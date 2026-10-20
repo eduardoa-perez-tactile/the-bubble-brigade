@@ -1,4 +1,6 @@
 {
-  "replay": "tests/replays/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect.greplay",
-  "structural": { "drawCallsMax": 14 }
+  "replay": "tests/replays/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
 }

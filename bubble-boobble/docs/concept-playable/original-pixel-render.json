@@ -1,0 +1,2468 @@
+{
+  "ok": true,
+  "gpuTier": "desktop",
+  "passed": 48,
+  "updateGoldens": false,
+  "scope": "Derived from final strict60-case desktop T1 run. Original48names are fixed by prior full-overhaul evidence; original pixel goldens were never updated.",
+  "tests": [
+    {
+      "name": "companion mode selector fits settings and changes through the real button",
+      "ok": true,
+      "steps": 9,
+      "hash": "f174bfd94c4ca804",
+      "shots": []
+    },
+    {
+      "name": "feel six player capture chain rescue boss and results fit every aspect",
+      "ok": true,
+      "steps": 65,
+      "hash": "aa16f6d46c418469",
+      "shots": [
+        {
+          "name": "bubble_showcase",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/bubble_showcase/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "arena_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "arena_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "arena_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "rescue",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/rescue/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss_capture",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/boss_capture/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/victory/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "reduced_victory",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/reduced_victory/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade reference board 768x720",
+      "ok": true,
+      "steps": 5,
+      "hash": "7f497ea972ff7203",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_board_768x720/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade reference board 1680x720",
+      "ok": true,
+      "steps": 5,
+      "hash": "ea32baeb654bf16c",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_board_1680x720/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade reference board 640x960",
+      "ok": true,
+      "steps": 5,
+      "hash": "a26b65cfe9880a72",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_board_640x960/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 1.6681397028150968e-06,
+            "max": 0.002539878012612462,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade reference editor preview",
+      "ok": true,
+      "steps": 3,
+      "hash": "b905f1fe650d7ffa",
+      "shots": [
+        {
+          "name": "editor",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_editor_preview/editor/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade reference encoded overlays",
+      "ok": true,
+      "steps": 7,
+      "hash": "51275828a0a95f30",
+      "shots": [
+        {
+          "name": "pause",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_encoded_overlays/pause/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.007056533824652433,
+            "max": 0.14306841790676117,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "result",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/arcade_reference_encoded_overlays/result/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.2710133862346993e-07,
+            "max": 0.007521653547883034,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "arcade scoring fruit and enemy point labels share the rendered text effect",
+      "ok": true,
+      "steps": 7,
+      "hash": "5f79d6668c4b3366",
+      "shots": []
+    },
+    {
+      "name": "bubble skins actual fire input all solo colors",
+      "ok": true,
+      "steps": 36,
+      "hash": "a0fc26b4b2c8239c",
+      "shots": [
+        {
+          "name": "green",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/green/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "blue",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/blue/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "red",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/red/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "yellow",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/yellow/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "bubble skins actual fire input simultaneous co-op colors",
+      "ok": true,
+      "steps": 22,
+      "hash": "f84960334f84a904",
+      "shots": [
+        {
+          "name": "red",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/red/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "yellow",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/yellow/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "courtyard full arena and ten identities fit native wide tall and ultrawide windows",
+      "ok": true,
+      "steps": 28,
+      "hash": "3d7f5e986ed444c9",
+      "shots": [
+        {
+          "name": "courtyard_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "courtyard_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "courtyard_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "courtyard_2560x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_2560x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "desktop account buttons match reference hit rectangles",
+      "ok": true,
+      "steps": 18,
+      "hash": "4d59931611dcf9bb",
+      "shots": [
+        {
+          "name": "name",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/name/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "invalid-name",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/invalid_name/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "desktop title animation uses reference global phase and wraps",
+      "ok": true,
+      "steps": 66,
+      "hash": "793cba32c9292a54",
+      "shots": [
+        {
+          "name": "menu",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_title_animation_uses_reference_global_phase_and_wraps/menu/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "desktop reference popup and banner layouts",
+      "ok": true,
+      "steps": 10,
+      "hash": "909d6da2748dc083",
+      "shots": [
+        {
+          "name": "ready",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_reference_popup_and_banner_layouts/ready/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "pause",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_reference_popup_and_banner_layouts/pause/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.007056533824652433,
+            "max": 0.14306841790676117,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "clear",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_reference_popup_and_banner_layouts/clear/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "win",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_reference_popup_and_banner_layouts/win/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.2710133862346993e-07,
+            "max": 0.007521653547883034,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "dragon palette all original animation frames",
+      "ok": true,
+      "steps": 4,
+      "hash": "b87c472120e1fcad",
+      "shots": [
+        {
+          "name": "all-frames",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_palette_all_original_animation_frames/all_frames/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0,
+            "maxCap": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "bubble palette all original shot frames",
+      "ok": true,
+      "steps": 4,
+      "hash": "c8e9a2da01cc1e84",
+      "shots": [
+        {
+          "name": "shot-frames",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/bubble_palette_all_original_shot_frames/shot_frames/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0,
+            "maxCap": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "dragon palette production composed colors retain encoded source RGB",
+      "ok": true,
+      "steps": 5,
+      "hash": "07f85916d4ace119",
+      "shots": []
+    },
+    {
+      "name": "dragon palette GPU masks flips clips and source-over agree",
+      "ok": true,
+      "steps": 12,
+      "hash": "33aa85adf0dbd37b",
+      "shots": []
+    },
+    {
+      "name": "dragon results victory and defeat show all ten dragons and usable safe buttons",
+      "ok": true,
+      "steps": 171,
+      "hash": "cf5d498947f15838",
+      "shots": [
+        {
+          "name": "victory_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/victory_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/victory_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/victory_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.711085755890963e-07,
+            "max": 0.009912272915244102,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory_904x2316",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/victory_904x2316/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 1.3354028851608746e-06,
+            "max": 0.01872347481548786,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory_1620x2160",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/victory_1620x2160/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 8.113842113743885e-07,
+            "max": 0.021025322377681732,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/defeat_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/defeat_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/defeat_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_904x2316",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/defeat_904x2316/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.5168756678795035e-07,
+            "max": 0.009793302975594997,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_1620x2160",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_results_victory_and_defeat_show_all_ten_dragons_and_usable_safe_buttons/defeat_1620x2160/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 8.704389529157197e-07,
+            "max": 0.021025322377681732,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "dragon skins settings selection reaches red gameplay",
+      "ok": true,
+      "steps": 17,
+      "hash": "9466ffa866adbd8b",
+      "shots": [
+        {
+          "name": "settings-preview",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "profile-preview",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/profile_preview/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "solo",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/solo/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "co-op",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/co_op/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "dragon skins settings selection reaches yellow gameplay",
+      "ok": true,
+      "steps": 20,
+      "hash": "e43aa1782dd1804f",
+      "shots": [
+        {
+          "name": "settings-preview",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "profile-preview",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/profile_preview/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "solo",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/solo/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "co-op",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/co_op/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "harness starter golden",
+      "ok": true,
+      "steps": 1,
+      "hash": "24e0db5037e39271",
+      "shots": [
+        {
+          "name": "starter-tap",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/harness_starter_golden/starter_tap/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "madness release menu and mode cards fit and launch both modes",
+      "ok": true,
+      "steps": 26,
+      "hash": "694ef729b7952b3a",
+      "shots": [
+        {
+          "name": "release_menu",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/release_menu/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "classic_card",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/classic_card/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.001238595461472869,
+            "max": 0.8908566236495972,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "madness_card",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/madness_card/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.001238595345057547,
+            "max": 0.8908566236495972,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "madness menu stays simple with development enabled",
+      "ok": true,
+      "steps": 102,
+      "hash": "4fdf2cd9dd39cfb5",
+      "shots": [
+        {
+          "name": "simple_menu_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "simple_menu_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "simple_menu_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "simple_menu_2160x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_2160x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "development_menu",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/development_menu/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "dragon_hop",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/dragon_hop/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "reduced_motion",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/madness_menu_stays_simple_with_development_enabled/reduced_motion/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "movement board 768x720",
+      "ok": true,
+      "steps": 2,
+      "hash": "7cca56c15e004722",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/movement_board_768x720/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "movement board 1680x720",
+      "ok": true,
+      "steps": 2,
+      "hash": "7b9c517dea62c66a",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/movement_board_1680x720/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "movement board 640x960",
+      "ok": true,
+      "steps": 2,
+      "hash": "52eb704c44e7de14",
+      "shots": [
+        {
+          "name": "round1",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/movement_board_640x960/round1/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "feedback jump dust grounded shadows nameplates and guarded results remain readable",
+      "ok": true,
+      "steps": 284,
+      "hash": "77b36cfd9a49e7a0",
+      "shots": [
+        {
+          "name": "takeoff",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/takeoff/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "airborne",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/airborne/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landing",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landing_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landing_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landing_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "mixed_badges",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/mixed_badges/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "clustered_badges",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/clustered_badges/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_guard",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_guard/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "defeat_ready",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_ready/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party boss moving art bottle warning and capture stay readable",
+      "ok": true,
+      "steps": 192,
+      "hash": "78f55a5ca173592d",
+      "shots": [
+        {
+          "name": "bottle_warning",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_warning/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "bottle_fan",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_fan/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "giant_bubble",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/giant_bubble/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party boss six firing dragons stay bounded on phone low",
+      "ok": true,
+      "steps": 304,
+      "hash": "d56917a68cacbd97",
+      "shots": []
+    },
+    {
+      "name": "party boss ten dragons sustain a long lightning fight without growing visual pools",
+      "ok": true,
+      "steps": 12007,
+      "hash": "aa51388fb44734b9",
+      "shots": [
+        {
+          "name": "boss_soak",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_ten_dragons_sustain_a_long_lightning_fight_without_growing_visual_pools/boss_soak/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.1237629255210777e-07,
+            "max": 0.003723727772012353,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party boss ten dragons fire identifiable lightning bubbles",
+      "ok": true,
+      "steps": 10,
+      "hash": "727d073da7361e0f",
+      "shots": [
+        {
+          "name": "colored_lightning_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.2685107978759333e-06,
+            "max": 0.010737473145127296,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "colored_lightning_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "colored_lightning_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 3.1967576319402724e-07,
+            "max": 0.00805759709328413,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party feedback ready GO and last kill fit every window",
+      "ok": true,
+      "steps": 936,
+      "hash": "527ae925708fc8eb",
+      "shots": [
+        {
+          "name": "ready_3_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_2_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_1_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "go_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.2685064777761e-06,
+            "max": 0.010737473145127296,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "flint_last_kill_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "between_waves_movement_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_3_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_2_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_1_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 1.0901951696951073e-07,
+            "max": 0.005723613314330578,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "go_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "flint_last_kill_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "between_waves_movement_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_3_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_2_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready_1_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 6.435106456592621e-07,
+            "max": 0.002471204148605466,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "go_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 6.435106456592621e-07,
+            "max": 0.002471204148605466,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "flint_last_kill_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 5.68128768918541e-07,
+            "max": 0.002471204148605466,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "between_waves_movement_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party last standing remaining dragon gets a clear HUD notice before defeat",
+      "ok": true,
+      "steps": 138,
+      "hash": "a677f785a168f11c",
+      "shots": [
+        {
+          "name": "last_dragon_standing",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/last_dragon_standing/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "team_defeat",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/team_defeat/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party pacing five second countdown preparation shooting and red last enemy",
+      "ok": true,
+      "steps": 309,
+      "hash": "8bf39a47a82538e5",
+      "shots": [
+        {
+          "name": "five_second_break",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/five_second_break/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "safe_preparation_shooting",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/safe_preparation_shooting/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "last_enemy_angry",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/last_enemy_angry/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party polish readable countdown falling enemies and rest practice shots",
+      "ok": true,
+      "steps": 196,
+      "hash": "50f2c2e24ee17cfb",
+      "shots": [
+        {
+          "name": "arriving",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/arriving/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "positioning",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/positioning/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "go",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/go/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "rest_shooting",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/rest_shooting/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party randomized powerup has a small green benefit alert in the arena",
+      "ok": true,
+      "steps": 7,
+      "hash": "47ac801601cb6cb2",
+      "shots": [
+        {
+          "name": "powerup_alert",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena/powerup_alert/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party palette ten dragon GPU body and matching bubbles",
+      "ok": true,
+      "steps": 4,
+      "hash": "23a008c1fca38449",
+      "shots": [
+        {
+          "name": "ten-colors",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_palette_ten_dragon_gpu_body_and_matching_bubbles/ten_colors/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "ten dragon lobby all real cards and portraits fit native wide and tall screens",
+      "ok": true,
+      "steps": 48,
+      "hash": "13b1981ca900d8e3",
+      "shots": [
+        {
+          "name": "lobby_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "lobby_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "lobby_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "p10_human_label",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/p10_human_label/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "ten dragons firing and rescue remain bounded on phone low",
+      "ok": true,
+      "steps": 795,
+      "hash": "61d8cafb4d768584",
+      "shots": [
+        {
+          "name": "arena_prepare",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_prepare/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "arena_firing",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_firing/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ivory_slate_rescue",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ivory_slate_rescue/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ten_boss_firing",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ten_boss_firing/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.1237629255210777e-07,
+            "max": 0.003723727772012353,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party wave lobby buttons fit desktop extremes and launch actual game",
+      "ok": true,
+      "steps": 12,
+      "hash": "655778f04c0f63a8",
+      "shots": [
+        {
+          "name": "lobby",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_wave_lobby_buttons_fit_desktop_extremes_and_launch_actual_game/lobby/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party actual six dragon arena and rest HUD",
+      "ok": true,
+      "steps": 128,
+      "hash": "f5af0820518c2165",
+      "shots": [
+        {
+          "name": "six_dragons",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/six_dragons/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "rest",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/rest/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/boss/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party whole wave preview and late mixed formation stay within render budget",
+      "ok": true,
+      "steps": 329,
+      "hash": "ffa0d2a391c286df",
+      "shots": [
+        {
+          "name": "formation_preview",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/formation_preview/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "late_formation",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/late_formation/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "party dragon cards change their own slot through real pointer presses",
+      "ok": true,
+      "steps": 35,
+      "hash": "4f41edda207fec43",
+      "shots": [
+        {
+          "name": "open_slots",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/party_dragon_cards_change_their_own_slot_through_real_pointer_presses/open_slots/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "pixel renderer exact texel prototype",
+      "ok": true,
+      "steps": 2,
+      "hash": "3c8c3887ddd90e3b",
+      "shots": [
+        {
+          "name": "prototype",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/pixel_renderer_exact_texel_prototype/prototype/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0,
+            "maxCap": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "desktop complete presentation flows",
+      "ok": true,
+      "steps": 780,
+      "hash": "26bcf2c5fcc099ea",
+      "shots": [
+        {
+          "name": "title",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/title/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "menu",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/menu/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "profiles",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/profiles/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "scores",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/scores/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "settings",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/settings/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "help",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/help/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.2593086157485232e-07,
+            "max": 0.007531850133091211,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "credits",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/credits/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/editor/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "ready",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/ready/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "round24-combat",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/round24_combat/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "pause",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/pause/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.0048193056136369705,
+            "max": 0.6633923649787903,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boundary-bubble-chain",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/boundary_bubble_chain/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boundary-element-fire",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/boundary_element_fire/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boundary-element-water",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/boundary_element_water/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boundary-element-thunder",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/boundary_element_thunder/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "death",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/death/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.0405965187819675e-05,
+            "max": 0.44150078296661377,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "win",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/win/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "skin-red-settings",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/skin_red_settings/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "skin-yellow-settings",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/skin_yellow_settings/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "bubbles-yellow-blue",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/bubbles_yellow_blue/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party-feel",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/party_feel/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party-capture",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/party_capture/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party-victory",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/desktop_complete_presentation_flows/party_victory/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "pickup sprite natural proportions",
+      "ok": true,
+      "steps": 7,
+      "hash": "06db64b1be019e2b",
+      "shots": [
+        {
+          "name": "pickups",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/pickup_sprite_natural_proportions/pickups/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0.005414032842963934,
+            "max": 0.6942527294158936,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor-icons",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/pickup_sprite_natural_proportions/editor_icons/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    },
+    {
+      "name": "wave fruit real final pops show a different reward each wave",
+      "ok": true,
+      "steps": 37,
+      "hash": "9f84bddddde1dba3",
+      "shots": [
+        {
+          "name": "wave_1_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_1_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_2_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_2_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_3_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_3_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_4_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_4_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_5_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_5_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_6_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_6_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_7_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_7_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "wave_8_fruit",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_8_fruit/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ]
+    }
+  ]
+}

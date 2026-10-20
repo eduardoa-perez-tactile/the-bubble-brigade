@@ -1,0 +1,115 @@
+{
+  "operation": "exact pixel crop; no character redraw",
+  "portraits": [
+    {
+      "skin": "green",
+      "source": "assets/cartoon/frames/dragon/green/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/green.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "blue",
+      "source": "assets/cartoon/frames/dragon/blue/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/blue.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "red",
+      "source": "assets/cartoon/frames/dragon/red/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/red.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "yellow",
+      "source": "assets/cartoon/frames/dragon/yellow/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/yellow.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "purple",
+      "source": "assets/cartoon/frames/dragon/purple/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/purple.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "orange",
+      "source": "assets/cartoon/frames/dragon/orange/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/orange.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "cyan",
+      "source": "assets/cartoon/frames/dragon/cyan/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/cyan.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "pink",
+      "source": "assets/cartoon/frames/dragon/pink/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/pink.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "ivory",
+      "source": "assets/cartoon/frames/dragon/ivory/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/ivory.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    },
+    {
+      "skin": "slate",
+      "source": "assets/cartoon/frames/dragon/slate/idle-0.png",
+      "target": "assets/cartoon/ui/portraits/slate.png",
+      "crop": [
+        28,
+        8,
+        80,
+        80
+      ]
+    }
+  ]
+}

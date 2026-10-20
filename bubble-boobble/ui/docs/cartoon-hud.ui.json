@@ -10,7 +10,7 @@
       "type": "element",
       "name": "Cartoon hud",
       "style": {
-        "w": 768,
+        "w": "100%",
         "h": 720,
         "pad": 0,
         "position": "anchored",
@@ -36,12 +36,13 @@
       "name": "Element",
       "children": [
         "ch_score_card",
-        "ch_brand",
-        "ch_round_card"
+        "ch_wave_plaque",
+        "ch_round_card",
+        "ch_header_text"
       ],
       "style": {
         "pad": 0,
-        "w": 768,
+        "w": "100%",
         "h": 48,
         "position": "anchored",
         "anchor": [
@@ -52,15 +53,14 @@
           0,
           0
         ]
-      }
+      },
+      "point": "header"
     },
     "ch_score_card": {
       "type": "element",
       "name": "Element",
       "children": [
-        "ch_name",
-        "ch_score",
-        "ch_score_rule"
+        "ch_score_paper"
       ],
       "style": {
         "pad": 0,
@@ -70,13 +70,13 @@
           0
         ],
         "offset": [
-          14,
+          12,
           6
         ],
-        "w": 144,
+        "w": 216,
         "h": 36,
-        "bg": "#f1e3bf",
-        "radius": 2
+        "bg": "#30271e",
+        "radius": 8
       },
       "point": "score-card"
     },
@@ -91,13 +91,13 @@
           0
         ],
         "offset": [
-          12,
-          2
+          22,
+          15
         ],
-        "w": 120,
-        "h": 13,
-        "fontSize": 9,
-        "fitMin": 7,
+        "w": 90,
+        "h": 16,
+        "fontSize": 10,
+        "fitMin": 8,
         "color": "#725640"
       }
     },
@@ -112,11 +112,11 @@
           0
         ],
         "offset": [
-          12,
-          14
+          112,
+          11
         ],
-        "w": 120,
-        "h": 20,
+        "w": 104,
+        "h": 23,
         "fontSize": 18,
         "fitMin": 14,
         "weight": 800,
@@ -126,7 +126,7 @@
     "ch_brand": {
       "type": "label",
       "name": "Label",
-      "text": "THE BUBBLE BRIGADE",
+      "text": "{waveLabel}",
       "style": {
         "position": "anchored",
         "anchor": [
@@ -135,15 +135,15 @@
         ],
         "offset": [
           0,
-          15
+          10
         ],
-        "w": 366,
-        "h": 22,
-        "fontSize": 16,
-        "fitMin": 14,
+        "w": 146,
+        "h": 28,
+        "fontSize": 21,
+        "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#f1e3bf"
+        "color": "#30271e"
       },
       "point": "brand"
     },
@@ -151,9 +151,7 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "ch_round",
-        "ch_high",
-        "ch_round_rule"
+        "ch_status_paper"
       ],
       "style": {
         "pad": 0,
@@ -163,68 +161,72 @@
           0
         ],
         "offset": [
-          -14,
+          -12,
           6
         ],
-        "w": 168,
+        "w": 216,
         "h": 36,
-        "bg": "#f1e3bf",
-        "radius": 2
+        "bg": "#30271e",
+        "radius": 8
       },
       "point": "round-card"
     },
     "ch_round": {
       "type": "label",
       "name": "Label",
-      "text": "{round}",
+      "text": "{highTitle}",
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          1,
           0
         ],
         "offset": [
-          12,
-          2
+          -24,
+          9
         ],
-        "w": 144,
-        "h": 16,
-        "fontSize": 12,
+        "w": 192,
+        "h": 13,
+        "fontSize": 9,
         "fitMin": 9,
         "weight": 800,
-        "color": "#382d38"
+        "color": "#30271e",
+        "textAlign": "center"
       }
     },
     "ch_high": {
       "type": "label",
       "name": "Label",
-      "text": "{highTitle}  {high}",
+      "text": "{high}",
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          1,
           0
         ],
         "offset": [
-          12,
-          20
+          -24,
+          21
         ],
-        "w": 144,
-        "h": 13,
-        "fontSize": 9,
+        "w": 192,
+        "h": 19,
+        "fontSize": 15,
         "fitMin": 7,
-        "color": "#725640"
+        "color": "#30271e",
+        "textAlign": "center"
       }
     },
     "ch_bottom": {
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_footer_panel",
         "ch_lives",
         "ch_controls",
         "ch_roster_top",
         "ch_roster_bottom",
-        "ch_classic_portrait"
+        "ch_classic_portrait",
+        "ch_roster_wide"
       ],
       "style": {
         "pad": 0,
@@ -237,10 +239,11 @@
           0,
           656
         ],
-        "w": 768,
+        "w": "100%",
         "h": 64,
-        "bg": "#f1e3bf"
-      }
+        "bg": "#00000000"
+      },
+      "point": "footer"
     },
     "ch_lives": {
       "type": "label",
@@ -303,12 +306,12 @@
         ],
         "offset": [
           0,
-          54
+          52
         ],
-        "w": 360,
-        "h": 52,
+        "w": 304,
+        "h": 36,
         "bg": "#f1e3bf",
-        "radius": 2
+        "radius": 6
       },
       "show": "showBanner",
       "point": "banner"
@@ -325,12 +328,12 @@
         ],
         "offset": [
           0,
-          3
+          1
         ],
-        "w": 340,
-        "h": 20,
-        "fontSize": 16,
-        "fitMin": 12,
+        "w": 288,
+        "h": 18,
+        "fontSize": 14,
+        "fitMin": 11,
         "textAlign": "center",
         "weight": 800,
         "color": "#30271e"
@@ -348,12 +351,12 @@
         ],
         "offset": [
           0,
-          24
+          21
         ],
-        "w": 340,
+        "w": 288,
         "h": 14,
-        "fontSize": 10,
-        "fitMin": 9,
+        "fontSize": 9,
+        "fitMin": 8,
         "textAlign": "center",
         "color": "#746047"
       }
@@ -377,7 +380,8 @@
         "fontSize": 8,
         "fitMin": 7,
         "textAlign": "center",
-        "color": "#746047"
+        "color": "#746047",
+        "hide": true
       }
     },
     "ch_freeze": {
@@ -417,14 +421,16 @@
         "position": "anchored",
         "anchor": [
           0.5,
-          0.5
-        ],
-        "offset": [
-          0,
           0
         ],
-        "w": 480,
-        "h": 116
+        "offset": [
+          -132,
+          6
+        ],
+        "w": 40,
+        "h": 36,
+        "bg": "#f1e3bf",
+        "radius": 6
       },
       "show": "showStartCue",
       "point": "start-cue"
@@ -434,13 +440,13 @@
       "name": "Label",
       "text": "{startCue}",
       "style": {
-        "w": 480,
-        "h": 86,
-        "fontSize": 72,
-        "fitMin": 48,
+        "w": 40,
+        "h": 32,
+        "fontSize": 21,
+        "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#fff3d9"
+        "color": "#30271e"
       }
     },
     "ch_start_hint": {
@@ -454,47 +460,8 @@
         "fitMin": 10,
         "textAlign": "center",
         "weight": 800,
-        "color": "#fff3d9"
-      }
-    },
-    "ch_score_rule": {
-      "type": "element",
-      "name": "Element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ],
-        "w": 144,
-        "h": 2,
-        "bg": "#30271e"
-      }
-    },
-    "ch_round_rule": {
-      "type": "element",
-      "name": "Element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0,
-          1
-        ],
-        "offset": [
-          0,
-          0
-        ],
-        "w": 168,
-        "h": 2,
-        "bg": "#30271e"
+        "color": "#fff3d9",
+        "hide": true
       }
     },
     "ch_banner_rule": {
@@ -512,7 +479,7 @@
           0,
           0
         ],
-        "w": 360,
+        "w": 304,
         "h": 2,
         "bg": "#30271e"
       }
@@ -521,6 +488,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_frames_top",
         "ch_portraits_top",
         "ch_roster_top_slots"
       ],
@@ -528,18 +496,19 @@
         "pad": 0,
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          14,
+          0,
           0
         ],
-        "w": 740,
+        "w": "94%",
         "h": 32,
         "dir": "row"
       },
-      "show": "party"
+      "show": "party",
+      "point": "roster-top"
     },
     "ch_roster_top_slots": {
       "type": "repeat",
@@ -550,6 +519,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_frames_bottom",
         "ch_portraits_bottom",
         "ch_roster_bottom_slots"
       ],
@@ -557,18 +527,19 @@
         "pad": 0,
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          14,
+          0,
           32
         ],
-        "w": 740,
+        "w": "94%",
         "h": 32,
         "dir": "row"
       },
-      "show": "party"
+      "show": "party",
+      "point": "roster-bottom"
     },
     "ch_roster_bottom_slots": {
       "type": "repeat",
@@ -612,7 +583,7 @@
           0,
           0
         ],
-        "w": 740,
+        "w": "100%",
         "h": 32,
         "dir": "row"
       }
@@ -639,7 +610,7 @@
           0,
           0
         ],
-        "w": 740,
+        "w": "100%",
         "h": 32,
         "dir": "row"
       }
@@ -648,6 +619,336 @@
       "type": "repeat",
       "doc": "cartoon-roster-portrait",
       "property": "rosterBottomPortraits"
+    },
+    "ch_score_paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          2,
+          2
+        ],
+        "w": 212,
+        "h": 32,
+        "bg": "#f1e3bf",
+        "radius": 6
+      }
+    },
+    "ch_status_paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          2,
+          2
+        ],
+        "w": 212,
+        "h": 32,
+        "bg": "#f1e3bf",
+        "radius": 6
+      }
+    },
+    "ch_wave_plaque": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_wave_paper"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          6
+        ],
+        "w": 200,
+        "h": 36,
+        "bg": "#30271e",
+        "radius": 16
+      },
+      "point": "wave-plaque"
+    },
+    "ch_wave_paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          2,
+          2
+        ],
+        "w": 196,
+        "h": 32,
+        "bg": "#f1e3bf",
+        "radius": 14
+      }
+    },
+    "ch_header_text": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_name",
+        "ch_score",
+        "ch_round",
+        "ch_high",
+        "ch_wave_curl_left",
+        "ch_brand",
+        "ch_wave_curl_right"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 48
+      }
+    },
+    "ch_wave_curl_left": {
+      "type": "label",
+      "name": "Label",
+      "text": "~",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          -84,
+          10
+        ],
+        "w": 18,
+        "h": 30,
+        "fontSize": 20,
+        "color": "#30271e",
+        "textAlign": "center"
+      }
+    },
+    "ch_wave_curl_right": {
+      "type": "label",
+      "name": "Label",
+      "text": "~",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          84,
+          10
+        ],
+        "w": 18,
+        "h": 30,
+        "fontSize": 20,
+        "color": "#30271e",
+        "textAlign": "center"
+      }
+    },
+    "ch_footer_panel": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_footer_paper"
+      ],
+      "style": {
+        "pad": 2,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "96%",
+        "h": 64,
+        "bg": "#30271e",
+        "dir": "column"
+      },
+      "point": "footer-panel"
+    },
+    "ch_footer_paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "grow": 1,
+        "bg": "#f1e3bf"
+      }
+    },
+    "ch_frames_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_frames_top_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_frames_top_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-frame",
+      "property": "rosterTopFrames"
+    },
+    "ch_frames_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_frames_bottom_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_frames_bottom_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-frame",
+      "property": "rosterBottomFrames"
+    },
+    "ch_roster_wide": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_wide_frames",
+        "ch_wide_portraits",
+        "ch_wide_labels"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "94%",
+        "h": 64,
+        "dir": "row"
+      },
+      "show": "party",
+      "point": "roster-wide"
+    },
+    "ch_wide_frames": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_wide_frames_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 64,
+        "dir": "row"
+      }
+    },
+    "ch_wide_frames_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-frame",
+      "property": "rosterWideFrames"
+    },
+    "ch_wide_portraits": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_wide_portraits_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 64,
+        "dir": "row"
+      }
+    },
+    "ch_wide_portraits_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-portrait",
+      "property": "rosterWidePortraits"
+    },
+    "ch_wide_labels": {
+      "type": "repeat",
+      "doc": "cartoon-roster-slot",
+      "property": "rosterWide"
     }
   },
   "view": {
@@ -781,6 +1082,35 @@
     "classicPortrait": {
       "type": "image",
       "default": "cartoon/frames/dragon/green/idle-0"
+    },
+    "waveLabel": {
+      "type": "text",
+      "default": "WAVE 01"
+    },
+    "rosterTopFrames": {
+      "type": "list",
+      "of": "cartoon-roster-frame",
+      "default": []
+    },
+    "rosterBottomFrames": {
+      "type": "list",
+      "of": "cartoon-roster-frame",
+      "default": []
+    },
+    "rosterWideFrames": {
+      "type": "list",
+      "of": "cartoon-roster-frame",
+      "default": []
+    },
+    "rosterWidePortraits": {
+      "type": "list",
+      "of": "cartoon-roster-portrait",
+      "default": []
+    },
+    "rosterWide": {
+      "type": "list",
+      "of": "cartoon-roster-slot",
+      "default": []
     }
   },
   "samples": {

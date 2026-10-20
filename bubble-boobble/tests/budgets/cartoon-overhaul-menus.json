@@ -1,4 +1,6 @@
 {
-  "replay": "tests/replays/cartoon_overhaul_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
-  "structural": { "drawCallsMax": 14 }
+  "replay": "tests/replays/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
 }

@@ -42,6 +42,7 @@ import { goSin } from "./trig";
 import { arenaWidth, arenaHeight, levelColumns, levelRows, levelWidth, levelHeight, EnemyState, position } from "./types.ts";
 import type { GameState, Level } from "./types.ts";
 import { cartoonSprites, cartoonMotion } from '../cartoon/renderer';
+import { cartoonRescueLabels } from '../cartoon/labels';
 import { cartoonDrawPlan, cartoonMenuDrawPlan, cartoonEditorDrawPlan } from '../cartoon/plan';
 import { isCartoonClearColor } from '../cartoon/theme';
 
@@ -78,6 +79,7 @@ interface Draw {
   text: string;
   size: number;
   footer?: boolean;
+  pixelOnly?: boolean;
   color?: readonly [number, number, number];
 }
 const dragonIndicatorColors: Readonly<Record<string, readonly [number, number, number]>> = {
@@ -298,7 +300,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
 
   }
   if(g.Party)for(const b of badges){
-    out.push(label(b.text,b.x,b.y+11*identityScale,10*identityScale,dragonIndicatorColors[skinAt(b.slot)]));
+    out.push({...label(b.text,b.x,b.y+11*identityScale,10*identityScale,dragonIndicatorColors[skinAt(b.slot)]),pixelOnly:true});
   }
   for (const p of g.Particles) {
     if(g.Party&&!p.Text)continue;
@@ -626,6 +628,8 @@ export const ArcadePresentation = defineSystem({
       : cartoonScene && ui.screen==='editor'
         ? cartoonSprites(cartoonEditorDrawPlan(ui.level,ctx.get(Time).step,desktopSaveState.get().profiles[desktopSaveState.get().active]?.avatar??'green'),plan.clip)
         : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
+    const rescueLabels = modern && g && ['play','pause'].includes(ui.screen)
+      ? cartoonRescueLabels(g,ctx.get(ViewInfo)) : [];
     if(modern && modern.length>q.mesh.count)throw new Error(`Cartoon presentation needs ${modern.length} slots; preserved pool has ${q.mesh.count}`);
     for(const c of q.masks.chunks())for(let i=0;i<c.length;i++){
       c.set(SpriteMask,i,{size:modern?[plan.clip.right-plan.clip.left,plan.clip.bottom-plan.clip.top]:[0,0]});
@@ -697,8 +701,8 @@ export const ArcadePresentation = defineSystem({
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;
         }
-        const d = plan.texts[slot - 1];
-        if (!d || modern && d.footer) {
+        const d = plan.texts[slot - 1] ?? rescueLabels[slot - 1 - plan.texts.length];
+        if (!d || modern && (d.footer || ('pixelOnly' in d && d.pixelOnly))) {
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;
         }

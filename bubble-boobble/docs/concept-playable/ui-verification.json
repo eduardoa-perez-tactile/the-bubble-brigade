@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-20",
+  "method": "Game Engine view renders, PNG inspection and runtime ui.layout against actual drawn diamond bounds",
+  "bounds": {
+    "header": 48,
+    "footer": 64,
+    "wideFace": 52,
+    "wideAspectThreshold": 1.6,
+    "wideRows": 1,
+    "narrowRows": 2
+  },
+  "sampleCount": 3,
+  "viewportCount": 4,
+  "renderCount": 4,
+  "layoutWarningCount": 0,
+  "previews": [
+    {
+      "sample": "rescue",
+      "size": [
+        1536,
+        864
+      ],
+      "path": ".gameengine/cartoon-ui-previews/concept-hud-wide-numbered.png"
+    },
+    {
+      "sample": "ready",
+      "size": [
+        768,
+        720
+      ],
+      "path": ".gameengine/cartoon-ui-previews/concept-hud-native-numbered.png"
+    },
+    {
+      "sample": "boss",
+      "size": [
+        1680,
+        720
+      ],
+      "path": ".gameengine/cartoon-ui-previews/concept-hud-ultrawide-boss.png"
+    },
+    {
+      "sample": "rescue",
+      "size": [
+        640,
+        960
+      ],
+      "path": ".gameengine/cartoon-ui-previews/concept-hud-tall-rescue.png"
+    }
+  ],
+  "visualChecks": [
+    "Numbers1\u201310 centered inside identity diamonds",
+    "All ten named face portraits and statuses remain visible",
+    "Rescue condition uses ink-red frame/status",
+    "Compact header countdown and boss message",
+    "Ten-wide switches to5x2 on native/tall"
+  ],
+  "typecheck": {
+    "command": "node .gameengine/engine/node_modules/typescript/bin/tsc --noEmit",
+    "exitCode": 0
+  },
+  "scope": "UI sample evidence; actual gameplay composition, replay and performance gates are recorded by companion verifiers."
+}

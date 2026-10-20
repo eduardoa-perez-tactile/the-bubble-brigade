@@ -1,4 +1,5 @@
 import { arenaLayout } from '../arcade/arena-layout';
+import { cartoonHelpAnchor } from './help-layout';
 import { EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
 import { partyColors } from '../arcade/party-config';
 import type { FeelState } from '../arcade/juice';
@@ -83,17 +84,23 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     out.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,flip,color});
   };
   out.push({frame:'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
-  for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<levelColumns(g.Level);){
+  const composed=g.Level.arena==='cartoon-courtyard',columns=levelColumns(g.Level);
+  const capHeight=composed?32:24;
+  for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<columns;){
+    // Keep the 24px inner masonry face at the actual collision edge. The
+    // outer backing tile remains solid in simulation but the painted room
+    // bleeds behind it, avoiding the previous double-width visual wall.
+    if(composed&&(col===0||col===columns-1)){col++;continue;}
     if(!g.Level.tiles[row]?.[col]){col++;continue;}
     if(row===0||g.Level.tiles[row-1]?.[col]){add('wall',col*24,row*24,24);col++;continue;}
     let end=col+1;
     while(end<levelColumns(g.Level)&&g.Level.tiles[row]?.[end]&&!g.Level.tiles[row-1]?.[end])end++;
     const width=(end-col)*24;
-    if(width===24)add('platform-middle',col*24,row*24,24);
+    if(width===24)add('platform-middle',col*24,row*24,24,capHeight);
     else{
-      add('platform-left',col*24,row*24,24);
-      for(let x=col*24+24;x<end*24-24;x+=48)add('platform-middle',x,row*24,Math.min(48,end*24-24-x),24);
-      add('platform-right',end*24-24,row*24,24);
+      add('platform-left',col*24,row*24,24,capHeight);
+      for(let x=col*24+24;x<end*24-24;x+=48)add('platform-middle',x,row*24,Math.min(48,end*24-24-x),capHeight);
+      add('platform-right',end*24-24,row*24,24,capHeight);
     }
     col=end;
   }
@@ -152,11 +159,17 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(!p.Downed&&p.Lives===0&&p.Dead===0)continue;
     const grace=!!g.Party&&['combat','boss'].includes(g.Party.Phase)&&g.LevelTicks<120;
     if(!p.Downed&&!grace&&p.Invincible&&p.Invincible%12>=6)continue;
+    const help=p.Downed?cartoonHelpAnchor(p,layout):undefined;
+    if(help){
+      add('solid/#3c3630',help.x-1,help.y-1,62,26);
+      add('solid/#fff0c9',help.x,help.y,60,24);
+      add('solid/#fff0c9',help.x+25,help.y+24,10,5);
+    }
     const draw=dragonDraw(p,skin(index),tick,!!motion?.[index]);
     add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
     if(g.Party||g.Players.length>1){
       const badgeSize=Math.min(13/layout.scale,19);
-      add('badge/'+skin(index),p.X+22-badgeSize/2,p.Y-32,badgeSize);
+      add('badge/'+skin(index),help?help.x-badgeSize-4:p.X+22-badgeSize/2,help?help.y+(24-badgeSize)/2:p.Y-32,badgeSize);
     }
     if(p.Downed)add('bubble',p.X-5,p.Y-7,54,54,false,rgba(colors[index%10]!, .8));
   }

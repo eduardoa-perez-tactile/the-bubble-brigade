@@ -14,13 +14,14 @@
         "pad": 0,
         "align": "center",
         "bg": "#00000000",
-        "radius": 12,
+        "radius": 0,
         "w": 148,
         "h": 32
       },
       "children": [
         "cr_name",
-        "cr_status"
+        "cr_status",
+        "cr_number"
       ]
     },
     "cr_name": {
@@ -34,10 +35,10 @@
           0
         ],
         "offset": [
-          36,
+          48,
           1
         ],
-        "w": 106,
+        "w": 94,
         "h": 18,
         "fontSize": 12,
         "fitMin": 10,
@@ -56,16 +57,39 @@
           0
         ],
         "offset": [
-          36,
+          48,
           18
         ],
-        "w": 106,
+        "w": 94,
         "h": 12,
         "fontSize": 9,
         "fitMin": 8,
         "color": "#746047"
       },
       "property": "status"
+    },
+    "cr_number": {
+      "type": "label",
+      "name": "Label",
+      "text": "{number}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          -7,
+          5
+        ],
+        "w": 20,
+        "h": 22,
+        "fontSize": 11,
+        "fitMin": 9,
+        "textAlign": "center",
+        "color": "#30271e"
+      },
+      "property": "number"
     }
   },
   "properties": {
@@ -101,6 +125,47 @@
             },
             "root": {
               "bg": "#00000000"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "type": "text",
+      "default": "1"
+    },
+    "condition": {
+      "type": "enum",
+      "values": [
+        "ready",
+        "rescue",
+        "returning",
+        "out",
+        "open"
+      ],
+      "default": "ready",
+      "poses": {
+        "rescue": {
+          "set": {
+            "cr_status": {
+              "color": "#a6472d"
+            }
+          }
+        },
+        "out": {
+          "set": {
+            "cr_status": {
+              "color": "#746047"
+            },
+            "root": {
+              "opacity": 0.45
+            }
+          }
+        },
+        "open": {
+          "set": {
+            "root": {
+              "opacity": 0.35
             }
           }
         }

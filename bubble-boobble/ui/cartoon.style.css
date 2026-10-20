@@ -26,3 +26,33 @@
 .cartoon-results-screen { background-color: #e5d1a7; }
 .cartoon-account .ud-cartoon-profile-row__dpr_image { transform: scaleX(-1); }
 .cartoon-settings-portrait { width: 60px; height: 60px; }
+/* Gameplay canvas: stretch across safe width, retain the stage's720px height. */
+.cartoon-hud { width: 100%; height: 720px; }
+.cartoon-hud .ud-cartoon-hud__ch_brand { font-family: "cartoon/fonts/Rye-Regular"; }
+.cartoon-hud .ud-cartoon-hud__ch_roster_wide { display: none; }
+/* Shared with cartoonHudFooterHeight: ten faces in one row at aspect>=1.6. */
+@media (aspect >= 1.6) {
+  .cartoon-hud .ud-cartoon-hud__ch_bottom { top: 656px; height: 64px; }
+  .cartoon-hud .ud-cartoon-hud__ch_footer_panel { height: 64px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_top,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_bottom { display: none; }
+  .cartoon-hud.v-party-yes .ud-cartoon-hud__ch_roster_wide { display: flex; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-frame__root,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__root,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__root { height: 64px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-frame__crf_face_border { left: 11px; top: 4px; width: 56px; height: 56px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__crp_image { left: 13px; top: 6px; width: 52px; height: 52px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-frame__crf_diamond { left: 3px; top: 22px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_number { left: -7px; top: 21px; width: 20px; height: 22px; font-size: 12px; text-fit: 10px 12px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_name { left: 70px; top: 12px; width: 38%; height: 18px; font-size: 11px; text-fit: 9px 11px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_status { left: 70px; top: 34px; width: 38%; height: 18px; font-size: 8px; text-fit: 7px 8px; }
+  .cartoon-hud .ud-cartoon-hud__ch_classic_portrait { top: 10px; width: 44px; height: 44px; }
+  .cartoon-hud .ud-cartoon-hud__ch_lives { top: 22px; }
+  .cartoon-hud .ud-cartoon-hud__ch_controls { top: 24px; }
+}
+/* Repeat copies share the available safe width; no per-slot width guesses. */
+.cartoon-hud .ud-cartoon-roster-frame__root,
+.cartoon-hud .ud-cartoon-roster-portrait__root,
+.cartoon-hud .ud-cartoon-roster-slot__root { width: 0; min-width: 0; flex-grow: 1; flex-basis: 0; }
+
+.cartoon-hud .ud-cartoon-roster-slot__cr_number { font-family: "cartoon/fonts/BreeSerif-Regular"; }

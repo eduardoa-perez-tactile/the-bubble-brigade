@@ -22,13 +22,13 @@ export function partyEnemyFormation(g:GameState,kinds:readonly string[]):EnemySp
  });
  const clear=(p:Spot)=>!blocked(g,p.X,p.Y,ActorSize)&&!protectedSpots.some(other=>overlaps(p,other,8));
  const ground:Spot[]=[];
- for(let row=4;row<arenaRows(g);row++)for(let x=2*Tile+2;x+ActorSize<=(arenaColumns(g)-2)*Tile;x+=Tile/2){
+ for(let row=g.Level.arena==='cartoon-courtyard'?3:4;row<arenaRows(g);row++)for(let x=2*Tile+2;x+ActorSize<=(arenaColumns(g)-2)*Tile;x+=Tile/2){
   const p={X:x,Y:row*Tile-ActorSize};
   if(supported(g,p)&&clear(p))ground.push(p);
  }
  // Preserve the formation's broad spread and alternating direction as preferred anchors.
  const courtyard:Spot[]=[];
- if(g.Players.length>6)for(const row of g.Level.arena==='cartoon-courtyard'?[4,8,12,16]:[9,14,19,22])for(let col=3;col<=arenaColumns(g)-5;col+=4){
+ if(g.Players.length>6)for(const row of g.Level.arena==='cartoon-courtyard'?[3,8,13,18]:[9,14,19,22])for(let col=3;col<=arenaColumns(g)-5;col+=4){
   const p={X:col*Tile,Y:row*Tile-ActorSize};if(!blocked(g,p.X,p.Y,ActorSize))courtyard.push(p);
  }
  const columns=[0,7,3,4,1,6,2,5],rows=[20,10,15,5];

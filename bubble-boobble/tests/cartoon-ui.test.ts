@@ -7,7 +7,7 @@ import { PartyReset } from '../src/arcade/party.cheats';
 renderTest('cartoon HUD keeps score and wave cards inside the existing top band', async ({ input, step, cheat, render, ui, world }) => {
   input.view(768, 720, 1);
   await step(5);
-  await cheat(PartyReset, { wave: 1, team: 10, humans: 1, countdown: 180 });
+  await cheat(PartyReset, { wave: 1, team: 10, humans: 1, countdown: 60 });
   await step(2);
   expect(world.resource(MaterialGlobals).v1[0]).toBe(1);
   // Paper alone cannot pass: require both dark score ink and bright card pixels.
