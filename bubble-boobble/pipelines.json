@@ -97,6 +97,27 @@
   {
    "r": "3d-program",
    "program": "materials/pixel-ordered.material.ts"
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Mask": {
+     "samples": 1,
+     "format": 22
+    }
+   }
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Sprite": {
+     "blend": 0,
+     "mask": 1,
+     "samples": 1,
+     "format": 22,
+     "debug": 0
+    }
+   }
   }
  ],
  "desktop": [
@@ -283,6 +304,27 @@
   {
    "r": "3d-program",
    "program": "materials/pixel-ordered.material.ts"
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Mask": {
+     "samples": 4,
+     "format": 40
+    }
+   }
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Sprite": {
+     "blend": 0,
+     "mask": 1,
+     "samples": 4,
+     "format": 40,
+     "debug": 0
+    }
+   }
   }
  ],
  "mobile": [
@@ -383,6 +425,27 @@
   {
    "r": "3d-program",
    "program": "materials/pixel-ordered.material.ts"
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Mask": {
+     "samples": 1,
+     "format": 22
+    }
+   }
+  },
+  {
+   "r": "2d",
+   "key": {
+    "Sprite": {
+     "blend": 0,
+     "mask": 1,
+     "samples": 1,
+     "format": 22,
+     "debug": 0
+    }
+   }
   }
  ]
 }

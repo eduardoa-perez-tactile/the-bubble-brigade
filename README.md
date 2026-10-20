@@ -1,6 +1,6 @@
 # The Bubble Brigade
 
-Independent migration of Bubble Madness / BubbleBoobble, including its complete AI harness. This is the pre-reskin baseline: existing game art, gameplay and local multiplayer are preserved.
+The Bubble Brigade is a visual revamp of Bubble Madness / BubbleBoobble, with its complete AI harness preserved. The first playable cartoon slice is the default scene; existing gameplay and local multiplayer remain unchanged.
 
 The engine project remains in `bubble-boobble/` to preserve relative paths used by tests, tools, workflows and documentation. Run Git from this repository and engine/harness commands from that subdirectory.
 
@@ -18,6 +18,9 @@ The installed Tactile Game Engine and Node.js 22+ are required. To provision the
 - [AI harness guide](bubble-boobble/docs/harness.md)
 - [Strict-port contract and limitations](bubble-boobble/docs/port-harness.md)
 - [Art investigation and future reskin concepts](bubble-boobble/docs/art-reskin-investigation/README.md)
+- [Playable cartoon slice, captures, verification and remaining work](bubble-boobble/docs/cartoon-slice/README.md)
 - [Existing web build workflow](bubble-boobble/docs/web.md)
 
-Historical documents/evidence retain original names, URLs and machine paths. The active web publisher now targets this repository. No publication is performed by migration or verification. Visual rebranding, gameplay changes and multiplayer feature development have not started.
+Open `bubble-boobble/` in the Game Engine editor and play `scenes/cartoon.scene.json` for the slice, or `scenes/arcade.scene.json` for the original pixel comparison. Title → START GAME retains the existing Classic and ten-slot party flows.
+
+Historical documents/evidence retain original names, URLs and machine paths. The active web publisher targets this repository. The migration archive remains immutable. No gameplay or multiplayer features were added, and no web build or application release was published.

@@ -1,0 +1,4 @@
+{
+  "replay": "tests/replays/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect.greplay",
+  "structural": { "drawCallsMax": 14 }
+}

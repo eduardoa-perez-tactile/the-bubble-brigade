@@ -1,0 +1,4 @@
+{
+  "replay": "tests/replays/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable.greplay",
+  "structural": { "drawCallsMax": 14 }
+}

@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "file": "dragon-source.png",
+      "sha256": "a00af89f55084f76a5b0d0b16699a15e5c756dc561137bc6aa23438166690136",
+      "bytes": 1859020,
+      "origin": "Built-in image_gen, 20 October 2026; original generation for The Bubble Brigade, no third-party game asset import."
+    },
+    {
+      "file": "imp-source.png",
+      "sha256": "a25bd1779e4a1a574333c7db138a42651fa486335b51494cd825ef4f58a2cd59",
+      "bytes": 984029,
+      "origin": "Built-in image_gen, 20 October 2026; original generation for The Bubble Brigade, no third-party game asset import."
+    },
+    {
+      "file": "courtyard-source.png",
+      "sha256": "44c82eebc9ff42bab60cc4cfcc032bc99572743c99cac32d24b28dc9433dfd69",
+      "bytes": 2436230,
+      "origin": "Built-in image_gen, 20 October 2026; original generation for The Bubble Brigade, no third-party game asset import."
+    }
+  ],
+  "derivedBy": "tools/cartoon/build-assets.py",
+  "licensedFont": "assets/cartoon/fonts/OFL.txt",
+  "referenceFallback": "Unconverted imported assets retain data/reference-assets.json provenance; existing original assets untouched."
+}

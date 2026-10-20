@@ -1,0 +1,3 @@
+/* The engine has no implicit fallback font; keep cartoon text explicitly bound
+   to a bundled font. Scoped classes preserve the original pixel presentation. */
+.cartoon-hud, .cartoon-menu { width: 768px; height: 720px; font-family: "cartoon/fonts/NotoSans-Regular"; }

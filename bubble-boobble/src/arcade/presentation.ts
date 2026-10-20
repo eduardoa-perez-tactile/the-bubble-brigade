@@ -14,6 +14,7 @@ import {
   LocalTransform,
   VisualOffset,
   Sprite,
+  SpriteMask,
   Text2D,
   Shape,
   MeshRenderer,
@@ -23,6 +24,8 @@ import {
   WorldView,
   ViewInfo,
   CameraShake,
+  Camera,
+  assetKey,
   shakeCamera,
   audio,
 } from "@gameengine/runtime";
@@ -38,6 +41,9 @@ import type { PixelQuad } from "./pixel-renderer/types.ts";
 import { goSin } from "./trig";
 import { arenaWidth, arenaHeight, levelColumns, levelRows, levelWidth, levelHeight, EnemyState, position } from "./types.ts";
 import type { GameState, Level } from "./types.ts";
+import { cartoonSprites } from '../cartoon/renderer';
+import { cartoonDrawPlan, cartoonMenuDrawPlan } from '../cartoon/plan';
+import { isCartoonClearColor } from '../cartoon/theme';
 
 // Pixel instances and pooled text have disjoint slots; never grow text to this base.
 const PIXEL_SLOT_BASE = 65536;
@@ -411,7 +417,7 @@ export const ArcadePool = defineSystem({
     });
     for (let slot = pixels; slot < pixelCount; slot++) ctx.commands.spawn({
       ArcadeVisual: { slot: PIXEL_SLOT_BASE + slot },
-      LocalTransform: {}, VisualOffset: {}, MaterialParams: {},
+      LocalTransform: {}, VisualOffset: {}, MaterialParams: {}, Sprite: {visible:false},
       MeshRenderer: {
         mesh: STATIC_QUAD, material: PIXEL_MATERIAL,
         castShadows: false, receiveShadows: false,
@@ -575,6 +581,8 @@ export const ArcadePresentation = defineSystem({
   name: "ArcadePresentation",
   stage: "LateUpdate",
   queries: {
+    cameras: query(read(Camera)),
+    masks: query(write(SpriteMask),write(VisualOffset)),
     visuals: query(
       read(ArcadeVisual),
       write(VisualOffset),
@@ -582,7 +590,7 @@ export const ArcadePresentation = defineSystem({
       write(Text2D),
       write(Shape),
     ),
-    mesh: query(read(ArcadeVisual), write(MeshRenderer), write(VisualOffset), write(MaterialParams)),
+    mesh: query(read(ArcadeVisual), write(MeshRenderer), write(Sprite), write(VisualOffset), write(MaterialParams)),
   },
   resources: [read(ArcadeControl), read(Time), read(ArcadeFeel), read(ViewInfo), write(MaterialGlobals)],
   runIf: { resource: ArcadeControl, field: "active", value: true },
@@ -605,22 +613,49 @@ export const ArcadePresentation = defineSystem({
         g.State === 2 ||
         (g.Hurry && g.State === 1 && g.LevelTicks < 1980 && g.Tick % 30 < 24));
     const bannerTop = g?.State === 2 ? 84 : 240;
-    ctx.set(MaterialGlobals, { v0: [fade, bannerTop, banner ? 1 : 0, 0] });
-    // File meshes upload on the cold live viewport path; dynamic meshes in this
-    // installed runtime upload only after an offscreen screenshot. One static
-    // unit quad is instanced, with the same ordered positions and source pixels.
-    const geometry = orderedArrays(plan.images,1,0,0,plan.clip), arrays = geometry.arrays;
+    let cartoonScene = false;
+    for (const c of q.cameras.chunks()) for (let i = 0; i < c.length; i++) {
+      if (isCartoonClearColor(c.col(Camera).clearColor, i * 4)) cartoonScene = true;
+    }
+    ctx.set(MaterialGlobals, { v0: [fade, bannerTop, banner ? 1 : 0, 0], v1: [cartoonScene ? 1 : 0, 0, 0, 0] });
+    // Cartoon art uses the native filtered sprite batch and a shared stencil.
+    // The fallback retains the static quad compositor and original source pixels.
+    const modern = cartoonScene && session.get().active && g && ['play','pause','result'].includes(ui.screen)
+      ? cartoonSprites(cartoonDrawPlan(g,ctx.get(Time).step,ctx.get(ViewInfo),feel),plan.clip)
+      : cartoonScene && ['title','menu','party'].includes(ui.screen)
+        ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
+    if(modern && modern.length>q.mesh.count)throw new Error(`Cartoon presentation needs ${modern.length} slots; preserved pool has ${q.mesh.count}`);
+    for(const c of q.masks.chunks())for(let i=0;i<c.length;i++){
+      c.set(SpriteMask,i,{size:modern?[plan.clip.right-plan.clip.left,plan.clip.bottom-plan.clip.top]:[0,0]});
+      c.set(VisualOffset,i,{position:[(plan.clip.left+plan.clip.right)/2,720-(plan.clip.top+plan.clip.bottom)/2,0],scale:modern?[1,1,1]:[0,0,0]});
+    }
+    const geometry = orderedArrays(modern ? [] : plan.images,1,0,0,plan.clip), arrays = geometry.arrays;
     for (const c of q.mesh.chunks()) {
       const slots = c.col(ArcadeVisual).slot;
       const offsets = c.col(VisualOffset);
       const params = c.col(MaterialParams).params;
       const colors = c.col(MeshRenderer).color;
+      const materials = c.col(MeshRenderer).material;
       for (let i = 0; i < c.length; i++) {
         const quad = slots[i]! - PIXEL_SLOT_BASE, t = i * 3, m = i * 4;
-        if (quad < 0 || quad >= geometry.vertices / 4) {
+        if (quad < 0 || quad >= (modern?.length ?? geometry.vertices / 4)) {
           offsets.scale[t] = offsets.scale[t + 1] = offsets.scale[t + 2] = 0;
+          if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);
           continue;
         }
+        if (modern) {
+          const d=modern[quad]!,color=d.color??[1,1,1,1];
+          if(c.col(MeshRenderer).mesh[i])c.setField(MeshRenderer,i,'mesh',null);
+          offsets.position[t]=d.x+d.width/2;offsets.position[t+1]=720-d.y-d.height/2;offsets.position[t+2]=0;
+          offsets.scale[t]=offsets.scale[t+1]=offsets.scale[t+2]=1;
+          c.set(Sprite,i,{image:d.image,visible:true,size:[d.width,d.height],anchor:[.5,.5],flipX:!!d.flip,
+            blend:'Alpha',maskInteraction:'VisibleInside',unlit:true,order:quad,
+            color:[color[0]*(1-fade),color[1]*(1-fade),color[2]*(1-fade),color[3]??1]});
+          continue;
+        }
+        if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);
+        if(assetKey(c.col(MeshRenderer).mesh[i]!)!==STATIC_QUAD)c.setField(MeshRenderer,i,'mesh',STATIC_QUAD);
+        if (assetKey(materials[i]!) !== PIXEL_MATERIAL) c.setField(MeshRenderer,i,'material',PIXEL_MATERIAL);
         const p = quad * 12, u = quad * 8, k = quad * 16;
         const x0 = arrays.positions[p]!, y0 = arrays.positions[p + 1]!;
         const x1 = arrays.positions[p + 6]!, y1 = arrays.positions[p + 7]!;
@@ -652,6 +687,7 @@ export const ArcadePresentation = defineSystem({
         if (c.col(Sprite).visible[i]) c.set(Sprite, i, { visible: false });
         if (c.col(Shape).visible[i]) c.set(Shape, i, { visible: false });
         if (slot === 0) {
+          if(modern){if(c.col(Text2D).visible[i])c.setField(Text2D,i,'visible',false);continue;}
           c.set(VisualOffset, i, {
             position: [0, 0, 0],
             scale: plan.images.length ? [1, 1, 1] : [0, 0, 0],
@@ -699,7 +735,7 @@ export const ArcadePresentation = defineSystem({
             );
           })(),
           align: "Left",
-          order: slot,
+          order: modern ? 10000 + slot : slot,
         });
       }
   },

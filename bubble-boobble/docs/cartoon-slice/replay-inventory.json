@@ -1,0 +1,380 @@
+{
+  "date": "2026-10-20",
+  "scope": "Read-only verification on explicitly supplied bundle; original recordings and archived evidence unchanged. A matching historical failure is not a passing gameplay gate.",
+  "bundleSha256": "5f9488a7d583e2ffb33355f345efc06f98c7fceef4204fe0a6e9fdb8c3ddee11",
+  "total": 33,
+  "passed": 15,
+  "failed": 18,
+  "sameAsArchived": 33,
+  "results": [
+    {
+      "path": "tests/replays/party_boss_ten_dragons_fire_identifiable_lightning_bubbles.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "cfb41f3f119345b3b0d83720e1cfd1cfafbd2d578a058200b035d263b00f12e3",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "cf74f27782821c93",
+        "actual": "977f78ddd9bd39f5"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/wave_fruit_real_final_pops_show_a_different_reward_each_wave.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "becbec4c3a2d80f4a1fbe9e213a217c4361e23b6be368770fa2249ade5a2651a",
+      "ok": false,
+      "steps": 6,
+      "divergence": {
+        "step": 5,
+        "expected": "3bc5defbe2cf569d",
+        "actual": "61d36cc705a96c54"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_feedback_ready_go_and_last_kill_fit_every_window.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "c6ca6675c7f772df3d65a1edf8caef1c3069a4bace93aa1de54f69b00824d3c6",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "73458f7f5d7ec5e9",
+        "actual": "a1aa96f9644e5d53"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "897870fd685a9ae439d5aa3493f9ff9b1fffb723cfc5b393d3b5fa2bf4c645c0",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "84da472e67d50c53",
+        "actual": "5d90577b6c3915f6"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/ten_named_actions_reject_malformed_suffixes_and_pad_ten_stays_isolated.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "959921b5306550d5805263521684c55a5891ca615acfeb27109a341b31c399e9",
+      "ok": false,
+      "steps": 26,
+      "divergence": {
+        "step": 25,
+        "expected": "f5259a8af62227f4",
+        "actual": "c157d62f15ef921e"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "a1949337da44aefa664fa7093102bb354e9a441c172c5e694c5fd1ee60df1e22",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "b92fd5c4656163f5",
+        "actual": "7e0e399f1667e675"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/feedback_shooting_space_cannot_restart_a_defeated_boss_run.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "298c25c44d6e407467e41a4d643ad62a9d56a14734c94b842a65a7846101ff7f",
+      "ok": false,
+      "steps": 6,
+      "divergence": {
+        "step": 5,
+        "expected": "08efee21c4c4a5f0",
+        "actual": "d04533d3e5922422"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/feedback_results_require_release_and_a_fresh_controller_confirmation_after_the_guard.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "fab5c261da7204dba060c10a1725b7c5e7888880633ef22859e567b6efb2c5e0",
+      "ok": false,
+      "steps": 6,
+      "divergence": {
+        "step": 5,
+        "expected": "08efee21c4c4a5f0",
+        "actual": "d04533d3e5922422"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "2d331a6d26f8f4819983351eedfda260fc2c1f92f36df4ca17ddca5058cd1533",
+      "ok": false,
+      "steps": 6,
+      "divergence": {
+        "step": 5,
+        "expected": "1af516139cbe3b9c",
+        "actual": "6141ab68a5ffaebe"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "fd8b420c84d1e98497c3441249832bcedbd3bbfd5ce687eac8570a3e990587f5",
+      "ok": false,
+      "steps": 11,
+      "divergence": {
+        "step": 10,
+        "expected": "eb6bd121502af11f",
+        "actual": "f5a85d71334cf5e0"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_boss_recorded_thunder_shot_capture_and_finishing_pop.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "bc97400f059055d810f7d0b2f93bdf61a3551d6cadfb9beee8c797e50c7eb4d6",
+      "ok": false,
+      "steps": 1,
+      "divergence": {
+        "step": 0,
+        "expected": "4d70cbc5eee97832",
+        "actual": "ea987f3a65a5de68"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_last_standing_only_shows_defeat_when_the_final_bot_falls_through_recorded_engine_inputs.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "7dfb053d82c3ca49c57a25180baf2a568db0e781273a998d6fb9e38540222aa2",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "929729a1569aa30e",
+        "actual": "e4e4797658515a89"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "e3ea3635c39421fbc58fd26de989abd8745eec55f468997c5eaded4e2bcac115",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "c26dbf9fe6201237",
+        "actual": "dbf0e77bb57446f2"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "c680f6570af3bcd3e4d0b6e91d3003367faa4b3faf5c8f5e12524f0a1ad866b2",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "93479771575e0e24",
+        "actual": "3dc5f2cfd3aaf05c"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_polish_six_real_pops_coalesce_while_classic_cues_retain_their_original_mix.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "42c0ce3ec9e0bbd78259f2f3edecd72e485df04c48f2db12227a32128818d5ed",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "15849d5a648789e1",
+        "actual": "968e9706b1f51a2a"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "2ca50a3701ede462378518881e589399cebbc98e06893d9856e08738c0cbb866",
+      "ok": false,
+      "steps": 4,
+      "divergence": {
+        "step": 3,
+        "expected": "93479771575e0e24",
+        "actual": "3dc5f2cfd3aaf05c"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_recorded_wave_clear_rest_boss_and_results.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "a7d5d914ef6c676c20e54fe2b53c4f81438d02412a20ac523e9e1ea93d0d5316",
+      "ok": false,
+      "steps": 1,
+      "divergence": {
+        "step": 0,
+        "expected": "4c29a834f244395d",
+        "actual": "f22f34d9c69ff67c"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/party_six_actual_controllers_move_separate_humans_and_operate_menus.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "838ba4db7c55fb6c47d7c38e01877368134c80debb30d094101726c3bc10c3d7",
+      "ok": false,
+      "steps": 1,
+      "divergence": {
+        "step": 0,
+        "expected": "4c29a834f244395d",
+        "actual": "f22f34d9c69ff67c"
+      },
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/harness_reset_and_tap.greplay",
+      "scene": "scenes/main.scene.json",
+      "sha256": "62df5edade27e9b0991f0fc009e65be332dade0c4338e62d4ae349538deabff9",
+      "ok": true,
+      "steps": 145,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay",
+      "scene": "scenes/round1.scene.json",
+      "sha256": "27dbbd66363f376e83aeb0b8cb5f05d284cd9387da9e8e79b5525c8be53bd9b6",
+      "ok": true,
+      "steps": 8,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "08ecda9bbee25f5164ec3cbecdfdf6c559cc67ea16f04adb0e27b7037294faf5",
+      "ok": true,
+      "steps": 90,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/player_traversal_engine_input_wraps_round_three_and_preserves_upward_re_entry.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "15b77133d6aaa055585db1f4265e579440dff05ec3b5d2491df5c4c7463ef336",
+      "ok": true,
+      "steps": 4,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/desktop_complete_presentation_flows.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "cdf5c5c6569978043b7886418cf3d38a038cf2e0538a531dc7dee08e30248167",
+      "ok": true,
+      "steps": 780,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/dragon_skins_settings_selection_reaches_red_gameplay.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "05513d682faee0692e3b4f88d741e59aa3a29276e539eafce3938a21dfa14ea3",
+      "ok": true,
+      "steps": 17,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/dragon_skins_settings_selection_reaches_yellow_gameplay.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "e9fd78e570b02cc5fc2fb7a8bb1c02441ba8236fb40c2d7d7089ba1c80fa2ebd",
+      "ok": true,
+      "steps": 20,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/bubble_skins_actual_fire_input_all_solo_colors.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "22fa6412f73cda65a4c0a2b11049b4ed222390ddf7b0a607d7be1d682ded1e2c",
+      "ok": true,
+      "steps": 36,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/bubble_skins_actual_fire_input_simultaneous_co_op_colors.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "9dfb13f6d72e15d26d7e5dd4b3db241854cb06197f0a626c1b64ea4c7d3e86ec",
+      "ok": true,
+      "steps": 22,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_false.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "92724aa72829057a916ec2a1f089048998d8a1d3d2694fbc8adfb5c26bbd250d",
+      "ok": true,
+      "steps": 32,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_true.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "87f77db8ee88261f024a66446bd57279cc6131344b921f3d2a926085e4307bc6",
+      "ok": true,
+      "steps": 32,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/arcade_player_motion_real_engine_jump_pause_and_co_op_phases.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "5b3b746843983c912525bce58d10004ac74d779b34463e658fdbc7b4670aff7a",
+      "ok": true,
+      "steps": 62,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/arcade_scoring_real_engine_pops_and_fruit_pickups_update_hud_and_animate_points.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "ba9279c7473bf355551213782d9912fe3fda6232efa54407783f96a6657a061e",
+      "ok": true,
+      "steps": 57,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/companion_modes_start_restart_pause_and_preserve_human_co_op_controls.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "1ed38d1c86b824c08c1b4dd0114dfdb38f05f5e5a878b599c5b9804dff57c3bf",
+      "ok": true,
+      "steps": 904,
+      "divergence": null,
+      "sameAsArchived": true
+    },
+    {
+      "path": "tests/replays/desktop_physical_enter_tap_between_simulation_steps_is_not_dropped.greplay",
+      "scene": "scenes/arcade.scene.json",
+      "sha256": "5f769d0435d7884666f0c7915238eafc9556dfec68bbf802353315607a0f7962",
+      "ok": true,
+      "steps": 4,
+      "divergence": null,
+      "sameAsArchived": true
+    }
+  ]
+}

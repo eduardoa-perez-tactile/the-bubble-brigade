@@ -1,0 +1,2228 @@
+{
+  "sourceBaselineCommit": "ed544181bdaea98c76dd7831318b6751f06b7735",
+  "engine": "Installed release V8 host",
+  "memoryClass": "phone-low",
+  "ok": true,
+  "originalTraceMatches": 269,
+  "totalCases": 280,
+  "cases": [
+    {
+      "name": "arcade audio bank original shoot trigger and music request",
+      "ok": true,
+      "steps": 13,
+      "finalHash": "ed0a66cb9905d57b",
+      "baselineSha256": "65260cd61825fa6bbb2f60d0e2fd39a1118f4836c58ccf1f1b73c25c7c9b93be",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio native connection restores fallback without gameplay changes",
+      "ok": true,
+      "steps": 18,
+      "finalHash": "d9ebbd3cdcb12367",
+      "baselineSha256": "bfa03c7907eab3ca0dcde1aac2852cf97281c7746a79a9154c711b340ff1d7e7",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio mute stops active SFX and reloads the first unmuted cue",
+      "ok": true,
+      "steps": 20,
+      "finalHash": "c6601692a1c7fc40",
+      "baselineSha256": "eef36b8feee0f680eb10560fdd684b2ec147b6ffe56767716dd567ddc2a7bf1f",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio SFX gain applies to future cues and sound zero skips them",
+      "ok": true,
+      "steps": 20,
+      "finalHash": "b30e7e66dd817c38",
+      "baselineSha256": "94b5f014f5bd1f84c48f09035e7309faf3ab7f12c01a133a1e8ae928f12dad45",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio saturation rejects new shoot and preserves 24 older water voices",
+      "ok": true,
+      "steps": 108,
+      "finalHash": "90e3d47fb1ed3f5d",
+      "baselineSha256": "344aaad05ed2f530d541f13b6d4df5bc646bb365089d15a8962c0223b1cc9fc4",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio saturation rejects new shoot and preserves 24 older shoot voices",
+      "ok": true,
+      "steps": 108,
+      "finalHash": "90e3d47fb1ed3f5d",
+      "baselineSha256": "a86ae77053455813e1410cd72de58f8cba57378aa77e62d372579c9747a182bc",
+      "divergence": null
+    },
+    {
+      "name": "arcade audio same-step SFX priorities strictly descend and mute resets bounded cursor",
+      "ok": true,
+      "steps": 19,
+      "finalHash": "864ec7087bb54a24",
+      "baselineSha256": "2a715e49850ecc93360ac7f68c3c4c7bc2f36a13016538e7b2290182f0430ab3",
+      "divergence": null
+    },
+    {
+      "name": "historical ballistic player traversal retains real five-tile and three-tile rises for both players",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "historical ballistic player traversal shoes retain the eight-tile round seven horizontal gap",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "historical ballistic player traversal documents a lost shoes landing and a real bubble-assisted alternative",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance fresh solo and co-op players have no hidden powers",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance walking and shoes retain responsive fixed-step movement",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance held fire follows baseline and yellow cadence without early shots",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance all blue and pink combinations travel exact range before floating",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance candy pickup preserves existing shots and pending cooldown",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance numeric profiles copy independently and survive level changes",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade balance old sessions without configuration use playable defaults",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-bonus-pending-drain",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-bonus-pending-drain",
+      "ok": true,
+      "steps": 13,
+      "finalHash": "f653af1d940a4e79",
+      "baselineSha256": "b354cbe9b69b860b9086a7b00a1d61042da9c88b89a9063125c12e08b1108aae",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-bonus-threshold-order",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-bonus-threshold-order",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "afe02abd459faa60",
+      "baselineSha256": "1d0323e1de6b66ba1e1c434922a5c69fdb1ddd415323eab8795f861f9466c976",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-bubble-bounce",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-bubble-bounce",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "b8562d77b637abb6",
+      "baselineSha256": "0c07af5ce219fbaf30dd5bc16a3caa84dbff7dd54c8798ddfb2657383ae748f6",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-bubble-chain",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-bubble-chain",
+      "ok": true,
+      "steps": 57,
+      "finalHash": "6b49b4b29732a874",
+      "baselineSha256": "70484f8c44b276c5e0d30445b6a2c9bae35f4eb23b2502b9fdc7c455d04f5249",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-bubble-escape",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-bubble-escape",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "72b8f1f528b867e2",
+      "baselineSha256": "a79e6ba6232fe70ea3720a3458fe2960c0abb09eb67ae57b7496ec01f42631b6",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-campaign-win",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-campaign-win",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "49fc371856ba8bd9",
+      "baselineSha256": "6aed73176993063188dee3754eeca13216a625ca2ea6c4f55d283e07696b8c17",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-clear-full-campaign",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-clear-full-campaign",
+      "ok": true,
+      "steps": 66,
+      "finalHash": "b550db376143f3de",
+      "baselineSha256": "47355f89bf221b1e9b4d3bcf8e70da1c3dc681ad26044b0994a595488c77d03c",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-element-fire",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-element-fire",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "872a8f39a1606f23",
+      "baselineSha256": "10247e6c09b17ffeeef404f6d51d5f06e1ff4a6db8f11617224159926c6092c5",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-element-thunder",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-element-thunder",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "6badcb8d73411353",
+      "baselineSha256": "370dca2c4fb3dd3aeb18320d4af38c56b1146e4eeb3d1f379c1fbe2c481ff2ad",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-element-water",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-element-water",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "98e1355b486a2002",
+      "baselineSha256": "ef3bdda575e749be80e6a9981159dae71d383a8919b5cfe6b40a4a08e7215ca7",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-power-clock",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-power-clock",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "74e131ea9f20062b",
+      "baselineSha256": "fa49a7949eebb14b77d35f930fc0e2785b697c867c42bd0fc3d7d32e9e8ce5f2",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-power-dynamite",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-power-dynamite",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "6c6784902d949fce",
+      "baselineSha256": "f94c6709b9c879ac92dcb0a94150244b859e70c1346966f72180f795d088501d",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-power-orange-parasol",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-power-orange-parasol",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "7444aafa60a1f9fe",
+      "baselineSha256": "b970dd1d2fd6b24d7cd7f852a7b074873deb0b1c656f91fd961668d23effdca5",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-power-purple-parasol",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-power-purple-parasol",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "0e7ae74b25bd923f",
+      "baselineSha256": "2d24c71aa20182642706796de17a50922d6ec2f2c7df15e317a4ba9c75e3b0e6",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-power-red-parasol",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-power-red-parasol",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "bad94deb9f546adf",
+      "baselineSha256": "ba03298a078edabe6bf71c5a7cf16244b14793844460f69745a9089e2fadfa13",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary pure exact Go boundary-powers-coop-revival",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade boundary engine input exact Go boundary-powers-coop-revival",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "43bc83523bc98f6a",
+      "baselineSha256": "9a0098913c1b78e73838576e0169b7bfcc18fcdeb554034c4b2e3f2bac63a44f",
+      "divergence": null
+    },
+    {
+      "name": "companion approaches shooting range and fires through normal player rules",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion approaches trapped bubbles without bounce and pops them",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion evades close enemies and predicted projectiles",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion follows physics-validated jumps to an upper platform",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion jumps to pop a floating target above the highest platform",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion clears campaign round one without human assistance",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion graph includes bottom wrap routes through floor openings",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion decisions survive copies and never mutate earlier snapshots",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion collects nearby rewards during the clear countdown",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion prefers a separate target when the human is closer",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion rebuilds routes for a new level and shoes",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "companion modes start restart pause and preserve human co-op controls",
+      "ok": true,
+      "steps": 904,
+      "finalHash": "53aa1b68b83cb886",
+      "baselineSha256": "1d7c233ff08af65e5ef34a9b43f5277c73d09af30c152b32d01b00da6ea89da7",
+      "divergence": null
+    },
+    {
+      "name": "arcade physical fire movement jump and pause bindings",
+      "ok": true,
+      "steps": 16,
+      "finalHash": "8a491c456ddc5d2c",
+      "baselineSha256": "5f61e24dcda4f9e7011daf68fd320c91060a8768593b3c5c6479251089c3aca1",
+      "divergence": null
+    },
+    {
+      "name": "arcade editor real pointer painting erasing and stroke undo",
+      "ok": true,
+      "steps": 9,
+      "finalHash": "adf08e5144fb8be5",
+      "baselineSha256": "43c42c1549df51419cd51f5cce8ff60310399a974a73ab2462e809e6fb55625a",
+      "divergence": null
+    },
+    {
+      "name": "arcade physical Escape pauses and resumes once",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "980e6e06a37ee052",
+      "baselineSha256": "39682b581ccc3507b14630d343f7373b4aead25e4ca349fdd8be150d4847fc0a",
+      "divergence": null
+    },
+    {
+      "name": "arcade semantic pause keeps desktop presentation synchronized",
+      "ok": true,
+      "steps": 5,
+      "finalHash": "c5abfe9df682d96e",
+      "baselineSha256": "3cdd88a50e56dae8d5678a6c0ec2c6f95e6c40fffc49b9ffb8fa5ee95a9c25c2",
+      "divergence": null
+    },
+    {
+      "name": "arcade recorded controller moves fires and pauses classic campaign",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "ab80402dac798666",
+      "baselineSha256": "c4d66d23a13cb80c32e688b9d49428dbbac8c413217626b2ae70cfbee61efd66",
+      "divergence": null
+    },
+    {
+      "name": "arcade enemy speed: explicit source-speed profile matches first five Go rounds",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade enemy speed: pause and freeze stop enemy time and hurry starts at active tick 1800",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade enemy speed: production normal locomotion is 20% slower for all six kinds and angry is unchanged",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade enemy speed: jump impulses projectile speeds and shot delays retain original timing",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade enemy speed: tuning survives copies and rounds and missing live-session fields use production default",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feel pixel solids compose behind translucent original art with exact RGB",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feel bubble deformation preserves center and never changes match geometry",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feel landing rescue and boss transitions are bounded expire and freeze on pause",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feel reduced effects remove ambient and celebration clutter while retaining rescue cues",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feel party audio coalesces simultaneous shots and keeps important cues higher priority",
+      "ok": true,
+      "steps": 16,
+      "finalHash": "b40562559825bcaa",
+      "baselineSha256": "c4bd101eac8bc4a6a2437fd802bec2db13e89d7f6d5d4769f9594b3cc218c0ee",
+      "divergence": null
+    },
+    {
+      "name": "arcade engine input full Go parity reference-round1-smoke",
+      "ok": true,
+      "steps": 90,
+      "finalHash": "9452b88e6e4ee592",
+      "baselineSha256": "98f5dfc553694b81ec501c7a1a25dd9a6aee16486da4270e0d6e4c6e49b80c5b",
+      "divergence": null
+    },
+    {
+      "name": "arcade engine input full Go parity arcade-round-1-combat",
+      "ok": true,
+      "steps": 362,
+      "finalHash": "574b8bb5d9138c22",
+      "baselineSha256": "3bd99175ab85c7129f06907ad63f6736b3d2887ca7379868a886876a5e1f7b8b",
+      "divergence": null
+    },
+    {
+      "name": "arcade engine input full Go parity arcade-round-10-combat",
+      "ok": true,
+      "steps": 362,
+      "finalHash": "8466634def68552e",
+      "baselineSha256": "20bddbea39720c7fd5b0361c93e724e8f74cf8d9ac6b05d51bd4ff414e208859",
+      "divergence": null
+    },
+    {
+      "name": "arcade engine input full Go parity arcade-round-24-combat",
+      "ok": true,
+      "steps": 362,
+      "finalHash": "3ec5446d304a5a03",
+      "baselineSha256": "62139f7f4e9547f0802e37c6d61afbea31d9b531c7d79d01153ef40a3808e28e",
+      "divergence": null
+    },
+    {
+      "name": "arcade engine input full Go parity arcade-round-25-combat",
+      "ok": true,
+      "steps": 362,
+      "finalHash": "da6c24a695437626",
+      "baselineSha256": "e13cda5220d5ed8882dfef0ce7be91451e6aa14674b131e61e1372228f79eb61",
+      "divergence": null
+    },
+    {
+      "name": "arcade pure simulation full Go parity reference-round1-smoke",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade pure simulation full Go parity arcade-round-1-combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade pure simulation full Go parity arcade-round-10-combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade pure simulation full Go parity arcade-round-24-combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade pure simulation full Go parity arcade-round-25-combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI six indexed bots keep independent memory and share equivalent navigation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI follows nearest human and yields targets to all nearby teammates",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI prioritizes rescuing a downed teammate and downed bots remain idle",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI decisions reproduce from independent snapshots and keep legacy API",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI approaches the boss and fires thunder while damage flashes remain cosmetic",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI rests quietly after collecting wave rewards",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI five bots capture enemies through the real party wave loop",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party AI collects thunder and damages the moving boss through real bubble pops",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion ledge falls stay steady for both players and shoes",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion jump has the sourced rise apex and landing timing",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion shoes alter cadence without changing jump height",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion wraps a steady fall and resets the curve on landing",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion bubble bounce restarts the jump curve without popping",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion copies preserve phase while Go projection remains compatible",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion can land on a real campaign upper platform",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion real engine fall inputs shoes false",
+      "ok": true,
+      "steps": 32,
+      "finalHash": "e624de9b61ddb192",
+      "baselineSha256": "325bc9c9f9bb4bf496d72c9bf1fe55a168ad00e93f9b4972b0b5074e03dbe27a",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion real engine fall inputs shoes true",
+      "ok": true,
+      "steps": 32,
+      "finalHash": "9bb2b3245ea41078",
+      "baselineSha256": "4e81a59ebe51dbefc6ed21076a2d66eac06ab450f562d26a3f45f218aded5f85",
+      "divergence": null
+    },
+    {
+      "name": "arcade player motion real engine jump pause and co-op phases",
+      "ok": true,
+      "steps": 62,
+      "finalHash": "90dc398adc8980d0",
+      "baselineSha256": "dfadebe721e92ef405d0f587e7b4fa0f39a8272aa37f614ce628db68cb6a8e6f",
+      "divergence": null
+    },
+    {
+      "name": "player traversal keeps upward velocity above the old ceiling and through platform undersides",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal wraps only after full top exit and rises visibly from bottom",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal requires matching full-width openings and preserves bottom wrap",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal bubble boost crosses top opening without popping the bubble",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal co-op wraps independently without changing jump-edge rules",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal real campaign round three wraps through paired openings",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal engine input wraps round three and preserves upward re-entry",
+      "ok": true,
+      "steps": 4,
+      "finalHash": "d0dd200ec4dd99f3",
+      "baselineSha256": "ed7ef38c05f26da84e23c5ab99ed36084042674d3ceef79b969b90bdf6e29e36",
+      "divergence": null
+    },
+    {
+      "name": "player traversal real round one closed roof returns to visible platform",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "player traversal bubble jump retains reference age and held-input rules",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade reference render frame order and capture warning selection",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: all rounds spawn clear and preserve campaign data",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: rising platforms swept landing and bottom wrap",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: chain score enemy drop and captured timeout",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: all power bonuses thresholds and water progress",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: element scheduling carrying and damage",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: coop targeting bonuses revival and survivor",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade upstream rules: projectile directions and 25 round victory",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring empty bubbles award ten points once for either player",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring mixed chains retain enemy combo multipliers and score each empty bubble",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring expired bubbles and bubble bounces do not award points",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring every fruit value produces the enemy-pop points effect at pickup",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring small pops trigger extra lives and snapshots stay independent",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring explicit Go profile retains historical scores and low fruit feedback",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade scoring real engine pops and fruit pickups update HUD and animate points",
+      "ok": true,
+      "steps": 57,
+      "finalHash": "86f3304cb34b3066",
+      "baselineSha256": "5fa316ebed4aa992871cf5943e3b9465a4fea740c00f3f2d9058d42064566500",
+      "divergence": null
+    },
+    {
+      "name": "bubble ownership stores both shooters and survives copies and removal filtering",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "bubble ownership Go projection strips only Shooter without mutating stored bubbles",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "bubble ownership leaves capture trajectory counters RNG and sounds identical over time",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "bubble skins normal frames follow shooter with legacy player one default",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "bubble skins preserve warning elemental and trapped variants for both shooters",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "cartoon animation explicit clip durations loop and clamp at boundaries",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon dragon every pose and direction preserves feet pivot and collision center",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon shooting pose and projectile appear together on the input step",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon mirrored shoot muzzle stays within four pixels of the actual initial shot center",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon trapped imp changes captured warning and escape presentation at sourced thresholds",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon planning full aspect and animation sampling cannot mutate authoritative game state",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4"
+    },
+    {
+      "name": "cartoon sprites retain complete geometry for shared stencil clipping",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b"
+    },
+    {
+      "name": "cartoon sprites preserve mirrored frame bounds at the stencil edge",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b"
+    },
+    {
+      "name": "cartoon sprites retain fractional alpha and omit invisible draws",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b"
+    },
+    {
+      "name": "cartoon sprites bound their draw list without silently dropping art",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b"
+    },
+    {
+      "name": "cartoon scene marker accepts only the dedicated camera clear color",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b"
+    },
+    {
+      "name": "courtyard has 44 columns and 30 rows while campaign retains original bounds",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "courtyard dragons enemies bubbles and bottles use the extra right and bottom space",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "courtyard rewards and boss patrol cover the larger arena",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "courtyard fit preserves readable badges and uses wide windows without clipping geometry",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "courtyard navigation warms bounded batches without mutating earlier snapshots",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop physical Enter opens title and activates the selected menu item once",
+      "ok": true,
+      "steps": 16,
+      "finalHash": "08320d0e9bbf5cc1",
+      "baselineSha256": "d620778ae516664196d64246f9d240596c4632edb663c3468ee2a658ddebae71",
+      "divergence": null
+    },
+    {
+      "name": "desktop physical Enter tap between simulation steps is not dropped",
+      "ok": true,
+      "steps": 4,
+      "finalHash": "c4e36b7aacf7c10c",
+      "baselineSha256": "059d2502f54c774d5bd0cca91ec447a6d3eedd83ab11050b954081ff26c2fd31",
+      "divergence": null
+    },
+    {
+      "name": "desktop short Enter taps confirm settings mode and start AI co-op",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "31476b1db1b67bf5",
+      "baselineSha256": "73718a34674e97d473a3c57485c18f5a68defb62e586d09e7c29e438aec98611",
+      "divergence": null
+    },
+    {
+      "name": "desktop repeat Enter events activate once until release",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "3178697e8fb3fdcc",
+      "baselineSha256": "8f45357918942ccc4a46e6baae03fe9a9ca86b94024c08eedb31a087b2099efc",
+      "divergence": null
+    },
+    {
+      "name": "desktop short Space taps confirm menus while profile Space remains text",
+      "ok": true,
+      "steps": 7,
+      "finalHash": "4b12dd43a131c59d",
+      "baselineSha256": "6c4013addb7d07e8ee9baa6b73f1496ce819e3ea18493f90b48685d8a80db578",
+      "divergence": null
+    },
+    {
+      "name": "desktop main menu has only start settings and quit in every build",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "ba732a38801ce360",
+      "baselineSha256": "19c61d23aab1a5d68efca56e886ecbdec0e57a9d2f2b6d520ddfab5b30fdeeb3",
+      "divergence": null
+    },
+    {
+      "name": "desktop mode chooser records classic and madness requests and returns to menu",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "a337430e8a0dae93",
+      "baselineSha256": "0136363790a5f21829fa737526e479b7c87aaa8186b0562a867267a710255195",
+      "divergence": null
+    },
+    {
+      "name": "desktop mode cards support recorded keyboard and controller navigation",
+      "ok": true,
+      "steps": 13,
+      "finalHash": "faa0dc52c59b2494",
+      "baselineSha256": "3dbf5f255a46a3e5050b47a3208ae9bd56e2199611c1e58c5203dfc4d8108c1d",
+      "divergence": null
+    },
+    {
+      "name": "desktop native focus loss pauses only the current playing screen",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop native music pauses only on canonical play page",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop ordinary source bundle stays disconnected from native app",
+      "ok": true,
+      "steps": 120,
+      "finalHash": "d062e486cf6ac4a1",
+      "baselineSha256": "8bd2e5cc29bf66db35631c6445939a7cc7f4bae4da72f4ea4f75398cf6830d81",
+      "divergence": null
+    },
+    {
+      "name": "desktop native backend failure restores music and ACKs cannot hide failure",
+      "ok": true,
+      "steps": 18,
+      "finalHash": "3cd7a4772c0b6d14",
+      "baselineSha256": "12717ddae6f5db76199c3f5122f16d069aed2d921bc2bb1d39925a070facd8ad",
+      "divergence": null
+    },
+    {
+      "name": "desktop skins cycle ten saved names in both directions and label the active dragon",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop skins preserve v1 green and blue saves and per-profile red yellow choices on reload",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop skins reject unknown saved avatars without silently replacing profiles",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop skins physical settings arrows wrap reverse and persist distinct profile choices",
+      "ok": true,
+      "steps": 58,
+      "finalHash": "e8938193c8f6c5b7",
+      "baselineSha256": "810bc33821e03ab29654a6d1676f14bd210a66b043d86042c85b924976850d3d",
+      "divergence": null
+    },
+    {
+      "name": "desktop profile validation, slots and stable leaderboard statistics",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop recorded intents create profiles and change settings",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "d85b3c0513926779",
+      "baselineSha256": "1a8a5530d812295c9abc78d187c1c0aa92c659ccc0b94c46a9880c0de0921642",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor exact feet coordinates, closed walls and validation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor copy, undo, save/load and playtest requests",
+      "ok": true,
+      "steps": 14,
+      "finalHash": "c7ff068effafe91c",
+      "baselineSha256": "e4560c6391c274ddf9910da452b39fe113eb4ec1507ac4c811bddaec244377c4",
+      "divergence": null
+    },
+    {
+      "name": "desktop save envelope round trip and background flush",
+      "ok": true,
+      "steps": 9,
+      "finalHash": "cb4c360e6302e871",
+      "baselineSha256": "f9bbb8c55aa9b7ad426da0dd34a376afd824b850072326ccda8456ddcdd08b0a",
+      "divergence": null
+    },
+    {
+      "name": "desktop new profile keyboard back and repeated deletion",
+      "ok": true,
+      "steps": 43,
+      "finalHash": "8c7c79e3b1eed3a2",
+      "baselineSha256": "92f3202b76e82a4d66bd9b41ff151305e56275c5734e03337840a3b42ef6eec0",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor physical ControlLeft undo save and F5",
+      "ok": true,
+      "steps": 19,
+      "finalHash": "10bbbe76b1e99186",
+      "baselineSha256": "05b345fc4573a68f862c3991895b4cf0c74ece9afcb1c47bb80c8a437a4b1f7d",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor physical ControlRight undo save and F5",
+      "ok": true,
+      "steps": 19,
+      "finalHash": "10bbbe76b1e99186",
+      "baselineSha256": "987b8f4539144ca127d3b49a4bbd539eb5e2cd80dd862621027b83e3593530ad",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor physical MetaLeft undo save and F5",
+      "ok": true,
+      "steps": 19,
+      "finalHash": "10bbbe76b1e99186",
+      "baselineSha256": "7d7512181a4003d1b79bacc0410c4b24fc39cd4e9a551209c5d1f7ea05e73ab6",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor physical MetaRight undo save and F5",
+      "ok": true,
+      "steps": 19,
+      "finalHash": "10bbbe76b1e99186",
+      "baselineSha256": "f8d9308d5334d113ae6c87a8d3c9b8e360fa43762ac4b00345091874d249e0ef",
+      "divergence": null
+    },
+    {
+      "name": "desktop editor P F B preserve pinned reference no-op semantics",
+      "ok": true,
+      "steps": 12,
+      "finalHash": "4e7d3fa79b8d040c",
+      "baselineSha256": "923a6b75a065fde618ee0da7f636fc7d571ba7b43f0024518ed3384fa002fa2e",
+      "divergence": null
+    },
+    {
+      "name": "desktop fullscreen capability notice stays in presentation model",
+      "ok": true,
+      "steps": 7,
+      "finalHash": "06e8aa2fcb0d952e",
+      "baselineSha256": "e79353e631f4de80b0c6abf4f66d3c8acd65c16c97a7affb19e69e1f5bb6f1ae",
+      "divergence": null
+    },
+    {
+      "name": "dragon palette preserves every original frame mask eyes and belly",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "bubble palette preserves all shot frame geometry alpha and non-rim texels",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon results credit finishing kills once and preserve totals across waves and copies",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon results credit the boss finisher and share ranks for equal kills",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon results podium and list contain every entrant exactly once including small teams",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon skins selected player one survives co-op while player two stays blue",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon skins cover every animation frame without changing gameplay",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "tapping a bubble pops it",
+      "ok": true,
+      "steps": 44,
+      "finalHash": "d72198325515482d",
+      "baselineSha256": "cff4e1b69c5b6c3bb66d8d361345adb09025844ddef9ab18f9a5226d9e5287e5",
+      "divergence": null
+    },
+    {
+      "name": "bubbles that reach the top go away",
+      "ok": true,
+      "steps": 900,
+      "finalHash": "1d1936124225372c",
+      "baselineSha256": "cec00e319ffc3274d0977c7d026961ebd7413ebb77f7991c116e0f3eb51377ce",
+      "divergence": null
+    },
+    {
+      "name": "harness reset and tap",
+      "ok": true,
+      "steps": 145,
+      "finalHash": "25d0bd6c7f331f42",
+      "baselineSha256": "09e7f1731bda4056eedf6eb57235036db912b28addf454937b0d32d6de3c89ff",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-walk-jump",
+      "ok": true,
+      "steps": 615,
+      "finalHash": "7eccc41824d22b90",
+      "baselineSha256": "16a40d1a83a1fa233f9dd771cdc45b4c57f622ad0b7f6048efb3727f4c83bd75",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-wrap",
+      "ok": true,
+      "steps": 22,
+      "finalHash": "85116aacf4f9a47c",
+      "baselineSha256": "6b30298716dd58c3d6a7394506806d9ba26ea45e136c2c14624d473fb542cad9",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-coyote-last",
+      "ok": true,
+      "steps": 33,
+      "finalHash": "e4d4118dd9733f85",
+      "baselineSha256": "9d2db1b8fddab9d8de8eb1c5548da90c60e3bdabc121924c5ba556de88440152",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-coyote-expired",
+      "ok": true,
+      "steps": 33,
+      "finalHash": "5142b157bd590fdf",
+      "baselineSha256": "af695a33905be7ab3e219e0c9c7e51b35019f97ea4388400164f53e2a672799c",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-buffer-landing",
+      "ok": true,
+      "steps": 33,
+      "finalHash": "3137c2eddac71eca",
+      "baselineSha256": "c1cc1987d10dac7c71535793cf1917dff7ef152cf8044bc8d167d63c2d46b608",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-buffer-expired",
+      "ok": true,
+      "steps": 33,
+      "finalHash": "87bbe5339b5db247",
+      "baselineSha256": "17241eeb8225bc7d5c98e6306bd683c9d6bc7e360a4b2d75a3907b05d809ad2b",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-ceiling",
+      "ok": true,
+      "steps": 32,
+      "finalHash": "20994094ad99524f",
+      "baselineSha256": "f76e5c98c9e0873b480fe40abca134cbb5e57a3a7127165d9bcd6db3b7b62abf",
+      "divergence": null
+    },
+    {
+      "name": "movement oracle movement-obstructed-spawn",
+      "ok": true,
+      "steps": 4,
+      "finalHash": "b61dfc1a6408fc6c",
+      "baselineSha256": "a56c37eaa8ac525ca070e2a9a7a76d65cbedcf016c0b1e28a052538c883a5f26",
+      "divergence": null
+    },
+    {
+      "name": "movement ready countdown and semantic input",
+      "ok": true,
+      "steps": 63,
+      "finalHash": "075c0bba7c72c0bd",
+      "baselineSha256": "db5415050c5cebc8aacae7e92eb6522cfa9554370f82d906666e2b4170f9e752",
+      "divergence": null
+    },
+    {
+      "name": "movement physical keyboard hold release and jump",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "8958a2c077455b81",
+      "baselineSha256": "4a800843b2012424f92d3369f0b6983f31323b4a8a5186c8b37afa9b828aef7a",
+      "divergence": null
+    },
+    {
+      "name": "feedback shooting Space cannot restart a defeated boss run",
+      "ok": true,
+      "steps": 78,
+      "finalHash": "8ca2c23bdcc2635e",
+      "baselineSha256": "84cc8f98bde24f981b7b0dbc5e0e0ebc36d03ab1f8a3a70d2a0f0d0876de7661",
+      "divergence": null
+    },
+    {
+      "name": "feedback airborne dragons do not carry a fixed black line beneath them",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feedback overhead badges explicitly distinguish players and AI",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feedback jumping and landing produce small short lived dust bursts",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feedback results require release and a fresh controller confirmation after the guard",
+      "ok": true,
+      "steps": 78,
+      "finalHash": "db39c98e49af0a29",
+      "baselineSha256": "e457029f573436a4c5dcce2dd3afe11a953d6c1b126d98edd760c228b782c291",
+      "divergence": null
+    },
+    {
+      "name": "feedback shadows stay on supporting platforms and shrink with altitude",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "feedback clustered badges stay legible separate and inside the arena",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss moves diagonally bounces and throws a bounded bottle fan",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss needs popped thunder bubbles and each bolt hits only once",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss captures before victory and a dragon must pop the giant bubble",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss body hurts dragons but preparation and captured states are safe",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss replaces lost thunder pickups and snapshots reproduce the fight",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party empty bubbles expire quickly without removing trapped enemies",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss five bots can complete the moving fight and pop the finale",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss recorded thunder shot capture and finishing pop",
+      "ok": true,
+      "steps": 55,
+      "finalHash": "6e8c70132157ce46",
+      "baselineSha256": "f008a0582a5e88cb369a8c5bf2c702db6a92e2c3ee8bf0756e1d8f7af5eaf6d7",
+      "divergence": null
+    },
+    {
+      "name": "party boss jumping into your own lightning bubble releases a bolt and damages the boss",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss lightning shots preserve every shooter color",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback countdown holds every dragon until a visible GO and then releases movement",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback start protection keeps dragons visible while rescue protection can still blink",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback final pop credits the popper rather than shooter and shows a temporary colored award",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback elemental and dynamite finishes retain the responsible dragon",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback final chain and boss touch each award exactly one responsible dragon",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback later wave countdowns allow moving jumping shooting and active AI",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party feedback movement stays enabled across the rest to preparation boundary",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party recorded raw events support all six pad indices",
+      "ok": true,
+      "steps": 12,
+      "finalHash": "d01b1dd1b5193be2",
+      "baselineSha256": "13ac6f4aa933467b3ffda3b4c8adf0503a237a751aa6c42ee94d25485ef4a3ba",
+      "divergence": null
+    },
+    {
+      "name": "party six pad isolation held input and edge controls",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party dpad deadzone and invalid pad safety",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party named actions preserve keyboard and combine with pad",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party menus accept recorded controller input and keyboard fallback",
+      "ok": true,
+      "steps": 1,
+      "finalHash": "134896f432921122",
+      "baselineSha256": "ae4bb80954148b4360fadc93ea1244c581240695036cbc3945d955784d3d1163",
+      "divergence": null
+    },
+    {
+      "name": "party menu stick edges ignore neutral pads and preserve negative directions",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party menu confirm back edges isolate pads and short taps",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party last standing every dragon slot can keep the run alive after all teammates fall",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party last standing only shows defeat when the final bot falls through recorded engine inputs",
+      "ok": true,
+      "steps": 13,
+      "finalHash": "64fac24e474d6878",
+      "baselineSha256": "5204687449e96c93d1b876555e11856d4eebe123e57eec328060083e6a268cdc",
+      "divergence": null
+    },
+    {
+      "name": "party last standing a surviving AI continues after the only human falls and empty slots do not count",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party last standing a full wipe ends the run during preparation or rest as well as combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party pacing break lasts five seconds including the next wave entrance with shooting throughout",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party pacing preparation shots move and pop but cannot capture arriving enemies until combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party pacing preparation protects enemies from elements and delays offensive pickups",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party pacing last surviving enemy becomes angry red and faster after combat starts",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party placement supports ground monsters and gives every enemy a clear separate body",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party placement reserves scarce footing for walkers before flyers and rejects low ceilings",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party placement all enemy artwork falls from above then lands on its supported target",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party polish flyers descend and idle without moving their simulation formation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party polish benefit descriptions use three letters or fewer",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party polish HUD explains rest arrival positioning and go",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party polish six real pops coalesce while classic cues retain their original mix",
+      "ok": true,
+      "steps": 11,
+      "finalHash": "5651ff8a858d0506",
+      "baselineSha256": "fe016cf50a152a513e37a0802f31fcedd6f126adb0dcff76d92c34d30c865493",
+      "divergence": null
+    },
+    {
+      "name": "party powerups randomize safe supported locations and reproduce from snapshots",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party powerup alert marks benefits only and classic keeps its authored spawn",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party presentation six dragons and shots use independent identities",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party presentation rescue boss telegraphs and text remain within canvas",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party palette new colors preserve every original dragon and bubble alpha",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party boss captured animation uses the original complete arcade bubble frames",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "ten dragons spawn safely on two tiers without modifying campaign geometry",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "ten arena every platform is reachable from every start without upgrades",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "ten dragon identities remain unique in grayscale and blinking presentation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "dragon names are text only and disappear when the wave starts while rescue calls remain",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "ten named actions reject malformed suffixes and pad ten stays isolated",
+      "ok": true,
+      "steps": 208,
+      "finalHash": "03cc372e8784e551",
+      "baselineSha256": "2478ff1a19eeb7eb925fa268b164bced2111434bb04ae0dda0441201952d63b1",
+      "divergence": null
+    },
+    {
+      "name": "ten boss pickups cover both tiers and every last survivor can rescue",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "ten bot snapshots stay deterministic through busy late wave combat",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves six spawn areas and safe preparation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves increase whole formations and mix every unlocked monster type",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves five second break preserves upgrades and recovers downed teammates",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves contact rescue team wipe pause and campaign item isolation",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves snapshot isolation includes boss slots telegraphs and bots",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party waves lobby starts restarts and leaves through engine intents",
+      "ok": true,
+      "steps": 18,
+      "finalHash": "3c9660273da0e390",
+      "baselineSha256": "1ebcb99433ac39a7e865a3d8604d9be298011c521ef0d3d8a783f2825d82d3b4",
+      "divergence": null
+    },
+    {
+      "name": "party recorded wave clear rest boss and results",
+      "ok": true,
+      "steps": 310,
+      "finalHash": "1c479a60f240a10a",
+      "baselineSha256": "27c942cb69aca580111f5f6d92a47271530f25c0dfc2a4e5a4a166d8f4139eb4",
+      "divergence": null
+    },
+    {
+      "name": "party six actual controllers move separate humans and operate menus",
+      "ok": true,
+      "steps": 18,
+      "finalHash": "380f9c5704f2b8c2",
+      "baselineSha256": "3c23ed91a98e89e57ef507cf20a99276abcd9a51d058761d9fb74ddcc8a884ac",
+      "divergence": null
+    },
+    {
+      "name": "party team setup switches humans bots and empty slots without restarting waves",
+      "ok": true,
+      "steps": 197,
+      "finalHash": "949acd104c5700f1",
+      "baselineSha256": "ea4799314d9d81b9bc5bb2bf07f431c60cf769956f4acf419f85e621b270baa6",
+      "divergence": null
+    },
+    {
+      "name": "party five bots naturally clear a complete wave before the rest",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "party dragon grid navigates rows and columns before configuring and starting",
+      "ok": true,
+      "steps": 12,
+      "finalHash": "6b84156020b419b2",
+      "baselineSha256": "e73c55ce4f6fbd1b39284f32da0e23bfb347a216c7db25de879b467401110b9a",
+      "divergence": null
+    },
+    {
+      "name": "party dragon grid accepts a controller selecting the pink dragon",
+      "ok": true,
+      "steps": 8,
+      "finalHash": "18668a8fd5c3b771",
+      "baselineSha256": "440146d5eb360d587d2f3212151842eab9c3cefd719b55974e3a85e3ba822f6f",
+      "divergence": null
+    },
+    {
+      "name": "pixel instance capacity bounds clipped scaled alpha runs",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "26bcbd691598a014",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "shoes progress real walking crosses9599 and preserves travel remainder",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "shoes progress queues behind existing power and preserves FIFO order",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "shoes progress shares co-op distance but only collector gains speed",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "shoes progress blocked movement cannot unlock reward",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "shoes progress reference profile retains original threshold and old sessions use new default",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "pickup sprite source aspects preserve box centers and square art",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "876ce25687dba12b",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade Go float64 trigonometry exact study",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade Go fused float64 arithmetic exact study",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "arcade Go PCG exact seeded distributions and state",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "c08913bd85cb6711",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "wave fruit enemy drops and bubble rewards use the wave fruit and preserve pickup scores",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    },
+    {
+      "name": "wave fruit rotation remains deterministic and classic keeps its original level rewards",
+      "ok": true,
+      "steps": 0,
+      "finalHash": "91b7f1445aac3ab4",
+      "baselineSha256": "501885fe25e5cabef461c3be69b0baa5c499cd552124b987e2e1381774a5d365",
+      "divergence": null
+    }
+  ]
+}

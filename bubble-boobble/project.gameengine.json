@@ -1,6 +1,6 @@
 {
   "$schemaVersion": 2,
-  "name": "Bubble Madness",
+  "name": "The Bubble Brigade",
   "bundleId": {
     "ios": "com.example.bubbleboobble",
     "android": "com.example.bubbleboobble",
@@ -53,7 +53,7 @@
     "desktop",
     "web"
   ],
-  "startScene": "scenes/arcade.scene.json",
+  "startScene": "scenes/cartoon.scene.json",
   "audio": {
     "banks": [
       "reference/audio/sfx.bank",

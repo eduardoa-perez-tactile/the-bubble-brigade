@@ -9,6 +9,73 @@ import type { LocText } from '@gameengine/ui';
 declare module '@gameengine/ui' {
   interface UiDocumentTypes {
     /**
+     * Cartoon button: a widget, button (ui/docs/cartoon-button.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "START GAME"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-button': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon hud: a view, screen (ui/docs/cartoon-hud.ui.json)
+     *
+     * Properties:
+     *   - `name`: text, default ""
+     *   - `score`: text, default ""
+     *   - `round`: text, default ""
+     *   - `high`: text, default ""
+     *   - `highTitle`: text, default ""
+     *   - `lives`: text, default ""
+     *   - `enemies`: text, default ""
+     *   - `banner`: text, default ""
+     *   - `hint`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `freeze`: text, default ""
+     *   - `startCue`: text, default ""
+     *   - `startHint`: text, default ""
+     *   - `showBanner`: yesno, default false
+     *   - `showStartCue`: yesno, default false
+     *   - `party`: yesno, default false
+     *   - `shade`: enum normal | pause | result, default "normal"
+     * Events: none
+     * Code areas: none
+     * Refs: `score-card`, `brand`, `round-card`, `banner`, `start-cue`
+     * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`
+     */
+    'cartoon-hud': {
+      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result' };
+      areas: never;
+      refs: 'score-card' | 'brand' | 'round-card' | 'banner' | 'start-cue';
+    };
+    /**
+     * Cartoon menu: a view, screen (ui/docs/cartoon-menu.ui.json)
+     *
+     * Properties:
+     *   - `startSelected`: yesno, default false
+     *   - `settingsSelected`: yesno, default false
+     *   - `quitSelected`: yesno, default false
+     *   - `titleMode`: yesno, default false
+     *   - `promptVisible`: yesno, default false
+     *   - `showStatus`: yesno, default false
+     *   - `status`: text, default ""
+     * Events: `choose-mode`, `settings`, `quit`
+     * Code areas: none
+     * Refs: `title-card`, `choose-mode`, `settings`, `quit`
+     * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
+     */
+    'cartoon-menu': {
+      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText };
+      areas: never;
+      refs: 'title-card' | 'choose-mode' | 'settings' | 'quit';
+    };
+    /**
      * Desktop account: a view, screen (ui/docs/desktop-account.ui.json)
      *
      * Properties:

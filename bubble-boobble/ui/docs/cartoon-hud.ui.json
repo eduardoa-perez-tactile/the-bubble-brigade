@@ -1,0 +1,582 @@
+{
+  "$schemaVersion": 1,
+  "guid": "c7377dcb-0c00-45b9-a4e0-7f59fb668b74",
+  "name": "cartoon-hud",
+  "title": "Cartoon hud",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon hud",
+      "style": {
+        "w": 768,
+        "h": 720,
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "ch_top",
+        "ch_bottom",
+        "ch_banner",
+        "ch_freeze",
+        "ch_start"
+      ]
+    },
+    "ch_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_score_card",
+        "ch_brand",
+        "ch_round_card"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 768,
+        "h": 48,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      }
+    },
+    "ch_score_card": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_name",
+        "ch_score"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          4
+        ],
+        "w": 186,
+        "h": 40,
+        "bg": "#fff3d9",
+        "radius": 12
+      },
+      "point": "score-card"
+    },
+    "ch_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "{name}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          12,
+          3
+        ],
+        "w": 162,
+        "h": 13,
+        "fontSize": 9,
+        "fitMin": 7,
+        "color": "#725640"
+      }
+    },
+    "ch_score": {
+      "type": "label",
+      "name": "Label",
+      "text": "{score}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          12,
+          16
+        ],
+        "w": 162,
+        "h": 22,
+        "fontSize": 20,
+        "fitMin": 14,
+        "weight": 800,
+        "color": "#382d38"
+      }
+    },
+    "ch_brand": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE BUBBLE BRIGADE",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          14
+        ],
+        "w": 342,
+        "h": 24,
+        "fontSize": 20,
+        "fitMin": 14,
+        "textAlign": "center",
+        "weight": 800,
+        "color": "#fff3d9"
+      },
+      "point": "brand"
+    },
+    "ch_round_card": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_round",
+        "ch_high"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          -14,
+          4
+        ],
+        "w": 186,
+        "h": 40,
+        "bg": "#fff3d9",
+        "radius": 12
+      },
+      "point": "round-card"
+    },
+    "ch_round": {
+      "type": "label",
+      "name": "Label",
+      "text": "{round}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          12,
+          3
+        ],
+        "w": 162,
+        "h": 16,
+        "fontSize": 13,
+        "fitMin": 9,
+        "weight": 800,
+        "color": "#382d38"
+      }
+    },
+    "ch_high": {
+      "type": "label",
+      "name": "Label",
+      "text": "{highTitle}  {high}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          12,
+          22
+        ],
+        "w": 162,
+        "h": 13,
+        "fontSize": 9,
+        "fitMin": 7,
+        "color": "#725640"
+      }
+    },
+    "ch_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_lives",
+        "ch_controls"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          672
+        ],
+        "w": 768,
+        "h": 48
+      }
+    },
+    "ch_lives": {
+      "type": "label",
+      "name": "Label",
+      "text": "LIVES {lives}   {enemies}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          54,
+          17
+        ],
+        "w": 380,
+        "h": 18,
+        "fontSize": 12,
+        "fitMin": 9,
+        "color": "#fff3d9"
+      }
+    },
+    "ch_controls": {
+      "type": "label",
+      "name": "Label",
+      "text": "ESC  PAUSE    M  SOUND",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          -24,
+          18
+        ],
+        "w": 260,
+        "h": 16,
+        "fontSize": 10,
+        "fitMin": 8,
+        "textAlign": "right",
+        "color": "#d5e2d1"
+      }
+    },
+    "ch_banner": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_banner_title",
+        "ch_banner_hint",
+        "ch_banner_detail"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          56
+        ],
+        "w": 516,
+        "h": 66,
+        "bg": "#fff3d9ee",
+        "radius": 16
+      },
+      "show": "showBanner",
+      "point": "banner"
+    },
+    "ch_banner_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "{banner}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          5
+        ],
+        "w": 488,
+        "h": 25,
+        "fontSize": 21,
+        "fitMin": 12,
+        "textAlign": "center",
+        "weight": 800,
+        "color": "#382d38"
+      }
+    },
+    "ch_banner_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "{hint}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          31
+        ],
+        "w": 488,
+        "h": 17,
+        "fontSize": 12,
+        "fitMin": 8,
+        "textAlign": "center",
+        "color": "#725640"
+      }
+    },
+    "ch_banner_detail": {
+      "type": "label",
+      "name": "Label",
+      "text": "{detail}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          49
+        ],
+        "w": 488,
+        "h": 13,
+        "fontSize": 9,
+        "fitMin": 7,
+        "textAlign": "center",
+        "color": "#725640"
+      }
+    },
+    "ch_freeze": {
+      "type": "label",
+      "name": "Label",
+      "text": "{freeze}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          -12
+        ],
+        "w": 480,
+        "h": 20,
+        "fontSize": 14,
+        "fitMin": 10,
+        "textAlign": "center",
+        "weight": 800,
+        "color": "#fff3d9"
+      }
+    },
+    "ch_start": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_start_text",
+        "ch_start_hint"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 480,
+        "h": 116
+      },
+      "show": "showStartCue",
+      "point": "start-cue"
+    },
+    "ch_start_text": {
+      "type": "label",
+      "name": "Label",
+      "text": "{startCue}",
+      "style": {
+        "w": 480,
+        "h": 86,
+        "fontSize": 72,
+        "fitMin": 48,
+        "textAlign": "center",
+        "weight": 800,
+        "color": "#fff3d9"
+      }
+    },
+    "ch_start_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "{startHint}",
+      "style": {
+        "w": 480,
+        "h": 22,
+        "fontSize": 14,
+        "fitMin": 10,
+        "textAlign": "center",
+        "weight": 800,
+        "color": "#fff3d9"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen"
+  },
+  "properties": {
+    "name": {
+      "type": "text",
+      "default": ""
+    },
+    "score": {
+      "type": "text",
+      "default": ""
+    },
+    "round": {
+      "type": "text",
+      "default": ""
+    },
+    "high": {
+      "type": "text",
+      "default": ""
+    },
+    "highTitle": {
+      "type": "text",
+      "default": ""
+    },
+    "lives": {
+      "type": "text",
+      "default": ""
+    },
+    "enemies": {
+      "type": "text",
+      "default": ""
+    },
+    "banner": {
+      "type": "text",
+      "default": ""
+    },
+    "hint": {
+      "type": "text",
+      "default": ""
+    },
+    "detail": {
+      "type": "text",
+      "default": ""
+    },
+    "freeze": {
+      "type": "text",
+      "default": ""
+    },
+    "startCue": {
+      "type": "text",
+      "default": ""
+    },
+    "startHint": {
+      "type": "text",
+      "default": ""
+    },
+    "showBanner": {
+      "type": "yesno",
+      "default": false
+    },
+    "showStartCue": {
+      "type": "yesno",
+      "default": false
+    },
+    "party": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "ch_lives": {
+              "hide": true
+            },
+            "ch_controls": {
+              "hide": true
+            }
+          }
+        }
+      }
+    },
+    "shade": {
+      "type": "enum",
+      "values": [
+        "normal",
+        "pause",
+        "result"
+      ],
+      "default": "normal",
+      "poses": {
+        "pause": {
+          "set": {
+            "root": {
+              "opacity": 0.3
+            }
+          }
+        },
+        "result": {
+          "set": {
+            "root": {
+              "opacity": 0.3
+            }
+          }
+        }
+      }
+    }
+  },
+  "samples": {
+    "playing": {
+      "name": "TEAM SCORE",
+      "score": "0012400",
+      "round": "WAVE 3 / 10",
+      "highTitle": "DRAGONS",
+      "high": "8 / 10",
+      "party": true
+    },
+    "ready": {
+      "name": "TEAM SCORE",
+      "score": "0000000",
+      "round": "WAVE 1 / 10",
+      "highTitle": "DRAGONS",
+      "high": "10 / 10",
+      "party": true,
+      "showBanner": true,
+      "banner": "WAVE 1 IN 3S",
+      "hint": "GET INTO POSITION",
+      "showStartCue": true,
+      "startCue": "3",
+      "startHint": "MOVE AT GO!"
+    }
+  }
+}
