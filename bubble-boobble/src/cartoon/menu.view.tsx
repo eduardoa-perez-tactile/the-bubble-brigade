@@ -13,11 +13,11 @@ export const CartoonMenuView = defineView<DesktopModel>({
   },
   render: (model, { intent }) => <Screen safeArea class="desktop-screen">
     <Widget class="cartoon-menu" doc="cartoon-menu" id="cartoon-main" props={{
-      titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
+      thirdLabel: () => model().buttons[2]?.label ?? 'QUIT',titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
       status: () => model().status, showStatus: () => !!model().status,
       startSelected: () => model().selected === 0,
       settingsSelected: () => model().selected === 1,
       quitSelected: () => model().selected === 2,
-    }} onIntent={(_, event) => intent(event.path.at(-1)!)} />
+    }} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='quit'?(model().buttons[2]?.key??key):key); }} />
   </Screen>,
 });

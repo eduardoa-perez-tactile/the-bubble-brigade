@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "count": 1,
+  "tests": [
+    {
+      "name": "cartoon roster reports actual downed teammates as rescuable and preserves ten stable identities",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    }
+  ]
+}

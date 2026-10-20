@@ -9,14 +9,15 @@ import {
   body,
   intersects,
   powers,
+  levelColumns,
 } from "./types";
 import { blocked, movePlayer, spawnPosition, startPlayerJump } from "./physics";
 import { addScore } from "./game";
 import { productionPlayerBalance } from './balance';
 import { shootBubble } from "./bubbles";
 export function respawn(g: GameState, index: number) {
-  const c = g.Party ? partySpawn(index,g.Players.length) : { ...g.Level.player };
-  if (!g.Party && index === 1) c.col = 28 - c.col;
+  const c = g.Party ? partySpawn(index,g.Players.length,g.Level) : { ...g.Level.player };
+  if (!g.Party && index === 1) c.col = (g.Level.arena==='cartoon-courtyard'?levelColumns(g.Level)-4:28) - c.col;
   const [x, y] = spawnPosition(g, c),
     lives = g.Players[index]!.Lives;
   g.Players[index]! = {

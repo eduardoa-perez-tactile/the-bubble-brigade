@@ -22,17 +22,24 @@
           0,
           0
         ],
-        "clip": true
+        "clip": true,
+        "bg": "#f1e3bf",
+        "image": "cartoon/ui/theatre-paper",
+        "fit": "fill"
       },
       "children": [
         "cm_title_card",
+        "cm_illustrated_logo",
         "cm_start",
         "cm_settings",
         "cm_quit",
         "cm_tagline",
         "cm_prompt",
         "cm_hint",
-        "cm_status"
+        "cm_status",
+        "cm_billing",
+        "cm_mascot_left",
+        "cm_mascot_right"
       ]
     },
     "cm_title_card": {
@@ -56,8 +63,9 @@
         ],
         "w": 600,
         "h": 228,
-        "bg": "#fff3d9",
-        "radius": 32
+        "bg": "#00000000",
+        "radius": 0,
+        "hide": true
       },
       "point": "title-card"
     },
@@ -81,7 +89,7 @@
         "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#725640"
+        "color": "#30271e"
       }
     },
     "cm_bubble": {
@@ -100,11 +108,11 @@
         ],
         "w": 540,
         "h": 78,
-        "fontSize": 64,
+        "fontSize": 72,
         "fitMin": 44,
         "textAlign": "center",
         "weight": 800,
-        "color": "#3d756d"
+        "color": "#30271e"
       }
     },
     "cm_brigade": {
@@ -127,7 +135,7 @@
         "fitMin": 44,
         "textAlign": "center",
         "weight": 800,
-        "color": "#382d38"
+        "color": "#a6472d"
       }
     },
     "cm_start": {
@@ -196,7 +204,9 @@
         "h": 44
       },
       "props": {
-        "label": "QUIT",
+        "label": {
+          "property": "thirdLabel"
+        },
         "selected": {
           "property": "quitSelected"
         }
@@ -214,15 +224,15 @@
         ],
         "offset": [
           0,
-          360
+          444
         ],
         "w": 680,
         "h": 26,
-        "fontSize": 18,
+        "fontSize": 16,
         "fitMin": 12,
         "textAlign": "center",
         "weight": 800,
-        "color": "#fff3d9"
+        "color": "#30271e"
       },
       "show": "titleMode"
     },
@@ -241,7 +251,7 @@
         ],
         "offset": [
           0,
-          438
+          490
         ],
         "w": 500,
         "h": 44
@@ -259,7 +269,7 @@
         "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#ffc85f"
+        "color": "#30271e"
       },
       "show": "promptVisible"
     },
@@ -282,7 +292,7 @@
         "fontSize": 12,
         "fitMin": 9,
         "textAlign": "center",
-        "color": "#fff3d9"
+        "color": "#30271e"
       }
     },
     "cm_status": {
@@ -304,9 +314,87 @@
         "fontSize": 11,
         "fitMin": 8,
         "textAlign": "center",
-        "color": "#ffc85f"
+        "color": "#30271e"
       },
       "show": "showStatus"
+    },
+    "cm_billing": {
+      "type": "label",
+      "name": "Label",
+      "text": "A BUBBLE-BLOWING CARTOON CAPER",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          300
+        ],
+        "w": 640,
+        "h": 22,
+        "fontSize": 12,
+        "textAlign": "center",
+        "color": "#746047"
+      }
+    },
+    "cm_mascot_left": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/frames/dragon/green/idle-0",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          60,
+          508
+        ],
+        "w": 140,
+        "h": 140
+      }
+    },
+    "cm_mascot_right": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/frames/dragon/blue/idle-0",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          568,
+          508
+        ],
+        "w": 140,
+        "h": 140
+      }
+    },
+    "cm_illustrated_logo": {
+      "type": "icon",
+      "name": "The Bubble Brigade illustrated title",
+      "image": "cartoon/ui/title-logo",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          10
+        ],
+        "w": 460,
+        "h": 307
+      }
     }
   },
   "view": {
@@ -342,6 +430,23 @@
             },
             "cm_quit": {
               "hide": true
+            },
+            "cm_illustrated_logo": {
+              "w": 600,
+              "h": 400,
+              "offset": [
+                0,
+                16
+              ]
+            },
+            "cm_billing": {
+              "hide": true
+            },
+            "cm_mascot_left": {
+              "hide": true
+            },
+            "cm_mascot_right": {
+              "hide": true
             }
           }
         }
@@ -358,6 +463,10 @@
     "status": {
       "type": "text",
       "default": ""
+    },
+    "thirdLabel": {
+      "type": "text",
+      "default": "QUIT"
     }
   },
   "samples": {

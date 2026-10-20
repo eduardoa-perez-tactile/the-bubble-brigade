@@ -5,3 +5,6 @@ importer = "texture"
 kind = "sprite"
 filter = "linear"
 compression = "none"
+
+[settings.overrides.phone-low]
+max_size = 768

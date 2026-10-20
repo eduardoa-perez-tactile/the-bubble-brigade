@@ -327,7 +327,7 @@ export function validateLevel(l: Level) {
   };
   if (l.number < 1 || l.number > 25)
     fail("tile theme must be between 1 and 25");
-  if(l.arena!==undefined&&l.arena!=='courtyard')fail('unknown arena');
+  if(l.arena!==undefined&&l.arena!=='courtyard'&&l.arena!=='cartoon-courtyard')fail('unknown arena');
   const rows=levelRows(l),columns=levelColumns(l);
   if (l.tiles.length !== rows) fail(`expected ${rows} rows`);
   for (const row of l.tiles) {

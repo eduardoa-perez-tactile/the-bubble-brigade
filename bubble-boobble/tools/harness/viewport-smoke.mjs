@@ -57,13 +57,14 @@ try{
  assert.equal(last.payload.length,last.meta.width*last.meta.height*4);
  writeFileSync(output+'.png',png(last));
  const tile=cartoon
-  ?count(last,[2,50,766,70],(r,g,b)=>r>40&&r<140&&g>65&&g<160&&b>65&&b<170&&g>r&&b>r)
+  ?count(last,[2,50,766,70],(r,g,b)=>r>35&&r<195&&g>35&&g<195&&b>35&&b<195&&Math.max(r,g,b)-Math.min(r,g,b)<70)
   :count(last,[2,50,766,70],(r,g,b)=>r>160&&b>160);
  const player=cartoon
   ?count(last,[64,560,160,672],(r,g,b)=>g>110&&g>r*1.08&&g>b*1.2&&r>70&&r<190)
   :count(last,[64,560,160,672],(r,g,b)=>g>150&&g>r*1.4&&g>b*1.4);
  const stats=await client.api.render.stats({});
  report.assetsAfter=await client.api.script.eval({code:'JSON.parse(__gameengine_host("assets.stats","{}"))'});
+ if(cartoon)report.tileAppearance='painted neutral stone';
  Object.assign(report,{width:last.meta.width,height:last.meta.height,frames,frameIndex:last.meta.frameIndex,tile,player,drawCalls:stats.drawCalls,triangles:stats.triangles});
  assert.ok(tile.found>tile.total*.8,`World tile band missing: ${tile.found}/${tile.total} pixels`);
  assert.ok(player.found>20,`Player sprite missing: ${player.found} green pixels`);

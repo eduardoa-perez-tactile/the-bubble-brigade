@@ -1,137 +1,153 @@
-"""Normalize reviewed generated key poses; pack an independent filtered atlas.
-
-Requires Pillow. Sources live outside cooked assets. No original asset is changed.
-Creative drawings are image-generated; rings, badges and masonry are code-native art.
+"""Normalize reviewed original generated art into filtered native sprites.
+Creative masters: docs/cartoon-overhaul/sources. Pillow only slices, aligns, scales,
+recolors and exports them. Explicit procedural derivatives are identified in metadata.
+No original pixel assets, fixtures, goldens or migration evidence are rewritten.
 """
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
-import colorsys, hashlib, json, math
+from PIL import Image, ImageDraw, ImageFilter, ImageChops, ImageEnhance, ImageOps
+import colorsys, json, math, uuid
+ROOT=Path(__file__).resolve().parents[2]
+SOURCE=ROOT/'docs/cartoon-overhaul'
+DEST=ROOT/'assets/cartoon'
+DEST.mkdir(parents=True,exist_ok=True)
+images={};metadata={};frames={}
+skins={'green':'#81b94b','blue':'#468bc8','red':'#ce6459','yellow':'#e3b953','purple':'#a87fbd','orange':'#dc9351','cyan':'#54b7bf','pink':'#d88eaa','ivory':'#c5c6a5','slate':'#718297'}
+def put(name,image,x=0,y=0):images[name]=image
 
-ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / 'docs/cartoon-slice'
-DEST = ROOT / 'assets/cartoon'
-DEST.mkdir(parents=True, exist_ok=True)
-atlas = Image.new('RGBA', (2048, 2048))
-frames = {}
-metadata = {}
-names = ['idle-0','run-0','run-1','run-2','jump-0','shoot-0','hurt-0','down-0']
-skins = {'green':'#81b94b','blue':'#468bc8','red':'#ce6459','yellow':'#e3b953','purple':'#a87fbd',
-         'orange':'#dc9351','cyan':'#54b7bf','pink':'#d88eaa','ivory':'#c5c6a5','slate':'#718297'}
+def isolate(cell,components=True):
+    cell=cell.convert('RGBA')
+    if components:
+        mask=cell.getchannel('A').point(lambda a:255 if a>100 else 0)
+        small=mask.resize((max(1,cell.width//3),max(1,cell.height//3)),Image.Resampling.NEAREST)
+        pixels=small.load();seen=set();groups=[]
+        for yy in range(small.height):
+            for xx in range(small.width):
+                if not pixels[xx,yy] or (xx,yy) in seen:continue
+                stack=[(xx,yy)];seen.add((xx,yy));group=[]
+                while stack:
+                    px,py=stack.pop();group.append((px,py))
+                    for nx,ny in [(px-1,py),(px+1,py),(px,py-1),(px,py+1)]:
+                        if 0<=nx<small.width and 0<=ny<small.height and (nx,ny) not in seen and pixels[nx,ny]:
+                            seen.add((nx,ny));stack.append((nx,ny))
+                groups.append(group)
+        largest=max(groups,key=len);clean=Image.new('L',small.size)
+        # Preserve intentional detached details larger than 2% of the core, but not
+        # fragments touching the cell boundaries from neighbouring drawings.
+        for group in groups:
+            keep=group is largest or (len(group)>len(largest)*.02 and all(2<x<small.width-3 and 2<y<small.height-3 for x,y in group))
+            if keep:
+                for xy in group:clean.putpixel(xy,255)
+        clean=clean.resize(cell.size,Image.Resampling.NEAREST).filter(ImageFilter.MaxFilter(9))
+        cell.putalpha(ImageChops.multiply(cell.getchannel('A'),clean))
+    box=cell.getchannel('A').point(lambda a:255 if a>100 else 0).getbbox()
+    assert box
+    return cell.crop(box)
 
-def put(name, image, x, y):
-    atlas.alpha_composite(image, (x,y))
-    frames[name] = dict(x=x,y=y,w=image.width,h=image.height)
+slices={}
+def grid(source,cols,rows,index):
+    # Generated sheets do not reliably obey equal cells. Segment whole source
+    # silhouettes first, then assign the reviewed row/column order. This prevents
+    # severed fruit bottoms and clipped antennae at nominal grid boundaries.
+    if source not in slices:
+        im=Image.open(SOURCE/'sources'/source).convert('RGBA')
+        divisor=3;mask=im.getchannel('A').point(lambda a:255 if a>100 else 0).resize((im.width//divisor,im.height//divisor),Image.Resampling.NEAREST)
+        pixels=mask.load();seen=set();groups=[]
+        for yy in range(mask.height):
+            for xx in range(mask.width):
+                if not pixels[xx,yy] or (xx,yy) in seen:continue
+                stack=[(xx,yy)];seen.add((xx,yy));count=0;left=right=xx;top=bottom=yy
+                while stack:
+                    px,py=stack.pop();count+=1;left=min(left,px);right=max(right,px);top=min(top,py);bottom=max(bottom,py)
+                    for nx,ny in [(px-1,py),(px+1,py),(px,py-1),(px,py+1)]:
+                        if 0<=nx<mask.width and 0<=ny<mask.height and (nx,ny) not in seen and pixels[nx,ny]:seen.add((nx,ny));stack.append((nx,ny))
+                groups.append((count,(left,top,right,bottom)))
+        major=sorted(groups,reverse=True)[:cols*rows]
+        assert len(major)==cols*rows,(source,len(major))
+        boxes=[b for _,b in sorted(major,key=lambda item:item[1][1]+item[1][3])]
+        boxes=[b for row in range(rows) for b in sorted(boxes[row*cols:(row+1)*cols],key=lambda b:b[0]+b[2])]
+        boxes=[(max(0,l*divisor-5),max(0,t*divisor-5),min(im.width,(r+1)*divisor+5),min(im.height,(b+1)*divisor+5)) for l,t,r,b in boxes]
+        slices[source]=(im,boxes)
+    im,boxes=slices[source]
+    return im.crop(boxes[index])
 
-sheet = Image.open(SOURCE/'dragon-source.png').convert('RGBA')
-for skin_index,(skin,hex_color) in enumerate(skins.items()):
-    target = tuple(int(hex_color[i:i+2],16)/255 for i in (1,3,5))
-    hue,saturation,value = colorsys.rgb_to_hsv(*target)
-    for pose,name in enumerate(names):
-        box=(pose%4*384,pose//4*512,(pose%4+1)*384,(pose//4+1)*512)
-        if pose==6:box=(768,512,1110,1024)
-        if pose==7:box=(1120,512,1536,1024)
-        cell = sheet.crop(box)
-        # Ignore zero/low-alpha fringe when finding the figure. Keep original alpha.
-        bounds = cell.getchannel('A').point(lambda a:255 if a>128 else 0).getbbox()
-        assert bounds, name
-        figure = cell.crop(bounds)
-        # Shared source scale prevents independently inflating squat/jump/defeat poses.
-        factor = 108/410
-        figure = figure.resize((round(figure.width*factor),round(figure.height*factor)),Image.Resampling.LANCZOS)
-        pixels = list(figure.getdata())
-        recolored=[]
-        for r,g,b,a in pixels:
-            if g>r*1.06 and g>b*1.13 and g>45:
-                _,s,v=colorsys.rgb_to_hsv(r/255,g/255,b/255)
-                nr,ng,nb=colorsys.hsv_to_rgb(hue,min(.88,saturation*s/.60),min(1,v*value/.74))
-                r,g,b=round(nr*255),round(ng*255),round(nb*255)
-            recolored.append((r,g,b,a))
-        figure.putdata(recolored)
-        frame=Image.new('RGBA',(128,128))
-        left=(128-figure.width)//2
-        top=120-figure.height
-        # A swept ink ear behind the blue master gives P2 a second silhouette.
-        if skin=='blue' and pose!=7:
-            d=ImageDraw.Draw(frame)
-            d.ellipse((23,top+3,57,top+15),fill='#292a29',width=2)
-            d.ellipse((26,top+5,56,top+12),fill=hex_color)
-        frame.alpha_composite(figure,(left,top))
-        index=skin_index*8+pose
-        put(f'dragon/{skin}/{name}',frame,index%16*128,index//16*128)
-        metadata[f'dragon/{skin}/{name}']={'feet':[64,120],'muzzle':[106,61] if name=='shoot-0' else [101,57],
-             'visualBounds':list(frame.getchannel('A').getbbox()),'sourceCell':[pose%4,pose//4]}
+def normalize(cell,fit=112,feet=True,flip=False):
+    fig=isolate(cell)
+    if flip:fig=ImageOps.mirror(fig)
+    factor=min(fit/fig.width,fit/fig.height)
+    fig=fig.resize((max(1,round(fig.width*factor)),max(1,round(fig.height*factor))),Image.Resampling.LANCZOS)
+    out=Image.new('RGBA',(128,128));out.alpha_composite(fig,((128-fig.width)//2,120-fig.height if feet else (128-fig.height)//2));return out
 
-enemy = Image.open(SOURCE/'imp-source.png').convert('RGBA')
-for index,name in enumerate(['walk-0','walk-1','captured-0','warning-0']):
-    boxes=[(0,0,530,724),(543,0,1060,724),(1086,0,1629,724),(1450,0,2172,724)]
-    cell=enemy.crop(boxes[index])
-    # A sheet is not a ready animation: remove disconnected neighboring fragments
-    # at the reviewed crop boundaries before scaling the actual character.
-    mask=cell.getchannel('A').point(lambda a:255 if a>100 else 0)
-    small=mask.resize((max(1,cell.width//4),max(1,cell.height//4)),Image.Resampling.NEAREST)
-    pixels=small.load(); seen=set(); groups=[]
-    for yy in range(small.height):
-        for xx in range(small.width):
-            if pixels[xx,yy]==0 or (xx,yy) in seen:continue
-            stack=[(xx,yy)];seen.add((xx,yy));group=[]
-            while stack:
-                px,py=stack.pop();group.append((px,py))
-                for nx,ny in [(px-1,py),(px+1,py),(px,py-1),(px,py+1)]:
-                    if 0<=nx<small.width and 0<=ny<small.height and (nx,ny) not in seen and pixels[nx,ny]:
-                        seen.add((nx,ny));stack.append((nx,ny))
-            groups.append(group)
-    largest=max(groups,key=len)
-    cleaned=Image.new('L',small.size)
-    for xy in largest:cleaned.putpixel(xy,255)
-    cleaned=cleaned.resize(cell.size,Image.Resampling.NEAREST).filter(ImageFilter.MaxFilter(11))
-    from PIL import ImageChops
-    cell.putalpha(ImageChops.multiply(cell.getchannel('A'),cleaned))
-    bounds=cell.getchannel('A').point(lambda a:255 if a>128 else 0).getbbox()
-    assert bounds
-    figure=cell.crop(bounds)
-    factor=min(112/figure.width,112/figure.height)
-    figure=figure.resize((round(figure.width*factor),round(figure.height*factor)),Image.Resampling.LANCZOS)
-    frame=Image.new('RGBA',(128,128));frame.alpha_composite(figure,((128-figure.width)//2,120-figure.height))
-    put('imp/'+name,frame,index*128,640)
+def recolor(image,color):
+    hue,sat,val=colorsys.rgb_to_hsv(*(int(color[i:i+2],16)/255 for i in (1,3,5)));out=image.copy();pixels=[]
+    for r,g,b,a in image.getdata():
+        if g>r*1.06 and g>b*1.13 and g>45:
+            _,s,v=colorsys.rgb_to_hsv(r/255,g/255,b/255)
+            nr,ng,nb=colorsys.hsv_to_rgb(hue,min(.88,sat*s/.60),min(1,v*val/.74));r,g,b=round(nr*255),round(ng*255),round(nb*255)
+        pixels.append((r,g,b,a))
+    out.putdata(pixels);return out
 
-# Escape reuses the furious master; its clocked rock/flip is authored in the plan.
-frames['imp/escape-0']=dict(frames['imp/warning-0'])
+hero_names=['idle-0','idle-1','run-0','run-1','run-2','run-3','jump-0','jump-1','shoot-0','shoot-1','hurt-0','down-0']
+for i,name in enumerate(hero_names):
+    # Normalized authored poses. Frame height is held at108 for standing poses,
+    # while the downed pose intentionally occupies a shorter silhouette.
+    master=normalize(grid('dragon.png',4,3,i),fit=108)
+    if name.startswith('shoot'):
+        # A64world drawing needs muzzle[100,80] to coincide with authoritative
+        # bubble centre (player+40,+24); original48world sheet was too high.
+        fig=isolate(grid('shoot.png',2,1,i-8))
+        # Reviewed crouched masters keep full head/body mass during firing. Source
+        # mouth at60% height, soles at100%; fit the anchored40px vertical delta.
+        fig=fig.resize((100,100),Image.Resampling.LANCZOS)
+        master=Image.new('RGBA',(128,128));master.alpha_composite(fig,(0,20))
+    if name=='down-0':
+        fig=isolate(grid('dragon.png',4,3,i));factor=112/fig.width;fig=fig.resize((112,round(fig.height*factor)),Image.Resampling.LANCZOS)
+        master=Image.new('RGBA',(128,128));master.alpha_composite(fig,(8,120-fig.height))
+    for skin,color in skins.items():
+        frame=recolor(master,color)
+        if skin=='blue' and name!='down-0':
+            d=ImageDraw.Draw(frame);box=frame.getchannel('A').getbbox();top=box[1]
+            d.ellipse((23,top+3,57,top+15),fill='#292a29');d.ellipse((26,top+5,56,top+12),fill=color)
+        key=f'dragon/{skin}/{name}';put(key,frame)
+        metadata[key]={'feet':[64,120],'muzzle':[100,80] if name.startswith('shoot') else [101,57],'visualBounds':list(frame.getchannel('A').getbbox()),'sourceCell':[i%4,i//4],'master':name}
 
-def art(name, fn, x, y, size=128):
-    scale=4
-    image=Image.new('RGBA',(size*scale,size*scale))
-    fn(ImageDraw.Draw(image),scale)
-    put(name,image.resize((size,size),Image.Resampling.LANCZOS),x,y)
+kinds=['zenchan','monsta','pulpul','banebou','invader','mighta']
+for row,kind in enumerate(kinds):
+    masters=[normalize(grid('enemies.png',4,6,row*4+i),flip=True) for i in range(4)]
+    for name,index in [('walk-0',0),('walk-1',1),('angry-0',3),('captured-0',2),('warning-0',3),('escape-0',3),('dead-0',2),('shoot-0',3)]:
+        frame=masters[index]
+        if name=='dead-0':frame=frame.rotate(28,Image.Resampling.BICUBIC,expand=False)
+        put(f'enemy/{kind}/{name}',frame)
+        metadata[f'enemy/{kind}/{name}']={'feet':[64,120],'sourceCell':[index,row],'derivative':name in ['warning-0','escape-0','dead-0','shoot-0']}
+# Backward compatible public first-slice frame aliases; all now use newmasters.
+for name,target in [('walk-0','walk-0'),('walk-1','walk-1'),('captured-0','captured-0'),('warning-0','warning-0'),('escape-0','escape-0')]:put('imp/'+name,images['enemy/zenchan/'+target])
 
+for name,index in [('move-0',0),('move-1',1),('attack-0',2),('captured-0',3),('bottle-0',5)]:
+    cell=grid('boss.png',3,2,index)
+    put('boss/'+name,normalize(cell,flip=True,feet=index!=5))
+for i in range(25):put(f'item/food-{i+1}',normalize(grid('food.png',5,5,i),fit=108,feet=False))
+powers=['pink_candy','blue_candy','yellow_candy','shoes','orange_parasol','red_parasol','purple_parasol','crystal_ring','amethyst_ring','ruby_ring','dynamite','clock','thunder_potion']
+for i,name in enumerate(powers):put('item/'+name,normalize(grid('powerups.png',5,3,i),fit=108,feet=False))
+for name,i in [('boulder-0',13),('laser-0',14)]:put('effect/'+name,normalize(grid('powerups.png',5,3,i),fit=112,feet=False))
+for i,name in enumerate(['fire-0','fire-1','water-0','thunder-0','flame-0','spark-0']):put('effect/'+name,normalize(grid('effects.png',3,2,i),fit=112,feet=False))
+for i,name in enumerate(['platform-left','platform-middle','platform-right','wall','corner','bracket']):
+    fig=isolate(grid('masonry.png',3,2,i));put(name,fig.resize((128,128),Image.Resampling.LANCZOS))
+put('platform',images['platform-middle'])
+
+def art(name,fn,x=0,y=0,size=128):
+    scale=4;image=Image.new('RGBA',(size*scale,size*scale));fn(ImageDraw.Draw(image),scale);put(name,image.resize((size,size),Image.Resampling.LANCZOS))
 def bubble(d,s):
     d.ellipse((6*s,6*s,122*s,122*s),outline='#3d647a',width=3*s)
     d.arc((9*s,9*s,119*s,119*s),190,345,fill='#d7f5f1',width=3*s)
     d.arc((10*s,10*s,118*s,118*s),10,100,fill='#f3c1cf',width=2*s)
     d.arc((19*s,18*s,105*s,106*s),205,252,fill='#fff9e7',width=5*s)
-art('bubble',bubble,512,640)
+art('bubble',bubble)
 def pop(d,s):
     for i in range(8):
-        angle=i*math.pi/4
-        d.line((64*s+30*s*math.cos(angle),64*s+30*s*math.sin(angle),64*s+49*s*math.cos(angle),64*s+49*s*math.sin(angle)),fill='#fff1c4',width=4*s)
+        angle=i*math.pi/4;d.line((64*s+30*s*math.cos(angle),64*s+30*s*math.sin(angle),64*s+49*s*math.cos(angle),64*s+49*s*math.sin(angle)),fill='#fff1c4',width=4*s)
     d.ellipse((43*s,43*s,85*s,85*s),outline='#a9e3df',width=2*s)
-art('pop',pop,640,640)
+art('pop',pop)
 def shadow(d,s):d.ellipse((8*s,46*s,120*s,80*s),fill=(25,33,36,100))
-art('shadow',shadow,768,640)
-def platform(d,s):
-    d.rounded_rectangle((1*s,1*s,127*s,126*s),radius=8*s,fill='#303e40',outline='#20292d',width=2*s)
-    d.rectangle((3*s,18*s,125*s,116*s),fill='#667b78')
-    d.line((5*s,118*s,123*s,118*s),fill='#374e52',width=9*s)
-    d.line((64*s,25*s,59*s,111*s),fill='#4b6262',width=2*s)
-    d.rounded_rectangle((1*s,0,127*s,28*s),radius=5*s,fill='#e8d2a3',outline='#333333',width=2*s)
-    d.line((5*s,6*s,122*s,6*s),fill='#fff0ca',width=3*s)
-    d.line((44*s,2*s,43*s,25*s),fill='#bda77e',width=2*s)
-art('platform',platform,896,640)
-def wall(d,s):
-    d.rectangle((0,0,128*s,128*s),fill='#526a6b')
-    d.line((0,126*s,128*s,126*s),fill='#304c52',width=5*s)
-    d.line((64*s,0,64*s,128*s),fill='#3b565b',width=3*s)
-    d.line((3*s,3*s,125*s,3*s),fill='#80918b',width=3*s)
-art('wall',wall,1024,640)
+art('shadow',shadow)
 symbols=['circle','diamond','heart','star','club','triangle','moon','flower','square','spade']
 for index,(skin,color) in enumerate(skins.items()):
     def badge(d,s,index=index,color=color):
@@ -162,48 +178,36 @@ for index,(skin,color) in enumerate(skins.items()):
             d.rectangle((59*s,72*s,69*s,103*s),fill=ink)
     art('badge/'+skin,badge,index*128,768)
 
-# Keep unconverted enemies/items/elements in the independent atlas. Original bytes
-# and provenance remain untouched. These families deliberately retain pixel art.
-legacy=Image.open(ROOT/'assets/pixel-renderer/atlas.png').convert('RGBA')
-atlas.alpha_composite(legacy,(0,1024))
-layout=json.loads((ROOT/'assets/pixel-renderer/atlas-layout.json').read_text())
-unused_prefixes=('reference/tiles/','derived/circle/','reference/logo','reference/green/','reference/blue/',
-                 'reference/red/','reference/yellow/','reference/purple/','reference/orange/',
-                 'reference/cyan/','reference/pink/','reference/ivory/','reference/slate/','reference/zenchan/')
-for name,(x,y,w,h) in layout['rects'].items():
-    if not name.startswith(unused_prefixes):frames['legacy/'+name]=dict(x=x,y=y+1024,w=w,h=h)
-atlas.save(SOURCE/'normalized-atlas.png')
-(DEST/'atlas-layout.json').write_text(json.dumps(dict(width=2048,height=2048,frames=frames),indent=2)+'\n')
-# Native Sprite batches these subimages with GPU alpha. The retained independent
-# atlas is useful for frame QA and material previews; production never expands pixels.
-import uuid
+
+# Export reproducible per-frame native sprite assets; master atlas is QA only.
+cols=16;rows=math.ceil(len(images)/cols);atlas=Image.new('RGBA',(cols*128,rows*128))
+for i,(name,image) in enumerate(images.items()):
+    x=i%cols*128;y=i//cols*128;atlas.alpha_composite(image,(x,y));frames[name]=dict(x=x,y=y,w=128,h=128)
+    path=DEST/'frames'/(name+'.png');path.parent.mkdir(parents=True,exist_ok=True);image.save(path)
+    path.with_suffix('.png.gmeta').write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/"+name)}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = false\n')
 for previous in (DEST/'frames').rglob('*.png'):
-    name=previous.relative_to(DEST/'frames').as_posix()[:-4]
-    if name not in frames:
-        previous.unlink()
-        previous.with_suffix('.png.gmeta').unlink(missing_ok=True)
-for name,f in frames.items():
-    path=DEST/'frames'/(name+'.png');path.parent.mkdir(parents=True,exist_ok=True)
-    atlas.crop((f['x'],f['y'],f['x']+f['w'],f['y']+f['h'])).save(path)
-    meta=path.with_suffix('.png.gmeta')
-    meta.write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/"+name)}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = false\n')
-Image.new('RGBA',(4,4),'white').save(DEST/'white.png')
-white_meta=DEST/'white.png.gmeta'
-white_meta.write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/white")}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = false\n')
+    if previous.relative_to(DEST/'frames').as_posix()[:-4] not in frames:
+        previous.unlink();previous.with_suffix('.png.gmeta').unlink(missing_ok=True)
+atlas.save(SOURCE/'normalized-atlas.png')
+(SOURCE/'source-slices.json').write_text(json.dumps({name:boxes for name,(_,boxes) in slices.items()},indent=2)+'\n')
+(DEST/'atlas-layout.json').write_text(json.dumps(dict(width=atlas.width,height=atlas.height,frames=frames),indent=2)+'\n')
 (DEST/'animation.json').write_text(json.dumps(dict(feet=[64,120],frames=metadata,clips={
-    'idle':{'frames':['idle-0'],'durations':[60],'loop':True},
-    'run':{'frames':['run-0','run-1','run-2','run-1'],'durations':[5,5,5,5],'loop':True},
-    'jump':{'frames':['jump-0'],'durations':[1],'loop':False},
-    'shoot':{'frames':['shoot-0'],'durations':[12],'loop':False},
-    'hurt':{'frames':['hurt-0'],'durations':[12],'loop':False},
-    'down':{'frames':['down-0'],'durations':[90],'loop':False}},identities=symbols),indent=2)+'\n')
-background=Image.open(SOURCE/'courtyard-source.png').convert('RGB').resize((1024,768),Image.Resampling.LANCZOS)
-ImageEnhance.Brightness(background).enhance(.72).save(DEST/'courtyard.png')
-preview=Image.new('RGBA',(8*128,3*128),'#f4e4c2')
-for row,skin in enumerate(['green','blue']):
-    for col,name in enumerate(names):
-        f=frames[f'dragon/{skin}/{name}'];preview.alpha_composite(atlas.crop((f['x'],f['y'],f['x']+128,f['y']+128)),(col*128,row*128))
-for col,name in enumerate(['walk-0','walk-1','captured-0','warning-0']):
-    f=frames['imp/'+name];preview.alpha_composite(atlas.crop((f['x'],f['y'],f['x']+128,f['y']+128)),(col*128,256))
+'idle':{'frames':['idle-0','idle-1','idle-0'],'durations':[120,7,53],'loop':True},
+'run':{'frames':['run-0','run-1','run-2','run-3'],'durations':[5,4,5,4],'loop':True},
+'jump':{'frames':['jump-0','jump-1'],'durations':[18,42],'loop':False},
+'shoot':{'frames':['shoot-0','shoot-1'],'durations':[4,8],'loop':False},
+'hurt':{'frames':['hurt-0'],'durations':[12],'loop':False},
+'down':{'frames':['down-0'],'durations':[90],'loop':False}},identities=symbols),indent=2)+'\n')
+background=Image.open(SOURCE/'sources/courtyard.png').convert('RGB').resize((1536,864),Image.Resampling.LANCZOS)
+background.save(DEST/'courtyard.png')
+# Explicit lossless linear filtered background matches live/cooked colour.
+(DEST/'courtyard.png.gmeta').write_text(f'guid = "9850f803-9455-436c-b07a-57f7aca42a2c"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\nfilter = "linear"\ncompression = "none"\n\n[settings.overrides.phone-low]\nmax_size = 768\n')
+Image.new('RGBA',(4,4),'white').save(DEST/'white.png')
+(DEST/'white.png.gmeta').write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/white")}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = false\n')
+preview=Image.new('RGBA',(12*128,8*128),'#f4e4c2')
+for col,name in enumerate(hero_names):preview.alpha_composite(images['dragon/green/'+name],(col*128,0))
+for row,kind in enumerate(kinds):
+    for col,name in enumerate(['walk-0','walk-1','captured-0','warning-0']):preview.alpha_composite(images[f'enemy/{kind}/{name}'],(col*128,(row+1)*128))
+for col,name in enumerate(['platform-left','platform-middle','platform-right','wall','boss/move-0','item/food-1','item/pink_candy','effect/fire-0']):preview.alpha_composite(images[name],(col*128,7*128))
 preview.save(SOURCE/'normalized-poses.png')
-print('Exported',len(frames),'frames for the native sprite atlas; master atlas retained in docs only.')
+print('Exported',len(frames),'original cartoon frames, ZERO legacy pixel sprites.')

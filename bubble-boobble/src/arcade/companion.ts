@@ -109,7 +109,7 @@ function graphMatches(g:GameState,graph:Graph|null,index:number):graph is Graph 
  * graph is immutable: snapshots share finished nodes; only newly built nodes get
  * fresh links. All equivalent bots share the same in-progress or ready graph. */
 export function warmPartyNavigation(g:GameState):void {
-  if(g.Level.arena!=='courtyard'||!g.Companions)return;
+  if((g.Level.arena!=='courtyard'&&g.Level.arena!=='cartoon-courtyard')||!g.Companions)return;
   if(g.Companions.every((ai,index)=>!ai||!alive(g.Players[index]!)||graphMatches(g,ai.Graph,index)&&ai.Graph.BuildIndex===undefined))return;
   for(const shoes of [false,true]){
     const indices=g.Companions.flatMap((ai,index)=>ai&&alive(g.Players[index]!)&&g.Players[index]!.Power.Shoes===shoes?[index]:[]);

@@ -10,9 +10,10 @@ renderTest('cartoon HUD keeps score and wave cards inside the existing top band'
   await cheat(PartyReset, { wave: 1, team: 10, humans: 1, countdown: 180 });
   await step(2);
   expect(world.resource(MaterialGlobals).v1[0]).toBe(1);
-  // Cream cards alone have red=255; visible dark score glyphs must lower it.
+  // Paper alone cannot pass: require both dark score ink and bright card pixels.
   const scoreInk = render.probe({ width: 768, height: 720, regions: [[26,20,150,20]] }).regions[0]!;
-  expect(scoreInk.mean[0]!).toBeLessThan(250);
+  expect(scoreInk.min[0]!).toBeLessThan(120);
+  expect(scoreInk.max[0]!).toBeGreaterThan(200);
   for (const [width, height] of [[768,720], [1680,720], [640,960]]) {
     input.view(width!, height!, 1);
     await step(1);
@@ -47,7 +48,8 @@ renderTest('cartoon title branding preserves menu actions', async ({ input, step
   await step(5);
   // This detects a missing font, which rect bounds cannot establish.
   const titleInk = render.probe({ width: 768, height: 720, regions: [[260,100,248,78]] }).regions[0]!;
-  expect(titleInk.mean[0]!).toBeLessThan(250);
+  expect(titleInk.min[0]!).toBeLessThan(120);
+  expect(titleInk.max[0]!).toBeGreaterThan(200);
   for (const [width, height] of [[768,720], [1680,720], [640,960]]) {
     input.view(width!, height!, 1);
     await step(1);

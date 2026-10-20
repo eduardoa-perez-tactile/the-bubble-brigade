@@ -1,5 +1,6 @@
 import atlas from '../../assets/cartoon/atlas-layout.json';
 import type { PixelClip } from '../arcade/pixel-renderer/ordered';
+import type { GameState } from '../arcade/types';
 
 /** Draw coordinates are logical screen pixels, with the origin at the top left. */
 export interface CartoonDraw {
@@ -15,6 +16,23 @@ export interface CartoonSprite extends CartoonDraw {image:string}
 // Over five times a fully occupied 44×30 arena plus its combat actors.
 const capacity = 8192;
 const linear = (v: number) => v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4);
+
+type MotionGlobals={v2:ArrayLike<number>;v3:ArrayLike<number>;v4:ArrayLike<number>;v5:ArrayLike<number>;v6:ArrayLike<number>;v7:ArrayLike<number>};
+/** Player VX is not simulation movement. Retain only cosmetic walk-counter
+ * observations in the existing presentation resource, never in the game doc. */
+export function cartoonMotion(game:GameState|null,previous:MotionGlobals){
+  const frames=Array.from({length:10},(_,i)=>game?.Players[i]?.WalkFrame??0);
+  const until=Array.from({length:10},(_,i)=>{
+    if(!game||!previous.v4[3]||game.Tick<previous.v4[2]!)return 0;
+    const old=(i<4?previous.v2:i<8?previous.v3:previous.v4)[i%4]!;
+    if(frames[i]!<old)return 0;
+    return frames[i]!==old?game.Tick+3:(i<4?previous.v5:i<8?previous.v6:previous.v7)[i%4]!;
+  });
+  const moving=until.map((end,i)=>!!game?.Players[i]&&end>(game?.Tick??0));
+  const vec=(a:readonly number[],start:number):[number,number,number,number]=>[a[start]??0,a[start+1]??0,a[start+2]??0,a[start+3]??0];
+  return {moving,globals:{v2:vec(frames,0),v3:vec(frames,4),v4:[frames[8]!,frames[9]!,game?.Tick??0,game?1:0] as [number,number,number,number],
+    v5:vec(until,0),v6:vec(until,4),v7:vec(until,8)}};
+}
 
 /** Native sprites retain original bounds; the scene's shared stencil crops UVs. */
 export function cartoonSprites(draws: readonly CartoonDraw[], clip: PixelClip): CartoonSprite[] {

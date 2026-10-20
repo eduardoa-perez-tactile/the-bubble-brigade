@@ -1,0 +1,1893 @@
+{
+  "ok": true,
+  "js": "v8",
+  "passed": 6,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+      "ok": true,
+      "steps": 4,
+      "hash": "63e7a385404bf862",
+      "millis": 503.853875,
+      "tier": "t1",
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.014708249999999999,
+          "maxMs": 0.017082999999999997
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0005102500000000001,
+          "maxMs": 0.0015
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00011425,
+          "maxMs": 0.00029099999999999997
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.14425000000000002,
+          "maxMs": 0.14425000000000002
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00173975,
+          "maxMs": 0.00625
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.000458,
+          "maxMs": 0.000958
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.12674975,
+          "maxMs": 0.49549999999999994
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0923435,
+          "maxMs": 0.344625
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.041541999999999996,
+          "maxMs": 0.145375
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.010521,
+          "maxMs": 0.034917
+        },
+        {
+          "name": "SetupView",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.044677249999999995,
+          "maxMs": 0.156292
+        },
+        {
+          "name": "SpawnBubbles",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.12180224999999999,
+          "maxMs": 0.48216699999999996
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.05487475,
+          "maxMs": 0.135625
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00030199999999999997,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00028125,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0002605,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00027100000000000003,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00015625,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00061425,
+          "maxMs": 0.000833
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.000281,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0033747499999999997,
+          "maxMs": 0.008291999999999999
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0016037500000000001,
+          "maxMs": 0.004583
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00058325,
+          "maxMs": 0.001584
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0003855,
+          "maxMs": 0.00125
+        }
+      ],
+      "script": {
+        "ms": 468.501578,
+        "allocatedKB": 39185.015625,
+        "gcs": 1
+      }
+    },
+    {
+      "name": "cartoon slice ten firing humans keep full arena and HUD across every desktop aspect",
+      "ok": true,
+      "steps": 28,
+      "hash": "7dbc9770b828b1a4",
+      "millis": 5964.118041,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "ten_768x720",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect/ten_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "ten_1680x720",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect/ten_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "ten_640x960",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect/ten_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "ten_2520x1080",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect/ten_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        }
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.01589878571428572,
+          "maxMs": 0.023791999999999997
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00034221428571428565,
+          "maxMs": 0.0014169999999999999
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00008485714285714285,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.04125,
+          "maxMs": 0.04125
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.034854,
+          "maxMs": 0.058
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.004104,
+          "maxMs": 0.005625000000000001
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0028539999999999998,
+          "maxMs": 0.003417
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 1.7641040000000001,
+          "maxMs": 3.5260830000000003
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0076045,
+          "maxMs": 0.013084
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0038540000000000002,
+          "maxMs": 0.005708
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002791,
+          "maxMs": 0.003541
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0023755,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002542,
+          "maxMs": 0.003167
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0033335,
+          "maxMs": 0.004792
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0025625,
+          "maxMs": 0.003375
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.10566649999999998,
+          "maxMs": 0.20845799999999998
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0032084999999999995,
+          "maxMs": 0.003459
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0023339999999999997,
+          "maxMs": 0.0027089999999999996
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002375,
+          "maxMs": 0.0026249999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.003521,
+          "maxMs": 0.005167
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0030420000000000004,
+          "maxMs": 0.003917
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002479,
+          "maxMs": 0.002875
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002521,
+          "maxMs": 0.003
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0023545,
+          "maxMs": 0.00275
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002313,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002438,
+          "maxMs": 0.0029170000000000003
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0081035,
+          "maxMs": 0.012166
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0031875000000000002,
+          "maxMs": 0.00425
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.000468857142857143,
+          "maxMs": 0.0011250000000000001
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0005699285714285714,
+          "maxMs": 0.002041
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.253959,
+          "maxMs": 0.253959
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.10186457142857143,
+          "maxMs": 0.726166
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.007072964285714285,
+          "maxMs": 0.070167
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.6753899642857144,
+          "maxMs": 1.785417
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.03816517857142858,
+          "maxMs": 0.30333299999999996
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.5223393214285715,
+          "maxMs": 5.371125
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.004291678571428573,
+          "maxMs": 0.024875
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.003413785714285716,
+          "maxMs": 0.016958
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00048364285714285724,
+          "maxMs": 0.001083
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0003824285714285713,
+          "maxMs": 0.000917
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0003215,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00030796428571428565,
+          "maxMs": 0.000792
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00020517857142857146,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0006637142857142859,
+          "maxMs": 0.0012079999999999999
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.00029464285714285714,
+          "maxMs": 0.000792
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0009195714285714288,
+          "maxMs": 0.002166
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0008942142857142862,
+          "maxMs": 0.002
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0002871071428571428,
+          "maxMs": 0.000958
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 28,
+          "meanMs": 0.0002752857142857143,
+          "maxMs": 0.00125
+        }
+      ],
+      "script": {
+        "ms": 5715.91758,
+        "allocatedKB": 115743.140625,
+        "gcs": 5
+      }
+    },
+    {
+      "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+      "ok": true,
+      "steps": 43,
+      "hash": "70a119a79be1ebbc",
+      "millis": 5200.077541,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "capture_warning_escape",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/capture_warning_escape/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "downed",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/downed/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "rescued",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/rescued/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        }
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.013029023255813961,
+          "maxMs": 0.029625
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0002839069767441861,
+          "maxMs": 0.004084
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00004941860465116277,
+          "maxMs": 0.00029099999999999997
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.031167,
+          "maxMs": 0.031167
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.014499999999999999,
+          "maxMs": 0.027458
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00335375,
+          "maxMs": 0.0048330000000000005
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00239625,
+          "maxMs": 0.0037500000000000003
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 4,
+          "meanMs": 1.031427,
+          "maxMs": 2.172958
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00508325,
+          "maxMs": 0.012374999999999999
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.040489500000000005,
+          "maxMs": 0.151375
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0024375000000000004,
+          "maxMs": 0.002875
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0029065,
+          "maxMs": 0.006083
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0020517499999999998,
+          "maxMs": 0.0027080000000000003
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00196875,
+          "maxMs": 0.0024590000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.002,
+          "maxMs": 0.0025
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0020315000000000003,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0018852500000000002,
+          "maxMs": 0.002458
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00198975,
+          "maxMs": 0.0026249999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0020315,
+          "maxMs": 0.0028339999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0021147500000000003,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00234375,
+          "maxMs": 0.003625
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00218775,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.002125,
+          "maxMs": 0.003208
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0030417499999999997,
+          "maxMs": 0.006834
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.0020205,
+          "maxMs": 0.002666
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.07637524999999999,
+          "maxMs": 0.299792
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.005041250000000001,
+          "maxMs": 0.008666
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 4,
+          "meanMs": 0.00258325,
+          "maxMs": 0.0038330000000000005
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00021895348837209299,
+          "maxMs": 0.0007080000000000001
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00027425581395348843,
+          "maxMs": 0.001083
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.148084,
+          "maxMs": 0.148084
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.04389632558139534,
+          "maxMs": 0.249417
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0031375581395348844,
+          "maxMs": 0.017124999999999998
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.24504844186046518,
+          "maxMs": 0.571083
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.020172558139534887,
+          "maxMs": 0.118667
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.34565016279069777,
+          "maxMs": 4.942083
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.002860558139534885,
+          "maxMs": 0.028125
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.002246116279069769,
+          "maxMs": 0.012417
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0004215348837209304,
+          "maxMs": 0.006583
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0002238139534883721,
+          "maxMs": 0.000916
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00018997674418604657,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0001937441860465116,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00012397674418604648,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0004438372093023258,
+          "maxMs": 0.0012079999999999999
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.00019183720930232562,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0005639534883720932,
+          "maxMs": 0.001625
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0005736511627906979,
+          "maxMs": 0.00125
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0001841860465116279,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 43,
+          "meanMs": 0.0001512325581395348,
+          "maxMs": 0.000542
+        }
+      ],
+      "script": {
+        "ms": 5156.947987,
+        "allocatedKB": 137662.1171875,
+        "gcs": 4
+      }
+    },
+    {
+      "name": "cartoon HUD keeps score and wave cards inside the existing top band",
+      "ok": true,
+      "steps": 11,
+      "hash": "7c05e3b3b7c7d730",
+      "millis": 94.967917,
+      "tier": "t1",
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.013515181818181817,
+          "maxMs": 0.017958
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0002841818181818182,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0001060909090909091,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.033624999999999995,
+          "maxMs": 0.033624999999999995
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.017082999999999997,
+          "maxMs": 0.017082999999999997
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003834,
+          "maxMs": 0.003834
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0022919999999999998,
+          "maxMs": 0.0022919999999999998
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 2.013542,
+          "maxMs": 2.013542
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0095,
+          "maxMs": 0.0095
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.006541,
+          "maxMs": 0.006541
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003,
+          "maxMs": 0.003
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0045000000000000005,
+          "maxMs": 0.0045000000000000005
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002375,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0022919999999999998,
+          "maxMs": 0.0022919999999999998
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0020829999999999998,
+          "maxMs": 0.0020829999999999998
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002125,
+          "maxMs": 0.002125
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002333,
+          "maxMs": 0.002333
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0024590000000000002,
+          "maxMs": 0.0024590000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0025830000000000002,
+          "maxMs": 0.0025830000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002208,
+          "maxMs": 0.002208
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003167,
+          "maxMs": 0.003167
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0025,
+          "maxMs": 0.0025
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0025,
+          "maxMs": 0.0025
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.006292,
+          "maxMs": 0.006292
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0024590000000000002,
+          "maxMs": 0.0024590000000000002
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002333,
+          "maxMs": 0.002333
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.008375,
+          "maxMs": 0.008375
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003083,
+          "maxMs": 0.003083
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00035609090909090904,
+          "maxMs": 0.0006670000000000001
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00039018181818181816,
+          "maxMs": 0.000917
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.1405,
+          "maxMs": 0.1405
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.08773863636363637,
+          "maxMs": 0.26095799999999997
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00624618181818182,
+          "maxMs": 0.01675
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 11,
+          "meanMs": 1.5435301818181815,
+          "maxMs": 5.43275
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.03048099999999999,
+          "maxMs": 0.114667
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.4844924545454545,
+          "maxMs": 3.49175
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.004507636363636366,
+          "maxMs": 0.020458
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0038524545454545465,
+          "maxMs": 0.012833
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0003938181818181818,
+          "maxMs": 0.000541
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00035981818181818185,
+          "maxMs": 0.000625
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00026518181818181816,
+          "maxMs": 0.00045900000000000004
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0002690909090909091,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00018963636363636364,
+          "maxMs": 0.000292
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0005567272727272729,
+          "maxMs": 0.00075
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0002537272727272727,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0007651818181818181,
+          "maxMs": 0.001375
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0007424545454545455,
+          "maxMs": 0.0011250000000000001
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.0002235454545454546,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 11,
+          "meanMs": 0.00018563636363636362,
+          "maxMs": 0.000375
+        }
+      ],
+      "script": {
+        "ms": 59.44446,
+        "allocatedKB": 71031.5,
+        "gcs": 1
+      }
+    },
+    {
+      "name": "original arcade scene retains the pixel HUD",
+      "ok": true,
+      "steps": 8,
+      "hash": "94cdee1885418e9d",
+      "millis": 96.96475000000001,
+      "tier": "t1",
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.013775999999999998,
+          "maxMs": 0.017750000000000002
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.0001875,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000052249999999999996,
+          "maxMs": 0.000125
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.064167,
+          "maxMs": 0.064167
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.017041,
+          "maxMs": 0.017041
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0037500000000000003,
+          "maxMs": 0.0037500000000000003
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002208,
+          "maxMs": 0.002208
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 1.442541,
+          "maxMs": 1.442541
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.008875000000000001,
+          "maxMs": 0.008875000000000001
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.006375,
+          "maxMs": 0.006375
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0029579999999999997,
+          "maxMs": 0.0029579999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003,
+          "maxMs": 0.003
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002542,
+          "maxMs": 0.002542
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003709,
+          "maxMs": 0.003709
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002334,
+          "maxMs": 0.002334
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0022919999999999998,
+          "maxMs": 0.0022919999999999998
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002333,
+          "maxMs": 0.002333
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002542,
+          "maxMs": 0.002542
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002666,
+          "maxMs": 0.002666
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002209,
+          "maxMs": 0.002209
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003,
+          "maxMs": 0.003
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0047079999999999995,
+          "maxMs": 0.0047079999999999995
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0026249999999999997,
+          "maxMs": 0.0026249999999999997
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003084,
+          "maxMs": 0.003084
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.0025,
+          "maxMs": 0.0025
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.002375,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.008209000000000001,
+          "maxMs": 0.008209000000000001
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.003292,
+          "maxMs": 0.003292
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000250125,
+          "maxMs": 0.000417
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00031262499999999997,
+          "maxMs": 0.000875
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.16941699999999998,
+          "maxMs": 0.16941699999999998
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.10737999999999999,
+          "maxMs": 0.244291
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.007166500000000001,
+          "maxMs": 0.020541
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.07877599999999998,
+          "maxMs": 0.35362499999999997
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.032890375,
+          "maxMs": 0.12545800000000001
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.488099,
+          "maxMs": 2.922416
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.005062375,
+          "maxMs": 0.023583
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.003953125,
+          "maxMs": 0.01525
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00032287500000000003,
+          "maxMs": 0.000417
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00023425000000000003,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00020312500000000002,
+          "maxMs": 0.000417
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00021362500000000003,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000135375,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000448125,
+          "maxMs": 0.000584
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.00022912500000000005,
+          "maxMs": 0.00041600000000000003
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000604125,
+          "maxMs": 0.000958
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.0006406249999999999,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000208375,
+          "maxMs": 0.000334
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 8,
+          "meanMs": 0.000182625,
+          "maxMs": 0.000375
+        }
+      ],
+      "script": {
+        "ms": 58.937916,
+        "allocatedKB": 49918.515625,
+        "gcs": 2
+      }
+    },
+    {
+      "name": "cartoon title branding preserves menu actions",
+      "ok": true,
+      "steps": 12,
+      "hash": "7afb4b4504286326",
+      "millis": 67.215791,
+      "tier": "t1",
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.013736166666666667,
+          "maxMs": 0.017667
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00020833333333333337,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00006625000000000002,
+          "maxMs": 0.000292
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.031166,
+          "maxMs": 0.031166
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.0002499166666666667,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00028466666666666663,
+          "maxMs": 0.000791
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.138583,
+          "maxMs": 0.138583
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.11329166666666667,
+          "maxMs": 0.23141599999999998
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.004982750000000001,
+          "maxMs": 0.016333
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.007041666666666667,
+          "maxMs": 0.023917
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.02485766666666667,
+          "maxMs": 0.114208
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.28777091666666665,
+          "maxMs": 2.684542
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.003989583333333334,
+          "maxMs": 0.0235
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.002927250000000001,
+          "maxMs": 0.01225
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00030900000000000003,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00023241666666666666,
+          "maxMs": 0.0005
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00020825000000000002,
+          "maxMs": 0.000458
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00021208333333333336,
+          "maxMs": 0.00045900000000000004
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00012533333333333334,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.0004444166666666667,
+          "maxMs": 0.000833
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00022925000000000004,
+          "maxMs": 0.00045900000000000004
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.000618,
+          "maxMs": 0.00125
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.0006073333333333334,
+          "maxMs": 0.001041
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00024299999999999994,
+          "maxMs": 0.000584
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 12,
+          "meanMs": 0.00014575000000000002,
+          "maxMs": 0.00029099999999999997
+        }
+      ],
+      "script": {
+        "ms": 32.309121000000005,
+        "allocatedKB": 46388.8515625,
+        "gcs": 1
+      }
+    }
+  ],
+  "adapter": {
+    "backend": "metal",
+    "device": "Apple M2 Max",
+    "family": "metal",
+    "tier": "desktop"
+  }
+}

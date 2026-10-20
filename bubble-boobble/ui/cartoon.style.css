@@ -1,3 +1,28 @@
-/* The engine has no implicit fallback font; keep cartoon text explicitly bound
-   to a bundled font. Scoped classes preserve the original pixel presentation. */
-.cartoon-hud, .cartoon-menu { width: 768px; height: 720px; font-family: "cartoon/fonts/NotoSans-Regular"; }
+/* Independent cartoon document theme. Every font is bundled with its OFL. */
+.cartoon-hud, .cartoon-menu, .cartoon-shell, .cartoon-account, .cartoon-modes,
+.cartoon-party, .cartoon-results, .cartoon-editor {
+  width: 768px; height: 720px;
+  font-family: "cartoon/fonts/BreeSerif-Regular";
+}
+.cartoon-menu .ud-cartoon-menu__cm_bubble,
+.cartoon-menu .ud-cartoon-menu__cm_brigade,
+.cartoon-shell .ud-cartoon-shell__ds_title,
+.cartoon-account .ud-cartoon-heading__dhead_title,
+.cartoon-modes .ud-cartoon-modes__ms_title,
+.cartoon-party .ud-cartoon-party__pl_title,
+.cartoon-results .ud-cartoon-results__rr_title,
+.cartoon-editor .ud-cartoon-editor__de_title {
+  font-family: "cartoon/fonts/Rye-Regular";
+}
+.cartoon-hud .ud-cartoon-hud__ch_banner_title,
+.cartoon-hud .ud-cartoon-hud__ch_start_text {
+  font-family: "cartoon/fonts/Rye-Regular";
+}
+.cartoon-shell .ud-cartoon-shell__ds_body { white-space: pre-wrap; line-height: 1.7; max-width: 700px; }
+.cartoon-shell .ud-cartoon-shell__ds_keys { flex-wrap: wrap; }
+.cartoon-help .ud-cartoon-action__root, .cartoon-credits .ud-cartoon-action__root,
+.cartoon-scores .ud-cartoon-action__root { width: 240px; }
+.cartoon-results .ud-cartoon-action__root { width: 296px; height: 44px; }
+.cartoon-results-screen { background-color: #e5d1a7; }
+.cartoon-account .ud-cartoon-profile-row__dpr_image { transform: scaleX(-1); }
+.cartoon-settings-portrait { width: 60px; height: 60px; }

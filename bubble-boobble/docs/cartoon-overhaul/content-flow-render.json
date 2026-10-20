@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "tests": [
+    {
+      "name": "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+      "ok": true,
+      "steps": 48,
+      "hash": "7f1f3543374436d3",
+      "shots": [
+        {
+          "name": "complete_enemies",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_enemies/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_capture",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_capture/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_items",
+          "result": {
+            "ok": true,
+            "updated": true,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_items/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_elements",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_elements/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_boss",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_boss/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_boss-captured",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_boss_captured/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_downed",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_downed/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_rescued",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_rescued/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "complete_victory",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_victory/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        }
+      ],
+      "logs": [
+        "cartoon rescue positions [{\"x\":235.00000000000085,\"y\":364,\"down\":false,\"lives\":1},{\"x\":270,\"y\":364,\"down\":false,\"lives\":1}] combat"
+      ],
+      "error": null
+    }
+  ],
+  "scope": "Final corrected-art full-flow run; separately named new golden and replay artifacts."
+}

@@ -41,8 +41,8 @@ import type { PixelQuad } from "./pixel-renderer/types.ts";
 import { goSin } from "./trig";
 import { arenaWidth, arenaHeight, levelColumns, levelRows, levelWidth, levelHeight, EnemyState, position } from "./types.ts";
 import type { GameState, Level } from "./types.ts";
-import { cartoonSprites } from '../cartoon/renderer';
-import { cartoonDrawPlan, cartoonMenuDrawPlan } from '../cartoon/plan';
+import { cartoonSprites, cartoonMotion } from '../cartoon/renderer';
+import { cartoonDrawPlan, cartoonMenuDrawPlan, cartoonEditorDrawPlan } from '../cartoon/plan';
 import { isCartoonClearColor } from '../cartoon/theme';
 
 // Pixel instances and pooled text have disjoint slots; never grow text to this base.
@@ -403,7 +403,7 @@ export const ArcadePool = defineSystem({
   runIf: { resource: ArcadeControl, field: "active", value: true },
   run(ctx, q) {
     const plan = sceneDraws(ctx.step,undefined,ctx.get(ViewInfo)), party=!!session.get().game?.Party;
-    const needed = plan.texts.length + 1 + (party?36:0), pixelCount = orderedCapacity(plan.images,plan.clip)+(party?512:0);
+    const needed = plan.texts.length + 1 + (party?36:0), pixelCount = orderedCapacity(plan.images,plan.clip)+(party?512:0)+(session.get().game?.Level.arena==='cartoon-courtyard'?256:0);
     let count = 0, pixels = 0;
     for (const c of q.chunks()) for (let i = 0; i < c.length; i++) {
       const slot = c.col(ArcadeVisual).slot[i]!;
@@ -448,8 +448,8 @@ export function sceneDraws(tick: number, feel?:FeelState, view?:{width:number;he
     level = editor ? ui.level : g?.Level;
   if (level) {
     const layout=arenaLayout(level,view);
-    if(level.arena==='courtyard')clip={left:layout.viewportLeft,top:layout.viewportTop,right:layout.viewportRight,bottom:layout.viewportBottom};
-    if(level.arena==='courtyard')images[0]={image:'solid/ink',x:-2000,y:-2000,w:4768,h:4720};
+    if(level.arena==='courtyard'||level.arena==='cartoon-courtyard')clip={left:layout.viewportLeft,top:layout.viewportTop,right:layout.viewportRight,bottom:layout.viewportBottom};
+    if(level.arena==='courtyard'||level.arena==='cartoon-courtyard')images[0]={image:'solid/ink',x:-2000,y:-2000,w:4768,h:4720};
     const boardStart=images.length;
     const layoutDraw=(d:Draw):Draw=>({...d,x:layout.x+d.x*layout.scale,y:layout.y+(d.y-48)*layout.scale,w:d.w*layout.scale,h:d.h*layout.scale,size:d.size*layout.scale});
     solid(
@@ -485,7 +485,7 @@ export function sceneDraws(tick: number, feel?:FeelState, view?:{width:number;he
     else if (g) {
       const actors = arcadeDrawPlan(g, avatar, feel, !!save.settings.reducedEffects,1/layout.scale);
       actors.filter((d) => !d.footer).forEach(push);
-      if(level.arena==='courtyard'){
+      if(level.arena==='courtyard'||level.arena==='cartoon-courtyard'){
         for(let i=boardStart;i<images.length;i++){
           const d=images[i]!;images[i]={...d,x:layout.x+d.x*layout.scale,y:layout.y+(d.y-48)*layout.scale,w:d.w*layout.scale,h:d.h*layout.scale};
         }
@@ -617,13 +617,15 @@ export const ArcadePresentation = defineSystem({
     for (const c of q.cameras.chunks()) for (let i = 0; i < c.length; i++) {
       if (isCartoonClearColor(c.col(Camera).clearColor, i * 4)) cartoonScene = true;
     }
-    ctx.set(MaterialGlobals, { v0: [fade, bannerTop, banner ? 1 : 0, 0], v1: [cartoonScene ? 1 : 0, 0, 0, 0] });
+    const motion=cartoonScene?cartoonMotion(session.get().active?g:null,ctx.get(MaterialGlobals)):undefined;
+    ctx.set(MaterialGlobals, { v0: [fade, bannerTop, banner ? 1 : 0, 0], v1: [cartoonScene ? 1 : 0, 0, 0, 0],...motion?.globals });
     // Cartoon art uses the native filtered sprite batch and a shared stencil.
     // The fallback retains the static quad compositor and original source pixels.
     const modern = cartoonScene && session.get().active && g && ['play','pause','result'].includes(ui.screen)
-      ? cartoonSprites(cartoonDrawPlan(g,ctx.get(Time).step,ctx.get(ViewInfo),feel),plan.clip)
-      : cartoonScene && ['title','menu','party'].includes(ui.screen)
-        ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
+      ? cartoonSprites(cartoonDrawPlan(g,g.Tick,ctx.get(ViewInfo),feel,motion?.moving),plan.clip)
+      : cartoonScene && ui.screen==='editor'
+        ? cartoonSprites(cartoonEditorDrawPlan(ui.level,ctx.get(Time).step,desktopSaveState.get().profiles[desktopSaveState.get().active]?.avatar??'green'),plan.clip)
+        : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
     if(modern && modern.length>q.mesh.count)throw new Error(`Cartoon presentation needs ${modern.length} slots; preserved pool has ${q.mesh.count}`);
     for(const c of q.masks.chunks())for(let i=0;i<c.length;i++){
       c.set(SpriteMask,i,{size:modern?[plan.clip.right-plan.clip.left,plan.clip.bottom-plan.clip.top]:[0,0]});
@@ -696,7 +698,7 @@ export const ArcadePresentation = defineSystem({
           continue;
         }
         const d = plan.texts[slot - 1];
-        if (!d) {
+        if (!d || modern && d.footer) {
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;
         }
@@ -707,7 +709,7 @@ export const ArcadePresentation = defineSystem({
         c.set(Text2D, i, {
           visible: true,
           text: d.text,
-          font: "reference/arcade",
+          font: modern ? "cartoon/fonts/BreeSerif-Regular" : "reference/arcade",
           size: d.size,
           color: (() => {
             let [r, g, b] = d.color ?? [255, 220, 106];

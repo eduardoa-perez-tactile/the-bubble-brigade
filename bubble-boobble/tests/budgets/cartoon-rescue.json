@@ -1,4 +1,4 @@
 {
-  "replay": "tests/replays/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable.greplay",
+  "replay": "tests/replays/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena.greplay",
   "structural": { "drawCallsMax": 14 }
 }

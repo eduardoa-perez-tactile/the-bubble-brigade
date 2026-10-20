@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "count": 23,
+  "tests": [
+    {
+      "name": "cartoon animation explicit clip durations loop and clamp at boundaries",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon dragon every pose and direction preserves feet pivot and collision center",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon shooting pose and projectile appear together on the input step",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon mirrored shoot muzzle stays within four pixels of the actual initial shot center",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon trapped imp changes captured warning and escape presentation at sourced thresholds",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon planning full aspect and animation sampling cannot mutate authoritative game state",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon animation uses real walk counters and action clocks without changing physics",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    },
+    {
+      "name": "cartoon complete content redraws every campaign enemy family and combat pose",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon complete content keeps capture warning and escape distinct for all enemy families",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon complete content redraws every fruit and powerup without legacy fallback",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon complete content redraws elemental effects projectiles and boss phases",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls geometry remains an explicit opt in and preserves original campaign source",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls campaign keeps round enemies rewards and element metadata across new geometry",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls new layout retains immediate movement firing jump and pause rules",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls recorded opt in reaches party requests without changing original start actions",
+      "ok": true,
+      "steps": 6,
+      "hash": "8e7df27562e339f1",
+      "error": null
+    },
+    {
+      "name": "cartoon controls original party requests retain their original geometry and omit cartoon flag",
+      "ok": true,
+      "steps": 5,
+      "hash": "9a3c8dc4d10ac65a",
+      "error": null
+    },
+    {
+      "name": "cartoon controls normal preparation warms all bot navigation before the first combat step",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon roster reports actual downed teammates as rescuable and preserves ten stable identities",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon sprites retain complete geometry for shared stencil clipping",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon sprites preserve mirrored frame bounds at the stencil edge",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon sprites retain fractional alpha and omit invisible draws",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon sprites bound their draw list without silently dropping art",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon scene marker accepts only the dedicated camera clear color",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    }
+  ]
+}

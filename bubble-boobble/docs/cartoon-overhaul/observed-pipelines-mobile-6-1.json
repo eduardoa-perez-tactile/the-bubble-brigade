@@ -1,0 +1,103 @@
+{
+  "tier": "mobile",
+  "pipelines": [
+    {
+      "r": "2d",
+      "key": {
+        "Blit": {
+          "format": 22
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Mask": {
+          "samples": 1,
+          "format": 22
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Shape": {
+          "samples": 1,
+          "format": 22
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Sprite": {
+          "blend": 0,
+          "mask": 0,
+          "samples": 1,
+          "format": 22,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Sprite": {
+          "blend": 0,
+          "mask": 1,
+          "samples": 1,
+          "format": 22,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Text": {
+          "samples": 1,
+          "format": 22
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Forward": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "prepassed": false,
+          "samples": 1,
+          "format": 22,
+          "skinned": false,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Shadow": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "skinned": false
+        }
+      }
+    },
+    {
+      "r": "3d-program",
+      "program": "builtin:standard"
+    },
+    {
+      "r": "3d-program",
+      "program": "materials/pixel-ordered.material.ts"
+    }
+  ],
+  "blobCache": {
+    "hits": 49,
+    "misses": 0,
+    "stores": 0
+  }
+}

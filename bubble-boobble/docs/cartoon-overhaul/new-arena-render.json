@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "tests": [
+    {
+      "name": "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+      "ok": true,
+      "steps": 208,
+      "hash": "38a7083859ae2a12",
+      "shots": [
+        {
+          "name": "new_arena_768x720",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/new_arena_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "new_arena_1680x720",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/new_arena_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "new_arena_640x960",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/new_arena_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "new_arena_2520x1080",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/new_arena_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        },
+        {
+          "name": "pause_new_arena",
+          "result": {
+            "ok": true,
+            "updated": false,
+            "golden": "tests/goldens/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/pause_new_arena/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop"
+          }
+        }
+      ],
+      "error": null
+    }
+  ],
+  "scope": "Final corrected-art full-flow run; separately named new golden and replay artifacts."
+}

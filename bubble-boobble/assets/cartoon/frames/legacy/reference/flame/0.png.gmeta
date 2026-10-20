@@ -1,9 +1,0 @@
-guid = "ed950adb-4a5d-5435-bafd-df0ad19ad999"
-importer = "texture"
-
-[settings]
-kind = "sprite"
-atlas = "cartoon"
-filter = "linear"
-compression = "none"
-trim = false

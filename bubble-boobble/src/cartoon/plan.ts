@@ -1,16 +1,14 @@
 import { arenaLayout } from '../arcade/arena-layout';
-import { EnemyState, levelColumns, levelRows, type GameState, type Player } from '../arcade/types';
+import { EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
 import { partyColors } from '../arcade/party-config';
 import type { FeelState } from '../arcade/juice';
 import { desktopSaveState } from '../desktop/save';
-import sourceFrames from '../../data/sprites.json';
 import animation from '../../assets/cartoon/animation.json';
 import type { CartoonDraw } from './renderer';
 import { partyCardRect } from '../desktop/layout';
 
 type Clip = keyof typeof animation.clips;
 const clips: Readonly<Record<Clip,{frames:readonly string[];durations:readonly number[];loop:boolean}>> = animation.clips;
-const legacyFrames:Readonly<Record<string,readonly string[]>>=sourceFrames;
 
 /** Clip clocks never control input, collision, firing, or authoritative state. */
 export function clipFrame(clip:Clip, tick:number):string {
@@ -19,29 +17,30 @@ export function clipFrame(clip:Clip, tick:number):string {
   for(let i=0;i<c.frames.length;i++){if(time<c.durations[i]!)return c.frames[i]!;time-=c.durations[i]!;}
   return c.frames[c.frames.length-1]!;
 }
-export function playerClip(p:Player):Clip {
+export function playerClip(p:Player,moving=false):Clip {
   if(p.Downed)return 'down';
   if(p.Dead>0)return p.Dead>72?'hurt':'down';
   if(p.Shoot>0)return 'shoot';
   if(!p.Ground)return 'jump';
-  return Math.abs(p.VX)>.01?'run':'idle';
+  return moving||Math.abs(p.VX)>.01?'run':'idle';
 }
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
-export function dragonDraw(p:Player,skin:string,tick:number):CartoonDraw {
-  const clip=playerClip(p), squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
-  const w=48*(1+squash),h=48*(1-squash);
-  return {frame:`dragon/${skin}/${clipFrame(clip,clip==='run'?p.WalkFrame:tick)}`,
+export function dragonDraw(p:Player,skin:string,tick:number,moving=false):CartoonDraw {
+  const clip=playerClip(p,moving), squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
+  const w=64*(1+squash),h=64*(1-squash);
+  const clock=clip==='run'?p.WalkFrame:clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
+    clip==='jump'?(p.VY<0?0:clips.jump.durations[0]!):tick;
+  return {frame:`dragon/${skin}/${clipFrame(clip,clock)}`,
     x:p.X+22-w*.5,y:p.Y+44-h*120/128,width:w,height:h,flip:p.Dir<0};
 }
-function reference(name:string,tick:number):string {
-  if(name.startsWith('boss/')){
-    const pose=name.slice(5),n=pose==='move'||pose==='captured'?4:2;
-    return `legacy/derived/boss/${pose}-${Math.floor(tick/10)%n}`;
-  }
-  const frames=legacyFrames[name];
-  const path=frames?.[Math.floor(Math.max(0,tick)/10)%frames.length];
-  return path?'legacy/reference/'+path.replace(/^sprites\//,'').replace(/\.png$/,''):'';
+/** Every supported family has original cartoon masters; no pixel aliases escape here. */
+export function cartoonEnemyFrame(kind:string,state:string,tick:number):string {
+  const pose=state==='walk'?`walk-${Math.floor(Math.max(0,tick)/6)%2}`
+    :state==='bubble'?'captured-0':state==='shoot-angry'?'shoot-0':`${state}-0`;
+  return `enemy/${kind}/${pose}`;
 }
+const effectFrame=(element:string,tick:number)=>`effect/${element}-${element==='fire'?Math.floor(Math.max(0,tick)/6)%2:0}`;
+const itemFrame=(power:string|undefined,food:number)=>power?`item/${power}`:`item/food-${food}`;
 const rgba=(hex:string,alpha=1):readonly[number,number,number,number]=>[
   parseInt(hex.slice(1,3),16)/255,parseInt(hex.slice(3,5),16)/255,parseInt(hex.slice(5,7),16)/255,alpha];
 const colors=['#81b94b','#468bc8','#ce6459','#e3b953','#a87fbd','#dc9351','#54b7bf','#d88eaa','#c5c6a5','#718297'];
@@ -61,17 +60,42 @@ export function cartoonMenuDrawPlan(screen:string,tick:number,selected:number):C
   return out;
 }
 
+/** The editor keeps its authored cell hit targets while previewing the new art. */
+export function cartoonEditorDrawPlan(level:Level,tick:number,avatar:string):CartoonDraw[]{
+  const out:CartoonDraw[]=[{frame:'solid/#273c45',x:0,y:0,width:768,height:720},
+    {frame:'courtyard',x:24,y:146,width:512,height:416}];
+  for(let row=0;row<levelRows(level);row++)for(let col=0;col<levelColumns(level);col++){
+    if(level.tiles[row]?.[col])out.push({frame:row>0&&!level.tiles[row-1]?.[col]?'platform-middle':'wall',x:24+col*16,y:146+row*16,width:16,height:16});
+    else out.push({frame:'solid/#34515a',x:24+col*16,y:146+row*16,width:16,height:1,color:[1,1,1,.3]});
+  }
+  const actor=(cell:{col:number;row:number},frame:string,size=40)=>out.push({frame,x:24+cell.col*16+44/3-size/2,y:146+cell.row*16-size*120/128,width:size,height:size});
+  actor(level.player,`dragon/${avatar}/${clipFrame('idle',tick)}`,64*2/3);
+  for(const enemy of level.enemies)actor(enemy,cartoonEnemyFrame(enemy.kind,'walk',tick),56*2/3);
+  actor(level.food_spawn,'item/food-1',24);actor(level.power_spawn,'item/pink_candy',24);
+  return out;
+}
+
 /** Read-only lowering from the same authoritative state as the preserved pixel path. */
-export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState):CartoonDraw[]{
+export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly boolean[]):CartoonDraw[]{
   const layout=arenaLayout(g.Level,view),out:CartoonDraw[]=[];
   const add=(frame:string,x:number,y:number,width:number,height=width,flip=false,color?:CartoonDraw['color'])=>{
     if(!frame)return;
     out.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,flip,color});
   };
   out.push({frame:'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
-  for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<levelColumns(g.Level);col++){
-    if(!g.Level.tiles[row]?.[col])continue;
-    add(row>0&&!g.Level.tiles[row-1]?.[col]?'platform':'wall',col*24,row*24,24);
+  for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<levelColumns(g.Level);){
+    if(!g.Level.tiles[row]?.[col]){col++;continue;}
+    if(row===0||g.Level.tiles[row-1]?.[col]){add('wall',col*24,row*24,24);col++;continue;}
+    let end=col+1;
+    while(end<levelColumns(g.Level)&&g.Level.tiles[row]?.[end]&&!g.Level.tiles[row-1]?.[end])end++;
+    const width=(end-col)*24;
+    if(width===24)add('platform-middle',col*24,row*24,24);
+    else{
+      add('platform-left',col*24,row*24,24);
+      for(let x=col*24+24;x<end*24-24;x+=48)add('platform-middle',x,row*24,Math.min(48,end*24-24-x),24);
+      add('platform-right',end*24-24,row*24,24);
+    }
+    col=end;
   }
   const save=desktopSaveState.get(),avatar=save.profiles[save.active]?.avatar??'green';
   const skin=(index:number)=>g.Party?partyColors[index%partyColors.length]!:index===1?'blue':avatar;
@@ -83,7 +107,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
-    add(reference(item.Power==='thunder_potion'?'thunder-bubble':item.Power||`food/${item.Food}`,0),item.X,item.Y,32);
+    add(itemFrame(item.Power,item.Food),item.X,item.Y,32);
   }
   const entrance=(y:number,index:number)=>{
     if(g.Party?.Phase!=='prepare')return y;
@@ -93,49 +117,46 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const boss=g.Party?.Boss;
   if(boss){
     const pose=boss.Mode==='captured'?'captured':boss.Mode==='windup'?'attack':'move';
-    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)add(reference('boss/'+pose,boss.Tick),boss.X,entrance(boss.Y,0),96,96,boss.Dir>0);
+    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)add(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X-8,entrance(boss.Y,0)-16,112,112,boss.Dir<0);
   }
   for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
   for(let index=0;index<g.Enemies.length;index++){
     const e=g.Enemies[index]!;
     if(e.State===EnemyState.Trapped||e.State===EnemyState.Defeated&&e.DeadTicks===0)continue;
     const y=entrance(e.Y,index);
-    if(e.Kind==='zenchan')add('imp/'+(e.State===EnemyState.Defeated?'captured-0':e.Angry?'warning-0':`walk-${Math.floor(e.Age/6)%2}`),e.X,y,48,48,e.Dir>0);
-    else{
-      let pose=e.Angry?'angry':'walk';
-      if(e.Kind==='mighta'&&e.Shoot>0)pose=e.Angry?'shoot-angry':'shoot';
-      if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
-      add(reference(e.Kind+'/'+pose,e.Age),e.X,y,48,48,e.Dir>0);
-    }
+    let pose=e.Angry?'angry':'walk';
+    if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
+    if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
+    const size=56;
+    add(cartoonEnemyFrame(e.Kind,pose,e.Age),e.X+22-size/2,y+44-size*120/128,size,size,e.Dir<0);
   }
   for(const b of g.Bubbles){
     if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
-    const color=b.CapturedAge>1000?'#f6b36a':b.Element==='fire'?'#f5ad79':b.Element==='thunder'?'#ffdf80':b.Element==='water'?'#80d6ef':'#ffffff';
+    const color=b.CapturedAge>1000||b.Age>450&&!b.EnemyID&&!b.Element?'#f6b36a':b.Element==='fire'?'#f5ad79':b.Element==='thunder'?'#ffdf80':b.Element==='water'?'#80d6ef':'#ffffff';
     if(b.EnemyID){
       const e=g.Enemies.find(e=>e.ID===b.EnemyID);
-      if(e?.Kind==='zenchan'){
-        const escaping=b.CapturedAge>1200;
-        const rock=escaping?Math.sin(b.Age*.8)*2:0;
-        add('imp/'+(escaping?'escape-0':b.CapturedAge>1000?'warning-0':'captured-0'),b.X+6+rock,b.Y+5,32,32,escaping&&b.Age%12<6);
+      if(e){
+        const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
+        const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
+        add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
       }
-      else if(e)add(reference(e.Kind+'/'+(b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble'),b.Age),b.X+4,b.Y+4,36);
     }
     add('bubble',b.X,b.Y,44,44,false,rgba(color));
     if(b.Shooter!==undefined)add('badge/'+skin(b.Shooter),b.X+31,b.Y+31,10);
-    if(b.Element)add(reference(b.Element+'-bubble',b.Age),b.X+13,b.Y+13,18);
+    if(b.Element)add(effectFrame(b.Element,b.Age),b.X+13,b.Y+13,18);
   }
-  for(const p of g.Projectiles)add(reference(p.Bottle?'boss/bottle':p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
-  for(const effect of g.Effects)add(reference(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir>0);
+  for(const p of g.Projectiles)add(p.Bottle?'boss/bottle-0':effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
+  for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   for(let index=0;index<g.Players.length;index++){
     const p=g.Players[index]!;
-    if(p.Lives===0&&p.Dead===0)continue;
+    if(!p.Downed&&p.Lives===0&&p.Dead===0)continue;
     const grace=!!g.Party&&['combat','boss'].includes(g.Party.Phase)&&g.LevelTicks<120;
     if(!p.Downed&&!grace&&p.Invincible&&p.Invincible%12>=6)continue;
-    const draw=dragonDraw(p,skin(index),tick);
+    const draw=dragonDraw(p,skin(index),tick,!!motion?.[index]);
     add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
     if(g.Party||g.Players.length>1){
       const badgeSize=Math.min(13/layout.scale,19);
-      add('badge/'+skin(index),p.X+22-badgeSize/2,p.Y-14,badgeSize);
+      add('badge/'+skin(index),p.X+22-badgeSize/2,p.Y-32,badgeSize);
     }
     if(p.Downed)add('bubble',p.X-5,p.Y-7,54,54,false,rgba(colors[index%10]!, .8));
   }
@@ -143,12 +164,6 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const cue of feel?.cues??[]){
     const age=feel!.clock-cue.at;
     if(cue.kind==='rescue'&&age<24)add('pop',cue.x-26-age*.3,cue.y-48-26-age*.3,52+age*.6,52+age*.6,false,[.6,1,.8,1-age/24]);
-  }
-  out.push({frame:'solid/#263b42',x:0,y:0,width:768,height:48});
-  out.push({frame:'solid/#263b42',x:0,y:672,width:768,height:48});
-  for(let i=0;i<g.Players.length;i++){
-    const x=g.Party?12+i%5*152:i===0?20:126,y=g.Party?675+Math.floor(i/5)*22:680;
-    if(g.Players[i]!.Lives>0)out.push({frame:`dragon/${skin(i)}/idle-0`,x,y,width:g.Party?20:28,height:g.Party?20:28});
   }
   return out;
 }

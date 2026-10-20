@@ -13,8 +13,8 @@
         "dir": "row",
         "pad": 0,
         "align": "center",
-        "bg": "#fff3d9",
-        "radius": 14,
+        "bg": "#00000000",
+        "radius": 0,
         "w": 332,
         "h": 44,
         "justify": "center"
@@ -28,9 +28,9 @@
       "name": "Label",
       "text": "{label}",
       "style": {
-        "fontSize": 18,
+        "fontSize": 24,
         "weight": 800,
-        "color": "#382d38",
+        "color": "#30271e",
         "w": 300,
         "h": 26,
         "textAlign": "center",
@@ -55,7 +55,10 @@
         "yes": {
           "set": {
             "root": {
-              "bg": "#ffc85f"
+              "bg": "#30271e"
+            },
+            "cb_label": {
+              "color": "#f1e3bf"
             }
           }
         }

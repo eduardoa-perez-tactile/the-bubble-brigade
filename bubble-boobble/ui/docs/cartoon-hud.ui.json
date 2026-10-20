@@ -59,7 +59,8 @@
       "name": "Element",
       "children": [
         "ch_name",
-        "ch_score"
+        "ch_score",
+        "ch_score_rule"
       ],
       "style": {
         "pad": 0,
@@ -70,12 +71,12 @@
         ],
         "offset": [
           14,
-          4
+          6
         ],
-        "w": 186,
-        "h": 40,
-        "bg": "#fff3d9",
-        "radius": 12
+        "w": 144,
+        "h": 36,
+        "bg": "#f1e3bf",
+        "radius": 2
       },
       "point": "score-card"
     },
@@ -91,9 +92,9 @@
         ],
         "offset": [
           12,
-          3
+          2
         ],
-        "w": 162,
+        "w": 120,
         "h": 13,
         "fontSize": 9,
         "fitMin": 7,
@@ -112,11 +113,11 @@
         ],
         "offset": [
           12,
-          16
+          14
         ],
-        "w": 162,
-        "h": 22,
-        "fontSize": 20,
+        "w": 120,
+        "h": 20,
+        "fontSize": 18,
         "fitMin": 14,
         "weight": 800,
         "color": "#382d38"
@@ -134,15 +135,15 @@
         ],
         "offset": [
           0,
-          14
+          15
         ],
-        "w": 342,
-        "h": 24,
-        "fontSize": 20,
+        "w": 366,
+        "h": 22,
+        "fontSize": 16,
         "fitMin": 14,
         "textAlign": "center",
         "weight": 800,
-        "color": "#fff3d9"
+        "color": "#f1e3bf"
       },
       "point": "brand"
     },
@@ -151,7 +152,8 @@
       "name": "Element",
       "children": [
         "ch_round",
-        "ch_high"
+        "ch_high",
+        "ch_round_rule"
       ],
       "style": {
         "pad": 0,
@@ -162,12 +164,12 @@
         ],
         "offset": [
           -14,
-          4
+          6
         ],
-        "w": 186,
-        "h": 40,
-        "bg": "#fff3d9",
-        "radius": 12
+        "w": 168,
+        "h": 36,
+        "bg": "#f1e3bf",
+        "radius": 2
       },
       "point": "round-card"
     },
@@ -183,11 +185,11 @@
         ],
         "offset": [
           12,
-          3
+          2
         ],
-        "w": 162,
+        "w": 144,
         "h": 16,
-        "fontSize": 13,
+        "fontSize": 12,
         "fitMin": 9,
         "weight": 800,
         "color": "#382d38"
@@ -205,9 +207,9 @@
         ],
         "offset": [
           12,
-          22
+          20
         ],
-        "w": 162,
+        "w": 144,
         "h": 13,
         "fontSize": 9,
         "fitMin": 7,
@@ -219,7 +221,10 @@
       "name": "Element",
       "children": [
         "ch_lives",
-        "ch_controls"
+        "ch_controls",
+        "ch_roster_top",
+        "ch_roster_bottom",
+        "ch_classic_portrait"
       ],
       "style": {
         "pad": 0,
@@ -230,10 +235,11 @@
         ],
         "offset": [
           0,
-          672
+          656
         ],
         "w": 768,
-        "h": 48
+        "h": 64,
+        "bg": "#f1e3bf"
       }
     },
     "ch_lives": {
@@ -247,14 +253,14 @@
           0
         ],
         "offset": [
-          54,
-          17
+          66,
+          22
         ],
         "w": 380,
         "h": 18,
-        "fontSize": 12,
+        "fontSize": 14,
         "fitMin": 9,
-        "color": "#fff3d9"
+        "color": "#30271e"
       }
     },
     "ch_controls": {
@@ -269,14 +275,14 @@
         ],
         "offset": [
           -24,
-          18
+          24
         ],
         "w": 260,
         "h": 16,
-        "fontSize": 10,
+        "fontSize": 11,
         "fitMin": 8,
         "textAlign": "right",
-        "color": "#d5e2d1"
+        "color": "#746047"
       }
     },
     "ch_banner": {
@@ -285,7 +291,8 @@
       "children": [
         "ch_banner_title",
         "ch_banner_hint",
-        "ch_banner_detail"
+        "ch_banner_detail",
+        "ch_banner_rule"
       ],
       "style": {
         "pad": 0,
@@ -296,12 +303,12 @@
         ],
         "offset": [
           0,
-          56
+          54
         ],
-        "w": 516,
-        "h": 66,
-        "bg": "#fff3d9ee",
-        "radius": 16
+        "w": 360,
+        "h": 52,
+        "bg": "#f1e3bf",
+        "radius": 2
       },
       "show": "showBanner",
       "point": "banner"
@@ -318,15 +325,15 @@
         ],
         "offset": [
           0,
-          5
+          3
         ],
-        "w": 488,
-        "h": 25,
-        "fontSize": 21,
+        "w": 340,
+        "h": 20,
+        "fontSize": 16,
         "fitMin": 12,
         "textAlign": "center",
         "weight": 800,
-        "color": "#382d38"
+        "color": "#30271e"
       }
     },
     "ch_banner_hint": {
@@ -341,14 +348,14 @@
         ],
         "offset": [
           0,
-          31
+          24
         ],
-        "w": 488,
-        "h": 17,
-        "fontSize": 12,
-        "fitMin": 8,
+        "w": 340,
+        "h": 14,
+        "fontSize": 10,
+        "fitMin": 9,
         "textAlign": "center",
-        "color": "#725640"
+        "color": "#746047"
       }
     },
     "ch_banner_detail": {
@@ -363,14 +370,14 @@
         ],
         "offset": [
           0,
-          49
+          39
         ],
-        "w": 488,
-        "h": 13,
-        "fontSize": 9,
+        "w": 340,
+        "h": 12,
+        "fontSize": 8,
         "fitMin": 7,
         "textAlign": "center",
-        "color": "#725640"
+        "color": "#746047"
       }
     },
     "ch_freeze": {
@@ -381,19 +388,21 @@
         "position": "anchored",
         "anchor": [
           0.5,
-          1
+          0
         ],
         "offset": [
           0,
-          -12
+          54
         ],
         "w": 480,
         "h": 20,
-        "fontSize": 14,
+        "fontSize": 12,
         "fitMin": 10,
         "textAlign": "center",
         "weight": 800,
-        "color": "#fff3d9"
+        "color": "#fff3d9",
+        "outline": 0.04,
+        "outlineColor": "#30271e"
       }
     },
     "ch_start": {
@@ -447,6 +456,198 @@
         "weight": 800,
         "color": "#fff3d9"
       }
+    },
+    "ch_score_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 144,
+        "h": 2,
+        "bg": "#30271e"
+      }
+    },
+    "ch_round_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 168,
+        "h": 2,
+        "bg": "#30271e"
+      }
+    },
+    "ch_banner_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 360,
+        "h": 2,
+        "bg": "#30271e"
+      }
+    },
+    "ch_roster_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_portraits_top",
+        "ch_roster_top_slots"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          0
+        ],
+        "w": 740,
+        "h": 32,
+        "dir": "row"
+      },
+      "show": "party"
+    },
+    "ch_roster_top_slots": {
+      "type": "repeat",
+      "doc": "cartoon-roster-slot",
+      "property": "rosterTop"
+    },
+    "ch_roster_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_portraits_bottom",
+        "ch_roster_bottom_slots"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          32
+        ],
+        "w": 740,
+        "h": 32,
+        "dir": "row"
+      },
+      "show": "party"
+    },
+    "ch_roster_bottom_slots": {
+      "type": "repeat",
+      "doc": "cartoon-roster-slot",
+      "property": "rosterBottom"
+    },
+    "ch_classic_portrait": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/frames/dragon/green/idle-0",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          10
+        ],
+        "w": 44,
+        "h": 44
+      },
+      "property": "classicPortrait"
+    },
+    "ch_portraits_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_portraits_top_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 740,
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_portraits_top_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-portrait",
+      "property": "rosterTopPortraits"
+    },
+    "ch_portraits_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_portraits_bottom_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 740,
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_portraits_bottom_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-portrait",
+      "property": "rosterBottomPortraits"
     }
   },
   "view": {
@@ -524,6 +725,9 @@
             },
             "ch_controls": {
               "hide": true
+            },
+            "ch_classic_portrait": {
+              "hide": true
             }
           }
         }
@@ -553,6 +757,30 @@
           }
         }
       }
+    },
+    "rosterTop": {
+      "type": "list",
+      "of": "cartoon-roster-slot",
+      "default": []
+    },
+    "rosterBottom": {
+      "type": "list",
+      "of": "cartoon-roster-slot",
+      "default": []
+    },
+    "rosterTopPortraits": {
+      "type": "list",
+      "of": "cartoon-roster-portrait",
+      "default": []
+    },
+    "rosterBottomPortraits": {
+      "type": "list",
+      "of": "cartoon-roster-portrait",
+      "default": []
+    },
+    "classicPortrait": {
+      "type": "image",
+      "default": "cartoon/frames/dragon/green/idle-0"
     }
   },
   "samples": {

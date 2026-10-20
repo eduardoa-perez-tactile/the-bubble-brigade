@@ -1,4 +1,5 @@
 import { createPartyArena } from './party-arena';
+import { createCartoonArena } from '../cartoon/arena';
 import { partyEnemyFormation } from './party-spawns';
 import { createBoss, ensureThunderPickups, stepBoss } from './boss';
 import { createGame, remainingEnemies } from './game';
@@ -15,11 +16,11 @@ const idle: Input = Object.freeze({Move:0,Jump:false,Fire:false});
 const kinds = ['zenchan','monsta','banebou','mighta','pulpul','invader'];
 
 /** One authoritative party document; the campaign's arena is copied, never modified. */
-export function createPartyGame(levels:Level[], seed:number, slots:PartySlot[]=defaultPartySlots, bossWave=10):GameState {
+export function createPartyGame(levels:Level[], seed:number, slots:PartySlot[]=defaultPartySlots, bossWave=10, arena:'original'|'cartoon'='original'):GameState {
   if (![6,10].includes(slots.length) || !slots.includes('human') || slots.some(s=>!['human','ai','empty'].includes(s))) throw new Error('Choose six or ten slots with at least one human');
   if (!Number.isInteger(bossWave)||bossWave<2||bossWave>100) throw new Error('Invalid boss wave');
   if(!levels.length)throw new Error('no levels supplied');
-  const g=createGame(slots.length>6?[createPartyArena(levels[0]!)]:levels.slice(0,1),seed,slots.length);
+  const g=createGame(arena==='cartoon'?[createCartoonArena(levels[0]!)]:slots.length>6?[createPartyArena(levels[0]!)]:levels.slice(0,1),seed,slots.length);
   g.Party={Kills:slots.map(()=>0),Wave:1,BossWave:bossWave,Phase:'prepare',Timer:partyPrepareTicks,Slots:slots.slice(),ToSpawn:0,SpawnTick:0,Spawned:0,Telegraphs:[]};
   g.Enemies=[];g.Companions=Array.from({length:slots.length},()=>null);
   for(let i=0;i<g.Players.length;i++) {

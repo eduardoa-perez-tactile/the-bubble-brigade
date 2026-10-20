@@ -1,0 +1,40 @@
+{
+  "$schemaVersion": 1,
+  "guid": "f2364334-ac17-46c6-9ec5-0b25e57f0868",
+  "name": "cartoon-grid-row",
+  "title": "Cartoon Grid Row",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon grid row",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#f1e3bf",
+        "radius": 0,
+        "gap": 0
+      },
+      "children": [
+        "dgr_cells"
+      ]
+    },
+    "dgr_cells": {
+      "type": "repeat",
+      "doc": "cartoon-cell",
+      "property": "cells"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "cells": {
+      "type": "list",
+      "of": "cartoon-cell",
+      "default": []
+    }
+  }
+}

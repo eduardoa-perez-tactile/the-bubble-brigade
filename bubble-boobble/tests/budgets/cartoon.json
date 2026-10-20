@@ -1,4 +1,4 @@
 {
-  "replay": "tests/replays/cartoon_slice_ten_firing_humans_keep_full_arena_and_hud_across_every_desktop_aspect.greplay",
+  "replay": "tests/replays/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect.greplay",
   "structural": { "drawCallsMax": 14 }
 }

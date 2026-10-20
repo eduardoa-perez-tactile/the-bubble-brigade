@@ -1,0 +1,210 @@
+{
+  "tier": "desktop",
+  "pipelines": [
+    {
+      "r": "2d",
+      "key": {
+        "Blit": {
+          "format": 22
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Mask": {
+          "samples": 4,
+          "format": 40
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Shape": {
+          "samples": 4,
+          "format": 40
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Sprite": {
+          "blend": 0,
+          "mask": 0,
+          "samples": 4,
+          "format": 40,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Sprite": {
+          "blend": 0,
+          "mask": 1,
+          "samples": 4,
+          "format": 40,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "2d",
+      "key": {
+        "Text": {
+          "samples": 4,
+          "format": 40
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Forward": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "prepassed": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "debug": 0,
+          "fade": true
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Forward": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "prepassed": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Prepass": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "fade": true
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Prepass": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "samples": 4,
+          "format": 40,
+          "skinned": false
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Shadow": {
+          "program": "7946469ed20397e0",
+          "alpha": 0,
+          "double_sided": false,
+          "skinned": false
+        }
+      }
+    },
+    {
+      "r": "3d-program",
+      "program": "builtin:standard"
+    },
+    {
+      "r": "3d-program",
+      "program": "materials/pixel-ordered.material.ts"
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Forward": {
+          "program": "07dc748779860e78",
+          "alpha": 1,
+          "double_sided": true,
+          "prepassed": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "debug": 0,
+          "fade": true
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Forward": {
+          "program": "07dc748779860e78",
+          "alpha": 1,
+          "double_sided": true,
+          "prepassed": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "debug": 0
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Prepass": {
+          "program": "07dc748779860e78",
+          "alpha": 1,
+          "double_sided": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false,
+          "fade": true
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Prepass": {
+          "program": "07dc748779860e78",
+          "alpha": 1,
+          "double_sided": true,
+          "samples": 4,
+          "format": 40,
+          "skinned": false
+        }
+      }
+    },
+    {
+      "r": "3d",
+      "key": {
+        "Shadow": {
+          "program": "07dc748779860e78",
+          "alpha": 1,
+          "double_sided": true,
+          "skinned": false
+        }
+      }
+    }
+  ]
+}

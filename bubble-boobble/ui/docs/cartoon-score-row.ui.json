@@ -1,0 +1,130 @@
+{
+  "$schemaVersion": 1,
+  "guid": "63567072-b099-449f-9067-34fed3489170",
+  "name": "cartoon-score-row",
+  "title": "Cartoon Score Row",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon score row",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#f1e3bf",
+        "radius": 0,
+        "w": 608,
+        "h": 38
+      },
+      "children": [
+        "dsr_name",
+        "dsr_score",
+        "dsr_round",
+        "dsr_record"
+      ]
+    },
+    "dsr_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          24,
+          8
+        ],
+        "fontSize": 12,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "name"
+    },
+    "dsr_score": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          274,
+          8
+        ],
+        "fontSize": 12,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "score"
+    },
+    "dsr_round": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          432,
+          8
+        ],
+        "fontSize": 12,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "round"
+    },
+    "dsr_record": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          524,
+          8
+        ],
+        "fontSize": 12,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "record"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "name": {
+      "type": "text",
+      "default": ""
+    },
+    "score": {
+      "type": "text",
+      "default": ""
+    },
+    "round": {
+      "type": "text",
+      "default": ""
+    },
+    "record": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

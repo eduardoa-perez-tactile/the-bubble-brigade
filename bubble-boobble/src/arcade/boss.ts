@@ -1,7 +1,7 @@
 import { recordPartyKill, recordPartyLastKill } from './party-config';
 import { arenaWidth, arenaHeight, levelWidth, type Level } from './types';
 import { ActorSize, Tile, State, alive, body, intersects, type GameState, type PartyBoss } from './types';
-import { partySpawns } from './party-config';
+import { partySpawn } from './party-config';
 import { item } from './items';
 import { addScore } from './game';
 
@@ -18,7 +18,7 @@ export function ensureThunderPickups(g:GameState) {
   const needed=g.Players.filter(p=>alive(p)&&!p.Power.Thunder).length;
   let present=g.Items.filter(i=>i.Power==='thunder_potion').length;
   for(let i=0;present<needed&&i<g.Players.length;i++) {
-    const cell=partySpawns[i]!;
+    const cell=partySpawn(i,g.Players.length,g.Level);
     const x=g.Players.length>6?cell.col*Tile:80+i*116,y=g.Players.length>6?cell.row*Tile-32:arenaHeight(g)-Tile-32;
     if(g.Items.some(it=>it.Power==='thunder_potion'&&Math.abs(it.X-x)<32&&Math.abs(it.Y-y)<32))continue;
     g.Items.push({...item(x,y),Power:'thunder_potion',Stationary:true});present++;
