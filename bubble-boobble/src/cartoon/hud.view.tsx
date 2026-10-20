@@ -27,6 +27,7 @@ export const CartoonHudView = defineView<CartoonHudModel>({
   },
   render: model => <Screen safeArea class="desktop-screen desktop-hud-screen">
     <Widget class="cartoon-hud" doc="cartoon-hud" id="cartoon-hud" props={{
+      showStatus: () => model().showStatus ?? (model().highTitle === 'BOSS HP' || model().highTitle === 'LAST DRAGON'),
       classicPortrait: () => model().classicPortrait ?? 'cartoon/ui/portraits/green',
       waveLabel: () => model().waveLabel ?? model().round.replace(/ \/ \d+$/, ''),
       rosterWide: () => model().rosterAll ?? [...(model().rosterTop??[]),...(model().rosterBottom??[])],

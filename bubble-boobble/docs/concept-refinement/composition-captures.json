@@ -1,0 +1,750 @@
+{
+  "captures": [
+    {
+      "name": "wide-combat",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 10,
+      "atlasPages": 6,
+      "framing": {
+        "columns": 72,
+        "rows": 24,
+        "tiers": [
+          3,
+          8,
+          13,
+          18,
+          23
+        ],
+        "logicalViewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "scale": 0.7470449172576832,
+        "firstLedgeScreenY": 283.7106382978724,
+        "floorLedgeScreenY": 714.0085106382979,
+        "stageWidthOccupancy": 0.9875,
+        "firstLedgeScreenX": 36.49361702127659,
+        "headerClearanceAtHighestJumpBody": 29.753191489361726,
+        "floorArtFooterClearance": 21.087470449172542,
+        "footer": 80,
+        "actors": {
+          "player": 102.4,
+          "enemy": 89.6,
+          "boss": 168,
+          "opaquePlayerHeight": 86.4
+        },
+        "badgeClampHeaderMargin": 4,
+        "source": "Expected bounds from the shared authored layout contract; actual image/camera captured beside them."
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "native-combat",
+      "width": 768,
+      "height": 720,
+      "drawCalls": 12,
+      "atlasPages": 6,
+      "framing": {
+        "columns": 72,
+        "rows": 24,
+        "tiers": [
+          3,
+          8,
+          13,
+          18,
+          23
+        ],
+        "logicalViewport": {
+          "width": 768,
+          "height": 720
+        },
+        "scale": 0.4444444444444444,
+        "firstLedgeScreenY": 288,
+        "floorLedgeScreenY": 501.3333333333333,
+        "stageWidthOccupancy": 0.9791666666666666,
+        "firstLedgeScreenX": 21.333333333333332,
+        "headerClearanceAtHighestJumpBody": 145.6,
+        "floorArtFooterClearance": 140.44444444444446,
+        "footer": 64,
+        "actors": {
+          "player": 102.4,
+          "enemy": 89.6,
+          "boss": 168,
+          "opaquePlayerHeight": 86.4
+        },
+        "badgeClampHeaderMargin": 4,
+        "source": "Expected bounds from the shared authored layout contract; actual image/camera captured beside them."
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "tall-combat",
+      "width": 640,
+      "height": 960,
+      "drawCalls": 12,
+      "atlasPages": 6,
+      "framing": {
+        "columns": 72,
+        "rows": 24,
+        "tiers": [
+          3,
+          8,
+          13,
+          18,
+          23
+        ],
+        "logicalViewport": {
+          "width": 768,
+          "height": 1152
+        },
+        "scale": 0.4444444444444444,
+        "firstLedgeScreenY": 420,
+        "floorLedgeScreenY": 597.7777777777777,
+        "stageWidthOccupancy": 0.9791666666666666,
+        "firstLedgeScreenX": 17.777777777777775,
+        "headerClearanceAtHighestJumpBody": 145.6,
+        "floorArtFooterClearance": 140.44444444444446,
+        "footer": 64,
+        "actors": {
+          "player": 102.4,
+          "enemy": 89.6,
+          "boss": 168,
+          "opaquePlayerHeight": 86.4
+        },
+        "badgeClampHeaderMargin": 4,
+        "source": "Expected bounds from the shared authored layout contract; actual image/camera captured beside them."
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "ultrawide-combat",
+      "width": 2520,
+      "height": 1080,
+      "drawCalls": 10,
+      "atlasPages": 6,
+      "framing": {
+        "columns": 72,
+        "rows": 24,
+        "tiers": [
+          3,
+          8,
+          13,
+          18,
+          23
+        ],
+        "logicalViewport": {
+          "width": 1680,
+          "height": 720
+        },
+        "scale": 0.8043478260869565,
+        "firstLedgeScreenY": 342.2608695652174,
+        "floorLedgeScreenY": 921.3913043478261,
+        "stageWidthOccupancy": 0.8100931677018633,
+        "firstLedgeScreenX": 275.47826086956513,
+        "headerClearanceAtHighestJumpBody": 9.330434782608677,
+        "floorArtFooterClearance": 0,
+        "footer": 80,
+        "actors": {
+          "player": 102.4,
+          "enemy": 89.6,
+          "boss": 168,
+          "opaquePlayerHeight": 86.4
+        },
+        "badgeClampHeaderMargin": 4,
+        "source": "Expected bounds from the shared authored layout contract; actual image/camera captured beside them."
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "wide-help",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 12,
+      "atlasPages": 6,
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "wide-start",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 10,
+      "atlasPages": 6,
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "wide-boss",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 11,
+      "atlasPages": 6,
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    },
+    {
+      "name": "wide-help-crown",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 14,
+      "state": {
+        "X": 288,
+        "Y": -95,
+        "Downed": true,
+        "Ground": false
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    }
+  ],
+  "setup": "Five-tier concept stage, ten human slots in the actual new arena; one recorded jump, one moving player and staggered one-shot fire inputs. Controlled engine QA composition, not a human-group readability certification."
+}

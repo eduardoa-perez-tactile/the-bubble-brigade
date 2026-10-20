@@ -48,13 +48,13 @@ renderTest('concept checkpoint real player climbs five tiers then captures pops 
  input.view(1680,720,1);await step(8);
  await cheat(ConceptPlaytest,{scenario:'route'});
  expect(session.get().game!.Level.tiles.length).toBe(24);
- expect(session.get().game!.Level.tiles[0]!.length).toBe(60);
- for(let tick=0;Math.abs(session.get().game!.Players[0]!.X-288)>.001&&tick<300;tick++){
-  const dx=288-session.get().game!.Players[0]!.X;
+ expect(session.get().game!.Level.tiles[0]!.length).toBe(72);
+ for(let tick=0;Math.abs(session.get().game!.Players[0]!.X-240)>.001&&tick<300;tick++){
+  const dx=240-session.get().game!.Players[0]!.X;
   padInput([{type:'gamepadAxis',pad:0,axis:0,value:Math.max(-1,Math.min(1,dx/2.5))}]);await step(1);
  }
  padInput([{type:'gamepadAxis',pad:0,axis:0,value:0}]);await step(1);
- expect(Math.abs(session.get().game!.Players[0]!.X-288)<.001).toBe(true);
+ expect(Math.abs(session.get().game!.Players[0]!.X-240)<.001).toBe(true);
  for(const row of [18,13,8,3]){
   padInput([{type:'gamepadButton',pad:0,button:0,down:true}]);await step(1);
   padInput([{type:'gamepadButton',pad:0,button:0,down:false}]);
@@ -88,7 +88,7 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   const help=world.entities(Text2D).filter(entity=>{const t=world.get(entity,Text2D);return t.visible&&t.text==='HELP!';});
   expect(help.length).toBe(1);
   expect(world.entities(Text2D).filter(entity=>{const t=world.get(entity,Text2D);return t.visible&&t.text.includes('HELP');}).length).toBe(1);
-  const expected=cartoonRescueLabels(g,{width:width!,height:height!,safeArea:[0,0,0,0]})[0]!;
+  const expected=cartoonRescueLabels(g,{width:width!,height:height!,safeArea:[0,0,0,0]}).find(label=>label.text==='HELP!')!;
   const position=world.get(help[0]!,VisualOffset).position;
   expect(Math.abs(position[0]!-expected.x)<.01).toBe(true);
   expect(Math.abs(position[1]!-(720-expected.y))<.01).toBe(true);
@@ -104,8 +104,8 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   expect(glyphCenter-text.size/2>=box.y-.02&&glyphCenter+text.size/2<=box.y+box.h+.02).toBe(true);
   expect(box.y>=48-.02).toBe(true);expect(glyphCenter-text.size/2>=48-.02).toBe(true);
   for(const entity of world.entities(Sprite)){
-   const sprite=world.get(entity,Sprite);if(!sprite.visible||!(sprite.image??'').startsWith('cartoon/frames/badge/'))continue;
-   const at=world.get(entity,VisualOffset).position,rect={x:at[0]!-sprite.size[0]!/2,y:720-at[1]!-sprite.size[1]!/2,w:sprite.size[0]!,h:sprite.size[1]!};
+   const sprite=world.get(entity,Sprite),offset=world.get(entity,VisualOffset);if(!sprite.visible||sprite.image!=='cartoon/white'||Math.abs(offset.rotation[2]!)<.1)continue;
+   const at=offset.position,span=(sprite.size[0]!+sprite.size[1]!)/Math.SQRT2,rect={x:at[0]!-span/2,y:720-at[1]!-span/2,w:span,h:span};
    expect(rect.y>=48-.02).toBe(true);
    expect(rect.x<box.x+box.w&&rect.x+rect.w>box.x&&rect.y<box.y+box.h&&rect.y+rect.h>box.y).toBe(false);
   }
@@ -127,7 +127,8 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   expect(roster[4]!.status).toBe('OPEN SLOT');
   expect(roster[4]!.key).toBe('dragon-4');
   const stats=render.stats({width:width!,height:height!});peak=Math.max(peak,stats.drawCalls);
-  for(const id of ['score-card','round-card','brand','header','footer']){
+  const contextual=ui.rect('cartoon-hud.round-card');expect(contextual===null||contextual.width===0||contextual.height===0).toBe(true);
+  for(const id of ['score-card','brand','header','footer']){
    const r=ui.rect(`cartoon-hud.${id}`)!;expect(!!r).toBe(true);
    expect(r.x>=0&&r.y>=0&&r.x+r.width<=width!+1&&r.y+r.height<=height!+1).toBe(true);
   }
@@ -139,7 +140,7 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   const header=ui.rect('cartoon-hud.header')!,footer=ui.rect('cartoon-hud.footer')!;
   expect(Math.abs(header.height-48*unit)<1).toBe(true);
   expect(Math.abs(footer.height-footerHeight*unit)<1).toBe(true);
-  expect(offsetY+(layout.y-130*layout.scale)*unit>=header.y+header.height-.01).toBe(true);
+  expect(offsetY+(layout.y-152*layout.scale)*unit>=header.y+header.height-.01).toBe(true);
   expect(offsetY+(layout.y+(levelHeight(g.Level)+8)*layout.scale)*unit<=footer.y+.01).toBe(true);
   const visibleRows=width!/height!>=1.6?['roster-wide']:['roster-top','roster-bottom'];
   for(const id of visibleRows){const row=ui.rect(`cartoon-hud.${id}`)!;expect(!!row&&row.width>0&&row.height>0).toBe(true);expect(row.y>=footer.y-1&&row.y+row.height<=footer.y+footer.height+1).toBe(true);}

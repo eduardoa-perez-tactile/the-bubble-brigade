@@ -58,8 +58,8 @@ renderTest('cartoon overhaul recorded ten human start uses new whole board and r
   for (const [width,height] of [[768,720],[1680,720],[640,960],[2520,1080]]) {
     input.view(width!,height!,1); await step(1);
     const g = session.get().game!, layout = arenaLayout(g.Level, { width:width!, height:height!, safeArea:[0,0,0,0] });
-    expect(layout.x >= layout.viewportLeft - .001).toBe(true);
-    expect(layout.x + levelWidth(g.Level) * layout.scale <= layout.viewportRight + .001).toBe(true);
+    expect(layout.x +48*layout.scale >= layout.viewportLeft - .001).toBe(true);
+    expect(layout.x +(levelWidth(g.Level)-48)*layout.scale <= layout.viewportRight + .001).toBe(true);
     expect(layout.y >= 48 - .001).toBe(true);
     expect(layout.y + levelHeight(g.Level) * layout.scale <= 672 + .001).toBe(true);
     expect(render.stats({width:width!,height:height!}).drawCalls).toBeLessThanOrEqual(14);

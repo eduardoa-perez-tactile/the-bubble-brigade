@@ -649,12 +649,15 @@ export const ArcadePresentation = defineSystem({
           if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);
           continue;
         }
+        offsets.rotation[m]=offsets.rotation[m+1]=offsets.rotation[m+2]=0;offsets.rotation[m+3]=1;
         if (modern) {
           const d=modern[quad]!,color=d.color??[1,1,1,1];
           if(c.col(MeshRenderer).mesh[i])c.setField(MeshRenderer,i,'mesh',null);
           offsets.position[t]=d.x+d.width/2;offsets.position[t+1]=720-d.y-d.height/2;offsets.position[t+2]=0;
           offsets.scale[t]=offsets.scale[t+1]=offsets.scale[t+2]=1;
-          c.set(Sprite,i,{image:d.image,visible:true,size:[d.width,d.height],anchor:[.5,.5],flipX:!!d.flip,
+          if(d.diamond){offsets.rotation[m+2]=.3826834323650898;offsets.rotation[m+3]=.9238795325112867;}
+          const side=d.diamond?Math.SQRT1_2:1;
+          c.set(Sprite,i,{image:d.image,visible:true,size:[d.width*side,d.height*side],anchor:[.5,.5],flipX:!!d.flip,
             blend:'Alpha',maskInteraction:'VisibleInside',unlit:true,order:quad,
             color:[color[0]*(1-fade),color[1]*(1-fade),color[2]*(1-fade),color[3]??1]});
           continue;
@@ -740,7 +743,9 @@ export const ArcadePresentation = defineSystem({
               "ff"
             );
           })(),
-          align: "Left",
+          align: modern && 'worldNumber' in d && d.worldNumber ? "Center" : "Left",
+          outlineWidth: modern && 'worldNumber' in d && d.worldNumber ? .08 : 0,
+          outlineColor: "#172124ff",
           order: modern ? 10000 + slot : slot,
         });
       }

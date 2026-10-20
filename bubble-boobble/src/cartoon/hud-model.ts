@@ -18,6 +18,7 @@ export interface RosterSlot {
 export interface CartoonHudModel extends HudModel {
   classicPortrait?: string;
   waveLabel?: string;
+  showStatus?: boolean;
   rosterAll?: RosterSlot[];
   rosterTop?: RosterSlot[];
   rosterBottom?: RosterSlot[];
@@ -42,7 +43,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
     return { key: `dragon-${slot}`, number: String(slot + 1), color: skin, condition,
       name: partyNames[slot]!, status, portrait: `cartoon/ui/portraits/${skin}`, active, down };
   });
-  return { ...base, waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
+  return { ...base, showStatus: base.highTitle === 'BOSS HP' || base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
     showStartCue: base.showStartCue && (game.Party.Phase === 'prepare' ? game.Party.Timer <= 90 : game.LevelTicks < 30),
     rosterAll: roster, rosterTop: roster.slice(0, 5), rosterBottom: roster.slice(5) };
 }

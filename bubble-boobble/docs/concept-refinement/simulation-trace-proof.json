@@ -1,0 +1,44 @@
+{
+  "protectedOriginalTests": {
+    "identical": 280,
+    "expected": 280,
+    "missing": 0,
+    "divergences": [],
+    "allowances": 0
+  },
+  "immediatePreRefinementBaseline": {
+    "identical": 299,
+    "expected": 301,
+    "intentionalOptInGeometryChanges": [
+      {
+        "file": "cartoon_controls_recorded_opt_in_reaches_party_requests_without_changing_original_start_actions.hashtrace",
+        "step": 5,
+        "components": [
+          "ArcadeVisual",
+          "LocalTransform",
+          "WorldTransform",
+          "doc:arcade.session"
+        ],
+        "reason": "Recorded explicitly opted-in cartoon route now constructs the approved72x24 arena and revised spread spawns. Original routes remain strictly identical."
+      },
+      {
+        "file": "concept_controls_recorded_solo_default_nine_bots_ten_humans_pause_and_restart_preserve_mode_and_geometry.hashtrace",
+        "step": 8,
+        "components": [
+          "ArcadeVisual",
+          "LocalTransform",
+          "WorldTransform",
+          "doc:arcade.session"
+        ],
+        "reason": "Recorded explicitly opted-in cartoon route now constructs the approved72x24 arena and revised spread spawns. Original routes remain strictly identical."
+      }
+    ]
+  },
+  "newTests": [
+    "refinement_controls_enlarged_actors_retain_collision_feet_and_crown_alpha_clears_the_header.hashtrace",
+    "refinement_controls_first_visible_shot_contains_enlarged_source_mouth_in_both_directions.hashtrace",
+    "refinement_controls_five_shelf_section_rhythm_and_visible_identity_markers_match_their_actors.hashtrace",
+    "refinement_controls_large_lower_gap_has_a_real_upper_detour_without_a_jump_upgrade.hashtrace"
+  ],
+  "note": "No hash allowances were used. Raw directory diffs exit1 for new test filenames and the two explicitly classified opt-in starts. Pure helper tests have zero engine steps; their route assertions execute real stepGame calls inside the test. Commit labels identify checkout HEAD, not uncommitted source; engine0.1.0 is not a unique engine revision."
+}

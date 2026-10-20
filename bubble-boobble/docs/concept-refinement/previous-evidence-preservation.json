@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "baseline": "71e9d527c783940c2365a2344847f53871c91d38",
+  "checked": 382,
+  "changed": [],
+  "scope": "Previous concept-playable evidence and checkpoint replay bytes; all golden files associated with the protected48original pixel T1 cases.",
+  "inventory": "preserved-evidence-sha256.json"
+}

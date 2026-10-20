@@ -10,6 +10,8 @@ export interface CartoonDraw {
   width: number;
   height: number;
   flip?: boolean;
+  /** Rotated white quad; width/height describe its final axis-aligned bounds. */
+  diamond?: boolean;
   color?: readonly [number, number, number, number?];
 }
 export interface CartoonSprite extends CartoonDraw {image:string}

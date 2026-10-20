@@ -1,5 +1,5 @@
 {
-  "replay": "tests/replays/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable.greplay",
+  "replay": "tests/replays/refinement_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable.greplay",
   "structural": {
     "drawCallsMax": 14
   }

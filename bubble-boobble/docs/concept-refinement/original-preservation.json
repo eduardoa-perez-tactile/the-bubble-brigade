@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "baseline": "ed544181bdaea98c76dd7831318b6751f06b7735",
+  "checked": 1625,
+  "changed": [],
+  "scope": [
+    "bubble-boobble/docs/migration/",
+    "bubble-boobble/tests/replays/",
+    "bubble-boobble/tests/goldens/",
+    "bubble-boobble/data/",
+    "bubble-boobble/assets/reference/",
+    "bubble-boobble/assets/pixel-renderer/",
+    "AGENTS.md",
+    "bubble-boobble/AGENTS.md",
+    "bubble-boobble/PROJECT.md",
+    "bubble-boobble/scenes/arcade.scene.json"
+  ]
+}

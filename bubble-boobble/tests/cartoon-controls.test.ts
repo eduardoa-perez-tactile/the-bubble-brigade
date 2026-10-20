@@ -17,7 +17,7 @@ worldTest('cartoon controls geometry remains an explicit opt in and preserves or
   expect(original.Level.arena === 'cartoon-courtyard').toBe(false);
   const game = createPartyGame(campaign, 42, ['human','ai','ai','ai','ai','ai','ai','ai','ai','ai'], 10, 'cartoon');
   expect(game.Level.arena).toBe('cartoon-courtyard');
-  expect(levelColumns(game.Level)).toBe(60);
+  expect(levelColumns(game.Level)).toBe(72);
   expect(levelRows(game.Level)).toBe(24);
   expect(game.Players.length).toBe(10);
   expect(game.Party!.Slots).toEqual(['human','ai','ai','ai','ai','ai','ai','ai','ai','ai']);
@@ -26,7 +26,7 @@ worldTest('cartoon controls geometry remains an explicit opt in and preserves or
   const spawns = Array.from({ length: 10 }, (_, index) => cartoonSpawn(index));
   expect(new Set(spawns.map(cell => `${cell.col},${cell.row}`)).size).toBe(10);
   for (const cell of spawns) {
-    expect(cell.col >= 2 && cell.col + 1 < 58).toBe(true);
+    expect(cell.col >= 2 && cell.col + 1 < 70).toBe(true);
     expect(game.Level.tiles[cell.row]![cell.col]!).toBeGreaterThan(0);
     expect(game.Level.tiles[cell.row - 1]![cell.col]!).toBe(0);
     expect(game.Level.tiles[cell.row - 2]![cell.col]!).toBe(0);

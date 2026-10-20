@@ -1,0 +1,1903 @@
+{
+  "ok": true,
+  "js": "v8",
+  "passed": 4,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+      "ok": true,
+      "steps": 46,
+      "hash": "0570503cc1895963",
+      "millis": 12723.024625,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "title",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/title/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "menu",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/menu/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "modes",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/modes/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/party/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "profiles",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/profiles/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "new-profile",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/new_profile/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "scores",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/scores/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "settings",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/settings/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "help",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/help/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "credits",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/credits/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/editor/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "menu_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/menu_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "menu_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/menu_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "menu_2520x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/menu_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/party_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/party_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "party_2520x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/party_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/editor_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/editor_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "editor_2520x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens/editor_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ],
+      "logs": [
+        "cartoon complete menu route peak draws 14"
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.018017173913043482,
+          "maxMs": 0.033583
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.000346108695652174,
+          "maxMs": 0.0015
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00011326086956521744,
+          "maxMs": 0.000417
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.092833,
+          "maxMs": 0.092833
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00042034782608695655,
+          "maxMs": 0.001917
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.000592326086956522,
+          "maxMs": 0.00125
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.562208,
+          "maxMs": 0.562208
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.1601096521739131,
+          "maxMs": 0.9550420000000001
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.006786173913043477,
+          "maxMs": 0.064791
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.010944739130434781,
+          "maxMs": 0.150917
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.06704984782608694,
+          "maxMs": 1.828208
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.17893565217391297,
+          "maxMs": 2.280542
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.004308739130434783,
+          "maxMs": 0.056458
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.005297999999999999,
+          "maxMs": 0.059083000000000004
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0003948695652173913,
+          "maxMs": 0.000791
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0005090869565217395,
+          "maxMs": 0.0036669999999999997
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00041845652173913046,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00037676086956521754,
+          "maxMs": 0.000875
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00027352173913043485,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0007255434782608699,
+          "maxMs": 0.0012920000000000002
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.00038763043478260876,
+          "maxMs": 0.000917
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0010642826086956529,
+          "maxMs": 0.003709
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0013052826086956527,
+          "maxMs": 0.007666000000000001
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0004900869565217393,
+          "maxMs": 0.001625
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 46,
+          "meanMs": 0.0003550434782608698,
+          "maxMs": 0.00175
+        }
+      ],
+      "script": {
+        "ms": 9799.600033,
+        "allocatedKB": 76300.0703125,
+        "gcs": 4
+      }
+    },
+    {
+      "name": "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+      "ok": true,
+      "steps": 341,
+      "hash": "574079dd0f90fff7",
+      "millis": 5813.013917,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "landed_tier_18",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/landed_tier_18/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landed_tier_13",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/landed_tier_13/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landed_tier_8",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/landed_tier_8/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "landed_tier_3",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/landed_tier_3/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "actual_fired_capture",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/actual_fired_capture/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "next_wave",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/next_wave/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.013607155425219938,
+          "maxMs": 0.022584
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0001543049853372435,
+          "maxMs": 0.0006659999999999999
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.000034586510263929665,
+          "maxMs": 0.00025
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.07037500000000001,
+          "maxMs": 0.07037500000000001
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.041021,
+          "maxMs": 0.051917
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.006104,
+          "maxMs": 0.009375
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0026665,
+          "maxMs": 0.003375
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0027705,
+          "maxMs": 0.003708
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.003083,
+          "maxMs": 0.004291
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0035625,
+          "maxMs": 0.005334
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002438,
+          "maxMs": 0.002959
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0029375,
+          "maxMs": 0.003916
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0024584999999999997,
+          "maxMs": 0.002959
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.004666,
+          "maxMs": 0.007791
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0020835000000000003,
+          "maxMs": 0.0025830000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002208,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0026045,
+          "maxMs": 0.003542
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0021045,
+          "maxMs": 0.0024590000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0022285,
+          "maxMs": 0.002291
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0019585,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0024790000000000003,
+          "maxMs": 0.0025830000000000002
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0030205,
+          "maxMs": 0.0038330000000000005
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002792,
+          "maxMs": 0.0029170000000000003
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002229,
+          "maxMs": 0.002291
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.002333,
+          "maxMs": 0.0025830000000000002
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0020829999999999998,
+          "maxMs": 0.002541
+        },
+        {
+          "name": "gameengine.cheat:concept.playtest",
+          "native": false,
+          "runs": 2,
+          "meanMs": 2.7039375000000003,
+          "maxMs": 3.169125
+        },
+        {
+          "name": "gameengine.cheat:concept.hit",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0064165,
+          "maxMs": 0.009666000000000001
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.009104,
+          "maxMs": 0.01475
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 2,
+          "meanMs": 0.0071460000000000004,
+          "maxMs": 0.012167
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.000262818181818182,
+          "maxMs": 0.003666
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0002625923753665691,
+          "maxMs": 0.004167
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.17,
+          "maxMs": 0.17
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.03166460410557187,
+          "maxMs": 0.278916
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.002722237536656886,
+          "maxMs": 0.0235
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.16824622580645154,
+          "maxMs": 1.839
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.016012457478005872,
+          "maxMs": 0.129625
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.1730531524926686,
+          "maxMs": 6.089334
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0018236656891495577,
+          "maxMs": 0.024916999999999998
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.003236087976539585,
+          "maxMs": 0.126917
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.00028006744868035215,
+          "maxMs": 0.003666
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.00023387096774193564,
+          "maxMs": 0.003542
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0002011085043988271,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.00023923753665689167,
+          "maxMs": 0.0035
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.00016188856304985346,
+          "maxMs": 0.003125
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0003896539589442814,
+          "maxMs": 0.00425
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.00019248680351906174,
+          "maxMs": 0.000792
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0004690850439882685,
+          "maxMs": 0.001459
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0005226363636363624,
+          "maxMs": 0.00175
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0001996451612903227,
+          "maxMs": 0.000834
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 341,
+          "meanMs": 0.0001709384164222875,
+          "maxMs": 0.0035
+        }
+      ],
+      "script": {
+        "ms": 3968.1645009999997,
+        "allocatedKB": 522298.1171875,
+        "gcs": 17
+      }
+    },
+    {
+      "name": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+      "ok": true,
+      "steps": 171,
+      "hash": "df03e86a79a6a9bb",
+      "millis": 11579.689792,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "actual_hud_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/actual_hud_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "actual_hud_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/actual_hud_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "actual_hud_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/actual_hud_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "actual_hud_2520x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/actual_hud_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_apex_help_768x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/crown_apex_help_768x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_apex_help_1680x720",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/crown_apex_help_1680x720/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_apex_help_640x960",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/crown_apex_help_640x960/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_apex_help_2520x1080",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/crown_apex_help_2520x1080/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "contact_rescue",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/contact_rescue/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/boss/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "victory",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/victory/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "restarted",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable/restarted/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.01422175438596491,
+          "maxMs": 0.021917
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00016907602339181292,
+          "maxMs": 0.000625
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00004312280701754395,
+          "maxMs": 0.00033299999999999996
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.043415999999999996,
+          "maxMs": 0.043415999999999996
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.02313916666666667,
+          "maxMs": 0.032209
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.006993000000000002,
+          "maxMs": 0.026959
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002368,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0025208333333333337,
+          "maxMs": 0.003
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0025833333333333333,
+          "maxMs": 0.005875
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0022571666666666664,
+          "maxMs": 0.003375
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0028541666666666663,
+          "maxMs": 0.006834
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002118,
+          "maxMs": 0.003208
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002048666666666667,
+          "maxMs": 0.002417
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0021181666666666666,
+          "maxMs": 0.00275
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0018821666666666668,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0026805,
+          "maxMs": 0.0050409999999999995
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0018956666666666664,
+          "maxMs": 0.002666
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0017916666666666665,
+          "maxMs": 0.002
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0021179999999999997,
+          "maxMs": 0.0025830000000000002
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0021876666666666663,
+          "maxMs": 0.0029170000000000003
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002236166666666667,
+          "maxMs": 0.0025840000000000004
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002159666666666667,
+          "maxMs": 0.0027080000000000003
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.002118,
+          "maxMs": 0.0022500000000000003
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 6,
+          "meanMs": 1.3355558333333333,
+          "maxMs": 4.054917
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.004312666666666667,
+          "maxMs": 0.008792
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.0025555,
+          "maxMs": 0.003292
+        },
+        {
+          "name": "gameengine.cheat:concept.playtest",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.6662916666666666,
+          "maxMs": 2.051916
+        },
+        {
+          "name": "gameengine.cheat:concept.hit",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.034826499999999996,
+          "maxMs": 0.18604099999999998
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.007159666666666666,
+          "maxMs": 0.014166
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 6,
+          "meanMs": 0.003742833333333333,
+          "maxMs": 0.00925
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0003009239766081873,
+          "maxMs": 0.003584
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0003070000000000002,
+          "maxMs": 0.00425
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.141541,
+          "maxMs": 0.141541
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.059141345029239754,
+          "maxMs": 0.269166
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.002833573099415203,
+          "maxMs": 0.020208999999999998
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.14688985380116967,
+          "maxMs": 9.762334
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.01840126315789474,
+          "maxMs": 0.46770900000000004
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.20114184210526298,
+          "maxMs": 4.751084
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0018981578947368377,
+          "maxMs": 0.021625000000000002
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0036313216374268945,
+          "maxMs": 0.104459
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00024489473684210546,
+          "maxMs": 0.000875
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0002460818713450294,
+          "maxMs": 0.0036669999999999997
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0002166491228070177,
+          "maxMs": 0.000959
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00020588888888888903,
+          "maxMs": 0.00075
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00014816959064327495,
+          "maxMs": 0.000542
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00043078947368421083,
+          "maxMs": 0.004583
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00022806432748538022,
+          "maxMs": 0.003792
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0005301871345029243,
+          "maxMs": 0.0045000000000000005
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0006447192982456144,
+          "maxMs": 0.005417
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.0002132222222222224,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 171,
+          "meanMs": 0.00016861403508771941,
+          "maxMs": 0.000875
+        }
+      ],
+      "script": {
+        "ms": 10690.637702,
+        "allocatedKB": 307199.671875,
+        "gcs": 9
+      }
+    },
+    {
+      "name": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+      "ok": true,
+      "steps": 155,
+      "hash": "36db577db054073d",
+      "millis": 9839.518208,
+      "tier": "t1",
+      "shots": [
+        {
+          "name": "crown_help_fold_cover",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/crown_help_fold_cover/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 4.7198891905964047e-8,
+            "max": 0.005277005489915609,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_help_iphone_notch",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/crown_help_iphone_notch/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "crown_help_tablet",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/crown_help_tablet/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 2.5348725785079296e-7,
+            "max": 0.015226062387228012,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss_fold_cover",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/boss_fold_cover/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 4.7198891905964047e-8,
+            "max": 0.005277005489915609,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss_iphone_notch",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/boss_iphone_notch/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 0,
+            "max": 0,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        },
+        {
+          "name": "boss_tablet",
+          "result": {
+            "ok": true,
+            "golden": "tests/goldens/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/boss_tablet/desktop/metal.png",
+            "family": "metal",
+            "tier": "desktop",
+            "mean": 6.638607032982691e-7,
+            "max": 0.016392555087804794,
+            "threshold": 0.009999999776482582,
+            "maxCap": 0.8999999761581421
+          }
+        }
+      ],
+      "systems": [
+        {
+          "name": "gameengine.Input",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.014025516129032266,
+          "maxMs": 0.021958
+        },
+        {
+          "name": "gameengine.WorldLoading",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00018552258064516146,
+          "maxMs": 0.0007080000000000001
+        },
+        {
+          "name": "gameengine.WallClock",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00003282580645161289,
+          "maxMs": 0.000375
+        },
+        {
+          "name": "gameengine.meta:load",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.047375,
+          "maxMs": 0.047375
+        },
+        {
+          "name": "gameengine.cheat:arcade.pop-burst",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.023583333333333335,
+          "maxMs": 0.036375000000000005
+        },
+        {
+          "name": "gameengine.cheat:arcade.sprite-sizing",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0033746666666666664,
+          "maxMs": 0.0041659999999999996
+        },
+        {
+          "name": "gameengine.cheat:arcade.reset",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0023326666666666665,
+          "maxMs": 0.002666
+        },
+        {
+          "name": "gameengine.cheat:party.reset",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0024306666666666665,
+          "maxMs": 0.003042
+        },
+        {
+          "name": "gameengine.cheat:party.clear-wave",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.004291333333333333,
+          "maxMs": 0.009082999999999999
+        },
+        {
+          "name": "gameengine.cheat:party.rescue-setup",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0024443333333333335,
+          "maxMs": 0.003333
+        },
+        {
+          "name": "gameengine.cheat:party.finish-boss",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0034716666666666667,
+          "maxMs": 0.005666
+        },
+        {
+          "name": "gameengine.cheat:party.powerup",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.00225,
+          "maxMs": 0.0026249999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.last-enemy",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002055333333333333,
+          "maxMs": 0.0026249999999999997
+        },
+        {
+          "name": "gameengine.cheat:party.hit-dragon",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002347,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:party.boss-duel",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002472,
+          "maxMs": 0.00275
+        },
+        {
+          "name": "gameengine.cheat:party.protect-team",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.003347333333333333,
+          "maxMs": 0.0054589999999999994
+        },
+        {
+          "name": "gameengine.cheat:party.final-pop",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0023886666666666665,
+          "maxMs": 0.002791
+        },
+        {
+          "name": "gameengine.cheat:party.boss-soak",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0024583333333333336,
+          "maxMs": 0.002833
+        },
+        {
+          "name": "gameengine.cheat:party.feel-showcase",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0024306666666666665,
+          "maxMs": 0.002792
+        },
+        {
+          "name": "gameengine.cheat:party.feedback-cluster",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0022503333333333334,
+          "maxMs": 0.002375
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-player-motion",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002333,
+          "maxMs": 0.002541
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-top-traversal",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002916666666666667,
+          "maxMs": 0.00325
+        },
+        {
+          "name": "gameengine.cheat:arcade.prepare-scoring",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0028610000000000003,
+          "maxMs": 0.003333
+        },
+        {
+          "name": "gameengine.cheat:cartoon.overhaul",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.777889,
+          "maxMs": 2.328875
+        },
+        {
+          "name": "gameengine.cheat:cartoon.party-reset",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.002791333333333333,
+          "maxMs": 0.003208
+        },
+        {
+          "name": "gameengine.cheat:cartoon.capture-states",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0024443333333333335,
+          "maxMs": 0.0027080000000000003
+        },
+        {
+          "name": "gameengine.cheat:concept.playtest",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.6994723333333334,
+          "maxMs": 2.093709
+        },
+        {
+          "name": "gameengine.cheat:concept.hit",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.039875,
+          "maxMs": 0.10074999999999999
+        },
+        {
+          "name": "gameengine.cheat:harness.reset",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.007180666666666668,
+          "maxMs": 0.015000000000000001
+        },
+        {
+          "name": "gameengine.cheat:port.movement",
+          "native": false,
+          "runs": 3,
+          "meanMs": 0.0036386666666666664,
+          "maxMs": 0.006208
+        },
+        {
+          "name": "gameengine.AnimatorInit",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00032582580645161314,
+          "maxMs": 0.003583
+        },
+        {
+          "name": "gameengine.Skeleton2DInit",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.0002935548387096776,
+          "maxMs": 0.00325
+        },
+        {
+          "name": "ArcadeBoot",
+          "native": false,
+          "runs": 1,
+          "meanMs": 0.162167,
+          "maxMs": 0.162167
+        },
+        {
+          "name": "DesktopSystem",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.032558599999999986,
+          "maxMs": 0.279709
+        },
+        {
+          "name": "ArcadeEditorInput",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.0026585806451612857,
+          "maxMs": 0.018334
+        },
+        {
+          "name": "ArcadeStep",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.14792449032258054,
+          "maxMs": 0.4975
+        },
+        {
+          "name": "ArcadeAudioSystem",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.01569677419354839,
+          "maxMs": 0.123583
+        },
+        {
+          "name": "ArcadePool",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.1741333677419355,
+          "maxMs": 4.321917
+        },
+        {
+          "name": "PortBoot",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.001968219354838705,
+          "maxMs": 0.037542
+        },
+        {
+          "name": "RiseAndPop",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.002725025806451609,
+          "maxMs": 0.021667000000000002
+        },
+        {
+          "name": "gameengine.Timeline",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00027716774193548406,
+          "maxMs": 0.0013340000000000001
+        },
+        {
+          "name": "gameengine.Animator",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00022447741935483883,
+          "maxMs": 0.001916
+        },
+        {
+          "name": "gameengine.Clip2D",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00020836129032258082,
+          "maxMs": 0.001
+        },
+        {
+          "name": "gameengine.Tween",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00022444516129032271,
+          "maxMs": 0.00075
+        },
+        {
+          "name": "gameengine.VisualTweenCleanup",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00013604516129032268,
+          "maxMs": 0.000417
+        },
+        {
+          "name": "gameengine.Skeleton2D",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.0003962645161290326,
+          "maxMs": 0.0012079999999999999
+        },
+        {
+          "name": "gameengine.AnimatorSkeleton2D",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.0002040580645161292,
+          "maxMs": 0.000875
+        },
+        {
+          "name": "gameengine.Physics2D",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.0005004838709677423,
+          "maxMs": 0.0037500000000000003
+        },
+        {
+          "name": "gameengine.Physics3D",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.000637903225806452,
+          "maxMs": 0.003625
+        },
+        {
+          "name": "gameengine.ParticleClock",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00021080000000000014,
+          "maxMs": 0.001042
+        },
+        {
+          "name": "gameengine.Skeleton2DFollow",
+          "native": false,
+          "runs": 155,
+          "meanMs": 0.00016589032258064527,
+          "maxMs": 0.000958
+        }
+      ],
+      "script": {
+        "ms": 9012.911685000001,
+        "allocatedKB": 334199.8203125,
+        "gcs": 11
+      }
+    }
+  ],
+  "adapter": {
+    "backend": "metal",
+    "device": "Apple M2 Max",
+    "family": "metal",
+    "tier": "desktop"
+  }
+}

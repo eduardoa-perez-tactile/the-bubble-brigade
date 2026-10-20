@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
+}

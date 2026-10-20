@@ -1,4 +1,5 @@
 import { arenaLayout } from '../arcade/arena-layout';
+import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
 import { cartoonHelpAnchor } from './help-layout';
 import { EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
 import { partyColors } from '../arcade/party-config';
@@ -26,9 +27,9 @@ export function playerClip(p:Player,moving=false):Clip {
   return moving||Math.abs(p.VX)>.01?'run':'idle';
 }
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
-export function dragonDraw(p:Player,skin:string,tick:number,moving=false):CartoonDraw {
+export function dragonDraw(p:Player,skin:string,tick:number,moving=false,size=64):CartoonDraw {
   const clip=playerClip(p,moving), squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
-  const w=64*(1+squash),h=64*(1-squash);
+  const w=size*(1+squash),h=size*(1-squash);
   const clock=clip==='run'?p.WalkFrame:clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
     clip==='jump'?(p.VY<0?0:clips.jump.durations[0]!):tick;
   return {frame:`dragon/${skin}/${clipFrame(clip,clock)}`,
@@ -78,14 +79,21 @@ export function cartoonEditorDrawPlan(level:Level,tick:number,avatar:string):Car
 
 /** Read-only lowering from the same authoritative state as the preserved pixel path. */
 export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly boolean[]):CartoonDraw[]{
-  const layout=arenaLayout(g.Level,view),out:CartoonDraw[]=[];
+  const layout=arenaLayout(g.Level,view),out:CartoonDraw[]=[],markers:CartoonDraw[]=[];
   const add=(frame:string,x:number,y:number,width:number,height=width,flip=false,color?:CartoonDraw['color'])=>{
     if(!frame)return;
     out.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,flip,color});
   };
+  const marker=(frame:string,x:number,y:number,width:number,height=width,diamond=false)=>markers.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,diamond});
   out.push({frame:'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
   const composed=g.Level.arena==='cartoon-courtyard',columns=levelColumns(g.Level);
-  const capHeight=composed?32:24;
+  const capHeight=composed?CARTOON_PLATFORM_HEIGHT:24,capSpan=composed?CARTOON_PLATFORM_SPAN:48;
+  if(composed){
+    // Continue the two existing masonry faces through decorative headroom;
+    // neither this art nor the background changes the collision tiles.
+    const top=Math.floor((layout.viewportTop-layout.y)/layout.scale/24)*24;
+    for(const col of [1,columns-2])for(let y=top;y<0;y+=24)add('wall',col*24,y,24);
+  }
   for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<columns;){
     // Keep the 24px inner masonry face at the actual collision edge. The
     // outer backing tile remains solid in simulation but the painted room
@@ -99,7 +107,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(width===24)add('platform-middle',col*24,row*24,24,capHeight);
     else{
       add('platform-left',col*24,row*24,24,capHeight);
-      for(let x=col*24+24;x<end*24-24;x+=48)add('platform-middle',x,row*24,Math.min(48,end*24-24-x),capHeight);
+      for(let x=col*24+24;x<end*24-24;x+=capSpan)add('platform-middle',x,row*24,Math.min(capSpan,end*24-24-x),capHeight);
       add('platform-right',end*24-24,row*24,24,capHeight);
     }
     col=end;
@@ -124,7 +132,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const boss=g.Party?.Boss;
   if(boss){
     const pose=boss.Mode==='captured'?'captured':boss.Mode==='windup'?'attack':'move';
-    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)add(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X-8,entrance(boss.Y,0)-16,112,112,boss.Dir<0);
+    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)add(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X+48-(composed?CARTOON_BOSS_SIZE:112)/2,(composed?entrance(boss.Y,0)+96-CARTOON_BOSS_SIZE*120/128:entrance(boss.Y,0)-16),composed?CARTOON_BOSS_SIZE:112,composed?CARTOON_BOSS_SIZE:112,boss.Dir<0);
   }
   for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
   for(let index=0;index<g.Enemies.length;index++){
@@ -134,7 +142,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     let pose=e.Angry?'angry':'walk';
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
-    const size=56;
+    const size=composed?CARTOON_ENEMY_SIZE:56;
     add(cartoonEnemyFrame(e.Kind,pose,e.Age),e.X+22-size/2,y+44-size*120/128,size,size,e.Dir<0);
   }
   for(const b of g.Bubbles){
@@ -156,23 +164,25 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   for(let index=0;index<g.Players.length;index++){
     const p=g.Players[index]!;
-    if(!p.Downed&&p.Lives===0&&p.Dead===0)continue;
-    const grace=!!g.Party&&['combat','boss'].includes(g.Party.Phase)&&g.LevelTicks<120;
-    if(!p.Downed&&!grace&&p.Invincible&&p.Invincible%12>=6)continue;
+    if(!cartoonPlayerVisible(p,g.Party?.Phase,g.LevelTicks,!!g.Party))continue;
     const help=p.Downed?cartoonHelpAnchor(p,layout):undefined;
     if(help){
-      add('solid/#3c3630',help.x-1,help.y-1,62,26);
-      add('solid/#fff0c9',help.x,help.y,60,24);
-      add('solid/#fff0c9',help.x+25,help.y+24,10,5);
+      marker('solid/#3c3630',help.x-1,help.y-1,62,26);
+      marker('solid/#fff0c9',help.x,help.y,60,24);
+      marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
     }
-    const draw=dragonDraw(p,skin(index),tick,!!motion?.[index]);
+    const draw=dragonDraw(p,skin(index),tick,!!motion?.[index],composed?CARTOON_PLAYER_SIZE:64);
     add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
     if(g.Party||g.Players.length>1){
-      const badgeSize=Math.min(13/layout.scale,19);
-      add('badge/'+skin(index),help?help.x-badgeSize-4:p.X+22-badgeSize/2,help?help.y+(24-badgeSize)/2:p.Y-32,badgeSize);
+      const badge=cartoonBadgeAnchor(p,layout,help);
+      const color=colors[partyColors.findIndex(c=>c===skin(index))]??colors[index%10]!;
+      marker('solid/#172124',badge.x,badge.y,badge.size,badge.size,true);
+      marker('solid/'+color,badge.x+1.5/layout.scale,badge.y+1.5/layout.scale,badge.size-3/layout.scale,badge.size-3/layout.scale,true);
     }
     if(p.Downed)add('bubble',p.X-5,p.Y-7,54,54,false,rgba(colors[index%10]!, .8));
   }
+  // Keep all existing-white marker/plaque quads adjacent after actor images.
+  out.push(...markers);
   for(const p of g.Particles)if(!p.Text){const size=20+Math.max(0,12-p.Life)*1.8;add('pop',p.X+22-size/2,p.Y+22-size/2,size,size,false,[1,1,1,Math.min(1,p.Life/8)]);}
   for(const cue of feel?.cues??[]){
     const age=feel!.clock-cue.at;

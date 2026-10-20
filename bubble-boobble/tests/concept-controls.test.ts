@@ -5,6 +5,7 @@ import { createGame, stepGame } from '../src/arcade/game';
 import { createPartyGame, preparePartyWave, partyWaveBudget } from '../src/arcade/party';
 import { buildCompanionGraph } from '../src/arcade/companion';
 import { blocked } from '../src/arcade/physics';
+import { cartoonBadgeAnchor } from '../src/cartoon/actor-layout';
 import { cartoonHelpAnchor } from '../src/cartoon/help-layout';
 import { cartoonDrawPlan } from '../src/cartoon/plan';
 import { cartoonRescueLabels } from '../src/cartoon/labels';
@@ -104,13 +105,13 @@ worldTest('concept controls jump trajectory and unupgraded movement retain produ
 },{scene:'scenes/arcade.scene.json'});
 
 worldTest('concept controls real unupgraded player ascends every authored tier through both continuous lanes',()=>{
- for(const source of campaign.slice(0,4))for(const col of [12,30]){
+ for(const source of campaign.slice(0,4))for(const col of [10,50]){
   const g=createGame([createCartoonArena(source)],42),p=g.Players[0]!;
   g.State=State.Playing;g.Freeze=10000;p.Invincible=10000;
   for(let tick=0;tick<30;tick++)stepGame(g,idle);
   expect((p.Y+ActorSize)/Tile).toBe(23);
   const target=col*Tile;
-  for(let tick=0;Math.abs(p.X-target)>1e-7&&tick<300;tick++)
+  for(let tick=0;Math.abs(p.X-target)>1e-7&&tick<700;tick++)
    stepGame(g,{...idle,Move:Math.max(-1,Math.min(1,(target-p.X)/g.PlayerBalance!.MoveSpeed))});
   expect(Math.abs(p.X-target)<1e-7).toBe(true);
   const landed=[23];
@@ -144,7 +145,7 @@ worldTest('concept controls actual downed help follows actor at every aspect and
  const before=JSON.stringify(g);
  for(const [width,height]of [[768,720],[1680,720],[640,960],[2520,1080]]){
   const view={width:width!,height:height!,safeArea:[0,0,0,0]};
-  const layout=arenaLayout(g.Level,view),labels=cartoonRescueLabels(g,view);
+  const layout=arenaLayout(g.Level,view),labels=cartoonRescueLabels(g,view).filter(label=>label.text==='HELP!');
   expect(labels.length).toBe(1);expect(labels[0]!.text).toBe('HELP!');
   const anchor=cartoonHelpAnchor(teammate,layout);
   expect(labels[0]!.x).toBe(layout.x+(anchor.x+13)*layout.scale);
@@ -152,13 +153,13 @@ worldTest('concept controls actual downed help follows actor at every aspect and
   expect(labels[0]!.size).toBe(14*layout.scale);
   expect(labels[0]!.y).toBeLessThan(layout.y+teammate.Y*layout.scale);
   const plaque={x:layout.x+(anchor.x-1)*layout.scale,y:layout.y+(anchor.y-1)*layout.scale,w:62*layout.scale,h:26*layout.scale};
-  for(const badge of cartoonDrawPlan(g,0,view).filter(draw=>draw.frame.startsWith('badge/')))
+  for(const badge of cartoonDrawPlan(g,0,view).filter(draw=>draw.diamond))
    expect(badge.x<plaque.x+plaque.w&&badge.x+badge.width>plaque.x&&badge.y<plaque.y+plaque.h&&badge.y+badge.height>plaque.y).toBe(false);
  }
  expect(JSON.stringify(g)).toBe(before);
  for(let tick=0;g.Players[1]!.Downed&&tick<30;tick++)stepGame(g,[{...idle,Move:1},...Array.from({length:9},()=>idle)]);
  expect(g.Players[1]!.Downed).toBe(false);expect(g.Players[1]!.Lives).toBe(1);
- expect(cartoonRescueLabels(g,{width:1680,height:720,safeArea:[0,0,0,0]}).length).toBe(0);
+ expect(cartoonRescueLabels(g,{width:1680,height:720,safeArea:[0,0,0,0]}).filter(label=>label.text==='HELP!').length).toBe(0);
 },{scene:'scenes/arcade.scene.json'});
 
 worldTest('concept controls every wave formation stays safe at six and ten dragon capacity across four layouts',()=>{
@@ -216,10 +217,10 @@ worldTest('concept controls diagonal tier transfer and cross stage gap land thro
 worldTest('concept controls missed jump falls safely to floor and player recovers to the next tier',()=>{
  const g=createGame([createCartoonArena(campaign[0]!)],42),p=g.Players[0]!;
  g.State=State.Playing;g.Freeze=10000;
- Object.assign(p,body(20*Tile,18*Tile-ActorSize),{Ground:true,Invincible:10000});
- // Leave the right edge of the broad lower shelf into its three-cell gap.
- for(let tick=0;Math.abs(p.X-23*Tile)>.001&&tick<100;tick++)
-  stepGame(g,{...idle,Move:Math.max(-1,Math.min(1,(23*Tile-p.X)/g.PlayerBalance!.MoveSpeed))});
+ Object.assign(p,body(10*Tile,18*Tile-ActorSize),{Ground:true,Invincible:10000});
+ // Leave the right edge of the broad lower shelf into its five-cell gap.
+ for(let tick=0;Math.abs(p.X-14*Tile)>.001&&tick<100;tick++)
+  stepGame(g,{...idle,Move:Math.max(-1,Math.min(1,(14*Tile-p.X)/g.PlayerBalance!.MoveSpeed))});
  expect(p.Ground).toBe(false);
  for(let tick=0;tick<8;tick++)stepGame(g,idle);
  expect(p.Coyote).toBe(0);
@@ -229,8 +230,8 @@ worldTest('concept controls missed jump falls safely to floor and player recover
  for(let tick=0;!p.Ground&&tick<100;tick++)stepGame(g,idle);
  expect(p.Ground).toBe(true);expect((p.Y+ActorSize)/Tile).toBe(23);
  expect(p.Lives).toBe(3);
- for(let tick=0;Math.abs(p.X-12*Tile)>.001&&tick<200;tick++)
-  stepGame(g,{...idle,Move:Math.max(-1,Math.min(1,(12*Tile-p.X)/g.PlayerBalance!.MoveSpeed))});
+ for(let tick=0;Math.abs(p.X-10*Tile)>.001&&tick<200;tick++)
+  stepGame(g,{...idle,Move:Math.max(-1,Math.min(1,(10*Tile-p.X)/g.PlayerBalance!.MoveSpeed))});
  stepGame(g,idle);stepGame(g,{...idle,Jump:true});
  for(let tick=0;!p.Ground&&tick<100;tick++)stepGame(g,idle);
  expect((p.Y+ActorSize)/Tile).toBe(18);expect(p.Ground).toBe(true);
@@ -252,10 +253,11 @@ worldTest('concept controls crown apex injury keeps help plaque text and downed 
  const before=JSON.stringify(g);
  for(const [width,height]of [[768,720],[1680,720],[640,960],[2520,1080]]){
   const view={width:width!,height:height!,safeArea:[0,0,0,0]},layout=arenaLayout(g.Level,view);
-  const plan=cartoonDrawPlan(g,g.Tick,view),labels=cartoonRescueLabels(g,view);
+  const plan=cartoonDrawPlan(g,g.Tick,view),labels=cartoonRescueLabels(g,view).filter(label=>label.text==='HELP!');
   expect(labels.length).toBe(1);
   expect(labels[0]!.y-labels[0]!.size/2>=48-.01).toBe(true);
-  const badge=plan.find(draw=>draw.frame==='badge/blue')!;
+  const expectedBadge=cartoonBadgeAnchor(p,layout,cartoonHelpAnchor(p,layout));
+  const badge=plan.find(draw=>draw.diamond&&Math.abs(draw.x-layout.x-expectedBadge.x*layout.scale)<.01&&Math.abs(draw.width-expectedBadge.size*layout.scale)<.01)!;
   expect(!!badge).toBe(true);expect(badge.y>=48-.01).toBe(true);
   const plaque=plan.find(draw=>draw.frame==='solid/#fff0c9'&&Math.abs(draw.width-60*layout.scale)<.01&&Math.abs(draw.height-24*layout.scale)<.01)!;
   expect(!!plaque).toBe(true);expect(plaque.y>=48-.01).toBe(true);
