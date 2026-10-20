@@ -1,0 +1,7 @@
+
+> bubbleboobble@0.1.0 harness:pipelines
+> node tools/harness/record-pipelines.mjs
+
+desktop: 215 explicit frames, peak 11 draws, all required pages/effects observed
+mobile: 215 explicit frames, peak 9 draws, all required pages/effects observed
+compat: 215 explicit frames, peak 9 draws, all required pages/effects observed

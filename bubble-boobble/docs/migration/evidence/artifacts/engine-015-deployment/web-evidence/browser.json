@@ -1,0 +1,11 @@
+{
+  "sha": "6a69b55850085b1b235c5efa67855c82b16bc2da",
+  "ok": false,
+  "status": "deferred",
+  "reason": "Browser gameplay playtesting is reserved for the user, as explicitly requested in this deployment task and in PROJECT.md/docs/git-workflow.md.",
+  "deferredCommand": [
+    "/opt/homebrew/Cellar/node/26.9.0/bin/node",
+    "tools/web/smoke.mjs"
+  ],
+  "recorded": "2026-10-20T11:41:52.951Z"
+}

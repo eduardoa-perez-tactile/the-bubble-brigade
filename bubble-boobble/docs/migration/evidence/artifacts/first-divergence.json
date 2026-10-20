@@ -1,0 +1,1000 @@
+{
+  "scenario": "reference-round1-smoke",
+  "frame": 65,
+  "path": "$.state.Snapshot.Score",
+  "expected": 0,
+  "actual": 1,
+  "input": {
+    "ticks": 1,
+    "players": [
+      {
+        "Move": 1,
+        "Jump": true,
+        "Fire": true
+      }
+    ],
+    "paused": false
+  },
+  "expectedContext": [
+    {
+      "frame": 64,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 64,
+          "LevelTicks": 4,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 0,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 108,
+              "Y": 524.5,
+              "VX": 0,
+              "VY": -10,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 9,
+              "Cooldown": 15,
+              "WalkFrame": 4,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 374.0000000000002,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 374.0000000000002,
+              "Y": 153,
+              "VX": 0,
+              "VY": 2,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 393.9999999999998,
+              "Y": 105,
+              "VX": 0,
+              "VY": 2,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 149,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 4,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 32,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 12
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    },
+    {
+      "frame": 65,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 65,
+          "LevelTicks": 5,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 0,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 111,
+              "Y": 515,
+              "VX": 0,
+              "VY": -9.5,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 8,
+              "Cooldown": 14,
+              "WalkFrame": 5,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 371.5000000000003,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 371.5000000000003,
+              "Y": 155.5,
+              "VX": 0,
+              "VY": 2.5,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 396.4999999999997,
+              "Y": 107.5,
+              "VX": 0,
+              "VY": 2.5,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 157,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 5,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 40,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 15
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    },
+    {
+      "frame": 66,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 66,
+          "LevelTicks": 6,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 0,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 114,
+              "Y": 506,
+              "VX": 0,
+              "VY": -9,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 7,
+              "Cooldown": 13,
+              "WalkFrame": 6,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 369.00000000000034,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 369.00000000000034,
+              "Y": 158.5,
+              "VX": 0,
+              "VY": 3,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 398.99999999999966,
+              "Y": 110.5,
+              "VX": 0,
+              "VY": 3,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 165,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 6,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 48,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 18
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    }
+  ],
+  "actualContext": [
+    {
+      "frame": 64,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 64,
+          "LevelTicks": 4,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 0,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 108,
+              "Y": 524.5,
+              "VX": 0,
+              "VY": -10,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 9,
+              "Cooldown": 15,
+              "WalkFrame": 4,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 374.0000000000002,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 374.0000000000002,
+              "Y": 153,
+              "VX": 0,
+              "VY": 2,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 393.9999999999998,
+              "Y": 105,
+              "VX": 0,
+              "VY": 2,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 4,
+              "Cooldown": 176,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 149,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 4,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 32,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 12
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    },
+    {
+      "frame": 65,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 65,
+          "LevelTicks": 5,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 1,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 111,
+              "Y": 515,
+              "VX": 0,
+              "VY": -9.5,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 8,
+              "Cooldown": 14,
+              "WalkFrame": 5,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 371.5000000000003,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 371.5000000000003,
+              "Y": 155.5,
+              "VX": 0,
+              "VY": 2.5,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 396.4999999999997,
+              "Y": 107.5,
+              "VX": 0,
+              "VY": 2.5,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 5,
+              "Cooldown": 175,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 157,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 5,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 40,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 15
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    },
+    {
+      "frame": 66,
+      "input": {
+        "ticks": 1,
+        "players": [
+          {
+            "Move": 1,
+            "Jump": true,
+            "Fire": true
+          }
+        ],
+        "paused": false
+      },
+      "state": {
+        "Snapshot": {
+          "Round": 1,
+          "State": 1,
+          "Paused": false,
+          "Hurry": false,
+          "Tick": 66,
+          "LevelTicks": 6,
+          "Countdown": 0,
+          "Freeze": 0,
+          "Score": 0,
+          "Players": [
+            {
+              "Lives": 3,
+              "JumpBuffer": 0,
+              "Coyote": 0,
+              "LastJump": true,
+              "X": 114,
+              "Y": 506,
+              "VX": 0,
+              "VY": -9,
+              "Ground": false,
+              "Dir": 1,
+              "Invincible": 0,
+              "Dead": 0,
+              "Shoot": 7,
+              "Cooldown": 13,
+              "WalkFrame": 6,
+              "Power": {
+                "Pink": false,
+                "Blue": false,
+                "Yellow": false,
+                "Shoes": false,
+                "Crystal": false,
+                "Amethyst": false,
+                "Ruby": false,
+                "WalkPoints": 0
+              }
+            }
+          ],
+          "Enemies": [
+            {
+              "X": 369.00000000000034,
+              "Y": 196,
+              "VX": 0,
+              "VY": 0,
+              "Ground": true,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 1,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 4.177208332074797
+            },
+            {
+              "X": 369.00000000000034,
+              "Y": 158.5,
+              "VX": 0,
+              "VY": 3,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 2,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": -1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.437474164479185
+            },
+            {
+              "X": 398.99999999999966,
+              "Y": 110.5,
+              "VX": 0,
+              "VY": 3,
+              "Ground": false,
+              "CarriedBy": 0,
+              "CarryTicks": 0,
+              "ID": 3,
+              "Kind": "zenchan",
+              "State": 0,
+              "Dir": 1,
+              "Vertical": 1,
+              "Angry": false,
+              "Age": 6,
+              "Cooldown": 174,
+              "Shoot": 0,
+              "DeadTicks": 0,
+              "Phase": 5.327207425291773
+            }
+          ],
+          "Bubbles": [
+            {
+              "X": 165,
+              "Y": 558,
+              "VX": 0,
+              "VY": 0,
+              "Ground": false,
+              "ID": 4,
+              "Dir": 1,
+              "Age": 6,
+              "EnemyID": 0,
+              "CapturedAge": 0,
+              "Distance": 48,
+              "MaxDistance": 200,
+              "Speed": 8,
+              "Floating": false,
+              "Removed": false,
+              "Element": ""
+            }
+          ],
+          "Projectiles": null,
+          "Items": null,
+          "Effects": null,
+          "Particles": null,
+          "Sounds": null
+        },
+        "LevelIndex": 0,
+        "Custom": false,
+        "Counters": {
+          "Blown": 1,
+          "Popped": 0,
+          "Jumps": 1,
+          "Water": 0,
+          "Thunder": 0,
+          "Fire": 0,
+          "Pink": 0,
+          "Blue": 0,
+          "Yellow": 0,
+          "Walked": 18
+        },
+        "WaterStage": 0,
+        "Pending": [],
+        "SpawnedSpecial": 0,
+        "NextID": 4,
+        "ExtraLifeAt": 30000,
+        "RNG": "7063673a6bd1b933fc5fc02be19bf122b8d5704b"
+      }
+    }
+  ]
+}

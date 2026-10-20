@@ -1,0 +1,23 @@
+{
+  "pipelineSha256": "e9fb3b463cd46406c6fce46488fcb1c8da91b979e4dbda1f332151dc64beddef",
+  "tiers": {
+    "compat": 7,
+    "desktop": 8,
+    "mobile": 7
+  },
+  "structural": [
+    {
+      "file": "presentation.json",
+      "ok": true,
+      "checks": [
+        {
+          "metric": "drawCallsMax",
+          "value": 6,
+          "limit": 14,
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "scope": "Actual production assets/materials/input/scene source copied unchanged. Only test entry modules are replaced by a bootstrap without non-desktop pixel assertions; the committed full presentation replay supplies the recorded route. GPU-tier records do not establish mobile/compat Go image parity."
+}

@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "samples": 59584,
+  "mismatches": 0,
+  "image": "tests/goldens/dragon_palette_all_original_animation_frames/all_frames/desktop/metal.png",
+  "sha256": "213225ca40ec566d91902859beb4e532e47dc0279664c506f525916d265fb239",
+  "paletteSHA256": "96466549aa5be0e947a48fc1032df879c0b1a245665c4049fff327abb387b2d7",
+  "examples": []
+}

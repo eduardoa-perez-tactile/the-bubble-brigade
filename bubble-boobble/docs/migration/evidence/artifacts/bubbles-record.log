@@ -1,0 +1,23 @@
+
+> bubbleboobble@0.1.0 harness:record
+> node tools/harness/run.mjs record
+
+gameengine test --js v8 --record-replays --filter harness reset and tap: 0.927 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter movement physical keyboard hold release and jump: 0.930 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade engine input full Go parity reference-round1-smoke: 1.018 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter player traversal engine input wraps round three and preserves upward re-entry: 0.967 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows: 7.044 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches red gameplay: 2.179 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches yellow gameplay: 2.182 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input all solo colors: 2.192 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input simultaneous co-op colors: 1.653 s
+1 selected test cases passed
+Harness record: 19.094 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

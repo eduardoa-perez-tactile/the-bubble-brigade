@@ -1,0 +1,1 @@
+{"passes":[{"name":"3d.clusters","culled":false,"gpuMs":0},{"name":"3d.forward","culled":false,"gpuMs":0.106822},{"name":"2d.ui","culled":false,"gpuMs":0},{"name":"post.present","culled":false,"gpuMs":0}],"width":960,"height":540,"gpuTotalMs":0.106822,"drawCalls":5,"triangles":6009,"instances":93,"pipelinesCreated":0}

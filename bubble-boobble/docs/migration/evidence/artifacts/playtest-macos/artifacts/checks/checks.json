@@ -1,0 +1,9 @@
+{
+  "mode": "fail",
+  "passed": 0,
+  "warned": 0,
+  "failed": 0,
+  "downgraded": 0,
+  "skipped": 0,
+  "checks": []
+}

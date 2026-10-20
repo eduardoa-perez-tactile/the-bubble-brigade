@@ -1,0 +1,117 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "lib": [
+      "ES2022"
+    ],
+    "types": [],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@gameengine/ui",
+    "paths": {
+      "@gameengine/runtime": [
+        "./.gameengine/engine/packages/runtime/src/index.ts"
+      ],
+      "@gameengine/runtime/*": [
+        "./.gameengine/engine/packages/runtime/src/*"
+      ],
+      "@gameengine/test": [
+        "./.gameengine/engine/packages/test/src/index.ts"
+      ],
+      "@gameengine/test/*": [
+        "./.gameengine/engine/packages/test/src/*"
+      ],
+      "@gameengine/schema": [
+        "./.gameengine/engine/packages/schema/src/index.ts"
+      ],
+      "@gameengine/schema/*": [
+        "./.gameengine/engine/packages/schema/src/*"
+      ],
+      "@gameengine/ui": [
+        "./.gameengine/engine/packages/ui/src/index.ts"
+      ],
+      "@gameengine/ui/*": [
+        "./.gameengine/engine/packages/ui/src/*"
+      ],
+      "@gameengine/materials": [
+        "./.gameengine/engine/packages/materials/src/index.ts"
+      ],
+      "@gameengine/materials/*": [
+        "./.gameengine/engine/packages/materials/src/*"
+      ],
+      "@gameengine/vfx": [
+        "./.gameengine/engine/packages/vfx/src/index.ts"
+      ],
+      "@gameengine/vfx/*": [
+        "./.gameengine/engine/packages/vfx/src/*"
+      ],
+      "@gameengine/story": [
+        "./.gameengine/engine/packages/story/src/index.ts"
+      ],
+      "@gameengine/story/*": [
+        "./.gameengine/engine/packages/story/src/*"
+      ],
+      "@gameengine/meta": [
+        "./.gameengine/engine/packages/meta/src/index.ts"
+      ],
+      "@gameengine/meta/*": [
+        "./.gameengine/engine/packages/meta/src/*"
+      ],
+      "@gameengine/stream": [
+        "./.gameengine/engine/packages/stream/src/index.ts"
+      ],
+      "@gameengine/stream/*": [
+        "./.gameengine/engine/packages/stream/src/*"
+      ],
+      "@gameengine/tools": [
+        "./.gameengine/engine/packages/tools/src/index.ts"
+      ],
+      "@gameengine/tools/*": [
+        "./.gameengine/engine/packages/tools/src/*"
+      ],
+      "@gameengine/applovin-max": [
+        "./.gameengine/engine/packages/applovin-max/src/index.ts"
+      ],
+      "@gameengine/applovin-max/*": [
+        "./.gameengine/engine/packages/applovin-max/src/*"
+      ],
+      "@gameengine/appsflyer": [
+        "./.gameengine/engine/packages/appsflyer/src/index.ts"
+      ],
+      "@gameengine/appsflyer/*": [
+        "./.gameengine/engine/packages/appsflyer/src/*"
+      ],
+      "@gameengine/pulse": [
+        "./.gameengine/engine/packages/pulse/src/index.ts"
+      ],
+      "@gameengine/pulse/*": [
+        "./.gameengine/engine/packages/pulse/src/*"
+      ],
+      "@gameengine/di": ["./.gameengine/engine/packages/di/src/index.ts"],
+      "@gameengine/di/*": ["./.gameengine/engine/packages/di/src/*"],
+      "@gameengine/embrace": ["./.gameengine/engine/packages/embrace/src/index.ts"],
+      "@gameengine/embrace/*": ["./.gameengine/engine/packages/embrace/src/*"],
+      "@gameengine/gws": ["./.gameengine/engine/packages/gws/src/index.ts"],
+      "@gameengine/gws/*": ["./.gameengine/engine/packages/gws/src/*"],
+      "@gameengine/playwright": ["./.gameengine/engine/packages/playwright/src/index.ts"],
+      "@gameengine/playwright/*": ["./.gameengine/engine/packages/playwright/src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "schema",
+    "tests"
+  ]
+}

@@ -1,0 +1,26 @@
+gameengine bundle: 0.543 s
+Replay tests/replays/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect.greplay, scene scenes/arcade.scene.json: 0.185 s
+Replay tests/replays/party_boss_recorded_thunder_shot_capture_and_finishing_pop.greplay, scene scenes/arcade.scene.json: 0.156 s
+Replay tests/replays/party_last_standing_only_shows_defeat_when_the_final_bot_falls_through_recorded_engine_inputs.greplay, scene scenes/arcade.scene.json: 0.175 s
+Replay tests/replays/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy.greplay, scene scenes/arcade.scene.json: 0.222 s
+Replay tests/replays/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots.greplay, scene scenes/arcade.scene.json: 0.190 s
+Replay tests/replays/party_polish_six_real_pops_coalesce_while_classic_cues_retain_their_original_mix.greplay, scene scenes/arcade.scene.json: 0.150 s
+Replay tests/replays/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena.greplay, scene scenes/arcade.scene.json: 0.135 s
+Replay tests/replays/party_recorded_wave_clear_rest_boss_and_results.greplay, scene scenes/arcade.scene.json: 0.221 s
+Replay tests/replays/party_six_actual_controllers_move_separate_humans_and_operate_menus.greplay, scene scenes/arcade.scene.json: 0.142 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.129 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.129 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.151 s
+Replay tests/replays/player_traversal_engine_input_wraps_round_three_and_preserves_upward_re_entry.greplay, scene scenes/arcade.scene.json: 0.133 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.345 s
+Replay tests/replays/dragon_skins_settings_selection_reaches_red_gameplay.greplay, scene scenes/arcade.scene.json: 0.136 s
+Replay tests/replays/dragon_skins_settings_selection_reaches_yellow_gameplay.greplay, scene scenes/arcade.scene.json: 0.136 s
+Replay tests/replays/bubble_skins_actual_fire_input_all_solo_colors.greplay, scene scenes/arcade.scene.json: 0.147 s
+Replay tests/replays/bubble_skins_actual_fire_input_simultaneous_co_op_colors.greplay, scene scenes/arcade.scene.json: 0.140 s
+Replay tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_false.greplay, scene scenes/arcade.scene.json: 0.139 s
+Replay tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_true.greplay, scene scenes/arcade.scene.json: 0.138 s
+Replay tests/replays/arcade_player_motion_real_engine_jump_pause_and_co_op_phases.greplay, scene scenes/arcade.scene.json: 0.143 s
+Replay tests/replays/arcade_scoring_real_engine_pops_and_fruit_pickups_update_hud_and_animate_points.greplay, scene scenes/arcade.scene.json: 0.161 s
+Replay tests/replays/companion_modes_start_restart_pause_and_preserve_human_co_op_controls.greplay, scene scenes/arcade.scene.json: 0.346 s
+Replay tests/replays/desktop_physical_enter_tap_between_simulation_steps_is_not_dropped.greplay, scene scenes/arcade.scene.json: 0.127 s
+Harness replay: 5.004 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

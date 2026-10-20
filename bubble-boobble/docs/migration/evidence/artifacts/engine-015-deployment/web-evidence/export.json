@@ -1,0 +1,17 @@
+{
+  "sha": "6a69b55850085b1b235c5efa67855c82b16bc2da",
+  "ok": true,
+  "started": "2026-10-20T11:41:51.279Z",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.9.0/bin/node",
+        "tools/web/toolchain.mjs",
+        "export"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/export-1.log"
+    }
+  ],
+  "finished": "2026-10-20T11:41:52.951Z"
+}

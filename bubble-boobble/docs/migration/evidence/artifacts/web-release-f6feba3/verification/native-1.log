@@ -1,0 +1,12 @@
+✔ ten controllers map to separate engine seats and release on disconnect (1.340417ms)
+✔ seat assignment survives list reorder and suspension releases held input (0.220042ms)
+✔ browser file flush stays synchronous and preserves filesystem errors (0.86825ms)
+✔ unknown loader refuses the compatibility patch (0.1945ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.565916

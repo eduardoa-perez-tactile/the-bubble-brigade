@@ -1,0 +1,2 @@
+{"ok":true,"ws":"ws://127.0.0.1:65381","local":null,"token":"f8413641b972ab8e542b2f3e2349124e61fc0ed92167a0afd81d11bde107bed1","mode":"headless","pid":17880}
+[Warn] render: pipeline warm-up: 3 recorded 3D pipelines dropped: no material program has their hash (a material changed since pipelines.json was recorded); loaded materials still warm theirs, re-record with `gameengine test --tier t1 --record-pipelines`

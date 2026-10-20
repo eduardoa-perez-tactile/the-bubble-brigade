@@ -1,0 +1,75 @@
+BubbleBoobble game-owned macOS adapter: http://127.0.0.1:47681; child 76080; installed runtime unchanged (1934941121d3).
+[Warn] audio: music 'reference/audio/bubble-2': not a decodable file
+{
+  "ok": true,
+  "mode": "player",
+  "steps": 175,
+  "hash": "313199b77395512a",
+  "frames": 438,
+  "quit": false,
+  "seconds": 2.960589417,
+  "surface": {
+    "width": 768,
+    "height": 720
+  },
+  "audio": {
+    "device": true,
+    "voices": 0,
+    "sounds": 10,
+    "buses": {
+      "Master": 1.0,
+      "Music": 0.5,
+      "SFX": 0.75,
+      "UI": 1.0,
+      "Voice": 1.0
+    },
+    "music": null
+  },
+  "quality": {
+    "device": {
+      "vendor": "apple",
+      "device": "Apple M2 Max metal-3",
+      "driver": "Metal driver on macOS Version 26.7.1 (Build 25G241)",
+      "model": "",
+      "os": "macos"
+    },
+    "profile": "desktop-apple-silicon",
+    "source": "database",
+    "benchmarkMs": null,
+    "level": 1,
+    "maxLevel": 5,
+    "thermal": "nominal",
+    "heat": null,
+    "settings": {
+      "renderScale": 0.8999999761581421,
+      "post": "full",
+      "shadowQuality": "high",
+      "msaa": 0,
+      "targetFps": null,
+      "vfx": 1.0,
+      "lodBias": 0.0
+    },
+    "history": [
+      {
+        "t": 0.262887583,
+        "level": 1,
+        "thermal": "nominal"
+      }
+    ]
+  },
+  "targetFps": null,
+  "idleFrames": {
+    "enabled": true,
+    "presented": 140,
+    "skipped": 298
+  },
+  "displayHz": 120.0,
+  "frameIntervalMs": {
+    "count": 437,
+    "mean": 6.722866224256296,
+    "p50": 8.327292,
+    "p95": 9.685417,
+    "sd": 6.724668568181727,
+    "fps": 148.74608041313851
+  }
+}

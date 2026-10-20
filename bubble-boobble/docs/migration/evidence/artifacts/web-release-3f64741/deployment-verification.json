@@ -1,0 +1,82 @@
+{
+  "ok": true,
+  "sha": "3f647419189a336d2eb0e5862d28bdc35bef8359",
+  "build": {
+    "sha": "3f647419189a336d2eb0e5862d28bdc35bef8359",
+    "dirty": false,
+    "exportedAt": "2026-10-20T10:09:16.839Z",
+    "name": "Bubble Madness",
+    "shell": "bubble-web-v2"
+  },
+  "url": "https://eduardoa-perez-tactile.github.io/poc-bubble-boobble/",
+  "workflowRun": "https://github.com/eduardoa-perez-tactile/poc-bubble-boobble/actions/runs/39405936839",
+  "storageIdentityPreserved": true,
+  "checks": [
+    {
+      "path": "index.html",
+      "bytes": 4336,
+      "sha256": "4e03030efbe5da93325de58a1185770e90dd7c64304f9d42583c0f00eac8d9ad",
+      "matches": true
+    },
+    {
+      "path": "player.js",
+      "bytes": 10459,
+      "sha256": "2a4345755379f02068b8735040a93c24ea6ab2f8f437779366f9dac326401b3a",
+      "matches": true
+    },
+    {
+      "path": "web-build.json",
+      "bytes": 304,
+      "sha256": "44aac8dd59043969d3dc120001f6b2a37d30447da5f13db8c26b84f2a9b96fee",
+      "matches": true
+    },
+    {
+      "path": "gameengine-web-player.js",
+      "bytes": 155836,
+      "sha256": "6a20150e70279db301a8fc37a1c86dd10195e908615583d7a9043bf390106c97",
+      "matches": true
+    },
+    {
+      "path": "gameengine_web_player.wasm",
+      "bytes": 23576852,
+      "sha256": "85ad6b711ca670856d3a2a4c4113c213a55e01ffed50181f3b21ef8da0b4b20f",
+      "matches": true
+    },
+    {
+      "path": "splash/splash.css",
+      "bytes": 7222,
+      "sha256": "02dc3b471452426105f05635a32a66a74cf877739acccb31901e1aa5dd4d5bbe",
+      "matches": true
+    },
+    {
+      "path": "splash/logo.webp",
+      "bytes": 108126,
+      "sha256": "f85a5a3e3178a7e88eea38a21471182acda23078c641a146ba3e6f561be2ed14",
+      "matches": true
+    },
+    {
+      "path": "splash/arcade.ttf",
+      "bytes": 26500,
+      "sha256": "145ca8092ec8e01662783c7c141a3521999c2d5a5a28a301318da3ea6d360688",
+      "matches": true
+    },
+    {
+      "path": "game/base.gpak",
+      "bytes": 3378024,
+      "sha256": "9e1ff1bc1161dd265b7a15c7d1d683f769e9f4e5e41f31bf601942ffa05a2e70",
+      "matches": true
+    },
+    {
+      "path": "game/code.gpak",
+      "bytes": 591016,
+      "sha256": "91fcd3e484e21619cd67c0f636618218f30a2a61d78583c5057a472a5dff1347",
+      "matches": true
+    },
+    {
+      "path": "game/manifest.json",
+      "bytes": 155573,
+      "sha256": "b22a67f52080acda73cfeb832dcf68df96b44c6fd4eebb8902edc781b9f967c7",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+
+> bubbleboobble@0.1.0 harness:replay
+> node tools/harness/run.mjs replay
+
+gameengine bundle: 0.439 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.119 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.118 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.129 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.187 s
+Harness replay: 1.283 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

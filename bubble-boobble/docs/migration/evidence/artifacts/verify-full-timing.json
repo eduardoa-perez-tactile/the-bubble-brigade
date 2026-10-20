@@ -1,0 +1,160 @@
+{
+  "command": "verify-full",
+  "wallMs": 86622.39733400001,
+  "measurements": [
+    {
+      "command": "desktop bridge aborted-body regression",
+      "wallMs": 160.473458
+    },
+    {
+      "command": "cold live-viewport startup regression",
+      "wallMs": 1999.654417
+    },
+    {
+      "command": "gameengine test --js v8",
+      "wallMs": 3951.0837079999997,
+      "tests": 251
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *",
+      "wallMs": 45311.117541,
+      "tests": 43
+    },
+    {
+      "command": "presentation replay structural check (explicit GPU probes)",
+      "wallMs": 14490.910249999994
+    },
+    {
+      "command": "gameengine bundle",
+      "wallMs": 581.7421250000043
+    },
+    {
+      "command": "replay tests/replays/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 152.69862499999
+    },
+    {
+      "command": "replay tests/replays/ten_named_actions_reject_malformed_suffixes_and_pad_ten_stays_isolated.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 163.49758300000394
+    },
+    {
+      "command": "replay tests/replays/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 1293.3741670000018
+    },
+    {
+      "command": "replay tests/replays/feedback_shooting_space_cannot_restart_a_defeated_boss_run.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 218.667082999993
+    },
+    {
+      "command": "replay tests/replays/feedback_results_require_release_and_a_fresh_controller_confirmation_after_the_guard.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 212.08383299999696
+    },
+    {
+      "command": "replay tests/replays/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 250.39229099999648
+    },
+    {
+      "command": "replay tests/replays/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 196.46337500000664
+    },
+    {
+      "command": "replay tests/replays/party_boss_recorded_thunder_shot_capture_and_finishing_pop.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 162.5963749999937
+    },
+    {
+      "command": "replay tests/replays/party_last_standing_only_shows_defeat_when_the_final_bot_falls_through_recorded_engine_inputs.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 181.18275000000722
+    },
+    {
+      "command": "replay tests/replays/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 235.62154200000805
+    },
+    {
+      "command": "replay tests/replays/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 199.80379200000607
+    },
+    {
+      "command": "replay tests/replays/party_polish_six_real_pops_coalesce_while_classic_cues_retain_their_original_mix.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 152.95591699999932
+    },
+    {
+      "command": "replay tests/replays/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 139.27570799998648
+    },
+    {
+      "command": "replay tests/replays/party_recorded_wave_clear_rest_boss_and_results.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 227.4418330000044
+    },
+    {
+      "command": "replay tests/replays/party_six_actual_controllers_move_separate_humans_and_operate_menus.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 148.6102499999979
+    },
+    {
+      "command": "replay tests/replays/harness_reset_and_tap.greplay scene=scenes/main.scene.json",
+      "wallMs": 132.5814160000009
+    },
+    {
+      "command": "replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay scene=scenes/round1.scene.json",
+      "wallMs": 131.60104100000171
+    },
+    {
+      "command": "replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 155.64616699999897
+    },
+    {
+      "command": "replay tests/replays/player_traversal_engine_input_wraps_round_three_and_preserves_upward_re_entry.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 136.58595799999603
+    },
+    {
+      "command": "replay tests/replays/desktop_complete_presentation_flows.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 363.7435830000031
+    },
+    {
+      "command": "replay tests/replays/dragon_skins_settings_selection_reaches_red_gameplay.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 141.3392920000042
+    },
+    {
+      "command": "replay tests/replays/dragon_skins_settings_selection_reaches_yellow_gameplay.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 141.1820000000007
+    },
+    {
+      "command": "replay tests/replays/bubble_skins_actual_fire_input_all_solo_colors.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 152.74708400000236
+    },
+    {
+      "command": "replay tests/replays/bubble_skins_actual_fire_input_simultaneous_co_op_colors.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 146.14837499998976
+    },
+    {
+      "command": "replay tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_false.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 139.93208299999242
+    },
+    {
+      "command": "replay tests/replays/arcade_player_motion_real_engine_fall_inputs_shoes_true.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 139.51949999999488
+    },
+    {
+      "command": "replay tests/replays/arcade_player_motion_real_engine_jump_pause_and_co_op_phases.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 146.50800000000163
+    },
+    {
+      "command": "replay tests/replays/arcade_scoring_real_engine_pops_and_fruit_pickups_update_hud_and_animate_points.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 159.783792000002
+    },
+    {
+      "command": "replay tests/replays/companion_modes_start_restart_pause_and_preserve_human_co_op_controls.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 352.96295799998916
+    },
+    {
+      "command": "replay tests/replays/desktop_physical_enter_tap_between_simulation_steps_is_not_dropped.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 130.4667080000072
+    },
+    {
+      "command": "gameengine check",
+      "wallMs": 12913.093541999988
+    },
+    {
+      "command": "audio asset provenance and alias guard",
+      "wallMs": 76.61870900000213
+    }
+  ]
+}

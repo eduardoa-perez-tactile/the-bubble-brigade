@@ -1,0 +1,58 @@
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-1-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-10-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-24-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-25-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bonus-pending-drain: 12 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bonus-threshold-order: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-bounce: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-chain: 56 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-escape: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-campaign-win: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-clear-full-campaign: 65 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-fire: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-thunder: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-water: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-clock: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-dynamite: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-orange-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-purple-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-red-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-powers-coop-revival: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-buffer-expired: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-buffer-landing: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-ceiling: 31 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-coyote-expired: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-coyote-last: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-obstructed-spawn: 3 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-walk-jump: 614 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-wrap: 21 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim reference-round1-smoke: 89 frames exact.

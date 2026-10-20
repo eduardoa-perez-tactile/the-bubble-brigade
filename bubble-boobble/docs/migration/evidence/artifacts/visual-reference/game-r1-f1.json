@@ -1,0 +1,18 @@
+{
+  "reference": "783cf6aa26ac3c57cdab43f2d7a5b3725a3991cc",
+  "pristine": true,
+  "version": "go version go1.26.9 darwin/arm64",
+  "scene": "game",
+  "round": 1,
+  "smokeFrames": 1,
+  "seed": 1,
+  "paths": [
+    "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/artifacts/visual-reference/game-r1-f1-0.png",
+    "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/artifacts/visual-reference/game-r1-f1-1.png"
+  ],
+  "hashes": [
+    "6c3c81dd83545bc34c81cec2b103a51e2d48bf38a220e687892660a2c2487360",
+    "4f46c7bed3c2868e4dfabe0b70fb94b568e39539dbe82b372fb26ea0bb10a8ce"
+  ],
+  "repeatedPngBytesEqual": false
+}

@@ -1,0 +1,37 @@
+{
+  "observed": {
+    "tick": 600,
+    "state": 1,
+    "score": 3900,
+    "bubbles": 32,
+    "players": [
+      {
+        "x": 463,
+        "lives": 3
+      },
+      {
+        "x": 340,
+        "lives": 2
+      }
+    ]
+  },
+  "stepTimeMs": {
+    "p50": 0.3285,
+    "p95": 0.536791,
+    "p99": 0.669,
+    "max": 1.909459,
+    "mean": 0.35576464666666635
+  },
+  "presentationTimeMs": {
+    "p50": 0.649333,
+    "p95": 4.017748999999999,
+    "p99": 4.570374000000015,
+    "max": 4.570374000000015,
+    "mean": 0.725703485714286
+  },
+  "memoryMB": 147.28125,
+  "gcMaxMs": 3.018583000000019,
+  "drawCalls": 0,
+  "instances": 0,
+  "limits": "Paused protocol capture: stepTimeMs measures simulation; presentationTimeMs is only sampled presentation frames; render.stats is the requested final render. Whole-frame timing does not establish real-time GPU performance."
+}

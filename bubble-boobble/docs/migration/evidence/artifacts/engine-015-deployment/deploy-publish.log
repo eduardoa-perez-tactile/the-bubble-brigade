@@ -1,0 +1,6 @@
+
+> bubbleboobble@0.1.0 web:publish
+> node tools/web/publish.mjs --defer-browser-playtest
+
+Browser gameplay acceptance DEFERRED: Browser gameplay playtesting is reserved for the user, as explicitly requested in this deployment task and in PROJECT.md/docs/git-workflow.md.
+Deploying https://eduardoa-perez-tactile.github.io/poc-bubble-boobble/

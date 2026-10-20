@@ -1,0 +1,55 @@
+gameengine test --js v8 --record-replays --filter feedback shooting Space cannot restart a defeated boss run: 1.305 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter feedback results require release and a fresh controller confirmation after the guard: 1.289 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter feedback jump dust grounded shadows nameplates and guarded results remain readable: 4.696 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter feel six player capture chain rescue boss and results fit every aspect: 4.112 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter party boss recorded thunder shot capture and finishing pop: 1.215 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter party last standing only shows defeat when the final bot falls through recorded engine inputs: 1.202 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party pacing five second countdown preparation shooting and red last enemy: 2.313 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party polish readable countdown falling enemies and rest practice shots: 2.561 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter party polish six real pops coalesce while classic cues retain their original mix: 1.191 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party randomized powerup has a small green benefit alert in the arena: 1.569 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter party recorded wave clear rest boss and results: 1.364 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter party six actual controllers move separate humans and operate menus: 1.177 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter harness reset and tap: 1.126 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter movement physical keyboard hold release and jump: 1.135 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade engine input full Go parity reference-round1-smoke: 1.181 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter player traversal engine input wraps round three and preserves upward re-entry: 1.136 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows: 8.106 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches red gameplay: 2.358 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches yellow gameplay: 2.367 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input all solo colors: 2.386 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input simultaneous co-op colors: 1.829 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade player motion real engine fall inputs shoes false: 1.138 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade player motion real engine fall inputs shoes true: 1.154 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade player motion real engine jump pause and co-op phases: 1.165 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade scoring real engine pops and fruit pickups update HUD and animate points: 1.190 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter companion modes start restart pause and preserve human co-op controls: 1.703 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter desktop physical Enter tap between simulation steps is not dropped: 1.124 s
+1 selected test cases passed
+Harness record: 53.095 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

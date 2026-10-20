@@ -1,0 +1,27 @@
+✔ exact comparison accepts repeated trace and object key reordering (4.311875ms)
+✔ first divergent tick includes the field, input and surrounding states (2.419083ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.706875ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (70.272875ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.078583ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.392666
+gameengine test --js v8: 1.959 s
+gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *: 12.941 s
+desktop: 170 explicit frames, peak 11 draws, all required pages/effects observed
+gameengine bundle: 0.440 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.118 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.120 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.128 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.191 s
+Warning: assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = "#646664" in the .gmeta
+scenes/arcade.scene.json: not in canonical form (run `gameengine fmt`)
+scenes/pixel-prototype.scene.json: not in canonical form (run `gameengine fmt`)
+Warning: pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`
+gameengine check: 13.722 s
+Harness verify: 39.670 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

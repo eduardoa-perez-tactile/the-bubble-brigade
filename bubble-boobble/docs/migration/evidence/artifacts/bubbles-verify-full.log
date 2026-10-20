@@ -1,0 +1,51 @@
+
+> bubbleboobble@0.1.0 harness:verify-full
+> node tools/harness/run.mjs verify-full
+
+✔ exact comparison accepts repeated trace and object key reordering (4.160291ms)
+✔ first divergent tick includes the field, input and surrounding states (2.316084ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.112083ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (61.639375ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.074917ms)
+✔ campaign boundary permits only original Y24/VY0 versus rising above24 and does not mutate actual (0.485209ms)
+✔ campaign boundary rejects wrong reference clamp, stationary/falling motion and nonfinite coordinates (0.129042ms)
+✔ campaign boundary rejects collateral canonical changes including another player (0.243875ms)
+✔ campaign prefix stops at first verified boundary without simulating or claiming later frames (0.147833ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.673459
+✔ aborted authenticated request body leaves bridge responsive (17.861041ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 96.532083
+{"ok":true,"scope":"cold live readback viewport; no offscreen render or preload","assetsBefore":{"value":{"class":"desktop","budget":{"total":2147483648,"textures":1610612736,"audio":268435456},"resident":{"textures":0,"audio":0,"total":0,"data":0},"overBudget":null,"overCount":0,"evicted":0,"groups":{}}},"assetsAfter":{"value":{"class":"desktop","budget":{"total":2147483648,"textures":1610612736,"audio":268435456},"resident":{"textures":11185048,"audio":0,"total":11185048,"data":0},"overBudget":null,"overCount":0,"evicted":0,"groups":{}}},"width":1920,"height":1080,"frames":66,"frameIndex":66,"tile":{"found":34380,"total":34380},"player":{"found":1136,"total":24192},"drawCalls":5,"triangles":1065}
+gameengine test --js v8: 2.607 s
+122 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *: 19.029 s
+23 selected test cases passed
+desktop: 230 explicit frames, peak 11 draws, all required pages/effects observed
+gameengine bundle: 0.418 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.116 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.118 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.155 s
+Replay tests/replays/player_traversal_engine_input_wraps_round_three_and_preserves_upward_re_entry.greplay, scene scenes/arcade.scene.json: 0.129 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.333 s
+Replay tests/replays/dragon_skins_settings_selection_reaches_red_gameplay.greplay, scene scenes/arcade.scene.json: 0.135 s
+Replay tests/replays/dragon_skins_settings_selection_reaches_yellow_gameplay.greplay, scene scenes/arcade.scene.json: 0.136 s
+Replay tests/replays/bubble_skins_actual_fire_input_all_solo_colors.greplay, scene scenes/arcade.scene.json: 0.145 s
+Replay tests/replays/bubble_skins_actual_fire_input_simultaneous_co_op_colors.greplay, scene scenes/arcade.scene.json: 0.138 s
+Warning: assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = "#646664" in the .gmeta
+Warning: pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`
+gameengine check: 14.936 s
+Original provenance intact; 75 unique nonempty cooked aliases; 36 reference audio aliases; five distinct playable music keys.
+Harness verify-full: 56.016 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

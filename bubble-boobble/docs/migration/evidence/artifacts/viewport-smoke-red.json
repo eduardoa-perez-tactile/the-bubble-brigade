@@ -1,0 +1,19 @@
+{
+  "ok": false,
+  "scope": "cold live readback viewport; no offscreen render or preload",
+  "width": 1920,
+  "height": 1080,
+  "frames": 67,
+  "frameIndex": 67,
+  "tile": {
+    "found": 0,
+    "total": 34380
+  },
+  "player": {
+    "found": 0,
+    "total": 24192
+  },
+  "drawCalls": 2,
+  "triangles": 125,
+  "error": "AssertionError [ERR_ASSERTION]: World tile band missing: 0/34380 pixels"
+}

@@ -1,0 +1,17 @@
+✔ ten controllers map to separate engine seats and release on disconnect (1.247458ms)
+✔ seat assignment survives list reorder and suspension releases held input (0.246875ms)
+✔ fully verified releases publish without a deferral flag (0.735083ms)
+✔ a recorded browser deferral is accepted only when explicitly selected (0.628416ms)
+✔ an actual failed browser test cannot be relabeled by the publication flag (0.55825ms)
+✔ deferred browser checks never excuse failed native or wasm checks (0.141792ms)
+✔ all evidence must match the exact clean exported commit (0.327625ms)
+✔ browser file flush stays synchronous and preserves filesystem errors (0.884916ms)
+✔ unknown loader refuses the compatibility patch (0.19825ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.228709

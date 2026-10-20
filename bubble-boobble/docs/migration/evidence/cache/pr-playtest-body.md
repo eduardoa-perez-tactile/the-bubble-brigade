@@ -1,0 +1,9 @@
+Normal enemies now move 20% slower, players can rise above top platforms and wrap through aligned top/bottom openings, and non-square pickups and power icons retain their source proportions. Angry speed and attack timing remain unchanged. Closed roofs return players to the visible board; upward wrapping preserves velocity and bubble boosting.
+
+The original speed translation was correct: the pinned Go oracle matches 1,811 audited states. The slowdown, upward traversal and item fitting are explicit playtest changes. Original Go fixtures and art are untouched; reference comparisons select the original numeric speed profile, while separate regressions exercise production tuning. Existing live sessions without the new tuning field safely default to 0.8.
+
+Validation on local macOS arm64 V8/Metal: `harness:verify-full` passed (109 T0, 15 T1, five independent replay verifications, cold live viewport, typecheck/validate/cook/600-step smoke and provenance guards). All-tier presentation coverage completed 627 steps/210 rendered frames per tier with peak draws 11/9/9, below the existing 14 limit. Five existing goldens were reviewed and two item captures added; screenshot thresholds are unchanged. An isolated pre-change render confirms an inherited smoothing difference in the old editor baseline.
+
+The longer source-speed campaign audit verifies 25,315 exact prefix states: 15 complete rounds and ten stops at the first strictly confirmed player ceiling difference, without claiming later frames. All nine comparator selftests pass, including rejection of collateral differences.
+
+Hermes and OS/device-specific checks remain deferred as documented. No engine changes or computer-use access. Existing original tile-12 art and built-in Standard pipeline warnings remain. Details and scope limits: `docs/playtest-feedback.md`, `docs/player-traversal.md` and `docs/harness.md`.

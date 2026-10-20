@@ -1,0 +1,101 @@
+structural budget presentation.json: playing tests/replays/desktop_complete_presentation_flows.greplay…
+[v8] host: /Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host (release)
+1 host process, 1 at a time (--jobs 6)
+✓ [v8 · t1] companion mode selector fits settings and changes through the real button  (9 steps, f174bfd94c4ca804)
+✓ [v8 · t1] feel six player capture chain rescue boss and results fit every aspect  (65 steps, d6e4bf2a4a5b57ec)
+    │ {"peakDrawCalls":6}
+✓ [v8 · t1] arcade reference board 768x720  (5 steps, 7f497ea972ff7203)
+✓ [v8 · t1] arcade reference board 1680x720  (5 steps, ea32baeb654bf16c)
+✓ [v8 · t1] arcade reference board 640x960  (5 steps, a26b65cfe9880a72)
+✓ [v8 · t1] arcade reference editor preview  (3 steps, b905f1fe650d7ffa)
+✓ [v8 · t1] arcade reference encoded overlays  (7 steps, 42d0d62afd4d796e)
+✓ [v8 · t1] arcade scoring fruit and enemy point labels share the rendered text effect  (7 steps, 5f79d6668c4b3366)
+✓ [v8 · t1] bubble skins actual fire input all solo colors  (36 steps, a0fc26b4b2c8239c)
+✓ [v8 · t1] bubble skins actual fire input simultaneous co-op colors  (22 steps, f84960334f84a904)
+✓ [v8 · t1] courtyard full arena and ten identities fit native wide tall and ultrawide windows  (28 steps, c2f5ea719f338ea9)
+✗ [v8 · t1] desktop account buttons match reference hit rectangles  (18 steps, 4d59931611dcf9bb)
+    screenshot 'invalid-name': FLIP mean 0.0030 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/desktop_account_buttons_match_reference_hit_rectangles/invalid_name.desktop.metal.flip.png
+    AssertionError: screenshot 'invalid-name': FLIP mean 0.0030 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/desktop_account_buttons_match_reference_hit_rectangles/invalid_name.desktop.metal.flip.png
+        at Object.expectScreenshot (bundle.js:17783:26)
+        at bundle.js:56214:13
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+✓ [v8 · t1] desktop title animation uses reference global phase and wraps  (66 steps, 793cba32c9292a54)
+✓ [v8 · t1] desktop reference popup and banner layouts  (10 steps, 4608e30797e2edce)
+✓ [v8 · t1] dragon palette all original animation frames  (4 steps, b87c472120e1fcad)
+✓ [v8 · t1] bubble palette all original shot frames  (4 steps, c8e9a2da01cc1e84)
+✓ [v8 · t1] dragon palette production composed colors retain encoded source RGB  (5 steps, 07f85916d4ace119)
+✓ [v8 · t1] dragon palette GPU masks flips clips and source-over agree  (12 steps, 33aa85adf0dbd37b)
+✗ [v8 · t1] dragon skins settings selection reaches red gameplay  (12 steps, 14d2f1a6704499a0)
+    screenshot 'settings-preview': FLIP mean 0.0057 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview.desktop.metal.flip.png
+    AssertionError: screenshot 'settings-preview': FLIP mean 0.0057 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview.desktop.metal.flip.png
+        at Object.expectScreenshot (bundle.js:17783:26)
+        at bundle.js:56602:13
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+✗ [v8 · t1] dragon skins settings selection reaches yellow gameplay  (15 steps, 9fd9f2594fe15f72)
+    screenshot 'settings-preview': FLIP mean 0.0062 (limit 0.0100), max 0.981 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview.desktop.metal.flip.png
+    AssertionError: screenshot 'settings-preview': FLIP mean 0.0062 (limit 0.0100), max 0.981 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview.desktop.metal.flip.png
+        at Object.expectScreenshot (bundle.js:17783:26)
+        at bundle.js:56602:13
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+✓ [v8 · t1] harness starter golden  (1 steps, 24e0db5037e39271)
+✓ [v8 · t1] madness release menu and mode cards fit and launch both modes  (26 steps, 694ef729b7952b3a)
+✓ [v8 · t1] madness menu stays simple with development enabled  (102 steps, 4fdf2cd9dd39cfb5)
+✓ [v8 · t1] movement board 768x720  (2 steps, 7cca56c15e004722)
+✓ [v8 · t1] movement board 1680x720  (2 steps, 7b9c517dea62c66a)
+✓ [v8 · t1] movement board 640x960  (2 steps, 52eb704c44e7de14)
+✓ [v8 · t1] feedback jump dust grounded shadows nameplates and guarded results remain readable  (284 steps, c32239428965edb8)
+    │ {"peakDrawCalls":8}
+✓ [v8 · t1] party boss moving art bottle warning and capture stay readable  (192 steps, 3fda017dbdecc730)
+✓ [v8 · t1] party boss six firing dragons stay bounded on phone low  (304 steps, 53c9329521b57129)
+    │ {"peakDrawCalls":8,"peakBubbles":6,"peakBottles":7,"peakLightning":12,"shots":67}
+✗ [v8 · t1] party boss ten dragons sustain a long lightning fight without growing visual pools  (12007 steps, 5892a16664e10de9)
+    screenshot 'boss_soak': FLIP mean 0.0022 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/party_boss_ten_dragons_sustain_a_long_lightning_fight_without_growing_visual_pools/boss_soak.desktop.metal.flip.png
+    AssertionError: screenshot 'boss_soak': FLIP mean 0.0022 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/party_boss_ten_dragons_sustain_a_long_lightning_fight_without_growing_visual_pools/boss_soak.desktop.metal.flip.png
+        at Object.expectScreenshot (bundle.js:17783:26)
+        at bundle.js:58569:13
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+    │ {"warmPool":1233,"peakPool":1233,"peakBubbles":18,"peakDraws":8,"ticks":12000}
+✓ [v8 · t1] party boss ten dragons fire identifiable lightning bubbles  (10 steps, 6d660a8a1e6db320)
+✓ [v8 · t1] party feedback ready GO and last kill fit every window  (936 steps, 91b4c96c3a2d0df6)
+✓ [v8 · t1] party last standing remaining dragon gets a clear HUD notice before defeat  (138 steps, 4df1d8177e65d670)
+✓ [v8 · t1] party pacing five second countdown preparation shooting and red last enemy  (309 steps, cee3b2448e3c0602)
+✓ [v8 · t1] party polish readable countdown falling enemies and rest practice shots  (196 steps, fa8b8164de90d1f6)
+✓ [v8 · t1] party randomized powerup has a small green benefit alert in the arena  (7 steps, 237fadaf084faa72)
+✓ [v8 · t1] party palette ten dragon GPU body and matching bubbles  (4 steps, 23a008c1fca38449)
+✓ [v8 · t1] ten dragon lobby all real cards and portraits fit native wide and tall screens  (48 steps, 13b1981ca900d8e3)
+✓ [v8 · t1] ten dragons firing and rescue remain bounded on phone low  (795 steps, 80ef0c9aae7ddfc0)
+    │ Ten-dragon late wave: peak 8 draw calls, 36 bubbles
+✓ [v8 · t1] party wave lobby buttons fit desktop extremes and launch actual game  (12 steps, ea4670499d6f664b)
+✓ [v8 · t1] party actual six dragon arena and rest HUD  (128 steps, a92fc22a3f092b84)
+✓ [v8 · t1] party whole wave preview and late mixed formation stay within render budget  (329 steps, 3da22f13442d783b)
+✓ [v8 · t1] party dragon cards change their own slot through real pointer presses  (35 steps, 4f41edda207fec43)
+✓ [v8 · t1] pixel renderer exact texel prototype  (2 steps, 3c8c3887ddd90e3b)
+✗ [v8 · t1] desktop complete presentation flows  (165 steps, 80d2fd178a12fa5c)
+    screenshot 'boundary-element-fire': FLIP mean 0.0325 (limit 0.0100), max 0.992 (cap 0.900); heatmap .gameengine/t1/desktop_complete_presentation_flows/boundary_element_fire.desktop.metal.flip.png
+    AssertionError: screenshot 'boundary-element-fire': FLIP mean 0.0325 (limit 0.0100), max 0.992 (cap 0.900); heatmap .gameengine/t1/desktop_complete_presentation_flows/boundary_element_fire.desktop.metal.flip.png
+        at Object.expectScreenshot (bundle.js:17783:26)
+        at shot (bundle.js:60747:15)
+        at bundle.js:60777:7
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+    │ presentation title: 6 draws
+    │ presentation menu: 8 draws
+    │ presentation profiles: 8 draws
+    │ presentation scores: 6 draws
+    │ presentation settings: 8 draws
+    │ presentation help: 4 draws
+    │ presentation credits: 3 draws
+    │ presentation editor: 11 draws
+    │ presentation ready: 5 draws
+    │ presentation round24-combat: 5 draws
+    │ presentation pause: 9 draws
+    │ presentation boundary-bubble-chain: 6 draws
+    │ presentation boundary-element-fire: 6 draws
+✓ [v8 · t1] pickup sprite natural proportions  (7 steps, 06db64b1be019e2b)
+✓ [v8 · t1] wave fruit real final pops show a different reward each wave  (37 steps, 6035584deaf0bf2b)
+✓ [v8 · t1] structural budget presentation.json  (drawCallsMax 12/14)
+42 passed, 5 failed

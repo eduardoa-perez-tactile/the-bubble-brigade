@@ -1,0 +1,10 @@
+
+> bubbleboobble@0.1.0 web:build
+> node tools/web/toolchain.mjs export
+
+cooking browser content…
+building the browser WebGPU player…
+    Finished `fast` profile [optimized] target(s) in 0.10s
+built browser game: /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/build/web/site
+Serve this folder over HTTPS or localhost; WebGPU is required.
+Report: /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/build/web/build-report.json

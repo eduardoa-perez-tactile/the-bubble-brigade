@@ -1,0 +1,9 @@
+gameengine test --js v8 --record-replays --filter harness reset and tap: 0.943 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter movement physical keyboard hold release and jump: 0.942 s
+1 selected test cases passed
+gameengine test --js v8 --record-replays --filter arcade engine input full Go parity reference-round1-smoke: 1.023 s
+1 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows: 6.193 s
+1 selected test cases passed
+Harness record: 9.103 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

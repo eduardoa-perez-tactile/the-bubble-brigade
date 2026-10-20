@@ -1,0 +1,64 @@
+{
+  "ok": true,
+  "target": "web",
+  "config": "probe",
+  "dryRun": false,
+  "out": "/Users/eduardoleale/.codex/worktrees/engine-015-web-deploy/bubblebooble/bubble-boobble/build/web",
+  "nativeSystems": {
+    "linked": false
+  },
+  "site": "/Users/eduardoleale/.codex/worktrees/engine-015-web-deploy/bubblebooble/bubble-boobble/build/web/site",
+  "contentBytes": 4128674,
+  "files": [
+    "game/base.gpak",
+    "game/code.gpak",
+    "game/manifest.json",
+    "gameengine-web-player.js",
+    "gameengine_web_player.wasm",
+    "index.html",
+    "player.js",
+    "promise-LICENSE.txt",
+    "promise-runtime.js",
+    "web-build.json"
+  ],
+  "bytes": 28465956,
+  "requirements": [
+    "HTTPS or localhost",
+    "WebGPU",
+    "WebAssembly",
+    "IndexedDB for persistent saves"
+  ],
+  "buildSteps": [
+    {
+      "id": "game/development-menu",
+      "phase": "pre-build",
+      "bucket": "first",
+      "wrote": [
+        "src/desktop/build-flags.ts"
+      ],
+      "millis": 1
+    },
+    {
+      "id": "game/reset-development-menu",
+      "phase": "post-build",
+      "bucket": "last",
+      "wrote": [
+        "src/desktop/build-flags.ts"
+      ],
+      "millis": 1
+    }
+  ],
+  "checkMode": "fail",
+  "checks": [],
+  "artifacts": [
+    {
+      "step": "build checks",
+      "group": "checks",
+      "name": "checks.json",
+      "path": "/Users/eduardoleale/.codex/worktrees/engine-015-web-deploy/bubblebooble/bubble-boobble/build/web/artifacts/checks/checks.json",
+      "bytes": 116,
+      "sha256": "157ca3ae27243cbbacac2311d86e8d5c759aa1f68304fa1858a6996c035084e5"
+    }
+  ],
+  "messages": []
+}

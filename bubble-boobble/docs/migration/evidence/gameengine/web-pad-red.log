@@ -1,0 +1,11 @@
+[v8] host: /Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host (release)
+1 host process, 1 at a time (--jobs 6)
+✗ [v8] arcade recorded controller moves fires and pauses classic campaign  (5 steps, f4ec412df051c239)
+    expected false to be true
+    AssertionError: expected false to be true
+        at check3 (bundle.js:17629:34)
+        at Object.toBe (bundle.js:17632:22)
+        at bundle.js:51776:54
+        at Generator.next (<anonymous>)
+        at fulfilled (bundle.js:13:26)
+0 passed, 1 failed

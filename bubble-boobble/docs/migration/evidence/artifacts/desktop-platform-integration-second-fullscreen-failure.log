@@ -1,0 +1,80 @@
+BubbleBoobble game-owned macOS application: /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app; bridge http://127.0.0.1:47681; installed runtime unchanged (1934941121d3).
+[Warn] render: pipeline warm-up: 3 recorded 3D pipelines dropped: no material program has their hash (a material changed since pipelines.json was recorded); loaded materials still warm theirs, re-record with `gameengine test --tier t1 --record-pipelines`
+{
+  "ok": true,
+  "mode": "player",
+  "steps": 2008,
+  "hash": "8c20982777175ddc",
+  "frames": 3991,
+  "quit": false,
+  "seconds": 33.48885375,
+  "surface": {
+    "width": 768,
+    "height": 720
+  },
+  "audio": {
+    "device": true,
+    "voices": 0,
+    "sounds": 10,
+    "buses": {
+      "Master": 1.0,
+      "Music": 0.0,
+      "SFX": 1.0,
+      "UI": 1.0,
+      "Voice": 1.0
+    },
+    "music": null
+  },
+  "quality": {
+    "device": {
+      "vendor": "apple",
+      "device": "Apple M2 Max metal-3",
+      "driver": "Metal driver on macOS Version 26.7.1 (Build 25G241)",
+      "model": "",
+      "os": "macos"
+    },
+    "profile": "desktop-apple-silicon",
+    "source": "database",
+    "benchmarkMs": null,
+    "level": 0,
+    "maxLevel": 5,
+    "thermal": "nominal",
+    "heat": null,
+    "settings": {
+      "renderScale": 1.0,
+      "post": "full",
+      "shadowQuality": "high",
+      "msaa": 0,
+      "targetFps": null,
+      "vfx": 1.0,
+      "lodBias": 0.0
+    },
+    "history": [
+      {
+        "t": 0.174191875,
+        "level": 1,
+        "thermal": "nominal"
+      },
+      {
+        "t": 4.191265875,
+        "level": 0,
+        "thermal": "nominal"
+      }
+    ]
+  },
+  "targetFps": null,
+  "idleFrames": {
+    "enabled": true,
+    "presented": 3991,
+    "skipped": 0
+  },
+  "displayHz": 120.0,
+  "frameIntervalMs": {
+    "count": 3990,
+    "mean": 8.387451846365922,
+    "p50": 8.333708,
+    "p95": 10.285625,
+    "sd": 1.7017399694410502,
+    "fps": 119.22572174685874
+  }
+}

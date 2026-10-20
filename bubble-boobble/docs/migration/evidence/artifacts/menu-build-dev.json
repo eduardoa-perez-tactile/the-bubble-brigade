@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "flavor": "dev",
+  "scriptHash": "9d49a2d05dcd47fcf0856f229f79fa83",
+  "scriptBytes": 3788387,
+  "developmentMenu": true,
+  "labels": [
+    "QUIT",
+    "SETTINGS",
+    "START GAME"
+  ],
+  "scope": "Exact shipped code.gpak script on diagnostic headless engine host; no standalone app launch"
+}

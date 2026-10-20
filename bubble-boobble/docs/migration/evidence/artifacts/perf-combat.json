@@ -1,0 +1,302 @@
+{
+  "scenario": {
+    "round": 25,
+    "players": 2,
+    "seed": 42,
+    "ticks": 600,
+    "events": 1200
+  },
+  "observed": {
+    "tick": 600,
+    "state": 1,
+    "score": 3900,
+    "bubbles": 32,
+    "players": [
+      {
+        "x": 463,
+        "lives": 3
+      },
+      {
+        "x": 340,
+        "lives": 2
+      }
+    ]
+  },
+  "perf": {
+    "systemTimeMs": {
+      "ArcadeAudioSystem": {
+        "p50": 6.146549999999997,
+        "p95": 6.146549999999997,
+        "p99": 6.146549999999997,
+        "max": 6.146549999999997,
+        "mean": 6.146549999999997,
+        "native": false
+      },
+      "ArcadeEditorInput": {
+        "p50": 1.2449559999999964,
+        "p95": 1.2449559999999964,
+        "p99": 1.2449559999999964,
+        "max": 1.2449559999999964,
+        "mean": 1.2449559999999964,
+        "native": false
+      },
+      "ArcadePool": {
+        "p50": 2.992790000000002,
+        "p95": 2.992790000000002,
+        "p99": 2.992790000000002,
+        "max": 2.992790000000002,
+        "mean": 2.992790000000002,
+        "native": false
+      },
+      "ArcadeStep": {
+        "p50": 184.40828800000008,
+        "p95": 184.40828800000008,
+        "p99": 184.40828800000008,
+        "max": 184.40828800000008,
+        "mean": 184.40828800000008,
+        "native": false
+      },
+      "DesktopSystem": {
+        "p50": 5.801246000000002,
+        "p95": 5.801246000000002,
+        "p99": 5.801246000000002,
+        "max": 5.801246000000002,
+        "mean": 5.801246000000002,
+        "native": false
+      },
+      "PortBoot": {
+        "p50": 0.705009999999997,
+        "p95": 0.705009999999997,
+        "p99": 0.705009999999997,
+        "max": 0.705009999999997,
+        "mean": 0.705009999999997,
+        "native": false
+      },
+      "RiseAndPop": {
+        "p50": 0.7076219999999964,
+        "p95": 0.7076219999999964,
+        "p99": 0.7076219999999964,
+        "max": 0.7076219999999964,
+        "mean": 0.7076219999999964,
+        "native": false
+      },
+      "gameengine.Animator": {
+        "p50": 0.09339600000000009,
+        "p95": 0.09339600000000009,
+        "p99": 0.09339600000000009,
+        "max": 0.09339600000000009,
+        "mean": 0.09339600000000009,
+        "native": false
+      },
+      "gameengine.AnimatorInit": {
+        "p50": 0.08812200000000006,
+        "p95": 0.08812200000000006,
+        "p99": 0.08812200000000006,
+        "max": 0.08812200000000006,
+        "mean": 0.08812200000000006,
+        "native": false
+      },
+      "gameengine.AnimatorSkeleton2D": {
+        "p50": 0.08288600000000007,
+        "p95": 0.08288600000000007,
+        "p99": 0.08288600000000007,
+        "max": 0.08288600000000007,
+        "mean": 0.08288600000000007,
+        "native": false
+      },
+      "gameengine.Clip2D": {
+        "p50": 0.07603300000000004,
+        "p95": 0.07603300000000004,
+        "p99": 0.07603300000000004,
+        "max": 0.07603300000000004,
+        "mean": 0.07603300000000004,
+        "native": false
+      },
+      "gameengine.Input": {
+        "p50": 4.701247,
+        "p95": 4.701247,
+        "p99": 4.701247,
+        "max": 4.701247,
+        "mean": 4.701247,
+        "native": false
+      },
+      "gameengine.ParticleClock": {
+        "p50": 0.08066200000000005,
+        "p95": 0.08066200000000005,
+        "p99": 0.08066200000000005,
+        "max": 0.08066200000000005,
+        "mean": 0.08066200000000005,
+        "native": false
+      },
+      "gameengine.Physics2D": {
+        "p50": 0.249868999999999,
+        "p95": 0.249868999999999,
+        "p99": 0.249868999999999,
+        "max": 0.249868999999999,
+        "mean": 0.249868999999999,
+        "native": false
+      },
+      "gameengine.Physics3D": {
+        "p50": 0.2678819999999991,
+        "p95": 0.2678819999999991,
+        "p99": 0.2678819999999991,
+        "max": 0.2678819999999991,
+        "mean": 0.2678819999999991,
+        "native": false
+      },
+      "gameengine.Skeleton2D": {
+        "p50": 0.18683199999999994,
+        "p95": 0.18683199999999994,
+        "p99": 0.18683199999999994,
+        "max": 0.18683199999999994,
+        "mean": 0.18683199999999994,
+        "native": false
+      },
+      "gameengine.Skeleton2DFollow": {
+        "p50": 0.05499200000000005,
+        "p95": 0.05499200000000005,
+        "p99": 0.05499200000000005,
+        "max": 0.05499200000000005,
+        "mean": 0.05499200000000005,
+        "native": false
+      },
+      "gameengine.Skeleton2DInit": {
+        "p50": 0.09184000000000007,
+        "p95": 0.09184000000000007,
+        "p99": 0.09184000000000007,
+        "max": 0.09184000000000007,
+        "mean": 0.09184000000000007,
+        "native": false
+      },
+      "gameengine.Timeline": {
+        "p50": 0.09408500000000009,
+        "p95": 0.09408500000000009,
+        "p99": 0.09408500000000009,
+        "max": 0.09408500000000009,
+        "mean": 0.09408500000000009,
+        "native": false
+      },
+      "gameengine.Tween": {
+        "p50": 0.07316100000000006,
+        "p95": 0.07316100000000006,
+        "p99": 0.07316100000000006,
+        "max": 0.07316100000000006,
+        "mean": 0.07316100000000006,
+        "native": false
+      },
+      "gameengine.VisualTweenCleanup": {
+        "p50": 0.048413000000000025,
+        "p95": 0.048413000000000025,
+        "p99": 0.048413000000000025,
+        "max": 0.048413000000000025,
+        "mean": 0.048413000000000025,
+        "native": false
+      },
+      "gameengine.WallClock": {
+        "p50": 0.026710000000000036,
+        "p95": 0.026710000000000036,
+        "p99": 0.026710000000000036,
+        "max": 0.026710000000000036,
+        "mean": 0.026710000000000036,
+        "native": false
+      },
+      "gameengine.WorldLoading": {
+        "p50": 0.06287900000000006,
+        "p95": 0.06287900000000006,
+        "p99": 0.06287900000000006,
+        "max": 0.06287900000000006,
+        "mean": 0.06287900000000006,
+        "native": false
+      }
+    },
+    "frames": 36,
+    "frameTimeMs": {
+      "p50": 0.39604100000000003,
+      "p95": 0.820208,
+      "p99": 548.424,
+      "max": 548.424,
+      "mean": 15.706952527777778
+    },
+    "scriptTimeMs": {
+      "p50": 0.37645799999999996,
+      "p95": 0.792583,
+      "p99": 493.599673,
+      "max": 493.599673,
+      "mean": 14.166246638888888
+    },
+    "jsHeapMB": 20.16486358642578,
+    "gpuTimeMs": null,
+    "memoryMB": 154.3125,
+    "loadMs": null,
+    "hitchFrames": 1,
+    "steps": 600,
+    "stepTimeMs": {
+      "p50": 0.330708,
+      "p95": 0.583083,
+      "p99": 0.723958,
+      "max": 1.6388340000000001,
+      "mean": 0.3638700666666665
+    },
+    "hitchSteps": 0,
+    "presentationTimeMs": {
+      "p50": 0.39599900000000005,
+      "p95": 0.8197080000000001,
+      "p99": 4.268999999999892,
+      "max": 4.268999999999892,
+      "mean": 0.5905901944444414
+    },
+    "paused": true,
+    "pipelinesCreatedDuringCapture": 0,
+    "drawCallsMax": 0,
+    "gcPausesOver4ms": 0,
+    "gcMaxMs": 0.2850409999999859,
+    "gcIdleMs": null,
+    "gpuTiming": true,
+    "cpuAdapter": false,
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    },
+    "host": {
+      "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+      "profile": "release"
+    }
+  },
+  "render": {
+    "drawCalls": 5,
+    "instances": 58,
+    "triangles": 1635,
+    "pipelines": 9,
+    "pipelinesCreatedThisFrame": 0,
+    "passes": [
+      "3d.clusters",
+      "3d.forward",
+      "2d.ui",
+      "post.present"
+    ],
+    "culledPasses": [],
+    "atlasPages": 1,
+    "texturesUploaded": 0,
+    "validationErrors": [],
+    "sceneSize": [
+      540,
+      960
+    ],
+    "uiModelsRendered": 0,
+    "culled2d": 0,
+    "transparent2d": 0,
+    "culledSkeletons": 0,
+    "worldOccluded": false,
+    "particleInstances": 0,
+    "glyphPageUploads": 1,
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    },
+    "rendered": true,
+    "framesRendered": 12
+  },
+  "limits": "Paused protocol capture: stepTimeMs measures simulation; presentationTimeMs is only sampled presentation frames; render.stats is the requested final render. Whole-frame timing does not establish real-time GPU performance."
+}

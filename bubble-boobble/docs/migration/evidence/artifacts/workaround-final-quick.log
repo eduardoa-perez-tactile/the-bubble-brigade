@@ -1,0 +1,20 @@
+✔ exact comparison accepts repeated trace and object key reordering (4.727916ms)
+✔ first divergent tick includes the field, input and surrounding states (2.769625ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.678833ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (72.099542ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.099958ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 159.638292
+gameengine test --js v8 --filter *movement*: 1.103 s
+11 selected test cases passed
+gameengine test --js v8 --filter *arcade engine input*: 1.267 s
+5 selected test cases passed
+gameengine test --js v8 --filter *arcade Go*: 0.992 s
+3 selected test cases passed
+Harness quick: 3.613 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

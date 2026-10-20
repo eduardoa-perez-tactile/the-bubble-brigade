@@ -1,0 +1,149 @@
+{
+  "pipelines": {
+    "tier": "desktop",
+    "pipelines": [
+      {
+        "r": "2d",
+        "key": {
+          "Blit": {
+            "format": 22
+          }
+        }
+      },
+      {
+        "r": "2d",
+        "key": {
+          "Shape": {
+            "samples": 4,
+            "format": 40
+          }
+        }
+      },
+      {
+        "r": "2d",
+        "key": {
+          "Text": {
+            "samples": 4,
+            "format": 40
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Forward": {
+            "program": "7946469ed20397e0",
+            "alpha": 0,
+            "double_sided": false,
+            "prepassed": true,
+            "samples": 4,
+            "format": 40,
+            "skinned": false,
+            "debug": 0
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Forward": {
+            "program": "ad82d3855fa8013b",
+            "alpha": 1,
+            "double_sided": true,
+            "prepassed": true,
+            "samples": 4,
+            "format": 40,
+            "skinned": false,
+            "debug": 0
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Prepass": {
+            "program": "7946469ed20397e0",
+            "alpha": 0,
+            "double_sided": false,
+            "samples": 4,
+            "format": 40,
+            "skinned": false
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Prepass": {
+            "program": "ad82d3855fa8013b",
+            "alpha": 1,
+            "double_sided": true,
+            "samples": 4,
+            "format": 40,
+            "skinned": false
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Shadow": {
+            "program": "7946469ed20397e0",
+            "alpha": 0,
+            "double_sided": false,
+            "skinned": false
+          }
+        }
+      },
+      {
+        "r": "3d",
+        "key": {
+          "Shadow": {
+            "program": "ad82d3855fa8013b",
+            "alpha": 1,
+            "double_sided": true,
+            "skinned": false
+          }
+        }
+      },
+      {
+        "r": "3d-program",
+        "program": "builtin:standard"
+      },
+      {
+        "r": "3d-program",
+        "program": "materials/pixel-ordered.material.ts"
+      }
+    ],
+    "blobCache": {
+      "hits": 59,
+      "misses": 0,
+      "stores": 0
+    }
+  },
+  "logs": {
+    "entries": [
+      {
+        "seq": 1,
+        "level": "info",
+        "category": "render",
+        "message": "pipeline warm-up: 11 of 11 recorded for desktop; pipeline cache: 26 hits, 0 misses, 0 stored",
+        "t_ms": 107.226542
+      },
+      {
+        "seq": 2,
+        "level": "info",
+        "category": "memory",
+        "message": "memory class desktop: gpu tier desktop",
+        "t_ms": 107.32558300000001
+      },
+      {
+        "seq": 3,
+        "level": "warn",
+        "category": "render",
+        "message": "pipeline warm-up: 3 recorded 3D pipelines dropped: no material program has their hash (a material changed since pipelines.json was recorded); loaded materials still warm theirs, re-record with `gameengine test --tier t1 --record-pipelines`",
+        "t_ms": 200.1985
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+.gameengine/
+build/
+builds/
+node_modules/
+.agents/
+.claude/
+.codex/agents/
+.cache/
+artifacts/
+.DS_Store

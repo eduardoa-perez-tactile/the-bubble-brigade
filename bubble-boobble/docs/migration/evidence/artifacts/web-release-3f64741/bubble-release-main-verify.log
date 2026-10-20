@@ -1,0 +1,11 @@
+
+> bubbleboobble@0.1.0 web:verify
+> node tools/web/verify.mjs --defer-browser-playtest
+
+/opt/homebrew/Cellar/node/26.9.0/bin/node --test tools/web/controls.test.mjs tools/web/save-compat.test.mjs tools/web/release-evidence.test.mjs
+gameengine check --json
+gameengine test --tier t1 --gpu-tier desktop --js v8
+gameengine test --tier t1 --gpu-tier desktop --js v8 --memory-class phone-low --filter feel six player capture chain rescue boss and results fit every aspect
+/opt/homebrew/Cellar/node/26.9.0/bin/node tools/web/toolchain.mjs parity
+/opt/homebrew/Cellar/node/26.9.0/bin/node tools/web/toolchain.mjs export
+Native checks, V8/WebAssembly tests and export passed for 3f647419189a336d2eb0e5862d28bdc35bef8359 ; browser gameplay acceptance DEFERRED: Browser gameplay playtesting is reserved for the user, as explicitly requested in this deployment task and in PROJECT.md/docs/git-workflow.md.

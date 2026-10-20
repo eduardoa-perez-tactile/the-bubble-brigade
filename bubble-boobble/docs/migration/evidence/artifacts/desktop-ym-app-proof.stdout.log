@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "pausedPrefix": {
+    "frames": 602400,
+    "fnv1a64": "a70e489a49287911",
+    "sha256": "6b973bd87781ba37c33623e13646fdec5eeb2ad8e577873b48e0c8bd456d23c5",
+    "matches": true
+  },
+  "resumedPrefix": {
+    "frames": 609600,
+    "fnv1a64": "72407eb2f1f25859",
+    "sha256": "410592a69a206eff07f46b83fc41a23a96b3412564df73b0f38e0851da16cc30",
+    "matches": true
+  },
+  "resetPrefix": {
+    "frames": 7200,
+    "fnv1a64": "3e9383e6c4ef59d1",
+    "sha256": "ee858bef1a0c027b707c977d1f62d6a28b46b9b6bf21124ca35ce05bd9add7f2",
+    "matches": true
+  },
+  "normalCleanup": true,
+  "launcherLeaseStoppedSource": true,
+  "finiteDiagnosticDeadline": true
+}

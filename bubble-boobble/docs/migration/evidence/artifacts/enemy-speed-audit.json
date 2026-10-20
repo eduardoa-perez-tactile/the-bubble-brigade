@@ -1,0 +1,2001 @@
+{
+  "reference": {
+    "repository": "https://github.com/olivierh59500/go-bubblebobble.git",
+    "revision": "783cf6aa26ac3c57cdab43f2d7a5b3725a3991cc",
+    "version": "go version go1.26.9 darwin/arm64",
+    "levelsSha256": "3509e88a991a8e0778bf1d3e7a5640c0eec5cc011d6074dac485da5a786f3e54",
+    "sourceHashes": {
+      "internal/game/bubbles.go": "06835885934aa7473d702f469f521dcc36a52f4b7f11b5227bb840e7644fade6",
+      "internal/game/enemies.go": "b444f431aa6f7e24fee4eca5fab4d3e0ec56d437b96042abc9ab2afbfd87743f",
+      "internal/game/game.go": "f6804ec2456580a0c17b3088881b98225e13310e75c32b6745e4ac8d5e19d568",
+      "internal/game/items.go": "b29ad4d00dcdb879598fa364707bc1c91d31b87826a643219b8521ce8fcc9675",
+      "internal/game/level.go": "b9fd54347257c01442c34e6dd7e7849c11f8bae97d4640f8f52498dce38933d8",
+      "internal/game/physics.go": "3436e1a7ef2a45ac534c5995570f054b4fff5fd8ab0eafd67bbc234167e2d031",
+      "internal/game/snapshot.go": "7c5c5e3965d684d7513dc28b99b276e4f35d49e6456572ec9d9978095d0c8e3f"
+    }
+  },
+  "scope": "CPU-only explicit original-speed profile canonical comparisons; production default 0.8 has intentional normal locomotion deltas, not full-state Go parity. Collision-free production position checks allow 1e-12 for movement-substep rounding. No wall-clock pacing or pixel claims.",
+  "rows": [
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "idle-round-1",
+        "round": 1,
+        "seed": 42,
+        "players": 1,
+        "spans": [
+          {
+            "ticks": 360,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 361,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 0,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 60,
+          "State": 1,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 61,
+          "State": 1,
+          "LevelTicks": 1,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 381.50000000000006,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 381.50000000000006,
+              "Y": 148.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 386.49999999999994,
+              "Y": 100.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 120,
+          "State": 1,
+          "LevelTicks": 60,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 234.00000000000264,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 234.00000000000264,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 533.9999999999981,
+              "Y": 196,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 360,
+          "State": 1,
+          "LevelTicks": 300,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 551.4999999999989,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 551.4999999999989,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 129.8333333333348,
+              "Y": 436,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "idle-round-2",
+        "round": 2,
+        "seed": 42,
+        "players": 1,
+        "spans": [
+          {
+            "ticks": 360,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 361,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 0,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 336,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 408,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 288,
+              "Y": 172,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 432,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 60,
+          "State": 1,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 336,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 408,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 288,
+              "Y": 172,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 432,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 61,
+          "State": 1,
+          "LevelTicks": 1,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 333.50000000000006,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 405.50000000000006,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 290.49999999999994,
+              "Y": 172.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 429.50000000000006,
+              "Y": 172.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 120,
+          "State": 1,
+          "LevelTicks": 60,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 186.00000000000102,
+              "Y": 206.5,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 258.0000000000034,
+              "Y": 86.5,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 316.3333333333327,
+              "Y": 316,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 411.16666666666714,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 360,
+          "State": 1,
+          "LevelTicks": 300,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 483.8333333333293,
+              "Y": 556,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 413.83333333333087,
+              "Y": 556,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 353.83333333333223,
+              "Y": 556,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 365.1666666666626,
+              "Y": 556,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "idle-round-3",
+        "round": 3,
+        "seed": 42,
+        "players": 1,
+        "spans": [
+          {
+            "ticks": 360,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 361,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 0,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 144,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 576,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 240,
+              "Y": 52,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 480,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 60,
+          "State": 1,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 144,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 576,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 240,
+              "Y": 52,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 480,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 61,
+          "State": 1,
+          "LevelTicks": 1,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 142.33333333333331,
+              "Y": 172.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 573.4999999999999,
+              "Y": 172.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 242.50000000000003,
+              "Y": 52.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 477.50000000000006,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 120,
+          "State": 1,
+          "LevelTicks": 60,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 287.3333333333339,
+              "Y": 196,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 425.9999999999991,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 389.99999999999716,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 330.0000000000034,
+              "Y": 316,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 360,
+          "State": 1,
+          "LevelTicks": 300,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 413.1666666666644,
+              "Y": 556,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 301.00000000000193,
+              "Y": 556,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 515.8333333333279,
+              "Y": 64.5,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 203.3333333333378,
+              "Y": 76,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "idle-round-4",
+        "round": 4,
+        "seed": 42,
+        "players": 1,
+        "spans": [
+          {
+            "ticks": 360,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 361,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 0,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 120,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 600,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 168,
+              "Y": 148,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 552,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 216,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 504,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 60,
+          "State": 1,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 120,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 600,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 168,
+              "Y": 148,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 552,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 216,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 504,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 61,
+          "State": 1,
+          "LevelTicks": 1,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 117.50000000000001,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 597.4999999999999,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 170.50000000000003,
+              "Y": 148.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 549.4999999999999,
+              "Y": 148.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 213.49999999999997,
+              "Y": 412.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 501.50000000000006,
+              "Y": 412.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 120,
+          "State": 1,
+          "LevelTicks": 60,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 122.99999999999972,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 449.99999999999744,
+              "Y": 76,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 249.6666666666676,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 549.4999999999999,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 215.16666666666666,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 456.5000000000011,
+              "Y": 557.5,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 360,
+          "State": 1,
+          "LevelTicks": 300,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 178.00000000000026,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 65.00000000000074,
+              "Y": 86.5,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 303.00000000000006,
+              "Y": 454,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 563.4999999999949,
+              "Y": 316,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 270.5000000000008,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 511.8333333333259,
+              "Y": 52,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "idle-round-5",
+        "round": 5,
+        "seed": 42,
+        "players": 1,
+        "spans": [
+          {
+            "ticks": 360,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 361,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 0,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 432,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 336,
+              "Y": 292,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 288,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 60,
+          "State": 1,
+          "LevelTicks": 0,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 432,
+              "Y": 52,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 172,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 336,
+              "Y": 292,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 288,
+              "Y": 412,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 61,
+          "State": 1,
+          "LevelTicks": 1,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 429.50000000000006,
+              "Y": 52.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 381.50000000000006,
+              "Y": 172.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 338.49999999999994,
+              "Y": 292.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 285.50000000000006,
+              "Y": 412.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 120,
+          "State": 1,
+          "LevelTicks": 60,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 282.0000000000034,
+              "Y": 76,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 234.00000000000264,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 485.9999999999966,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 191.33333333333331,
+              "Y": 436,
+              "Dir": 1,
+              "Age": 60,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 360,
+          "State": 1,
+          "LevelTicks": 300,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 472.83333333333246,
+              "Y": 76,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 422.33333333333246,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 296.0000000000009,
+              "Y": 316,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 366.33333333333155,
+              "Y": 76,
+              "Dir": 1,
+              "Age": 300,
+              "Angry": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": {
+        "NormalEnemySpeedScale": 1,
+        "PlayerBalance": {
+          "MoveSpeed": 3,
+          "ShoesSpeed": 5,
+          "BubbleSpeed": 8,
+          "BlueBubbleSpeed": 16,
+          "BubbleRange": 200,
+          "PinkBubbleRange": 400,
+          "FireCooldown": 18,
+          "YellowFireCooldown": 5
+        }
+      },
+      "scenario": {
+        "name": "freeze-hurry-boundary",
+        "round": 1,
+        "seed": 42,
+        "players": 1,
+        "setup": {
+          "State": 1,
+          "LevelTicks": 1798,
+          "Freeze": 2
+        },
+        "spans": [
+          {
+            "ticks": 1,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": true
+          },
+          {
+            "ticks": 4,
+            "players": [
+              {
+                "Move": 0,
+                "Jump": false,
+                "Fire": false
+              }
+            ],
+            "paused": false
+          }
+        ]
+      },
+      "frames": 6,
+      "samples": [
+        {
+          "frame": 0,
+          "State": 1,
+          "LevelTicks": 1798,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 1,
+          "State": 1,
+          "LevelTicks": 1798,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "State": 1,
+          "LevelTicks": 1798,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "State": 1,
+          "LevelTicks": 1798,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 148,
+              "Dir": -1,
+              "Age": 0,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 384,
+              "Y": 100,
+              "Dir": 1,
+              "Age": 0,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "State": 1,
+          "LevelTicks": 1799,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 381.50000000000006,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 381.50000000000006,
+              "Y": 148.5,
+              "Dir": -1,
+              "Age": 1,
+              "Angry": false
+            },
+            {
+              "Kind": "zenchan",
+              "X": 386.49999999999994,
+              "Y": 100.5,
+              "Dir": 1,
+              "Age": 1,
+              "Angry": false
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "State": 1,
+          "LevelTicks": 1800,
+          "enemies": [
+            {
+              "Kind": "zenchan",
+              "X": 378.00000000000006,
+              "Y": 196,
+              "Dir": -1,
+              "Age": 2,
+              "Angry": true
+            },
+            {
+              "Kind": "zenchan",
+              "X": 378.00000000000006,
+              "Y": 149.5,
+              "Dir": -1,
+              "Age": 2,
+              "Angry": true
+            },
+            {
+              "Kind": "zenchan",
+              "X": 389.99999999999994,
+              "Y": 101.5,
+              "Dir": 1,
+              "Age": 2,
+              "Angry": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "velocityRows": [
+    {
+      "kind": "zenchan",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 202.50000000000003,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "zenchan",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 202,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "zenchan",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "mighta",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 202.50000000000003,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "mighta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 202,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "mighta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "banebou",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 202.50000000000003,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "banebou",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 202,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "banebou",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "monsta",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 202.50000000000003,
+        "Y": 202.50000000000003,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "monsta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 202,
+        "Y": 202,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "monsta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "pulpul",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 202.6746025985717,
+        "Y": 201.90031057257133,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "pulpul",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.535
+      },
+      "productionEnemy": {
+        "X": 202.13968207885742,
+        "Y": 201.5202484580571,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "pulpul",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.535
+      }
+    },
+    {
+      "kind": "invader",
+      "angry": false,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.75,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "invader",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 203,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "invader",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": false,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "zenchan",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "zenchan",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "zenchan",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "mighta",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "mighta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "mighta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "banebou",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "banebou",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 203.5,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "banebou",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "monsta",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.5,
+        "Y": 203.5,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "monsta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 203.5,
+        "Y": 203.5,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "monsta",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    },
+    {
+      "kind": "pulpul",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 203.1844436380004,
+        "Y": 202.3804348015999,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "pulpul",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.535
+      },
+      "productionEnemy": {
+        "X": 203.1844436380004,
+        "Y": 202.3804348015999,
+        "VX": 0,
+        "VY": 0,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "pulpul",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.535
+      }
+    },
+    {
+      "kind": "invader",
+      "angry": true,
+      "productionScale": 0.8,
+      "goEnemy": {
+        "X": 205.25,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "invader",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      },
+      "productionEnemy": {
+        "X": 205.25,
+        "Y": 200.5,
+        "VX": 0,
+        "VY": 0.5,
+        "Ground": false,
+        "CarriedBy": 0,
+        "CarryTicks": 0,
+        "ID": 1,
+        "Kind": "invader",
+        "State": 0,
+        "Dir": 1,
+        "Vertical": 1,
+        "Angry": true,
+        "Age": 1,
+        "Cooldown": 179,
+        "Shoot": 0,
+        "DeadTicks": 0,
+        "Phase": 0.5
+      }
+    }
+  ]
+}

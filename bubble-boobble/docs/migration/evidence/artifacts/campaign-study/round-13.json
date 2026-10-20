@@ -1,0 +1,43 @@
+{
+  "round": 13,
+  "availableFrames": 1261,
+  "matchedFrames": 301,
+  "boundary": {
+    "frame": 301,
+    "input": {
+      "ticks": 1,
+      "players": [
+        {
+          "Move": -1,
+          "Jump": true,
+          "Fire": true
+        },
+        {
+          "Move": 1,
+          "Jump": true,
+          "Fire": true
+        }
+      ],
+      "paused": false
+    },
+    "firstDifference": {
+      "path": "$.Snapshot.Players[1].VY",
+      "expected": 0,
+      "actual": -11
+    },
+    "players": [
+      {
+        "player": 1,
+        "expected": {
+          "Y": 24,
+          "VY": 0
+        },
+        "actual": {
+          "Y": 17,
+          "VY": -11
+        }
+      }
+    ]
+  },
+  "failure": null
+}

@@ -1,0 +1,1410 @@
+gameengine bundle: 0.452 s
+/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host --mode headless --project /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble --bundle /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.gameengine/bundle.js --js v8 --scene scenes/arcade.scene.json --verify /Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/tests/replays/desktop_complete_presentation_flows.greplay failed (1)
+{
+  "ok": false,
+  "steps": 1,
+  "firstDivergence": {
+    "step": 0,
+    "expected": "9cd0b39ca4d244d1",
+    "actual": "d9a73817d8f0625b"
+  },
+  "breakdown": [
+    {
+      "system": "gameengine.Input",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.WorldLoading",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.WallClock",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.meta:load",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.cheat:arcade.reset",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.cheat:harness.reset",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.cheat:port.movement",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.AnimatorInit",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "gameengine.Skeleton2DInit",
+      "hash": "f93bfe8585536858"
+    },
+    {
+      "system": "ArcadeBoot",
+      "hash": "e84d13de011e2a60"
+    },
+    {
+      "system": "DesktopSystem",
+      "hash": "e84d13de011e2a60"
+    },
+    {
+      "system": "ArcadeEditorInput",
+      "hash": "e84d13de011e2a60"
+    },
+    {
+      "system": "ArcadeStep",
+      "hash": "e84d13de011e2a60"
+    },
+    {
+      "system": "ArcadeAudioSystem",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "ArcadePool",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "PortBoot",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "PortControls",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "PortMovement",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "SetupView",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "SpawnBubbles",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "RiseAndPop",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Timeline",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Animator",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Clip2D",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Tween",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.VisualTweenCleanup",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Skeleton2D",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.AnimatorSkeleton2D",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Physics2D",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Physics3D",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.ParticleClock",
+      "hash": "8d76be2a64bbf243"
+    },
+    {
+      "system": "gameengine.Skeleton2DFollow",
+      "hash": "8d76be2a64bbf243"
+    }
+  ],
+  "note": "the replay has no checkpoint at this step: on a build that still verifies it (e.g. the previous commit), run `gameengine replay rehash <file> --checkpoint-every 1 --out <copy>`, then `replay verify <copy>` here names the system and components",
+  "hint": "the very first step differs: the replay was recorded from a world that was not freshly built (older engines let `replay record start` begin mid-game), or with other code or content",
+  "worldBefore": {
+    "entities": [
+      {
+        "id": "1:1",
+        "components": {
+          "ActionState": {
+            "name": "move",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "2:1",
+        "components": {
+          "ActionState": {
+            "name": "jump",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "3:1",
+        "components": {
+          "ActionState": {
+            "name": "pause",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "4:1",
+        "components": {
+          "ActionState": {
+            "name": "fire",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "5:1",
+        "components": {
+          "ActionState": {
+            "name": "menuY",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "6:1",
+        "components": {
+          "ActionState": {
+            "name": "menuX",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "7:1",
+        "components": {
+          "ActionState": {
+            "name": "confirm",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "8:1",
+        "components": {
+          "ActionState": {
+            "name": "back",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "9:1",
+        "components": {
+          "ActionState": {
+            "name": "undo",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "10:1",
+        "components": {
+          "ActionState": {
+            "name": "save",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "11:1",
+        "components": {
+          "ActionState": {
+            "name": "playtest",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "12:1",
+        "components": {
+          "ActionState": {
+            "name": "mute",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "13:1",
+        "components": {
+          "ActionState": {
+            "name": "fullscreen",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "14:1",
+        "components": {
+          "ActionState": {
+            "name": "move2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "15:1",
+        "components": {
+          "ActionState": {
+            "name": "jump2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "16:1",
+        "components": {
+          "ActionState": {
+            "name": "fire2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "17:1",
+        "components": {
+          "ActionState": {
+            "name": "delete",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "18:1",
+        "components": {
+          "ActionState": {
+            "name": "profileConfirm",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "19:1",
+        "components": {
+          "ActionState": {
+            "name": "editorModifier",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "20:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              384.0,
+              360.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "SceneEntity": {
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf"
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              384.0,
+              360.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      },
+      {
+        "id": "21:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "SceneEntity": {
+            "guid": "57b99a5d-ffbb-4510-a11a-4347ae61e5b8"
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 0
+          }
+        }
+      }
+    ],
+    "resources": {
+      "ViewInfo": {
+        "width": 1080,
+        "height": 1920,
+        "scale": 1.0,
+        "safeArea": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "WorldView": {
+        "center": [
+          0.0,
+          0.0
+        ],
+        "orthoSize": 5.0,
+        "fit": "Contain",
+        "designAspect": 0.5625
+      },
+      "PointerState": {
+        "down": false,
+        "id": 0,
+        "screen": [
+          0.0,
+          0.0
+        ],
+        "world": [
+          0.0,
+          0.0
+        ],
+        "startWorld": [
+          0.0,
+          0.0
+        ],
+        "downStep": 0,
+        "count": 0,
+        "lastTapStep": 0,
+        "lastTapWorld": [
+          0.0,
+          0.0
+        ],
+        "dragging": false,
+        "longFired": false,
+        "secondDown": false,
+        "secondId": 0,
+        "secondScreen": [
+          0.0,
+          0.0
+        ],
+        "pinchDist": 0.0,
+        "pinchAngle": 0.0
+      },
+      "DeviceMotion": {
+        "gravity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "MorePlayerInputs": {
+        "buttons": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "stickX": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stickY": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "PlayerInputs": {
+        "players": 0,
+        "buttons0": 0,
+        "buttons1": 0,
+        "buttons2": 0,
+        "buttons3": 0,
+        "stick0": [
+          0.0,
+          0.0
+        ],
+        "stick1": [
+          0.0,
+          0.0
+        ],
+        "stick2": [
+          0.0,
+          0.0
+        ],
+        "stick3": [
+          0.0,
+          0.0
+        ]
+      },
+      "Time": {
+        "step": 0,
+        "dt": 0.016666668,
+        "elapsed": 0
+      },
+      "WorldInfo": {
+        "seed": 0,
+        "sceneGuid": "164ff3cb-0ee9-4629-9b2f-767b931ebcd2"
+      },
+      "Physics2D": {
+        "gravity": [
+          0.0,
+          -10.0
+        ],
+        "subSteps": 4,
+        "enabled": true
+      },
+      "Physics3D": {
+        "gravity": [
+          0.0,
+          -9.81,
+          0.0
+        ],
+        "collisionSteps": 1,
+        "enabled": true
+      },
+      "WallClock": {
+        "ms": 0,
+        "tzOffset": 0
+      },
+      "ArcadeAudio": {
+        "track": "",
+        "native": false,
+        "muted": false,
+        "music": -1,
+        "sound": -1,
+        "paused": false,
+        "exitSequence": 0
+      },
+      "ArcadeControl": {
+        "active": false,
+        "skip": false,
+        "requestSequence": 0
+      },
+      "EditorPointer": {
+        "drawing": false,
+        "erasing": false,
+        "col": -1,
+        "row": -1
+      },
+      "Game": {
+        "score": 0,
+        "spawned": 0
+      },
+      "HarnessControl": {
+        "active": 0
+      },
+      "PortInput": {
+        "move": 0,
+        "jump": false
+      },
+      "PortMatch": {
+        "active": false,
+        "tick": 0,
+        "countdown": 60,
+        "ready": true,
+        "paused": false,
+        "walked": 0,
+        "jumps": 0,
+        "jumpSound": false,
+        "skip": false
+      },
+      "PortPlayer": {
+        "x": 0,
+        "y": 0,
+        "vx": 0,
+        "vy": 0,
+        "ground": false,
+        "lives": 3,
+        "dir": 1,
+        "jumpBuffer": 0,
+        "coyote": 0,
+        "lastJump": false,
+        "invincible": 0,
+        "dead": 0,
+        "shoot": 0,
+        "cooldown": 0,
+        "walkFrame": 0
+      }
+    }
+  },
+  "js": "v8"
+}
+

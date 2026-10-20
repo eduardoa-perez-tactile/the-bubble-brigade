@@ -1,0 +1,7 @@
+{
+  "engineRoot": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/engine-source",
+  "cargoHome": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/cargo",
+  "rustupHome": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/rustup",
+  "emsdkRoot": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/emsdk",
+  "rustToolchain": "1.94.1"
+}

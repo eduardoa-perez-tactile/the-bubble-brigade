@@ -1,0 +1,8 @@
+{
+  "engineRoot": "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/engine-source-0.1.15",
+  "cargoHome": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/cargo",
+  "rustupHome": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/rustup",
+  "emsdkRoot": "/Users/eduardoleale/workspace/tactile-game-engine/streetfighter/streetfighter/.gameengine/toolchains/emsdk",
+  "rustToolchain": "1.94.1",
+  "targetDir": "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/engine-web-target-0.1.15"
+}

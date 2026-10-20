@@ -1,0 +1,2179 @@
+{
+  "rows": [
+    {
+      "team": 6,
+      "observed": {
+        "players": 6,
+        "alive": 6,
+        "bots": 5,
+        "bubbles": 2,
+        "enemies": 0,
+        "tick": 661,
+        "phase": "boss",
+        "bossHP": 50
+      },
+      "startup": {
+        "systemTimeMs": {
+          "ArcadeAudioSystem": {
+            "p50": 0.168875,
+            "p95": 0.168875,
+            "p99": 0.168875,
+            "max": 0.168875,
+            "mean": 0.168875,
+            "native": false
+          },
+          "ArcadeEditorInput": {
+            "p50": 0.006791999999999999,
+            "p95": 0.006791999999999999,
+            "p99": 0.006791999999999999,
+            "max": 0.006791999999999999,
+            "mean": 0.006791999999999999,
+            "native": false
+          },
+          "ArcadePool": {
+            "p50": 5.305583,
+            "p95": 5.305583,
+            "p99": 5.305583,
+            "max": 5.305583,
+            "mean": 5.305583,
+            "native": false
+          },
+          "ArcadeStep": {
+            "p50": 25.267417,
+            "p95": 25.267417,
+            "p99": 25.267417,
+            "max": 25.267417,
+            "mean": 25.267417,
+            "native": false
+          },
+          "DesktopSystem": {
+            "p50": 0.089125,
+            "p95": 0.089125,
+            "p99": 0.089125,
+            "max": 0.089125,
+            "mean": 0.089125,
+            "native": false
+          },
+          "PortBoot": {
+            "p50": 0.024833,
+            "p95": 0.024833,
+            "p99": 0.024833,
+            "max": 0.024833,
+            "mean": 0.024833,
+            "native": false
+          },
+          "RiseAndPop": {
+            "p50": 0.012625,
+            "p95": 0.012625,
+            "p99": 0.012625,
+            "max": 0.012625,
+            "mean": 0.012625,
+            "native": false
+          },
+          "gameengine.Animator": {
+            "p50": 0.001499,
+            "p95": 0.001499,
+            "p99": 0.001499,
+            "max": 0.001499,
+            "mean": 0.001499,
+            "native": false
+          },
+          "gameengine.AnimatorInit": {
+            "p50": 0.001333,
+            "p95": 0.001333,
+            "p99": 0.001333,
+            "max": 0.001333,
+            "mean": 0.001333,
+            "native": false
+          },
+          "gameengine.AnimatorSkeleton2D": {
+            "p50": 0.0010830000000000002,
+            "p95": 0.0010830000000000002,
+            "p99": 0.0010830000000000002,
+            "max": 0.0010830000000000002,
+            "mean": 0.0010830000000000002,
+            "native": false
+          },
+          "gameengine.Clip2D": {
+            "p50": 0.0009170000000000001,
+            "p95": 0.0009170000000000001,
+            "p99": 0.0009170000000000001,
+            "max": 0.0009170000000000001,
+            "mean": 0.0009170000000000001,
+            "native": false
+          },
+          "gameengine.Input": {
+            "p50": 0.043582,
+            "p95": 0.043582,
+            "p99": 0.043582,
+            "max": 0.043582,
+            "mean": 0.043582,
+            "native": false
+          },
+          "gameengine.ParticleClock": {
+            "p50": 0.0011250000000000001,
+            "p95": 0.0011250000000000001,
+            "p99": 0.0011250000000000001,
+            "max": 0.0011250000000000001,
+            "mean": 0.0011250000000000001,
+            "native": false
+          },
+          "gameengine.Physics2D": {
+            "p50": 0.003584,
+            "p95": 0.003584,
+            "p99": 0.003584,
+            "max": 0.003584,
+            "mean": 0.003584,
+            "native": false
+          },
+          "gameengine.Physics3D": {
+            "p50": 0.002666,
+            "p95": 0.002666,
+            "p99": 0.002666,
+            "max": 0.002666,
+            "mean": 0.002666,
+            "native": false
+          },
+          "gameengine.Skeleton2D": {
+            "p50": 0.002375,
+            "p95": 0.002375,
+            "p99": 0.002375,
+            "max": 0.002375,
+            "mean": 0.002375,
+            "native": false
+          },
+          "gameengine.Skeleton2DFollow": {
+            "p50": 0.0006670000000000001,
+            "p95": 0.0006670000000000001,
+            "p99": 0.0006670000000000001,
+            "max": 0.0006670000000000001,
+            "mean": 0.0006670000000000001,
+            "native": false
+          },
+          "gameengine.Skeleton2DInit": {
+            "p50": 0.0017500000000000003,
+            "p95": 0.0017500000000000003,
+            "p99": 0.0017500000000000003,
+            "max": 0.0017500000000000003,
+            "mean": 0.0017500000000000003,
+            "native": false
+          },
+          "gameengine.Timeline": {
+            "p50": 0.001416,
+            "p95": 0.001416,
+            "p99": 0.001416,
+            "max": 0.001416,
+            "mean": 0.001416,
+            "native": false
+          },
+          "gameengine.Tween": {
+            "p50": 0.0011250000000000001,
+            "p95": 0.0011250000000000001,
+            "p99": 0.0011250000000000001,
+            "max": 0.0011250000000000001,
+            "mean": 0.0011250000000000001,
+            "native": false
+          },
+          "gameengine.VisualTweenCleanup": {
+            "p50": 0.0006249999999999999,
+            "p95": 0.0006249999999999999,
+            "p99": 0.0006249999999999999,
+            "max": 0.0006249999999999999,
+            "mean": 0.0006249999999999999,
+            "native": false
+          },
+          "gameengine.WallClock": {
+            "p50": 0.000459,
+            "p95": 0.000459,
+            "p99": 0.000459,
+            "max": 0.000459,
+            "mean": 0.000459,
+            "native": false
+          },
+          "gameengine.WorldLoading": {
+            "p50": 0.000916,
+            "p95": 0.000916,
+            "p99": 0.000916,
+            "max": 0.000916,
+            "mean": 0.000916,
+            "native": false
+          },
+          "gameengine.cheat:arcade.pop-burst": {
+            "p50": 0.225584,
+            "p95": 0.225584,
+            "p99": 0.225584,
+            "max": 0.225584,
+            "mean": 0.225584,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-player-motion": {
+            "p50": 0.013625000000000002,
+            "p95": 0.013625000000000002,
+            "p99": 0.013625000000000002,
+            "max": 0.013625000000000002,
+            "mean": 0.013625000000000002,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-scoring": {
+            "p50": 0.003125,
+            "p95": 0.003125,
+            "p99": 0.003125,
+            "max": 0.003125,
+            "mean": 0.003125,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-top-traversal": {
+            "p50": 0.002542,
+            "p95": 0.002542,
+            "p99": 0.002542,
+            "max": 0.002542,
+            "mean": 0.002542,
+            "native": false
+          },
+          "gameengine.cheat:arcade.reset": {
+            "p50": 0.0035,
+            "p95": 0.0035,
+            "p99": 0.0035,
+            "max": 0.0035,
+            "mean": 0.0035,
+            "native": false
+          },
+          "gameengine.cheat:arcade.sprite-sizing": {
+            "p50": 0.009375,
+            "p95": 0.009375,
+            "p99": 0.009375,
+            "max": 0.009375,
+            "mean": 0.009375,
+            "native": false
+          },
+          "gameengine.cheat:harness.reset": {
+            "p50": 0.019,
+            "p95": 0.019,
+            "p99": 0.019,
+            "max": 0.019,
+            "mean": 0.019,
+            "native": false
+          },
+          "gameengine.cheat:party.boss-duel": {
+            "p50": 0.0022500000000000003,
+            "p95": 0.0022500000000000003,
+            "p99": 0.0022500000000000003,
+            "max": 0.0022500000000000003,
+            "mean": 0.0022500000000000003,
+            "native": false
+          },
+          "gameengine.cheat:party.clear-wave": {
+            "p50": 0.012416,
+            "p95": 0.012416,
+            "p99": 0.012416,
+            "max": 0.012416,
+            "mean": 0.012416,
+            "native": false
+          },
+          "gameengine.cheat:party.feedback-cluster": {
+            "p50": 0.015042,
+            "p95": 0.015042,
+            "p99": 0.015042,
+            "max": 0.015042,
+            "mean": 0.015042,
+            "native": false
+          },
+          "gameengine.cheat:party.feel-showcase": {
+            "p50": 0.002542,
+            "p95": 0.002542,
+            "p99": 0.002542,
+            "max": 0.002542,
+            "mean": 0.002542,
+            "native": false
+          },
+          "gameengine.cheat:party.finish-boss": {
+            "p50": 0.005666,
+            "p95": 0.005666,
+            "p99": 0.005666,
+            "max": 0.005666,
+            "mean": 0.005666,
+            "native": false
+          },
+          "gameengine.cheat:party.hit-dragon": {
+            "p50": 0.002375,
+            "p95": 0.002375,
+            "p99": 0.002375,
+            "max": 0.002375,
+            "mean": 0.002375,
+            "native": false
+          },
+          "gameengine.cheat:party.last-enemy": {
+            "p50": 0.0026249999999999997,
+            "p95": 0.0026249999999999997,
+            "p99": 0.0026249999999999997,
+            "max": 0.0026249999999999997,
+            "mean": 0.0026249999999999997,
+            "native": false
+          },
+          "gameengine.cheat:party.powerup": {
+            "p50": 0.0035,
+            "p95": 0.0035,
+            "p99": 0.0035,
+            "max": 0.0035,
+            "mean": 0.0035,
+            "native": false
+          },
+          "gameengine.cheat:party.protect-team": {
+            "p50": 0.002375,
+            "p95": 0.002375,
+            "p99": 0.002375,
+            "max": 0.002375,
+            "mean": 0.002375,
+            "native": false
+          },
+          "gameengine.cheat:party.rescue-setup": {
+            "p50": 0.006667,
+            "p95": 0.006667,
+            "p99": 0.006667,
+            "max": 0.006667,
+            "mean": 0.006667,
+            "native": false
+          },
+          "gameengine.cheat:party.reset": {
+            "p50": 1.5775,
+            "p95": 1.5775,
+            "p99": 1.5775,
+            "max": 1.5775,
+            "mean": 1.5775,
+            "native": false
+          },
+          "gameengine.cheat:port.movement": {
+            "p50": 0.003708,
+            "p95": 0.003708,
+            "p99": 0.003708,
+            "max": 0.003708,
+            "mean": 0.003708,
+            "native": false
+          }
+        },
+        "frames": 73,
+        "frameTimeMs": {
+          "p50": 0.26287499999999997,
+          "p95": 0.93775,
+          "p99": 38.712792,
+          "max": 38.712792,
+          "mean": 0.9776050273972601
+        },
+        "scriptTimeMs": {
+          "p50": 0.218748,
+          "p95": 0.726376,
+          "p99": 36.575917,
+          "max": 36.575917,
+          "mean": 0.8157106575342464
+        },
+        "jsHeapMB": 23.741844177246094,
+        "gpuTimeMs": null,
+        "memoryMB": 196.59375,
+        "loadMs": null,
+        "hitchFrames": 1,
+        "steps": 2,
+        "stepTimeMs": {
+          "p50": 8.340458,
+          "p95": 25.996959,
+          "p99": 25.996959,
+          "max": 25.996959,
+          "mean": 17.1687085
+        },
+        "hitchSteps": 1,
+        "presentationTimeMs": {
+          "p50": 0.257583,
+          "p95": 0.7741669999999999,
+          "p99": 3.993168,
+          "max": 3.993168,
+          "mean": 0.4505508356164384
+        },
+        "paused": true,
+        "pipelinesCreatedDuringCapture": 0,
+        "drawCallsMax": 0,
+        "gcPausesOver4ms": 0,
+        "gcMaxMs": 0.22729099999999058,
+        "gcIdleMs": {
+          "p50": 0.0027080000000000003,
+          "p95": 0.0027080000000000003,
+          "p99": 0.0027080000000000003,
+          "max": 0.0027080000000000003,
+          "mean": 0.0027080000000000003
+        },
+        "gpuTiming": true,
+        "cpuAdapter": false,
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "perf": {
+        "systemTimeMs": {
+          "ArcadeAudioSystem": {
+            "p50": 0.750755,
+            "p95": 1.003827,
+            "p99": 1.003827,
+            "max": 1.003827,
+            "mean": 0.8124809000000001,
+            "native": false
+          },
+          "ArcadeEditorInput": {
+            "p50": 0.11962500000000008,
+            "p95": 0.12941700000000006,
+            "p99": 0.12941700000000006,
+            "max": 0.12941700000000006,
+            "mean": 0.11995830000000007,
+            "native": false
+          },
+          "ArcadePool": {
+            "p50": 14.065170000000004,
+            "p95": 21.769879000000003,
+            "p99": 21.769879000000003,
+            "max": 21.769879000000003,
+            "mean": 13.7135347,
+            "native": false
+          },
+          "ArcadeStep": {
+            "p50": 14.737458000000005,
+            "p95": 20.281001,
+            "p99": 20.281001,
+            "max": 20.281001,
+            "mean": 15.606741000000003,
+            "native": false
+          },
+          "DesktopSystem": {
+            "p50": 0.9922089999999999,
+            "p95": 1.3571229999999994,
+            "p99": 1.3571229999999994,
+            "max": 1.3571229999999994,
+            "mean": 1.0146117000000001,
+            "native": false
+          },
+          "PortBoot": {
+            "p50": 0.07646000000000004,
+            "p95": 0.10104200000000005,
+            "p99": 0.10104200000000005,
+            "max": 0.10104200000000005,
+            "mean": 0.08149980000000005,
+            "native": false
+          },
+          "RiseAndPop": {
+            "p50": 0.07403800000000003,
+            "p95": 0.14845999999999995,
+            "p99": 0.14845999999999995,
+            "max": 0.14845999999999995,
+            "mean": 0.08303350000000004,
+            "native": false
+          },
+          "gameengine.Animator": {
+            "p50": 0.009082000000000003,
+            "p95": 0.010668000000000002,
+            "p99": 0.010668000000000002,
+            "max": 0.010668000000000002,
+            "mean": 0.009349600000000003,
+            "native": false
+          },
+          "gameengine.AnimatorInit": {
+            "p50": 0.010920000000000004,
+            "p95": 0.012834000000000005,
+            "p99": 0.012834000000000005,
+            "max": 0.012834000000000005,
+            "mean": 0.011241900000000004,
+            "native": false
+          },
+          "gameengine.AnimatorSkeleton2D": {
+            "p50": 0.008877000000000001,
+            "p95": 0.010374000000000001,
+            "p99": 0.010374000000000001,
+            "max": 0.010374000000000001,
+            "mean": 0.009158000000000003,
+            "native": false
+          },
+          "gameengine.Clip2D": {
+            "p50": 0.008129000000000003,
+            "p95": 0.009290000000000001,
+            "p99": 0.009290000000000001,
+            "max": 0.009290000000000001,
+            "mean": 0.008229200000000002,
+            "native": false
+          },
+          "gameengine.Input": {
+            "p50": 0.7199569999999998,
+            "p95": 0.7783720000000001,
+            "p99": 0.7783720000000001,
+            "max": 0.7783720000000001,
+            "mean": 0.7200768000000001,
+            "native": false
+          },
+          "gameengine.ParticleClock": {
+            "p50": 0.007624000000000001,
+            "p95": 0.009127,
+            "p99": 0.009127,
+            "max": 0.009127,
+            "mean": 0.007899999999999999,
+            "native": false
+          },
+          "gameengine.Physics2D": {
+            "p50": 0.02553900000000001,
+            "p95": 0.03025700000000002,
+            "p99": 0.03025700000000002,
+            "max": 0.03025700000000002,
+            "mean": 0.026084900000000015,
+            "native": false
+          },
+          "gameengine.Physics3D": {
+            "p50": 0.02532800000000001,
+            "p95": 0.028915000000000014,
+            "p99": 0.028915000000000014,
+            "max": 0.028915000000000014,
+            "mean": 0.02586230000000001,
+            "native": false
+          },
+          "gameengine.Skeleton2D": {
+            "p50": 0.019049000000000014,
+            "p95": 0.028126000000000016,
+            "p99": 0.028126000000000016,
+            "max": 0.028126000000000016,
+            "mean": 0.020009300000000008,
+            "native": false
+          },
+          "gameengine.Skeleton2DFollow": {
+            "p50": 0.006126999999999999,
+            "p95": 0.007582999999999999,
+            "p99": 0.007582999999999999,
+            "max": 0.007582999999999999,
+            "mean": 0.0063945999999999985,
+            "native": false
+          },
+          "gameengine.Skeleton2DInit": {
+            "p50": 0.009623000000000003,
+            "p95": 0.016915,
+            "p99": 0.016915,
+            "max": 0.016915,
+            "mean": 0.010661100000000001,
+            "native": false
+          },
+          "gameengine.Timeline": {
+            "p50": 0.009711000000000003,
+            "p95": 0.013875000000000004,
+            "p99": 0.013875000000000004,
+            "max": 0.013875000000000004,
+            "mean": 0.010400100000000004,
+            "native": false
+          },
+          "gameengine.Tween": {
+            "p50": 0.007838999999999999,
+            "p95": 0.009501000000000006,
+            "p99": 0.009501000000000006,
+            "max": 0.009501000000000006,
+            "mean": 0.008284300000000001,
+            "native": false
+          },
+          "gameengine.VisualTweenCleanup": {
+            "p50": 0.005538,
+            "p95": 0.006536999999999997,
+            "p99": 0.006536999999999997,
+            "max": 0.006536999999999997,
+            "mean": 0.005662799999999999,
+            "native": false
+          },
+          "gameengine.WallClock": {
+            "p50": 0.001914,
+            "p95": 0.0023789999999999987,
+            "p99": 0.0023789999999999987,
+            "max": 0.0023789999999999987,
+            "mean": 0.0019506999999999997,
+            "native": false
+          },
+          "gameengine.WorldLoading": {
+            "p50": 0.0072939999999999975,
+            "p95": 0.011289,
+            "p99": 0.011289,
+            "max": 0.011289,
+            "mean": 0.007851199999999997,
+            "native": false
+          }
+        },
+        "frames": 709,
+        "frameTimeMs": {
+          "p50": 0.421792,
+          "p95": 3.910917,
+          "p99": 62.303625000000004,
+          "max": 94.00775,
+          "mean": 1.656651753173484
+        },
+        "scriptTimeMs": {
+          "p50": 0.403499,
+          "p95": 0.93725,
+          "p99": 51.223659,
+          "max": 82.750872,
+          "mean": 1.3199983145275032
+        },
+        "jsHeapMB": 36.311317443847656,
+        "gpuTimeMs": null,
+        "memoryMB": 228.265625,
+        "loadMs": null,
+        "hitchFrames": 10,
+        "steps": 600,
+        "stepTimeMs": {
+          "p50": 0.508916,
+          "p95": 1.190792,
+          "p99": 1.42175,
+          "max": 1.753,
+          "mean": 0.6287966133333336
+        },
+        "hitchSteps": 0,
+        "presentationTimeMs": {
+          "p50": 0.41875,
+          "p95": 1.032709,
+          "p99": 4.136416,
+          "max": 4.606668,
+          "mean": 0.6010444146685471
+        },
+        "paused": true,
+        "pipelinesCreatedDuringCapture": 0,
+        "drawCallsMax": 0,
+        "gcPausesOver4ms": 0,
+        "gcMaxMs": 0.17408399999996327,
+        "gcIdleMs": {
+          "p50": 0.004458,
+          "p95": 1.092958,
+          "p99": 1.092958,
+          "max": 1.092958,
+          "mean": 0.18603450000000002
+        },
+        "gpuTiming": true,
+        "cpuAdapter": false,
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "render": {
+        "drawCalls": 4,
+        "instances": 520,
+        "triangles": 1041,
+        "pipelines": 8,
+        "pipelinesCreatedThisFrame": 0,
+        "passes": [
+          "3d.clusters",
+          "3d.forward",
+          "2d.ui",
+          "post.present"
+        ],
+        "culledPasses": [],
+        "atlasPages": 2,
+        "texturesUploaded": 0,
+        "validationErrors": [],
+        "sceneSize": [
+          768,
+          720
+        ],
+        "uiModelsRendered": 0,
+        "culled2d": 0,
+        "transparent2d": 0,
+        "culledSkeletons": 0,
+        "worldOccluded": false,
+        "particleInstances": 0,
+        "culling": {
+          "distance": 0,
+          "small": 0,
+          "occluded": 0,
+          "occluderTriangles": 0,
+          "animations": 0,
+          "effects": 0,
+          "fading": 0
+        },
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "rendered": true,
+        "framesRendered": 32,
+        "cullingSettings": {
+          "distance": true,
+          "layerDistances": {},
+          "minScreenSize": 0,
+          "animation": true,
+          "particles": true,
+          "occlusion": "auto",
+          "occluderTriangles": 4096,
+          "lodCrossFade": 0,
+          "perspective2d": true
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000041
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014457999999999999
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001709
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.21054099999999998
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.011125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.092541
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.0012079999999999999
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.0011250000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.03625
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.003291
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 0.281458
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.009041
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.000792
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.003834
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.00075
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.000458
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 0.345
+          }
+        ],
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "peakDraws": 6
+    },
+    {
+      "team": 10,
+      "observed": {
+        "players": 10,
+        "alive": 10,
+        "bots": 9,
+        "bubbles": 9,
+        "enemies": 0,
+        "tick": 661,
+        "phase": "boss",
+        "bossHP": 53
+      },
+      "startup": {
+        "systemTimeMs": {
+          "ArcadeAudioSystem": {
+            "p50": 0.14737499999999998,
+            "p95": 0.14737499999999998,
+            "p99": 0.14737499999999998,
+            "max": 0.14737499999999998,
+            "mean": 0.14737499999999998,
+            "native": false
+          },
+          "ArcadeEditorInput": {
+            "p50": 0.018958,
+            "p95": 0.018958,
+            "p99": 0.018958,
+            "max": 0.018958,
+            "mean": 0.018958,
+            "native": false
+          },
+          "ArcadePool": {
+            "p50": 6.413625,
+            "p95": 6.413625,
+            "p99": 6.413625,
+            "max": 6.413625,
+            "mean": 6.413625,
+            "native": false
+          },
+          "ArcadeStep": {
+            "p50": 7.329292,
+            "p95": 7.329292,
+            "p99": 7.329292,
+            "max": 7.329292,
+            "mean": 7.329292,
+            "native": false
+          },
+          "DesktopSystem": {
+            "p50": 0.08637500000000001,
+            "p95": 0.08637500000000001,
+            "p99": 0.08637500000000001,
+            "max": 0.08637500000000001,
+            "mean": 0.08637500000000001,
+            "native": false
+          },
+          "PortBoot": {
+            "p50": 0.00875,
+            "p95": 0.00875,
+            "p99": 0.00875,
+            "max": 0.00875,
+            "mean": 0.00875,
+            "native": false
+          },
+          "RiseAndPop": {
+            "p50": 0.0074589999999999995,
+            "p95": 0.0074589999999999995,
+            "p99": 0.0074589999999999995,
+            "max": 0.0074589999999999995,
+            "mean": 0.0074589999999999995,
+            "native": false
+          },
+          "gameengine.Animator": {
+            "p50": 0.0010409999999999998,
+            "p95": 0.0010409999999999998,
+            "p99": 0.0010409999999999998,
+            "max": 0.0010409999999999998,
+            "mean": 0.0010409999999999998,
+            "native": false
+          },
+          "gameengine.AnimatorInit": {
+            "p50": 0.001,
+            "p95": 0.001,
+            "p99": 0.001,
+            "max": 0.001,
+            "mean": 0.001,
+            "native": false
+          },
+          "gameengine.AnimatorSkeleton2D": {
+            "p50": 0.000709,
+            "p95": 0.000709,
+            "p99": 0.000709,
+            "max": 0.000709,
+            "mean": 0.000709,
+            "native": false
+          },
+          "gameengine.Clip2D": {
+            "p50": 0.000583,
+            "p95": 0.000583,
+            "p99": 0.000583,
+            "max": 0.000583,
+            "mean": 0.000583,
+            "native": false
+          },
+          "gameengine.Input": {
+            "p50": 0.036874,
+            "p95": 0.036874,
+            "p99": 0.036874,
+            "max": 0.036874,
+            "mean": 0.036874,
+            "native": false
+          },
+          "gameengine.ParticleClock": {
+            "p50": 0.000542,
+            "p95": 0.000542,
+            "p99": 0.000542,
+            "max": 0.000542,
+            "mean": 0.000542,
+            "native": false
+          },
+          "gameengine.Physics2D": {
+            "p50": 0.002334,
+            "p95": 0.002334,
+            "p99": 0.002334,
+            "max": 0.002334,
+            "mean": 0.002334,
+            "native": false
+          },
+          "gameengine.Physics3D": {
+            "p50": 0.002209,
+            "p95": 0.002209,
+            "p99": 0.002209,
+            "max": 0.002209,
+            "mean": 0.002209,
+            "native": false
+          },
+          "gameengine.Skeleton2D": {
+            "p50": 0.00175,
+            "p95": 0.00175,
+            "p99": 0.00175,
+            "max": 0.00175,
+            "mean": 0.00175,
+            "native": false
+          },
+          "gameengine.Skeleton2DFollow": {
+            "p50": 0.000624,
+            "p95": 0.000624,
+            "p99": 0.000624,
+            "max": 0.000624,
+            "mean": 0.000624,
+            "native": false
+          },
+          "gameengine.Skeleton2DInit": {
+            "p50": 0.001416,
+            "p95": 0.001416,
+            "p99": 0.001416,
+            "max": 0.001416,
+            "mean": 0.001416,
+            "native": false
+          },
+          "gameengine.Timeline": {
+            "p50": 0.0009170000000000001,
+            "p95": 0.0009170000000000001,
+            "p99": 0.0009170000000000001,
+            "max": 0.0009170000000000001,
+            "mean": 0.0009170000000000001,
+            "native": false
+          },
+          "gameengine.Tween": {
+            "p50": 0.001042,
+            "p95": 0.001042,
+            "p99": 0.001042,
+            "max": 0.001042,
+            "mean": 0.001042,
+            "native": false
+          },
+          "gameengine.VisualTweenCleanup": {
+            "p50": 0.000458,
+            "p95": 0.000458,
+            "p99": 0.000458,
+            "max": 0.000458,
+            "mean": 0.000458,
+            "native": false
+          },
+          "gameengine.WallClock": {
+            "p50": 0.000291,
+            "p95": 0.000291,
+            "p99": 0.000291,
+            "max": 0.000291,
+            "mean": 0.000291,
+            "native": false
+          },
+          "gameengine.WorldLoading": {
+            "p50": 0.00075,
+            "p95": 0.00075,
+            "p99": 0.00075,
+            "max": 0.00075,
+            "mean": 0.00075,
+            "native": false
+          },
+          "gameengine.cheat:arcade.pop-burst": {
+            "p50": 0.156666,
+            "p95": 0.156666,
+            "p99": 0.156666,
+            "max": 0.156666,
+            "mean": 0.156666,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-player-motion": {
+            "p50": 0.0077919999999999994,
+            "p95": 0.0077919999999999994,
+            "p99": 0.0077919999999999994,
+            "max": 0.0077919999999999994,
+            "mean": 0.0077919999999999994,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-scoring": {
+            "p50": 0.003,
+            "p95": 0.003,
+            "p99": 0.003,
+            "max": 0.003,
+            "mean": 0.003,
+            "native": false
+          },
+          "gameengine.cheat:arcade.prepare-top-traversal": {
+            "p50": 0.0025830000000000002,
+            "p95": 0.0025830000000000002,
+            "p99": 0.0025830000000000002,
+            "max": 0.0025830000000000002,
+            "mean": 0.0025830000000000002,
+            "native": false
+          },
+          "gameengine.cheat:arcade.reset": {
+            "p50": 0.00325,
+            "p95": 0.00325,
+            "p99": 0.00325,
+            "max": 0.00325,
+            "mean": 0.00325,
+            "native": false
+          },
+          "gameengine.cheat:arcade.sprite-sizing": {
+            "p50": 0.008667,
+            "p95": 0.008667,
+            "p99": 0.008667,
+            "max": 0.008667,
+            "mean": 0.008667,
+            "native": false
+          },
+          "gameengine.cheat:harness.reset": {
+            "p50": 0.013916,
+            "p95": 0.013916,
+            "p99": 0.013916,
+            "max": 0.013916,
+            "mean": 0.013916,
+            "native": false
+          },
+          "gameengine.cheat:party.boss-duel": {
+            "p50": 0.0022919999999999998,
+            "p95": 0.0022919999999999998,
+            "p99": 0.0022919999999999998,
+            "max": 0.0022919999999999998,
+            "mean": 0.0022919999999999998,
+            "native": false
+          },
+          "gameengine.cheat:party.clear-wave": {
+            "p50": 0.010709,
+            "p95": 0.010709,
+            "p99": 0.010709,
+            "max": 0.010709,
+            "mean": 0.010709,
+            "native": false
+          },
+          "gameengine.cheat:party.feedback-cluster": {
+            "p50": 0.0095,
+            "p95": 0.0095,
+            "p99": 0.0095,
+            "max": 0.0095,
+            "mean": 0.0095,
+            "native": false
+          },
+          "gameengine.cheat:party.feel-showcase": {
+            "p50": 0.002541,
+            "p95": 0.002541,
+            "p99": 0.002541,
+            "max": 0.002541,
+            "mean": 0.002541,
+            "native": false
+          },
+          "gameengine.cheat:party.finish-boss": {
+            "p50": 0.005915999999999999,
+            "p95": 0.005915999999999999,
+            "p99": 0.005915999999999999,
+            "max": 0.005915999999999999,
+            "mean": 0.005915999999999999,
+            "native": false
+          },
+          "gameengine.cheat:party.hit-dragon": {
+            "p50": 0.002417,
+            "p95": 0.002417,
+            "p99": 0.002417,
+            "max": 0.002417,
+            "mean": 0.002417,
+            "native": false
+          },
+          "gameengine.cheat:party.last-enemy": {
+            "p50": 0.002417,
+            "p95": 0.002417,
+            "p99": 0.002417,
+            "max": 0.002417,
+            "mean": 0.002417,
+            "native": false
+          },
+          "gameengine.cheat:party.powerup": {
+            "p50": 0.0028339999999999997,
+            "p95": 0.0028339999999999997,
+            "p99": 0.0028339999999999997,
+            "max": 0.0028339999999999997,
+            "mean": 0.0028339999999999997,
+            "native": false
+          },
+          "gameengine.cheat:party.protect-team": {
+            "p50": 0.002333,
+            "p95": 0.002333,
+            "p99": 0.002333,
+            "max": 0.002333,
+            "mean": 0.002333,
+            "native": false
+          },
+          "gameengine.cheat:party.rescue-setup": {
+            "p50": 0.006875,
+            "p95": 0.006875,
+            "p99": 0.006875,
+            "max": 0.006875,
+            "mean": 0.006875,
+            "native": false
+          },
+          "gameengine.cheat:party.reset": {
+            "p50": 1.927792,
+            "p95": 1.927792,
+            "p99": 1.927792,
+            "max": 1.927792,
+            "mean": 1.927792,
+            "native": false
+          },
+          "gameengine.cheat:port.movement": {
+            "p50": 0.003334,
+            "p95": 0.003334,
+            "p99": 0.003334,
+            "max": 0.003334,
+            "mean": 0.003334,
+            "native": false
+          }
+        },
+        "frames": 67,
+        "frameTimeMs": {
+          "p50": 0.186833,
+          "p95": 0.856625,
+          "p99": 23.914209,
+          "max": 23.914209,
+          "mean": 0.741998208955224
+        },
+        "scriptTimeMs": {
+          "p50": 0.150041,
+          "p95": 0.630418,
+          "p99": 21.598793,
+          "max": 21.598793,
+          "mean": 0.5876950895522387
+        },
+        "jsHeapMB": 27.248313903808594,
+        "gpuTimeMs": null,
+        "memoryMB": 190.5,
+        "loadMs": null,
+        "hitchFrames": 0,
+        "steps": 2,
+        "stepTimeMs": {
+          "p50": 8.099042,
+          "p95": 9.88175,
+          "p99": 9.88175,
+          "max": 9.88175,
+          "mean": 8.990396
+        },
+        "hitchSteps": 0,
+        "presentationTimeMs": {
+          "p50": 0.16362599999999997,
+          "p95": 0.85625,
+          "p99": 4.129584,
+          "max": 4.129584,
+          "mean": 0.39402988059701494
+        },
+        "paused": true,
+        "pipelinesCreatedDuringCapture": 0,
+        "drawCallsMax": 0,
+        "gcPausesOver4ms": 0,
+        "gcMaxMs": 0.1295000000000046,
+        "gcIdleMs": {
+          "p50": 0.003375,
+          "p95": 0.003375,
+          "p99": 0.003375,
+          "max": 0.003375,
+          "mean": 0.003375
+        },
+        "gpuTiming": true,
+        "cpuAdapter": false,
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "perf": {
+        "systemTimeMs": {
+          "ArcadeAudioSystem": {
+            "p50": 0.8521639999999998,
+            "p95": 1.1674599999999997,
+            "p99": 1.1674599999999997,
+            "max": 1.1674599999999997,
+            "mean": 0.8914753000000001,
+            "native": false
+          },
+          "ArcadeEditorInput": {
+            "p50": 0.12632700000000008,
+            "p95": 0.13608300000000004,
+            "p99": 0.13608300000000004,
+            "max": 0.13608300000000004,
+            "mean": 0.12628350000000005,
+            "native": false
+          },
+          "ArcadePool": {
+            "p50": 22.11884,
+            "p95": 36.297585000000005,
+            "p99": 36.297585000000005,
+            "max": 36.297585000000005,
+            "mean": 23.607086799999998,
+            "native": false
+          },
+          "ArcadeStep": {
+            "p50": 26.055041,
+            "p95": 29.786955999999996,
+            "p99": 29.786955999999996,
+            "max": 29.786955999999996,
+            "mean": 25.983962399999996,
+            "native": false
+          },
+          "DesktopSystem": {
+            "p50": 0.974414,
+            "p95": 1.2439640000000005,
+            "p99": 1.2439640000000005,
+            "max": 1.2439640000000005,
+            "mean": 1.0430051000000002,
+            "native": false
+          },
+          "PortBoot": {
+            "p50": 0.09700900000000005,
+            "p95": 0.10720600000000007,
+            "p99": 0.10720600000000007,
+            "max": 0.10720600000000007,
+            "mean": 0.09690380000000005,
+            "native": false
+          },
+          "RiseAndPop": {
+            "p50": 0.07895400000000004,
+            "p95": 0.09004200000000007,
+            "p99": 0.09004200000000007,
+            "max": 0.09004200000000007,
+            "mean": 0.07984080000000005,
+            "native": false
+          },
+          "gameengine.Animator": {
+            "p50": 0.010666000000000005,
+            "p95": 0.014081000000000007,
+            "p99": 0.014081000000000007,
+            "max": 0.014081000000000007,
+            "mean": 0.011545800000000005,
+            "native": false
+          },
+          "gameengine.AnimatorInit": {
+            "p50": 0.011874,
+            "p95": 0.020375000000000008,
+            "p99": 0.020375000000000008,
+            "max": 0.020375000000000008,
+            "mean": 0.013312700000000002,
+            "native": false
+          },
+          "gameengine.AnimatorSkeleton2D": {
+            "p50": 0.010000000000000002,
+            "p95": 0.015126000000000007,
+            "p99": 0.015126000000000007,
+            "max": 0.015126000000000007,
+            "mean": 0.011041800000000001,
+            "native": false
+          },
+          "gameengine.Clip2D": {
+            "p50": 0.009538999999999997,
+            "p95": 0.011582000000000005,
+            "p99": 0.011582000000000005,
+            "max": 0.011582000000000005,
+            "mean": 0.009850200000000003,
+            "native": false
+          },
+          "gameengine.Input": {
+            "p50": 0.7465460000000003,
+            "p95": 0.8368720000000001,
+            "p99": 0.8368720000000001,
+            "max": 0.8368720000000001,
+            "mean": 0.7567499000000002,
+            "native": false
+          },
+          "gameengine.ParticleClock": {
+            "p50": 0.009041,
+            "p95": 0.013750000000000002,
+            "p99": 0.013750000000000002,
+            "max": 0.013750000000000002,
+            "mean": 0.0096748,
+            "native": false
+          },
+          "gameengine.Physics2D": {
+            "p50": 0.028546000000000012,
+            "p95": 0.036789000000000016,
+            "p99": 0.036789000000000016,
+            "max": 0.036789000000000016,
+            "mean": 0.029824600000000014,
+            "native": false
+          },
+          "gameengine.Physics3D": {
+            "p50": 0.028122000000000015,
+            "p95": 0.03333100000000002,
+            "p99": 0.03333100000000002,
+            "max": 0.03333100000000002,
+            "mean": 0.02907010000000001,
+            "native": false
+          },
+          "gameengine.Skeleton2D": {
+            "p50": 0.02299700000000001,
+            "p95": 0.02982900000000001,
+            "p99": 0.02982900000000001,
+            "max": 0.02982900000000001,
+            "mean": 0.02479040000000001,
+            "native": false
+          },
+          "gameengine.Skeleton2DFollow": {
+            "p50": 0.007166,
+            "p95": 0.010341,
+            "p99": 0.010341,
+            "max": 0.010341,
+            "mean": 0.007688099999999999,
+            "native": false
+          },
+          "gameengine.Skeleton2DInit": {
+            "p50": 0.011999000000000003,
+            "p95": 0.017709000000000006,
+            "p99": 0.017709000000000006,
+            "max": 0.017709000000000006,
+            "mean": 0.012902800000000002,
+            "native": false
+          },
+          "gameengine.Timeline": {
+            "p50": 0.010796000000000004,
+            "p95": 0.014958000000000003,
+            "p99": 0.014958000000000003,
+            "max": 0.014958000000000003,
+            "mean": 0.0116544,
+            "native": false
+          },
+          "gameengine.Tween": {
+            "p50": 0.009541000000000003,
+            "p95": 0.011164000000000002,
+            "p99": 0.011164000000000002,
+            "max": 0.011164000000000002,
+            "mean": 0.009815100000000004,
+            "native": false
+          },
+          "gameengine.VisualTweenCleanup": {
+            "p50": 0.006040999999999996,
+            "p95": 0.007121999999999999,
+            "p99": 0.007121999999999999,
+            "max": 0.007121999999999999,
+            "mean": 0.006223499999999999,
+            "native": false
+          },
+          "gameengine.WallClock": {
+            "p50": 0.0025369999999999993,
+            "p95": 0.010295000000000004,
+            "p99": 0.010295000000000004,
+            "max": 0.010295000000000004,
+            "mean": 0.0037167999999999993,
+            "native": false
+          },
+          "gameengine.WorldLoading": {
+            "p50": 0.00837,
+            "p95": 0.013877000000000004,
+            "p99": 0.013877000000000004,
+            "max": 0.013877000000000004,
+            "mean": 0.009837300000000002,
+            "native": false
+          }
+        },
+        "frames": 720,
+        "frameTimeMs": {
+          "p50": 0.694291,
+          "p95": 4.347667,
+          "p99": 98.31016600000001,
+          "max": 141.232,
+          "mean": 2.5207424791666666
+        },
+        "scriptTimeMs": {
+          "p50": 0.664875,
+          "p95": 1.512666,
+          "p99": 86.345362,
+          "max": 129.054043,
+          "mean": 2.144548529166666
+        },
+        "jsHeapMB": 55.85704040527344,
+        "gpuTimeMs": null,
+        "memoryMB": 273.25,
+        "loadMs": null,
+        "hitchFrames": 10,
+        "steps": 600,
+        "stepTimeMs": {
+          "p50": 0.8760420000000001,
+          "p95": 1.696917,
+          "p99": 2.195958,
+          "max": 2.469042,
+          "mean": 0.9893476266666666
+        },
+        "hitchSteps": 0,
+        "presentationTimeMs": {
+          "p50": 0.6845410000000001,
+          "p95": 1.614042,
+          "p99": 5.090958,
+          "max": 5.51325,
+          "mean": 0.9256229111111106
+        },
+        "paused": true,
+        "pipelinesCreatedDuringCapture": 0,
+        "drawCallsMax": 0,
+        "gcPausesOver4ms": 0,
+        "gcMaxMs": 0.5617919999999499,
+        "gcIdleMs": {
+          "p50": 0.005291,
+          "p95": 0.103333,
+          "p99": 0.103333,
+          "max": 0.103333,
+          "mean": 0.021833
+        },
+        "gpuTiming": true,
+        "cpuAdapter": false,
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "render": {
+        "drawCalls": 4,
+        "instances": 752,
+        "triangles": 1505,
+        "pipelines": 8,
+        "pipelinesCreatedThisFrame": 0,
+        "passes": [
+          "3d.clusters",
+          "3d.forward",
+          "2d.ui",
+          "post.present"
+        ],
+        "culledPasses": [],
+        "atlasPages": 2,
+        "texturesUploaded": 0,
+        "validationErrors": [],
+        "sceneSize": [
+          768,
+          720
+        ],
+        "uiModelsRendered": 0,
+        "culled2d": 0,
+        "transparent2d": 0,
+        "culledSkeletons": 0,
+        "worldOccluded": false,
+        "particleInstances": 0,
+        "culling": {
+          "distance": 0,
+          "small": 0,
+          "occluded": 0,
+          "occluderTriangles": 0,
+          "animations": 0,
+          "effects": 0,
+          "fading": 0
+        },
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "rendered": true,
+        "framesRendered": 35,
+        "cullingSettings": {
+          "distance": true,
+          "layerDistances": {},
+          "minScreenSize": 0,
+          "animation": true,
+          "particles": true,
+          "occlusion": "auto",
+          "occluderTriangles": 4096,
+          "lodCrossFade": 0,
+          "perspective2d": true
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.013
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.013415999999999999
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001792
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.414916
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.009959
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.17625
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000916
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.035917000000000004
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.00275
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 0.39849999999999997
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.007292
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.0006670000000000001
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.00325
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000541
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.00029099999999999997
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 0.461125
+          }
+        ],
+        "host": {
+          "path": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+          "profile": "release"
+        }
+      },
+      "peakDraws": 6
+    }
+  ],
+  "limits": "Release V8/Metal host; mobile rendering tier; one firing human, remaining slots bots, protected boss team, seed 42, 600 measured steps after 60-step warmup. Ten explicit render probes per team. CPU and structural comparison only; no real device GPU or thermal verdict."
+}

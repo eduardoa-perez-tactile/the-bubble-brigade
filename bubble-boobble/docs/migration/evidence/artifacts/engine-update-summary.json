@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-20",
+  "engineVersion": "0.1.15",
+  "verdict": "Gameplay, rendering, cooked smoke and web export pass after compatibility updates; full harness remains blocked by replay mismatches that reproduce on the old engine host.",
+  "changes": [
+    "Migrated project graphics settings to schema 2, preserving the existing look.",
+    "Refreshed the invalid-name menu golden after checking selected-button state; added explicit state assertions.",
+    "Moved web export to the matching source CLI to resolve missing packaged SDK dependencies.",
+    "Resolved web shell imports relative to the engine shell directory.",
+    "Restricted the legacy browser save patch to engine 0.1.13.",
+    "Prepared an isolated 0.1.15 web toolchain in ignored local paths."
+  ],
+  "checks": {
+    "logic": {
+      "v8": 269,
+      "web": 269,
+      "total": 538,
+      "failed": 0,
+      "evidence": "artifacts/engine-update-web-parity.log"
+    },
+    "render": {
+      "total": 48,
+      "initialPassed": 47,
+      "reviewedGoldenRefresh": 1,
+      "focusedRerunPassed": true,
+      "evidence": "artifacts/engine-update-render-results.json"
+    },
+    "coldViewport": {
+      "ok": true,
+      "evidence": "artifacts/viewport-smoke.png"
+    },
+    "engineCheck": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "gameengine-host (V8)",
+          "ok": true,
+          "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host"
+        },
+        {
+          "name": "gameengine-cook",
+          "ok": true,
+          "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-cook"
+        },
+        {
+          "name": "desktop player (release)",
+          "ok": true,
+          "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/player/release/gameengine-host"
+        },
+        {
+          "name": "typecheck",
+          "ok": true,
+          "detail": "tsc --noEmit"
+        },
+        {
+          "name": "validate (warnings)",
+          "ok": true,
+          "warning": true,
+          "detail": "assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = \"#646664\" in the .gmeta\nscenes/arcade.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/arcade.scene.json: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0\nscenes/main.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/pixel-prototype.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0"
+        },
+        {
+          "name": "pipelines (warning: a release build refuses this)",
+          "ok": true,
+          "warning": true,
+          "detail": "pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`"
+        },
+        {
+          "name": "views",
+          "ok": true,
+          "detail": "every TSX view places a UI document"
+        },
+        {
+          "name": "cook (desktop)",
+          "ok": true,
+          "detail": "cooked"
+        },
+        {
+          "name": "smoke (cooked)",
+          "ok": true,
+          "detail": "600 frames on cooked content"
+        },
+        {
+          "name": "ui nodes",
+          "ok": true,
+          "detail": "14 shown at most, budget 1000"
+        }
+      ]
+    },
+    "phoneLow": {
+      "ok": true,
+      "peakDraws": 6
+    },
+    "presentationRoute": {
+      "frames": 262,
+      "peakDraws": 11,
+      "budget": 14,
+      "stepP95Ms": 3.112375,
+      "presentationP95Ms": 4.215959,
+      "scope": "Headless release host on Apple M2 Max; no real-device frame-rate claim."
+    },
+    "webBuild": {
+      "ok": true,
+      "evidence": "artifacts/engine-update-web-build.log"
+    },
+    "webToolTests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "replays": {
+      "total": 33,
+      "passed": 15,
+      "failed": 18,
+      "identicalDivergenceOnOld013Host": 18,
+      "evidence": "artifacts/engine-update-replay-audit.json"
+    }
+  },
+  "limitations": [
+    "Browser gameplay and OS-level interaction were excluded by PROJECT.md.",
+    "Hermes host is absent.",
+    "Existing pipeline warning still blocks normal release packaging.",
+    "Real phone GPU time, thermal behavior and hardware controllers were not measured.",
+    "Original replay files were not rewritten."
+  ]
+}

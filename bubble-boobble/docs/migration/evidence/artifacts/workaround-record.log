@@ -1,0 +1,9 @@
+
+> bubbleboobble@0.1.0 harness:record
+> node tools/harness/run.mjs record
+
+gameengine test --js v8 --record-replays --filter harness reset and tap: 0.972 s
+gameengine test --js v8 --record-replays --filter movement physical keyboard hold release and jump: 1.046 s
+gameengine test --js v8 --record-replays --filter arcade engine input full Go parity reference-round1-smoke: 1.022 s
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows: 6.658 s
+Harness record: 9.699 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

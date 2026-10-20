@@ -1,0 +1,53 @@
+{
+  "savedPreferencesBefore": {
+    "music": 50,
+    "sound": 75,
+    "fullscreen": false
+  },
+  "security": {
+    "unauthorized": 403,
+    "origin": 403,
+    "arbitraryTrack": 400
+  },
+  "pass": false,
+  "error": "Error: game bridge: {\"observation\":null,\"desired\":{\"fullscreen\":false,\"track\":\"\",\"volume\":0.5,\"paused\":false,\"muted\":false}}",
+  "errorNative": {
+    "music": {},
+    "nativeSpaceFullscreen": false,
+    "windowClass": "SDL3Window",
+    "launcherPID": 10798,
+    "bundleId": "bubbleboobble.desktop",
+    "launcherHeartbeatUnixMs": 1791987791153,
+    "keyWindow": true,
+    "screenWidth": 1496,
+    "canBecomeKey": true,
+    "volume": 0.5,
+    "executablePath": "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app/Contents/MacOS/BubbleBoobble-runtime",
+    "position": 0,
+    "windowTitle": "BubbleBoobble",
+    "inputSequence": 0,
+    "launchId": "16284eba1b37e9e28ddb4f7a4b47244a7395b1cb27f2306f4e238f87723519e4",
+    "pauseAcknowledged": false,
+    "windowHeight": 392,
+    "muted": false,
+    "transport": "stateful-ym",
+    "screenHeight": 967,
+    "revision": 0,
+    "windowStyle": 15,
+    "playing": 0,
+    "windowReady": true,
+    "windowWidth": 384,
+    "fullscreenMode": "borderless-desktop",
+    "adapterActive": true,
+    "focused": true,
+    "applicationActive": true,
+    "error": "",
+    "fullscreen": false,
+    "transition": false,
+    "controlledPresentation": false,
+    "track": "",
+    "pid": 10903
+  },
+  "processesCleaned": true,
+  "endpointClosed": true
+}

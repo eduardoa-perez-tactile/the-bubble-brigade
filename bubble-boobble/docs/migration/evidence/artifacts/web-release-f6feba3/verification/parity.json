@@ -1,0 +1,17 @@
+{
+  "sha": "f6feba3c41f84c647050930d11f19ce6adc6daf9",
+  "ok": true,
+  "started": "2026-10-20T08:19:40.336Z",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.9.0/bin/node",
+        "tools/web/toolchain.mjs",
+        "parity"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/parity-1.log"
+    }
+  ],
+  "finished": "2026-10-20T08:20:59.787Z"
+}

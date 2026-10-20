@@ -1,0 +1,41 @@
+{
+  "command": "quick",
+  "wallMs": 9444.648125,
+  "measurements": [
+    {
+      "command": "gameengine test --js v8 --filter *movement*",
+      "wallMs": 1205.041541,
+      "tests": 13
+    },
+    {
+      "command": "gameengine test --js v8 --filter *arcade engine input*",
+      "wallMs": 1379.877459,
+      "tests": 5
+    },
+    {
+      "command": "gameengine test --js v8 --filter *arcade Go*",
+      "wallMs": 988.3065000000001,
+      "tests": 3
+    },
+    {
+      "command": "gameengine test --js v8 --filter desktop *",
+      "wallMs": 1605.6200830000002,
+      "tests": 25
+    },
+    {
+      "command": "gameengine test --js v8 --filter companion *",
+      "wallMs": 1766.891208,
+      "tests": 12
+    },
+    {
+      "command": "gameengine test --js v8 --filter arcade player motion *",
+      "wallMs": 1120.9067090000008,
+      "tests": 10
+    },
+    {
+      "command": "gameengine test --js v8 --filter arcade scoring *",
+      "wallMs": 1122.3358750000007,
+      "tests": 7
+    }
+  ]
+}

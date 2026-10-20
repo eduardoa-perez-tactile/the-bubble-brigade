@@ -1,0 +1,409 @@
+{
+  "ok": true,
+  "started": "2026-10-20T08:23:16.946Z",
+  "build": {
+    "sha": "f6feba3c41f84c647050930d11f19ce6adc6daf9",
+    "dirty": false,
+    "exportedAt": "2026-10-20T08:21:01.471Z",
+    "name": "Bubble Madness",
+    "shell": "bubble-web-v1"
+  },
+  "checks": [
+    {
+      "name": "WebGPU adapter",
+      "detail": {
+        "vendor": "apple",
+        "architecture": "metal-3",
+        "fallback": false
+      }
+    },
+    {
+      "name": "classic controller fire movement and release",
+      "detail": true
+    },
+    {
+      "name": "campaign keyboard input and rendered frames",
+      "detail": {
+        "frames": 191,
+        "step": "208",
+        "hash": "716e6797a5848cd9"
+      }
+    },
+    {
+      "name": "pause and resume",
+      "detail": {
+        "frames": 312,
+        "step": "329",
+        "hash": "0eb7a4f1cc4de98b"
+      }
+    },
+    {
+      "name": "fullscreen from game settings",
+      "detail": true
+    },
+    {
+      "name": "AI and two-keyboard-seat co-op",
+      "detail": true
+    },
+    {
+      "name": "Wave Survival keyboard flow",
+      "detail": {
+        "frames": 1142,
+        "step": "1159",
+        "hash": "fd7a17c501605eef"
+      }
+    },
+    {
+      "name": "survival rendered throughput",
+      "detail": {
+        "frames": 180,
+        "elapsedMs": 3004
+      }
+    },
+    {
+      "name": "compact ultrawide and portrait resizing",
+      "detail": true
+    },
+    {
+      "name": "virtual controller input and disconnect",
+      "detail": true
+    },
+    {
+      "name": "native inactive-tab suspend and return",
+      "detail": true
+    },
+    {
+      "name": "IndexedDB stores music and campaign progress",
+      "detail": {
+        "music": 25,
+        "played": 3
+      }
+    },
+    {
+      "name": "saved game reload and settings screen",
+      "detail": true
+    },
+    {
+      "name": "WebAudio unlocked",
+      "detail": true
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    {
+      "name": "launch",
+      "path": "build/web-qa/launch.png"
+    },
+    {
+      "name": "title",
+      "path": "build/web-qa/title.png"
+    },
+    {
+      "name": "menu",
+      "path": "build/web-qa/menu.png"
+    },
+    {
+      "name": "modes",
+      "path": "build/web-qa/modes.png"
+    },
+    {
+      "name": "classic",
+      "path": "build/web-qa/classic.png"
+    },
+    {
+      "name": "classic-controller",
+      "path": "build/web-qa/classic-controller.png"
+    },
+    {
+      "name": "pause",
+      "path": "build/web-qa/pause.png"
+    },
+    {
+      "name": "pause-held",
+      "path": "build/web-qa/pause-held.png"
+    },
+    {
+      "name": "resume",
+      "path": "build/web-qa/resume.png"
+    },
+    {
+      "name": "returned-menu",
+      "path": "build/web-qa/returned-menu.png"
+    },
+    {
+      "name": "settings",
+      "path": "build/web-qa/settings.png"
+    },
+    {
+      "name": "settings-music",
+      "path": "build/web-qa/settings-music.png"
+    },
+    {
+      "name": "ai-setting",
+      "path": "build/web-qa/ai-setting.png"
+    },
+    {
+      "name": "ai-coop",
+      "path": "build/web-qa/ai-coop.png"
+    },
+    {
+      "name": "human-setting",
+      "path": "build/web-qa/human-setting.png"
+    },
+    {
+      "name": "human-coop",
+      "path": "build/web-qa/human-coop.png"
+    },
+    {
+      "name": "survival-team",
+      "path": "build/web-qa/survival-team.png"
+    },
+    {
+      "name": "survival",
+      "path": "build/web-qa/survival.png"
+    },
+    {
+      "name": "survival-combat",
+      "path": "build/web-qa/survival-combat.png"
+    },
+    {
+      "name": "resize-800x600",
+      "path": "build/web-qa/resize-800x600.png"
+    },
+    {
+      "name": "resize-1680x720",
+      "path": "build/web-qa/resize-1680x720.png"
+    },
+    {
+      "name": "resize-640x960",
+      "path": "build/web-qa/resize-640x960.png"
+    },
+    {
+      "name": "controller",
+      "path": "build/web-qa/controller.png"
+    },
+    {
+      "name": "settings-after-reload",
+      "path": "build/web-qa/settings-after-reload.png"
+    }
+  ],
+  "audio": [
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "97fe8d2b-d9d7-4a26-9237-82598c2645e5",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "97fe8d2b-d9d7-4a26-9237-82598c2645e5",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "97fe8d2b-d9d7-4a26-9237-82598c2645e5",
+      "contextType": "realtime",
+      "contextState": "closed",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "433311de-4dc6-42a6-9530-4dd1a3590814",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "433311de-4dc6-42a6-9530-4dd1a3590814",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "433311de-4dc6-42a6-9530-4dd1a3590814",
+      "contextType": "realtime",
+      "contextState": "closed",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "94fa5b3c-0367-481e-bc86-e0a67c7033aa",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "a223c4aa-82c5-46f8-a4aa-71860a2b52d5",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "a223c4aa-82c5-46f8-a4aa-71860a2b52d5",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "a223c4aa-82c5-46f8-a4aa-71860a2b52d5",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "d409da34-20c1-4c7e-b3dd-f9eae2c3de7b",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "d409da34-20c1-4c7e-b3dd-f9eae2c3de7b",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "d409da34-20c1-4c7e-b3dd-f9eae2c3de7b",
+      "contextType": "realtime",
+      "contextState": "closed",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "9f7b49c4-639b-4c8e-9fe8-95a9706f2e3e",
+      "contextType": "realtime",
+      "contextState": "suspended",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "9f7b49c4-639b-4c8e-9fe8-95a9706f2e3e",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "9f7b49c4-639b-4c8e-9fe8-95a9706f2e3e",
+      "contextType": "realtime",
+      "contextState": "closed",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    },
+    {
+      "contextId": "a223c4aa-82c5-46f8-a4aa-71860a2b52d5",
+      "contextType": "realtime",
+      "contextState": "running",
+      "callbackBufferSize": 256,
+      "maxOutputChannelCount": 2,
+      "sampleRate": 48000,
+      "renderQuantumSize": 128
+    }
+  ],
+  "finished": "2026-10-20T08:23:52.725Z"
+}

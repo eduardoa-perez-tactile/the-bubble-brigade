@@ -1,0 +1,6 @@
+warning: pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`
+cooking desktop content for Bubble Madness…
+using the prebuilt desktop player (probe)
+signing ad hoc (set GAMEENGINE_MACOS_SIGN_IDENTITY to sign with a Developer ID)…
+/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/artifacts/playtest-macos/app/Bubble Madness.app/Contents/MacOS/libgameengine_webgpu.dylib: replacing existing signature
+/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/artifacts/playtest-macos/app/Bubble Madness.app: replacing existing signature

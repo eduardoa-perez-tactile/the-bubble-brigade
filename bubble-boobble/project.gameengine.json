@@ -1,0 +1,65 @@
+{
+  "$schemaVersion": 2,
+  "name": "Bubble Madness",
+  "bundleId": {
+    "ios": "com.example.bubbleboobble",
+    "android": "com.example.bubbleboobble",
+    "web": "com.tactile.prototypes.bubblemadness"
+  },
+  "version": "0.1.0",
+  "sim": {
+    "dt": 0.016666667,
+    "maxStepsPerFrame": 5,
+    "physicsThreads": 1,
+    "hashInDev": true,
+    "seed": 1
+  },
+  "js": {
+    "entry": "src/main.ts",
+    "target": "es2020"
+  },
+  "render": {
+    "defaultTier": "auto",
+    "tiers": {
+      "mobile": { "msaa": 1, "hdr": false },
+      "compat": { "msaa": 1, "hdr": false },
+      "desktop": { "features": { "spotShadows": true } }
+    },
+    "clearColor": [0, 0, 0, 1],
+    "sortingLayers": ["Default"],
+    "pixelsPerUnit": 100
+  },
+  "ui": {
+    "referenceResolution": [
+      768,
+      720
+    ],
+    "orientation": "landscape"
+  },
+  "bundles": [
+    {
+      "name": "base",
+      "include": [
+        "**"
+      ],
+      "delivery": "in-app"
+    }
+  ],
+  "targets": [
+    "ios",
+    "android"
+  ],
+  "platforms": [
+    "desktop",
+    "web"
+  ],
+  "startScene": "scenes/arcade.scene.json",
+  "audio": {
+    "banks": [
+      "reference/audio/sfx.bank",
+      "audio/juice.bank"
+    ],
+    "maxVoices": 24,
+    "normalize": false
+  }
+}

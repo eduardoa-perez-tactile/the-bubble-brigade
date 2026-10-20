@@ -1,0 +1,1862 @@
+{
+  "green/walk": {
+    "frames": 7,
+    "source": [
+      "sprites/green/walk/0.png",
+      "sprites/green/walk/1.png",
+      "sprites/green/walk/2.png",
+      "sprites/green/walk/3.png",
+      "sprites/green/walk/4.png",
+      "sprites/green/walk/5.png",
+      "sprites/green/walk/6.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        19,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        18
+      ]
+    ]
+  },
+  "green/jump": {
+    "frames": 4,
+    "source": [
+      "sprites/green/jump/0.png",
+      "sprites/green/jump/1.png",
+      "sprites/green/jump/2.png",
+      "sprites/green/jump/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  },
+  "green/shoot": {
+    "frames": 4,
+    "source": [
+      "sprites/green/shoot/0.png",
+      "sprites/green/shoot/1.png",
+      "sprites/green/shoot/2.png",
+      "sprites/green/shoot/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        18
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        18,
+        19
+      ]
+    ]
+  },
+  "green/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/green/dead/0.png",
+      "sprites/green/dead/1.png",
+      "sprites/green/dead/2.png",
+      "sprites/green/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        17
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ]
+  },
+  "blue/walk": {
+    "frames": 7,
+    "source": [
+      "sprites/blue/walk/0.png",
+      "sprites/blue/walk/1.png",
+      "sprites/blue/walk/2.png",
+      "sprites/blue/walk/3.png",
+      "sprites/blue/walk/4.png",
+      "sprites/blue/walk/5.png",
+      "sprites/blue/walk/6.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        19,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        18
+      ]
+    ]
+  },
+  "blue/jump": {
+    "frames": 4,
+    "source": [
+      "sprites/blue/jump/0.png",
+      "sprites/blue/jump/1.png",
+      "sprites/blue/jump/2.png",
+      "sprites/blue/jump/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  },
+  "blue/shoot": {
+    "frames": 4,
+    "source": [
+      "sprites/blue/shoot/0.png",
+      "sprites/blue/shoot/1.png",
+      "sprites/blue/shoot/2.png",
+      "sprites/blue/shoot/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        18
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        18,
+        19
+      ]
+    ]
+  },
+  "blue/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/blue/dead/0.png",
+      "sprites/blue/dead/1.png",
+      "sprites/blue/dead/2.png",
+      "sprites/blue/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        17
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ]
+  },
+  "zenchan/walk": {
+    "frames": 4,
+    "source": [
+      "sprites/zenchan/walk/0.png",
+      "sprites/zenchan/walk/1.png",
+      "sprites/zenchan/walk/2.png",
+      "sprites/zenchan/walk/3.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "zenchan/angry": {
+    "frames": 4,
+    "source": [
+      "sprites/zenchan/angry/0.png",
+      "sprites/zenchan/angry/1.png",
+      "sprites/zenchan/angry/2.png",
+      "sprites/zenchan/angry/3.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        19
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "zenchan/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/zenchan/dead/0.png",
+      "sprites/zenchan/dead/1.png",
+      "sprites/zenchan/dead/2.png",
+      "sprites/zenchan/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        19,
+        17
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        16
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "zenchan/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/zenchan/bubble/0.png",
+      "sprites/zenchan/bubble/1.png",
+      "sprites/zenchan/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        18
+      ]
+    ]
+  },
+  "zenchan/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/zenchan/warning/0.png",
+      "sprites/zenchan/warning/1.png",
+      "sprites/zenchan/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "zenchan/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/zenchan/escape/0.png",
+      "sprites/zenchan/escape/1.png",
+      "sprites/zenchan/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        19
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "monsta/walk": {
+    "frames": 2,
+    "source": [
+      "sprites/monsta/walk/0.png",
+      "sprites/monsta/walk/1.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  },
+  "monsta/angry": {
+    "frames": 2,
+    "source": [
+      "sprites/monsta/angry/0.png",
+      "sprites/monsta/angry/1.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  },
+  "monsta/dead": {
+    "frames": 5,
+    "source": [
+      "sprites/monsta/dead/0.png",
+      "sprites/monsta/dead/1.png",
+      "sprites/monsta/dead/2.png",
+      "sprites/monsta/dead/3.png",
+      "sprites/monsta/dead/4.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        17
+      ]
+    ]
+  },
+  "monsta/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/monsta/bubble/0.png",
+      "sprites/monsta/bubble/1.png",
+      "sprites/monsta/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "monsta/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/monsta/warning/0.png",
+      "sprites/monsta/warning/1.png",
+      "sprites/monsta/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "monsta/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/monsta/escape/0.png",
+      "sprites/monsta/escape/1.png",
+      "sprites/monsta/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "mighta/walk": {
+    "frames": 5,
+    "source": [
+      "sprites/mighta/walk/0.png",
+      "sprites/mighta/walk/1.png",
+      "sprites/mighta/walk/2.png",
+      "sprites/mighta/walk/3.png",
+      "sprites/mighta/walk/4.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "mighta/angry": {
+    "frames": 5,
+    "source": [
+      "sprites/mighta/angry/0.png",
+      "sprites/mighta/angry/1.png",
+      "sprites/mighta/angry/2.png",
+      "sprites/mighta/angry/3.png",
+      "sprites/mighta/angry/4.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        17,
+        18
+      ]
+    ]
+  },
+  "mighta/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/mighta/dead/0.png",
+      "sprites/mighta/dead/1.png",
+      "sprites/mighta/dead/2.png",
+      "sprites/mighta/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        17,
+        18
+      ]
+    ]
+  },
+  "mighta/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/mighta/bubble/0.png",
+      "sprites/mighta/bubble/1.png",
+      "sprites/mighta/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "mighta/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/mighta/warning/0.png",
+      "sprites/mighta/warning/1.png",
+      "sprites/mighta/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "mighta/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/mighta/escape/0.png",
+      "sprites/mighta/escape/1.png",
+      "sprites/mighta/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        19
+      ],
+      [
+        16,
+        19
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "pulpul/walk": {
+    "frames": 4,
+    "source": [
+      "sprites/pulpul/walk/0.png",
+      "sprites/pulpul/walk/1.png",
+      "sprites/pulpul/walk/2.png",
+      "sprites/pulpul/walk/3.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        16
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ]
+  },
+  "pulpul/angry": {
+    "frames": 4,
+    "source": [
+      "sprites/pulpul/angry/0.png",
+      "sprites/pulpul/angry/1.png",
+      "sprites/pulpul/angry/2.png",
+      "sprites/pulpul/angry/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        17
+      ],
+      [
+        19,
+        17
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        19,
+        17
+      ]
+    ]
+  },
+  "pulpul/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/pulpul/dead/0.png",
+      "sprites/pulpul/dead/1.png",
+      "sprites/pulpul/dead/2.png",
+      "sprites/pulpul/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        16
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        16,
+        18
+      ]
+    ]
+  },
+  "pulpul/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/pulpul/bubble/0.png",
+      "sprites/pulpul/bubble/1.png",
+      "sprites/pulpul/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "pulpul/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/pulpul/warning/0.png",
+      "sprites/pulpul/warning/1.png",
+      "sprites/pulpul/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "pulpul/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/pulpul/escape/0.png",
+      "sprites/pulpul/escape/1.png",
+      "sprites/pulpul/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "banebou/walk": {
+    "frames": 3,
+    "source": [
+      "sprites/banebou/walk/0.png",
+      "sprites/banebou/walk/1.png",
+      "sprites/banebou/walk/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        16
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        18
+      ]
+    ]
+  },
+  "banebou/angry": {
+    "frames": 3,
+    "source": [
+      "sprites/banebou/angry/0.png",
+      "sprites/banebou/angry/1.png",
+      "sprites/banebou/angry/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        16
+      ],
+      [
+        18,
+        17
+      ],
+      [
+        18,
+        18
+      ]
+    ]
+  },
+  "banebou/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/banebou/dead/0.png",
+      "sprites/banebou/dead/1.png",
+      "sprites/banebou/dead/2.png",
+      "sprites/banebou/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        16
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        18,
+        16
+      ],
+      [
+        17,
+        18
+      ]
+    ]
+  },
+  "banebou/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/banebou/bubble/0.png",
+      "sprites/banebou/bubble/1.png",
+      "sprites/banebou/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        16,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "banebou/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/banebou/warning/0.png",
+      "sprites/banebou/warning/1.png",
+      "sprites/banebou/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "banebou/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/banebou/escape/0.png",
+      "sprites/banebou/escape/1.png",
+      "sprites/banebou/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "invader/walk": {
+    "frames": 2,
+    "source": [
+      "sprites/invader/walk/0.png",
+      "sprites/invader/walk/1.png"
+    ],
+    "dimensions": [
+      [
+        19,
+        18
+      ],
+      [
+        19,
+        19
+      ]
+    ]
+  },
+  "invader/angry": {
+    "frames": 2,
+    "source": [
+      "sprites/invader/angry/0.png",
+      "sprites/invader/angry/1.png"
+    ],
+    "dimensions": [
+      [
+        19,
+        19
+      ],
+      [
+        19,
+        19
+      ]
+    ]
+  },
+  "invader/dead": {
+    "frames": 4,
+    "source": [
+      "sprites/invader/dead/0.png",
+      "sprites/invader/dead/1.png",
+      "sprites/invader/dead/2.png",
+      "sprites/invader/dead/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        19
+      ],
+      [
+        19,
+        18
+      ],
+      [
+        19,
+        19
+      ],
+      [
+        19,
+        19
+      ]
+    ]
+  },
+  "invader/bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/invader/bubble/0.png",
+      "sprites/invader/bubble/1.png",
+      "sprites/invader/bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        16,
+        18
+      ]
+    ]
+  },
+  "invader/warning": {
+    "frames": 3,
+    "source": [
+      "sprites/invader/warning/0.png",
+      "sprites/invader/warning/1.png",
+      "sprites/invader/warning/2.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        18
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        16,
+        18
+      ]
+    ]
+  },
+  "invader/escape": {
+    "frames": 3,
+    "source": [
+      "sprites/invader/escape/0.png",
+      "sprites/invader/escape/1.png",
+      "sprites/invader/escape/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        16,
+        19
+      ]
+    ]
+  },
+  "mighta/shoot": {
+    "frames": 5,
+    "source": [
+      "sprites/mighta/shoot/0.png",
+      "sprites/mighta/shoot/1.png",
+      "sprites/mighta/shoot/2.png",
+      "sprites/mighta/shoot/3.png",
+      "sprites/mighta/shoot/4.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        18,
+        16
+      ],
+      [
+        21,
+        16
+      ],
+      [
+        23,
+        16
+      ]
+    ]
+  },
+  "mighta/shoot-angry": {
+    "frames": 5,
+    "source": [
+      "sprites/mighta/shoot-angry/0.png",
+      "sprites/mighta/shoot-angry/1.png",
+      "sprites/mighta/shoot-angry/2.png",
+      "sprites/mighta/shoot-angry/3.png",
+      "sprites/mighta/shoot-angry/4.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        20,
+        18
+      ],
+      [
+        23,
+        18
+      ],
+      [
+        25,
+        18
+      ]
+    ]
+  },
+  "bubble": {
+    "frames": 4,
+    "source": [
+      "sprites/bubble/0.png",
+      "sprites/bubble/1.png",
+      "sprites/bubble/2.png",
+      "sprites/bubble/3.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ]
+  },
+  "pop": {
+    "frames": 1,
+    "source": [
+      "sprites/pop/0.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "bubble-warning": {
+    "frames": 2,
+    "source": [
+      "sprites/bubble-warning/0.png",
+      "sprites/bubble-warning/1.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ]
+  },
+  "water-bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/water-bubble/0.png",
+      "sprites/water-bubble/1.png",
+      "sprites/water-bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "thunder-bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/thunder-bubble/0.png",
+      "sprites/thunder-bubble/1.png",
+      "sprites/thunder-bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        19
+      ],
+      [
+        15,
+        19
+      ],
+      [
+        15,
+        19
+      ]
+    ]
+  },
+  "fire-bubble": {
+    "frames": 3,
+    "source": [
+      "sprites/fire-bubble/0.png",
+      "sprites/fire-bubble/1.png",
+      "sprites/fire-bubble/2.png"
+    ],
+    "dimensions": [
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        17,
+        19
+      ]
+    ]
+  },
+  "water": {
+    "frames": 1,
+    "source": [
+      "sprites/water/0.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        8
+      ]
+    ]
+  },
+  "thunder": {
+    "frames": 3,
+    "source": [
+      "sprites/thunder/0.png",
+      "sprites/thunder/1.png",
+      "sprites/thunder/2.png"
+    ],
+    "dimensions": [
+      [
+        34,
+        58
+      ],
+      [
+        34,
+        58
+      ],
+      [
+        34,
+        58
+      ]
+    ]
+  },
+  "fire": {
+    "frames": 3,
+    "source": [
+      "sprites/fire/0.png",
+      "sprites/fire/1.png",
+      "sprites/fire/2.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        8,
+        10
+      ]
+    ]
+  },
+  "flame": {
+    "frames": 6,
+    "source": [
+      "sprites/flame/0.png",
+      "sprites/flame/1.png",
+      "sprites/flame/2.png",
+      "sprites/flame/3.png",
+      "sprites/flame/4.png",
+      "sprites/flame/5.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        8
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        5,
+        3
+      ]
+    ]
+  },
+  "boulder": {
+    "frames": 4,
+    "source": [
+      "sprites/boulder/0.png",
+      "sprites/boulder/1.png",
+      "sprites/boulder/2.png",
+      "sprites/boulder/3.png"
+    ],
+    "dimensions": [
+      [
+        18,
+        19
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        17,
+        19
+      ],
+      [
+        18,
+        19
+      ]
+    ]
+  },
+  "laser": {
+    "frames": 2,
+    "source": [
+      "sprites/laser/0.png",
+      "sprites/laser/1.png"
+    ],
+    "dimensions": [
+      [
+        7,
+        16
+      ],
+      [
+        7,
+        16
+      ]
+    ]
+  },
+  "food/1": {
+    "frames": 1,
+    "source": [
+      "sprites/food/1/0.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        16
+      ]
+    ]
+  },
+  "food/2": {
+    "frames": 1,
+    "source": [
+      "sprites/food/2/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/3": {
+    "frames": 1,
+    "source": [
+      "sprites/food/3/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/4": {
+    "frames": 1,
+    "source": [
+      "sprites/food/4/0.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        16
+      ]
+    ]
+  },
+  "food/5": {
+    "frames": 1,
+    "source": [
+      "sprites/food/5/0.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        16
+      ]
+    ]
+  },
+  "food/6": {
+    "frames": 1,
+    "source": [
+      "sprites/food/6/0.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        16
+      ]
+    ]
+  },
+  "food/7": {
+    "frames": 1,
+    "source": [
+      "sprites/food/7/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/8": {
+    "frames": 1,
+    "source": [
+      "sprites/food/8/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/9": {
+    "frames": 1,
+    "source": [
+      "sprites/food/9/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/10": {
+    "frames": 1,
+    "source": [
+      "sprites/food/10/0.png"
+    ],
+    "dimensions": [
+      [
+        12,
+        16
+      ]
+    ]
+  },
+  "food/11": {
+    "frames": 1,
+    "source": [
+      "sprites/food/11/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/12": {
+    "frames": 1,
+    "source": [
+      "sprites/food/12/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/13": {
+    "frames": 1,
+    "source": [
+      "sprites/food/13/0.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        16
+      ]
+    ]
+  },
+  "food/14": {
+    "frames": 1,
+    "source": [
+      "sprites/food/14/0.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        16
+      ]
+    ]
+  },
+  "food/15": {
+    "frames": 1,
+    "source": [
+      "sprites/food/15/0.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        14
+      ]
+    ]
+  },
+  "food/16": {
+    "frames": 1,
+    "source": [
+      "sprites/food/16/0.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        15
+      ]
+    ]
+  },
+  "food/17": {
+    "frames": 1,
+    "source": [
+      "sprites/food/17/0.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        16
+      ]
+    ]
+  },
+  "food/18": {
+    "frames": 1,
+    "source": [
+      "sprites/food/18/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/19": {
+    "frames": 1,
+    "source": [
+      "sprites/food/19/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        16
+      ]
+    ]
+  },
+  "food/20": {
+    "frames": 1,
+    "source": [
+      "sprites/food/20/0.png"
+    ],
+    "dimensions": [
+      [
+        16,
+        13
+      ]
+    ]
+  },
+  "food/21": {
+    "frames": 1,
+    "source": [
+      "sprites/food/21/0.png"
+    ],
+    "dimensions": [
+      [
+        11,
+        14
+      ]
+    ]
+  },
+  "food/22": {
+    "frames": 1,
+    "source": [
+      "sprites/food/22/0.png"
+    ],
+    "dimensions": [
+      [
+        12,
+        16
+      ]
+    ]
+  },
+  "food/23": {
+    "frames": 1,
+    "source": [
+      "sprites/food/23/0.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        13
+      ]
+    ]
+  },
+  "food/24": {
+    "frames": 1,
+    "source": [
+      "sprites/food/24/0.png"
+    ],
+    "dimensions": [
+      [
+        11,
+        13
+      ]
+    ]
+  },
+  "food/25": {
+    "frames": 1,
+    "source": [
+      "sprites/food/25/0.png"
+    ],
+    "dimensions": [
+      [
+        12,
+        15
+      ]
+    ]
+  },
+  "pink_candy": {
+    "frames": 1,
+    "source": [
+      "sprites/items/pink_candy.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        10
+      ]
+    ]
+  },
+  "blue_candy": {
+    "frames": 1,
+    "source": [
+      "sprites/items/blue_candy.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        10
+      ]
+    ]
+  },
+  "yellow_candy": {
+    "frames": 1,
+    "source": [
+      "sprites/items/yellow_candy.png"
+    ],
+    "dimensions": [
+      [
+        15,
+        10
+      ]
+    ]
+  },
+  "shoes": {
+    "frames": 1,
+    "source": [
+      "sprites/items/shoes.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        9
+      ]
+    ]
+  },
+  "orange_parasol": {
+    "frames": 1,
+    "source": [
+      "sprites/items/orange_parasol.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        16
+      ]
+    ]
+  },
+  "red_parasol": {
+    "frames": 1,
+    "source": [
+      "sprites/items/red_parasol.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        16
+      ]
+    ]
+  },
+  "purple_parasol": {
+    "frames": 1,
+    "source": [
+      "sprites/items/purple_parasol.png"
+    ],
+    "dimensions": [
+      [
+        13,
+        16
+      ]
+    ]
+  },
+  "crystal_ring": {
+    "frames": 1,
+    "source": [
+      "sprites/items/crystal_ring.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "amethyst_ring": {
+    "frames": 1,
+    "source": [
+      "sprites/items/amethyst_ring.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "ruby_ring": {
+    "frames": 1,
+    "source": [
+      "sprites/items/ruby_ring.png"
+    ],
+    "dimensions": [
+      [
+        8,
+        14
+      ]
+    ]
+  },
+  "dynamite": {
+    "frames": 1,
+    "source": [
+      "sprites/items/dynamite.png"
+    ],
+    "dimensions": [
+      [
+        14,
+        13
+      ]
+    ]
+  },
+  "clock": {
+    "frames": 1,
+    "source": [
+      "sprites/items/clock.png"
+    ],
+    "dimensions": [
+      [
+        11,
+        15
+      ]
+    ]
+  }
+}

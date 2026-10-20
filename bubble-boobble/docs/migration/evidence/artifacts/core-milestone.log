@@ -1,0 +1,105 @@
+
+> bubbleboobble@0.1.0 harness:milestone
+> node tools/harness/run.mjs milestone
+
+✔ exact comparison accepts repeated trace and object key reordering (4.252792ms)
+✔ first divergent tick includes the field, input and surrounding states (2.492833ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.136709ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (68.025667ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.082958ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.8485
+go version go1.26.9 darwin/arm64
+ok  	bubblebobble/internal/game	(cached)
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-1-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-10-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-24-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim arcade-round-25-combat: 361 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bonus-pending-drain: 12 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bonus-threshold-order: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-bounce: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-chain: 56 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-bubble-escape: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-campaign-win: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-clear-full-campaign: 65 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-fire: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-thunder: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-element-water: 7 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-clock: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-dynamite: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-orange-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-purple-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-power-red-parasol: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim boundary-powers-coop-revival: 4 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-buffer-expired: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-buffer-landing: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-ceiling: 31 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-coyote-expired: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-coyote-last: 32 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-obstructed-spawn: 3 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-walk-jump: 614 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim movement-wrap: 21 frames exact.
+Trace matches exactly (comparator result; coverage depends on runner provenance).
+Pure sim reference-round1-smoke: 89 frames exact.
+Exact live Go matches: 9997 finite raw-bit trig samples; 9920 finite-result FMA samples.
+Round 1 all 1261 frames exact
+Round 2 all 1261 frames exact
+Round 3 all 1261 frames exact
+Round 4 all 1261 frames exact
+Round 5 all 1261 frames exact
+Round 6 all 1261 frames exact
+Round 7 all 1261 frames exact
+Round 8 all 1261 frames exact
+Round 9 all 1261 frames exact
+Round 10 all 1261 frames exact
+Round 11 all 1261 frames exact
+Round 12 all 1261 frames exact
+Round 13 all 1261 frames exact
+Round 14 all 1261 frames exact
+Round 15 all 1261 frames exact
+Round 16 all 1261 frames exact
+Round 17 all 1261 frames exact
+Round 18 all 1261 frames exact
+Round 19 all 1261 frames exact
+Round 20 all 1261 frames exact
+Round 21 all 1261 frames exact
+Round 22 all 1261 frames exact
+Round 23 all 1261 frames exact
+Round 24 all 1261 frames exact
+Round 25 all 1261 frames exact
+failed rounds 0
+Harness milestone: 8.595 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

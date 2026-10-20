@@ -1,0 +1,281 @@
+{
+  "security": {
+    "unauthorized": 403,
+    "origin": 403,
+    "arbitraryTrack": 400
+  },
+  "initial": {
+    "observation": {
+      "screen": "title",
+      "selected": 0,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    "desired": {
+      "fullscreen": false,
+      "track": "bubble-2",
+      "volume": 0.5,
+      "paused": false,
+      "muted": false
+    }
+  },
+  "initialNative": {
+    "music": {
+      "paused": false,
+      "volume": 0.5,
+      "pcmHash": "bedf3c7c8d72206d",
+      "helperPID": 9731,
+      "position": 13.01,
+      "underrunFrames": 0,
+      "eof": false,
+      "running": true,
+      "pauseAcknowledged": false,
+      "producedFrames": 634080,
+      "muted": false,
+      "capacityFrames": 9600,
+      "consumedFrames": 624480,
+      "bufferedFrames": 9600
+    },
+    "nativeSpaceFullscreen": false,
+    "windowClass": "SDL3Window",
+    "launcherPID": 9613,
+    "bundleId": "bubbleboobble.desktop",
+    "launcherHeartbeatUnixMs": 1791987645871,
+    "keyWindow": true,
+    "screenWidth": 1496,
+    "canBecomeKey": true,
+    "volume": 0.5,
+    "executablePath": "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app/Contents/MacOS/BubbleBoobble-runtime",
+    "position": 13.01,
+    "windowTitle": "BubbleBoobble",
+    "inputSequence": 0,
+    "launchId": "445f6c031a1877b42b8893e805fd6aa94e9d90b99fbcc4821207e660dd62440b",
+    "pauseAcknowledged": false,
+    "windowHeight": 392,
+    "muted": false,
+    "transport": "stateful-ym",
+    "screenHeight": 967,
+    "revision": 1,
+    "windowStyle": 15,
+    "playing": 1,
+    "windowReady": true,
+    "windowWidth": 384,
+    "fullscreenMode": "borderless-desktop",
+    "adapterActive": true,
+    "focused": true,
+    "applicationActive": true,
+    "error": "",
+    "fullscreen": false,
+    "transition": false,
+    "controlledPresentation": false,
+    "track": "bubble-2",
+    "pid": 9728
+  },
+  "inputTrace": [
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 6,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 7,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 6,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 7,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 0,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 1,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 2,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 3,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 4,
+      "screen": "menu",
+      "selected": 4,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 3,
+      "screen": "settings",
+      "selected": 0,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 3,
+      "screen": "settings",
+      "selected": 1,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 3,
+      "screen": "settings",
+      "selected": 2,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 3,
+      "screen": "settings",
+      "selected": 3,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 1,
+      "screen": "settings",
+      "selected": 3,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 1,
+      "screen": "settings",
+      "selected": 4,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 1,
+      "screen": "settings",
+      "selected": 0,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    },
+    {
+      "target": 1,
+      "screen": "settings",
+      "selected": 1,
+      "gameActive": false,
+      "gamePaused": false,
+      "gameTick": 0
+    }
+  ],
+  "pass": false,
+  "error": "Error: fullscreen UI preference: {\"music\":{\"paused\":false,\"volume\":0.5,\"pcmHash\":\"7919976bcd7276f5\",\"helperPID\":9731,\"position\":31.46,\"underrunFrames\":0,\"eof\":false,\"running\":true,\"pauseAcknowledged\":false,\"producedFrames\":1519680,\"muted\":false,\"capacityFrames\":9600,\"consumedFrames\":1510080,\"bufferedFrames\":9600},\"nativeSpaceFullscreen\":false,\"windowClass\":\"SDL3Window\",\"launcherPID\":9613,\"bundleId\":\"bubbleboobble.desktop\",\"launcherHeartbeatUnixMs\":1791987664157,\"keyWindow\":true,\"screenWidth\":1496,\"canBecomeKey\":true,\"volume\":0.5,\"executablePath\":\"/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app/Contents/MacOS/BubbleBoobble-runtime\",\"position\":31.46,\"windowTitle\":\"BubbleBoobble\",\"inputSequence\":14,\"launchId\":\"445f6c031a1877b42b8893e805fd6aa94e9d90b99fbcc4821207e660dd62440b\",\"pauseAcknowledged\":false,\"windowHeight\":392,\"muted\":false,\"transport\":\"stateful-ym\",\"screenHeight\":967,\"revision\":18,\"windowStyle\":15,\"playing\":1,\"windowReady\":true,\"windowWidth\":384,\"fullscreenMode\":\"borderless-desktop\",\"adapterActive\":true,\"focused\":true,\"applicationActive\":true,\"error\":\"\",\"fullscreen\":false,\"transition\":false,\"controlledPresentation\":false,\"track\":\"bubble-2\",\"pid\":9728}",
+  "errorNative": {
+    "music": {
+      "paused": false,
+      "volume": 0.5,
+      "pcmHash": "4d0a501c07df4291",
+      "helperPID": 9731,
+      "position": 31.51,
+      "underrunFrames": 0,
+      "eof": false,
+      "running": true,
+      "pauseAcknowledged": false,
+      "producedFrames": 1522080,
+      "muted": false,
+      "capacityFrames": 9600,
+      "consumedFrames": 1512480,
+      "bufferedFrames": 9600
+    },
+    "nativeSpaceFullscreen": false,
+    "windowClass": "SDL3Window",
+    "launcherPID": 9613,
+    "bundleId": "bubbleboobble.desktop",
+    "launcherHeartbeatUnixMs": 1791987665175,
+    "keyWindow": true,
+    "screenWidth": 1496,
+    "canBecomeKey": true,
+    "volume": 0.5,
+    "executablePath": "/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app/Contents/MacOS/BubbleBoobble-runtime",
+    "position": 31.51,
+    "windowTitle": "BubbleBoobble",
+    "inputSequence": 14,
+    "launchId": "445f6c031a1877b42b8893e805fd6aa94e9d90b99fbcc4821207e660dd62440b",
+    "pauseAcknowledged": false,
+    "windowHeight": 392,
+    "muted": false,
+    "transport": "stateful-ym",
+    "screenHeight": 967,
+    "revision": 18,
+    "windowStyle": 15,
+    "playing": 1,
+    "windowReady": true,
+    "windowWidth": 384,
+    "fullscreenMode": "borderless-desktop",
+    "adapterActive": true,
+    "focused": true,
+    "applicationActive": true,
+    "error": "",
+    "fullscreen": false,
+    "transition": false,
+    "controlledPresentation": false,
+    "track": "bubble-2",
+    "pid": 9728
+  },
+  "restoredPreferences": {
+    "desired": {
+      "fullscreen": false,
+      "track": "bubble-2",
+      "volume": 0.5,
+      "paused": false,
+      "muted": false
+    },
+    "fullscreen": false,
+    "volume": 0.5
+  },
+  "preferencesRestored": true,
+  "processesCleaned": true,
+  "endpointClosed": true
+}

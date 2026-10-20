@@ -1,0 +1,236 @@
+{
+  "$schemaVersion": 1,
+  "actions": {
+    "move": [
+      {
+        "negative": "ArrowLeft",
+        "positive": "ArrowRight"
+      },
+      {
+        "negative": "KeyA",
+        "positive": "KeyD"
+      }
+    ],
+    "jump": [
+      {
+        "key": "ArrowUp"
+      },
+      {
+        "key": "KeyW"
+      }
+    ],
+    "pause": [
+      {
+        "key": "Escape"
+      }
+    ],
+    "fire": [
+      {
+        "key": "Space"
+      },
+      {
+        "key": "ControlLeft"
+      },
+      {
+        "key": "ControlRight"
+      },
+      {
+        "button": 2
+      }
+    ],
+    "menuY": [
+      {
+        "negative": "ArrowUp",
+        "positive": "ArrowDown"
+      },
+      {
+        "key": "Tab"
+      }
+    ],
+    "menuX": [
+      {
+        "negative": "ArrowLeft",
+        "positive": "ArrowRight"
+      }
+    ],
+    "confirm": [
+      {
+        "key": "Enter"
+      },
+      {
+        "key": "Space"
+      }
+    ],
+    "back": [
+      {
+        "key": "Escape"
+      }
+    ],
+    "undo": [
+      {
+        "key": "KeyZ"
+      }
+    ],
+    "save": [
+      {
+        "key": "KeyS"
+      }
+    ],
+    "playtest": [
+      {
+        "key": "F5"
+      }
+    ],
+    "mute": [
+      {
+        "key": "KeyM"
+      }
+    ],
+    "fullscreen": [
+      {
+        "key": "F11"
+      }
+    ],
+    "move2": [
+      {
+        "negative": "KeyJ",
+        "positive": "KeyL"
+      }
+    ],
+    "jump2": [
+      {
+        "key": "KeyI"
+      }
+    ],
+    "fire2": [
+      {
+        "key": "KeyK"
+      }
+    ],
+    "delete": [
+      {
+        "key": "Backspace"
+      }
+    ],
+    "profileConfirm": [
+      {
+        "key": "Enter"
+      }
+    ],
+    "editorModifier": [
+      {
+        "key": "ControlLeft"
+      },
+      {
+        "key": "ControlRight"
+      },
+      {
+        "key": "MetaLeft"
+      },
+      {
+        "key": "MetaRight"
+      }
+    ],
+    "partyMove1": [
+      {
+        "negative": "ArrowLeft",
+        "positive": "ArrowRight"
+      },
+      {
+        "negative": "KeyA",
+        "positive": "KeyD"
+      }
+    ],
+    "partyJump1": [
+      {
+        "key": "ArrowUp"
+      },
+      {
+        "key": "KeyW"
+      }
+    ],
+    "partyFire1": [
+      {
+        "key": "Space"
+      },
+      {
+        "key": "ControlLeft"
+      },
+      {
+        "key": "ControlRight"
+      }
+    ],
+    "partyJoin1": [
+      {
+        "key": "Enter"
+      }
+    ],
+    "partyPause1": [
+      {
+        "key": "Escape"
+      }
+    ],
+    "partyMove2": [
+      {
+        "negative": "KeyJ",
+        "positive": "KeyL"
+      }
+    ],
+    "partyJump2": [
+      {
+        "key": "KeyI"
+      }
+    ],
+    "partyFire2": [
+      {
+        "key": "KeyK"
+      }
+    ],
+    "partyJoin2": [
+      {
+        "key": "KeyI"
+      }
+    ],
+    "partyPause2": [],
+    "partyMove3": [],
+    "partyJump3": [],
+    "partyFire3": [],
+    "partyJoin3": [],
+    "partyPause3": [],
+    "partyMove4": [],
+    "partyJump4": [],
+    "partyFire4": [],
+    "partyJoin4": [],
+    "partyPause4": [],
+    "partyMove5": [],
+    "partyJump5": [],
+    "partyFire5": [],
+    "partyJoin5": [],
+    "partyPause5": [],
+    "partyMove6": [],
+    "partyJump6": [],
+    "partyFire6": [],
+    "partyJoin6": [],
+    "partyPause6": [],
+    "partyMove7": [],
+    "partyJump7": [],
+    "partyFire7": [],
+    "partyJoin7": [],
+    "partyPause7": [],
+    "partyMove8": [],
+    "partyJump8": [],
+    "partyFire8": [],
+    "partyJoin8": [],
+    "partyPause8": [],
+    "partyMove9": [],
+    "partyJump9": [],
+    "partyFire9": [],
+    "partyJoin9": [],
+    "partyPause9": [],
+    "partyMove10": [],
+    "partyJump10": [],
+    "partyFire10": [],
+    "partyJoin10": [],
+    "partyPause10": []
+  }
+}

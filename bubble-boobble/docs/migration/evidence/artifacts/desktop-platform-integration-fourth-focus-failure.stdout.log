@@ -1,0 +1,7 @@
+
+> bubbleboobble@0.1.0 desktop:integration
+> node tools/desktop/integration.mjs
+
+Own game window ready; waiting for ordinary foreground activation if macOS declined it.
+Error: own-window focus before input: {"music":{"paused":false,"volume":0.5,"pcmHash":"4d809da7d6aab9d1","helperPID":11571,"position":9.96,"underrunFrames":0,"eof":false,"running":true,"pauseAcknowledged":false,"producedFrames":487680,"muted":false,"capacityFrames":9600,"consumedFrames":478080,"bufferedFrames":9600},"nativeSpaceFullscreen":false,"windowClass":"SDL3Window","launcherPID":11424,"bundleId":"bubbleboobble.desktop","launcherHeartbeatUnixMs":1791987877592,"keyWindow":false,"screenWidth":1496,"canBecomeKey":true,"volume":0.5,"executablePath":"/Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/.cache/desktop/BubbleBoobble.app/Contents/MacOS/BubbleBoobble-runtime","position":9.96,"windowTitle":"BubbleBoobble","inputSequence":1,"launchId":"e8e3d87c04a20ce5250ef0c96725688ee002a47b55238ab7031856909d437348","pauseAcknowledged":false,"windowHeight":392,"muted":false,"transport":"stateful-ym","screenHeight":967,"revision":6,"windowStyle":15,"playing":1,"windowReady":true,"windowWidth":384,"fullscreenMode":"borderless-desktop","adapterActive":true,"focused":false,"applicationActive":false,"error":"","fullscreen":false,"transition":false,"controlledPresentation":false,"track":"bubble-2","pid":11520}
+{"pass":false,"preferencesRestored":true,"processesCleaned":true,"endpointClosed":true}

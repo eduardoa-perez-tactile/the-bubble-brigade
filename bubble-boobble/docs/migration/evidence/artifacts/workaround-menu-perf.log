@@ -1,0 +1,163 @@
+BubbleBoobble game-owned macOS adapter: http://127.0.0.1:47681; child 88466; installed runtime unchanged (1934941121d3).
+[Warn] audio: music 'reference/audio/bubble-2': not a decodable file
+perf: 707 frames; frame time p50 8.3 ms, p95 9.5, p99 11.8, max 59.6; work p95 4.0 ms; 2 hitches
+worst: #1 (step 4) 59.6 ms, #241 (step 126) 48.8 ms, #30 (step 18) 15.2 ms, #9 (step 8) 13.0 ms, #3 (step 5) 12.4 ms
+{
+  "ok": true,
+  "mode": "player",
+  "steps": 359,
+  "hash": "bee358ee53dae632",
+  "frames": 708,
+  "quit": false,
+  "seconds": 6.002496375,
+  "surface": {
+    "width": 2992,
+    "height": 1934
+  },
+  "audio": {
+    "device": true,
+    "voices": 0,
+    "sounds": 10,
+    "buses": {
+      "Master": 1.0,
+      "Music": 0.0,
+      "SFX": 0.75,
+      "UI": 1.0,
+      "Voice": 1.0
+    },
+    "music": null
+  },
+  "quality": {
+    "device": {
+      "vendor": "apple",
+      "device": "Apple M2 Max metal-3",
+      "driver": "Metal driver on macOS Version 26.7.1 (Build 25G241)",
+      "model": "",
+      "os": "macos"
+    },
+    "profile": "desktop-apple-silicon",
+    "source": "database",
+    "benchmarkMs": null,
+    "level": 0,
+    "maxLevel": 5,
+    "thermal": "nominal",
+    "heat": null,
+    "settings": {
+      "renderScale": 1.0,
+      "post": "full",
+      "shadowQuality": "high",
+      "msaa": 0,
+      "targetFps": null,
+      "vfx": 1.0,
+      "lodBias": 0.0
+    },
+    "history": [
+      {
+        "t": 0.218431791,
+        "level": 1,
+        "thermal": "nominal"
+      },
+      {
+        "t": 4.226475541,
+        "level": 0,
+        "thermal": "nominal"
+      }
+    ]
+  },
+  "targetFps": null,
+  "idleFrames": {
+    "enabled": true,
+    "presented": 708,
+    "skipped": 0
+  },
+  "displayHz": 120.0,
+  "frameIntervalMs": {
+    "count": 707,
+    "mean": 8.449784247524756,
+    "p50": 8.306209,
+    "p95": 9.502375,
+    "sd": 2.6248130708300113,
+    "fps": 118.34621698097627
+  },
+  "perf": {
+    "frames": 707,
+    "frameTimeMs": {
+      "p50": 8.306209,
+      "p95": 9.502375,
+      "p99": 11.816375,
+      "max": 59.587041,
+      "mean": 8.44978424752475
+    },
+    "workMs": {
+      "p50": 2.998625,
+      "p95": 4.029583,
+      "p99": 5.843331999999999,
+      "max": 44.10675,
+      "mean": 3.236603551626591
+    },
+    "hitchFrames": 2,
+    "memoryMB": 251.703125,
+    "worstFrames": [
+      {
+        "frame": 1,
+        "step": 4,
+        "ms": 59.587041,
+        "workMs": 44.10675
+      },
+      {
+        "frame": 241,
+        "step": 126,
+        "ms": 48.803209,
+        "workMs": 43.691874
+      },
+      {
+        "frame": 30,
+        "step": 18,
+        "ms": 15.189375,
+        "workMs": 2.8624169999999998
+      },
+      {
+        "frame": 9,
+        "step": 8,
+        "ms": 13.019957999999999,
+        "workMs": 8.420916
+      },
+      {
+        "frame": 3,
+        "step": 5,
+        "ms": 12.385583,
+        "workMs": 5.107833
+      },
+      {
+        "frame": 476,
+        "step": 244,
+        "ms": 12.012666999999999,
+        "workMs": 6.807375
+      },
+      {
+        "frame": 18,
+        "step": 12,
+        "ms": 11.905958,
+        "workMs": 5.639209
+      },
+      {
+        "frame": 10,
+        "step": 9,
+        "ms": 11.816375,
+        "workMs": 5.038583
+      },
+      {
+        "frame": 22,
+        "step": 14,
+        "ms": 11.075834,
+        "workMs": 5.786290999999999
+      },
+      {
+        "frame": 618,
+        "step": 315,
+        "ms": 11.070958000000001,
+        "workMs": 3.0952919999999997
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+✔ exact comparison accepts repeated trace and object key reordering (4.001208ms)
+✔ first divergent tick includes the field, input and surrounding states (2.484ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.067167ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (69.856ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.097625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.419334
+gameengine test --js v8: 1.924 s
+85 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *: 12.610 s
+14 selected test cases passed
+gameengine bundle: 0.440 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.122 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.123 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.130 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.190 s
+Warning: assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = "#646664" in the .gmeta
+Warning: pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`
+gameengine check: 13.481 s
+Original provenance intact; 36 unique reference audio aliases; five distinct playable music keys.
+Harness verify: 29.652 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

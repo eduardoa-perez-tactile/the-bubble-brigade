@@ -1,0 +1,171 @@
+{
+  "command": "record",
+  "wallMs": 83134.435042,
+  "measurements": [
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party boss ten dragons fire identifiable lightning bubbles",
+      "wallMs": 2473.5415,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter wave fruit real final pops show a different reward each wave",
+      "wallMs": 3707.569834,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party feedback ready GO and last kill fit every window",
+      "wallMs": 10432.165041,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter courtyard full arena and ten identities fit native wide tall and ultrawide windows",
+      "wallMs": 3975.843334000001,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter ten named actions reject malformed suffixes and pad ten stays isolated",
+      "wallMs": 1395.0620419999977,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter ten dragons firing and rescue remain bounded on phone low",
+      "wallMs": 5744.984790999999,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter feedback shooting Space cannot restart a defeated boss run",
+      "wallMs": 1498.1771249999983,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter feedback results require release and a fresh controller confirmation after the guard",
+      "wallMs": 1302.6388750000006,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter feedback jump dust grounded shadows nameplates and guarded results remain readable",
+      "wallMs": 5079.7828329999975,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter feel six player capture chain rescue boss and results fit every aspect",
+      "wallMs": 4191.9259170000005,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter party boss recorded thunder shot capture and finishing pop",
+      "wallMs": 1260.9632500000007,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter party last standing only shows defeat when the final bot falls through recorded engine inputs",
+      "wallMs": 1274.1709999999948,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party pacing five second countdown preparation shooting and red last enemy",
+      "wallMs": 2461.0916669999933,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party polish readable countdown falling enemies and rest practice shots",
+      "wallMs": 2623.0274160000045,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter party polish six real pops coalesce while classic cues retain their original mix",
+      "wallMs": 1221.0382089999985,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter party randomized powerup has a small green benefit alert in the arena",
+      "wallMs": 1602.6516249999986,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter party recorded wave clear rest boss and results",
+      "wallMs": 1425.453834,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter party six actual controllers move separate humans and operate menus",
+      "wallMs": 1186.767667,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter harness reset and tap",
+      "wallMs": 1171.8377089999994,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter movement physical keyboard hold release and jump",
+      "wallMs": 1173.3852079999997,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter arcade engine input full Go parity reference-round1-smoke",
+      "wallMs": 1300.4998330000017,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter player traversal engine input wraps round three and preserves upward re-entry",
+      "wallMs": 1267.2304579999982,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows",
+      "wallMs": 8680.213292,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches red gameplay",
+      "wallMs": 2506.353292,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter dragon skins settings selection reaches yellow gameplay",
+      "wallMs": 2379.3097500000003,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input all solo colors",
+      "wallMs": 2385.595250000013,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter bubble skins actual fire input simultaneous co-op colors",
+      "wallMs": 1810.4384999999893,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter arcade player motion real engine fall inputs shoes false",
+      "wallMs": 1135.5585830000055,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter arcade player motion real engine fall inputs shoes true",
+      "wallMs": 1137.7177499999962,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter arcade player motion real engine jump pause and co-op phases",
+      "wallMs": 1160.096000000005,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter arcade scoring real engine pops and fruit pickups update HUD and animate points",
+      "wallMs": 1181.8989589999983,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter companion modes start restart pause and preserve human co-op controls",
+      "wallMs": 1730.9497919999994,
+      "tests": 1
+    },
+    {
+      "command": "gameengine test --js v8 --record-replays --filter desktop physical Enter tap between simulation steps is not dropped",
+      "wallMs": 1251.7832500000077,
+      "tests": 1
+    }
+  ]
+}

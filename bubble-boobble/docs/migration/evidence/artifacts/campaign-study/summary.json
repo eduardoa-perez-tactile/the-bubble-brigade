@@ -1,0 +1,553 @@
+{
+  "sourceProfile": {
+    "NormalEnemySpeedScale": 1
+  },
+  "scope": "Exact canonical prefixes against original Go; stop each round at first narrowly verified player ceiling boundary. Production default normal speed is intentionally slower. No claim about any suffix after a boundary.",
+  "exactRounds": 15,
+  "expectedBoundaryRounds": 10,
+  "failedRounds": 0,
+  "matchedFrames": 25315,
+  "rows": [
+    {
+      "round": 1,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 2,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 3,
+      "availableFrames": 1261,
+      "matchedFrames": 550,
+      "boundary": {
+        "frame": 550,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -6.5
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 21.650000000004837,
+              "VY": -6.5
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 4,
+      "availableFrames": 1261,
+      "matchedFrames": 486,
+      "boundary": {
+        "frame": 486,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[0].VY",
+          "expected": 0,
+          "actual": -8.5
+        },
+        "players": [
+          {
+            "player": 0,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 17.5,
+              "VY": -8.5
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 5,
+      "availableFrames": 1261,
+      "matchedFrames": 1058,
+      "boundary": {
+        "frame": 1058,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -7.5
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 23.299999999999613,
+              "VY": -7.5
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 6,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 7,
+      "availableFrames": 1261,
+      "matchedFrames": 486,
+      "boundary": {
+        "frame": 486,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[0].VY",
+          "expected": 0,
+          "actual": -8.5
+        },
+        "players": [
+          {
+            "player": 0,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 17.5,
+              "VY": -8.5
+            }
+          },
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 17.5,
+              "VY": -8.5
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 8,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 9,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 10,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 11,
+      "availableFrames": 1261,
+      "matchedFrames": 533,
+      "boundary": {
+        "frame": 533,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -10
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 15.450000000000756,
+              "VY": -10
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 12,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 13,
+      "availableFrames": 1261,
+      "matchedFrames": 301,
+      "boundary": {
+        "frame": 301,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -11
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 17,
+              "VY": -11
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 14,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 15,
+      "availableFrames": 1261,
+      "matchedFrames": 685,
+      "boundary": {
+        "frame": 685,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -8
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 19,
+              "VY": -8
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 16,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 17,
+      "availableFrames": 1261,
+      "matchedFrames": 596,
+      "boundary": {
+        "frame": 596,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[0].VY",
+          "expected": 0,
+          "actual": -6
+        },
+        "players": [
+          {
+            "player": 0,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 23.150000000002535,
+              "VY": -6
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 18,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 19,
+      "availableFrames": 1261,
+      "matchedFrames": 1024,
+      "boundary": {
+        "frame": 1024,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -9.5
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 18.5,
+              "VY": -9.5
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 20,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 21,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 22,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 23,
+      "availableFrames": 1261,
+      "matchedFrames": 681,
+      "boundary": {
+        "frame": 681,
+        "input": {
+          "ticks": 1,
+          "players": [
+            {
+              "Move": -1,
+              "Jump": true,
+              "Fire": true
+            },
+            {
+              "Move": 1,
+              "Jump": true,
+              "Fire": true
+            }
+          ],
+          "paused": false
+        },
+        "firstDifference": {
+          "path": "$.Snapshot.Players[1].VY",
+          "expected": 0,
+          "actual": -9
+        },
+        "players": [
+          {
+            "player": 1,
+            "expected": {
+              "Y": 24,
+              "VY": 0
+            },
+            "actual": {
+              "Y": 19.450000000003143,
+              "VY": -9
+            }
+          }
+        ]
+      },
+      "failure": null
+    },
+    {
+      "round": 24,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    },
+    {
+      "round": 25,
+      "availableFrames": 1261,
+      "matchedFrames": 1261,
+      "boundary": null,
+      "failure": null
+    }
+  ]
+}

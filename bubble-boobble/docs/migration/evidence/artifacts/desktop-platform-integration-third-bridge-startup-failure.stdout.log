@@ -1,0 +1,7 @@
+
+> bubbleboobble@0.1.0 desktop:integration
+> node tools/desktop/integration.mjs
+
+Own game window ready; waiting for ordinary foreground activation if macOS declined it.
+Error: game bridge: {"observation":null,"desired":{"fullscreen":false,"track":"","volume":0.5,"paused":false,"muted":false}}
+{"pass":false,"processesCleaned":true,"endpointClosed":true}

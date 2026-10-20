@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "samples": 46464,
+  "mismatches": 0,
+  "image": "tests/goldens/bubble_palette_all_original_shot_frames/shot_frames/desktop/metal.png",
+  "sha256": "b0be913ae28868be0b3b1e2494efa3933b483578ca23c60d07c6ea74e28b6d67",
+  "examples": []
+}

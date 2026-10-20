@@ -1,0 +1,1 @@
+{"ok":false,"error":"gameengine-host (hermes) not built (/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/hermes/release/gameengine-host); run: cargo build --profile fast -p gameengine-host --no-default-features --features hermes,desktop,protocol --target-dir target/hermes"}

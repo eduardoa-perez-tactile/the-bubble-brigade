@@ -1,0 +1,17 @@
+✔ exact comparison accepts repeated trace and object key reordering (4.375292ms)
+✔ first divergent tick includes the field, input and surrounding states (2.336292ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.344125ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (65.607083ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.09675ms)
+✔ campaign boundary permits only original Y24/VY0 versus rising above24 and does not mutate actual (0.514292ms)
+✔ campaign boundary rejects wrong reference clamp, stationary/falling motion and nonfinite coordinates (0.128458ms)
+✔ campaign boundary rejects collateral canonical changes including another player (0.238875ms)
+✔ campaign prefix stops at first verified boundary without simulating or claiming later frames (0.143ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.976083

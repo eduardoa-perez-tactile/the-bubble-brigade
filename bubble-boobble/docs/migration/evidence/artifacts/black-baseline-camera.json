@@ -1,0 +1,1 @@
+{"entities":[{"id":"20:1","components":{"Camera":{"projection":"Orthographic","orthoSize":360,"fovY":1.0472,"near":-100,"far":100,"order":0,"clear":true,"clearColor":[0,0,0,1],"layerMask":4294967295,"viewport":[0,0,1,1],"renderScale":1,"postProfile":null,"msaa":0,"fit":"Contain","designAspect":0.5625,"space":"Auto"}}}],"truncated":false}

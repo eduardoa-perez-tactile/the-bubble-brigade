@@ -1,0 +1,43 @@
+
+> bubbleboobble@0.1.0 harness:verify-full
+> node tools/harness/run.mjs verify-full
+
+✔ exact comparison accepts repeated trace and object key reordering (4.191417ms)
+✔ first divergent tick includes the field, input and surrounding states (2.429708ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.161084ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (66.01125ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.092ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 149.338584
+✔ aborted authenticated request body leaves bridge responsive (18.289959ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.14975
+{"ok":true,"scope":"cold live readback viewport; no offscreen render or preload","assetsBefore":{"value":{"class":"desktop","budget":{"total":2147483648,"textures":1610612736,"audio":268435456},"resident":{"textures":0,"audio":0,"total":0,"data":0},"overBudget":null,"overCount":0,"evicted":0,"groups":{}}},"assetsAfter":{"value":{"class":"desktop","budget":{"total":2147483648,"textures":1610612736,"audio":268435456},"resident":{"textures":11185048,"audio":0,"total":11185048,"data":0},"overBudget":null,"overCount":0,"evicted":0,"groups":{}}},"width":1920,"height":1080,"frames":67,"frameIndex":67,"tile":{"found":34380,"total":34380},"player":{"found":1136,"total":24192},"drawCalls":5,"triangles":1065}
+gameengine test --js v8: 2.459 s
+109 selected test cases passed
+gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *: 13.514 s
+15 selected test cases passed
+desktop: 210 explicit frames, peak 11 draws, all required pages/effects observed
+gameengine bundle: 0.443 s
+Replay tests/replays/harness_reset_and_tap.greplay, scene scenes/main.scene.json: 0.124 s
+Replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay, scene scenes/round1.scene.json: 0.125 s
+Replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay, scene scenes/arcade.scene.json: 0.165 s
+Replay tests/replays/player_traversal_engine_input_wraps_round_three_and_preserves_upward_re_entry.greplay, scene scenes/arcade.scene.json: 0.136 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.325 s
+Warning: assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = "#646664" in the .gmeta
+Warning: pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`
+gameengine check: 13.421 s
+Original provenance intact; 75 unique nonempty cooked aliases; 36 reference audio aliases; five distinct playable music keys.
+Harness verify-full: 44.851 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

@@ -1,0 +1,44 @@
+{
+  "command": "verify",
+  "wallMs": 30620.064333000002,
+  "measurements": [
+    {
+      "command": "gameengine test --js v8",
+      "wallMs": 2041.7380830000002,
+      "tests": 92
+    },
+    {
+      "command": "gameengine test --js v8 --tier t1 --gpu-tier desktop --filter *",
+      "wallMs": 12415.348541000001,
+      "tests": 14
+    },
+    {
+      "command": "gameengine bundle",
+      "wallMs": 425.7240419999998
+    },
+    {
+      "command": "replay tests/replays/harness_reset_and_tap.greplay scene=scenes/main.scene.json",
+      "wallMs": 114.76833299999998
+    },
+    {
+      "command": "replay tests/replays/movement_physical_keyboard_hold_release_and_jump.greplay scene=scenes/round1.scene.json",
+      "wallMs": 115.15558299999975
+    },
+    {
+      "command": "replay tests/replays/arcade_engine_input_full_go_parity_reference_round1_smoke.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 124.39929200000006
+    },
+    {
+      "command": "replay tests/replays/desktop_complete_presentation_flows.greplay scene=scenes/arcade.scene.json",
+      "wallMs": 187.95758300000125
+    },
+    {
+      "command": "gameengine check",
+      "wallMs": 14585.402167
+    },
+    {
+      "command": "audio asset provenance and alias guard",
+      "wallMs": 79.60883299999841
+    }
+  ]
+}

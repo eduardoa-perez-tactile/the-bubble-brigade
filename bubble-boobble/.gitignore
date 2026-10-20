@@ -1,0 +1,8 @@
+/.gameengine/
+/build/
+/builds/
+/node_modules/
+/.cache/
+/artifacts/
+/AGENTS.md.new
+.DS_Store

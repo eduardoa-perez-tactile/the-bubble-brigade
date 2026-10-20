@@ -1,0 +1,60 @@
+{
+  "sha": "3f647419189a336d2eb0e5862d28bdc35bef8359",
+  "ok": true,
+  "started": "2026-10-20T10:05:02.395Z",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.9.0/bin/node",
+        "--test",
+        "tools/web/controls.test.mjs",
+        "tools/web/save-compat.test.mjs",
+        "tools/web/release-evidence.test.mjs"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/native-1.log"
+    },
+    {
+      "command": [
+        "gameengine",
+        "check",
+        "--json"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/native-2.log"
+    },
+    {
+      "command": [
+        "gameengine",
+        "test",
+        "--tier",
+        "t1",
+        "--gpu-tier",
+        "desktop",
+        "--js",
+        "v8"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/native-3.log"
+    },
+    {
+      "command": [
+        "gameengine",
+        "test",
+        "--tier",
+        "t1",
+        "--gpu-tier",
+        "desktop",
+        "--js",
+        "v8",
+        "--memory-class",
+        "phone-low",
+        "--filter",
+        "feel six player capture chain rescue boss and results fit every aspect"
+      ],
+      "code": 0,
+      "log": "build/web-evidence/native-4.log"
+    }
+  ],
+  "finished": "2026-10-20T10:07:53.870Z"
+}

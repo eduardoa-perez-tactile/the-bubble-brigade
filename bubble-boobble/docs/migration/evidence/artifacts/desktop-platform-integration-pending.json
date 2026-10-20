@@ -1,0 +1,6 @@
+{
+  "status": "pending",
+  "reason": "Coordinator independently observed macOS session locked; GUI validation stopped without bypassing lock.",
+  "verified": "Renamed WAV aliases load in loose/cooked offline audio and actual native host; no decoding warning.",
+  "gui": "Full settings/focus probe requires unlocked desktop. Prior pre-rename full proof exists in tool history."
+}

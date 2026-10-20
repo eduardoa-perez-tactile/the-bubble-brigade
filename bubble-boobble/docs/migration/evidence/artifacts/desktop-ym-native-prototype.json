@@ -1,0 +1,62 @@
+{
+  "pass" : true,
+  "firstPrefixMatches" : true,
+  "paused" : {
+    "paused" : true,
+    "pcmHash" : "3feaa498b8175f19",
+    "helperPID" : 85445,
+    "position" : 0.10666666666666667,
+    "underrunFrames" : 0,
+    "eof" : false,
+    "running" : true,
+    "pauseAcknowledged" : true,
+    "producedFrames" : 14720,
+    "capacityFrames" : 9600,
+    "consumedFrames" : 5120,
+    "bufferedFrames" : 9600
+  },
+  "helperExited" : true,
+  "secondPause" : {
+    "paused" : true,
+    "pcmHash" : "980cba8691b647c1",
+    "helperPID" : 85445,
+    "position" : 0.21333333333333335,
+    "underrunFrames" : 0,
+    "eof" : false,
+    "running" : true,
+    "pauseAcknowledged" : true,
+    "producedFrames" : 19840,
+    "capacityFrames" : 9600,
+    "consumedFrames" : 10240,
+    "bufferedFrames" : 9600
+  },
+  "resumedPrefixMatches" : true,
+  "stillPaused" : {
+    "paused" : true,
+    "pcmHash" : "3feaa498b8175f19",
+    "helperPID" : 85445,
+    "position" : 0.10666666666666667,
+    "underrunFrames" : 0,
+    "eof" : false,
+    "running" : true,
+    "pauseAcknowledged" : true,
+    "producedFrames" : 14720,
+    "capacityFrames" : 9600,
+    "consumedFrames" : 5120,
+    "bufferedFrames" : 9600
+  },
+  "playing" : {
+    "paused" : false,
+    "pcmHash" : "3feaa498b8175f19",
+    "helperPID" : 85445,
+    "position" : 0.10666666666666667,
+    "underrunFrames" : 0,
+    "eof" : false,
+    "running" : true,
+    "pauseAcknowledged" : false,
+    "producedFrames" : 14720,
+    "capacityFrames" : 9600,
+    "consumedFrames" : 5120,
+    "bufferedFrames" : 9600
+  }
+}

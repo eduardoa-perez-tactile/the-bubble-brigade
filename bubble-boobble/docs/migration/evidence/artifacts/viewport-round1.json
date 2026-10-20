@@ -1,0 +1,58 @@
+{
+  "ok": true,
+  "scope": "cold live readback viewport; no offscreen render or preload",
+  "assetsBefore": {
+    "value": {
+      "class": "desktop",
+      "budget": {
+        "total": 2147483648,
+        "textures": 1610612736,
+        "audio": 268435456
+      },
+      "resident": {
+        "textures": 0,
+        "audio": 0,
+        "total": 0,
+        "data": 0
+      },
+      "overBudget": null,
+      "overCount": 0,
+      "evicted": 0,
+      "groups": {}
+    }
+  },
+  "assetsAfter": {
+    "value": {
+      "class": "desktop",
+      "budget": {
+        "total": 2147483648,
+        "textures": 1610612736,
+        "audio": 268435456
+      },
+      "resident": {
+        "textures": 897508,
+        "audio": 0,
+        "total": 897508,
+        "data": 0
+      },
+      "overBudget": null,
+      "overCount": 0,
+      "evicted": 0,
+      "groups": {}
+    }
+  },
+  "width": 1920,
+  "height": 1080,
+  "frames": 66,
+  "frameIndex": 66,
+  "tile": {
+    "found": 34380,
+    "total": 34380
+  },
+  "player": {
+    "found": 1101,
+    "total": 24192
+  },
+  "drawCalls": 2,
+  "triangles": 455
+}

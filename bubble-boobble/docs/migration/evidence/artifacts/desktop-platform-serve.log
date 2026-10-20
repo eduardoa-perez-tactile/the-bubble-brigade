@@ -1,0 +1,3 @@
+BubbleBoobble game-owned macOS adapter: http://127.0.0.1:47681; child 77827; installed runtime unchanged (1934941121d3).
+{"ok":true,"ws":"ws://127.0.0.1:54172","local":null,"token":"50ad2a1dfe05ff2ea9efa8f1418e6f2e3fabf16dd5a90944a044b025ba15df61","mode":"player","pid":77827}
+[Warn] audio: music 'reference/audio/bubble-2': not a decodable file

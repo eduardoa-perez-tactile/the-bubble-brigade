@@ -1,0 +1,3 @@
+gameengine bundle: 0.439 s
+Replay tests/replays/desktop_complete_presentation_flows.greplay, scene scenes/arcade.scene.json: 0.193 s
+Harness replay: 0.921 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

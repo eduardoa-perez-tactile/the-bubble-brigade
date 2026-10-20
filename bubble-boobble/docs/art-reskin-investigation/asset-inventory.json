@@ -1,0 +1,4630 @@
+[
+  {
+    "path": "artifacts/arcade-perf-before.png",
+    "bytes": 499005,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-baseline-auto-2992x1934.png",
+    "bytes": 789597,
+    "width": 2992,
+    "height": 1934,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-baseline-gameplay-2992x1934.png",
+    "bytes": 541153,
+    "width": 2992,
+    "height": 1934,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-editor-gameplay-fixed.png",
+    "bytes": 68525,
+    "width": 2096,
+    "height": 1418,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/black-editor-gameplay.png",
+    "bytes": 73013,
+    "width": 1888,
+    "height": 1418,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/black-editor-stream-frame.jpg",
+    "bytes": 26163,
+    "width": 720,
+    "height": 405,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/black-editor-stream-gameplay.jpg",
+    "bytes": 26163,
+    "width": 720,
+    "height": 405,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/black-fixed-gameplay-2992x1934.png",
+    "bytes": 541154,
+    "width": 2992,
+    "height": 1934,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-fixed-title-2992x1934.png",
+    "bytes": 789597,
+    "width": 2992,
+    "height": 1934,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-initial-key-offscreen.png",
+    "bytes": 243936,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-preload-offscreen.png",
+    "bytes": 243936,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-static-quad-before-offscreen.png",
+    "bytes": 10975,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-static-quad-offscreen.png",
+    "bytes": 44227,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-viewport-after-offscreen.png",
+    "bytes": 38489,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-viewport-before-offscreen.png",
+    "bytes": 18552,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/black-viewport-offscreen.png",
+    "bytes": 243936,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/bubble-skins-contact.png",
+    "bytes": 72166,
+    "width": 1536,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/desktop-editor.png",
+    "bytes": 187746,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-help.png",
+    "bytes": 288387,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-menu-wide.png",
+    "bytes": 696869,
+    "width": 3360,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-menu.png",
+    "bytes": 541817,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-name.png",
+    "bytes": 172335,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-profiles.png",
+    "bytes": 147331,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-scores.png",
+    "bytes": 120983,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/desktop-title.png",
+    "bytes": 638350,
+    "width": 1536,
+    "height": 1440,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/dragon-skins-contact.png",
+    "bytes": 166318,
+    "width": 1920,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/dragon-skins-desktop-contact.png",
+    "bytes": 166704,
+    "width": 1920,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/editor-head-isolated.png",
+    "bytes": 46176,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/editor-movement.png",
+    "bytes": 475760,
+    "width": 2800,
+    "height": 1668,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/editor-starter.png",
+    "bytes": 191518,
+    "width": 2800,
+    "height": 1668,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/fixed-arcade-visible.png",
+    "bytes": 310643,
+    "width": 2096,
+    "height": 1418,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/fixed-editor-visible.png",
+    "bytes": 547294,
+    "width": 2992,
+    "height": 1668,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/flow-contact.png",
+    "bytes": 565113,
+    "width": 1536,
+    "height": 1950,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/go-app-round1.png",
+    "bytes": 20728,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/go-pause-final.png",
+    "bytes": 20342,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/go-ready-final.png",
+    "bytes": 20367,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/go-round1.png",
+    "bytes": 20878,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/go-win-final.png",
+    "bytes": 30296,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/movement.png",
+    "bytes": 218897,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/perf-combat.png",
+    "bytes": 28458,
+    "width": 540,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/player-motion-ai.png",
+    "bytes": 124187,
+    "width": 540,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/sprite-sizing-before.png",
+    "bytes": 23741,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/starter-reset.png",
+    "bytes": 19901,
+    "width": 540,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-round1.png",
+    "bytes": 63888,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-smoke-red.png",
+    "bytes": 18552,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-smoke-static-independent.png",
+    "bytes": 37291,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-smoke.png",
+    "bytes": 37237,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-static-perf.png",
+    "bytes": 37291,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/viewport-static-steady.png",
+    "bytes": 37291,
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "artifacts/visual-reference/game-r1-f1-0.png",
+    "bytes": 20529,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/visual-reference/game-r1-f1-1.png",
+    "bytes": 20367,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/visual-reference/menu-r1-f1-0.png",
+    "bytes": 102983,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/visual-reference/menu-r1-f1-1.png",
+    "bytes": 102983,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "artifacts/visual-reference/repeat-diff.png",
+    "bytes": 1993,
+    "width": 768,
+    "height": 720,
+    "mode": "L"
+  },
+  {
+    "path": "assets/audio/boss-hit.wav",
+    "bytes": 7724
+  },
+  {
+    "path": "assets/audio/bubble-pop.wav",
+    "bytes": 6764
+  },
+  {
+    "path": "assets/audio/bubble-shot.wav",
+    "bytes": 4844
+  },
+  {
+    "path": "assets/audio/capture.wav",
+    "bytes": 10604
+  },
+  {
+    "path": "assets/audio/rescue.wav",
+    "bytes": 19244
+  },
+  {
+    "path": "assets/audio/victory.wav",
+    "bytes": 33644
+  },
+  {
+    "path": "assets/audio/wave-clear.wav",
+    "bytes": 20204
+  },
+  {
+    "path": "assets/branding/bubble-madness-logo.png",
+    "bytes": 1593064,
+    "width": 1477,
+    "height": 1065,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/pixel-renderer/atlas.png",
+    "bytes": 204380,
+    "width": 2048,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/pixel-renderer/circle-0.png",
+    "bytes": 362,
+    "width": 20,
+    "height": 20,
+    "mode": "RGB"
+  },
+  {
+    "path": "assets/pixel-renderer/circle-1.png",
+    "bytes": 525,
+    "width": 30,
+    "height": 30,
+    "mode": "RGB"
+  },
+  {
+    "path": "assets/pixel-renderer/circle-2.png",
+    "bytes": 692,
+    "width": 40,
+    "height": 40,
+    "mode": "RGB"
+  },
+  {
+    "path": "assets/pixel-renderer/circle-3.png",
+    "bytes": 821,
+    "width": 50,
+    "height": 50,
+    "mode": "RGB"
+  },
+  {
+    "path": "assets/pixel-renderer/static-quad.gltf",
+    "bytes": 1072
+  },
+  {
+    "path": "assets/reference/arcade.ttf",
+    "bytes": 26500
+  },
+  {
+    "path": "assets/reference/audio/bubble-1.ym",
+    "bytes": 1012
+  },
+  {
+    "path": "assets/reference/audio/bubble-2.ym",
+    "bytes": 301
+  },
+  {
+    "path": "assets/reference/audio/bubble-3.ym",
+    "bytes": 445
+  },
+  {
+    "path": "assets/reference/audio/bubble-4.ym",
+    "bytes": 265
+  },
+  {
+    "path": "assets/reference/audio/bubble-5.ym",
+    "bytes": 328
+  },
+  {
+    "path": "assets/reference/audio/death.wav",
+    "bytes": 26084
+  },
+  {
+    "path": "assets/reference/audio/explosion.wav",
+    "bytes": 44022
+  },
+  {
+    "path": "assets/reference/audio/fire.wav",
+    "bytes": 26908
+  },
+  {
+    "path": "assets/reference/audio/food.wav",
+    "bytes": 9308
+  },
+  {
+    "path": "assets/reference/audio/item.wav",
+    "bytes": 9482
+  },
+  {
+    "path": "assets/reference/audio/jump.wav",
+    "bytes": 14192
+  },
+  {
+    "path": "assets/reference/audio/laser.wav",
+    "bytes": 17796
+  },
+  {
+    "path": "assets/reference/audio/music-bubble-1.wav",
+    "bytes": 8863788
+  },
+  {
+    "path": "assets/reference/audio/music-bubble-2.wav",
+    "bytes": 1966124
+  },
+  {
+    "path": "assets/reference/audio/music-bubble-3.wav",
+    "bytes": 2490412
+  },
+  {
+    "path": "assets/reference/audio/music-bubble-4.wav",
+    "bytes": 2211884
+  },
+  {
+    "path": "assets/reference/audio/music-bubble-5.wav",
+    "bytes": 1114156
+  },
+  {
+    "path": "assets/reference/audio/pop.wav",
+    "bytes": 57350
+  },
+  {
+    "path": "assets/reference/audio/shoot.wav",
+    "bytes": 8738
+  },
+  {
+    "path": "assets/reference/audio/water.wav",
+    "bytes": 46440
+  },
+  {
+    "path": "assets/reference/banebou/angry/0.png",
+    "bytes": 286,
+    "width": 17,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/angry/1.png",
+    "bytes": 305,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/angry/2.png",
+    "bytes": 316,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/bubble/0.png",
+    "bytes": 376,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/bubble/1.png",
+    "bytes": 327,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/bubble/2.png",
+    "bytes": 371,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/dead/0.png",
+    "bytes": 293,
+    "width": 18,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/dead/1.png",
+    "bytes": 338,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/dead/2.png",
+    "bytes": 306,
+    "width": 18,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/dead/3.png",
+    "bytes": 353,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/escape/0.png",
+    "bytes": 456,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/escape/1.png",
+    "bytes": 422,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/escape/2.png",
+    "bytes": 446,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/walk/0.png",
+    "bytes": 284,
+    "width": 17,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/walk/1.png",
+    "bytes": 303,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/walk/2.png",
+    "bytes": 315,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/warning/0.png",
+    "bytes": 427,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/warning/1.png",
+    "bytes": 396,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/banebou/warning/2.png",
+    "bytes": 421,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/dead/0.png",
+    "bytes": 778,
+    "width": 16,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/dead/1.png",
+    "bytes": 776,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/dead/2.png",
+    "bytes": 777,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/dead/3.png",
+    "bytes": 774,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/jump/0.png",
+    "bytes": 749,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/jump/1.png",
+    "bytes": 741,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/jump/2.png",
+    "bytes": 750,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/jump/3.png",
+    "bytes": 749,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/shoot/0.png",
+    "bytes": 757,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/shoot/1.png",
+    "bytes": 757,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/shoot/2.png",
+    "bytes": 746,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/shoot/3.png",
+    "bytes": 746,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/0.png",
+    "bytes": 750,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/1.png",
+    "bytes": 749,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/2.png",
+    "bytes": 740,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/3.png",
+    "bytes": 746,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/4.png",
+    "bytes": 743,
+    "width": 19,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/5.png",
+    "bytes": 745,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/blue/walk/6.png",
+    "bytes": 739,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/boulder/0.png",
+    "bytes": 1155,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/boulder/1.png",
+    "bytes": 1146,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/boulder/2.png",
+    "bytes": 1136,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/boulder/3.png",
+    "bytes": 1161,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble/0.png",
+    "bytes": 337,
+    "width": 15,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble/1.png",
+    "bytes": 352,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble/2.png",
+    "bytes": 316,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble/3.png",
+    "bytes": 239,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble-warning/0.png",
+    "bytes": 300,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/bubble-warning/1.png",
+    "bytes": 312,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire/0.png",
+    "bytes": 657,
+    "width": 8,
+    "height": 12,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire/1.png",
+    "bytes": 652,
+    "width": 8,
+    "height": 11,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire/2.png",
+    "bytes": 642,
+    "width": 8,
+    "height": 10,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire-bubble/0.png",
+    "bytes": 349,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire-bubble/1.png",
+    "bytes": 365,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/fire-bubble/2.png",
+    "bytes": 372,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/0.png",
+    "bytes": 648,
+    "width": 8,
+    "height": 8,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/1.png",
+    "bytes": 642,
+    "width": 8,
+    "height": 7,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/2.png",
+    "bytes": 625,
+    "width": 8,
+    "height": 6,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/3.png",
+    "bytes": 617,
+    "width": 8,
+    "height": 5,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/4.png",
+    "bytes": 606,
+    "width": 7,
+    "height": 4,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/flame/5.png",
+    "bytes": 592,
+    "width": 5,
+    "height": 3,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/1/0.png",
+    "bytes": 227,
+    "width": 14,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/10/0.png",
+    "bytes": 177,
+    "width": 12,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/11/0.png",
+    "bytes": 274,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/12/0.png",
+    "bytes": 264,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/13/0.png",
+    "bytes": 192,
+    "width": 14,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/14/0.png",
+    "bytes": 255,
+    "width": 13,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/15/0.png",
+    "bytes": 199,
+    "width": 13,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/16/0.png",
+    "bytes": 214,
+    "width": 13,
+    "height": 15,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/17/0.png",
+    "bytes": 250,
+    "width": 14,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/18/0.png",
+    "bytes": 256,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/19/0.png",
+    "bytes": 237,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/2/0.png",
+    "bytes": 248,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/20/0.png",
+    "bytes": 215,
+    "width": 16,
+    "height": 13,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/21/0.png",
+    "bytes": 251,
+    "width": 11,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/22/0.png",
+    "bytes": 239,
+    "width": 12,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/23/0.png",
+    "bytes": 176,
+    "width": 14,
+    "height": 13,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/24/0.png",
+    "bytes": 234,
+    "width": 11,
+    "height": 13,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/25/0.png",
+    "bytes": 190,
+    "width": 12,
+    "height": 15,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/3/0.png",
+    "bytes": 259,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/4/0.png",
+    "bytes": 207,
+    "width": 14,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/5/0.png",
+    "bytes": 232,
+    "width": 15,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/6/0.png",
+    "bytes": 251,
+    "width": 15,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/7/0.png",
+    "bytes": 251,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/8/0.png",
+    "bytes": 229,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/food/9/0.png",
+    "bytes": 227,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/dead/0.png",
+    "bytes": 277,
+    "width": 16,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/dead/1.png",
+    "bytes": 333,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/dead/2.png",
+    "bytes": 284,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/dead/3.png",
+    "bytes": 331,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/jump/0.png",
+    "bytes": 276,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/jump/1.png",
+    "bytes": 271,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/jump/2.png",
+    "bytes": 279,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/jump/3.png",
+    "bytes": 283,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/shoot/0.png",
+    "bytes": 265,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/shoot/1.png",
+    "bytes": 274,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/shoot/2.png",
+    "bytes": 260,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/shoot/3.png",
+    "bytes": 261,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/0.png",
+    "bytes": 278,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/1.png",
+    "bytes": 282,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/2.png",
+    "bytes": 275,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/3.png",
+    "bytes": 285,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/4.png",
+    "bytes": 284,
+    "width": 19,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/5.png",
+    "bytes": 277,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/green/walk/6.png",
+    "bytes": 277,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/angry/0.png",
+    "bytes": 357,
+    "width": 19,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/angry/1.png",
+    "bytes": 355,
+    "width": 19,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/bubble/0.png",
+    "bytes": 424,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/bubble/1.png",
+    "bytes": 399,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/bubble/2.png",
+    "bytes": 407,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/dead/0.png",
+    "bytes": 334,
+    "width": 18,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/dead/1.png",
+    "bytes": 343,
+    "width": 19,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/dead/2.png",
+    "bytes": 345,
+    "width": 19,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/dead/3.png",
+    "bytes": 346,
+    "width": 19,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/escape/0.png",
+    "bytes": 462,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/escape/1.png",
+    "bytes": 434,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/escape/2.png",
+    "bytes": 444,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/walk/0.png",
+    "bytes": 403,
+    "width": 19,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/walk/1.png",
+    "bytes": 410,
+    "width": 19,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/warning/0.png",
+    "bytes": 417,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/warning/1.png",
+    "bytes": 393,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/invader/warning/2.png",
+    "bytes": 403,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/amethyst_ring.png",
+    "bytes": 4338,
+    "width": 8,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/blue_candy.png",
+    "bytes": 679,
+    "width": 15,
+    "height": 10,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/clock.png",
+    "bytes": 683,
+    "width": 11,
+    "height": 15,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/crystal_ring.png",
+    "bytes": 4351,
+    "width": 8,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/dynamite.png",
+    "bytes": 673,
+    "width": 14,
+    "height": 13,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/orange_parasol.png",
+    "bytes": 656,
+    "width": 13,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/pink_candy.png",
+    "bytes": 663,
+    "width": 15,
+    "height": 10,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/purple_parasol.png",
+    "bytes": 658,
+    "width": 13,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/red_parasol.png",
+    "bytes": 675,
+    "width": 13,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/ruby_ring.png",
+    "bytes": 4339,
+    "width": 8,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/shoes.png",
+    "bytes": 642,
+    "width": 13,
+    "height": 9,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/items/yellow_candy.png",
+    "bytes": 669,
+    "width": 15,
+    "height": 10,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/laser/0.png",
+    "bytes": 141,
+    "width": 7,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/laser/1.png",
+    "bytes": 146,
+    "width": 7,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/logo.png",
+    "bytes": 140347,
+    "width": 450,
+    "height": 324,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/angry/0.png",
+    "bytes": 300,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/angry/1.png",
+    "bytes": 311,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/angry/2.png",
+    "bytes": 310,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/angry/3.png",
+    "bytes": 301,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/angry/4.png",
+    "bytes": 304,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/bubble/0.png",
+    "bytes": 327,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/bubble/1.png",
+    "bytes": 323,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/bubble/2.png",
+    "bytes": 330,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/dead/0.png",
+    "bytes": 328,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/dead/1.png",
+    "bytes": 305,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/dead/2.png",
+    "bytes": 329,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/dead/3.png",
+    "bytes": 301,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/escape/0.png",
+    "bytes": 379,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/escape/1.png",
+    "bytes": 376,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/escape/2.png",
+    "bytes": 387,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot/0.png",
+    "bytes": 730,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot/1.png",
+    "bytes": 745,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot/2.png",
+    "bytes": 741,
+    "width": 18,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot/3.png",
+    "bytes": 776,
+    "width": 21,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot/4.png",
+    "bytes": 817,
+    "width": 23,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot-angry/0.png",
+    "bytes": 319,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot-angry/1.png",
+    "bytes": 340,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot-angry/2.png",
+    "bytes": 357,
+    "width": 20,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot-angry/3.png",
+    "bytes": 387,
+    "width": 23,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/shoot-angry/4.png",
+    "bytes": 460,
+    "width": 25,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/walk/0.png",
+    "bytes": 696,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/walk/1.png",
+    "bytes": 689,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/walk/2.png",
+    "bytes": 692,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/walk/3.png",
+    "bytes": 695,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/walk/4.png",
+    "bytes": 691,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/warning/0.png",
+    "bytes": 359,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/warning/1.png",
+    "bytes": 354,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/mighta/warning/2.png",
+    "bytes": 365,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/angry/0.png",
+    "bytes": 255,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/angry/1.png",
+    "bytes": 247,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/bubble/0.png",
+    "bytes": 335,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/bubble/1.png",
+    "bytes": 334,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/bubble/2.png",
+    "bytes": 343,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/dead/0.png",
+    "bytes": 297,
+    "width": 18,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/dead/1.png",
+    "bytes": 264,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/dead/2.png",
+    "bytes": 285,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/dead/3.png",
+    "bytes": 267,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/dead/4.png",
+    "bytes": 274,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/escape/0.png",
+    "bytes": 390,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/escape/1.png",
+    "bytes": 379,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/escape/2.png",
+    "bytes": 393,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/walk/0.png",
+    "bytes": 715,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/walk/1.png",
+    "bytes": 260,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/warning/0.png",
+    "bytes": 370,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/warning/1.png",
+    "bytes": 364,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/monsta/warning/2.png",
+    "bytes": 379,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pop/0.png",
+    "bytes": 283,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/angry/0.png",
+    "bytes": 340,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/angry/1.png",
+    "bytes": 333,
+    "width": 19,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/angry/2.png",
+    "bytes": 339,
+    "width": 18,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/angry/3.png",
+    "bytes": 345,
+    "width": 19,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/bubble/0.png",
+    "bytes": 378,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/bubble/1.png",
+    "bytes": 384,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/bubble/2.png",
+    "bytes": 386,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/dead/0.png",
+    "bytes": 271,
+    "width": 17,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/dead/1.png",
+    "bytes": 291,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/dead/2.png",
+    "bytes": 267,
+    "width": 16,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/dead/3.png",
+    "bytes": 280,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/escape/0.png",
+    "bytes": 415,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/escape/1.png",
+    "bytes": 419,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/escape/2.png",
+    "bytes": 413,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/walk/0.png",
+    "bytes": 311,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/walk/1.png",
+    "bytes": 295,
+    "width": 17,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/walk/2.png",
+    "bytes": 311,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/walk/3.png",
+    "bytes": 312,
+    "width": 17,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/warning/0.png",
+    "bytes": 369,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/warning/1.png",
+    "bytes": 374,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/pulpul/warning/2.png",
+    "bytes": 374,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder/0.png",
+    "bytes": 566,
+    "width": 34,
+    "height": 58,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder/1.png",
+    "bytes": 623,
+    "width": 34,
+    "height": 58,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder/2.png",
+    "bytes": 677,
+    "width": 34,
+    "height": 58,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder-bubble/0.png",
+    "bytes": 308,
+    "width": 15,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder-bubble/1.png",
+    "bytes": 318,
+    "width": 15,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/thunder-bubble/2.png",
+    "bytes": 287,
+    "width": 15,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/01.png",
+    "bytes": 143,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/02.png",
+    "bytes": 222,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/03.png",
+    "bytes": 178,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/04.png",
+    "bytes": 186,
+    "width": 15,
+    "height": 15,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/05.png",
+    "bytes": 158,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/06.png",
+    "bytes": 203,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/07.png",
+    "bytes": 152,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/08.png",
+    "bytes": 145,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/09.png",
+    "bytes": 166,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/10.png",
+    "bytes": 178,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/11.png",
+    "bytes": 174,
+    "width": 15,
+    "height": 15,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/12.png",
+    "bytes": 128,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/13.png",
+    "bytes": 163,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/14.png",
+    "bytes": 187,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/15.png",
+    "bytes": 168,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/16.png",
+    "bytes": 156,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/17.png",
+    "bytes": 134,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/18.png",
+    "bytes": 211,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/19.png",
+    "bytes": 178,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/20.png",
+    "bytes": 188,
+    "width": 14,
+    "height": 14,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/21.png",
+    "bytes": 131,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/22.png",
+    "bytes": 186,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/23.png",
+    "bytes": 153,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/24.png",
+    "bytes": 140,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/tiles/25.png",
+    "bytes": 167,
+    "width": 16,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/water/0.png",
+    "bytes": 119,
+    "width": 8,
+    "height": 8,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/water-bubble/0.png",
+    "bytes": 324,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/water-bubble/1.png",
+    "bytes": 320,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/water-bubble/2.png",
+    "bytes": 317,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/angry/0.png",
+    "bytes": 336,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/angry/1.png",
+    "bytes": 328,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/angry/2.png",
+    "bytes": 334,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/angry/3.png",
+    "bytes": 348,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/bubble/0.png",
+    "bytes": 431,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/bubble/1.png",
+    "bytes": 421,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/bubble/2.png",
+    "bytes": 419,
+    "width": 17,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/dead/0.png",
+    "bytes": 349,
+    "width": 19,
+    "height": 17,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/dead/1.png",
+    "bytes": 303,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/dead/2.png",
+    "bytes": 338,
+    "width": 17,
+    "height": 16,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/dead/3.png",
+    "bytes": 303,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/escape/0.png",
+    "bytes": 465,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/escape/1.png",
+    "bytes": 449,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/escape/2.png",
+    "bytes": 457,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/walk/0.png",
+    "bytes": 351,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/walk/1.png",
+    "bytes": 342,
+    "width": 16,
+    "height": 18,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/walk/2.png",
+    "bytes": 358,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/walk/3.png",
+    "bytes": 351,
+    "width": 16,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/warning/0.png",
+    "bytes": 433,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/warning/1.png",
+    "bytes": 429,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "assets/reference/zenchan/warning/2.png",
+    "bytes": 427,
+    "width": 17,
+    "height": 19,
+    "mode": "RGBA"
+  },
+  {
+    "path": "build/web-qa/ai-coop.png",
+    "bytes": 22322,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/ai-setting.png",
+    "bytes": 26269,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/classic-controller.png",
+    "bytes": 21780,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/classic.png",
+    "bytes": 21888,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/controller.png",
+    "bytes": 29470,
+    "width": 640,
+    "height": 960,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/failure.png",
+    "bytes": 27837,
+    "width": 640,
+    "height": 960,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/human-coop.png",
+    "bytes": 22207,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/human-setting.png",
+    "bytes": 26847,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/launch.png",
+    "bytes": 247363,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/menu.png",
+    "bytes": 131395,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/modes.png",
+    "bytes": 36992,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/pause-held.png",
+    "bytes": 21688,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/pause.png",
+    "bytes": 21688,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/resize-1680x720.png",
+    "bytes": 30322,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/resize-640x960.png",
+    "bytes": 25404,
+    "width": 640,
+    "height": 960,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/resize-800x600.png",
+    "bytes": 24466,
+    "width": 800,
+    "height": 600,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/resume.png",
+    "bytes": 22235,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/returned-menu.png",
+    "bytes": 131276,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/settings-after-reload.png",
+    "bytes": 23885,
+    "width": 640,
+    "height": 960,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/settings-music.png",
+    "bytes": 25938,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/settings.png",
+    "bytes": 25967,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/survival-team.png",
+    "bytes": 54631,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/survival.png",
+    "bytes": 42837,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "build/web-qa/title.png",
+    "bytes": 134051,
+    "width": 1024,
+    "height": 768,
+    "mode": "RGB"
+  },
+  {
+    "path": "docs/ten-dragon-courtyard.svg",
+    "bytes": 10306
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_1680x720/round1/desktop/metal.png",
+    "bytes": 30423,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_1680x720/round1/mobile/metal.png",
+    "bytes": 30391,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_640x960/round1/desktop/metal.png",
+    "bytes": 22971,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_640x960/round1/mobile/metal.png",
+    "bytes": 22917,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_768x720/round1/desktop/metal.png",
+    "bytes": 24982,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_board_768x720/round1/mobile/metal.png",
+    "bytes": 24918,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_editor_preview/editor/desktop/metal.png",
+    "bytes": 46630,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_editor_preview/editor/mobile/metal.png",
+    "bytes": 46983,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_encoded_overlays/pause/desktop/metal.png",
+    "bytes": 26741,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/arcade_reference_encoded_overlays/result/desktop/metal.png",
+    "bytes": 40774,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_palette_all_original_shot_frames/shot_frames/desktop/metal.png",
+    "bytes": 9294,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_palette_all_original_shot_frames/shot_frames/mobile/metal.png",
+    "bytes": 9294,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/blue/desktop/metal.png",
+    "bytes": 21848,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/blue/mobile/metal.png",
+    "bytes": 21875,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/green/desktop/metal.png",
+    "bytes": 21795,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/green/mobile/metal.png",
+    "bytes": 21824,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/red/desktop/metal.png",
+    "bytes": 21795,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/red/mobile/metal.png",
+    "bytes": 21817,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/yellow/desktop/metal.png",
+    "bytes": 21846,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_all_solo_colors/yellow/mobile/metal.png",
+    "bytes": 21870,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/red/desktop/metal.png",
+    "bytes": 22270,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/red/mobile/metal.png",
+    "bytes": 22311,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/yellow/desktop/metal.png",
+    "bytes": 22328,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/bubble_skins_actual_fire_input_simultaneous_co_op_colors/yellow/mobile/metal.png",
+    "bytes": 22371,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_1680x720/desktop/metal.png",
+    "bytes": 59923,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_1680x720/mobile/metal.png",
+    "bytes": 54740,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_2560x1080/desktop/metal.png",
+    "bytes": 84926,
+    "width": 2560,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_2560x1080/mobile/metal.png",
+    "bytes": 78573,
+    "width": 2560,
+    "height": 1080,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_640x960/desktop/metal.png",
+    "bytes": 47855,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_640x960/mobile/metal.png",
+    "bytes": 44096,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_768x720/desktop/metal.png",
+    "bytes": 51471,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/courtyard_full_arena_and_ten_identities_fit_native_wide_tall_and_ultrawide_windows/courtyard_768x720/mobile/metal.png",
+    "bytes": 47524,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/invalid_name/desktop/metal.png",
+    "bytes": 25090,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/invalid_name/mobile/metal.png",
+    "bytes": 25269,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/name/desktop/metal.png",
+    "bytes": 22689,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_account_buttons_match_reference_hit_rectangles/name/mobile/metal.png",
+    "bytes": 22734,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_bubble_chain/desktop/metal.png",
+    "bytes": 26941,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_bubble_chain/mobile/metal.png",
+    "bytes": 27017,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_fire/desktop/metal.png",
+    "bytes": 25826,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_fire/mobile/metal.png",
+    "bytes": 25909,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_thunder/desktop/metal.png",
+    "bytes": 25963,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_thunder/mobile/metal.png",
+    "bytes": 26015,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_water/desktop/metal.png",
+    "bytes": 20391,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/boundary_element_water/mobile/metal.png",
+    "bytes": 20415,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/bubbles_yellow_blue/desktop/metal.png",
+    "bytes": 21969,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/bubbles_yellow_blue/mobile/metal.png",
+    "bytes": 22005,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/credits/desktop/metal.png",
+    "bytes": 34630,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/credits/mobile/metal.png",
+    "bytes": 34729,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/death/desktop/metal.png",
+    "bytes": 21254,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/death/mobile/metal.png",
+    "bytes": 21284,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/editor/desktop/metal.png",
+    "bytes": 46634,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/editor/mobile/metal.png",
+    "bytes": 46988,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/help/desktop/metal.png",
+    "bytes": 53357,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/help/mobile/metal.png",
+    "bytes": 53502,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/menu/desktop/metal.png",
+    "bytes": 152071,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/menu/mobile/metal.png",
+    "bytes": 129350,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_capture/desktop/metal.png",
+    "bytes": 45399,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_capture/mobile/metal.png",
+    "bytes": 40871,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_feel/desktop/metal.png",
+    "bytes": 34158,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_feel/mobile/metal.png",
+    "bytes": 33626,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_victory/desktop/metal.png",
+    "bytes": 54264,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/party_victory/mobile/metal.png",
+    "bytes": 43016,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/pause/desktop/metal.png",
+    "bytes": 26552,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/pause/mobile/metal.png",
+    "bytes": 24517,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/profiles/desktop/metal.png",
+    "bytes": 22421,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/profiles/mobile/metal.png",
+    "bytes": 22589,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/ready/desktop/metal.png",
+    "bytes": 24982,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/ready/mobile/metal.png",
+    "bytes": 24929,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/round24_combat/desktop/metal.png",
+    "bytes": 23574,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/round24_combat/mobile/metal.png",
+    "bytes": 23713,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/scores/desktop/metal.png",
+    "bytes": 19279,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/scores/mobile/metal.png",
+    "bytes": 19207,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/settings/desktop/metal.png",
+    "bytes": 29738,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/settings/mobile/metal.png",
+    "bytes": 29826,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/skin_red_settings/desktop/metal.png",
+    "bytes": 29355,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/skin_red_settings/mobile/metal.png",
+    "bytes": 29453,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/skin_yellow_settings/desktop/metal.png",
+    "bytes": 29586,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/skin_yellow_settings/mobile/metal.png",
+    "bytes": 29695,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/title/desktop/metal.png",
+    "bytes": 154831,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/title/mobile/metal.png",
+    "bytes": 132243,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/win/desktop/metal.png",
+    "bytes": 40774,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_complete_presentation_flows/win/mobile/metal.png",
+    "bytes": 37907,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/clear/desktop/metal.png",
+    "bytes": 24312,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/clear/mobile/metal.png",
+    "bytes": 24379,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/pause/desktop/metal.png",
+    "bytes": 26741,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/pause/mobile/metal.png",
+    "bytes": 23677,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/ready/desktop/metal.png",
+    "bytes": 24982,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/ready/mobile/metal.png",
+    "bytes": 24918,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/win/desktop/metal.png",
+    "bytes": 40774,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_reference_popup_and_banner_layouts/win/mobile/metal.png",
+    "bytes": 37907,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/desktop_title_animation_uses_reference_global_phase_and_wraps/menu/desktop/metal.png",
+    "bytes": 151883,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_palette_all_original_animation_frames/all_frames/desktop/metal.png",
+    "bytes": 26787,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_palette_all_original_animation_frames/all_frames/mobile/metal.png",
+    "bytes": 26787,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/co_op/desktop/metal.png",
+    "bytes": 25259,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/co_op/mobile/metal.png",
+    "bytes": 25208,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/profile_preview/desktop/metal.png",
+    "bytes": 22415,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/profile_preview/mobile/metal.png",
+    "bytes": 22582,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview/desktop/metal.png",
+    "bytes": 29417,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview/mobile/metal.png",
+    "bytes": 29490,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/solo/desktop/metal.png",
+    "bytes": 24980,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_red_gameplay/solo/mobile/metal.png",
+    "bytes": 24918,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/co_op/desktop/metal.png",
+    "bytes": 25295,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/co_op/mobile/metal.png",
+    "bytes": 25247,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/profile_preview/desktop/metal.png",
+    "bytes": 22427,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/profile_preview/mobile/metal.png",
+    "bytes": 22596,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview/desktop/metal.png",
+    "bytes": 29630,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview/mobile/metal.png",
+    "bytes": 29662,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/solo/desktop/metal.png",
+    "bytes": 25000,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/dragon_skins_settings_selection_reaches_yellow_gameplay/solo/mobile/metal.png",
+    "bytes": 24941,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/airborne/desktop/metal.png",
+    "bytes": 41148,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/airborne/mobile/metal.png",
+    "bytes": 40625,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/clustered_badges/desktop/metal.png",
+    "bytes": 43153,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/clustered_badges/mobile/metal.png",
+    "bytes": 42326,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_guard/desktop/metal.png",
+    "bytes": 41803,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_guard/mobile/metal.png",
+    "bytes": 35724,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_ready/desktop/metal.png",
+    "bytes": 41098,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/defeat_ready/mobile/metal.png",
+    "bytes": 35471,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing/desktop/metal.png",
+    "bytes": 41087,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing/mobile/metal.png",
+    "bytes": 40572,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_1680x720/desktop/metal.png",
+    "bytes": 48468,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_1680x720/mobile/metal.png",
+    "bytes": 47883,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_640x960/desktop/metal.png",
+    "bytes": 39117,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_640x960/mobile/metal.png",
+    "bytes": 37185,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_768x720/desktop/metal.png",
+    "bytes": 40987,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/landing_768x720/mobile/metal.png",
+    "bytes": 40498,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/mixed_badges/desktop/metal.png",
+    "bytes": 35066,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/mixed_badges/mobile/metal.png",
+    "bytes": 34401,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/takeoff/desktop/metal.png",
+    "bytes": 41197,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feedback_jump_dust_grounded_shadows_nameplates_and_guarded_results_remain_readable/takeoff/mobile/metal.png",
+    "bytes": 40673,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_1680x720/desktop/metal.png",
+    "bytes": 40540,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_1680x720/mobile/metal.png",
+    "bytes": 39964,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_640x960/desktop/metal.png",
+    "bytes": 34950,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_640x960/mobile/metal.png",
+    "bytes": 31004,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_768x720/desktop/metal.png",
+    "bytes": 34085,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/arena_768x720/mobile/metal.png",
+    "bytes": 33557,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/boss_capture/desktop/metal.png",
+    "bytes": 45418,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/boss_capture/mobile/metal.png",
+    "bytes": 40762,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/bubble_showcase/desktop/metal.png",
+    "bytes": 34158,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/bubble_showcase/mobile/metal.png",
+    "bytes": 33626,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/reduced_victory/desktop/metal.png",
+    "bytes": 47710,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/reduced_victory/mobile/metal.png",
+    "bytes": 39669,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/rescue/desktop/metal.png",
+    "bytes": 33346,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/rescue/mobile/metal.png",
+    "bytes": 32811,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/victory/desktop/metal.png",
+    "bytes": 50947,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/victory/mobile/metal.png",
+    "bytes": 42859,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/harness_starter_golden/starter_tap/desktop/metal.png",
+    "bytes": 6341,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/harness_starter_golden/starter_tap/mobile/metal.png",
+    "bytes": 6317,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/development_menu/desktop/metal.png",
+    "bytes": 152138,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/development_menu/mobile/metal.png",
+    "bytes": 129428,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/dragon_hop/desktop/metal.png",
+    "bytes": 151910,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/dragon_hop/mobile/metal.png",
+    "bytes": 129200,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/reduced_motion/desktop/metal.png",
+    "bytes": 151827,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/reduced_motion/mobile/metal.png",
+    "bytes": 129133,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_1680x720/desktop/metal.png",
+    "bytes": 165295,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_1680x720/mobile/metal.png",
+    "bytes": 144847,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_2160x720/desktop/metal.png",
+    "bytes": 169522,
+    "width": 2160,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_2160x720/mobile/metal.png",
+    "bytes": 149268,
+    "width": 2160,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_640x960/desktop/metal.png",
+    "bytes": 115550,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_640x960/mobile/metal.png",
+    "bytes": 100715,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_768x720/desktop/metal.png",
+    "bytes": 152040,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_menu_stays_simple_with_development_enabled/simple_menu_768x720/mobile/metal.png",
+    "bytes": 129362,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/classic_card/desktop/metal.png",
+    "bytes": 36931,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/classic_card/mobile/metal.png",
+    "bytes": 37776,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/madness_card/desktop/metal.png",
+    "bytes": 36913,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/madness_card/mobile/metal.png",
+    "bytes": 37791,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/release_menu/desktop/metal.png",
+    "bytes": 152027,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/release_menu/mobile/metal.png",
+    "bytes": 129327,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_1680x720/round1/desktop/metal.png",
+    "bytes": 24817,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_1680x720/round1/mobile/metal.png",
+    "bytes": 24908,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_640x960/round1/desktop/metal.png",
+    "bytes": 13438,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_640x960/round1/mobile/metal.png",
+    "bytes": 13404,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_768x720/round1/desktop/metal.png",
+    "bytes": 20695,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/movement_board_768x720/round1/mobile/metal.png",
+    "bytes": 20741,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/boss/desktop/metal.png",
+    "bytes": 36493,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/rest/desktop/metal.png",
+    "bytes": 35602,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_actual_six_dragon_arena_and_rest_hud/six_dragons/desktop/metal.png",
+    "bytes": 40952,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_fan/desktop/metal.png",
+    "bytes": 33642,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_fan/mobile/metal.png",
+    "bytes": 33141,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_warning/desktop/metal.png",
+    "bytes": 37977,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/bottle_warning/mobile/metal.png",
+    "bytes": 37426,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/giant_bubble/desktop/metal.png",
+    "bytes": 41065,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/giant_bubble/mobile/metal.png",
+    "bytes": 36461,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_1680x720/desktop/metal.png",
+    "bytes": 60693,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_1680x720/mobile/metal.png",
+    "bytes": 54818,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_640x960/desktop/metal.png",
+    "bytes": 48285,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_640x960/mobile/metal.png",
+    "bytes": 43178,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_768x720/desktop/metal.png",
+    "bytes": 52288,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_fire_identifiable_lightning_bubbles/colored_lightning_768x720/mobile/metal.png",
+    "bytes": 47336,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_sustain_a_long_lightning_fight_without_growing_visual_pools/boss_soak/desktop/metal.png",
+    "bytes": 41022,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_boss_ten_dragons_sustain_a_long_lightning_fight_without_growing_visual_pools/boss_soak/mobile/metal.png",
+    "bytes": 36638,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_dragon_cards_change_their_own_slot_through_real_pointer_presses/open_slots/desktop/metal.png",
+    "bytes": 50965,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_dragon_cards_change_their_own_slot_through_real_pointer_presses/open_slots/mobile/metal.png",
+    "bytes": 50651,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_1680x720/desktop/metal.png",
+    "bytes": 60333,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_1680x720/mobile/metal.png",
+    "bytes": 55608,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_640x960/desktop/metal.png",
+    "bytes": 48011,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_640x960/mobile/metal.png",
+    "bytes": 44356,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_768x720/desktop/metal.png",
+    "bytes": 52183,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/between_waves_movement_768x720/mobile/metal.png",
+    "bytes": 48532,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_1680x720/desktop/metal.png",
+    "bytes": 48913,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_1680x720/mobile/metal.png",
+    "bytes": 43983,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_640x960/desktop/metal.png",
+    "bytes": 38823,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_640x960/mobile/metal.png",
+    "bytes": 34826,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_768x720/desktop/metal.png",
+    "bytes": 41196,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_768x720/mobile/metal.png",
+    "bytes": 37464,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_1680x720/desktop/metal.png",
+    "bytes": 57145,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_1680x720/mobile/metal.png",
+    "bytes": 52405,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_640x960/desktop/metal.png",
+    "bytes": 44985,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_640x960/mobile/metal.png",
+    "bytes": 41789,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_768x720/desktop/metal.png",
+    "bytes": 48977,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/go_768x720/mobile/metal.png",
+    "bytes": 45305,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_1680x720/desktop/metal.png",
+    "bytes": 64073,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_1680x720/mobile/metal.png",
+    "bytes": 58753,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_640x960/desktop/metal.png",
+    "bytes": 51688,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_640x960/mobile/metal.png",
+    "bytes": 47545,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_768x720/desktop/metal.png",
+    "bytes": 55483,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_1_768x720/mobile/metal.png",
+    "bytes": 51535,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_1680x720/desktop/metal.png",
+    "bytes": 65479,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_1680x720/mobile/metal.png",
+    "bytes": 60168,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_640x960/desktop/metal.png",
+    "bytes": 52793,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_640x960/mobile/metal.png",
+    "bytes": 48682,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_768x720/desktop/metal.png",
+    "bytes": 56800,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_2_768x720/mobile/metal.png",
+    "bytes": 52679,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_1680x720/desktop/metal.png",
+    "bytes": 62395,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_1680x720/mobile/metal.png",
+    "bytes": 57206,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_640x960/desktop/metal.png",
+    "bytes": 50068,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_640x960/mobile/metal.png",
+    "bytes": 45846,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_768x720/desktop/metal.png",
+    "bytes": 53781,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_feedback_ready_go_and_last_kill_fit_every_window/ready_3_768x720/mobile/metal.png",
+    "bytes": 49839,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/last_dragon_standing/desktop/metal.png",
+    "bytes": 40147,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/last_dragon_standing/mobile/metal.png",
+    "bytes": 39189,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/team_defeat/desktop/metal.png",
+    "bytes": 47261,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_last_standing_remaining_dragon_gets_a_clear_hud_notice_before_defeat/team_defeat/mobile/metal.png",
+    "bytes": 38834,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/five_second_break/desktop/metal.png",
+    "bytes": 36726,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/five_second_break/mobile/metal.png",
+    "bytes": 35313,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/last_enemy_angry/desktop/metal.png",
+    "bytes": 39017,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/last_enemy_angry/mobile/metal.png",
+    "bytes": 38544,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/safe_preparation_shooting/desktop/metal.png",
+    "bytes": 45290,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/safe_preparation_shooting/mobile/metal.png",
+    "bytes": 44562,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_palette_ten_dragon_gpu_body_and_matching_bubbles/ten_colors/desktop/metal.png",
+    "bytes": 10566,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_palette_ten_dragon_gpu_body_and_matching_bubbles/ten_colors/mobile/metal.png",
+    "bytes": 10564,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/arriving/desktop/metal.png",
+    "bytes": 44508,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/arriving/mobile/metal.png",
+    "bytes": 43708,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/go/desktop/metal.png",
+    "bytes": 41113,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/go/mobile/metal.png",
+    "bytes": 40613,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/positioning/desktop/metal.png",
+    "bytes": 43905,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/positioning/mobile/metal.png",
+    "bytes": 43114,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/rest_shooting/desktop/metal.png",
+    "bytes": 35591,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_polish_readable_countdown_falling_enemies_and_rest_practice_shots/rest_shooting/mobile/metal.png",
+    "bytes": 33222,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena/powerup_alert/desktop/metal.png",
+    "bytes": 42880,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_randomized_powerup_has_a_small_green_benefit_alert_in_the_arena/powerup_alert/mobile/metal.png",
+    "bytes": 42066,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_wave_lobby_buttons_fit_desktop_extremes_and_launch_actual_game/lobby/desktop/metal.png",
+    "bytes": 50697,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_wave_lobby_buttons_fit_desktop_extremes_and_launch_actual_game/lobby/mobile/metal.png",
+    "bytes": 50397,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/formation_preview/desktop/metal.png",
+    "bytes": 42846,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/formation_preview/mobile/metal.png",
+    "bytes": 42052,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/late_formation/desktop/metal.png",
+    "bytes": 42887,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/party_whole_wave_preview_and_late_mixed_formation_stay_within_render_budget/late_formation/mobile/metal.png",
+    "bytes": 42202,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/pickup_sprite_natural_proportions/editor_icons/desktop/metal.png",
+    "bytes": 46630,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/pickup_sprite_natural_proportions/editor_icons/mobile/metal.png",
+    "bytes": 46983,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/pickup_sprite_natural_proportions/pickups/desktop/metal.png",
+    "bytes": 23477,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/pickup_sprite_natural_proportions/pickups/mobile/metal.png",
+    "bytes": 23241,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/pixel_renderer_exact_texel_prototype/prototype/desktop/metal.png",
+    "bytes": 9302,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_1680x720/desktop/metal.png",
+    "bytes": 60375,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_1680x720/mobile/metal.png",
+    "bytes": 60026,
+    "width": 1680,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_640x960/desktop/metal.png",
+    "bytes": 57240,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_640x960/mobile/metal.png",
+    "bytes": 56329,
+    "width": 640,
+    "height": 960,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_768x720/desktop/metal.png",
+    "bytes": 50697,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/lobby_768x720/mobile/metal.png",
+    "bytes": 50397,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/p10_human_label/desktop/metal.png",
+    "bytes": 51380,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragon_lobby_all_real_cards_and_portraits_fit_native_wide_and_tall_screens/p10_human_label/mobile/metal.png",
+    "bytes": 51110,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_firing/desktop/metal.png",
+    "bytes": 51132,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_firing/mobile/metal.png",
+    "bytes": 43793,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_prepare/desktop/metal.png",
+    "bytes": 49412,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/arena_prepare/mobile/metal.png",
+    "bytes": 45607,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ivory_slate_rescue/desktop/metal.png",
+    "bytes": 50762,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ivory_slate_rescue/mobile/metal.png",
+    "bytes": 44618,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ten_boss_firing/desktop/metal.png",
+    "bytes": 43071,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/ten_dragons_firing_and_rescue_remain_bounded_on_phone_low/ten_boss_firing/mobile/metal.png",
+    "bytes": 36516,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_1_fruit/desktop/metal.png",
+    "bytes": 37595,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_1_fruit/mobile/metal.png",
+    "bytes": 35804,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_2_fruit/desktop/metal.png",
+    "bytes": 40262,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_2_fruit/mobile/metal.png",
+    "bytes": 35811,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_3_fruit/desktop/metal.png",
+    "bytes": 37589,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_3_fruit/mobile/metal.png",
+    "bytes": 35912,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_4_fruit/desktop/metal.png",
+    "bytes": 38837,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_4_fruit/mobile/metal.png",
+    "bytes": 35439,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_5_fruit/desktop/metal.png",
+    "bytes": 36242,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_5_fruit/mobile/metal.png",
+    "bytes": 35556,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_6_fruit/desktop/metal.png",
+    "bytes": 37321,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_6_fruit/mobile/metal.png",
+    "bytes": 35655,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_7_fruit/desktop/metal.png",
+    "bytes": 39725,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_7_fruit/mobile/metal.png",
+    "bytes": 35956,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_8_fruit/desktop/metal.png",
+    "bytes": 37206,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_8_fruit/mobile/metal.png",
+    "bytes": 35501,
+    "width": 768,
+    "height": 720,
+    "mode": "RGBA"
+  },
+  {
+    "path": "tools/port/reference-captures/go-menu-r1-smoke1.png",
+    "bytes": 102983,
+    "width": 768,
+    "height": 720,
+    "mode": "RGB"
+  },
+  {
+    "path": "tools/port/sources/super-drunk.png",
+    "bytes": 9226,
+    "width": 384,
+    "height": 144,
+    "mode": "RGBA"
+  }
+]

@@ -1,0 +1,4 @@
+[v8] host: /Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host (release)
+1 host process, 1 at a time (--jobs 6)
+✓ [v8 · t1] pixel renderer exact texel prototype  (2 steps, 3c8c3887ddd90e3b)
+1 passed, 0 failed

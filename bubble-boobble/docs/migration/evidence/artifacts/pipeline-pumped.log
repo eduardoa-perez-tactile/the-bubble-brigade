@@ -1,0 +1,9 @@
+file:///Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/tools/harness/record-pipelines.mjs:44
+  if(missing.length||missingMarkers.length)throw new Error(`${tier} missing rendered coverage: ${[...missing,...missingMarkers].join(', ')}`);
+                                                 ^
+
+Error: desktop missing rendered coverage: title
+    at file:///Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/tools/harness/record-pipelines.mjs:44:50
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v26.9.0

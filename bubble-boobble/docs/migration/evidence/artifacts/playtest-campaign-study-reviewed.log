@@ -1,0 +1,26 @@
+Round 1: all 1261 frames exact
+Round 2: all 1261 frames exact
+Round 3: 550 frames exact; verified player ceiling boundary at frame 550; later frames NOT compared
+Round 4: 486 frames exact; verified player ceiling boundary at frame 486; later frames NOT compared
+Round 5: 1058 frames exact; verified player ceiling boundary at frame 1058; later frames NOT compared
+Round 6: all 1261 frames exact
+Round 7: 486 frames exact; verified player ceiling boundary at frame 486; later frames NOT compared
+Round 8: all 1261 frames exact
+Round 9: all 1261 frames exact
+Round 10: all 1261 frames exact
+Round 11: 533 frames exact; verified player ceiling boundary at frame 533; later frames NOT compared
+Round 12: all 1261 frames exact
+Round 13: 301 frames exact; verified player ceiling boundary at frame 301; later frames NOT compared
+Round 14: all 1261 frames exact
+Round 15: 685 frames exact; verified player ceiling boundary at frame 685; later frames NOT compared
+Round 16: all 1261 frames exact
+Round 17: 596 frames exact; verified player ceiling boundary at frame 596; later frames NOT compared
+Round 18: all 1261 frames exact
+Round 19: 1024 frames exact; verified player ceiling boundary at frame 1024; later frames NOT compared
+Round 20: all 1261 frames exact
+Round 21: all 1261 frames exact
+Round 22: all 1261 frames exact
+Round 23: 681 frames exact; verified player ceiling boundary at frame 681; later frames NOT compared
+Round 24: all 1261 frames exact
+Round 25: all 1261 frames exact
+Source-speed audit: 15 complete rounds; 10 verified boundary stops; 0 unexpected failures; 25315 exact prefix frames

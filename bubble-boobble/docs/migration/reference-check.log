@@ -1,0 +1,8 @@
+
+> bubbleboobble@0.1.0 harness:reference-check
+> node tools/harness/run.mjs reference-check
+
+go version go1.26.9 darwin/arm64
+Two independent reference runs exactly match the committed fixture.
+ok  	bubblebobble/internal/game	0.439s
+Harness reference-check: 4.032 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

@@ -1,0 +1,1 @@
+[Warn] render: pipeline warm-up: 5 recorded 3D pipelines dropped: no material program has their hash (a material changed since pipelines.json was recorded); loaded materials still warm theirs, re-record with `gameengine test --tier t1 --record-pipelines`

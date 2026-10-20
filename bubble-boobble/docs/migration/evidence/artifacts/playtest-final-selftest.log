@@ -1,0 +1,22 @@
+
+> bubbleboobble@0.1.0 harness:selftest
+> node tools/harness/run.mjs selftest
+
+✔ exact comparison accepts repeated trace and object key reordering (4.480792ms)
+✔ first divergent tick includes the field, input and surrounding states (2.514667ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.438709ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (68.224667ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.10075ms)
+✔ campaign boundary permits only original Y24/VY0 versus rising above24 and does not mutate actual (0.508584ms)
+✔ campaign boundary rejects wrong reference clamp, stationary/falling motion and nonfinite coordinates (0.140125ms)
+✔ campaign boundary rejects collateral canonical changes including another player (0.274625ms)
+✔ campaign prefix stops at first verified boundary without simulating or claiming later frames (0.156833ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.723958
+Harness selftest: 0.246 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

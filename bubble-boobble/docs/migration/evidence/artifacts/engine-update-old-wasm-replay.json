@@ -1,0 +1,3445 @@
+{
+  "ok": false,
+  "steps": 4,
+  "firstDivergence": {
+    "step": 3,
+    "expected": "cf74f27782821c93",
+    "actual": "977f78ddd9bd39f5"
+  },
+  "breakdown": [
+    {
+      "system": "gameengine.Input",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.WorldLoading",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.WallClock",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.meta:load",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:arcade.pop-burst",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:arcade.sprite-sizing",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:arcade.reset",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:party.feel-showcase",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:party.feedback-cluster",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:arcade.prepare-player-motion",
+      "hash": "36985ca5a402e275"
+    },
+    {
+      "system": "gameengine.cheat:party.reset",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.clear-wave",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.rescue-setup",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.finish-boss",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.powerup",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.last-enemy",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.hit-dragon",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.boss-duel",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.protect-team",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.final-pop",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:party.boss-soak",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:arcade.prepare-scoring",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:arcade.prepare-top-traversal",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:harness.reset",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.cheat:port.movement",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.AnimatorInit",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "gameengine.Skeleton2DInit",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "ArcadeBoot",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "DesktopSystem",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "ArcadeEditorInput",
+      "hash": "eebd72f6910f72c8"
+    },
+    {
+      "system": "ArcadeStep",
+      "hash": "b828f6f34ab3e9d5"
+    },
+    {
+      "system": "ArcadeAudioSystem",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "ArcadePool",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "PortBoot",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "PortControls",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "PortMovement",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "SetupView",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "SpawnBubbles",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "RiseAndPop",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Timeline",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Animator",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Clip2D",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Tween",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.VisualTweenCleanup",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Skeleton2D",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.AnimatorSkeleton2D",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Physics2D",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Physics3D",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.ParticleClock",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.WorldViewFollow",
+      "hash": "18df6afb650b8527"
+    },
+    {
+      "system": "gameengine.Skeleton2DFollow",
+      "hash": "18df6afb650b8527"
+    }
+  ],
+  "note": "the replay has no checkpoint at this step: on a build that still verifies it (e.g. the previous commit), run `gameengine replay rehash <file> --checkpoint-every 1 --out <copy>`, then `replay verify <copy>` here names the system and components",
+  "worldBefore": {
+    "entities": [
+      {
+        "id": "1:1",
+        "components": {
+          "ActionState": {
+            "name": "move",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "2:1",
+        "components": {
+          "ActionState": {
+            "name": "jump",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "3:1",
+        "components": {
+          "ActionState": {
+            "name": "pause",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "4:1",
+        "components": {
+          "ActionState": {
+            "name": "fire",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "5:1",
+        "components": {
+          "ActionState": {
+            "name": "menuY",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "6:1",
+        "components": {
+          "ActionState": {
+            "name": "menuX",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "7:1",
+        "components": {
+          "ActionState": {
+            "name": "confirm",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "8:1",
+        "components": {
+          "ActionState": {
+            "name": "back",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "9:1",
+        "components": {
+          "ActionState": {
+            "name": "undo",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "10:1",
+        "components": {
+          "ActionState": {
+            "name": "save",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "11:1",
+        "components": {
+          "ActionState": {
+            "name": "playtest",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "12:1",
+        "components": {
+          "ActionState": {
+            "name": "mute",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "13:1",
+        "components": {
+          "ActionState": {
+            "name": "fullscreen",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "14:1",
+        "components": {
+          "ActionState": {
+            "name": "move2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "15:1",
+        "components": {
+          "ActionState": {
+            "name": "jump2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "16:1",
+        "components": {
+          "ActionState": {
+            "name": "fire2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "17:1",
+        "components": {
+          "ActionState": {
+            "name": "delete",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "18:1",
+        "components": {
+          "ActionState": {
+            "name": "profileConfirm",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "19:1",
+        "components": {
+          "ActionState": {
+            "name": "editorModifier",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "20:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove1",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "21:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump1",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "22:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire1",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "23:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin1",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "24:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause1",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "25:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "26:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "27:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "28:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "29:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause2",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "30:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove3",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "31:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump3",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "32:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire3",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "33:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin3",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "34:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause3",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "35:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove4",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "36:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump4",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "37:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire4",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "38:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin4",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "39:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause4",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "40:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove5",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "41:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump5",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "42:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire5",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "43:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin5",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "44:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause5",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "45:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove6",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "46:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump6",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "47:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire6",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "48:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin6",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "49:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause6",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "50:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove7",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "51:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump7",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "52:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire7",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "53:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin7",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "54:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause7",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "55:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove8",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "56:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump8",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "57:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire8",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "58:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin8",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "59:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause8",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "60:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove9",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "61:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump9",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "62:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire9",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "63:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin9",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "64:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause9",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "65:1",
+        "components": {
+          "ActionState": {
+            "name": "partyMove10",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "66:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJump10",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "67:1",
+        "components": {
+          "ActionState": {
+            "name": "partyFire10",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "68:1",
+        "components": {
+          "ActionState": {
+            "name": "partyJoin10",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "69:1",
+        "components": {
+          "ActionState": {
+            "name": "partyPause10",
+            "value": 0.0,
+            "pressed": false,
+            "justPressed": false,
+            "justReleased": false
+          }
+        }
+      },
+      {
+        "id": "70:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              384.0,
+              360.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "SceneEntity": {
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf"
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              384.0,
+              360.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      },
+      {
+        "id": "71:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "SceneEntity": {
+            "guid": "57b99a5d-ffbb-4510-a11a-4347ae61e5b8"
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 0
+          }
+        }
+      },
+      {
+        "id": "72:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65536
+          }
+        }
+      },
+      {
+        "id": "73:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65537
+          }
+        }
+      },
+      {
+        "id": "74:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65538
+          }
+        }
+      },
+      {
+        "id": "75:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65539
+          }
+        }
+      },
+      {
+        "id": "76:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65540
+          }
+        }
+      },
+      {
+        "id": "77:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65541
+          }
+        }
+      },
+      {
+        "id": "78:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65542
+          }
+        }
+      },
+      {
+        "id": "79:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65543
+          }
+        }
+      },
+      {
+        "id": "80:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65544
+          }
+        }
+      },
+      {
+        "id": "81:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65545
+          }
+        }
+      },
+      {
+        "id": "82:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65546
+          }
+        }
+      },
+      {
+        "id": "83:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65547
+          }
+        }
+      },
+      {
+        "id": "84:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65548
+          }
+        }
+      },
+      {
+        "id": "85:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65549
+          }
+        }
+      },
+      {
+        "id": "86:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65550
+          }
+        }
+      },
+      {
+        "id": "87:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65551
+          }
+        }
+      },
+      {
+        "id": "88:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65552
+          }
+        }
+      },
+      {
+        "id": "89:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65553
+          }
+        }
+      },
+      {
+        "id": "90:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65554
+          }
+        }
+      },
+      {
+        "id": "91:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65555
+          }
+        }
+      },
+      {
+        "id": "92:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65556
+          }
+        }
+      },
+      {
+        "id": "93:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65557
+          }
+        }
+      },
+      {
+        "id": "94:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65558
+          }
+        }
+      },
+      {
+        "id": "95:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65559
+          }
+        }
+      },
+      {
+        "id": "96:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65560
+          }
+        }
+      },
+      {
+        "id": "97:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65561
+          }
+        }
+      },
+      {
+        "id": "98:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65562
+          }
+        }
+      },
+      {
+        "id": "99:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65563
+          }
+        }
+      },
+      {
+        "id": "100:1",
+        "components": {
+          "LocalTransform": {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "WorldTransform": {
+            "matrix": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "ArcadeVisual": {
+            "slot": 65564
+          }
+        }
+      }
+    ],
+    "resources": {
+      "ViewInfo": {
+        "width": 768,
+        "height": 720,
+        "scale": 1.0,
+        "safeArea": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "WorldView": {
+        "center": [
+          384.0,
+          360.0
+        ],
+        "orthoSize": 360.0,
+        "fit": "Contain",
+        "designAspect": 1.0666667
+      },
+      "PointerState": {
+        "down": false,
+        "id": 0,
+        "screen": [
+          0.0,
+          0.0
+        ],
+        "world": [
+          0.0,
+          0.0
+        ],
+        "startWorld": [
+          0.0,
+          0.0
+        ],
+        "downStep": 0,
+        "count": 0,
+        "lastTapStep": 0,
+        "lastTapWorld": [
+          0.0,
+          0.0
+        ],
+        "dragging": false,
+        "longFired": false,
+        "secondDown": false,
+        "secondId": 0,
+        "secondScreen": [
+          0.0,
+          0.0
+        ],
+        "pinchDist": 0.0,
+        "pinchAngle": 0.0
+      },
+      "DeviceMotion": {
+        "gravity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "WorldViewFollow": {
+        "target": null,
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "damping": 0.2,
+        "deadZone": [
+          0.0,
+          0.0
+        ],
+        "lookahead": 0.0,
+        "bounded": false,
+        "boundsMin": [
+          0.0,
+          0.0
+        ],
+        "boundsMax": [
+          0.0,
+          0.0
+        ],
+        "last": [
+          0.0,
+          0.0
+        ],
+        "primed": false,
+        "followed": null
+      },
+      "MorePlayerInputs": {
+        "buttons": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "stickX": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stickY": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "PlayerInputs": {
+        "players": 0,
+        "buttons0": 0,
+        "buttons1": 0,
+        "buttons2": 0,
+        "buttons3": 0,
+        "stick0": [
+          0.0,
+          0.0
+        ],
+        "stick1": [
+          0.0,
+          0.0
+        ],
+        "stick2": [
+          0.0,
+          0.0
+        ],
+        "stick3": [
+          0.0,
+          0.0
+        ]
+      },
+      "Time": {
+        "step": 2,
+        "dt": 0.016666668,
+        "elapsed": 0.03333333333333333
+      },
+      "WorldInfo": {
+        "seed": 0,
+        "sceneGuid": "164ff3cb-0ee9-4629-9b2f-767b931ebcd2"
+      },
+      "Physics2D": {
+        "gravity": [
+          0.0,
+          -10.0
+        ],
+        "subSteps": 4,
+        "enabled": true
+      },
+      "Physics3D": {
+        "gravity": [
+          0.0,
+          -9.81,
+          0.0
+        ],
+        "collisionSteps": 1,
+        "enabled": true
+      },
+      "WallClock": {
+        "ms": 0,
+        "tzOffset": 0
+      },
+      "ArcadeAudio": {
+        "track": "menu",
+        "native": false,
+        "muted": false,
+        "music": 50,
+        "sound": 75,
+        "sfxPriority": 2147483647,
+        "paused": false,
+        "exitSequence": 0
+      },
+      "ArcadeControl": {
+        "active": true,
+        "skip": false,
+        "requestSequence": 0
+      },
+      "EditorPointer": {
+        "drawing": false,
+        "erasing": false,
+        "col": -1,
+        "row": -1
+      },
+      "Game": {
+        "score": 0,
+        "spawned": 0
+      },
+      "HarnessControl": {
+        "active": 0
+      },
+      "PortInput": {
+        "move": 0,
+        "jump": false
+      },
+      "PortMatch": {
+        "active": false,
+        "tick": 0,
+        "countdown": 60,
+        "ready": true,
+        "paused": false,
+        "walked": 0,
+        "jumps": 0,
+        "jumpSound": false,
+        "skip": false
+      },
+      "PortPlayer": {
+        "x": 0,
+        "y": 0,
+        "vx": 0,
+        "vy": 0,
+        "ground": false,
+        "lives": 3,
+        "dir": 1,
+        "jumpBuffer": 0,
+        "coyote": 0,
+        "lastJump": false,
+        "invincible": 0,
+        "dead": 0,
+        "shoot": 0,
+        "cooldown": 0,
+        "walkFrame": 0
+      }
+    }
+  },
+  "js": "web"
+}

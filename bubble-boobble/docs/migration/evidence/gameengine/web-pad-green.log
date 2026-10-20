@@ -1,0 +1,4 @@
+[v8] host: /Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host (release)
+1 host process, 1 at a time (--jobs 6)
+✓ [v8] arcade recorded controller moves fires and pauses classic campaign  (11 steps, ab80402dac798666)
+1 passed, 0 failed

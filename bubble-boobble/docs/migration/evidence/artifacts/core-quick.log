@@ -1,0 +1,21 @@
+
+> bubbleboobble@0.1.0 harness:quick
+> node tools/harness/run.mjs quick
+
+✔ exact comparison accepts repeated trace and object key reordering (4.198ms)
+✔ first divergent tick includes the field, input and surrounding states (2.316875ms)
+✔ missing fields, reordered actors, changed precision, and missing frames fail (4.423208ms)
+✔ real comparator command exits nonzero and writes a diagnostic on corruption (67.874709ms)
+✔ fixture covers ready, movement, shooting and pause without ticking while paused (0.103541ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.204167
+gameengine test --js v8 --filter *movement*: 1.029 s
+gameengine test --js v8 --filter *arcade engine input*: 1.257 s
+gameengine test --js v8 --filter *arcade Go*: 0.845 s
+Harness quick: 3.378 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

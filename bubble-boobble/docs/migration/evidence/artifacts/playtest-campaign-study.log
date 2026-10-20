@@ -1,0 +1,26 @@
+Round 1 all 1261 frames exact
+Round 2 all 1261 frames exact
+{"round":3,"frame":550,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-6.5,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+{"round":4,"frame":486,"path":"$.Snapshot.Players[0].VY","expected":0,"actual":-8.5,"input":{"ticks":1,"players":[{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+{"round":5,"frame":1058,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-7.5,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 6 all 1261 frames exact
+{"round":7,"frame":486,"path":"$.Snapshot.Players[0].VY","expected":0,"actual":-8.5,"input":{"ticks":1,"players":[{"Move":1,"Jump":true,"Fire":true},{"Move":-1,"Jump":true,"Fire":true}],"paused":false}}
+Round 8 all 1261 frames exact
+Round 9 all 1261 frames exact
+Round 10 all 1261 frames exact
+{"round":11,"frame":533,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-10,"input":{"ticks":1,"players":[{"Move":1,"Jump":true,"Fire":true},{"Move":-1,"Jump":true,"Fire":true}],"paused":false}}
+Round 12 all 1261 frames exact
+{"round":13,"frame":301,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-11,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 14 all 1261 frames exact
+{"round":15,"frame":685,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-8,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 16 all 1261 frames exact
+{"round":17,"frame":596,"path":"$.Snapshot.Players[0].VY","expected":0,"actual":-6,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 18 all 1261 frames exact
+{"round":19,"frame":1024,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-9.5,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 20 all 1261 frames exact
+Round 21 all 1261 frames exact
+Round 22 all 1261 frames exact
+{"round":23,"frame":681,"path":"$.Snapshot.Players[1].VY","expected":0,"actual":-9,"input":{"ticks":1,"players":[{"Move":-1,"Jump":true,"Fire":true},{"Move":1,"Jump":true,"Fire":true}],"paused":false}}
+Round 24 all 1261 frames exact
+Round 25 all 1261 frames exact
+failed rounds 10

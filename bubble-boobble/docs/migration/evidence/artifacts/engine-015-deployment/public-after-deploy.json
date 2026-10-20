@@ -1,0 +1,18 @@
+{
+  "expected": {
+    "sha": "6a69b55850085b1b235c5efa67855c82b16bc2da",
+    "dirty": false,
+    "exportedAt": "2026-10-20T11:41:52.904Z",
+    "name": "Bubble Madness",
+    "shell": "bubble-web-v2"
+  },
+  "actual": {
+    "sha": "6a69b55850085b1b235c5efa67855c82b16bc2da",
+    "dirty": false,
+    "exportedAt": "2026-10-20T11:41:52.904Z",
+    "name": "Bubble Madness",
+    "shell": "bubble-web-v2"
+  },
+  "ok": true,
+  "url": "https://eduardoa-perez-tactile.github.io/poc-bubble-boobble/"
+}

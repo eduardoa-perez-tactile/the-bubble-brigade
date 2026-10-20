@@ -1,0 +1,3 @@
+gameengine test --js v8 --tier t1 --gpu-tier desktop --record-replays --filter desktop complete presentation flows: 6.093 s
+1 selected test cases passed
+Harness record: 6.094 s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.

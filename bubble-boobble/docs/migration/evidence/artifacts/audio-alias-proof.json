@@ -1,0 +1,56 @@
+[
+  {
+    "track": "reference/audio/bubble-2",
+    "status": {
+      "device": false,
+      "voices": 0,
+      "sounds": 0,
+      "buses": {
+        "Master": 1,
+        "Music": 1,
+        "SFX": 1,
+        "UI": 1,
+        "Voice": 1
+      },
+      "music": null,
+      "banks": {}
+    },
+    "log": "[Warn] audio: music 'reference/audio/bubble-2': not a decodable file\n"
+  },
+  {
+    "track": "dd8115d4-c0a8-4b59-94bf-ff0961704151",
+    "status": {
+      "device": false,
+      "voices": 0,
+      "sounds": 0,
+      "buses": {
+        "Master": 1,
+        "Music": 1,
+        "SFX": 1,
+        "UI": 1,
+        "Voice": 1
+      },
+      "music": "dd8115d4-c0a8-4b59-94bf-ff0961704151",
+      "banks": {}
+    },
+    "log": ""
+  },
+  {
+    "track": "reference/audio/music-unique",
+    "status": {
+      "device": false,
+      "voices": 0,
+      "sounds": 0,
+      "buses": {
+        "Master": 1,
+        "Music": 1,
+        "SFX": 1,
+        "UI": 1,
+        "Voice": 1
+      },
+      "music": "reference/audio/music-unique",
+      "banks": {}
+    },
+    "log": ""
+  }
+]

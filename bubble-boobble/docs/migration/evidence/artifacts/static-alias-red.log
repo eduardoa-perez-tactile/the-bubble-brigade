@@ -1,0 +1,11 @@
+file:///Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/tools/port/check-audio-assets.mjs:17
+ if(previous)throw new Error(`Duplicate cooked alias ${entry.alias}: ${previous.kind} (${previous.guid}) and ${entry.kind} (${entry.guid})`);
+                   ^
+
+Error: Duplicate cooked alias pixel-renderer/atlas: texture-3d (1f22124d-a579-5bef-aa70-f5257653cec7) and data (90ad7775-a493-4423-93e0-979a43cbed9b)
+    at file:///Users/eduardoleale/workspace/tactile-game-engine/bubblebooble/bubble-boobble/tools/port/check-audio-assets.mjs:17:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v26.9.0

@@ -1,0 +1,1 @@
+{"id":"arcade.reset","where":"sim","args":{"round":1,"seed":42,"players":1,"ready":false,"quiet":true,"scenario":""}}

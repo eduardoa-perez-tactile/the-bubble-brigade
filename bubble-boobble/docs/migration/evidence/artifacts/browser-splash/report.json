@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "checks": [
+    "Actual engine download, renderer preparation and ready state; Start stays disabled until ready",
+    "No horizontal overflow; Start visible at desktop, ultrawide, short landscape and two narrow portrait sizes",
+    "Keyboard opens How to Play; expanded controls scroll on narrow screens",
+    "Engine errors stay readable and hide both Start and progress, including after the launch overlay was hidden"
+  ],
+  "screenshots": [
+    "artifacts/browser-splash/loading.png",
+    "artifacts/browser-splash/ready-1024x768.png",
+    "artifacts/browser-splash/ready-1680x720.png",
+    "artifacts/browser-splash/ready-800x480.png",
+    "artifacts/browser-splash/ready-375x812.png",
+    "artifacts/browser-splash/ready-320x568.png",
+    "artifacts/browser-splash/controls.png",
+    "artifacts/browser-splash/controls-narrow.png",
+    "artifacts/browser-splash/unsupported-browser.png"
+  ]
+}
