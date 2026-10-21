@@ -90,3 +90,90 @@
   .cartoon-hud .ud-cartoon-hud__ch_lives { left: 8%; top: 30px; }
   .cartoon-hud .ud-cartoon-hud__ch_controls { top: 32px; }
 }
+/* Faithful reconstruction: native live UI over illustrated architecture. */
+.cartoon-hud .ud-cartoon-hud__ch_arch_left,
+.cartoon-hud .ud-cartoon-hud__ch_arch_center,
+.cartoon-hud .ud-cartoon-hud__ch_arch_right,
+.cartoon-hud .ud-cartoon-hud__ch_arch_paper,
+.cartoon-hud .ud-cartoon-hud__ch_score_fruit3,
+.cartoon-hud .ud-cartoon-hud__ch_score_fruit4 { display: none; }
+.cartoon-hud .ud-cartoon-roster-badge__root { width: 0; min-width: 0; flex-grow: 1; flex-basis: 0; }
+.cartoon-hud .ud-cartoon-roster-portrait__crp_image { left: 0px; top: 0px; }
+@media (aspect >= 1.6) {
+  .cartoon-hud .ud-cartoon-hud__ch_score_card { left: 4.55%; top: 4px; width: 31%; height: 42px; }
+  .cartoon-hud .ud-cartoon-hud__ch_name { left: 6.3%; top: 9px; width: 11%; height: 30px; font-size: 21px; text-fit: 16px 21px; color: #100f0c; }
+  .cartoon-hud .ud-cartoon-hud__ch_score { left: 17.8%; top: 7px; width: 8%; height: 32px; font-size: 23px; text-fit: 18px 23px; color: #100f0c; }
+  .cartoon-hud .ud-cartoon-hud__ch_score_cherries { anchor: 0 0; left: 25.5%; top: 10px; width: 24px; height: 26px; }
+  .cartoon-hud .ud-cartoon-hud__ch_score_berry { anchor: 0 0; left: 27.7%; top: 10px; width: 24px; height: 26px; }
+  .cartoon-hud .ud-cartoon-hud__ch_score_fruit3 { left: 29.9%; top: 10px; display: flex; }
+  .cartoon-hud .ud-cartoon-hud__ch_score_fruit4 { left: 32.1%; top: 10px; display: flex; }
+  .cartoon-hud .ud-cartoon-hud__ch_wave_plaque { top: 3px; width: 18%; height: 43px; }
+  .cartoon-hud .ud-cartoon-hud__ch_brand { top: 8px; width: 12%; height: 31px; font-size: 23px; text-fit: 18px 23px; color: #100f0c; }
+  .cartoon-hud .ud-cartoon-hud__ch_bottom { top: 630px; height: 90px; }
+  .cartoon-hud .ud-cartoon-hud__ch_footer_panel { display: none; }
+  .cartoon-hud .ud-cartoon-hud__ch_arch_left,
+  .cartoon-hud .ud-cartoon-hud__ch_arch_center,
+  .cartoon-hud .ud-cartoon-hud__ch_arch_right,
+  .cartoon-hud .ud-cartoon-hud__ch_arch_paper { display: flex; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide { width: 66.4%; height: 90px; }
+  .cartoon-hud .ud-cartoon-hud__ch_wide_frames,
+  .cartoon-hud .ud-cartoon-hud__ch_wide_portraits,
+  .cartoon-hud .ud-cartoon-hud__ch_badges_wide { height: 90px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-frame__root,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__root,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-badge__root,
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__root { height: 90px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-frame__crf_face_border { top: 18px; width: 64px; height: 52px; border-radius: 4px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__crp_clip { anchor: 0.5 0; pivot: 0.5 0; left: 0px; top: 20px; width: 60px; height: 48px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__crp_image { anchor: 0 0; pivot: 0 0; left: 0px; top: 0px; width: 60px; height: 60px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-badge__crb_diamond { anchor: 0.5 0; pivot: 0 0; left: -26px; top: 8px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_number { anchor: 0.5 0; pivot: 0 0; left: -36px; top: 7px; font-size: 13px; text-fit: 11px 13px; }
+  .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_status { top: 71px; height: 12px; font-size: 8px; text-fit: 6px 8px; }
+  .cartoon-hud .ud-cartoon-hud__ch_classic_portrait { left: 17%; top: 25px; }
+  .cartoon-hud .ud-cartoon-hud__ch_lives { left: 23%; top: 35px; }
+  .cartoon-hud .ud-cartoon-hud__ch_controls { anchor: 0.85 0; left: -12px; top: 37px; }
+}
+
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-portrait__crp_image { height: 48px; }
+}
+/* The narrow5x2 layout keeps the same stone/parchment materials without side reliefs. */
+.cartoon-hud .ud-cartoon-hud__ch_footer_panel { display: none; }
+.cartoon-hud .ud-cartoon-hud__ch_arch_center { display: flex; width: 100%; height: 64px; }
+.cartoon-hud .ud-cartoon-hud__ch_arch_paper { display: flex; top: 2px; width: 96%; height: 60px; }
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_arch_center { width: 70.4%; height: 90px; }
+ .cartoon-hud .ud-cartoon-hud__ch_arch_paper { top: 7px; width: 70.4%; height: 72px; }
+}
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_controls { pivot: 1 0; }
+ .cartoon-hud .ud-cartoon-hud__ch_classic_portrait { top: 28px; height: 35px; }
+}
+/* Solid bundled slab lettering follows the approved reconstruction reference. */
+.cartoon-hud .ud-cartoon-hud__ch_brand {
+  font-family: "cartoon/fonts/BreeSerif-Regular";
+  text-stroke: 0.35px #100f0c;
+}
+.cartoon-hud .ud-cartoon-hud__ch_name,
+.cartoon-hud .ud-cartoon-hud__ch_score { text-stroke: 0.25px #100f0c; }
+/* Match the reference's foreground identity diamond silhouette at wide sizes. */
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-badge__crb_diamond { left: -18px; top: 4.5px; width: 19px; height: 19px; }
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-badge__crb_color { width: 15px; height: 15px; }
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_number { left: -28px; }
+}
+/* Wide reference roster communicates rescue through its portrait and world HELP. */
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__cr_status { display: none; }
+}
+/* Align the wide scroll's measured top and bottom edges to the approved reference. */
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_wave_plaque { top: 7.5px; height: 37px; }
+}
+
+/* Narrow rows share paint passes: frames, portraits, foreground badges, then labels. */
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_narrow_frames,
+ .cartoon-hud .ud-cartoon-hud__ch_narrow_portraits,
+ .cartoon-hud .ud-cartoon-hud__ch_narrow_badges { display: none; }
+}

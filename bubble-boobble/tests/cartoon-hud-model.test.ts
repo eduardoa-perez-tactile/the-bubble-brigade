@@ -26,15 +26,15 @@ worldTest('cartoon roster reports actual downed teammates as rescuable and prese
   expect(roster[3]!.condition).toBe('returning');expect(roster[3]!.status).toBe('RETURNING');expect(roster[3]!.down).toBe(true);
   expect(roster[4]!.condition).toBe('open');expect(roster[4]!.status).toBe('OPEN SLOT');expect(roster[4]!.active).toBe(false);
   expect(roster[4]!.down).toBe(false);
-  expect(roster[4]!.portrait).toBe('cartoon/ui/portraits/purple');
+  expect(roster[4]!.portrait).toBe('cartoon/reconstruction/ui/portraits/purple');
   expect(roster[5]!.condition).toBe('out');expect(roster[5]!.status).toBe('OUT');expect(roster[5]!.active).toBe(true);
   expect(roster[9]!.key).toBe('dragon-9');expect(roster[9]!.status).toBe('PLAYER 10');
-  expect(roster[9]!.portrait).toBe('cartoon/ui/portraits/slate');
+  expect(roster[9]!.portrait).toBe('cartoon/reconstruction/ui/portraits/slate');
   expect(new Set(roster.map(slot=>slot.portrait)).size).toBe(10);
   expect(JSON.stringify(g)).toBe(before);expect(JSON.stringify(initialDesktopSave)).toBe(saveBefore);
   const classic=createGame(campaign,42);
   const save={...initialDesktopSave,profiles:initialDesktopSave.profiles.map(profile=>({...profile,avatar:'blue' as const}))};
   const classicHud=cartoonHudModel(classic,save);
-  expect(classicHud.classicPortrait).toBe('cartoon/ui/portraits/blue');
+  expect(classicHud.classicPortrait).toBe('cartoon/reconstruction/ui/portraits/blue');
   expect(classicHud.rosterTop).toBe(undefined);
 },{scene:'scenes/arcade.scene.json'});

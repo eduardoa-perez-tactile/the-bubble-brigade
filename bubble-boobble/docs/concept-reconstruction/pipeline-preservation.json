@@ -1,0 +1,27 @@
+{
+  "tiers": {
+    "compat": {
+      "before": 12,
+      "observed": 10,
+      "additions": 0,
+      "after": 12,
+      "allHistoricalEntriesPreserved": true
+    },
+    "desktop": {
+      "before": 18,
+      "observed": 17,
+      "additions": 0,
+      "after": 18,
+      "allHistoricalEntriesPreserved": true
+    },
+    "mobile": {
+      "before": 12,
+      "observed": 10,
+      "additions": 0,
+      "after": 12,
+      "allHistoricalEntriesPreserved": true
+    }
+  },
+  "totalAdditions": 0,
+  "unknownHistoricalMaterialsRetained": true
+}

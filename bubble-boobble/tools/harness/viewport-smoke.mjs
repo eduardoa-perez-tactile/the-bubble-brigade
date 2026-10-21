@@ -76,7 +76,7 @@ try{
  assert.ok(player.found>20,`Player sprite missing: ${player.found} green pixels`);
  if(concept){
   report.geometry=(await client.api.script.eval({code:'(()=>{const g=JSON.parse(__gameengine_host("doc.get",JSON.stringify({name:"arcade.session"}))).game;return {arena:g.Level.arena,columns:g.Level.tiles[0].length,rows:g.Level.tiles.length,players:g.Players.length};})()'})).value;
-  assert.equal(report.geometry.arena,'cartoon-courtyard');assert.equal(report.geometry.columns,72);assert.equal(report.geometry.rows,24);assert.equal(report.geometry.players,10);
+  assert.equal(report.geometry.arena,'cartoon-courtyard');assert.equal(report.geometry.columns,72);assert.equal(report.geometry.rows,23);assert.equal(report.geometry.players,10);
  }
  if(cartoon){
   const queried=await client.api.world.query({components:['Sprite','MeshRenderer'],limit:8192});

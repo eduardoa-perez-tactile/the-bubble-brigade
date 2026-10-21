@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/reconstruction_checkpoint_controlled_reference_poses_preserve_measured_caps_and_full_native_actors_across_four_aspects.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
+}

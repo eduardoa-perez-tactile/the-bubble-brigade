@@ -1,0 +1,445 @@
+{
+  "source": "docs/concept-reconstruction/sources/platform-kit-sheet.png",
+  "sourceFileSHA256": "804980eaddeb8f46688285a207c6924773450b1991a323f1acaa1e5f2839f0ba",
+  "sourceSize": [
+    1774,
+    887
+  ],
+  "sourceMode": "RGBA",
+  "generator": "built-in image_gen; generated master supplied by root",
+  "prompt": "docs/concept-reconstruction/sources/platform-kit-prompt.md",
+  "segmentation": "Alpha>8, four-neighbor components with at least16pixels, reported only; alpha is never modified. Separate authored sheet regions prevent stray low-alpha pixels from joining assets.",
+  "coordinateConvention": "Half-open left,top,right,bottom source boxes; bounds are local to the cropped asset.",
+  "assets": [
+    {
+      "key": "cap-middle",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-middle.png",
+      "sourceBox": [
+        49,
+        88,
+        1725,
+        181
+      ],
+      "size": [
+        1676,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        1676,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        1,
+        1674,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            2,
+            1,
+            1674,
+            93
+          ],
+          "pixels": 152893
+        }
+      ],
+      "rgbaPixelSHA256": "ca73f879574084b36f30dd68852e232b4cff7f2787a9e247095a38bda86dccbe",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "cap-left",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-left.png",
+      "sourceBox": [
+        49,
+        288,
+        445,
+        381
+      ],
+      "size": [
+        396,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        396,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        394,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            3,
+            2,
+            394,
+            93
+          ],
+          "pixels": 35236
+        }
+      ],
+      "rgbaPixelSHA256": "b321bbc6392db817499a2c1e821b8f69e509e0c46b7b9965f4c4e16181ba98ec",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "cap-right",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-right.png",
+      "sourceBox": [
+        1328,
+        288,
+        1723,
+        381
+      ],
+      "size": [
+        395,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        395,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        393,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            2,
+            2,
+            393,
+            93
+          ],
+          "pixels": 35201
+        }
+      ],
+      "rgbaPixelSHA256": "ce0e9451d3e23d4863b093a0f9f03bf9b42a806d2dc0a71c3b54baec5b073ede",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "underside",
+      "file": "assets/cartoon/reconstruction/environment/platform-underside.png",
+      "sourceBox": [
+        55,
+        489,
+        1719,
+        588
+      ],
+      "size": [
+        1664,
+        99
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        1664,
+        99
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        1662,
+        97
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            2,
+            2,
+            1662,
+            97
+          ],
+          "pixels": 137772
+        }
+      ],
+      "rgbaPixelSHA256": "402e0d9792d5f7c4639d4cad525ef02efa5a7619486b91a43f71a7ab734f7896",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "corbel-left",
+      "file": "assets/cartoon/reconstruction/environment/platform-corbel-left.png",
+      "sourceBox": [
+        191,
+        610,
+        465,
+        830
+      ],
+      "size": [
+        274,
+        220
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        274,
+        220
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        272,
+        218
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            2,
+            2,
+            270,
+            218
+          ],
+          "pixels": 37729
+        }
+      ],
+      "rgbaPixelSHA256": "0a99c67fe2bac3a8d3ac7275fb8e5c7c98e922ec1ce70bb23389409b46f851d4",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "corbel-right",
+      "file": "assets/cartoon/reconstruction/environment/platform-corbel-right.png",
+      "sourceBox": [
+        1308,
+        609,
+        1582,
+        830
+      ],
+      "size": [
+        274,
+        221
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        274,
+        221
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        272,
+        219
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            4,
+            2,
+            272,
+            219
+          ],
+          "pixels": 37789
+        }
+      ],
+      "rgbaPixelSHA256": "216fbf8b6c9c9aad9bd823b13dd443fe28c0ae5621d642ba40bf18e9bbdbe6f9",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "edge-join",
+      "file": "assets/cartoon/reconstruction/environment/platform-edge-join.png",
+      "sourceBox": [
+        822,
+        626,
+        951,
+        818
+      ],
+      "size": [
+        129,
+        192
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        129,
+        192
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        127,
+        190
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            2,
+            2,
+            127,
+            190
+          ],
+          "pixels": 16206
+        }
+      ],
+      "rgbaPixelSHA256": "1845b842734dcfb3ed7601dc06b843ddd94afefce94590dd53e981f07654a41c",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "cap-repeat",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-repeat.png",
+      "sourceBox": [
+        893,
+        88,
+        1149,
+        181
+      ],
+      "size": [
+        256,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        256,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        0,
+        1,
+        256,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            0,
+            1,
+            256,
+            93
+          ],
+          "pixels": 23529
+        }
+      ],
+      "rgbaPixelSHA256": "fb75a82aed283d754d116fa1ebc6e8b1442e89a9e4640d676bd848f2578e9620",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "cap-end-left",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-end-left.png",
+      "sourceBox": [
+        49,
+        288,
+        145,
+        381
+      ],
+      "size": [
+        96,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        96,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        2,
+        2,
+        96,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            3,
+            2,
+            96,
+            93
+          ],
+          "pixels": 8262
+        }
+      ],
+      "rgbaPixelSHA256": "17a3e7e0cf5fb39fbdc57697cfbc114ca5f0726f530e3a31141592a9acf96813",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    },
+    {
+      "key": "cap-end-right",
+      "file": "assets/cartoon/reconstruction/environment/platform-cap-end-right.png",
+      "sourceBox": [
+        1627,
+        288,
+        1723,
+        381
+      ],
+      "size": [
+        96,
+        93
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        96,
+        93
+      ],
+      "alphaAbove8Bounds": [
+        0,
+        2,
+        94,
+        93
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "componentsAbove8": [
+        {
+          "box": [
+            0,
+            2,
+            94,
+            93
+          ],
+          "pixels": 8315
+        }
+      ],
+      "rgbaPixelSHA256": "903b239f0d08b9fc23d418f0b7e86a51fe807733eec0ec4dd71583ea4a71292c",
+      "operation": "exact RGBA crop; no redraw, resize, alpha-keying or pixel alteration"
+    }
+  ]
+}

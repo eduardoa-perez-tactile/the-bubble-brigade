@@ -41,11 +41,12 @@ export function cartoonSprites(draws: readonly CartoonDraw[], clip: PixelClip): 
   const sprites: CartoonSprite[] = [];
   for (const draw of draws) {
     if(draw.width<=0||draw.height<=0||draw.x>=clip.right||draw.y>=clip.bottom||draw.x+draw.width<=clip.left||draw.y+draw.height<=clip.top)continue;
+    const environment=draw.frame.startsWith('environment/');
     const solid=/^solid\/#[0-9a-f]{6}$/i.test(draw.frame);
-    if(!solid&&draw.frame!=='courtyard'&&!(draw.frame in atlas.frames))continue;
+    if(!environment&&!solid&&draw.frame!=='courtyard'&&!(draw.frame in atlas.frames))continue;
     let color=draw.color;
     if(solid)color=[0,1,2].map(c=>linear(parseInt(draw.frame.slice(7+c*2,9+c*2),16)/255)*(draw.color?.[c]??1)).concat(draw.color?.[3]??1) as [number,number,number,number];
-    sprites.push({...draw,image:solid?'cartoon/white':draw.frame==='courtyard'?'cartoon/courtyard':`cartoon/frames/${draw.frame}`,color});
+    sprites.push({...draw,image:environment?`cartoon/reconstruction/${draw.frame}`:solid?'cartoon/white':draw.frame==='courtyard'?'cartoon/courtyard':`cartoon/frames/${draw.frame}`,color});
     if(sprites.length>capacity)throw new Error('cartoon presentation capacity exceeded');
   }
   return sprites;

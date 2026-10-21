@@ -1,0 +1,15 @@
+{
+  "head": "2ba8d1e563222ea02ed0cf0bb61fbe49d6342989",
+  "ok": true,
+  "tests": 305,
+  "passed": 305,
+  "traceDirectory": ".gameengine/concept-reconstruction-baseline/v8",
+  "checkpointEvery": 1,
+  "inventoryCounts": {
+    "priorEvidence": 960,
+    "priorRecordings": 45,
+    "originalPixelGoldens": 313,
+    "characterAnimation": 510,
+    "allExistingCartoonAssetsInformational": 532
+  }
+}

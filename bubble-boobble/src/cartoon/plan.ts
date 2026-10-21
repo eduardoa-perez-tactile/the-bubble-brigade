@@ -1,3 +1,5 @@
+import { cartoonProjection } from './projection';
+import { cartoonTierRows } from './arena';
 import { arenaLayout } from '../arcade/arena-layout';
 import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
 import { cartoonHelpAnchor } from './help-layout';
@@ -46,6 +48,8 @@ const itemFrame=(power:string|undefined,food:number)=>power?`item/${power}`:`ite
 const rgba=(hex:string,alpha=1):readonly[number,number,number,number]=>[
   parseInt(hex.slice(1,3),16)/255,parseInt(hex.slice(3,5),16)/255,parseInt(hex.slice(5,7),16)/255,alpha];
 const colors=['#81b94b','#468bc8','#ce6459','#e3b953','#a87fbd','#dc9351','#54b7bf','#d88eaa','#c5c6a5','#718297'];
+const referenceSpans:readonly (readonly (readonly [number,number])[])[]=[[[24,982],[1066,1643]],[[24,347],[417,699],[801,1382],[1450,1643]],[[24,272],[302,545],[608,945],[1009,1303],[1397,1643]],[[26,304],[402,754],[980,1643]],[[24,1644]]];
+
 
 export function cartoonMenuDrawPlan(screen:string,tick:number,selected:number):CartoonDraw[]{
   const out:CartoonDraw[]=[{frame:'courtyard',x:0,y:0,width:768,height:720},
@@ -79,26 +83,26 @@ export function cartoonEditorDrawPlan(level:Level,tick:number,avatar:string):Car
 
 /** Read-only lowering from the same authoritative state as the preserved pixel path. */
 export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly boolean[]):CartoonDraw[]{
-  const layout=arenaLayout(g.Level,view),out:CartoonDraw[]=[],markers:CartoonDraw[]=[];
+  const baseLayout=arenaLayout(g.Level,view),composed=g.Level.arena==='cartoon-courtyard';
+  const projection=composed?cartoonProjection(g,baseLayout):undefined;
+  const layout={...baseLayout,...(projection?{scale:projection.scale,projectY:projection.projectY,inverseY:projection.inverseY}: {})};
+  const out:CartoonDraw[]=[],markers:CartoonDraw[]=[];
+  const px=(x:number)=>projection?projection.projectX(x):layout.x+x*layout.scale;
+  const py=(y:number)=>projection?projection.projectY(y):layout.y+y*layout.scale;
   const add=(frame:string,x:number,y:number,width:number,height=width,flip=false,color?:CartoonDraw['color'])=>{
     if(!frame)return;
-    out.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,flip,color});
+    out.push({frame,x:px(x),y:py(y),width:width*layout.scale,height:height*layout.scale,flip,color});
   };
-  const marker=(frame:string,x:number,y:number,width:number,height=width,diamond=false)=>markers.push({frame,x:layout.x+x*layout.scale,y:layout.y+y*layout.scale,width:width*layout.scale,height:height*layout.scale,diamond});
-  out.push({frame:'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
-  const composed=g.Level.arena==='cartoon-courtyard',columns=levelColumns(g.Level);
+  const marker=(frame:string,x:number,y:number,width:number,height=width,diamond=false)=>markers.push({frame,x:px(x),y:py(y),width:width*layout.scale,height:height*layout.scale,diamond});
+  const centered=(frame:string,x:number,y:number,size:number,flip=false,color?:CartoonDraw['color'])=>out.push({frame,x:px(x)-size*layout.scale/2,y:py(y)-size*layout.scale/2,width:size*layout.scale,height:size*layout.scale,flip,color});
+  const actor=(frame:string,x:number,feet:number,size:number,flip=false)=>{
+    out.push({frame,x:px(x),y:py(feet)-size*layout.scale*120/128,width:size*layout.scale,height:size*layout.scale,flip});
+  };
+  out.push({frame:composed?'environment/courtyard-plate':'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
+  const columns=levelColumns(g.Level);
   const capHeight=composed?CARTOON_PLATFORM_HEIGHT:24,capSpan=composed?CARTOON_PLATFORM_SPAN:48;
-  if(composed){
-    // Continue the two existing masonry faces through decorative headroom;
-    // neither this art nor the background changes the collision tiles.
-    const top=Math.floor((layout.viewportTop-layout.y)/layout.scale/24)*24;
-    for(const col of [1,columns-2])for(let y=top;y<0;y+=24)add('wall',col*24,y,24);
-  }
-  for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<columns;){
-    // Keep the 24px inner masonry face at the actual collision edge. The
-    // outer backing tile remains solid in simulation but the painted room
-    // bleeds behind it, avoiding the previous double-width visual wall.
-    if(composed&&(col===0||col===columns-1)){col++;continue;}
+
+  if(!composed)for(let row=0;row<levelRows(g.Level);row++)for(let col=0;col<columns;){
     if(!g.Level.tiles[row]?.[col]){col++;continue;}
     if(row===0||g.Level.tiles[row-1]?.[col]){add('wall',col*24,row*24,24);col++;continue;}
     let end=col+1;
@@ -112,6 +116,29 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     }
     col=end;
   }
+  if(composed){
+    // Exact painted endpoints are a small overhang over the retained tile
+    // collision spans; the reference comparison reports both independently.
+    const factor=1728/1672;
+    for(let tier=0;tier<cartoonTierRows.length;tier++)for(const [left,right] of referenceSpans[tier]!){
+      const x=left*factor,end=right*factor,y=cartoonTierRows[tier]!*24;
+      const h=20/(1280/1728);
+      const module=256/93*h,edge=96/93*h;
+      if(tier!==4){
+        add('environment/platform-underside',x,y,end-x,14/(1280/1728));
+        const under=out[out.length-1]!;under.y=py(y)+h*layout.scale;
+        if(end-x>120){
+          for(const cx of [x+edge,end-edge-28]){
+            add(cx===x+edge?'environment/platform-corbel-left':'environment/platform-corbel-right',cx,y,28,32);
+            out[out.length-1]!.y=py(y)+(h+8)*layout.scale;
+          }
+        }
+      }
+      add('environment/platform-cap-end-left',x,y,edge,h);
+      for(let at=x+edge;at<end-edge;at+=module)add('environment/platform-cap-repeat',at,y,Math.min(module,end-edge-at),h);
+      add('environment/platform-cap-end-right',end-edge,y,edge,h);
+    }
+  }
   const save=desktopSaveState.get(),avatar=save.profiles[save.active]?.avatar??'green';
   const skin=(index:number)=>g.Party?partyColors[index%partyColors.length]!:index===1?'blue':avatar;
   for(const p of g.Players)if(p.Lives>0&&!p.Downed){
@@ -122,7 +149,8 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
-    add(itemFrame(item.Power,item.Food),item.X,item.Y,32);
+    if(composed)out.push({frame:itemFrame(item.Power,item.Food),x:px(item.X),y:py(item.Y+32)-32*layout.scale,width:32*layout.scale,height:32*layout.scale});
+    else add(itemFrame(item.Power,item.Food),item.X,item.Y,32);
   }
   const entrance=(y:number,index:number)=>{
     if(g.Party?.Phase!=='prepare')return y;
@@ -132,7 +160,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const boss=g.Party?.Boss;
   if(boss){
     const pose=boss.Mode==='captured'?'captured':boss.Mode==='windup'?'attack':'move';
-    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)add(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X+48-(composed?CARTOON_BOSS_SIZE:112)/2,(composed?entrance(boss.Y,0)+96-CARTOON_BOSS_SIZE*120/128:entrance(boss.Y,0)-16),composed?CARTOON_BOSS_SIZE:112,composed?CARTOON_BOSS_SIZE:112,boss.Dir<0);
+    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)actor(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X+48-(composed?CARTOON_BOSS_SIZE:112)/2,composed?entrance(boss.Y,0)+96:entrance(boss.Y,0)-16+112*120/128,composed?CARTOON_BOSS_SIZE:112,boss.Dir<0);
   }
   for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
   for(let index=0;index<g.Enemies.length;index++){
@@ -143,7 +171,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
     const size=composed?CARTOON_ENEMY_SIZE:56;
-    add(cartoonEnemyFrame(e.Kind,pose,e.Age),e.X+22-size/2,y+44-size*120/128,size,size,e.Dir<0);
+    actor(cartoonEnemyFrame(e.Kind,pose,e.Age),e.X+22-size/2,y+44,size,e.Dir<0);
   }
   for(const b of g.Bubbles){
     if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
@@ -153,10 +181,12 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       if(e){
         const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
         const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
-        add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
+        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,96,state==='escape'&&b.Age%12<6);
+        else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
       }
     }
-    add('bubble',b.X,b.Y,44,44,false,rgba(color));
+    if(composed)centered('bubble',b.X+22,b.Y+22,b.EnemyID?120:72,false,rgba(color));
+    else add('bubble',b.X,b.Y,44,44,false,rgba(color));
     if(b.Shooter!==undefined)add('badge/'+skin(b.Shooter),b.X+31,b.Y+31,10);
     if(b.Element)add(effectFrame(b.Element,b.Age),b.X+13,b.Y+13,18);
   }
@@ -172,7 +202,8 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
     }
     const draw=dragonDraw(p,skin(index),tick,!!motion?.[index],composed?CARTOON_PLAYER_SIZE:64);
-    add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
+    if(projection)out.push({...draw,x:px(draw.x),y:py(p.Y+44)-draw.height*layout.scale*120/128,width:draw.width*layout.scale,height:draw.height*layout.scale});
+    else add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
     if(g.Party||g.Players.length>1){
       const badge=cartoonBadgeAnchor(p,layout,help);
       const color=colors[partyColors.findIndex(c=>c===skin(index))]??colors[index%10]!;

@@ -1,8 +1,9 @@
 import {expect,renderTest} from '@gameengine/test';
-import {Sprite,Text2D,VisualOffset} from '@gameengine/runtime';
+import {Sprite,Text2D,VisualOffset,ViewInfo,WorldView} from '@gameengine/runtime';
 import {ConceptPlaytest,ConceptHit} from '../src/cartoon/concept.cheats';
 import {CartoonOverhaul} from '../src/cartoon/overhaul.cheats';
 import {session} from '../src/arcade/session';
+import {cartoonProjection} from '../src/cartoon/projection';
 import {arenaLayout} from '../src/arcade/arena-layout';
 import {actorAlphaBounds,projectBounds,type Bounds} from './helpers/refinement-fit';
 
@@ -48,9 +49,9 @@ renderTest('refinement checkpoint actual enlarged actors numbers help and HUD fi
    }
    expect(header.y>=d.insets[1]!-1).toBe(true);
    expect(footer.y+footer.height<=d.height-d.insets[3]!+1).toBe(true);
-   const g=session.get().game!,layout=arenaLayout(g.Level,{width:d.width,height:d.height,safeArea:d.insets});
-   const playable=projectBounds({x:layout.x+48*layout.scale,y:layout.y+3*24*layout.scale,
-    width:(1680-48)*layout.scale,height:(24*24+8-3*24)*layout.scale},point=>input.worldToScreen(point));
+   const g=session.get().game!,layout=arenaLayout(g.Level,{width:d.width,height:d.height,safeArea:d.insets}),projection=cartoonProjection(g,layout);
+   const playable=projectBounds({x:projection.projectX(48),y:projection.projectY(3*24),
+    width:projection.projectX(1680)-projection.projectX(48),height:projection.projectY(22*24)-projection.projectY(3*24)},point=>input.worldToScreen(point));
    inside(playable,header.y+header.height,footer.y);
    let dragons=0,enemies=0,bosses=0,diamonds=0;
    for(const entity of world.entities(Sprite)){
@@ -60,13 +61,17 @@ renderTest('refinement checkpoint actual enlarged actors numbers help and HUD fi
     if(image.startsWith('cartoon/frames/')){
      const frame=image.slice('cartoon/frames/'.length),alpha=actorAlphaBounds(frame,rect,sprite.flipX);
      if(!alpha||!(/^(dragon|enemy|boss)\//.test(frame)))continue;
-     inside(projectBounds(alpha,point=>input.worldToScreen(point)),header.y+header.height,footer.y);
+     const physical=projectBounds(alpha,point=>input.worldToScreen(point));
+     if(physical.x<d.insets[0]!-1||physical.x+physical.width>d.width-d.insets[2]!+1||physical.y<header.y+header.height-1||physical.y+physical.height>footer.y+1)throw new Error(JSON.stringify({device:d.name,scenario,frame,physical,header,footer}));
+     inside(physical,header.y+header.height,footer.y);
      if(frame.startsWith('dragon/'))dragons++;if(frame.startsWith('enemy/'))enemies++;if(frame.startsWith('boss/'))bosses++;
     }
     if(image==='cartoon/white'&&Math.abs(at.rotation[2]!)>.1){
      // The marker uses a 45-degree square: compare its actual rotated AABB.
      const span=(rect.width+rect.height)/Math.SQRT2;
-     inside(projectBounds({x:at.position[0]!-span/2,y:720-at.position[1]!-span/2,width:span,height:span},point=>input.worldToScreen(point)),header.y+header.height,footer.y);
+     const marker=projectBounds({x:at.position[0]!-span/2,y:720-at.position[1]!-span/2,width:span,height:span},point=>input.worldToScreen(point));
+     if(marker.y<header.y+header.height-1||marker.y+marker.height>footer.y+1)throw new Error(JSON.stringify({device:d.name,scenario,marker,header,footer,root:ui.rect('cartoon-hud'),viewInfo:world.resource(ViewInfo),worldView:world.resource(WorldView),world:at.position}));
+     inside(marker,header.y+header.height,footer.y);
      diamonds++;
     }
    }

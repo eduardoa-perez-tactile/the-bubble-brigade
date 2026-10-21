@@ -211,15 +211,18 @@ declare module '@gameengine/ui' {
      *   - `rosterWidePortraits`: list of cartoon-roster-portrait
      *   - `rosterWide`: list of cartoon-roster-slot
      *   - `showStatus`: yesno, default false
+     *   - `rosterTopBadges`: list of cartoon-roster-badge
+     *   - `rosterBottomBadges`: list of cartoon-roster-badge
+     *   - `rosterWideBadges`: list of cartoon-roster-badge
      * Events: none
      * Code areas: none
-     * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`
+     * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-architecture`, `footer-paper`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`
      * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`
      */
     'cartoon-hud': {
-      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean };
+      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[] };
       areas: never;
-      refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue';
+      refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-architecture' | 'footer-paper' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue';
     };
     /**
      * Cartoon Key Button: a widget, button (ui/docs/cartoon-key-button.ui.json)
@@ -429,6 +432,20 @@ declare module '@gameengine/ui' {
       refs: 'result-score' | 'result-stats';
     };
     /**
+     * Cartoon roster badge: a widget (ui/docs/cartoon-roster-badge.ui.json)
+     *
+     * Properties:
+     *   - `color`: enum green | blue | red | yellow | purple | orange | cyan | pink | ivory | slate, default "green"
+     * Events: none
+     * Code areas: none
+     * Refs: `identity-diamond`
+     */
+    'cartoon-roster-badge': {
+      props: { color: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' };
+      areas: never;
+      refs: 'identity-diamond';
+    };
+    /**
      * Cartoon roster frame: a widget (ui/docs/cartoon-roster-frame.ui.json)
      *
      * Properties:
@@ -453,12 +470,12 @@ declare module '@gameengine/ui' {
      *   - `active`: yesno, default true
      * Events: none
      * Code areas: none
-     * Refs: none
+     * Refs: `portrait-crop`
      */
     'cartoon-roster-portrait': {
       props: { portrait: string; active: boolean };
       areas: never;
-      refs: never;
+      refs: 'portrait-crop';
     };
     /**
      * Cartoon roster slot: a widget (ui/docs/cartoon-roster-slot.ui.json)

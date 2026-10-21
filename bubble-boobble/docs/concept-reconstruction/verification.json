@@ -1,0 +1,118 @@
+{
+  "ok": true,
+  "baselineHead": "2ba8d1e563222ea02ed0cf0bb61fbe49d6342989",
+  "logic": {
+    "passed": 308,
+    "total": 308,
+    "js": "v8"
+  },
+  "protectedOriginalTraces": {
+    "identical": 280,
+    "total": 280,
+    "allowances": 0
+  },
+  "immediateBaseline": {
+    "identical": 303,
+    "total": 305,
+    "individuallyClassifiedOptInGeometryDivergences": 2,
+    "newTests": 3
+  },
+  "desktopT1": {
+    "passed": 62,
+    "total": 62,
+    "protectedOriginalPixelCases": 48
+  },
+  "newReplays": {
+    "count": 5,
+    "verified": 5,
+    "steps": 739,
+    "screenshots": 52,
+    "scene": "scenes/cartoon.scene.json",
+    "gpuTier": "desktop",
+    "testMemoryClass": "phone-low"
+  },
+  "structuralDrawLimit": 14,
+  "canonicalAnchorChecks": {
+    "passed": 52,
+    "total": 52,
+    "tolerancePhysicalPixels": 4
+  },
+  "reviewedCartoonDesktopScreenshots": 93,
+  "coldViewport": {
+    "ok": true,
+    "scope": "Fresh live readback viewports before any offscreen render or preview, each in its own host; original pixel predicates unchanged.",
+    "results": [
+      {
+        "mode": "pixel",
+        "ok": true,
+        "drawCalls": 5,
+        "report": "cold-pixel.json",
+        "image": "cold-pixel.png"
+      },
+      {
+        "mode": "cartoon-classic",
+        "ok": true,
+        "drawCalls": 7,
+        "report": "cold-cartoon-classic.json",
+        "image": "cold-cartoon-classic.png"
+      },
+      {
+        "mode": "cartoon-party",
+        "ok": true,
+        "drawCalls": 14,
+        "report": "cold-cartoon-party.json",
+        "image": "cold-cartoon-party.png"
+      }
+    ]
+  },
+  "preservation": {
+    "baselineHead": "2ba8d1e563222ea02ed0cf0bb61fbe49d6342989",
+    "groups": {
+      "priorEvidence": {
+        "checked": 960,
+        "unchanged": 960,
+        "mismatches": []
+      },
+      "priorRecordings": {
+        "checked": 45,
+        "unchanged": 45,
+        "mismatches": []
+      },
+      "originalPixelGoldens": {
+        "checked": 313,
+        "unchanged": 313,
+        "mismatches": []
+      },
+      "characterAnimation": {
+        "checked": 510,
+        "unchanged": 510,
+        "mismatches": []
+      },
+      "allExistingCartoonAssetsInformational": {
+        "checked": 532,
+        "unchanged": 532,
+        "mismatches": []
+      }
+    },
+    "ok": true
+  },
+  "engineCheck": {
+    "ok": true,
+    "report": "engine-check.json",
+    "cookedSmokeFrames": 600,
+    "warnings": "Preserved original reference/camera warnings and stale material program 7946469ed20397e0; release builds still refuse that stale record."
+  },
+  "cookedCheckpointRun": {
+    "ok": true,
+    "cases": 5,
+    "passed": 5,
+    "steps": 739,
+    "shots": 52,
+    "js": "v8",
+    "gpuTier": "desktop",
+    "memoryClass": "phone-low",
+    "cooked": true
+  },
+  "engineSlotReleased": true,
+  "scope": "Game Engine automated verification only; fixed reference poses are authored state, separate from actual input trajectory tests and active captures."
+}

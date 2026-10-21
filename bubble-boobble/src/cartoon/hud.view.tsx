@@ -1,7 +1,7 @@
 import { defineView, Screen, Widget } from '@gameengine/ui';
 import type { CartoonHudModel, RosterSlot } from './hud-model';
 import { partyColors, partyNames } from '../arcade/party-config';
-const roster: RosterSlot[] = partyColors.map((skin, slot) => ({key:`dragon-${slot}`,number:String(slot+1),color:skin,condition:'ready',name:partyNames[slot]!,status:slot===0?'PLAYER 1':'AI TEAMMATE',portrait:`cartoon/ui/portraits/${skin}`,active:true,down:false}));
+const roster: RosterSlot[] = partyColors.map((skin, slot) => ({key:`dragon-${slot}`,number:String(slot+1),color:skin,condition:'ready',name:partyNames[slot]!,status:slot===0?'PLAYER 1':'AI TEAMMATE',portrait:`cartoon/reconstruction/ui/portraits/${skin}`,active:true,down:false}));
 
 const playing: CartoonHudModel = {
   rosterAll: roster, rosterTop: roster.slice(0,5), rosterBottom: roster.slice(5),
@@ -28,8 +28,10 @@ export const CartoonHudView = defineView<CartoonHudModel>({
   render: model => <Screen safeArea class="desktop-screen desktop-hud-screen">
     <Widget class="cartoon-hud" doc="cartoon-hud" id="cartoon-hud" props={{
       showStatus: () => model().showStatus ?? (model().highTitle === 'BOSS HP' || model().highTitle === 'LAST DRAGON'),
-      classicPortrait: () => model().classicPortrait ?? 'cartoon/ui/portraits/green',
+      classicPortrait: () => model().classicPortrait ?? 'cartoon/reconstruction/ui/portraits/green',
       waveLabel: () => model().waveLabel ?? model().round.replace(/ \/ \d+$/, ''),
+      rosterWideBadges: () => model().rosterAll ?? [...(model().rosterTop??[]),...(model().rosterBottom??[])],
+      rosterTopBadges: () => model().rosterTop ?? [], rosterBottomBadges: () => model().rosterBottom ?? [],
       rosterWide: () => model().rosterAll ?? [...(model().rosterTop??[]),...(model().rosterBottom??[])],
       rosterWideFrames: () => model().rosterAll ?? [...(model().rosterTop??[]),...(model().rosterBottom??[])],
       rosterWidePortraits: () => model().rosterAll ?? [...(model().rosterTop??[]),...(model().rosterBottom??[])],

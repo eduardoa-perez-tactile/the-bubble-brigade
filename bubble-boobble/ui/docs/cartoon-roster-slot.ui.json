@@ -87,7 +87,9 @@
         "fontSize": 11,
         "fitMin": 9,
         "textAlign": "center",
-        "color": "#30271e"
+        "color": "#fff7e3",
+        "outline": 0.13,
+        "outlineColor": "#191711"
       },
       "property": "number"
     }

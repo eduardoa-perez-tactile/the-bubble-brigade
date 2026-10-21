@@ -18,7 +18,7 @@ worldTest('cartoon controls geometry remains an explicit opt in and preserves or
   const game = createPartyGame(campaign, 42, ['human','ai','ai','ai','ai','ai','ai','ai','ai','ai'], 10, 'cartoon');
   expect(game.Level.arena).toBe('cartoon-courtyard');
   expect(levelColumns(game.Level)).toBe(72);
-  expect(levelRows(game.Level)).toBe(24);
+  expect(levelRows(game.Level)).toBe(23);
   expect(game.Players.length).toBe(10);
   expect(game.Party!.Slots).toEqual(['human','ai','ai','ai','ai','ai','ai','ai','ai','ai']);
   expect(game.PlayerBalance).toEqual(original.PlayerBalance);

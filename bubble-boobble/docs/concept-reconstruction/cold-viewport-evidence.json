@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "scope": "Fresh live readback viewports before any offscreen render or preview, each in its own host; original pixel predicates unchanged.",
+  "results": [
+    {
+      "mode": "pixel",
+      "ok": true,
+      "drawCalls": 5,
+      "report": "cold-pixel.json",
+      "image": "cold-pixel.png"
+    },
+    {
+      "mode": "cartoon-classic",
+      "ok": true,
+      "drawCalls": 7,
+      "report": "cold-cartoon-classic.json",
+      "image": "cold-cartoon-classic.png"
+    },
+    {
+      "mode": "cartoon-party",
+      "ok": true,
+      "drawCalls": 14,
+      "report": "cold-cartoon-party.json",
+      "image": "cold-cartoon-party.png"
+    }
+  ]
+}

@@ -4,6 +4,9 @@ import { cartoonRescueLabels } from '../src/cartoon/labels';
 import { DesktopIntent } from '../src/schema.gen';
 import { desktopState, desktopGameRequest } from '../src/desktop/state';
 import { session } from '../src/arcade/session';
+import { cartoonProjection } from '../src/cartoon/projection';
+import { actorAlphaBounds } from './helpers/refinement-fit';
+import { cartoonDrawPlan } from '../src/cartoon/plan';
 import { arenaLayout } from '../src/arcade/arena-layout';
 import { ConceptPlaytest, ConceptHit } from '../src/cartoon/concept.cheats';
 import { partyPrepareTicks } from '../src/arcade/party-config';
@@ -47,7 +50,7 @@ renderTest('concept checkpoint all menu routes remain functional and fit native 
 renderTest('concept checkpoint real player climbs five tiers then captures pops and clears a wave',async({input,step,cheat,render})=>{
  input.view(1680,720,1);await step(8);
  await cheat(ConceptPlaytest,{scenario:'route'});
- expect(session.get().game!.Level.tiles.length).toBe(24);
+ expect(session.get().game!.Level.tiles.length).toBe(23);
  expect(session.get().game!.Level.tiles[0]!.length).toBe(72);
  for(let tick=0;Math.abs(session.get().game!.Players[0]!.X-240)>.001&&tick<300;tick++){
   const dx=240-session.get().game!.Players[0]!.X;
@@ -92,7 +95,7 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   const position=world.get(help[0]!,VisualOffset).position;
   expect(Math.abs(position[0]!-expected.x)<.01).toBe(true);
   expect(Math.abs(position[1]!-(720-expected.y))<.01).toBe(true);
-  const layout=arenaLayout(g.Level,{width:width!,height:height!,safeArea:[0,0,0,0]});
+  const base=arenaLayout(g.Level,{width:width!,height:height!,safeArea:[0,0,0,0]}),projection=cartoonProjection(g,base),layout={...base,...projection};
   const plaqueCenter={x:expected.x+17*layout.scale,y:expected.y};
   const cream=world.entities(Sprite).find(entity=>{const sprite=world.get(entity,Sprite);if(!sprite.visible||(sprite.image??'')!=='cartoon/white')return false;const at=world.get(entity,VisualOffset).position;return Math.abs(sprite.size[0]!-60*layout.scale)<.02&&Math.abs(sprite.size[1]!-24*layout.scale)<.02&&Math.abs(at[0]!-plaqueCenter.x)<.02&&Math.abs(720-at[1]!-plaqueCenter.y)<.02;});
   expect(!!cream).toBe(true);
@@ -135,13 +138,13 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   const layout=assertActualHelp(width!,height!);
   expect(layout.y>=48).toBe(true);
   const footerHeight=cartoonHudFooterHeight({width:width!,height:height!});
-  expect(layout.y+(levelHeight(g.Level)+8)*layout.scale<=720-footerHeight+.001).toBe(true);
+  expect(layout.projectY(22*24)<=720-footerHeight+.001).toBe(true);
   const unit=Math.min(width!/768,height!/720),offsetY=(height!-720*unit)/2;
   const header=ui.rect('cartoon-hud.header')!,footer=ui.rect('cartoon-hud.footer')!;
   expect(Math.abs(header.height-48*unit)<1).toBe(true);
   expect(Math.abs(footer.height-footerHeight*unit)<1).toBe(true);
-  expect(offsetY+(layout.y-152*layout.scale)*unit>=header.y+header.height-.01).toBe(true);
-  expect(offsetY+(layout.y+(levelHeight(g.Level)+8)*layout.scale)*unit<=footer.y+.01).toBe(true);
+  for(const draw of cartoonDrawPlan(g,g.Tick,{width:width!,height:height!,safeArea:[0,0,0,0]}).filter(d=>d.frame.startsWith('dragon/'))){const alpha=actorAlphaBounds(draw.frame,draw,!!draw.flip)!;expect(offsetY+alpha.y*unit>=header.y+header.height-.01).toBe(true);}
+  expect(offsetY+layout.projectY(22*24)*unit<=footer.y+.01).toBe(true);
   const visibleRows=width!/height!>=1.6?['roster-wide']:['roster-top','roster-bottom'];
   for(const id of visibleRows){const row=ui.rect(`cartoon-hud.${id}`)!;expect(!!row&&row.width>0&&row.height>0).toBe(true);expect(row.y>=footer.y-1&&row.y+row.height<=footer.y+footer.height+1).toBe(true);}
 

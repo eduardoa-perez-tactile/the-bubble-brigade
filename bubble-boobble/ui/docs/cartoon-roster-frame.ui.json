@@ -79,7 +79,8 @@
         "bg": "#30271e",
         "rotate": 45,
         "attach": true,
-        "pivot": "anchor"
+        "pivot": "anchor",
+        "hide": true
       }
     },
     "crf_diamond_color": {

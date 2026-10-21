@@ -19,7 +19,7 @@
         "h": 32
       },
       "children": [
-        "crp_image"
+        "crp_clip"
       ]
     },
     "crp_image": {
@@ -34,13 +34,36 @@
           0
         ],
         "offset": [
-          15,
-          2
+          0,
+          0
         ],
         "w": 28,
         "h": 28
       },
       "property": "portrait"
+    },
+    "crp_clip": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "crp_image"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          15,
+          2
+        ],
+        "w": 28,
+        "h": 28,
+        "clip": false
+      },
+      "point": "portrait-crop"
     }
   },
   "properties": {

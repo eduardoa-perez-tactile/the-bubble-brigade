@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "scene": "scenes/cartoon.scene.json",
+  "cartoon": true,
+  "concept": true,
+  "scope": "cold live readback viewport; no offscreen render or preload",
+  "assetsBefore": {
+    "value": {
+      "class": "desktop",
+      "budget": {
+        "total": 2147483648,
+        "textures": 1610612736,
+        "audio": 268435456
+      },
+      "resident": {
+        "textures": 0,
+        "audio": 0,
+        "total": 0,
+        "data": 0
+      },
+      "overBudget": null,
+      "overCount": 0,
+      "evicted": 0,
+      "groups": {}
+    }
+  },
+  "assetsAfter": {
+    "value": {
+      "class": "desktop",
+      "budget": {
+        "total": 2147483648,
+        "textures": 1610612736,
+        "audio": 268435456
+      },
+      "resident": {
+        "textures": 30434492,
+        "audio": 0,
+        "total": 30434492,
+        "data": 0
+      },
+      "overBudget": null,
+      "overCount": 0,
+      "evicted": 0,
+      "groups": {}
+    }
+  },
+  "tileAppearance": "painted neutral stone",
+  "width": 1920,
+  "height": 1080,
+  "frames": 68,
+  "frameIndex": 68,
+  "tile": {
+    "found": 1024165,
+    "total": 1584000
+  },
+  "player": {
+    "found": 2708,
+    "total": 1584000
+  },
+  "drawCalls": 14,
+  "triangles": 977,
+  "geometry": {
+    "arena": "cartoon-courtyard",
+    "columns": 72,
+    "rows": 23,
+    "players": 10
+  },
+  "nativeAlphaSprites": 210
+}

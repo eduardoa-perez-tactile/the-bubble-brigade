@@ -39,8 +39,10 @@
         "ch_wave_plaque",
         "ch_round_card",
         "ch_score_berry",
-        "ch_header_text",
-        "ch_score_cherries"
+        "ch_score_cherries",
+        "ch_score_fruit3",
+        "ch_score_fruit4",
+        "ch_header_text"
       ],
       "style": {
         "pad": 0,
@@ -65,7 +67,7 @@
         "ch_score_paper"
       ],
       "style": {
-        "pad": 2,
+        "pad": 0,
         "position": "anchored",
         "anchor": [
           0,
@@ -77,8 +79,9 @@
         ],
         "w": 216,
         "h": 36,
-        "bg": "#30271e",
-        "radius": 8
+        "bg": "#00000000",
+        "radius": 0,
+        "image": "cartoon/reconstruction/ui/score-parchment"
       },
       "point": "score-card"
     },
@@ -225,9 +228,16 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_arch_left",
+        "ch_arch_center",
+        "ch_arch_right",
+        "ch_arch_paper",
         "ch_footer_panel",
         "ch_lives",
         "ch_controls",
+        "ch_narrow_frames",
+        "ch_narrow_portraits",
+        "ch_narrow_badges",
         "ch_roster_top",
         "ch_roster_bottom",
         "ch_classic_portrait",
@@ -493,8 +503,6 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "ch_frames_top",
-        "ch_portraits_top",
         "ch_roster_top_slots"
       ],
       "style": {
@@ -524,8 +532,6 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "ch_frames_bottom",
-        "ch_portraits_bottom",
         "ch_roster_bottom_slots"
       ],
       "style": {
@@ -613,7 +619,7 @@
         ],
         "offset": [
           0,
-          0
+          32
         ],
         "w": "100%",
         "h": 32,
@@ -643,7 +649,8 @@
         "w": "100%",
         "h": "100%",
         "bg": "#f1e3bf",
-        "radius": 6
+        "radius": 6,
+        "hide": true
       }
     },
     "ch_status_paper": {
@@ -686,8 +693,9 @@
         ],
         "w": 200,
         "h": 36,
-        "bg": "#30271e",
-        "radius": 16
+        "bg": "#00000000",
+        "radius": 0,
+        "image": "cartoon/reconstruction/ui/wave-scroll"
       },
       "point": "wave-plaque"
     },
@@ -709,7 +717,8 @@
         "w": 196,
         "h": 32,
         "bg": "#f1e3bf",
-        "radius": 14
+        "radius": 14,
+        "hide": true
       }
     },
     "ch_header_text": {
@@ -757,7 +766,8 @@
         "h": 30,
         "fontSize": 20,
         "color": "#30271e",
-        "textAlign": "center"
+        "textAlign": "center",
+        "hide": true
       }
     },
     "ch_wave_curl_right": {
@@ -778,7 +788,8 @@
         "h": 30,
         "fontSize": 20,
         "color": "#30271e",
-        "textAlign": "center"
+        "textAlign": "center",
+        "hide": true
       }
     },
     "ch_footer_panel": {
@@ -858,7 +869,7 @@
         ],
         "offset": [
           0,
-          0
+          32
         ],
         "w": "100%",
         "h": 32,
@@ -876,6 +887,7 @@
       "children": [
         "ch_wide_frames",
         "ch_wide_portraits",
+        "ch_badges_wide",
         "ch_wide_labels"
       ],
       "style": {
@@ -958,7 +970,7 @@
     "ch_score_cherries": {
       "type": "icon",
       "name": "Icon",
-      "image": "cartoon/frames/item/food-1",
+      "image": "cartoon/frames/item/food-5",
       "style": {
         "size": 32,
         "position": "anchored",
@@ -977,7 +989,7 @@
     "ch_score_berry": {
       "type": "icon",
       "name": "Icon",
-      "image": "cartoon/frames/item/food-2",
+      "image": "cartoon/frames/item/food-4",
       "style": {
         "size": 32,
         "position": "anchored",
@@ -992,6 +1004,272 @@
         "w": 22,
         "h": 22
       }
+    },
+    "ch_arch_left": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/reconstruction/ui/footer-left",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "14.8%",
+        "h": 90
+      }
+    },
+    "ch_arch_center": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/reconstruction/ui/footer-center",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "70.4%",
+        "h": 90
+      },
+      "point": "footer-architecture"
+    },
+    "ch_arch_right": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/reconstruction/ui/footer-right",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "14.8%",
+        "h": 90
+      }
+    },
+    "ch_arch_paper": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/reconstruction/ui/footer-parchment",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          7
+        ],
+        "w": "70.4%",
+        "h": 72
+      },
+      "point": "footer-paper"
+    },
+    "ch_score_fruit3": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/frames/item/food-1",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          10
+        ],
+        "w": 24,
+        "h": 26
+      }
+    },
+    "ch_score_fruit4": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/frames/item/food-3",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          10
+        ],
+        "w": 24,
+        "h": 26
+      }
+    },
+    "ch_badges_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_badges_top_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_badges_top_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-badge",
+      "property": "rosterTopBadges"
+    },
+    "ch_badges_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_badges_bottom_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          32
+        ],
+        "w": "100%",
+        "h": 32,
+        "dir": "row"
+      }
+    },
+    "ch_badges_bottom_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-badge",
+      "property": "rosterBottomBadges"
+    },
+    "ch_badges_wide": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_badges_wide_items"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 90,
+        "dir": "row"
+      }
+    },
+    "ch_badges_wide_items": {
+      "type": "repeat",
+      "doc": "cartoon-roster-badge",
+      "property": "rosterWideBadges"
+    },
+    "ch_narrow_frames": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_frames_top",
+        "ch_frames_bottom"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "94%",
+        "h": 64
+      },
+      "show": "party"
+    },
+    "ch_narrow_portraits": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_portraits_top",
+        "ch_portraits_bottom"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "94%",
+        "h": 64
+      },
+      "show": "party"
+    },
+    "ch_narrow_badges": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_badges_top",
+        "ch_badges_bottom"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "94%",
+        "h": 64
+      },
+      "show": "party"
     }
   },
   "view": {
@@ -1158,6 +1436,21 @@
     "showStatus": {
       "type": "yesno",
       "default": false
+    },
+    "rosterTopBadges": {
+      "type": "list",
+      "of": "cartoon-roster-badge",
+      "default": []
+    },
+    "rosterBottomBadges": {
+      "type": "list",
+      "of": "cartoon-roster-badge",
+      "default": []
+    },
+    "rosterWideBadges": {
+      "type": "list",
+      "of": "cartoon-roster-badge",
+      "default": []
     }
   },
   "samples": {

@@ -27,7 +27,7 @@ export interface CartoonHudModel extends HudModel {
 /** Presentation adapter: reads the same game snapshot as the original HUD. */
 export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudModel['shade'] = 'normal'): CartoonHudModel {
   const base = hudModel(game, save, shade);
-  if (!game.Party) return { ...base, classicPortrait: `cartoon/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
+  if (!game.Party) return { ...base, classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
   const roster = partyColors.map((skin, slot): RosterSlot => {
     const player = game.Players[slot];
     const mode = game.Party!.Slots[slot] ?? 'empty';
@@ -41,7 +41,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
       : condition === 'returning' ? 'RETURNING' : condition === 'out' ? 'OUT'
       : mode === 'ai' ? 'AI TEAMMATE' : `PLAYER ${slot + 1}`;
     return { key: `dragon-${slot}`, number: String(slot + 1), color: skin, condition,
-      name: partyNames[slot]!, status, portrait: `cartoon/ui/portraits/${skin}`, active, down };
+      name: partyNames[slot]!, status, portrait: `cartoon/reconstruction/ui/portraits/${skin}`, active, down };
   });
   return { ...base, showStatus: base.highTitle === 'BOSS HP' || base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
     showStartCue: base.showStartCue && (game.Party.Phase === 'prepare' ? game.Party.Timer <= 90 : game.LevelTicks < 30),

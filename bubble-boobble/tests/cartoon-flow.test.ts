@@ -5,7 +5,9 @@ import { desktopState, desktopGameRequest } from '../src/desktop/state';
 import { session } from '../src/arcade/session';
 import { arenaLayout } from '../src/arcade/arena-layout';
 import { CartoonOverhaul } from '../src/cartoon/overhaul.cheats';
-import { levelWidth, levelHeight } from '../src/arcade/types';
+import { levelWidth } from '../src/arcade/types';
+import { cartoonProjection } from '../src/cartoon/projection';
+import { cartoonHudBounds } from '../src/cartoon/hud-layout';
 
 const scene = 'scenes/cartoon.scene.json';
 declare const __gameengine_host:(op:string,arg:string)=>string;
@@ -57,11 +59,12 @@ renderTest('cartoon overhaul recorded ten human start uses new whole board and r
   input.action('partyMove1',0); input.action('partyFire1',0);
   for (const [width,height] of [[768,720],[1680,720],[640,960],[2520,1080]]) {
     input.view(width!,height!,1); await step(1);
-    const g = session.get().game!, layout = arenaLayout(g.Level, { width:width!, height:height!, safeArea:[0,0,0,0] });
-    expect(layout.x +48*layout.scale >= layout.viewportLeft - .001).toBe(true);
-    expect(layout.x +(levelWidth(g.Level)-48)*layout.scale <= layout.viewportRight + .001).toBe(true);
-    expect(layout.y >= 48 - .001).toBe(true);
-    expect(layout.y + levelHeight(g.Level) * layout.scale <= 672 + .001).toBe(true);
+    const g = session.get().game!, view={width:width!,height:height!,safeArea:[0,0,0,0]}, layout=arenaLayout(g.Level,view);
+    const projection=cartoonProjection(g,layout), hud=cartoonHudBounds(view);
+    expect(projection.projectX(48) >= layout.viewportLeft - .001).toBe(true);
+    expect(projection.projectX(levelWidth(g.Level)-48) <= layout.viewportRight + .001).toBe(true);
+    expect(projection.projectY(3*24) >= hud.top - .001).toBe(true);
+    expect(projection.projectY(22*24) <= hud.bottom + .001).toBe(true);
     expect(render.stats({width:width!,height:height!}).drawCalls).toBeLessThanOrEqual(14);
     render.expectScreenshot(`new_arena_${width}x${height}`,{width:width!,height:height!});
   }

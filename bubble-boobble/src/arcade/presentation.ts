@@ -43,6 +43,7 @@ import { arenaWidth, arenaHeight, levelColumns, levelRows, levelWidth, levelHeig
 import type { GameState, Level } from "./types.ts";
 import { cartoonSprites, cartoonMotion } from '../cartoon/renderer';
 import { cartoonRescueLabels } from '../cartoon/labels';
+import { cartoonProjection } from '../cartoon/projection';
 import { cartoonDrawPlan, cartoonMenuDrawPlan, cartoonEditorDrawPlan } from '../cartoon/plan';
 import { isCartoonClearColor } from '../cartoon/theme';
 
@@ -630,6 +631,8 @@ export const ArcadePresentation = defineSystem({
         : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
     const rescueLabels = modern && g && ['play','pause'].includes(ui.screen)
       ? cartoonRescueLabels(g,ctx.get(ViewInfo)) : [];
+    const textLayout=modern&&g?.Level.arena==='cartoon-courtyard'?arenaLayout(g.Level,ctx.get(ViewInfo)):null;
+    const textProjection=textLayout&&g?cartoonProjection(g,textLayout):null;
     if(modern && modern.length>q.mesh.count)throw new Error(`Cartoon presentation needs ${modern.length} slots; preserved pool has ${q.mesh.count}`);
     for(const c of q.masks.chunks())for(let i=0;i<c.length;i++){
       c.set(SpriteMask,i,{size:modern?[plan.clip.right-plan.clip.left,plan.clip.bottom-plan.clip.top]:[0,0]});
@@ -704,7 +707,16 @@ export const ArcadePresentation = defineSystem({
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;
         }
-        const d = plan.texts[slot - 1] ?? rescueLabels[slot - 1 - plan.texts.length];
+        const source=plan.texts[slot-1];
+        let d=source??rescueLabels[slot-1-plan.texts.length];
+        // The preserved pixel plan has already applied its linear world layout.
+        // Lower only its world text through the same projection as native art;
+        // UI/footer and the independently projected identity labels stay owned
+        // by their existing paths.
+        if(source&&textProjection&&textLayout&&!source.footer&&!source.pixelOnly)d={...source,
+          x:textProjection.projectX((source.x-textLayout.x)/textLayout.scale),
+          y:textProjection.projectY((source.y-textLayout.y)/textLayout.scale),
+          size:source.size/textLayout.scale*textProjection.scale};
         if (!d || modern && (d.footer || ('pixelOnly' in d && d.pixelOnly))) {
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;

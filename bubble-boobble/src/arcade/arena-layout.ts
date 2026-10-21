@@ -1,8 +1,7 @@
 import { worldFit } from '@gameengine/runtime';
 import type { WorldFitView } from '@gameengine/runtime';
 import { levelWidth,levelHeight,type Level } from './types';
-import { CARTOON_VISUAL_LEFT,CARTOON_VISUAL_RIGHT,CARTOON_HEADROOM,CARTOON_PLATFORM_HEIGHT } from '../cartoon/actor-layout';
-import { cartoonHudFooterHeight } from '../cartoon/hud-layout';
+import { cartoonHudFooterHeight,cartoonHudBounds } from '../cartoon/hud-layout';
 /** Layout inside the existing pixel compositor's reference canvas. The engine
  * camera keeps owning the 768x720 canvas; menus/HUD are never zoomed with the board.
  * worldFit supplies the same Contain footprint used by that camera. */
@@ -15,10 +14,11 @@ export function arenaLayout(level:Level,view:WorldFitView={width:768,height:720,
   const top=Math.max(48,360-height/2+(view.safeArea[1]??0)*unit);
   const bottom=Math.min(level.arena==='cartoon-courtyard'?720-cartoonHudFooterHeight(view):672,360+height/2-(view.safeArea[3]??0)*unit);
   if(level.arena==='cartoon-courtyard'){
-    const visualWidth=CARTOON_VISUAL_RIGHT-CARTOON_VISUAL_LEFT,paddedHeight=levelHeight(level)+CARTOON_HEADROOM+CARTOON_PLATFORM_HEIGHT-24;
-    const scale=Math.min((right-left)/visualWidth,(bottom-top)/paddedHeight);
-    return {x:(left+right-visualWidth*scale)/2-CARTOON_VISUAL_LEFT*scale,
-      y:(top+bottom-paddedHeight*scale)/2+CARTOON_HEADROOM*scale,scale,
+    // Canonical world width fills the reference composition. Narrow viewports
+    // uniformly contain it; the projection owns the nonlinear feet mapping.
+    const bands=cartoonHudBounds(view),stageTop=bands.top,stageBottom=bands.bottom;
+    const scale=Math.min(1,(right-left+16)/1280,(stageBottom-stageTop)/582);
+    return {x:(left+right-1280*scale)/2,y:stageTop+(stageBottom-stageTop-582*scale)/2+564*scale,scale:scale*1280/1728,headerBottom:stageTop,
       viewportLeft:384-width/2,viewportRight:384+width/2,viewportTop:360-height/2,viewportBottom:360+height/2};
   }
   // Preserve the original courtyard's historical 96px allowance.

@@ -1,0 +1,125 @@
+{
+  "tool": "Game Engine view render",
+  "visualInspection": "all five PNGs inspected; live text/portraits/icons, actual scroll curls, alpha edges and white outlined foreground number diamonds checked",
+  "samples": [
+    {
+      "sample": "rescue",
+      "size": [
+        1536,
+        864
+      ],
+      "path": "docs/concept-reconstruction/hud-wide-rescue.png",
+      "layoutWarnings": []
+    },
+    {
+      "sample": "ready",
+      "size": [
+        768,
+        720
+      ],
+      "path": "docs/concept-reconstruction/hud-native-ready.png",
+      "layoutWarnings": []
+    },
+    {
+      "sample": "boss",
+      "size": [
+        1680,
+        720
+      ],
+      "path": "docs/concept-reconstruction/hud-ultrawide-boss.png",
+      "layoutWarnings": []
+    },
+    {
+      "sample": "rescue",
+      "size": [
+        640,
+        960
+      ],
+      "path": "docs/concept-reconstruction/hud-tall-rescue.png",
+      "layoutWarnings": []
+    },
+    {
+      "sample": "custom classic",
+      "size": [
+        1536,
+        864
+      ],
+      "path": "docs/concept-reconstruction/hud-wide-classic.png",
+      "layoutWarnings": []
+    }
+  ],
+  "renderCount": 5,
+  "layoutWarningCount": 0,
+  "typecheck": {
+    "command": "node .gameengine/engine/node_modules/typescript/bin/tsc --noEmit",
+    "exitCode": 0
+  },
+  "wide": {
+    "header": 48,
+    "footerY": 630,
+    "footerHeight": 90,
+    "paperY": 637,
+    "paperHeight": 72,
+    "paperWidth": "70.4%",
+    "rowWidth": "66.4%",
+    "portraitFrame": [
+      64,
+      52
+    ],
+    "portraitArt": [
+      60,
+      48
+    ]
+  },
+  "narrow": {
+    "footerHeight": 64,
+    "rows": 2
+  },
+  "assets": {
+    "footer-right.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    "wave-scroll.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    "score-parchment.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    "footer-left.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    "footer-parchment.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        252,
+        254
+      ]
+    },
+    "footer-center.png": {
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    }
+  },
+  "provenance": "ui-asset-provenance.json",
+  "prompt": "prompts/ui-assets.txt",
+  "generator": "built-in image_gen"
+}

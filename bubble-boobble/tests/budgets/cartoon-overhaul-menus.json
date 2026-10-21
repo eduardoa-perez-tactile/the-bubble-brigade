@@ -1,5 +1,5 @@
 {
-  "replay": "tests/replays/refinement_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+  "replay": "tests/replays/reconstruction_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
   "structural": {
     "drawCallsMax": 14
   }

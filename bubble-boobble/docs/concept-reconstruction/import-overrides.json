@@ -1,0 +1,10 @@
+{
+  "reason": "Measured texture allocation exceeded low-end guidance. Validator rejects per-device max_size on atlas sprites; those trial fields were removed. All NEW UI/platform sprites now share one default namedatlas with original fullresolution source pixels. Background remainsstandalone with supported phone-low768/phone1024 max_size. Existingassets untouched.",
+  "sharedDefaultAtlas": "cartoon-reconstruction",
+  "platePhoneLowMaxSize": 768,
+  "platePhoneMaxSize": 1024,
+  "supersededTrials": [
+    "memory-classes-after-size-limits.json",
+    "memory-classes-unsupported-overrides-trial.json"
+  ]
+}

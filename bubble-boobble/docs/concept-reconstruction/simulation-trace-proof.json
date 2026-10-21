@@ -1,0 +1,50 @@
+{
+  "protectedOriginalTests": {
+    "expected": 280,
+    "identical": 280,
+    "allowances": 0,
+    "divergences": []
+  },
+  "immediatePreReconstructionBaseline": {
+    "expected": 305,
+    "identical": 303,
+    "divergences": [
+      {
+        "file": "cartoon_controls_recorded_opt_in_reaches_party_requests_without_changing_original_start_actions.hashtrace",
+        "step": 5,
+        "components": [
+          "ArcadeVisual",
+          "LocalTransform",
+          "WorldTransform",
+          "doc:arcade.session"
+        ],
+        "expected": "8c96a22b2243c2ec",
+        "actual": "555adb1c1b590905",
+        "allowances": 0,
+        "classification": "intentional approved opt-in geometry change",
+        "reason": "At step 5 the recorded explicit cartoon party request constructs the approved 72\u00d723 arena with floor row 22 and reference-matched shelves. Original start actions remain unchanged and all protected original traces match."
+      },
+      {
+        "file": "concept_controls_recorded_solo_default_nine_bots_ten_humans_pause_and_restart_preserve_mode_and_geometry.hashtrace",
+        "step": 8,
+        "components": [
+          "ArcadeVisual",
+          "LocalTransform",
+          "WorldTransform",
+          "doc:arcade.session"
+        ],
+        "expected": "929b137264ffee17",
+        "actual": "66a51ee0c6c091ea",
+        "allowances": 0,
+        "classification": "intentional approved opt-in geometry change",
+        "reason": "At step 8 the recorded cartoon classic start constructs the approved 72\u00d723 arena; this test subsequently checks solo, default nine bots, ten humans, pause and restart against that opted-in geometry."
+      }
+    ]
+  },
+  "newTests": [
+    "reconstruction_actual_crown_jump_zooms_uniformly_around_the_floor_and_returns_with_identical_repeated_trajectories.hashtrace",
+    "reconstruction_framing_remains_stable_across_cosmetic_invincibility_blink_at_the_actual_crown_apex.hashtrace",
+    "reconstruction_projection_is_continuous_strictly_monotone_and_invertible_through_all_tiers_and_jump_range.hashtrace"
+  ],
+  "note": "No hash allowances were used. Both approved opt-in geometry divergences are classified individually; all 280 original tests remain strictly identical. Raw complete diff reports retain system/component diagnostics. Added cheat registration shifts indexed firstSystem labels, so no inactive cheat execution is inferred from those labels. Pure projection tests also exercise real stepGame calls inside their assertions."
+}

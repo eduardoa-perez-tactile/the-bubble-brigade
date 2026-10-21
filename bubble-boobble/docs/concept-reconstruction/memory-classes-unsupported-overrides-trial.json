@@ -1,0 +1,209 @@
+{
+  "rows": [
+    {
+      "memoryClass": "phone",
+      "device": {
+        "tier": "mobile",
+        "memoryClass": "phone",
+        "qualityLevel": 0,
+        "level": "medium",
+        "platform": "",
+        "levelRule": null,
+        "thermal": "nominal",
+        "language": "en"
+      },
+      "residency": {
+        "class": "phone",
+        "budget": {
+          "total": 335544320,
+          "textures": 234881024,
+          "audio": 50331648
+        },
+        "resident": {
+          "textures": 25712764,
+          "audio": 0,
+          "total": 25712764,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 238338048,
+          "jsHeapUsed": 28041432,
+          "jsHeapTotal": 36618240,
+          "entities": 1418,
+          "ecs": 1019296,
+          "textures": 25712764,
+          "meshes3d": 0,
+          "gpuTextures": 139983716,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 103264
+        }
+      },
+      "render": {
+        "drawCalls": 12,
+        "instances": 599,
+        "triangles": 1199,
+        "pipelines": 8,
+        "pipelinesCreatedThisFrame": 0,
+        "passes": [
+          "2d.world",
+          "2d.ui",
+          "post.present"
+        ],
+        "culledPasses": [],
+        "atlasPages": 6,
+        "texturesUploaded": 0,
+        "validationErrors": [],
+        "sceneSize": [
+          768,
+          720
+        ],
+        "uiModelsRendered": 0,
+        "culled2d": 0,
+        "transparent2d": 0,
+        "culledSkeletons": 0,
+        "worldOccluded": false,
+        "particleInstances": 0,
+        "culling": {
+          "distance": 0,
+          "small": 0,
+          "occluded": 0,
+          "occluderTriangles": 0,
+          "animations": 0,
+          "effects": 0,
+          "fading": 0
+        },
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "rendered": true,
+        "framesRendered": 22,
+        "cullingSettings": {
+          "distance": true,
+          "layerDistances": {},
+          "minScreenSize": 0,
+          "animation": true,
+          "particles": true,
+          "occlusion": "auto",
+          "occluderTriangles": 4096,
+          "lodCrossFade": 0,
+          "perspective2d": true
+        }
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      }
+    },
+    {
+      "memoryClass": "phone-low",
+      "device": {
+        "tier": "mobile",
+        "memoryClass": "phone-low",
+        "qualityLevel": 0,
+        "level": "low",
+        "platform": "",
+        "levelRule": null,
+        "thermal": "nominal",
+        "language": "en"
+      },
+      "residency": {
+        "class": "phone-low",
+        "budget": {
+          "total": 201326592,
+          "textures": 134217728,
+          "audio": 33554432
+        },
+        "resident": {
+          "textures": 21736436,
+          "audio": 0,
+          "total": 21736436,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 230506496,
+          "jsHeapUsed": 30198360,
+          "jsHeapTotal": 36880384,
+          "entities": 1418,
+          "ecs": 1019296,
+          "textures": 21736436,
+          "meshes3d": 0,
+          "gpuTextures": 122027740,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 103264
+        }
+      },
+      "render": {
+        "drawCalls": 12,
+        "instances": 599,
+        "triangles": 1199,
+        "pipelines": 8,
+        "pipelinesCreatedThisFrame": 0,
+        "passes": [
+          "2d.world",
+          "2d.ui",
+          "post.present"
+        ],
+        "culledPasses": [],
+        "atlasPages": 5,
+        "texturesUploaded": 0,
+        "validationErrors": [],
+        "sceneSize": [
+          768,
+          720
+        ],
+        "uiModelsRendered": 0,
+        "culled2d": 0,
+        "transparent2d": 0,
+        "culledSkeletons": 0,
+        "worldOccluded": false,
+        "particleInstances": 0,
+        "culling": {
+          "distance": 0,
+          "small": 0,
+          "occluded": 0,
+          "occluderTriangles": 0,
+          "animations": 0,
+          "effects": 0,
+          "fading": 0
+        },
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "rendered": true,
+        "framesRendered": 20,
+        "cullingSettings": {
+          "distance": true,
+          "layerDistances": {},
+          "minScreenSize": 0,
+          "animation": true,
+          "particles": true,
+          "occlusion": "auto",
+          "occluderTriangles": 4096,
+          "lodCrossFade": 0,
+          "perspective2d": true
+        }
+      },
+      "assets": {
+        "loaded": 5,
+        "pending": 0
+      }
+    }
+  ],
+  "context": "Fresh mobile-tier V8 headless hosts, runtime assets.setDeviceClass before first stepped/rendered frame; same canonical content at768x720. GPU texture allocation is distinct from cooked/CPU residency bytes. Host measurements do not certify physical phone RAM, frame rate or thermals."
+}

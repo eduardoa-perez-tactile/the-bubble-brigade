@@ -1,0 +1,246 @@
+{
+  "scope": "Canonical reference cap silhouette versus nominal supporting tile span. Outer two collision-wall columns remain solid; painted outer tips are decorative and are not additional walkable width. Inner cap ends intentionally use measured fractional art overhang rather than changing the 24-pixel tile collision grid.",
+  "internalMaxAbsPixels": 11.330000000000041,
+  "spans": [
+    {
+      "tier": "crown",
+      "span": 0,
+      "visual": [
+        22.05,
+        902.12
+      ],
+      "tileEdgePhysical": [
+        21.333333333333332,
+        896.0
+      ],
+      "visualMinusTile": [
+        0.7166666666666686,
+        6.1200000000000045
+      ]
+    },
+    {
+      "tier": "crown",
+      "span": 1,
+      "visual": [
+        979.29,
+        1509.36
+      ],
+      "tileEdgePhysical": [
+        981.3333333333334,
+        1514.6666666666667
+      ],
+      "visualMinusTile": [
+        -2.0433333333334076,
+        -5.3066666666668425
+      ]
+    },
+    {
+      "tier": "upper",
+      "span": 0,
+      "visual": [
+        22.05,
+        318.78
+      ],
+      "tileEdgePhysical": [
+        21.333333333333332,
+        320.0
+      ],
+      "visualMinusTile": [
+        0.7166666666666686,
+        -1.2200000000000273
+      ]
+    },
+    {
+      "tier": "upper",
+      "span": 1,
+      "visual": [
+        383.08,
+        642.14
+      ],
+      "tileEdgePhysical": [
+        384.0,
+        640.0
+      ],
+      "visualMinusTile": [
+        -0.9200000000000159,
+        2.1399999999999864
+      ]
+    },
+    {
+      "tier": "upper",
+      "span": 2,
+      "visual": [
+        735.85,
+        1269.59
+      ],
+      "tileEdgePhysical": [
+        725.3333333333334,
+        1280.0
+      ],
+      "visualMinusTile": [
+        10.516666666666652,
+        -10.410000000000082
+      ]
+    },
+    {
+      "tier": "upper",
+      "span": 3,
+      "visual": [
+        1332.06,
+        1509.36
+      ],
+      "tileEdgePhysical": [
+        1322.6666666666667,
+        1514.6666666666667
+      ],
+      "visualMinusTile": [
+        9.393333333333203,
+        -5.3066666666668425
+      ]
+    },
+    {
+      "tier": "middle",
+      "span": 0,
+      "visual": [
+        22.05,
+        249.88
+      ],
+      "tileEdgePhysical": [
+        21.333333333333332,
+        256.0
+      ],
+      "visualMinusTile": [
+        0.7166666666666686,
+        -6.1200000000000045
+      ]
+    },
+    {
+      "tier": "middle",
+      "span": 1,
+      "visual": [
+        277.44,
+        500.67
+      ],
+      "tileEdgePhysical": [
+        277.3333333333333,
+        490.6666666666667
+      ],
+      "visualMinusTile": [
+        0.10666666666668334,
+        10.00333333333333
+      ]
+    },
+    {
+      "tier": "middle",
+      "span": 2,
+      "visual": [
+        558.55,
+        868.13
+      ],
+      "tileEdgePhysical": [
+        554.6666666666666,
+        874.6666666666666
+      ],
+      "visualMinusTile": [
+        3.8833333333333258,
+        -6.536666666666633
+      ]
+    },
+    {
+      "tier": "middle",
+      "span": 3,
+      "visual": [
+        926.93,
+        1197.01
+      ],
+      "tileEdgePhysical": [
+        917.3333333333334,
+        1194.6666666666667
+      ],
+      "visualMinusTile": [
+        9.596666666666579,
+        2.3433333333332484
+      ]
+    },
+    {
+      "tier": "middle",
+      "span": 4,
+      "visual": [
+        1283.37,
+        1509.36
+      ],
+      "tileEdgePhysical": [
+        1280.0,
+        1514.6666666666667
+      ],
+      "visualMinusTile": [
+        3.369999999999891,
+        -5.3066666666668425
+      ]
+    },
+    {
+      "tier": "lower",
+      "span": 0,
+      "visual": [
+        23.89,
+        279.27
+      ],
+      "tileEdgePhysical": [
+        21.333333333333332,
+        277.3333333333333
+      ],
+      "visualMinusTile": [
+        2.5566666666666684,
+        1.9366666666666674
+      ]
+    },
+    {
+      "tier": "lower",
+      "span": 1,
+      "visual": [
+        369.3,
+        692.67
+      ],
+      "tileEdgePhysical": [
+        362.6666666666667,
+        704.0
+      ],
+      "visualMinusTile": [
+        6.633333333333326,
+        -11.330000000000041
+      ]
+    },
+    {
+      "tier": "lower",
+      "span": 2,
+      "visual": [
+        900.29,
+        1509.36
+      ],
+      "tileEdgePhysical": [
+        896.0,
+        1514.6666666666667
+      ],
+      "visualMinusTile": [
+        4.289999999999964,
+        -5.3066666666668425
+      ]
+    },
+    {
+      "tier": "floor",
+      "span": 0,
+      "visual": [
+        22.05,
+        1510.28
+      ],
+      "tileEdgePhysical": [
+        0.0,
+        1536.0
+      ],
+      "visualMinusTile": [
+        22.05,
+        -25.720000000000027
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"tier":"mobile","team":6,"humans":1,"peakDraws":13,"stepP95":2.08675,"presentationP95":10.14149900000001,"memoryMB":299.515625}
+{"tier":"mobile","team":10,"humans":1,"peakDraws":13,"stepP95":2.191167,"presentationP95":10.799500000000023,"memoryMB":338.34375}
+{"tier":"mobile","team":10,"humans":10,"peakDraws":13,"stepP95":2.2277500000000003,"presentationP95":10.374250999999987,"memoryMB":319.296875}
+{"tier":"desktop","team":6,"humans":1,"peakDraws":13,"stepP95":1.921458,"presentationP95":9.739790999999997,"memoryMB":301.65625}
+{"tier":"desktop","team":10,"humans":1,"peakDraws":13,"stepP95":2.350375,"presentationP95":10.926792000000006,"memoryMB":340.8125}
+{"tier":"desktop","team":10,"humans":10,"peakDraws":13,"stepP95":2.282208,"presentationP95":10.024208000000016,"memoryMB":319.484375}
+{"tier":"compat","team":6,"humans":1,"peakDraws":13,"stepP95":1.704875,"presentationP95":10.163709000000011,"memoryMB":305.984375}
+{"tier":"compat","team":10,"humans":1,"peakDraws":13,"stepP95":2.130375,"presentationP95":9.423834,"memoryMB":341.09375}
+{"tier":"compat","team":10,"humans":10,"peakDraws":13,"stepP95":2.131792,"presentationP95":10.194000999999986,"memoryMB":321.53125}
+Saved docs/concept-reconstruction/performance.json
