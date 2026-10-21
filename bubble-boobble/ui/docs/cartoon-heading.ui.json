@@ -1,0 +1,134 @@
+{
+  "$schemaVersion": 1,
+  "guid": "92c4ab7e-cd44-4f85-af74-6b124b5da250",
+  "name": "cartoon-heading",
+  "title": "Cartoon Heading",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon heading",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 768,
+        "h": 132
+      },
+      "children": [
+        "dhead_dash",
+        "dhead_brand",
+        "dhead_title",
+        "dhead_subtitle"
+      ]
+    },
+    "dhead_dash": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          24,
+          30
+        ],
+        "w": 36,
+        "h": 4,
+        "bg": "#c68b39"
+      }
+    },
+    "dhead_brand": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE BUBBLE BRIGADE",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          76,
+          26
+        ],
+        "fontSize": 11,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "brand"
+    },
+    "dhead_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          65
+        ],
+        "fontSize": 32,
+        "color": "#30271e",
+        "outline": 0,
+        "w": 680,
+        "h": 48,
+        "fitMin": 24,
+        "textAlign": "center"
+      },
+      "property": "title"
+    },
+    "dhead_subtitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          110
+        ],
+        "fontSize": 13,
+        "color": "#30271e",
+        "outline": 0,
+        "w": 680,
+        "h": 20,
+        "fitMin": 10,
+        "textAlign": "center"
+      },
+      "property": "subtitle"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "title": {
+      "type": "text",
+      "default": ""
+    },
+    "subtitle": {
+      "type": "text",
+      "default": ""
+    },
+    "brand": {
+      "type": "text",
+      "default": "THE BUBBLE BRIGADE"
+    }
+  }
+}

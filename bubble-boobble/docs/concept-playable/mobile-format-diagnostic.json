@@ -1,0 +1,16 @@
+{
+  "scope": "Additional mobile-tier diagnostic from an initially omitted desktop flag; not the intended desktop golden gate. Temporary mobile golden files were removed.",
+  "test": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+  "observedCenterRGB": [
+    34,
+    64,
+    96
+  ],
+  "expectedDesktopRGB": [
+    32,
+    64,
+    96
+  ],
+  "interpretation": "A two-level red-channel difference is consistent with mobile texture-format quantization; this causal attribution is an inference, not a pre-change mobile comparison.",
+  "action": "Desktop exact-color expectation retained unchanged. Desktop native alpha check passes. Phone-low residency is enforced separately in the intended desktop T1 routes."
+}

@@ -1,0 +1,400 @@
+{
+  "steps": 120,
+  "before": {
+    "drawCalls": 8,
+    "instances": 97,
+    "triangles": 195,
+    "pipelines": 8,
+    "pipelinesCreatedThisFrame": 0,
+    "passes": [
+      "2d.world",
+      "2d.ui",
+      "post.present"
+    ],
+    "culledPasses": [],
+    "atlasPages": 5,
+    "texturesUploaded": 0,
+    "validationErrors": [],
+    "sceneSize": [
+      1536,
+      864
+    ],
+    "uiModelsRendered": 0,
+    "culled2d": 0,
+    "transparent2d": 0,
+    "culledSkeletons": 0,
+    "worldOccluded": false,
+    "particleInstances": 0,
+    "culling": {
+      "distance": 0,
+      "small": 0,
+      "occluded": 0,
+      "occluderTriangles": 0,
+      "animations": 0,
+      "effects": 0,
+      "fading": 0
+    },
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    },
+    "rendered": true,
+    "framesRendered": 58,
+    "cullingSettings": {
+      "distance": true,
+      "layerDistances": {},
+      "minScreenSize": 0,
+      "animation": true,
+      "particles": true,
+      "occlusion": "auto",
+      "occluderTriangles": 4096,
+      "lodCrossFade": 0,
+      "perspective2d": true
+    }
+  },
+  "after": {
+    "drawCalls": 8,
+    "instances": 97,
+    "triangles": 195,
+    "pipelines": 8,
+    "pipelinesCreatedThisFrame": 0,
+    "passes": [
+      "2d.world",
+      "2d.ui",
+      "post.present"
+    ],
+    "culledPasses": [],
+    "atlasPages": 5,
+    "texturesUploaded": 0,
+    "validationErrors": [],
+    "sceneSize": [
+      1536,
+      864
+    ],
+    "uiModelsRendered": 0,
+    "culled2d": 0,
+    "transparent2d": 0,
+    "culledSkeletons": 0,
+    "worldOccluded": false,
+    "particleInstances": 0,
+    "culling": {
+      "distance": 0,
+      "small": 0,
+      "occluded": 0,
+      "occluderTriangles": 0,
+      "animations": 0,
+      "effects": 0,
+      "fading": 0
+    },
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    },
+    "rendered": true,
+    "framesRendered": 58,
+    "cullingSettings": {
+      "distance": true,
+      "layerDistances": {},
+      "minScreenSize": 0,
+      "animation": true,
+      "particles": true,
+      "occlusion": "auto",
+      "occluderTriangles": 4096,
+      "lodCrossFade": 0,
+      "perspective2d": true
+    }
+  },
+  "perf": {
+    "systemTimeMs": {
+      "ArcadeAudioSystem": {
+        "p50": 1.870336,
+        "p95": 1.870336,
+        "p99": 1.870336,
+        "max": 1.870336,
+        "mean": 1.870336,
+        "native": false
+      },
+      "ArcadeEditorInput": {
+        "p50": 0.32695599999999947,
+        "p95": 0.32695599999999947,
+        "p99": 0.32695599999999947,
+        "max": 0.32695599999999947,
+        "mean": 0.32695599999999947,
+        "native": false
+      },
+      "ArcadePool": {
+        "p50": 3.9811640000000006,
+        "p95": 3.9811640000000006,
+        "p99": 3.9811640000000006,
+        "max": 3.9811640000000006,
+        "mean": 3.9811640000000006,
+        "native": false
+      },
+      "ArcadeStep": {
+        "p50": 0.5850899999999997,
+        "p95": 0.5850899999999997,
+        "p99": 0.5850899999999997,
+        "max": 0.5850899999999997,
+        "mean": 0.5850899999999997,
+        "native": false
+      },
+      "DesktopSystem": {
+        "p50": 9.794175999999997,
+        "p95": 9.794175999999997,
+        "p99": 9.794175999999997,
+        "max": 9.794175999999997,
+        "mean": 9.794175999999997,
+        "native": false
+      },
+      "PortBoot": {
+        "p50": 0.18370699999999965,
+        "p95": 0.18370699999999965,
+        "p99": 0.18370699999999965,
+        "max": 0.18370699999999965,
+        "mean": 0.18370699999999965,
+        "native": false
+      },
+      "RiseAndPop": {
+        "p50": 0.2138349999999997,
+        "p95": 0.2138349999999997,
+        "p99": 0.2138349999999997,
+        "max": 0.2138349999999997,
+        "mean": 0.2138349999999997,
+        "native": false
+      },
+      "gameengine.Animator": {
+        "p50": 0.019709000000000008,
+        "p95": 0.019709000000000008,
+        "p99": 0.019709000000000008,
+        "max": 0.019709000000000008,
+        "mean": 0.019709000000000008,
+        "native": false
+      },
+      "gameengine.AnimatorInit": {
+        "p50": 0.02704200000000001,
+        "p95": 0.02704200000000001,
+        "p99": 0.02704200000000001,
+        "max": 0.02704200000000001,
+        "mean": 0.02704200000000001,
+        "native": false
+      },
+      "gameengine.AnimatorSkeleton2D": {
+        "p50": 0.01704300000000001,
+        "p95": 0.01704300000000001,
+        "p99": 0.01704300000000001,
+        "max": 0.01704300000000001,
+        "mean": 0.01704300000000001,
+        "native": false
+      },
+      "gameengine.Clip2D": {
+        "p50": 0.01612000000000001,
+        "p95": 0.01612000000000001,
+        "p99": 0.01612000000000001,
+        "max": 0.01612000000000001,
+        "mean": 0.01612000000000001,
+        "native": false
+      },
+      "gameengine.Input": {
+        "p50": 1.6916239999999996,
+        "p95": 1.6916239999999996,
+        "p99": 1.6916239999999996,
+        "max": 1.6916239999999996,
+        "mean": 1.6916239999999996,
+        "native": false
+      },
+      "gameengine.ParticleClock": {
+        "p50": 0.01554400000000001,
+        "p95": 0.01554400000000001,
+        "p99": 0.01554400000000001,
+        "max": 0.01554400000000001,
+        "mean": 0.01554400000000001,
+        "native": false
+      },
+      "gameengine.Physics2D": {
+        "p50": 0.054666000000000034,
+        "p95": 0.054666000000000034,
+        "p99": 0.054666000000000034,
+        "max": 0.054666000000000034,
+        "mean": 0.054666000000000034,
+        "native": false
+      },
+      "gameengine.Physics3D": {
+        "p50": 0.061753000000000044,
+        "p95": 0.061753000000000044,
+        "p99": 0.061753000000000044,
+        "max": 0.061753000000000044,
+        "mean": 0.061753000000000044,
+        "native": false
+      },
+      "gameengine.Skeleton2D": {
+        "p50": 0.03861800000000001,
+        "p95": 0.03861800000000001,
+        "p99": 0.03861800000000001,
+        "max": 0.03861800000000001,
+        "mean": 0.03861800000000001,
+        "native": false
+      },
+      "gameengine.Skeleton2DFollow": {
+        "p50": 0.013791000000000001,
+        "p95": 0.013791000000000001,
+        "p99": 0.013791000000000001,
+        "max": 0.013791000000000001,
+        "mean": 0.013791000000000001,
+        "native": false
+      },
+      "gameengine.Skeleton2DInit": {
+        "p50": 0.021205000000000005,
+        "p95": 0.021205000000000005,
+        "p99": 0.021205000000000005,
+        "max": 0.021205000000000005,
+        "mean": 0.021205000000000005,
+        "native": false
+      },
+      "gameengine.Timeline": {
+        "p50": 0.024003000000000014,
+        "p95": 0.024003000000000014,
+        "p99": 0.024003000000000014,
+        "max": 0.024003000000000014,
+        "mean": 0.024003000000000014,
+        "native": false
+      },
+      "gameengine.Tween": {
+        "p50": 0.01600100000000001,
+        "p95": 0.01600100000000001,
+        "p99": 0.01600100000000001,
+        "max": 0.01600100000000001,
+        "mean": 0.01600100000000001,
+        "native": false
+      },
+      "gameengine.VisualTweenCleanup": {
+        "p50": 0.011336000000000006,
+        "p95": 0.011336000000000006,
+        "p99": 0.011336000000000006,
+        "max": 0.011336000000000006,
+        "mean": 0.011336000000000006,
+        "native": false
+      },
+      "gameengine.WallClock": {
+        "p50": 0.003250999999999996,
+        "p95": 0.003250999999999996,
+        "p99": 0.003250999999999996,
+        "max": 0.003250999999999996,
+        "mean": 0.003250999999999996,
+        "native": false
+      },
+      "gameengine.WorldLoading": {
+        "p50": 0.011208000000000004,
+        "p95": 0.011208000000000004,
+        "p99": 0.011208000000000004,
+        "max": 0.011208000000000004,
+        "mean": 0.011208000000000004,
+        "native": false
+      }
+    },
+    "frames": 3,
+    "frameTimeMs": {
+      "p50": 1.052833,
+      "p95": 59.793958,
+      "p99": 59.793958,
+      "max": 59.793958,
+      "mean": 20.386999666666668
+    },
+    "scriptTimeMs": {
+      "p50": 0.9430839999999999,
+      "p95": 46.506628,
+      "p99": 46.506628,
+      "max": 46.506628,
+      "mean": 15.896389999999998
+    },
+    "jsHeapMB": null,
+    "gpuTimeMs": null,
+    "memoryMB": 211.515625,
+    "loadMs": null,
+    "hitchFrames": 1,
+    "steps": 120,
+    "stepTimeMs": {
+      "p50": 0.151084,
+      "p95": 0.290709,
+      "p99": 0.4185,
+      "max": 0.776209,
+      "mean": 0.17749409166666677
+    },
+    "hitchSteps": 0,
+    "presentationTimeMs": {
+      "p50": 0.314167,
+      "p95": 1.0242499999999999,
+      "p99": 1.0242499999999999,
+      "max": 1.0242499999999999,
+      "mean": 0.509916666666669
+    },
+    "paused": true,
+    "pipelinesCreatedDuringCapture": 0,
+    "drawCallsMax": 0,
+    "gcPausesOver4ms": 0,
+    "gcMaxMs": 0.31499999999998196,
+    "gcIdleMs": null,
+    "gpuTiming": true,
+    "cpuAdapter": false,
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    }
+  },
+  "titleStats": {
+    "drawCalls": 8,
+    "instances": 97,
+    "triangles": 195,
+    "pipelines": 8,
+    "pipelinesCreatedThisFrame": 0,
+    "passes": [
+      "2d.world",
+      "2d.ui",
+      "post.present"
+    ],
+    "culledPasses": [],
+    "atlasPages": 5,
+    "texturesUploaded": 0,
+    "validationErrors": [],
+    "sceneSize": [
+      1536,
+      864
+    ],
+    "uiModelsRendered": 0,
+    "culled2d": 0,
+    "transparent2d": 0,
+    "culledSkeletons": 0,
+    "worldOccluded": false,
+    "particleInstances": 0,
+    "culling": {
+      "distance": 0,
+      "small": 0,
+      "occluded": 0,
+      "occluderTriangles": 0,
+      "animations": 0,
+      "effects": 0,
+      "fading": 0
+    },
+    "idleFrames": {
+      "enabled": false,
+      "presented": 0,
+      "skipped": 0
+    },
+    "rendered": true,
+    "framesRendered": 59,
+    "cullingSettings": {
+      "distance": true,
+      "layerDistances": {},
+      "minScreenSize": 0,
+      "animation": true,
+      "particles": true,
+      "occlusion": "auto",
+      "occluderTriangles": 4096,
+      "lodCrossFade": 0,
+      "perspective2d": true
+    }
+  },
+  "limits": "Host engine title window; forced screenshot follows the idle observation and is recorded separately. Not a physical phone power measurement."
+}

@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/reconstruction_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
+}

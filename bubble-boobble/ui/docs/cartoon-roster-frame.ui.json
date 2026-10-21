@@ -1,0 +1,242 @@
+{
+  "$schemaVersion": 1,
+  "guid": "b6d95ee3-3d86-4ab8-b951-9c1b5084af8d",
+  "name": "cartoon-roster-frame",
+  "title": "Cartoon roster frame",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon roster frame",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 148,
+        "h": 32
+      },
+      "children": [
+        "crf_face_border",
+        "crf_diamond"
+      ]
+    },
+    "crf_face_border": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "crf_face_paper"
+      ],
+      "style": {
+        "pad": 2,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          13,
+          0
+        ],
+        "w": 32,
+        "h": 32,
+        "bg": "#30271e",
+        "radius": 3
+      }
+    },
+    "crf_face_paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": "100%",
+        "bg": "#f1e3bf"
+      }
+    },
+    "crf_diamond": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "crf_diamond_color"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          3,
+          6
+        ],
+        "w": 14,
+        "h": 14,
+        "bg": "#30271e",
+        "rotate": 45,
+        "attach": true,
+        "pivot": "anchor",
+        "hide": true
+      }
+    },
+    "crf_diamond_color": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 10,
+        "h": 10,
+        "bg": "#97b96b"
+      }
+    }
+  },
+  "properties": {
+    "active": {
+      "type": "yesno",
+      "default": true
+    },
+    "down": {
+      "type": "yesno",
+      "default": false
+    },
+    "color": {
+      "type": "enum",
+      "values": [
+        "green",
+        "blue",
+        "red",
+        "yellow",
+        "purple",
+        "orange",
+        "cyan",
+        "pink",
+        "ivory",
+        "slate"
+      ],
+      "default": "green",
+      "poses": {
+        "green": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#97b96b"
+            }
+          }
+        },
+        "blue": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#79abc6"
+            }
+          }
+        },
+        "red": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#cf7c65"
+            }
+          }
+        },
+        "yellow": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#e0ba58"
+            }
+          }
+        },
+        "purple": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#ab8dbb"
+            }
+          }
+        },
+        "orange": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#d99957"
+            }
+          }
+        },
+        "cyan": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#79bdb3"
+            }
+          }
+        },
+        "pink": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#d59caf"
+            }
+          }
+        },
+        "ivory": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#e3d7b0"
+            }
+          }
+        },
+        "slate": {
+          "set": {
+            "crf_diamond_color": {
+              "bg": "#a5acb5"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "type": "enum",
+      "values": [
+        "ready",
+        "rescue",
+        "returning",
+        "out",
+        "open"
+      ],
+      "default": "ready",
+      "poses": {
+        "rescue": {
+          "set": {
+            "crf_face_border": {
+              "bg": "#a6472d"
+            },
+            "crf_face_paper": {
+              "bg": "#e9c7a1"
+            }
+          }
+        },
+        "out": {
+          "set": {
+            "root": {
+              "opacity": 0.45
+            }
+          }
+        },
+        "open": {
+          "set": {
+            "root": {
+              "opacity": 0.35
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "rows": [
+    {
+      "memoryClass": "phone",
+      "device": {
+        "tier": "mobile",
+        "memoryClass": "phone",
+        "qualityLevel": 0,
+        "level": "medium",
+        "platform": "",
+        "levelRule": null,
+        "thermal": "nominal",
+        "language": "en"
+      },
+      "residency": {
+        "class": "phone",
+        "budget": {
+          "total": 335544320,
+          "textures": 234881024,
+          "audio": 50331648
+        },
+        "resident": {
+          "textures": 25712764,
+          "audio": 0,
+          "total": 25712764,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 240812032,
+          "jsHeapUsed": 29527376,
+          "jsHeapTotal": 36880384,
+          "entities": 1028,
+          "ecs": 621984,
+          "textures": 25712764,
+          "meshes3d": 0,
+          "gpuTextures": 139983716,
+          "gpuRenderTargets": 15925252,
+          "gpuBuffers": 86880
+        }
+      },
+      "render": {
+        "drawCalls": 13,
+        "instances": 492,
+        "triangles": 985,
+        "pipelines": 8,
+        "pipelinesCreatedThisFrame": 0,
+        "passes": [
+          "2d.world",
+          "2d.ui",
+          "post.present"
+        ],
+        "culledPasses": [],
+        "atlasPages": 6,
+        "texturesUploaded": 0,
+        "validationErrors": [],
+        "sceneSize": [
+          1536,
+          864
+        ],
+        "uiModelsRendered": 0,
+        "culled2d": 0,
+        "transparent2d": 0,
+        "culledSkeletons": 0,
+        "worldOccluded": false,
+        "particleInstances": 0,
+        "culling": {
+          "distance": 0,
+          "small": 0,
+          "occluded": 0,
+          "occluderTriangles": 0,
+          "animations": 0,
+          "effects": 0,
+          "fading": 0
+        },
+        "idleFrames": {
+          "enabled": false,
+          "presented": 0,
+          "skipped": 0
+        },
+        "rendered": true,
+        "framesRendered": 19,
+        "cullingSettings": {
+          "distance": true,
+          "layerDistances": {},
+          "minScreenSize": 0,
+          "animation": true,
+          "particles": true,
+          "occlusion": "auto",
+          "occluderTriangles": 4096,
+          "lodCrossFade": 0,
+          "perspective2d": true
+        }
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "reward": {
+        "entities": [
+          {
+            "id": "102:1",
+            "components": {
+              "Text2D": {
+                "text": "800",
+                "font": "cartoon/fonts/BreeSerif-Regular",
+                "size": 11.111111,
+                "color": [
+                  1,
+                  0.8713671,
+                  0.40197778,
+                  1
+                ],
+                "align": "Left",
+                "outlineColor": [
+                  0.008568126,
+                  0.015208514,
+                  0.017641954,
+                  1
+                ],
+                "outlineWidth": 0,
+                "shadowOffset": [
+                  0,
+                  0
+                ],
+                "shadowColor": [
+                  0,
+                  0,
+                  0,
+                  0.5019608
+                ],
+                "sortingLayer": "Default",
+                "order": 10002,
+                "rich": false,
+                "maxWidth": 0,
+                "lineSpacing": 1,
+                "locKey": "",
+                "locArgs": "",
+                "gradient": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "glyphFx": "None",
+                "fxAmount": 0.1,
+                "fxSpeed": 1,
+                "visibleChars": -1,
+                "visible": true
+              },
+              "VisualOffset": {
+                "position": [
+                  -18.962963,
+                  222.2,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ]
+              }
+            }
+          }
+        ],
+        "truncated": false
+      }
+    }
+  ],
+  "context": "Fresh mobile-tier V8 headless hosts, runtime assets.setDeviceClass before first stepped/rendered frame; same canonical content at768x720. GPU texture allocation is distinct from cooked/CPU residency bytes. Host measurements do not certify physical phone RAM, frame rate or thermals."
+}

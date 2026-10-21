@@ -1,0 +1,88 @@
+{
+  "$schemaVersion": 1,
+  "guid": "48a13931-3f59-4110-99c1-2a5b76a5f95d",
+  "name": "cartoon-roster-portrait",
+  "title": "Cartoon roster portrait",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon roster portrait",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 148,
+        "h": 32
+      },
+      "children": [
+        "crp_clip"
+      ]
+    },
+    "crp_image": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 28,
+        "h": 28
+      },
+      "property": "portrait"
+    },
+    "crp_clip": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "crp_image"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          15,
+          2
+        ],
+        "w": 28,
+        "h": 28,
+        "clip": false
+      },
+      "point": "portrait-crop"
+    }
+  },
+  "properties": {
+    "portrait": {
+      "type": "image",
+      "default": "cartoon/frames/dragon/green/idle-0"
+    },
+    "active": {
+      "type": "yesno",
+      "default": true,
+      "poses": {
+        "no": {
+          "set": {
+            "root": {
+              "opacity": 0.45
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "actors": [
+    {
+      "frame": "cartoon/frames/dragon/green/shoot-0",
+      "quad": {
+        "x": 209.118114,
+        "y": 114.53759399999996,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 209.118114,
+        "y": 134.16425962499994,
+        "width": 98.13332812499999,
+        "height": 98.13332812499999
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/blue/jump-0",
+      "quad": {
+        "x": 844.83105,
+        "y": 79.64699400000005,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 864.457715625,
+        "y": 91.42299337500005,
+        "width": 85.37599546874999,
+        "height": 105.983994375
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/red/idle-0",
+      "quad": {
+        "x": 1297.9965756,
+        "y": 115.761348,
+        "width": 126.9160488,
+        "height": 124.30528799999999
+      },
+      "alpha": {
+        "x": 1323.7763980124998,
+        "y": 127.41496875,
+        "width": 75.356403975,
+        "height": 104.88258674999999
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/yellow/run-1",
+      "quad": {
+        "x": 374.476974,
+        "y": 247.672518,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 396.0663061875,
+        "y": 259.448517375,
+        "width": 82.431995625,
+        "height": 105.983994375
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/purple/run-1",
+      "quad": {
+        "x": 888.92673,
+        "y": 247.672518,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 910.5160621875,
+        "y": 259.448517375,
+        "width": 82.431995625,
+        "height": 105.983994375
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/orange/shoot-0",
+      "quad": {
+        "x": 183.395628,
+        "y": 378.052986,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 183.395628,
+        "y": 397.67965162499996,
+        "width": 98.13332812499999,
+        "height": 98.13332812499999
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/cyan/idle-0",
+      "quad": {
+        "x": 1247.4702155999998,
+        "y": 379.276776,
+        "width": 126.9160488,
+        "height": 124.30528799999999
+      },
+      "alpha": {
+        "x": 1273.2500380124998,
+        "y": 390.93039675,
+        "width": 75.356403975,
+        "height": 104.88258674999999
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/pink/run-1",
+      "quad": {
+        "x": 346.917162,
+        "y": 503.84255399999995,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 368.50649418750004,
+        "y": 515.6185533749999,
+        "width": 82.431995625,
+        "height": 105.983994375
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/ivory/shoot-0",
+      "quad": {
+        "x": 1002.840594,
+        "y": 503.84255399999995,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 1002.840594,
+        "y": 523.4692196249999,
+        "width": 98.13332812499999,
+        "height": 98.13332812499999
+      }
+    },
+    {
+      "frame": "cartoon/frames/dragon/slate/down-0",
+      "quad": {
+        "x": 694.17075,
+        "y": 615.859566,
+        "width": 125.61066,
+        "height": 125.61066
+      },
+      "alpha": {
+        "x": 702.02141625,
+        "y": 677.68356271875,
+        "width": 109.90932749999999,
+        "height": 55.93599703125
+      }
+    }
+  ],
+  "referenceGreenBody": {
+    "sourceBounds": [
+      239,
+      166,
+      114,
+      92
+    ],
+    "normalizedHeight": 84.47183846971308,
+    "normalizedWidth": 104.72727272727273,
+    "uncertainty": "Manual visiblebody extent excluding numbereddiamond, approximate\u00b14sourcepixels; illustrated silhouette differsfromretainedPNG."
+  },
+  "note": "Native actual pixels from queriedsprite size and unchangedPNG alpha bounds. Widerpresence is a deliberateuniformscale tradeoff: width,height,pose and footsole overlap cannot all match a differentlydrawn illustration.",
+  "memory": {
+    "categories": {
+      "resident": 249102336,
+      "jsHeapUsed": 27055360,
+      "jsHeapTotal": 36880384,
+      "entities": 1027,
+      "ecs": 621984,
+      "textures": 30434492,
+      "meshes3d": 0,
+      "gpuTextures": 155189252,
+      "gpuRenderTargets": 79626244,
+      "gpuBuffers": 86880
+    }
+  },
+  "residency": {
+    "class": "desktop",
+    "budget": {
+      "total": 2147483648,
+      "textures": 1610612736,
+      "audio": 268435456
+    },
+    "resident": {
+      "textures": 30434492,
+      "audio": 0,
+      "total": 30434492,
+      "data": 0
+    },
+    "overBudget": null,
+    "overCount": 0,
+    "evicted": 0,
+    "groups": {}
+  }
+}

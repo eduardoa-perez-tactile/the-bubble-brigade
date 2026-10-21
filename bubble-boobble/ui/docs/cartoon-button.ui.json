@@ -1,0 +1,77 @@
+{
+  "$schemaVersion": 1,
+  "guid": "7cbbb22d-6829-4350-aa65-ea48499c9cb1",
+  "name": "cartoon-button",
+  "title": "Cartoon button",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon button",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 332,
+        "h": 44,
+        "justify": "center"
+      },
+      "children": [
+        "cb_label"
+      ]
+    },
+    "cb_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "fontSize": 24,
+        "weight": 800,
+        "color": "#30271e",
+        "w": 300,
+        "h": 26,
+        "textAlign": "center",
+        "fitMin": 12
+      }
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "START GAME"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#30271e"
+            },
+            "cb_label": {
+              "color": "#f1e3bf"
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.96
+        }
+      }
+    }
+  }
+}

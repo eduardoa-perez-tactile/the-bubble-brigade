@@ -1,0 +1,105 @@
+{
+  "sources": [
+    {
+      "path": "docs/cartoon-overhaul/sources/boss.png",
+      "sha256": "fcca483881472bdb2b54c6d852c9bb8203c6e408d7ea9f8c51dd41a66dc95a89",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/courtyard.png",
+      "sha256": "8f71861c81d7801f5185d576231e6a6d626e2754b057cb85fab6b581a579ad3f",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/dragon.png",
+      "sha256": "24e41ca634c54fe53ad783e62f78821b6c3123f318fa31303470319003bf5fd0",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/effects.png",
+      "sha256": "af25a611b32289ebbb9426097f48d4fc736e260b291425278dbaa0d026046c3a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/enemies.png",
+      "sha256": "c7cff7ab68abd4b370c3af40a228715ff69080c29282c297dbf104588b8c92f7",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/food.png",
+      "sha256": "e10290148d83b15ea7efbbb1c4d82dfecba0949f744157357119eb56e19d5b2e",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/masonry.png",
+      "sha256": "4da4f234ae0cdf79f0a11d931105da26eac674894517f458546c2932a0b29898",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/powerups.png",
+      "sha256": "328fdad90d77e1fc0f7c7e2de903519d10704a274dfb3ef451d5518e4e586017",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/shoot.png",
+      "sha256": "04bb6d42dfbcf48690dfd19002f0e2573c0b4e7aea07f4fd0df2e50e5f1e2b1d",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    },
+    {
+      "path": "docs/cartoon-overhaul/sources/title-logo.png",
+      "sha256": "26b457ad539eb589d52c973e248a368a514ad2df6fbcc7c5832465bb4144adf0",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "origin": "Built-in image generation, original project artwork; reviewed normalization in tools/cartoon/build-assets.py"
+    }
+  ],
+  "thirdPartySpritePixelsImported": false
+}

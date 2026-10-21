@@ -1,0 +1,10 @@
+{
+  "head": "71e9d527c783940c2365a2344847f53871c91d38",
+  "ok": true,
+  "tests": 301,
+  "passed": 301,
+  "traceDirectory": ".gameengine/concept-refinement-baseline/v8",
+  "checkpointEvery": 1,
+  "preservedFiles": 382,
+  "originalGoldenFiles": 313
+}

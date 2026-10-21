@@ -1,0 +1,127 @@
+{
+  "geometryVerified": false,
+  "ok": null,
+  "actual": "docs/concept-refinement/wide-combat.png",
+  "actualSha256": "0ad00a3d9e72aafc34dc2adf195f9063d7686ac6b76114b082169d72fe6a5b01",
+  "referenceSha256": "60978cd71388d1e3b9a0b613f21ba3e3766f5193a5c4400b3026194dc690ffcd",
+  "actualCaptureSize": [
+    1536,
+    864
+  ],
+  "checks": [],
+  "imageDifferenceMetrics": [
+    {
+      "region": "header",
+      "bounds": [
+        0,
+        0,
+        1536,
+        90
+      ],
+      "meanAbsoluteRgbDifference": [
+        49.3337962962963,
+        50.005099826388886,
+        46.14703414351852
+      ]
+    },
+    {
+      "region": "crown",
+      "bounds": [
+        0,
+        110,
+        1536,
+        285
+      ],
+      "meanAbsoluteRgbDifference": [
+        49.4700037202381,
+        43.789925595238095,
+        41.110625
+      ]
+    },
+    {
+      "region": "upper",
+      "bounds": [
+        0,
+        280,
+        1536,
+        415
+      ],
+      "meanAbsoluteRgbDifference": [
+        68.7567756558642,
+        56.20153356481482,
+        48.30607156635803
+      ]
+    },
+    {
+      "region": "middle",
+      "bounds": [
+        0,
+        410,
+        1536,
+        550
+      ],
+      "meanAbsoluteRgbDifference": [
+        52.92652064732143,
+        47.54816313244048,
+        42.16659226190476
+      ]
+    },
+    {
+      "region": "lower",
+      "bounds": [
+        0,
+        540,
+        1536,
+        675
+      ],
+      "meanAbsoluteRgbDifference": [
+        62.49809027777778,
+        55.79972029320987,
+        48.36159336419753
+      ]
+    },
+    {
+      "region": "floor",
+      "bounds": [
+        0,
+        655,
+        1536,
+        765
+      ],
+      "meanAbsoluteRgbDifference": [
+        62.118744081439395,
+        55.190619081439394,
+        47.964553740530306
+      ]
+    },
+    {
+      "region": "footer",
+      "bounds": [
+        0,
+        755,
+        1536,
+        864
+      ],
+      "meanAbsoluteRgbDifference": [
+        64.24666714449542,
+        62.86434441896024,
+        60.13558987958716
+      ]
+    },
+    {
+      "region": "background-focal",
+      "bounds": [
+        560,
+        65,
+        1000,
+        650
+      ],
+      "meanAbsoluteRgbDifference": [
+        52.69203185703186,
+        47.71381118881119,
+        43.05861305361305
+      ]
+    }
+  ],
+  "limits": "Difference images are diagnostic, not an image-similarity pass. Without actual engine anchors, geometry is unverified. Actor drawings are intentionally preserved and may differ from the illustrated source."
+}

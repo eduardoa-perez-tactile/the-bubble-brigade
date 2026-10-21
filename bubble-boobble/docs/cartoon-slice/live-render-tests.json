@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "tests": [
+    {
+      "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+      "ok": true,
+      "steps": 4,
+      "hash": "63e7a385404bf862",
+      "error": null
+    },
+    {
+      "name": "cartoon slice ten firing humans keep full arena and HUD across every desktop aspect",
+      "ok": true,
+      "steps": 28,
+      "hash": "1b32a40f70f21fb2",
+      "error": null
+    },
+    {
+      "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+      "ok": true,
+      "steps": 43,
+      "hash": "16e83364bc00f3e4",
+      "error": null
+    },
+    {
+      "name": "cartoon HUD keeps score and wave cards inside the existing top band",
+      "ok": true,
+      "steps": 11,
+      "hash": "4237b19c104fcd56",
+      "error": null
+    },
+    {
+      "name": "cartoon title branding preserves menu actions",
+      "ok": true,
+      "steps": 12,
+      "hash": "e7ea61e6a337e5a0",
+      "error": null
+    }
+  ]
+}

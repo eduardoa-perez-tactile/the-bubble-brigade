@@ -1,0 +1,49 @@
+{
+  "protectedOriginalTests": {
+    "identical": 280,
+    "expected": 280,
+    "missing": 0,
+    "divergences": [],
+    "allowances": 0
+  },
+  "immediatePreConceptBaseline": {
+    "identical": 291,
+    "expected": 292,
+    "new": 9,
+    "intentionalOptInGeometryChanges": [
+      {
+        "file": "cartoon_controls_recorded_opt_in_reaches_party_requests_without_changing_original_start_actions.hashtrace",
+        "step": 5,
+        "components": [
+          "ArcadeVisual",
+          "LocalTransform",
+          "WorldTransform",
+          "doc:arcade.session"
+        ],
+        "reason": "This recorded opted-in party start now constructs the explicitly approved60\u00d724 five-tier geometry and spread spawns. Original routes remain strictly identical."
+      }
+    ]
+  },
+  "newTests": [
+    "concept_controls_actual_downed_help_follows_actor_at_every_aspect_and_disappears_after_contact_rescue.hashtrace",
+    "concept_controls_all_authored_variants_have_safe_connected_navigation_from_every_ten_player_spawn.hashtrace",
+    "concept_controls_crown_apex_injury_keeps_help_plaque_text_and_downed_badge_below_header.hashtrace",
+    "concept_controls_diagonal_tier_transfer_and_cross_stage_gap_land_through_real_unupgraded_inputs.hashtrace",
+    "concept_controls_every_wave_formation_stays_safe_at_six_and_ten_dragon_capacity_across_four_layouts.hashtrace",
+    "concept_controls_jump_trajectory_and_unupgraded_movement_retain_production_physics.hashtrace",
+    "concept_controls_missed_jump_falls_safely_to_floor_and_player_recovers_to_the_next_tier.hashtrace",
+    "concept_controls_real_unupgraded_player_ascends_every_authored_tier_through_both_continuous_lanes.hashtrace",
+    "concept_controls_recorded_solo_default_nine_bots_ten_humans_pause_and_restart_preserve_mode_and_geometry.hashtrace"
+  ],
+  "traceMetadata": {
+    "before": {
+      "commit": "6c0c219f7fd7112fb892412d983a594ad3d58764",
+      "engine": "0.1.0"
+    },
+    "after": {
+      "commit": "6c0c219f7fd7112fb892412d983a594ad3d58764",
+      "engine": "0.1.0"
+    },
+    "note": "Commit labels identify starting checkout HEAD, not uncommitted source. Engine string0.1.0 does not uniquely identify installed engine revision. Raw trace diff aligns system checkpoints positionally; inserting two QA cheat declarations shifts those names, so its firstSystem label is not causal attribution."
+  }
+}

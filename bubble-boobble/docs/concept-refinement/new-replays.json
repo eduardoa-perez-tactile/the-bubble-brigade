@@ -1,0 +1,101 @@
+{
+  "ok": true,
+  "total": 4,
+  "steps": 713,
+  "bundleSha256": "1046f7226855c3ec67c4806dd5d8bdf6d1b29e82710768ae56c05e4f92640cfe",
+  "note": "Four newly named refinement streams recorded on explicit desktop with phone-low residency. Original concept, overhaul and slice streams are retained unchanged. Verification selects the cartoon scene explicitly.",
+  "results": [
+    {
+      "path": "tests/replays/refinement_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+      "sha256": "ebfa97d090b007aa5536306bd99ee06c57bea7dde20bf7df458e40d856623826",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "5c38fc472d906d68",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 46
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 46,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/refinement_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave.greplay",
+      "sha256": "fba308dcf82bf7f3a6c940bfafb490d15bdeebc2eef02d97919d4a9d3c0441ba",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "5c38fc472d906d68",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 341
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 341,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/refinement_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable.greplay",
+      "sha256": "d2222e52da5cf88f24de9bc1c0685f3da51e5966f3b7a0ef7db6e05e3029bd67",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "5c38fc472d906d68",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 171
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 171,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices.greplay",
+      "sha256": "92123d44bdb3ef6ab7f67e65f0817404b0516f80855c2a71196c0db6343cfaaa",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "5c38fc472d906d68",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 155
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 155,
+        "firstDivergence": null
+      }
+    }
+  ]
+}

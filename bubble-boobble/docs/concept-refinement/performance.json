@@ -1,0 +1,5386 @@
+{
+  "scenario": {
+    "geometry": "cartoon-courtyard",
+    "seed": 42,
+    "bossWave": 10,
+    "warmupSteps": 60,
+    "measuredSteps": 600,
+    "stressSamples": 10,
+    "probeSizes": [
+      [
+        768,
+        720
+      ],
+      [
+        1680,
+        720
+      ],
+      [
+        640,
+        960
+      ],
+      [
+        2520,
+        1080
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "tier": "mobile",
+      "team": 6,
+      "humans": 1,
+      "bots": 5,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 9.564875,
+          "p95": 16.201292,
+          "p99": 16.201292,
+          "max": 16.201292,
+          "mean": 12.8830835
+        },
+        "presentationTimeMs": {
+          "p50": 1.092333,
+          "p95": 1.6480419999999896,
+          "p99": 1.6480419999999896,
+          "max": 1.6480419999999896,
+          "mean": 0.975048666666666
+        },
+        "scriptTimeMs": {
+          "p50": 0.982625,
+          "p95": 34.006795,
+          "p99": 34.006795,
+          "max": 34.006795,
+          "mean": 6.395396333333333
+        },
+        "memoryMB": 220.984375,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.2448750000000055,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 0.926167,
+          "p95": 1.7605419999999998,
+          "p99": 2.04425,
+          "max": 2.539625,
+          "mean": 1.0058386566666677
+        },
+        "presentationTimeMs": {
+          "p50": 0.801167,
+          "p95": 8.429584000000006,
+          "p99": 8.552583999999996,
+          "max": 8.552583999999996,
+          "mean": 1.5598509354838705
+        },
+        "scriptTimeMs": {
+          "p50": 0.910708,
+          "p95": 135.821583,
+          "p99": 139.47204399999998,
+          "max": 139.47204399999998,
+          "mean": 37.50670283870968
+        },
+        "memoryMB": 290.796875,
+        "jsHeapMB": 46.955970764160156,
+        "gcMaxMs": 0.5676660000000222,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 6,
+        "alive": 6,
+        "bots": 5,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 6,
+        "bossHP": 999955
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone",
+        "budget": {
+          "total": 335544320,
+          "textures": 234881024,
+          "audio": 50331648
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 311083008,
+          "jsHeapUsed": 53825936,
+          "jsHeapTotal": 88129536,
+          "entities": 1521,
+          "ecs": 1108768,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 107648
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011666
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014917
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001833
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.47275
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.017959
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.268167
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001083
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000916
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00029099999999999997
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.052833
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.004958
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 0.7248330000000001
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.011291
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.0011250000000000001
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.004875
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000917
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.0005
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 0.943167
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "mobile",
+      "team": 10,
+      "humans": 1,
+      "bots": 9,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 10.551542000000001,
+          "p95": 16.805084,
+          "p99": 16.805084,
+          "max": 16.805084,
+          "mean": 13.678313000000001
+        },
+        "presentationTimeMs": {
+          "p50": 0.947041,
+          "p95": 1.9778339999999943,
+          "p99": 1.9778339999999943,
+          "max": 1.9778339999999943,
+          "mean": 1.1110906666666638
+        },
+        "scriptTimeMs": {
+          "p50": 0.85304,
+          "p95": 37.031044,
+          "p99": 37.031044,
+          "max": 37.031044,
+          "mean": 6.9280273333333335
+        },
+        "memoryMB": 223.25,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.313542,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.331583,
+          "p95": 2.0349999999999997,
+          "p99": 2.470917,
+          "max": 2.886167,
+          "mean": 1.385325840000001
+        },
+        "presentationTimeMs": {
+          "p50": 1.574167,
+          "p95": 8.546666999999985,
+          "p99": 9.134873999999996,
+          "max": 9.134873999999996,
+          "mean": 2.2823909999999983
+        },
+        "scriptTimeMs": {
+          "p50": 1.622208,
+          "p95": 182.845979,
+          "p99": 186.509761,
+          "max": 186.509761,
+          "mean": 51.97109735483871
+        },
+        "memoryMB": 336.28125,
+        "jsHeapMB": 38.812583923339844,
+        "gcMaxMs": 0.6480840000000487,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 9,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 8,
+        "bossHP": 999894
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone",
+        "budget": {
+          "total": 335544320,
+          "textures": 234881024,
+          "audio": 50331648
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 348405760,
+          "jsHeapUsed": 87756672,
+          "jsHeapTotal": 126205952,
+          "entities": 1551,
+          "ecs": 1108768,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011708999999999999
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000041
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000209
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014542000000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001708
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.682458
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.017041
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.39841699999999997
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001083
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000917
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00029099999999999997
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.0005
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.057125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.003958
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.066334
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.009459
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.001
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.0045000000000000005
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000834
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000292
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.000292
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.30825
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "mobile",
+      "team": 10,
+      "humans": 10,
+      "bots": 0,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 2.591125,
+          "p95": 16.576166999999998,
+          "p99": 16.576166999999998,
+          "max": 16.576166999999998,
+          "mean": 9.583645999999998
+        },
+        "presentationTimeMs": {
+          "p50": 0.8048339999999999,
+          "p95": 2.0474179999999933,
+          "p99": 2.0474179999999933,
+          "max": 2.0474179999999933,
+          "mean": 1.0541393333333313
+        },
+        "scriptTimeMs": {
+          "p50": 0.707125,
+          "p95": 28.244416,
+          "p99": 28.244416,
+          "max": 28.244416,
+          "mean": 5.3957015
+        },
+        "memoryMB": 218.25,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.5210409999999999,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.524167,
+          "p95": 2.0053750000000004,
+          "p99": 2.1506250000000002,
+          "max": 2.481291,
+          "mean": 1.4553445816666686
+        },
+        "presentationTimeMs": {
+          "p50": 1.3791239999999902,
+          "p95": 8.525040999999987,
+          "p99": 9.029792,
+          "max": 9.029792,
+          "mean": 2.3077097741935466
+        },
+        "scriptTimeMs": {
+          "p50": 1.465166,
+          "p95": 164.84421,
+          "p99": 165.768218,
+          "max": 165.768218,
+          "mean": 51.231080161290315
+        },
+        "memoryMB": 308.78125,
+        "jsHeapMB": 45.41700744628906,
+        "gcMaxMs": 0.5884579999999584,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 0,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 46,
+        "bossHP": 1000000
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone",
+        "budget": {
+          "total": 335544320,
+          "textures": 234881024,
+          "audio": 50331648
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 321994752,
+          "jsHeapUsed": 56213632,
+          "jsHeapTotal": 120373248,
+          "entities": 1797,
+          "ecs": 1084832,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011959000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.01475
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001792
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.642084
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.011291
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.680416
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001083
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000875
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000458
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.044833000000000005
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.0049169999999999995
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.5011670000000001
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.010750000000000001
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.001041
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.004958
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000958
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.707417
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "desktop",
+      "team": 6,
+      "humans": 1,
+      "bots": 5,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 9.190667,
+          "p95": 16.003041999999997,
+          "p99": 16.003041999999997,
+          "max": 16.003041999999997,
+          "mean": 12.5968545
+        },
+        "presentationTimeMs": {
+          "p50": 0.86475,
+          "p95": 1.6061660000000018,
+          "p99": 1.6061660000000018,
+          "max": 1.6061660000000018,
+          "mean": 1.021992666666665
+        },
+        "scriptTimeMs": {
+          "p50": 0.764293,
+          "p95": 33.343833000000004,
+          "p99": 33.343833000000004,
+          "max": 33.343833000000004,
+          "mean": 6.286778000000001
+        },
+        "memoryMB": 221.953125,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.31045800000001345,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 0.926666,
+          "p95": 1.809291,
+          "p99": 1.989083,
+          "max": 2.648125,
+          "mean": 1.0104046533333335
+        },
+        "presentationTimeMs": {
+          "p50": 0.7852919999999997,
+          "p95": 8.13024999999999,
+          "p99": 8.21841599999999,
+          "max": 8.21841599999999,
+          "mean": 1.506749999999999
+        },
+        "scriptTimeMs": {
+          "p50": 0.8747079999999999,
+          "p95": 138.45570600000002,
+          "p99": 140.50548700000002,
+          "max": 140.50548700000002,
+          "mean": 37.5377609032258
+        },
+        "memoryMB": 287.109375,
+        "jsHeapMB": 39.93025207519531,
+        "gcMaxMs": 0.5871670000000551,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 6,
+        "alive": 6,
+        "bots": 5,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 6,
+        "bossHP": 999955
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "desktop",
+        "budget": {
+          "total": 2147483648,
+          "textures": 1610612736,
+          "audio": 268435456
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 306987008,
+          "jsHeapUsed": 62430992,
+          "jsHeapTotal": 88850432,
+          "entities": 1521,
+          "ecs": 1108768,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 33177604,
+          "gpuBuffers": 107648
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011625
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014416
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001791
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.468875
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.016834
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.259333
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001084
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000875
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.050124999999999996
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.005
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 0.707542
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.011167
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.000959
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.004583
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000875
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000334
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 0.95525
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "desktop",
+      "team": 10,
+      "humans": 1,
+      "bots": 9,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 10.012458,
+          "p95": 15.645292000000001,
+          "p99": 15.645292000000001,
+          "max": 15.645292000000001,
+          "mean": 12.828875
+        },
+        "presentationTimeMs": {
+          "p50": 0.89025,
+          "p95": 2.2421659999999903,
+          "p99": 2.2421659999999903,
+          "max": 2.2421659999999903,
+          "mean": 1.1516733333333316
+        },
+        "scriptTimeMs": {
+          "p50": 0.788874,
+          "p95": 34.783581,
+          "p99": 34.783581,
+          "max": 34.783581,
+          "mean": 6.546999166666666
+        },
+        "memoryMB": 223.5,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.49962500000000354,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.339834,
+          "p95": 2.0201659999999997,
+          "p99": 2.6127920000000002,
+          "max": 3.337792,
+          "mean": 1.3877213816666663
+        },
+        "presentationTimeMs": {
+          "p50": 1.4418330000000026,
+          "p95": 8.605374999999981,
+          "p99": 8.821957999999967,
+          "max": 8.821957999999967,
+          "mean": 2.242580838709674
+        },
+        "scriptTimeMs": {
+          "p50": 1.480583,
+          "p95": 182.570124,
+          "p99": 195.264164,
+          "max": 195.264164,
+          "mean": 52.082767806451606
+        },
+        "memoryMB": 335.84375,
+        "jsHeapMB": 38.66310119628906,
+        "gcMaxMs": 1.0657920000000098,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 9,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 8,
+        "bossHP": 999894
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "desktop",
+        "budget": {
+          "total": 2147483648,
+          "textures": 1610612736,
+          "audio": 268435456
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 347734016,
+          "jsHeapUsed": 54928960,
+          "jsHeapTotal": 121782272,
+          "entities": 1551,
+          "ecs": 1108768,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 33177604,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.012041
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.016541999999999998
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.0018750000000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.78925
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.022666
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.422458
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.00125
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000959
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00041600000000000003
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000458
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.0005
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000209
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.07145800000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.003875
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.013208
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.009208000000000001
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.000916
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.004208
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.00075
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.267708
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "desktop",
+      "team": 10,
+      "humans": 10,
+      "bots": 0,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 2.473542,
+          "p95": 17.163458,
+          "p99": 17.163458,
+          "max": 17.163458,
+          "mean": 9.8185
+        },
+        "presentationTimeMs": {
+          "p50": 0.7979999999999999,
+          "p95": 1.8753749999999982,
+          "p99": 1.8753749999999982,
+          "max": 1.8753749999999982,
+          "mean": 1.046874999999999
+        },
+        "scriptTimeMs": {
+          "p50": 0.706207,
+          "p95": 28.264459,
+          "p99": 28.264459,
+          "max": 28.264459,
+          "mean": 5.421236166666667
+        },
+        "memoryMB": 218.546875,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.22899999999997922,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.5286250000000001,
+          "p95": 2.0171669999999997,
+          "p99": 2.200083,
+          "max": 2.410584,
+          "mean": 1.466735901666666
+        },
+        "presentationTimeMs": {
+          "p50": 1.376334,
+          "p95": 8.666916000000002,
+          "p99": 9.105623999999999,
+          "max": 9.105623999999999,
+          "mean": 2.305819741935483
+        },
+        "scriptTimeMs": {
+          "p50": 1.378334,
+          "p95": 166.900626,
+          "p99": 168.82896,
+          "max": 168.82896,
+          "mean": 51.436390225806456
+        },
+        "memoryMB": 306.796875,
+        "jsHeapMB": 44.49376678466797,
+        "gcMaxMs": 0.5228750000000337,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 0,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 46,
+        "bossHP": 1000000
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "desktop",
+        "budget": {
+          "total": 2147483648,
+          "textures": 1610612736,
+          "audio": 268435456
+        },
+        "resident": {
+          "textures": 30642944,
+          "audio": 0,
+          "total": 30642944,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 322093056,
+          "jsHeapUsed": 55667456,
+          "jsHeapTotal": 120111104,
+          "entities": 1797,
+          "ecs": 1084832,
+          "textures": 30642944,
+          "meshes3d": 0,
+          "gpuTextures": 139460612,
+          "gpuRenderTargets": 33177604,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011875
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0.000042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.017875000000000002
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001833
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.653042
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.011542
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.736625
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001333
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.001042
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.00041600000000000003
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000458
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.045000000000000005
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.003541
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.083667
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.011084
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.001
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.004083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.00075
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000334
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.265333
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "compat",
+      "team": 6,
+      "humans": 1,
+      "bots": 5,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 9.333499999999999,
+          "p95": 16.637583,
+          "p99": 16.637583,
+          "max": 16.637583,
+          "mean": 12.9855415
+        },
+        "presentationTimeMs": {
+          "p50": 0.8831669999999999,
+          "p95": 1.7441669999999974,
+          "p99": 1.7441669999999974,
+          "max": 1.7441669999999974,
+          "mean": 1.0127708333333336
+        },
+        "scriptTimeMs": {
+          "p50": 0.781542,
+          "p95": 34.468045000000004,
+          "p99": 34.468045000000004,
+          "max": 34.468045000000004,
+          "mean": 6.437084166666668
+        },
+        "memoryMB": 222.328125,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.26183400000001633,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 0.910375,
+          "p95": 1.74325,
+          "p99": 2.052333,
+          "max": 2.6182499999999997,
+          "mean": 0.995064321666667
+        },
+        "presentationTimeMs": {
+          "p50": 0.795042,
+          "p95": 8.251540999999975,
+          "p99": 8.630457999999976,
+          "max": 8.630457999999976,
+          "mean": 1.5482848709677417
+        },
+        "scriptTimeMs": {
+          "p50": 0.921293,
+          "p95": 137.772759,
+          "p99": 138.41399700000002,
+          "max": 138.41399700000002,
+          "mean": 37.03291238709678
+        },
+        "memoryMB": 290.265625,
+        "jsHeapMB": 48.141990661621094,
+        "gcMaxMs": 0.5625000000000213,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 6,
+        "alive": 6,
+        "bots": 5,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 6,
+        "bossHP": 999955
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone-low",
+        "budget": {
+          "total": 201326592,
+          "textures": 134217728,
+          "audio": 33554432
+        },
+        "resident": {
+          "textures": 21944048,
+          "audio": 0,
+          "total": 21944048,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 310575104,
+          "jsHeapUsed": 53838848,
+          "jsHeapTotal": 88129536,
+          "entities": 1521,
+          "ecs": 1108768,
+          "textures": 21944048,
+          "meshes3d": 0,
+          "gpuTextures": 108805812,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 107648
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.01175
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014167
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001792
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.468584
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.017333
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.260708
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.0011250000000000001
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.000916
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00029099999999999997
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.065541
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.005458
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 0.763833
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.01375
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.001167
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.0055
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.000916
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.000542
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.00045900000000000004
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.000625
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.039917
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "compat",
+      "team": 10,
+      "humans": 1,
+      "bots": 9,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 10.625334,
+          "p95": 16.196375,
+          "p99": 16.196375,
+          "max": 16.196375,
+          "mean": 13.4108545
+        },
+        "presentationTimeMs": {
+          "p50": 0.999542,
+          "p95": 1.7836259999999982,
+          "p99": 1.7836259999999982,
+          "max": 1.7836259999999982,
+          "mean": 1.086708833333334
+        },
+        "scriptTimeMs": {
+          "p50": 0.8974989999999999,
+          "p95": 35.702416,
+          "p99": 35.702416,
+          "max": 35.702416,
+          "mean": 6.704131666666666
+        },
+        "memoryMB": 224.046875,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.313542,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.326333,
+          "p95": 2.018833,
+          "p99": 2.489375,
+          "max": 2.7207500000000002,
+          "mean": 1.3971190133333329
+        },
+        "presentationTimeMs": {
+          "p50": 1.5177910000000003,
+          "p95": 9.408417000000014,
+          "p99": 9.619249,
+          "max": 9.619249,
+          "mean": 2.3085644516129036
+        },
+        "scriptTimeMs": {
+          "p50": 1.505459,
+          "p95": 182.312846,
+          "p99": 193.836623,
+          "max": 193.836623,
+          "mean": 52.39383880645161
+        },
+        "memoryMB": 333.5625,
+        "jsHeapMB": 47.02293395996094,
+        "gcMaxMs": 0.7915829999998181,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 9,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 8,
+        "bossHP": 999894
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone-low",
+        "budget": {
+          "total": 201326592,
+          "textures": 134217728,
+          "audio": 33554432
+        },
+        "resident": {
+          "textures": 21944048,
+          "audio": 0,
+          "total": 21944048,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 360677376,
+          "jsHeapUsed": 62003216,
+          "jsHeapTotal": 121257984,
+          "entities": 1551,
+          "ecs": 1108768,
+          "textures": 21944048,
+          "meshes3d": 0,
+          "gpuTextures": 108805812,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.011792
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.014792
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.001834
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.78525
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.023292
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.415333
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001167
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.001084
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000334
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.00041600000000000003
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000458
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000084
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.07241600000000001
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.003875
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.583666
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.027875
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.001583
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.006667
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.001083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.005708
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.0007080000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.000917
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.9017909999999998
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    },
+    {
+      "tier": "compat",
+      "team": 10,
+      "humans": 10,
+      "bots": 0,
+      "hostProfile": "release",
+      "startup": {
+        "steps": 2,
+        "frames": 6,
+        "stepTimeMs": {
+          "p50": 2.754375,
+          "p95": 17.406791000000002,
+          "p99": 17.406791000000002,
+          "max": 17.406791000000002,
+          "mean": 10.080583
+        },
+        "presentationTimeMs": {
+          "p50": 0.803457,
+          "p95": 1.821957999999995,
+          "p99": 1.821957999999995,
+          "max": 1.821957999999995,
+          "mean": 1.0627566666666646
+        },
+        "scriptTimeMs": {
+          "p50": 0.7034590000000001,
+          "p95": 29.247328,
+          "p99": 29.247328,
+          "max": 29.247328,
+          "mean": 5.595506666666666
+        },
+        "memoryMB": 218.765625,
+        "jsHeapMB": null,
+        "gcMaxMs": 0.32412500000000843,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "steady": {
+        "steps": 600,
+        "frames": 31,
+        "stepTimeMs": {
+          "p50": 1.531167,
+          "p95": 2.022291,
+          "p99": 2.3195419999999998,
+          "max": 2.741291,
+          "mean": 1.4734668683333343
+        },
+        "presentationTimeMs": {
+          "p50": 1.4148329999999874,
+          "p95": 8.916751,
+          "p99": 9.108709000000001,
+          "max": 9.108709000000001,
+          "mean": 2.3232257419354827
+        },
+        "scriptTimeMs": {
+          "p50": 1.382251,
+          "p95": 167.482034,
+          "p99": 168.651037,
+          "max": 168.651037,
+          "mean": 51.903820903225814
+        },
+        "memoryMB": 307.375,
+        "jsHeapMB": 40.05570983886719,
+        "gcMaxMs": 0.6114579999999536,
+        "gcPausesOver4ms": 0,
+        "pipelinesCreatedDuringCapture": 0
+      },
+      "peakDraws": 12,
+      "draws": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "observed": {
+        "arena": "cartoon-courtyard",
+        "players": 10,
+        "alive": 10,
+        "bots": 0,
+        "tick": 661,
+        "phase": "boss",
+        "bubbles": 46,
+        "bossHP": 1000000
+      },
+      "assets": {
+        "loaded": 6,
+        "pending": 0
+      },
+      "assetResidency": {
+        "class": "phone-low",
+        "budget": {
+          "total": 201326592,
+          "textures": 134217728,
+          "audio": 33554432
+        },
+        "resident": {
+          "textures": 21944048,
+          "audio": 0,
+          "total": 21944048,
+          "data": 0
+        },
+        "overBudget": null,
+        "overCount": 0,
+        "evicted": 0,
+        "groups": {}
+      },
+      "memory": {
+        "categories": {
+          "resident": 320536576,
+          "jsHeapUsed": 64276504,
+          "jsHeapTotal": 119586816,
+          "entities": 1797,
+          "ecs": 1084832,
+          "textures": 21944048,
+          "meshes3d": 0,
+          "gpuTextures": 108805812,
+          "gpuRenderTargets": 6635524,
+          "gpuBuffers": 173184
+        }
+      },
+      "markers": {
+        "markers": [
+          {
+            "kind": "system",
+            "name": "gameengine.Input",
+            "stage": "PreUpdate",
+            "ms": 0.012958
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldLoading",
+            "stage": "PreUpdate",
+            "ms": 0.00020800000000000001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WallClock",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:load",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.pop-burst",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.sprite-sizing",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feel-showcase",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.feedback-cluster",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-player-motion",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.clear-wave",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.rescue-setup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.finish-boss",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.powerup",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.last-enemy",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.hit-dragon",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-duel",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.protect-team",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.final-pop",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:party.boss-soak",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-scoring",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:arcade.prepare-top-traversal",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.playtest",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:concept.hit",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.overhaul",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.party-reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:cartoon.capture-states",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:harness.reset",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.cheat:port.movement",
+            "stage": "PreUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorInit",
+            "stage": "PreUpdate",
+            "ms": 0.00029099999999999997
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DInit",
+            "stage": "PreUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeBoot",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "DesktopSystem",
+            "stage": "Update",
+            "ms": 0.0195
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeEditorInput",
+            "stage": "Update",
+            "ms": 0.002125
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeStep",
+            "stage": "Update",
+            "ms": 0.712375
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeAudioSystem",
+            "stage": "Update",
+            "ms": 0.013292
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePool",
+            "stage": "Update",
+            "ms": 0.720583
+          },
+          {
+            "kind": "system",
+            "name": "PortBoot",
+            "stage": "Update",
+            "ms": 0.001333
+          },
+          {
+            "kind": "system",
+            "name": "PortControls",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "PortMovement",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SetupView",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "SpawnBubbles",
+            "stage": "Update",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "RiseAndPop",
+            "stage": "Update",
+            "ms": 0.001083
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Timeline",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Animator",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2D",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Tween",
+            "stage": "PostUpdate",
+            "ms": 0.000167
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTweenCleanup",
+            "stage": "PostUpdate",
+            "ms": 0.000125
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00041600000000000003
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.AnimatorSkeleton2D",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics2D",
+            "stage": "PostUpdate",
+            "ms": 0.000541
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Physics3D",
+            "stage": "PostUpdate",
+            "ms": 0.000625
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.ParticleClock",
+            "stage": "PostUpdate",
+            "ms": 0.00025
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.WorldViewFollow",
+            "stage": "PostUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Skeleton2DFollow",
+            "stage": "PostUpdate",
+            "ms": 0.000166
+          },
+          {
+            "kind": "system",
+            "name": "ArcadeFeelSystem",
+            "stage": "LateUpdate",
+            "ms": 0.043083
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePlatform",
+            "stage": "LateUpdate",
+            "ms": 0.004625
+          },
+          {
+            "kind": "system",
+            "name": "ArcadePresentation",
+            "stage": "LateUpdate",
+            "ms": 1.516541
+          },
+          {
+            "kind": "system",
+            "name": "DesktopPlatformBridge",
+            "stage": "LateUpdate",
+            "ms": 0.010375
+          },
+          {
+            "kind": "system",
+            "name": "DesktopUI",
+            "stage": "LateUpdate",
+            "ms": 0.0011250000000000001
+          },
+          {
+            "kind": "system",
+            "name": "PortPresentation",
+            "stage": "LateUpdate",
+            "ms": 0
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.meta:save",
+            "stage": "LateUpdate",
+            "ms": 0.0047079999999999995
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.CheatConsole",
+            "stage": "LateUpdate",
+            "ms": 0.001
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.VisualTween",
+            "stage": "LateUpdate",
+            "ms": 0.000417
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.SpriteAnimation",
+            "stage": "LateUpdate",
+            "ms": 0.000375
+          },
+          {
+            "kind": "system",
+            "name": "gameengine.Clip2DPresent",
+            "stage": "LateUpdate",
+            "ms": 0.00033299999999999996
+          },
+          {
+            "kind": "frame",
+            "name": "cpu",
+            "ms": 1.759709
+          }
+        ]
+      },
+      "content": [
+        {
+          "scenario": "enemies",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "capture",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "items",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "elements",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "rescue",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "boss-captured",
+          "peakDraws": 12,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        },
+        {
+          "scenario": "victory",
+          "peakDraws": 7,
+          "assets": {
+            "loaded": 6,
+            "pending": 0
+          }
+        }
+      ]
+    }
+  ],
+  "limits": "Release-host V8 headless engine sessions on this computer with explicit GPU render requests. New geometry differs intentionally from original pixel geometry, so no cross-layout state-equivalence claim is made. phone-low residency is separately enforced by T1 tests; these sampled CPU/structure numbers do not establish phone GPU timing, physical controllers, sustained frame rate, thermals or human group readability."
+}

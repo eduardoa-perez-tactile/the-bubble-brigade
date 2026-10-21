@@ -1,0 +1,72 @@
+{
+  "method": "Game Engine view renders with PNG visual inspection",
+  "header": 48,
+  "footer": {
+    "wide": 80,
+    "narrow": 64,
+    "wideAspect": 1.6
+  },
+  "wideRoster": {
+    "width": "70%",
+    "face": 64,
+    "inkFrame": 68,
+    "ordinaryLabels": false,
+    "conditionLabels": true
+  },
+  "wideScoreWidth": "31%",
+  "rightPanel": "contextual boss HP or last dragon only",
+  "art": "existing exact-crop portraits and existing food-1/food-2 textures; no new artwork",
+  "samples": [
+    {
+      "sample": "rescue",
+      "size": [
+        1536,
+        864
+      ],
+      "path": "docs/concept-refinement/hud-wide-rescue.png",
+      "layoutWarningCount": 0
+    },
+    {
+      "sample": "ready",
+      "size": [
+        768,
+        720
+      ],
+      "path": "docs/concept-refinement/hud-native-ready.png",
+      "layoutWarningCount": 0
+    },
+    {
+      "sample": "boss",
+      "size": [
+        1680,
+        720
+      ],
+      "path": "docs/concept-refinement/hud-ultrawide-boss.png",
+      "layoutWarningCount": 0
+    },
+    {
+      "sample": "rescue",
+      "size": [
+        640,
+        960
+      ],
+      "path": "docs/concept-refinement/hud-tall-rescue.png",
+      "layoutWarningCount": 0
+    },
+    {
+      "sample": "custom classic",
+      "size": [
+        1536,
+        864
+      ],
+      "path": "docs/concept-refinement/hud-wide-classic.png",
+      "layoutWarningCount": 0
+    }
+  ],
+  "renderCount": 5,
+  "layoutWarningCount": 0,
+  "typecheck": {
+    "command": "node .gameengine/engine/node_modules/typescript/bin/tsc --noEmit",
+    "exitCode": 0
+  }
+}

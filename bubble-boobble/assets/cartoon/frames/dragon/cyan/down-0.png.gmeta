@@ -1,0 +1,9 @@
+guid = "cab8d28c-108f-58f0-986f-22dd06af9fb4"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "cartoon"
+filter = "linear"
+compression = "none"
+trim = false

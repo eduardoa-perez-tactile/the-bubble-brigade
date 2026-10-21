@@ -1,0 +1,31 @@
+{
+  "baselineHead": "2ba8d1e563222ea02ed0cf0bb61fbe49d6342989",
+  "groups": {
+    "priorEvidence": {
+      "checked": 960,
+      "unchanged": 960,
+      "mismatches": []
+    },
+    "priorRecordings": {
+      "checked": 45,
+      "unchanged": 45,
+      "mismatches": []
+    },
+    "originalPixelGoldens": {
+      "checked": 313,
+      "unchanged": 313,
+      "mismatches": []
+    },
+    "characterAnimation": {
+      "checked": 510,
+      "unchanged": 510,
+      "mismatches": []
+    },
+    "allExistingCartoonAssetsInformational": {
+      "checked": 532,
+      "unchanged": 532,
+      "mismatches": []
+    }
+  },
+  "ok": true
+}

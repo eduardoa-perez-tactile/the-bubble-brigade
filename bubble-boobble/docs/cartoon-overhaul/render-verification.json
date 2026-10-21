@@ -1,0 +1,352 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "total": 57,
+  "originalPixel": 48,
+  "cartoonAndFallback": 9,
+  "scope": "Original 48 pixel goldens were verified without updates. Only the five earlier cartoon-theme cases and three separately named overhaul routes received intentional visual baseline updates; original fallback HUD is verified without a golden.",
+  "tests": [
+    {
+      "name": "companion mode selector fits settings and changes through the real button",
+      "ok": true,
+      "steps": 9,
+      "error": null
+    },
+    {
+      "name": "feel six player capture chain rescue boss and results fit every aspect",
+      "ok": true,
+      "steps": 65,
+      "error": null
+    },
+    {
+      "name": "arcade reference board 768x720",
+      "ok": true,
+      "steps": 5,
+      "error": null
+    },
+    {
+      "name": "arcade reference board 1680x720",
+      "ok": true,
+      "steps": 5,
+      "error": null
+    },
+    {
+      "name": "arcade reference board 640x960",
+      "ok": true,
+      "steps": 5,
+      "error": null
+    },
+    {
+      "name": "arcade reference editor preview",
+      "ok": true,
+      "steps": 3,
+      "error": null
+    },
+    {
+      "name": "arcade reference encoded overlays",
+      "ok": true,
+      "steps": 7,
+      "error": null
+    },
+    {
+      "name": "arcade scoring fruit and enemy point labels share the rendered text effect",
+      "ok": true,
+      "steps": 7,
+      "error": null
+    },
+    {
+      "name": "bubble skins actual fire input all solo colors",
+      "ok": true,
+      "steps": 36,
+      "error": null
+    },
+    {
+      "name": "bubble skins actual fire input simultaneous co-op colors",
+      "ok": true,
+      "steps": 22,
+      "error": null
+    },
+    {
+      "name": "courtyard full arena and ten identities fit native wide tall and ultrawide windows",
+      "ok": true,
+      "steps": 28,
+      "error": null
+    },
+    {
+      "name": "desktop account buttons match reference hit rectangles",
+      "ok": true,
+      "steps": 18,
+      "error": null
+    },
+    {
+      "name": "desktop title animation uses reference global phase and wraps",
+      "ok": true,
+      "steps": 66,
+      "error": null
+    },
+    {
+      "name": "desktop reference popup and banner layouts",
+      "ok": true,
+      "steps": 10,
+      "error": null
+    },
+    {
+      "name": "dragon palette all original animation frames",
+      "ok": true,
+      "steps": 4,
+      "error": null
+    },
+    {
+      "name": "bubble palette all original shot frames",
+      "ok": true,
+      "steps": 4,
+      "error": null
+    },
+    {
+      "name": "dragon palette production composed colors retain encoded source RGB",
+      "ok": true,
+      "steps": 5,
+      "error": null
+    },
+    {
+      "name": "dragon palette GPU masks flips clips and source-over agree",
+      "ok": true,
+      "steps": 12,
+      "error": null
+    },
+    {
+      "name": "dragon results victory and defeat show all ten dragons and usable safe buttons",
+      "ok": true,
+      "steps": 171,
+      "error": null
+    },
+    {
+      "name": "dragon skins settings selection reaches red gameplay",
+      "ok": true,
+      "steps": 17,
+      "error": null
+    },
+    {
+      "name": "dragon skins settings selection reaches yellow gameplay",
+      "ok": true,
+      "steps": 20,
+      "error": null
+    },
+    {
+      "name": "harness starter golden",
+      "ok": true,
+      "steps": 1,
+      "error": null
+    },
+    {
+      "name": "madness release menu and mode cards fit and launch both modes",
+      "ok": true,
+      "steps": 26,
+      "error": null
+    },
+    {
+      "name": "madness menu stays simple with development enabled",
+      "ok": true,
+      "steps": 102,
+      "error": null
+    },
+    {
+      "name": "movement board 768x720",
+      "ok": true,
+      "steps": 2,
+      "error": null
+    },
+    {
+      "name": "movement board 1680x720",
+      "ok": true,
+      "steps": 2,
+      "error": null
+    },
+    {
+      "name": "movement board 640x960",
+      "ok": true,
+      "steps": 2,
+      "error": null
+    },
+    {
+      "name": "feedback jump dust grounded shadows nameplates and guarded results remain readable",
+      "ok": true,
+      "steps": 284,
+      "error": null
+    },
+    {
+      "name": "party boss moving art bottle warning and capture stay readable",
+      "ok": true,
+      "steps": 192,
+      "error": null
+    },
+    {
+      "name": "party boss six firing dragons stay bounded on phone low",
+      "ok": true,
+      "steps": 304,
+      "error": null
+    },
+    {
+      "name": "party boss ten dragons sustain a long lightning fight without growing visual pools",
+      "ok": true,
+      "steps": 12007,
+      "error": null
+    },
+    {
+      "name": "party boss ten dragons fire identifiable lightning bubbles",
+      "ok": true,
+      "steps": 10,
+      "error": null
+    },
+    {
+      "name": "party feedback ready GO and last kill fit every window",
+      "ok": true,
+      "steps": 936,
+      "error": null
+    },
+    {
+      "name": "party last standing remaining dragon gets a clear HUD notice before defeat",
+      "ok": true,
+      "steps": 138,
+      "error": null
+    },
+    {
+      "name": "party pacing five second countdown preparation shooting and red last enemy",
+      "ok": true,
+      "steps": 309,
+      "error": null
+    },
+    {
+      "name": "party polish readable countdown falling enemies and rest practice shots",
+      "ok": true,
+      "steps": 196,
+      "error": null
+    },
+    {
+      "name": "party randomized powerup has a small green benefit alert in the arena",
+      "ok": true,
+      "steps": 7,
+      "error": null
+    },
+    {
+      "name": "party palette ten dragon GPU body and matching bubbles",
+      "ok": true,
+      "steps": 4,
+      "error": null
+    },
+    {
+      "name": "ten dragon lobby all real cards and portraits fit native wide and tall screens",
+      "ok": true,
+      "steps": 48,
+      "error": null
+    },
+    {
+      "name": "ten dragons firing and rescue remain bounded on phone low",
+      "ok": true,
+      "steps": 795,
+      "error": null
+    },
+    {
+      "name": "party wave lobby buttons fit desktop extremes and launch actual game",
+      "ok": true,
+      "steps": 12,
+      "error": null
+    },
+    {
+      "name": "party actual six dragon arena and rest HUD",
+      "ok": true,
+      "steps": 128,
+      "error": null
+    },
+    {
+      "name": "party whole wave preview and late mixed formation stay within render budget",
+      "ok": true,
+      "steps": 329,
+      "error": null
+    },
+    {
+      "name": "party dragon cards change their own slot through real pointer presses",
+      "ok": true,
+      "steps": 35,
+      "error": null
+    },
+    {
+      "name": "pixel renderer exact texel prototype",
+      "ok": true,
+      "steps": 2,
+      "error": null
+    },
+    {
+      "name": "desktop complete presentation flows",
+      "ok": true,
+      "steps": 780,
+      "error": null
+    },
+    {
+      "name": "pickup sprite natural proportions",
+      "ok": true,
+      "steps": 7,
+      "error": null
+    },
+    {
+      "name": "wave fruit real final pops show a different reward each wave",
+      "ok": true,
+      "steps": 37,
+      "error": null
+    },
+    {
+      "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+      "ok": true,
+      "steps": 4,
+      "error": null
+    },
+    {
+      "name": "cartoon slice ten firing humans keep full arena and HUD across every desktop aspect",
+      "ok": true,
+      "steps": 28,
+      "error": null
+    },
+    {
+      "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+      "ok": true,
+      "steps": 43,
+      "error": null
+    },
+    {
+      "name": "cartoon HUD keeps score and wave cards inside the existing top band",
+      "ok": true,
+      "steps": 11,
+      "error": null
+    },
+    {
+      "name": "original arcade scene retains the pixel HUD",
+      "ok": true,
+      "steps": 8,
+      "error": null
+    },
+    {
+      "name": "cartoon title branding preserves menu actions",
+      "ok": true,
+      "steps": 12,
+      "error": null
+    },
+    {
+      "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+      "ok": true,
+      "steps": 46,
+      "error": null
+    },
+    {
+      "name": "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+      "ok": true,
+      "steps": 208,
+      "error": null
+    },
+    {
+      "name": "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+      "ok": true,
+      "steps": 48,
+      "error": null
+    }
+  ]
+}

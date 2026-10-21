@@ -1,0 +1,177 @@
+{
+  "$schemaVersion": 1,
+  "guid": "c21e2dc9-bdee-4057-bea5-da89e92b89b5",
+  "name": "cartoon-roster-slot",
+  "title": "Cartoon roster slot",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon roster slot",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 148,
+        "h": 32
+      },
+      "children": [
+        "cr_name",
+        "cr_status",
+        "cr_number"
+      ]
+    },
+    "cr_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          48,
+          1
+        ],
+        "w": 94,
+        "h": 18,
+        "fontSize": 12,
+        "fitMin": 10,
+        "color": "#30271e"
+      },
+      "property": "name"
+    },
+    "cr_status": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          48,
+          18
+        ],
+        "w": 94,
+        "h": 12,
+        "fontSize": 9,
+        "fitMin": 8,
+        "color": "#746047"
+      },
+      "property": "status"
+    },
+    "cr_number": {
+      "type": "label",
+      "name": "Label",
+      "text": "{number}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          -7,
+          5
+        ],
+        "w": 20,
+        "h": 22,
+        "fontSize": 11,
+        "fitMin": 9,
+        "textAlign": "center",
+        "color": "#fff7e3",
+        "outline": 0.13,
+        "outlineColor": "#191711"
+      },
+      "property": "number"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "text",
+      "default": ""
+    },
+    "status": {
+      "type": "text",
+      "default": ""
+    },
+    "active": {
+      "type": "yesno",
+      "default": true,
+      "poses": {
+        "no": {
+          "set": {
+            "root": {
+              "opacity": 0.45
+            }
+          }
+        }
+      }
+    },
+    "down": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cr_status": {
+              "color": "#a13e26"
+            },
+            "root": {
+              "bg": "#00000000"
+            }
+          }
+        }
+      }
+    },
+    "number": {
+      "type": "text",
+      "default": "1"
+    },
+    "condition": {
+      "type": "enum",
+      "values": [
+        "ready",
+        "rescue",
+        "returning",
+        "out",
+        "open"
+      ],
+      "default": "ready",
+      "poses": {
+        "rescue": {
+          "set": {
+            "cr_status": {
+              "color": "#a6472d"
+            }
+          }
+        },
+        "out": {
+          "set": {
+            "cr_status": {
+              "color": "#746047"
+            },
+            "root": {
+              "opacity": 0.45
+            }
+          }
+        },
+        "open": {
+          "set": {
+            "root": {
+              "opacity": 0.35
+            }
+          }
+        }
+      }
+    }
+  }
+}

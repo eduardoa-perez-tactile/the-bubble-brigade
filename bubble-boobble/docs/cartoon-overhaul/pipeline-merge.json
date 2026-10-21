@@ -1,0 +1,25 @@
+{
+  "added": {
+    "mobile": 0,
+    "desktop": 0,
+    "compat": 0
+  },
+  "preservedHistoricalRecords": true,
+  "counts": {
+    "mobile": {
+      "before": 12,
+      "after": 12,
+      "observed": 10
+    },
+    "desktop": {
+      "before": 18,
+      "after": 18,
+      "observed": 18
+    },
+    "compat": {
+      "before": 12,
+      "after": 12,
+      "observed": 10
+    }
+  }
+}

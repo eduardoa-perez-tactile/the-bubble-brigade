@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "count": 1,
+  "tests": [
+    {
+      "name": "cartoon animation uses real walk counters and action clocks without changing physics",
+      "ok": true,
+      "steps": 0,
+      "hash": "91b7f1445aac3ab4",
+      "error": null
+    }
+  ]
+}

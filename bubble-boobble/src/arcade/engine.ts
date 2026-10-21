@@ -1,6 +1,7 @@
 import { partyRanking } from './party-config';
 import { partyPads, reducePartyPadInput, readPartyAction, applyPartyAction } from './party-input';
 import { createPartyGame } from './party';
+import { createCartoonArena } from '../cartoon/arena';
 import { respawn } from './player';
 import { resetPartyPads } from './party-input';
 import { enableCompanion } from './companion';
@@ -23,7 +24,8 @@ export const ArcadeStep=defineSystem({
       ctx.setField(ArcadeControl,'requestSequence',request.sequence);
       if(request.action==='start'||request.action==='party'||request.action==='playtest'){
         const custom=request.action==='playtest'&&request.customLevel;
-        const game=request.action==='party'?createPartyGame(campaign as Level[],1,request.partySlots):createGame(custom?[custom]:(campaign as Level[]),1,request.players);
+        const levels=request.cartoon?(campaign as Level[]).map(createCartoonArena):(campaign as Level[]);
+        const game=request.action==='party'?createPartyGame(campaign as Level[],1,request.partySlots,10,request.cartoon?'cartoon':'original'):createGame(custom?[custom]:levels,1,request.players);
         if(!game.Party&&request.mode==='ai')enableCompanion(game);
         game.Custom=!!custom;current={active:true,mode:request.action==='party'?'party':custom?'custom':'campaign',game};session.set(current);
       } else if(request.action==='party-controls'&&current.game?.Party){

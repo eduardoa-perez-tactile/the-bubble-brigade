@@ -1,0 +1,3138 @@
+{
+  "feet": [
+    64,
+    120
+  ],
+  "frames": {
+    "dragon/green/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/blue/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        23,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/red/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/yellow/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/purple/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/orange/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/cyan/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/pink/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/ivory/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/slate/idle-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "master": "idle-0"
+    },
+    "dragon/green/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/blue/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        23,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/red/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/yellow/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/purple/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/orange/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/cyan/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/pink/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/ivory/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/slate/idle-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "master": "idle-1"
+    },
+    "dragon/green/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/blue/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/red/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/yellow/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/purple/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/orange/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/cyan/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/pink/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/ivory/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/slate/run-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "run-0"
+    },
+    "dragon/green/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/blue/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/red/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/yellow/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/purple/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/orange/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/cyan/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/pink/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/ivory/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/slate/run-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "master": "run-1"
+    },
+    "dragon/green/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/blue/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/red/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/yellow/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/purple/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/orange/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/cyan/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/pink/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/ivory/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/slate/run-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-2"
+    },
+    "dragon/green/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/blue/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/red/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/yellow/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/purple/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/orange/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/cyan/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/pink/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/ivory/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/slate/run-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-3"
+    },
+    "dragon/green/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/blue/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/red/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/yellow/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/purple/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/orange/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/cyan/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/pink/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/ivory/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/slate/jump-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "jump-0"
+    },
+    "dragon/green/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/blue/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/red/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/yellow/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/purple/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/orange/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/cyan/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/pink/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/ivory/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/slate/jump-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "jump-1"
+    },
+    "dragon/green/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/blue/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/red/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/yellow/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/purple/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/orange/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/cyan/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/pink/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/ivory/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/slate/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "shoot-0"
+    },
+    "dragon/green/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/blue/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/red/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/yellow/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/purple/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/orange/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/cyan/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/pink/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/ivory/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/slate/shoot-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        100,
+        80
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "shoot-1"
+    },
+    "dragon/green/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/blue/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/red/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/yellow/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/purple/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/orange/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/cyan/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/pink/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/ivory/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/slate/hurt-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "hurt-0"
+    },
+    "dragon/green/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/blue/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/red/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/yellow/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/purple/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/orange/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/cyan/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/pink/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/ivory/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "dragon/slate/down-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "muzzle": [
+        101,
+        57
+      ],
+      "visualBounds": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "down-0"
+    },
+    "enemy/zenchan/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        0
+      ],
+      "derivative": false
+    },
+    "enemy/zenchan/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        0
+      ],
+      "derivative": false
+    },
+    "enemy/zenchan/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "derivative": false
+    },
+    "enemy/zenchan/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "derivative": false
+    },
+    "enemy/zenchan/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "derivative": true
+    },
+    "enemy/zenchan/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "derivative": true
+    },
+    "enemy/zenchan/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        0
+      ],
+      "derivative": true
+    },
+    "enemy/zenchan/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        0
+      ],
+      "derivative": true
+    },
+    "enemy/monsta/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        1
+      ],
+      "derivative": false
+    },
+    "enemy/monsta/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        1
+      ],
+      "derivative": false
+    },
+    "enemy/monsta/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "derivative": false
+    },
+    "enemy/monsta/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "derivative": false
+    },
+    "enemy/monsta/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "derivative": true
+    },
+    "enemy/monsta/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "derivative": true
+    },
+    "enemy/monsta/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        1
+      ],
+      "derivative": true
+    },
+    "enemy/monsta/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        1
+      ],
+      "derivative": true
+    },
+    "enemy/pulpul/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        2
+      ],
+      "derivative": false
+    },
+    "enemy/pulpul/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        2
+      ],
+      "derivative": false
+    },
+    "enemy/pulpul/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "derivative": false
+    },
+    "enemy/pulpul/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "derivative": false
+    },
+    "enemy/pulpul/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "derivative": true
+    },
+    "enemy/pulpul/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "derivative": true
+    },
+    "enemy/pulpul/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        2
+      ],
+      "derivative": true
+    },
+    "enemy/pulpul/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        2
+      ],
+      "derivative": true
+    },
+    "enemy/banebou/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        3
+      ],
+      "derivative": false
+    },
+    "enemy/banebou/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        3
+      ],
+      "derivative": false
+    },
+    "enemy/banebou/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        3
+      ],
+      "derivative": false
+    },
+    "enemy/banebou/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        3
+      ],
+      "derivative": false
+    },
+    "enemy/banebou/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        3
+      ],
+      "derivative": true
+    },
+    "enemy/banebou/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        3
+      ],
+      "derivative": true
+    },
+    "enemy/banebou/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        3
+      ],
+      "derivative": true
+    },
+    "enemy/banebou/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        3
+      ],
+      "derivative": true
+    },
+    "enemy/invader/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        4
+      ],
+      "derivative": false
+    },
+    "enemy/invader/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        4
+      ],
+      "derivative": false
+    },
+    "enemy/invader/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        4
+      ],
+      "derivative": false
+    },
+    "enemy/invader/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        4
+      ],
+      "derivative": false
+    },
+    "enemy/invader/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        4
+      ],
+      "derivative": true
+    },
+    "enemy/invader/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        4
+      ],
+      "derivative": true
+    },
+    "enemy/invader/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        4
+      ],
+      "derivative": true
+    },
+    "enemy/invader/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        4
+      ],
+      "derivative": true
+    },
+    "enemy/mighta/walk-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        0,
+        5
+      ],
+      "derivative": false
+    },
+    "enemy/mighta/walk-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        1,
+        5
+      ],
+      "derivative": false
+    },
+    "enemy/mighta/angry-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        5
+      ],
+      "derivative": false
+    },
+    "enemy/mighta/captured-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        5
+      ],
+      "derivative": false
+    },
+    "enemy/mighta/warning-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        5
+      ],
+      "derivative": true
+    },
+    "enemy/mighta/escape-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        5
+      ],
+      "derivative": true
+    },
+    "enemy/mighta/dead-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        2,
+        5
+      ],
+      "derivative": true
+    },
+    "enemy/mighta/shoot-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "sourceCell": [
+        3,
+        5
+      ],
+      "derivative": true
+    }
+  },
+  "clips": {
+    "idle": {
+      "frames": [
+        "idle-0",
+        "idle-1",
+        "idle-0"
+      ],
+      "durations": [
+        120,
+        7,
+        53
+      ],
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "run-0",
+        "run-1",
+        "run-2",
+        "run-3"
+      ],
+      "durations": [
+        5,
+        4,
+        5,
+        4
+      ],
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "jump-0",
+        "jump-1"
+      ],
+      "durations": [
+        18,
+        42
+      ],
+      "loop": false
+    },
+    "shoot": {
+      "frames": [
+        "shoot-0",
+        "shoot-1"
+      ],
+      "durations": [
+        4,
+        8
+      ],
+      "loop": false
+    },
+    "hurt": {
+      "frames": [
+        "hurt-0"
+      ],
+      "durations": [
+        12
+      ],
+      "loop": false
+    },
+    "down": {
+      "frames": [
+        "down-0"
+      ],
+      "durations": [
+        90
+      ],
+      "loop": false
+    }
+  },
+  "identities": [
+    "circle",
+    "diamond",
+    "heart",
+    "star",
+    "club",
+    "triangle",
+    "moon",
+    "flower",
+    "square",
+    "spade"
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "canvas": [
+    1536,
+    864
+  ],
+  "canonicalZoom": 1,
+  "maximumInteriorEdgeMismatchPixels": 11.330143540669875,
+  "tiers": [
+    {
+      "tier": "crown",
+      "spans": [
+        {
+          "tileSpanInclusive": [
+            1,
+            41
+          ],
+          "paintedWorldEdges": [
+            24.803827751196174,
+            1014.88995215311
+          ],
+          "nominalTileWorldEdges": [
+            24,
+            1008
+          ],
+          "signedPhysicalError": [
+            -0.7145135566188211,
+            -6.12440191387557
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            46,
+            70
+          ],
+          "paintedWorldEdges": [
+            1101.7033492822966,
+            1698.0287081339713
+          ],
+          "nominalTileWorldEdges": [
+            1104,
+            1704
+          ],
+          "signedPhysicalError": [
+            2.0414673046252574,
+            5.307814992025467
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "upper",
+      "spans": [
+        {
+          "tileSpanInclusive": [
+            1,
+            14
+          ],
+          "paintedWorldEdges": [
+            24.803827751196174,
+            358.622009569378
+          ],
+          "nominalTileWorldEdges": [
+            24,
+            360
+          ],
+          "signedPhysicalError": [
+            -0.7145135566188211,
+            1.2248803827751038
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            18,
+            29
+          ],
+          "paintedWorldEdges": [
+            430.9665071770335,
+            722.4114832535885
+          ],
+          "nominalTileWorldEdges": [
+            432,
+            720
+          ],
+          "signedPhysicalError": [
+            0.9186602870813153,
+            -2.143540669856419
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            34,
+            59
+          ],
+          "paintedWorldEdges": [
+            827.8277511961722,
+            1428.2870813397128
+          ],
+          "nominalTileWorldEdges": [
+            816,
+            1440
+          ],
+          "signedPhysicalError": [
+            -10.513556618819772,
+            10.41148325358861
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            62,
+            70
+          ],
+          "paintedWorldEdges": [
+            1498.5645933014355,
+            1698.0287081339713
+          ],
+          "nominalTileWorldEdges": [
+            1488,
+            1704
+          ],
+          "signedPhysicalError": [
+            -9.390749601275981,
+            5.307814992025467
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "middle",
+      "spans": [
+        {
+          "tileSpanInclusive": [
+            1,
+            11
+          ],
+          "paintedWorldEdges": [
+            24.803827751196174,
+            281.1100478468899
+          ],
+          "nominalTileWorldEdges": [
+            24,
+            288
+          ],
+          "signedPhysicalError": [
+            -0.7145135566188211,
+            6.12440191387562
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            13,
+            22
+          ],
+          "paintedWorldEdges": [
+            312.11483253588517,
+            563.2535885167464
+          ],
+          "nominalTileWorldEdges": [
+            312,
+            552
+          ],
+          "signedPhysicalError": [
+            -0.10207336523126287,
+            -10.003189792663457
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            26,
+            40
+          ],
+          "paintedWorldEdges": [
+            628.3636363636364,
+            976.6507177033493
+          ],
+          "nominalTileWorldEdges": [
+            624,
+            984
+          ],
+          "signedPhysicalError": [
+            -3.8787878787878878,
+            6.532695374800621
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            43,
+            55
+          ],
+          "paintedWorldEdges": [
+            1042.7942583732058,
+            1346.641148325359
+          ],
+          "nominalTileWorldEdges": [
+            1032,
+            1344
+          ],
+          "signedPhysicalError": [
+            -9.594896331738507,
+            -2.347687400319046
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            60,
+            70
+          ],
+          "paintedWorldEdges": [
+            1443.7894736842106,
+            1698.0287081339713
+          ],
+          "nominalTileWorldEdges": [
+            1440,
+            1704
+          ],
+          "signedPhysicalError": [
+            -3.3684210526316747,
+            5.307814992025467
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "lower",
+      "spans": [
+        {
+          "tileSpanInclusive": [
+            1,
+            12
+          ],
+          "paintedWorldEdges": [
+            26.870813397129186,
+            314.1818181818182
+          ],
+          "nominalTileWorldEdges": [
+            24,
+            312
+          ],
+          "signedPhysicalError": [
+            -2.551834130781499,
+            -1.9393939393939439
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            17,
+            32
+          ],
+          "paintedWorldEdges": [
+            415.46411483253587,
+            779.2535885167464
+          ],
+          "nominalTileWorldEdges": [
+            408,
+            792
+          ],
+          "signedPhysicalError": [
+            -6.634768740031884,
+            11.330143540669875
+          ]
+        },
+        {
+          "tileSpanInclusive": [
+            42,
+            70
+          ],
+          "paintedWorldEdges": [
+            1012.8229665071771,
+            1698.0287081339713
+          ],
+          "nominalTileWorldEdges": [
+            1008,
+            1704
+          ],
+          "signedPhysicalError": [
+            -4.287081339712939,
+            5.307814992025467
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "floor",
+      "spans": [
+        {
+          "tileSpanInclusive": [
+            0,
+            71
+          ],
+          "paintedWorldEdges": [
+            24.803827751196174,
+            1699.0622009569379
+          ],
+          "nominalTileWorldEdges": [
+            0,
+            1728
+          ],
+          "signedPhysicalError": [
+            -22.047846889952158,
+            25.722488038277433
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": "Cream silhouettes follow the measured reference. Collision retains24px tiles and two solid backing columns; interior cap-to-collision endpoint error is at most11.34physicalpx. Outer cap edges extend decoratively into nonwalkable side architecture and are not additional walkable area. Landing/route tests use the actual collision grid, not painted endpoints."
+}

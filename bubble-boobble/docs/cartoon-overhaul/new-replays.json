@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "recordings": 3,
+  "steps": 302,
+  "scope": "Three separately named full-overhaul checkpoint recordings verified on the final production bundle with explicit cartoon scene. Original recordings were not regenerated.",
+  "results": [
+    {
+      "path": "tests/replays/cartoon_overhaul_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+      "scene": "scenes/cartoon.scene.json",
+      "sha256": "68c93f3348114e5ba0cb93683c9edaed25f6949501a8f018eeb8f94b892f6569",
+      "bytes": 17163,
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "e647befc1ee5c805",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 46
+      },
+      "report": {
+        "ok": true,
+        "steps": 46,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena.greplay",
+      "scene": "scenes/cartoon.scene.json",
+      "sha256": "ad541ee68e5049eb9ea85f7f9e49959324ec83cc9b8db39cef560c4c214adb49",
+      "bytes": 17597,
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "e647befc1ee5c805",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 48
+      },
+      "report": {
+        "ok": true,
+        "steps": 48,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect.greplay",
+      "scene": "scenes/cartoon.scene.json",
+      "sha256": "d006e73678e90a6f6727c608b8d8465d9ed54a6134c1ac0be638a88277adccaa",
+      "bytes": 64107,
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "e647befc1ee5c805",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 208
+      },
+      "report": {
+        "ok": true,
+        "steps": 208,
+        "firstDivergence": null
+      }
+    }
+  ]
+}

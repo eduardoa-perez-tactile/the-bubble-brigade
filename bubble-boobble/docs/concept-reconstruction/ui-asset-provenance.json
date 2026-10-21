@@ -1,0 +1,182 @@
+{
+  "generator": "built-in image_gen for original UI sheet; exact existing portrait crops",
+  "reference": "docs/art-reskin-investigation/concept-ten-player-arena.png",
+  "assets": [
+    {
+      "target": "assets/cartoon/reconstruction/ui/score-parchment.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        164,
+        178,
+        1378,
+        326
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/wave-scroll.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        363,
+        423,
+        1172,
+        588
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/footer-left.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        0,
+        750,
+        335,
+        934
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/footer-right.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        1202,
+        750,
+        1536,
+        934
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/footer-center.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        334,
+        750,
+        1203,
+        934
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/footer-parchment.png",
+      "source": "docs/concept-reconstruction/sources/ui-assets-sheet.png",
+      "crop": [
+        350,
+        768,
+        1185,
+        899
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/green.png",
+      "source": "assets/cartoon/ui/portraits/green.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/blue.png",
+      "source": "assets/cartoon/ui/portraits/blue.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/red.png",
+      "source": "assets/cartoon/ui/portraits/red.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/yellow.png",
+      "source": "assets/cartoon/ui/portraits/yellow.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/purple.png",
+      "source": "assets/cartoon/ui/portraits/purple.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/orange.png",
+      "source": "assets/cartoon/ui/portraits/orange.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/cyan.png",
+      "source": "assets/cartoon/ui/portraits/cyan.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/pink.png",
+      "source": "assets/cartoon/ui/portraits/pink.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/ivory.png",
+      "source": "assets/cartoon/ui/portraits/ivory.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    },
+    {
+      "target": "assets/cartoon/reconstruction/ui/portraits/slate.png",
+      "source": "assets/cartoon/ui/portraits/slate.png",
+      "crop": [
+        0,
+        0,
+        80,
+        64
+      ],
+      "operation": "exact pixel crop, no redraw or resampling"
+    }
+  ]
+}

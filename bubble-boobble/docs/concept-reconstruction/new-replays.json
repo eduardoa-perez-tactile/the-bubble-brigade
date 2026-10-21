@@ -1,0 +1,124 @@
+{
+  "ok": true,
+  "total": 5,
+  "steps": 739,
+  "bundleSha256": "7f68faa03a22bec3ecb4d0db36f1b912ef0728a556fbc319517c1644e4e86c01",
+  "note": "Five newly named reconstruction streams recorded on explicit desktop with phone-low residency. Original refinement, concept, overhaul and slice streams are retained unchanged. Verification selects the cartoon scene explicitly.",
+  "results": [
+    {
+      "path": "tests/replays/reconstruction_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+      "sha256": "5bcdbf49b1b2d298b947b3c301e11f4095a06d6385c5028a211e1da5b2e42fcf",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "279964c30f46c622",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 46
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 46,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/reconstruction_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave.greplay",
+      "sha256": "c65542be9a411eec33d12c270760d65b71b1c896f0e3363f0205240c6d5e1b3f",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "279964c30f46c622",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 347
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 347,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/reconstruction_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable.greplay",
+      "sha256": "b8a67c98c9e505912f41c57f6115c37219f8d0e795bf53d9fa366630774396ed",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "279964c30f46c622",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 171
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 171,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/reconstruction_checkpoint_controlled_reference_poses_preserve_measured_caps_and_full_native_actors_across_four_aspects.greplay",
+      "sha256": "94a5a79476798caf80a6aeb6472480c63383f7bb11e9a2b367725e8919d6eccf",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "279964c30f46c622",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "reconstruction checkpoint controlled reference poses preserve measured caps and full native actors across four aspects",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 20
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 20,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/reconstruction_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices.greplay",
+      "sha256": "f2aef7450626e9752d5a8e84f84056f2a068124fa98635bbbe07a0d82cfa38c4",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "279964c30f46c622",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 155
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 155,
+        "firstDivergence": null
+      }
+    }
+  ]
+}

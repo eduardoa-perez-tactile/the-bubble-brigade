@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "baseline": "71e9d52",
+  "checked": 532,
+  "changed": [],
+  "missing": [],
+  "note": "All existing cartoon assets, including character frames, animation data, atlas files and portraits, retain their bytes. Character changes are presentation scale only."
+}

@@ -1,0 +1,92 @@
+{
+  "$schemaVersion": 1,
+  "guid": "5443ee61-e986-41be-90b1-3361bde7db67",
+  "name": "cartoon-small-action",
+  "title": "Cartoon Small Action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon small action",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 96,
+        "h": 30,
+        "justify": "center"
+      },
+      "children": [
+        "dsb_label",
+        "d_small_button_marker"
+      ]
+    },
+    "dsb_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "style": {
+        "fontSize": 15,
+        "color": "#30271e",
+        "outline": 0,
+        "w": "90%",
+        "h": 28,
+        "fitMin": 10,
+        "textAlign": "center"
+      },
+      "property": "label"
+    },
+    "d_small_button_marker": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          -5,
+          0
+        ],
+        "w": 2,
+        "h": "100%",
+        "bg": "#c68b39",
+        "attach": true
+      },
+      "show": "selected"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#30271e"
+            },
+            "dsb_label": {
+              "color": "#f1e3bf",
+              "outline": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

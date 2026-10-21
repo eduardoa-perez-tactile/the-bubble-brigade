@@ -1,0 +1,78 @@
+{
+  "ok": true,
+  "total": 3,
+  "steps": 577,
+  "bundleSha256": "72e941bf40cfea98dc76fd054742d59b76edd12a99cd2b629c16b172d62c8de5",
+  "note": "Three separately named concept checkpoint recordings. Explicit cartoon scene selects the correct world; replay header sceneId is the test label. Previous recordings were not regenerated.",
+  "results": [
+    {
+      "path": "tests/replays/concept_checkpoint_all_menu_routes_remain_functional_and_fit_native_wide_tall_and_ultrawide_screens.greplay",
+      "sha256": "bedb47f8807f075cab5b4dec8716f78b43fd0c0e5c7de2ccb063234722da3eca",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "42e01ec64ba9416a",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 46
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 46,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave.greplay",
+      "sha256": "9db6698073653d998854ba029e1da138d6d1b8740452c83bcd522c6b703e71da",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "42e01ec64ba9416a",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 360
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 360,
+        "firstDivergence": null
+      }
+    },
+    {
+      "path": "tests/replays/concept_checkpoint_responsive_actual_rescue_empty_out_roster_boss_victory_and_restart_remain_playable.greplay",
+      "sha256": "f99407710193769e520cbf0fbab13582eb8bece870cba6930a448fdca738703a",
+      "header": {
+        "buildId": "0.1.0",
+        "bundleHash": "42e01ec64ba9416a",
+        "assetManifestHash": "loose:2d06800538d394c2",
+        "worldSeed": 1,
+        "sceneId": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+        "dt": 0.016666666666666666,
+        "engineVersion": "0.1.0",
+        "js": "v8",
+        "steps": 171
+      },
+      "scene": "scenes/cartoon.scene.json",
+      "gpuTier": "desktop",
+      "checkpointEvery": 1,
+      "verification": {
+        "ok": true,
+        "steps": 171,
+        "firstDivergence": null
+      }
+    }
+  ]
+}

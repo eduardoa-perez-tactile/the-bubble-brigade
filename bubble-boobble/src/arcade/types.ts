@@ -25,7 +25,7 @@ export interface Cell {
   row: number;
 }
 export interface Level {
-  arena?: 'courtyard';
+  arena?: 'courtyard' | 'cartoon-courtyard';
   number: number;
   tiles: number[][];
   enemies: ({
@@ -230,8 +230,8 @@ export const intersects = (
   hh: number,
 ) => x < xx + ww && x + w > xx && y < yy + hh && y + h > yy;
 // Campaign constants remain the reference defaults; only authored arenas opt in.
-export const levelColumns = (level?: Level) => level?.arena === 'courtyard' ? 44 : Columns;
-export const levelRows = (level?: Level) => level?.arena === 'courtyard' ? 30 : Rows;
+export const levelColumns = (level?: Level) => level?.arena === 'cartoon-courtyard' ? level.tiles[0]!.length : level?.arena === 'courtyard' ? 44 : Columns;
+export const levelRows = (level?: Level) => level?.arena === 'cartoon-courtyard' ? level.tiles.length : level?.arena === 'courtyard' ? 30 : Rows;
 export const levelWidth = (level?: Level) => levelColumns(level) * Tile;
 export const levelHeight = (level?: Level) => levelRows(level) * Tile;
 export const arenaWidth = (g: GameState) => levelWidth(g.Level);

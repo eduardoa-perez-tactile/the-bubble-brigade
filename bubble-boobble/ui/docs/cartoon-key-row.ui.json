@@ -1,0 +1,42 @@
+{
+  "$schemaVersion": 1,
+  "guid": "1dfd3314-c4e9-4a33-ae70-a06ad7b77ecb",
+  "name": "cartoon-key-row",
+  "title": "Cartoon Key Row",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon key row",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#f1e3bf",
+        "radius": 0,
+        "w": 560,
+        "h": 38,
+        "gap": 8
+      },
+      "children": [
+        "dkr_keys"
+      ]
+    },
+    "dkr_keys": {
+      "type": "repeat",
+      "doc": "cartoon-key-button",
+      "property": "keys"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "keys": {
+      "type": "list",
+      "of": "cartoon-key-button",
+      "default": []
+    }
+  }
+}

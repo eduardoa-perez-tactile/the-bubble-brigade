@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-20",
+  "method": "Game Engine view renders; PNGs visually inspected",
+  "devices": [
+    "galaxy-z-fold5-cover",
+    "iphone-se",
+    "ipad-10"
+  ],
+  "orientation": "landscape",
+  "time": "end",
+  "fullUiPass": {
+    "sampleCount": 16,
+    "deviceCount": 3,
+    "renderCount": 48,
+    "layoutWarningCount": 0,
+    "samples": [
+      {
+        "view": "CartoonMenu",
+        "sample": "title"
+      },
+      {
+        "view": "CartoonMenu",
+        "sample": "main"
+      },
+      {
+        "view": "CartoonAccount",
+        "sample": "settings"
+      },
+      {
+        "view": "CartoonAccount",
+        "sample": "new-profile"
+      },
+      {
+        "view": "CartoonAccount",
+        "sample": "profiles"
+      },
+      {
+        "view": "CartoonAccount",
+        "sample": "scores"
+      },
+      {
+        "view": "CartoonParty",
+        "sample": "team"
+      },
+      {
+        "view": "CartoonModes",
+        "sample": "classic"
+      },
+      {
+        "view": "CartoonResults",
+        "sample": "victory"
+      },
+      {
+        "view": "CartoonResults",
+        "sample": "classic"
+      },
+      {
+        "view": "CartoonShell",
+        "sample": "help"
+      },
+      {
+        "view": "CartoonShell",
+        "sample": "credits"
+      },
+      {
+        "view": "CartoonShell",
+        "sample": "pause"
+      },
+      {
+        "view": "CartoonEditor",
+        "sample": "round1"
+      },
+      {
+        "view": "CartoonHUD",
+        "sample": "ready"
+      },
+      {
+        "view": "CartoonHUD",
+        "sample": "boss"
+      }
+    ]
+  },
+  "finalHudAndLogoPass": {
+    "sampleCount": 4,
+    "deviceCount": 3,
+    "renderCount": 12,
+    "layoutWarningCount": 0,
+    "previews": [
+      ".gameengine/cartoon-ui-previews/final-cartoonhud-ready-devices.png",
+      ".gameengine/cartoon-ui-previews/final-cartoonhud-rescue-devices.png",
+      ".gameengine/cartoon-ui-previews/final-cartoonmenu-title-devices.png",
+      ".gameengine/cartoon-ui-previews/final-cartoonmenu-main-devices.png"
+    ]
+  },
+  "representativeCaptures": [
+    "docs/cartoon-overhaul/ui/title-logo.png",
+    "docs/cartoon-overhaul/ui/hud-roster.png"
+  ],
+  "typecheck": {
+    "command": "node .gameengine/engine/node_modules/typescript/bin/tsc --noEmit",
+    "exitCode": 0
+  },
+  "scope": "Visual/layout evidence only. Replay, input and performance gates are recorded separately."
+}

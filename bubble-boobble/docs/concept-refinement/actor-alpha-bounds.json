@@ -1,0 +1,2384 @@
+{
+  "method": "Pillow alpha>0 getbbox of unchanged source PNGs; right and bottom exclusive",
+  "frames": {
+    "badge/blue": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "5a0c64154aa784a45aef00965904ef441e264948cc7547206d72f9521eb7bb94"
+    },
+    "badge/cyan": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "ae5caaf4e094ae2fc79755dbe023b6ad2a7a8713ff210a1fdee404202519fd0c"
+    },
+    "badge/green": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "0694c0e734069e52553c886ff7d3c7e1f2a542cc330631b6df6fdd465cf4923c"
+    },
+    "badge/ivory": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "dd3e4b20cfacd28e76758665008623fb4402a8829429a32cd3545fef8d67262a"
+    },
+    "badge/orange": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "364e8b312bafbb2e17072fb2db7b3e32f30785b42e6cc946fe8d6531f11e3661"
+    },
+    "badge/pink": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "c5eeda2faf1ff579aaba62e70797206fe482873817b96e113036a930ce206264"
+    },
+    "badge/purple": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "471dda571e7b741706f5ba8c186da4f1ee0fe5263bbad5d580d5764784713b51"
+    },
+    "badge/red": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "d6d23257d049ddec55a09fa613f786f50962bb0311941da6b3e5c4b221195d3b"
+    },
+    "badge/slate": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "6d6d0b30ea7c59db509acc69bd3201139d5507e256864c45c7614a7f77f49584"
+    },
+    "badge/yellow": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "sha256": "c019dfe5d4a96f6dc9132c4895ae021d7a9d9f6910e78b03a7c5b1414db3c34f"
+    },
+    "boss/attack-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        21,
+        120,
+        120
+      ],
+      "sha256": "642689728360a85e7e706f3ee490ce844f3cf3f290fa722aaf3458d0f3489450"
+    },
+    "boss/bottle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        24,
+        8,
+        103,
+        120
+      ],
+      "sha256": "d8e79542aefeccb5173322dcdd3c7575266d22c646829a0e753340fbf43bff68"
+    },
+    "boss/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        114,
+        120
+      ],
+      "sha256": "bb63aa62fcd819a17103011bc145ddfe21a9edfcc1a834a84ae2f8673eedbe57"
+    },
+    "boss/move-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        11,
+        120,
+        120
+      ],
+      "sha256": "38ac99e3413da1da9e19e0dd26767f2b3462fefc70d8489f3a95bb4dd6c1944a"
+    },
+    "boss/move-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        17,
+        120,
+        120
+      ],
+      "sha256": "56bc6c43448830af3ea4ac6ea64e834a7b72a8d1361d77e90708d1a150d5ae29"
+    },
+    "dragon/blue/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "24441e4d2b86a80de9c884461b03930d1ce61460cb867107a589839aa1e795bd"
+    },
+    "dragon/blue/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "8d714f104308fb47a840300e5d32d9e8772c0b779de8f8f0cd5b5681a05b5cf9"
+    },
+    "dragon/blue/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        23,
+        12,
+        102,
+        120
+      ],
+      "sha256": "69580ab55e1da5d9a222d332701df711c90bfd8ba7d594928c6c36818c9e2802"
+    },
+    "dragon/blue/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        23,
+        12,
+        102,
+        120
+      ],
+      "sha256": "cb282ce0c0cd45022bece1bd2addb9d8f361df328c80becf91fd684f13c9ae64"
+    },
+    "dragon/blue/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "7dc9ee9967862cedc5bca8443665d639f99d83f80ba39d483bbcf6114d8dc0d3"
+    },
+    "dragon/blue/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "72cadaed5b370c7ee68b8c566b552ba0072ac13884b542d369d18f9d071aa0ab"
+    },
+    "dragon/blue/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "055c1ff9522f40e93564d0730baf94818cef8e9685aac0e5af7e87d40bce44e5"
+    },
+    "dragon/blue/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "759ffb2c4054a05061c2ee7776feea730efcc7b8d7db7f3e1200023016ef4b53"
+    },
+    "dragon/blue/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "8cd92635a5e33203266925acc3d7adbbc70ed6b901755c9a799c3ceab6a208a5"
+    },
+    "dragon/blue/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "8122d1efc7137a65f20f682e1ea6bbb961a186e914134d1174b04c59dc45e423"
+    },
+    "dragon/blue/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "372c61b9667f205524ca7f14246d0940460743ffc670d2cc9e5af72a6c39fc69"
+    },
+    "dragon/blue/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "d7b3ea6e709e2e45b437808ec1df1606a51061eaa20328a7c321aa96811efdd7"
+    },
+    "dragon/cyan/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "3f37acb7bf48315934712a48fc44965aaff5cc0d52dacb2ffd2e4cfc05c3b001"
+    },
+    "dragon/cyan/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "07bfe753ad7e073c0305eaf47b6a0207f0d708ce9eec1f4540eacf707b6a5989"
+    },
+    "dragon/cyan/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "d5a2da89b21b390823c79ef2c185bb55f217fa90e1da32638e0d30b03887bb0f"
+    },
+    "dragon/cyan/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "dc653cad1e683bbf669d300daf66541567872745b7974cbe6db43560f9ea2627"
+    },
+    "dragon/cyan/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "e67eaf603c0fa15cac211f1927e55704a44ad1f9f768bee1b65215bf5d9b986a"
+    },
+    "dragon/cyan/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "5220eaaaf3e5aaca8fb431d4498d63d45a7ea9055ca59c031323fab637f16672"
+    },
+    "dragon/cyan/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "5d581cc6a2021be905da4adfb805392ecfba3bd3cde30bb24a5776f59022679a"
+    },
+    "dragon/cyan/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "227e2fe31af447cfc2d4588bc86df2cad4dd9ac9ac4bfa1bd3083cd3c98f013a"
+    },
+    "dragon/cyan/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "41d4c928efe85f55bb672f19806dcd49bf3114afde1df213df9267298a36c50e"
+    },
+    "dragon/cyan/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "bfca0b8a856969aa7888ef197ce1deeb63d382324e74bb9de76f0d2178bcd66c"
+    },
+    "dragon/cyan/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "a1abc9cab3227072f82251ef5f70e2d8fed10bec9e695ced3096003ff8401ffe"
+    },
+    "dragon/cyan/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "5a742256f9a54a6588261cef4fb53763fa375b5a17f65b1f46cd3fe544138246"
+    },
+    "dragon/green/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "d4618f5c9714a92e92fb42caab30781d72b0163d4bfbe342e8f3f733e1bd9208"
+    },
+    "dragon/green/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "7d157ba2f856b6a717e9a1baea4794ac479fe2504af8f6f2fbe903f424982b01"
+    },
+    "dragon/green/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "61bee04ce0a0339b67208a9c244ff79bdbc96978e376cd289b7f10d651c824ec"
+    },
+    "dragon/green/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "d928c967b4ffb3d755b7aa4b1eb39982441202d25837d3830a8bf09a60940007"
+    },
+    "dragon/green/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "bc5d143f264005b081866200c8bca4dacebd4862f10904dd786d7b08db518a84"
+    },
+    "dragon/green/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "dfa54129b44018ec75a8eae09a3d9cba9cdc980d6186e612c95c90b72ccbfd06"
+    },
+    "dragon/green/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "94bf339cc2e5188a6958045f4cb9a3ae88c1bd9f14a9b6ffef0a37b442aa3dc8"
+    },
+    "dragon/green/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "92f00a713f97d0f8e7bf17679c9d579b3ab926f61ffc7ad6f4f75876484afb25"
+    },
+    "dragon/green/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "269b788fea9d9b6387c659f638ffe14e354c5ee7062e07ff36ebf5036af098f4"
+    },
+    "dragon/green/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "638cbc6ed0029f123ea3e62e9f74210efd3cf4f430ff6ad8dfc68c9daee791be"
+    },
+    "dragon/green/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "3a8ff44f3b365a717bf6cf0e676d26df040cec67005085c6e8c36b8fefad74bf"
+    },
+    "dragon/green/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "15763391d4ccda48294cb619fd420a6494af9439e8af616921a3f35ab8a0386a"
+    },
+    "dragon/ivory/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "669af762a59cd9a202c6e5fb4c8f81693da413cc8f52dfa1362503255c53a758"
+    },
+    "dragon/ivory/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "3e24f5d66a5e8c641850f4b82514a4baa02a645d3243bf59b3a988e9331a13a3"
+    },
+    "dragon/ivory/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "7797cc11cce15e1b0a776c1ea4fade9b7f26dcf82b4f773f07e93a05fe040ced"
+    },
+    "dragon/ivory/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "422ab22fa5f98a0aee5cbfcf29794d273de0f3cddf6355b25ac9bda4287ee2c3"
+    },
+    "dragon/ivory/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "24fd22a68dc6adf5a495665c904c1af9a0e1e9a0e189038b5c8f3363988af223"
+    },
+    "dragon/ivory/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "63d3116181d15177f53ffd67c46729cd518687a685a8471053e55d8cdcc92d65"
+    },
+    "dragon/ivory/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "d010a37b9ec946f24b1d0824e4fea72161ff1c2d831dded49003d3aa7248d2eb"
+    },
+    "dragon/ivory/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "02dd9724cab09b6945217c2be685992e5eb30de2cfaa1de133734c059c0edc04"
+    },
+    "dragon/ivory/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "491bb379b0e0646d9e2ab21ff9d3146ccb72071ca81682cc59988577badd1a22"
+    },
+    "dragon/ivory/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "0849d16490c3037c45bda0b778cf0312cd8cb3c6e8180f41d5d060baa04568a7"
+    },
+    "dragon/ivory/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "141358ea0c92c9a66f707e798250a7d5f18e6cde0a380448111c43f8d2b4f2bb"
+    },
+    "dragon/ivory/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "a318b86c82b0dfcc7d616305d6d2cdd67bac981164de763dd263eda5e23fb353"
+    },
+    "dragon/orange/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "6393beebca73ebfc4874299984168fe7552e0b8f09b1385dc93d428f7d759f4c"
+    },
+    "dragon/orange/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "d8967707d86f31b9e8afc7a1bd15ac32e521e42544b1e3f6dae5e451acaf9969"
+    },
+    "dragon/orange/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "afad7f888e336fb269badb1a1a958473a6ba9e97bfa55fbf3ba6e02ac9ce707d"
+    },
+    "dragon/orange/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "4ab768d740054bd16fbffd5cf58a5ee0eace820f5c59d6130729b25987da3b9a"
+    },
+    "dragon/orange/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "bcd7e542c49012d04fb8dd5902cda2992c9223e4c3111335f7efb7b69b15a69b"
+    },
+    "dragon/orange/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "3a5da3202a5ee09bc23fed344ec904445f58fef7e434133c2f868cf4627f4828"
+    },
+    "dragon/orange/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "d89b033fe769452d4c50b2ff845cf081c2665ef5834ff6feeedf05b5d9a102ea"
+    },
+    "dragon/orange/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "b04483d11eda89fb775e55ce2a63ca07c5b3e6150aeaa5f2305358329f8c3e87"
+    },
+    "dragon/orange/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "6d43c79b52fe7640e2d4d0b36494826164d631da858fd171286ebf5bdae7bb6d"
+    },
+    "dragon/orange/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "d7f14e35cdb8ed61d2f5c8dd9306f044c8b29d10f5b65432e2dd1359f2016e31"
+    },
+    "dragon/orange/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "a924891119cfc23c398e5701abfcc31dbeeb5af6a28b26a29467868d7ca85f31"
+    },
+    "dragon/orange/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "d6d349b2a671fe0f2f0d047a7502b47e0371307c4c623bf1ad5713e925acf90f"
+    },
+    "dragon/pink/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "a6fcc461ebec2e55e0850dfc01420ad67868d8c0bf60716e174aa2c1ae2e9059"
+    },
+    "dragon/pink/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "5245f782028c86e391a1a715217741b008f3f1f9456f3b436e540a4ae12535c9"
+    },
+    "dragon/pink/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "568bc19371dba759885772bc864162c67e5b05022e0a8fcd20c5ee5727c5f050"
+    },
+    "dragon/pink/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "af3b52cb7e7be898f7b31e83c711edb101371037820aaa13cb0d7907014b7e40"
+    },
+    "dragon/pink/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "42110324cfa83e2e4bec4d28a66d1cc9a72f31b041649fd3a9a2d00c96fb6aad"
+    },
+    "dragon/pink/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "048708f0e731d9d7090a4e045ff46bd33de56f37bd3ccd07bd0855e5cf9dd30c"
+    },
+    "dragon/pink/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "ba49c4b3f97192b937a75f2cab5780fdd6f42cb1986da69aef95ea5a7312a9ed"
+    },
+    "dragon/pink/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "9dd4a88ec3118d95b1326a50d910ef1a0ea973f8dae07cd88e53e8bce6535813"
+    },
+    "dragon/pink/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "f10dddd89e9d851b5e4f8b9853af1066150957587cd51196304173391d767069"
+    },
+    "dragon/pink/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "a1fdfbc4d2cac6d02e0175cebf9e12d19ad34deae26924d50b06dcd6b1999753"
+    },
+    "dragon/pink/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "b50f8ee377e1b030e85450cd24e7338aa423d72c2e2f0d65af77a35e2d9e2f59"
+    },
+    "dragon/pink/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "487dcf2a2a7a958fae2d655e41f15e164372badeccd75961adc303b41b2db7ef"
+    },
+    "dragon/purple/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "5e9d98bd23b5b69fa7629930ff732df5d7ef6a9b9932cb42165b78a71078ecd1"
+    },
+    "dragon/purple/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "d91b5e8c85392bbc1002fc466b4446c245a94a819a31e50aad777e7d4964db70"
+    },
+    "dragon/purple/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "0834d39755385a6d65265793483b4e7f325ea0369ce90cdef2b852aa48e819c9"
+    },
+    "dragon/purple/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "11e75da0906410f60092c235ae9ba87bfa70081646f51fbde587836842c6f5e0"
+    },
+    "dragon/purple/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "323f8775e2b96801c46f53fc3dc7cf2e8c50839d5493913550a7fbf717830cc3"
+    },
+    "dragon/purple/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "f910a5914057bbd3873f20959dc4e19234bbae5490755b37b80619db71bde17a"
+    },
+    "dragon/purple/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "257bd47086c6dd52ac5f69d968422b06cf7a9ffaf807875a5833988792fc2d00"
+    },
+    "dragon/purple/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "cdc9976d1f23b0e2db54fa70bdd30c98d1d8b8a9456566d9a52b288135fde59b"
+    },
+    "dragon/purple/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "aec22f268c3ace675a3063a7e702a705d25de91102361015dfc66ddca394cc5b"
+    },
+    "dragon/purple/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "37aa33c26f9b8871e3f7275797359c488fde0ba37a494e8a663c91b50a2ac621"
+    },
+    "dragon/purple/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "78f65a13d39c7e36882710778acb74bb71484a55407730f59b30e65e562a79e4"
+    },
+    "dragon/purple/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "754bada8a8a33aa92dd51cee3f8cadc34954cde23de1eaa526c2870410a20c94"
+    },
+    "dragon/red/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "2c53e46106761886b507b964140820705c53100b8ec12190f01b9b36611bd9e6"
+    },
+    "dragon/red/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "e449ac89f3932fe7bee5cc4ac4ad5618b61bdaea63b0308f3d76313c66a6678f"
+    },
+    "dragon/red/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "dc584b062843d97aba41a6d70024bf2b72b32b5f4804e79cc3febb25f27d60a6"
+    },
+    "dragon/red/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "00727fe65a7e288aa6ffc5003f10286a0d5f4e6a605e4315a3d7daa72620c5be"
+    },
+    "dragon/red/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "2530a31ccd3a8ae02a125b450c53a9ef55b93694b3f2a306b48d980eed48fab8"
+    },
+    "dragon/red/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "810c1cbdc23c04745a390be2c639911306f79bdaf7f997e966001c47aafb3f7a"
+    },
+    "dragon/red/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "6b88412d56ef93859e2a12c41dd7c0534cf9b406ebdb79ccdb6a51beaf60d512"
+    },
+    "dragon/red/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "e0569626e1fafd73d56fa0c532d8ee240e062c8a849199aad5817e3cc46c3d08"
+    },
+    "dragon/red/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "a817f34a2b71b46b1bb6c3fe28380d8546610b4e961be6402d119c6900fadeb9"
+    },
+    "dragon/red/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "5abb902051fd691724012653168eaa064d54262a8d7f3e4292cd943572aab366"
+    },
+    "dragon/red/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "cf9d0ca6e1c3b1eb78f3fc44a3b8d7df2c7143113e4705b0e9ec5c465ac008c4"
+    },
+    "dragon/red/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "072e6d00103baf4c8d39887aa07f9da0d704a5990983927641adacc1b7f9e69b"
+    },
+    "dragon/slate/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "f7e4f2288aa9fe2d20edf75e0b2d798bd680f153f937dd328fdf3bd58865aecd"
+    },
+    "dragon/slate/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "c9635979f50b3ecd18834f358a5babf1a10c02099624132553851281c45e8fc8"
+    },
+    "dragon/slate/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "6576c4b5c42a3d4bc9a06128379923cfab9b853710639fd0845833297b4f809c"
+    },
+    "dragon/slate/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "2220d450987fc002d00b8bc4b15ef988e73f01f0f7fe42f5e34dd058069e2783"
+    },
+    "dragon/slate/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "63dc93bf0ec70265a4cb7a0e2c16a7086647782ce821d2921e20baefbc6f0ea7"
+    },
+    "dragon/slate/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "d232d709154ab2e16df5c22bba7d52d34951b3e865f09fbf9cf172724bb20fd1"
+    },
+    "dragon/slate/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "cc7873a902d852535944f399323209e1a00d707fac28ec97a135be0cdcf1bd2f"
+    },
+    "dragon/slate/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "06dac8a8caa9b8a8b88197417acf0354705ecce036abf71e95b7154e45280aa0"
+    },
+    "dragon/slate/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "8d445f387fadf278647cc946af6a33c3027b39c76e5bebd244f7bda711aa5045"
+    },
+    "dragon/slate/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "2c3a2d8f7ce6b99382426a6558bbffc1e881879f3b4aa3abc7b0160420b389c2"
+    },
+    "dragon/slate/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "6257f39a8b40e1746065d5c41634a4901a36a7b0a1724674e20a177d1e394737"
+    },
+    "dragon/slate/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "8e07d972a93fc924d11c5af1b8b1c4eb31917e45cb519a898a2bb2070da818da"
+    },
+    "dragon/yellow/down-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        63,
+        120,
+        120
+      ],
+      "sha256": "1af87ba05dfa8301229976fa14c5c84e50f46d127e97a673cdcab6714ed030ca"
+    },
+    "dragon/yellow/hurt-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "9bd536347b30b0bedd95aabd7a81e57144c6d5313c815fc1d77cc0ca37dc1904"
+    },
+    "dragon/yellow/idle-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        26,
+        12,
+        102,
+        120
+      ],
+      "sha256": "f5ebd2f7ecc7fdb08eeec4a64a0b43259adda508bc8b024feb4509e4de32c245"
+    },
+    "dragon/yellow/idle-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        25,
+        12,
+        102,
+        120
+      ],
+      "sha256": "8ff209e9222753b4b6be5e20e140fb4236b8620a1af1086ad7c1bdaa514b217c"
+    },
+    "dragon/yellow/jump-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        107,
+        120
+      ],
+      "sha256": "b14f06268ac8a460d9e02841b40d0d4b4867e8e44eb2b1fcb6df1cb433b2699f"
+    },
+    "dragon/yellow/jump-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        16,
+        12,
+        112,
+        120
+      ],
+      "sha256": "b8dbef5ef86522fb559bfac0dcd77be6ed7c9b065f072b6fbf1bb0d4efdc6889"
+    },
+    "dragon/yellow/run-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        20,
+        12,
+        108,
+        120
+      ],
+      "sha256": "02d2e71281dce3659243b9d7d0505a87b04f62def82b29c76934c24b89526633"
+    },
+    "dragon/yellow/run-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        22,
+        12,
+        106,
+        120
+      ],
+      "sha256": "99d521d4c1f7df1ea441f2e671ea75eea2947adf0be08943c331c4fb68bcba2c"
+    },
+    "dragon/yellow/run-2": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        12,
+        109,
+        120
+      ],
+      "sha256": "b749c57f023b52ac04a5ab000149124b88bae41e4bc3b980fd034205742d85cc"
+    },
+    "dragon/yellow/run-3": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        12,
+        114,
+        120
+      ],
+      "sha256": "4d04b84e276b0d9be4d71041d01384ade08c1f96fca9aa8aca9ee5912eafdd1b"
+    },
+    "dragon/yellow/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "f4a83a78bfc63214b1f955f7be358a43e9467d87004ad956ed7e4d394edac317"
+    },
+    "dragon/yellow/shoot-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        20,
+        100,
+        120
+      ],
+      "sha256": "82b4a6a47c636d97484792e90c2e551c853f23285b3a83ab88e33208f46fe005"
+    },
+    "enemy/banebou/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        34,
+        120,
+        120
+      ],
+      "sha256": "c7abc753c41a231c0493c0c3f586cb7e2aa9ac30270fe0f03bba01ce6b62e0f5"
+    },
+    "enemy/banebou/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        21,
+        120,
+        120
+      ],
+      "sha256": "4cddb63d5affcde7288ec40ab0b63be831c75e128655f608768a42f5458c13f5"
+    },
+    "enemy/banebou/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        14,
+        19,
+        128,
+        118
+      ],
+      "sha256": "8377b8e1e40e1683af626f60f2a3a7c426389d9bb756c973958969df70eddbfd"
+    },
+    "enemy/banebou/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        34,
+        120,
+        120
+      ],
+      "sha256": "c7abc753c41a231c0493c0c3f586cb7e2aa9ac30270fe0f03bba01ce6b62e0f5"
+    },
+    "enemy/banebou/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        34,
+        120,
+        120
+      ],
+      "sha256": "c7abc753c41a231c0493c0c3f586cb7e2aa9ac30270fe0f03bba01ce6b62e0f5"
+    },
+    "enemy/banebou/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        23,
+        120,
+        120
+      ],
+      "sha256": "919c7397c3d94cd8821b66fd174eaccae746ad5ef26ec83dc047d25baa0223f5"
+    },
+    "enemy/banebou/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        22,
+        120,
+        120
+      ],
+      "sha256": "eb233b156be5732fe34ce95d92f4bc3df99525e8824436f7dceb939aa3b77af4"
+    },
+    "enemy/banebou/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        34,
+        120,
+        120
+      ],
+      "sha256": "c7abc753c41a231c0493c0c3f586cb7e2aa9ac30270fe0f03bba01ce6b62e0f5"
+    },
+    "enemy/invader/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "sha256": "cf9b85ae33bafb51b0aa9f301dded2cfc684af57b3397eee4c6cbd8b0d062f0f"
+    },
+    "enemy/invader/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        10,
+        8,
+        118,
+        120
+      ],
+      "sha256": "aec0bfc70784eb82248da614e7680128f96f0868a2bf64cafdf502e68db513ee"
+    },
+    "enemy/invader/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        0,
+        123,
+        121
+      ],
+      "sha256": "72127daaa05fd62b0496a0551fcd56b73d7fcd1bc539c888afcbd94a96b854de"
+    },
+    "enemy/invader/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "sha256": "cf9b85ae33bafb51b0aa9f301dded2cfc684af57b3397eee4c6cbd8b0d062f0f"
+    },
+    "enemy/invader/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "sha256": "cf9b85ae33bafb51b0aa9f301dded2cfc684af57b3397eee4c6cbd8b0d062f0f"
+    },
+    "enemy/invader/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        12,
+        8,
+        116,
+        120
+      ],
+      "sha256": "70a9dd4b8425e9beeabbfc3d7efb38359224a344dd568e0c54843a762cb7207e"
+    },
+    "enemy/invader/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        11,
+        8,
+        116,
+        120
+      ],
+      "sha256": "dd740f0635dd6970b0b7d2f3f1c3b0c89470c84356a1aad61473b4f2f7b9d469"
+    },
+    "enemy/invader/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "sha256": "cf9b85ae33bafb51b0aa9f301dded2cfc684af57b3397eee4c6cbd8b0d062f0f"
+    },
+    "enemy/mighta/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        36,
+        120,
+        120
+      ],
+      "sha256": "7fc7f5685196c4ce8efbcb6c0343e092cd4a49d176cc63988929c19941f343c6"
+    },
+    "enemy/mighta/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "sha256": "0fa7a07fcc331e1c152cab374179b843c41289405960a84ac79cb9698105eb1d"
+    },
+    "enemy/mighta/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        18,
+        13,
+        126,
+        125
+      ],
+      "sha256": "7140e7ac1e2cbc3c0cf4dae17d0f6a3bce703fa4def61ae4e1dc524a2ad56d95"
+    },
+    "enemy/mighta/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        36,
+        120,
+        120
+      ],
+      "sha256": "7fc7f5685196c4ce8efbcb6c0343e092cd4a49d176cc63988929c19941f343c6"
+    },
+    "enemy/mighta/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        36,
+        120,
+        120
+      ],
+      "sha256": "7fc7f5685196c4ce8efbcb6c0343e092cd4a49d176cc63988929c19941f343c6"
+    },
+    "enemy/mighta/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        24,
+        120,
+        120
+      ],
+      "sha256": "6d18f1fec41bb7c95e9014681aed8aa25c3b99729667c5786369d775b135568e"
+    },
+    "enemy/mighta/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        36,
+        120,
+        120
+      ],
+      "sha256": "bb8cfc6c48c0a477b7975bb026d4ba0b1992473236afee689983321d28689edb"
+    },
+    "enemy/mighta/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        36,
+        120,
+        120
+      ],
+      "sha256": "7fc7f5685196c4ce8efbcb6c0343e092cd4a49d176cc63988929c19941f343c6"
+    },
+    "enemy/monsta/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        51,
+        120,
+        120
+      ],
+      "sha256": "80eb672d208ea0eb5e0fe32d20401f554ba789dfc799fbaeb7cc887483439951"
+    },
+    "enemy/monsta/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        14,
+        120,
+        120
+      ],
+      "sha256": "3e2638d9cf709d23a6e2e5896bead49f9c3ce58d54c213b255b9c2c1b420915b"
+    },
+    "enemy/monsta/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        13,
+        17,
+        128,
+        128
+      ],
+      "sha256": "a22e281d68acdc2a95bd30fabe8ad095fcc2933c74bdc87ce4321b1342ca8ac2"
+    },
+    "enemy/monsta/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        51,
+        120,
+        120
+      ],
+      "sha256": "80eb672d208ea0eb5e0fe32d20401f554ba789dfc799fbaeb7cc887483439951"
+    },
+    "enemy/monsta/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        51,
+        120,
+        120
+      ],
+      "sha256": "80eb672d208ea0eb5e0fe32d20401f554ba789dfc799fbaeb7cc887483439951"
+    },
+    "enemy/monsta/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        39,
+        120,
+        120
+      ],
+      "sha256": "432016a56e4d361b9e4178b2727edd785a7d42ed883510f7949cb178ba524639"
+    },
+    "enemy/monsta/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        42,
+        120,
+        120
+      ],
+      "sha256": "3db8a18c4d8f954d86a3b432d18c681860788271197bf60669fb44633932350b"
+    },
+    "enemy/monsta/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        51,
+        120,
+        120
+      ],
+      "sha256": "80eb672d208ea0eb5e0fe32d20401f554ba789dfc799fbaeb7cc887483439951"
+    },
+    "enemy/pulpul/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        39,
+        120,
+        120
+      ],
+      "sha256": "ac26a83eb85e5cdeb7c9390e61d0e76d4916ee9d89638488d8362f9041bed18a"
+    },
+    "enemy/pulpul/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        32,
+        120,
+        120
+      ],
+      "sha256": "046e7b83c754554e2530f987f3eb998806014ef62746bd146123087ba0a5b4d2"
+    },
+    "enemy/pulpul/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        19,
+        16,
+        128,
+        128
+      ],
+      "sha256": "9fd765971aebf8d03bca9bc8e4589e10184bc780c817d4b1ae279dbd8eaf1181"
+    },
+    "enemy/pulpul/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        39,
+        120,
+        120
+      ],
+      "sha256": "ac26a83eb85e5cdeb7c9390e61d0e76d4916ee9d89638488d8362f9041bed18a"
+    },
+    "enemy/pulpul/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        39,
+        120,
+        120
+      ],
+      "sha256": "ac26a83eb85e5cdeb7c9390e61d0e76d4916ee9d89638488d8362f9041bed18a"
+    },
+    "enemy/pulpul/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        40,
+        120,
+        120
+      ],
+      "sha256": "e71c5fcd671ca6b0a609d9463057f4a70f0db0cb05ffa0f11e3ca71f70d6c7e2"
+    },
+    "enemy/pulpul/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        37,
+        120,
+        120
+      ],
+      "sha256": "2a66548538a28f95c32b94efce1aa81ad4c9aa927f1d970543106c0f58e35b01"
+    },
+    "enemy/pulpul/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        39,
+        120,
+        120
+      ],
+      "sha256": "ac26a83eb85e5cdeb7c9390e61d0e76d4916ee9d89638488d8362f9041bed18a"
+    },
+    "enemy/zenchan/angry-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        53,
+        120,
+        120
+      ],
+      "sha256": "fffdd5a4a75d87269cae7f273630ea7fa4bf4389184564ddc1bbf599f6238faf"
+    },
+    "enemy/zenchan/captured-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        10,
+        8,
+        118,
+        120
+      ],
+      "sha256": "8b4091052e01a02140fb15b05f0b15790dc7959ae1bf73722598d30062eb3071"
+    },
+    "enemy/zenchan/dead-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        19,
+        7,
+        128,
+        120
+      ],
+      "sha256": "511381668886afaad1947b4d49a8242945f09e3a53999b4e76c3461a11b50375"
+    },
+    "enemy/zenchan/escape-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        53,
+        120,
+        120
+      ],
+      "sha256": "fffdd5a4a75d87269cae7f273630ea7fa4bf4389184564ddc1bbf599f6238faf"
+    },
+    "enemy/zenchan/shoot-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        53,
+        120,
+        120
+      ],
+      "sha256": "fffdd5a4a75d87269cae7f273630ea7fa4bf4389184564ddc1bbf599f6238faf"
+    },
+    "enemy/zenchan/walk-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        35,
+        120,
+        120
+      ],
+      "sha256": "155dc5dc44692308a16e616f778ee28fc6f2a32f3684cbd181dac528b4099427"
+    },
+    "enemy/zenchan/walk-1": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        32,
+        120,
+        120
+      ],
+      "sha256": "ce033a8896a5a392f0bb223c3d399cb361e85247e727d3ac74ec7c7708928e9e"
+    },
+    "enemy/zenchan/warning-0": {
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        8,
+        53,
+        120,
+        120
+      ],
+      "sha256": "fffdd5a4a75d87269cae7f273630ea7fa4bf4389184564ddc1bbf599f6238faf"
+    }
+  }
+}

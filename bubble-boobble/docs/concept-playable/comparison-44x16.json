@@ -1,0 +1,105 @@
+{
+  "captures": [
+    {
+      "name": "wide-combat-44x16",
+      "width": 1536,
+      "height": 864,
+      "drawCalls": 9,
+      "atlasPages": 6,
+      "framing": {
+        "columns": 44,
+        "rows": 16,
+        "tiers": [
+          3,
+          6,
+          9,
+          12,
+          15
+        ],
+        "logicalViewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "scale": 1.1729323308270676,
+        "firstLedgeScreenY": 355.993984962406,
+        "floorLedgeScreenY": 761.3593984962406,
+        "stageWidthOccupancy": 0.9676691729323308,
+        "headerClearanceAtHighestJumpBadge": 11.729323308270665,
+        "floorArtFooterClearance": 0,
+        "footer": 48,
+        "source": "Expected bounds from the shared authored layout contract; actual image/camera captured beside them."
+      },
+      "camera": {
+        "cameras": [
+          {
+            "entity": "70:1",
+            "guid": "a747e15e-fa27-4884-98d2-4ed9985846bf",
+            "name": "Camera",
+            "kind": "flat2d",
+            "projection": "orthographic",
+            "order": 0,
+            "viewport": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "clear": true,
+            "layerMask": 4294967295,
+            "renderScale": 1,
+            "hidden": false,
+            "primary3d": true,
+            "drivesWorldView": true,
+            "drivenBy": {
+              "Camera.designAspect": "WorldView",
+              "Camera.fit": "WorldView",
+              "Camera.orthoSize": "WorldView",
+              "LocalTransform.position": "WorldView"
+            },
+            "rigs": {
+              "shake": true
+            },
+            "effective": {
+              "position": [
+                384,
+                360,
+                0
+              ],
+              "forward": [
+                0,
+                0,
+                -1
+              ],
+              "orthoSize": 360,
+              "fit": "Contain",
+              "designAspect": 1.0666667,
+              "center": [
+                384,
+                360
+              ],
+              "halfExtents": [
+                384.00003,
+                682.66675
+              ],
+              "near": -100,
+              "far": 100
+            }
+          }
+        ],
+        "worldView": {
+          "center": [
+            384,
+            360
+          ],
+          "orthoSize": 360,
+          "fit": "Contain",
+          "designAspect": 1.0666667
+        },
+        "warnings": [
+          "the world has MeshRenderers but no perspective or tilted orthographic camera: 3D meshes draw through the flat 2D view"
+        ]
+      }
+    }
+  ],
+  "setup": "Five-tier concept stage, ten human slots in the actual new arena; one recorded jump, one moving player and staggered one-shot fire inputs. Controlled engine QA composition, not a human-group readability certification."
+}

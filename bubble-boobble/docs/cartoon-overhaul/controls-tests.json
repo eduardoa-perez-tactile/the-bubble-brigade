@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-20",
+  "ok": true,
+  "count": 6,
+  "tests": [
+    {
+      "name": "cartoon controls geometry remains an explicit opt in and preserves original campaign source",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls campaign keeps round enemies rewards and element metadata across new geometry",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls new layout retains immediate movement firing jump and pause rules",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    },
+    {
+      "name": "cartoon controls recorded opt in reaches party requests without changing original start actions",
+      "ok": true,
+      "steps": 6,
+      "hash": "8e7df27562e339f1",
+      "error": null
+    },
+    {
+      "name": "cartoon controls original party requests retain their original geometry and omit cartoon flag",
+      "ok": true,
+      "steps": 5,
+      "hash": "9a3c8dc4d10ac65a",
+      "error": null
+    },
+    {
+      "name": "cartoon controls normal preparation warms all bot navigation before the first combat step",
+      "ok": true,
+      "steps": 0,
+      "hash": "876ce25687dba12b",
+      "error": null
+    }
+  ]
+}

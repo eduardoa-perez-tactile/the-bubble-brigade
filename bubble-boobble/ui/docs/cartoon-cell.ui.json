@@ -1,0 +1,68 @@
+{
+  "$schemaVersion": 1,
+  "guid": "ac12cbaa-0cbb-49b1-8f5c-0e51460c41b1",
+  "name": "cartoon-cell",
+  "title": "Cartoon Cell",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon cell",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#f1e3bf",
+        "radius": 0,
+        "w": 16,
+        "h": 16
+      },
+      "children": [
+        "dc_image",
+        "dc_label"
+      ]
+    },
+    "dc_image": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": 16,
+        "h": 16
+      },
+      "property": "image"
+    },
+    "dc_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "fontSize": 10,
+        "color": "#30271e",
+        "outline": 0
+      },
+      "property": "label"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "behaviour": "button",
+  "properties": {
+    "image": {
+      "type": "image",
+      "default": "ui/sprites/star"
+    },
+    "label": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

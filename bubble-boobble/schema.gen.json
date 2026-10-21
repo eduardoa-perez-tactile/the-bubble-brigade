@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "package": "Bubble Madness",
+  "package": "The Bubble Brigade",
   "enums": [],
   "types": [
     {
@@ -61,7 +61,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "ArcadeControl",
@@ -87,7 +87,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "ArcadeFeel",
@@ -173,7 +173,7 @@
           "lanes": 32
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "ArcadeInput",
@@ -211,7 +211,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "ArcadePlatformState",
@@ -225,7 +225,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "ArcadeVisual",
@@ -239,7 +239,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "Bubble",
@@ -260,7 +260,7 @@
           "doc": "Units per step"
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "DesktopIntent",
@@ -298,7 +298,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "EditorPointer",
@@ -332,7 +332,7 @@
           "default": -1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "Game",
@@ -353,7 +353,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "HarnessControl",
@@ -368,7 +368,7 @@
           "doc": "Controlled starter scenario; suppresses random spawns"
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "MovementInput",
@@ -394,7 +394,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "PortInput",
@@ -414,7 +414,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "PortMatch",
@@ -478,7 +478,7 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "PortPlayer",
@@ -578,14 +578,14 @@
           "lanes": 1
         }
       ],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     },
     {
       "name": "PortVisual",
       "kind": "component",
       "sim": true,
       "fields": [],
-      "package": "Bubble Madness"
+      "package": "The Bubble Brigade"
     }
   ],
   "commands": [],

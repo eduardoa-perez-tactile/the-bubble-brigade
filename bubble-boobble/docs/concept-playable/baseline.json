@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "lane": "v8",
+  "passed": 292,
+  "tests": 292,
+  "traceDirectory": ".gameengine/concept-playable-baseline/v8",
+  "checkpointEvery": 1,
+  "gitHead": "6c0c219f7fd7112fb892412d983a594ad3d58764",
+  "note": "Captured before concept geometry edits. Working tree snapshot is identified by stored per-step traces; gitHead alone does not identify uncommitted changes."
+}

@@ -1,0 +1,286 @@
+{
+  "reference": {
+    "path": "docs/art-reskin-investigation/concept-ten-player-arena.png",
+    "sha256": "60978cd71388d1e3b9a0b613f21ba3e3766f5193a5c4400b3026194dc690ffcd",
+    "width": 1672,
+    "height": 941
+  },
+  "comparisonCanvas": {
+    "width": 1536,
+    "height": 864,
+    "normalization": "Reference measurements scale X and Y independently to the fixed actual engine capture size. The 0.05% aspect difference is reported; actual engine pixels are never stretched to conceal layout drift."
+  },
+  "tolerance": {
+    "normalizedPixels": 4,
+    "meaning": "Hand-painted silhouette edges are approximate. Record actual cap top and full grey/tan cap silhouette, not a warm-color-only threshold. Occluded edges and decorative seams require visual review."
+  },
+  "tiers": [
+    {
+      "id": "crown",
+      "sourceCapTopY": 253,
+      "normalizedMeasuredTopY": 232.3,
+      "normalizedNominalTopY": 233,
+      "sourceCapSilhouetteSpansX": [
+        [
+          24,
+          982
+        ],
+        [
+          1066,
+          1643
+        ]
+      ],
+      "normalizedCapSpansX": [
+        [
+          22.05,
+          902.12
+        ],
+        [
+          979.29,
+          1509.36
+        ]
+      ],
+      "edgeNotes": "Approximate outer ink/cap silhouette, inclusive endpoints; actor feet overlap some cap tops. Boundary grey stones are included.",
+      "sourceCapDepthApprox": 24
+    },
+    {
+      "id": "upper",
+      "sourceCapTopY": 398,
+      "normalizedMeasuredTopY": 365.43,
+      "normalizedNominalTopY": 366,
+      "sourceCapSilhouetteSpansX": [
+        [
+          24,
+          347
+        ],
+        [
+          417,
+          699
+        ],
+        [
+          801,
+          1382
+        ],
+        [
+          1450,
+          1643
+        ]
+      ],
+      "normalizedCapSpansX": [
+        [
+          22.05,
+          318.78
+        ],
+        [
+          383.08,
+          642.14
+        ],
+        [
+          735.85,
+          1269.59
+        ],
+        [
+          1332.06,
+          1509.36
+        ]
+      ],
+      "edgeNotes": "Approximate outer ink/cap silhouette, inclusive endpoints; actor feet overlap some cap tops. Boundary grey stones are included.",
+      "sourceCapDepthApprox": 24
+    },
+    {
+      "id": "middle",
+      "sourceCapTopY": 540,
+      "normalizedMeasuredTopY": 495.81,
+      "normalizedNominalTopY": 496,
+      "sourceCapSilhouetteSpansX": [
+        [
+          24,
+          272
+        ],
+        [
+          302,
+          545
+        ],
+        [
+          608,
+          945
+        ],
+        [
+          1009,
+          1303
+        ],
+        [
+          1397,
+          1643
+        ]
+      ],
+      "normalizedCapSpansX": [
+        [
+          22.05,
+          249.88
+        ],
+        [
+          277.44,
+          500.67
+        ],
+        [
+          558.55,
+          868.13
+        ],
+        [
+          926.93,
+          1197.01
+        ],
+        [
+          1283.37,
+          1509.36
+        ]
+      ],
+      "edgeNotes": "Approximate outer ink/cap silhouette, inclusive endpoints; actor feet overlap some cap tops. Boundary grey stones are included.",
+      "sourceCapDepthApprox": 24
+    },
+    {
+      "id": "lower",
+      "sourceCapTopY": 677,
+      "normalizedMeasuredTopY": 621.6,
+      "normalizedNominalTopY": 623,
+      "sourceCapSilhouetteSpansX": [
+        [
+          26,
+          304
+        ],
+        [
+          402,
+          754
+        ],
+        [
+          980,
+          1643
+        ]
+      ],
+      "normalizedCapSpansX": [
+        [
+          23.89,
+          279.27
+        ],
+        [
+          369.3,
+          692.67
+        ],
+        [
+          900.29,
+          1509.36
+        ]
+      ],
+      "edgeNotes": "Approximate outer ink/cap silhouette, inclusive endpoints; actor feet overlap some cap tops. Boundary grey stones are included.",
+      "sourceCapDepthApprox": 24
+    },
+    {
+      "id": "floor",
+      "sourceCapTopY": 799,
+      "normalizedMeasuredTopY": 733.62,
+      "normalizedNominalTopY": 735,
+      "sourceCapSilhouetteSpansX": [
+        [
+          24,
+          1644
+        ]
+      ],
+      "normalizedCapSpansX": [
+        [
+          22.05,
+          1510.28
+        ]
+      ],
+      "edgeNotes": "Approximate outer ink/cap silhouette, inclusive endpoints; actor feet overlap some cap tops. Boundary grey stones are included.",
+      "sourceCapDepthApprox": 24
+    }
+  ],
+  "decorativeSeams": [
+    {
+      "tier": "crown",
+      "sourceX": [
+        569,
+        573
+      ],
+      "sourceY": [
+        253,
+        277
+      ],
+      "classification": "Painted3\u20134px separation between grey cap stones; aggregate as one walkable span 24..982. This is not a 44px-body traversable gap.",
+      "normalizedX": [
+        522.72,
+        526.39
+      ]
+    }
+  ],
+  "footer": {
+    "sourceParchmentBounds": {
+      "x": 247,
+      "y": 831,
+      "width": 1179,
+      "height": 99
+    },
+    "normalizedParchmentBounds": {
+      "x": 226.91,
+      "y": 763.0,
+      "width": 1083.1,
+      "height": 90.9
+    },
+    "sourcePortraitGroupBounds": {
+      "x": 300,
+      "y": 848,
+      "width": 1081,
+      "height": 72
+    },
+    "normalizedPortraitGroupBounds": {
+      "x": 275.6,
+      "y": 778.61,
+      "width": 993.07,
+      "height": 66.11
+    },
+    "sourceOrnamentBandY": [
+      823,
+      941
+    ],
+    "normalizedOrnamentBandY": [
+      755.66,
+      864
+    ],
+    "notes": "Panel outer ink is irregular and partly blends into masonry. Main parchment edge\u00b14px; portrait row contains ten faces and corner numbered diamonds, without ordinary names/role text."
+  },
+  "header": {
+    "sourceScoreParchmentBounds": {
+      "x": 76,
+      "y": 9,
+      "width": 519,
+      "height": 52
+    },
+    "normalizedScoreParchmentBounds": {
+      "x": 69.82,
+      "y": 8.26,
+      "width": 476.78,
+      "height": 47.74
+    },
+    "sourceWaveParchmentBounds": {
+      "x": 687,
+      "y": 10,
+      "width": 297,
+      "height": 48
+    },
+    "normalizedWaveParchmentBounds": {
+      "x": 631.12,
+      "y": 9.18,
+      "width": 272.84,
+      "height": 44.07
+    }
+  },
+  "verificationContract": [
+    "Actual engine capture is 1536x864 from scenes/cartoon.scene.json; use recorded QA fixture with fixed real GameState actor positions/action clocks and known world seed. Never use the concept PNG as a playable background substitute.",
+    "Match tier top anchors and all cap ends to the nominal/normalized measured targets within 4px; report every exception, occlusion or authored collision-grid approximation.",
+    "Keep full grey cap silhouettes when measuring ends; warm-only row sampling misses grey segments, and actor/bubble occlusion must not be reported as a new gap.",
+    "Save aligned 50% overlay, absolute difference and same-size crops for header, each tier, background focal area and footer. Difference pixels show remaining differences; preserved character drawings intentionally cannot be pixel-identical to the illustrated actors.",
+    "Separately prove real controls, routes, captures, rescue, wave/boss/restart; all four desktop aspects and required narrow/notched/tablet devices; full enlarged actor/crown-jump/HELP clearance; native text/diamonds and 14-draw budget.",
+    "Protect original 280 per-step traces and 48-pixel cases; previous recordings/evidence remain immutable. Record current checkpoints under new reconstruction names."
+  ]
+}
