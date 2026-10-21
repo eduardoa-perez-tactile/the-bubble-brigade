@@ -84,9 +84,9 @@ worldTest('concept controls all authored variants have safe connected navigation
  }
 },{scene:'scenes/arcade.scene.json'});
 
-worldTest('concept controls jump trajectory and unupgraded movement retain production physics',()=>{
+worldTest('concept controls faster courtyard stride retains the production jump trajectory',()=>{
  const reference=createGame(campaign,42),concept=createGame(campaign.map(createCartoonArena),42);
- expect(concept.PlayerBalance).toEqual(productionPlayerBalance);
+ expect(concept.PlayerBalance).toEqual({...productionPlayerBalance,MoveSpeed:4.5,ShoesSpeed:6.3});
  const traces:number[][]=[];
  for(const g of [reference,concept]){
   g.State=State.Playing;g.Freeze=10000;

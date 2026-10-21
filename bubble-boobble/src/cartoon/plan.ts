@@ -1,7 +1,7 @@
 import { cartoonProjection } from './projection';
 import { cartoonTierRows } from './arena';
 import { arenaLayout } from '../arcade/arena-layout';
-import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
+import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BUBBLE_SIZE,CARTOON_CAPTURED_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
 import { cartoonHelpAnchor } from './help-layout';
 import { EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
 import { partyColors } from '../arcade/party-config';
@@ -30,7 +30,10 @@ export function playerClip(p:Player,moving=false):Clip {
 }
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
 export function dragonDraw(p:Player,skin:string,tick:number,moving=false,size=64):CartoonDraw {
-  const clip=playerClip(p,moving), squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
+  const clip=playerClip(p,moving);
+  // Smooth weight transfer between the four drawn contacts, around the feet pivot.
+  const squash=clip==='run'?Math.sin(p.WalkFrame*Math.PI/6)*.025:
+    clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
   const w=size*(1+squash),h=size*(1-squash);
   const clock=clip==='run'?p.WalkFrame:clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
     clip==='jump'?(p.VY<0?0:clips.jump.durations[0]!):tick;
@@ -175,17 +178,17 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const b of g.Bubbles){
     if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
-    const color=b.CapturedAge>1000||b.Age>450&&!b.EnemyID&&!b.Element?'#f6b36a':b.Element==='fire'?'#f5ad79':b.Element==='thunder'?'#ffdf80':b.Element==='water'?'#80d6ef':'#ffffff';
+    const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
     if(b.EnemyID){
       const e=g.Enemies.find(e=>e.ID===b.EnemyID);
       if(e){
         const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
         const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
-        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,96,state==='escape'&&b.Age%12<6);
+        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6);
         else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
       }
     }
-    if(composed)centered('bubble',b.X+22,b.Y+22,b.EnemyID?120:72,false,rgba(color));
+    if(composed)centered('bubble',b.X+22,b.Y+22,CARTOON_BUBBLE_SIZE,false,rgba(color));
     else add('bubble',b.X,b.Y,44,44,false,rgba(color));
     if(b.Shooter!==undefined)add('badge/'+skin(b.Shooter),b.X+31,b.Y+31,10);
     if(b.Element)add(effectFrame(b.Element,b.Age),b.X+13,b.Y+13,18);
@@ -210,7 +213,18 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       marker('solid/#172124',badge.x,badge.y,badge.size,badge.size,true);
       marker('solid/'+color,badge.x+1.5/layout.scale,badge.y+1.5/layout.scale,badge.size-3/layout.scale,badge.size-3/layout.scale,true);
     }
-    if(p.Downed)add('bubble',p.X-5,p.Y-7,54,54,false,rgba(colors[index%10]!, .8));
+    if(p.Downed){
+      // Three small stars orbit over the knocked-out dragon until rescued.
+      const feet=py(p.Y+44),head=help?py(help.y)-20*layout.scale:feet-70*layout.scale;
+      for(let star=0;star<3;star++){
+        const phase=tick*Math.PI/30+star*Math.PI*2/3;
+        const size=(20+3*Math.sin(phase))*layout.scale;
+        const x=px(p.X+22)+Math.cos(phase)*32*layout.scale,y=head+Math.sin(phase)*6*layout.scale;
+        // Two tapered diamonds form a readable four-point sparkle without another texture.
+        out.push({frame:'solid/#ffe08a',x:x-size/2,y:y-size/6,width:size,height:size/3,diamond:true},
+          {frame:'solid/#ffe08a',x:x-size/6,y:y-size/2,width:size/3,height:size,diamond:true});
+      }
+    }
   }
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);

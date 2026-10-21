@@ -21,7 +21,8 @@ worldTest('cartoon controls geometry remains an explicit opt in and preserves or
   expect(levelRows(game.Level)).toBe(23);
   expect(game.Players.length).toBe(10);
   expect(game.Party!.Slots).toEqual(['human','ai','ai','ai','ai','ai','ai','ai','ai','ai']);
-  expect(game.PlayerBalance).toEqual(original.PlayerBalance);
+  expect(game.PlayerBalance.MoveSpeed).toBe(4.5);
+  expect(original.PlayerBalance.MoveSpeed).toBe(2.5);
   expect(JSON.stringify(campaign)).toBe(before);
   const spawns = Array.from({ length: 10 }, (_, index) => cartoonSpawn(index));
   expect(new Set(spawns.map(cell => `${cell.col},${cell.row}`)).size).toBe(10);

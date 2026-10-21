@@ -27,6 +27,12 @@ export const productionPlayerBalance: Readonly<PlayerBalance> = Object.freeze({
   FireCooldown: 24,
   YellowFireCooldown: 12,
 });
+// The wider cartoon courtyard needs a quicker stride at its presentation scale.
+export const cartoonPlayerBalance: Readonly<PlayerBalance> = Object.freeze({
+  ...productionPlayerBalance,
+  MoveSpeed: 4.5,
+  ShoesSpeed: 6.3,
+});
 // Explicit original numeric configuration for source-oracle audits; gameplay
 // selects production defaults. There is no environment-dependent sim branch.
 export const referencePlayerBalance: Readonly<PlayerBalance> = Object.freeze({

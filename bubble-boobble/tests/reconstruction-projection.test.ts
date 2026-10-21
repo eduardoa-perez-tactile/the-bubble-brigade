@@ -34,18 +34,19 @@ worldTest('reconstruction projection is continuous strictly monotone and inverti
   expect(mapped>prior).toBe(true);expect(Math.abs(cartoonInverseY(mapped)-y)<1e-9).toBe(true);prior=mapped;
  }
  const g=prepared(),layout=arenaLayout(g.Level,view),projection=cartoonProjection(g,layout),before=JSON.stringify(g);
- expect(projection.zoom).toBe(1);
+ expect(projection.zoom>0&&projection.zoom<1).toBe(true);
  for(let index=0;index<knots.length;index++){
   const y=knots[index]![0]!,physical=projection.projectY(y)*1.2;
-  expect(Math.abs(physical-contract.tiers[index]!.normalizedNominalTopY)<=4).toBe(true);
+  const original=contract.tiers[index]!.normalizedNominalTopY;
+  expect(Math.abs(physical-(layout.y*1.2+(original-layout.y*1.2)*projection.zoom))<=4).toBe(true);
  }
  for(const x of [18,48,240,864,1680,1710])expect(Math.abs(projection.inverseX(projection.projectX(x))-x)<1e-8).toBe(true);
  for(const y of [-126,0,72,130,192,250,312,400,432,500,528,600])expect(Math.abs(projection.inverseY(projection.projectY(y))-y)<1e-8).toBe(true);
  expect(JSON.stringify(g)).toBe(before);
 },{scene});
 
-worldTest('reconstruction actual crown jump zooms uniformly around the floor and returns with identical repeated trajectories',()=>{
- const initial=prepared(),start=initial.Players[1]!.Y;
+worldTest('reconstruction actual crown jump keeps fixed framing and identical repeated trajectories',()=>{
+ const initial=prepared(),start=initial.Players[1]!.Y,fixedZoom=cartoonProjection(initial,arenaLayout(initial.Level,view)).zoom;
  expect((start+44)/24).toBe(3);
  const run=(g:ReturnType<typeof prepared>)=>{
   const trace:number[][]=[];
@@ -53,7 +54,7 @@ worldTest('reconstruction actual crown jump zooms uniformly around the floor and
    const inputs=Array.from({length:10},()=>({...idle}));inputs[1]!.Jump=tick===0;
    stepGame(g,inputs);
    const before=JSON.stringify(g),layout=arenaLayout(g.Level,view),projection=cartoonProjection(g,layout);
-   expect(projection.zoom>0&&projection.zoom<=1).toBe(true);
+   expect(projection.zoom).toBe(fixedZoom);
    expect(Math.abs(projection.projectY(528)-layout.y)<1e-8).toBe(true);
    expect(Math.abs(projection.inverseY(projection.projectY(g.Players[1]!.Y+44))-g.Players[1]!.Y-44)<1e-8).toBe(true);
    const draw=cartoonDrawPlan(g,g.Tick,view).find(d=>d.frame.startsWith('dragon/blue/'))!;
@@ -66,7 +67,7 @@ worldTest('reconstruction actual crown jump zooms uniformly around the floor and
   }
   expect(Math.min(...trace.map(row=>row[0]!))).toBe(start-126);
   expect(Math.min(...trace.map(row=>row[1]!))).toBeLessThan(1);
-  expect(trace[trace.length-1]![1]).toBe(1);
+  expect(trace[trace.length-1]![1]).toBe(fixedZoom);
   expect(g.Players[1]!.Ground).toBe(true);expect((g.Players[1]!.Y+44)/24).toBe(3);
   return trace;
  };

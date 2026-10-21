@@ -193,7 +193,7 @@ atlas.save(SOURCE/'normalized-atlas.png')
 (DEST/'atlas-layout.json').write_text(json.dumps(dict(width=atlas.width,height=atlas.height,frames=frames),indent=2)+'\n')
 (DEST/'animation.json').write_text(json.dumps(dict(feet=[64,120],frames=metadata,clips={
 'idle':{'frames':['idle-0','idle-1','idle-0'],'durations':[120,7,53],'loop':True},
-'run':{'frames':['run-0','run-1','run-2','run-3'],'durations':[5,4,5,4],'loop':True},
+'run':{'frames':['run-0','run-1','run-2','run-3'],'durations':[6,6,6,6],'loop':True},
 'jump':{'frames':['jump-0','jump-1'],'durations':[18,42],'loop':False},
 'shoot':{'frames':['shoot-0','shoot-1'],'durations':[4,8],'loop':False},
 'hurt':{'frames':['hurt-0'],'durations':[12],'loop':False},

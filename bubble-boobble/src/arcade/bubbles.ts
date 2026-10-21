@@ -1,3 +1,4 @@
+import {cartoonShotOrigin} from '../cartoon/coordinates';
 import { arenaWidth, arenaHeight } from './types';
 import { hitBossWithThunder } from './boss';
 import { startPlayerJump } from './physics';
@@ -48,9 +49,10 @@ export function shootBubble(g: GameState, player: number) {
     balance = g.PlayerBalance ?? productionPlayerBalance,
     speed = p.Power.Blue ? balance.BlueBubbleSpeed : balance.BubbleSpeed,
     reach = p.Power.Pink ? balance.PinkBubbleRange : balance.BubbleRange;
+  const origin=g.Level.arena==='cartoon-courtyard'?cartoonShotOrigin(p.X,p.Y,p.Dir):{x:p.X+p.Dir*18,y:p.Y+2};
   g.NextID++;
   g.Bubbles.push({
-    ...bubble(p.X + p.Dir * 18, p.Y + 2),
+    ...bubble(origin.x,origin.y),
     ID: g.NextID,
     Shooter: player,
     Dir: p.Dir,
@@ -93,8 +95,13 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
         }
       }
     } else {
-      const ceiling = g.Level.number === 24 ? 9 * Tile : 2 * Tile;
-      if (b.Y > ceiling) b.Y -= 1.15;
+      const cartoon=g.Level.arena==='cartoon-courtyard';
+      const ceiling = cartoon ? -2 * Tile : g.Level.number === 24 ? 9 * Tile : 2 * Tile;
+      if (cartoon) {
+        // The top shelf is already above the old arena's ceiling. Rise into the
+        // courtyard headroom; shots born higher never snap down to a platform.
+        if(b.Y>ceiling)b.Y=Math.max(ceiling,b.Y-1.15);
+      } else if (b.Y > ceiling) b.Y -= 1.15;
       else b.Y = goFMA(goSin(b.Age / 28), 4, ceiling);
       b.X = goFMA(goSin(goFMA(b.ID, 1.7, b.Age / 60)), 0.2, b.X);
     }

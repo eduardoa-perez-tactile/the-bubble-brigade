@@ -15,7 +15,7 @@ import {
   direction,
   powers,
 } from "./types";
-import { productionPlayerBalance } from './balance';
+import { productionPlayerBalance, cartoonPlayerBalance } from './balance';
 import { spawnPosition } from "./physics";
 import { checkPlayerHit, respawn, updatePlayer } from "./player";
 import { spawnSpecial, updateBubbles, updateEffects } from "./bubbles";
@@ -31,7 +31,7 @@ export function createGame(
   if (!levels.length) throw new Error("no levels supplied");
   for (const level of levels) validateLevel(level);
   const g: GameState = {
-    PlayerBalance: { ...productionPlayerBalance },
+    PlayerBalance: { ...(levels[0]!.arena==='cartoon-courtyard'?cartoonPlayerBalance:productionPlayerBalance) },
     NormalEnemySpeedScale: 0.8,
     Campaign: levels,
     Level: levels[0]!,
