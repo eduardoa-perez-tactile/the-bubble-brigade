@@ -21,27 +21,29 @@ function close(actual: number, expected: number) {
 worldTest('cartoon animation explicit clip durations loop and clamp at boundaries', () => {
   // Exposures are authored in simulation ticks; no renderer timer delays input.
   const samples: [number, string][] = [
-    [-1, 'run-0'], [0, 'run-0'], [5, 'run-0'], [6, 'run-1'],
-    [11, 'run-1'], [12, 'run-2'], [17, 'run-2'], [18, 'run-3'],
-    [23, 'run-3'], [24, 'run-0'], [48, 'run-0'],
+    [-1, 'run-0'], [0, 'run-0'], [3, 'run-0'], [4, 'run-1'],
+    [7, 'run-1'], [8, 'run-2'], [11, 'run-2'], [12, 'run-3'],
+    [16, 'run-4'], [20, 'run-5'], [24, 'run-6'], [28, 'run-7'],
+    [31, 'run-7'], [32, 'run-0'], [64, 'run-0'],
   ];
   for (const [tick, frame] of samples) expect(clipFrame('run', tick)).toBe(frame);
-  expect(animation.clips.run.durations).toEqual([6, 6, 6, 6]);
+  expect(animation.clips.run.durations).toEqual([4,4,4,4,4,4,4,4]);
   for (const [tick, frame] of [[119,'idle-0'],[120,'idle-1'],[126,'idle-1'],[127,'idle-0'],[180,'idle-0']] as const)
     expect(clipFrame('idle', tick)).toBe(frame);
   expect(clipFrame('jump', 17)).toBe('jump-0');
   expect(clipFrame('jump', 18)).toBe('jump-1');
   expect(clipFrame('jump', 10000)).toBe('jump-1');
   expect(clipFrame('shoot', -12)).toBe('shoot-0');
-  expect(clipFrame('shoot', 3)).toBe('shoot-0');
-  expect(clipFrame('shoot', 4)).toBe('shoot-1');
-  expect(clipFrame('shoot', 10000)).toBe('shoot-1');
+  expect(clipFrame('shoot', 1)).toBe('shoot-0');
+  expect(clipFrame('shoot', 2)).toBe('shoot-1');
+  expect(clipFrame('shoot', 4)).toBe('shoot-2');
+  expect(clipFrame('shoot', 10000)).toBe('shoot-5');
   for (const clip of ['hurt', 'down'] as const) {
     expect(clipFrame(clip, -12)).toBe(`${clip}-0`);
     expect(clipFrame(clip, 10000)).toBe(`${clip}-0`);
     expect(animation.clips[clip].loop).toBe(false);
   }
-  expect(animation.clips.shoot.durations).toEqual([4, 8]);
+  expect(animation.clips.shoot.durations).toEqual([2,2,2,2,2,2]);
   expect(animation.clips.hurt.durations).toEqual([12]);
   expect(animation.clips.down.durations).toEqual([90]);
 });
@@ -183,7 +185,7 @@ worldTest('cartoon animation uses real walk counters and action clocks without c
   Object.assign(p,{Shoot:12,Ground:true});
   expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-0');
   p.Shoot=8;
-  expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-1');
+  expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-2');
   Object.assign(p,{Shoot:0,Ground:false,VY:-3});
   expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/jump-0');
   p.VY=3;

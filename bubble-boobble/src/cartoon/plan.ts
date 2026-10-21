@@ -31,9 +31,8 @@ export function playerClip(p:Player,moving=false):Clip {
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
 export function dragonDraw(p:Player,skin:string,tick:number,moving=false,size=64):CartoonDraw {
   const clip=playerClip(p,moving);
-  // Smooth weight transfer between the four drawn contacts, around the feet pivot.
-  const squash=clip==='run'?Math.sin(p.WalkFrame*Math.PI/6)*.025:
-    clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
+  // Walking has drawn weight transfer; an extra scale pulse fights those poses.
+  const squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
   const w=size*(1+squash),h=size*(1-squash);
   const clock=clip==='run'?p.WalkFrame:clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
     clip==='jump'?(p.VY<0?0:clips.jump.durations[0]!):tick;

@@ -6,4 +6,4 @@ kind = "sprite"
 atlas = "cartoon"
 filter = "linear"
 compression = "none"
-trim = false
+trim = true

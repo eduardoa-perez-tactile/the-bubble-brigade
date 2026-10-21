@@ -49,14 +49,14 @@ worldTest('gameplay refinements crown injury keeps the complete knock orbit belo
   }
  }
 });
-worldTest('gameplay refinements walk has continuous gait between pose changes and keeps feet planted',()=>{
+worldTest('gameplay refinements walk keeps a steady body size and feet planted across the full loop',()=>{
  const g=game(),p=g.Players[0]!;Object.assign(p,{Ground:true,VX:0,Shoot:0,Invincible:0});
  const widths=[];
- for(let tick=0;tick<24;tick++){
+ for(let tick=0;tick<32;tick++){
   p.WalkFrame=tick;const d=dragonDraw(p,'green',tick,true);widths.push(d.width);
   expect(Math.abs(d.y+d.height*120/128-(p.Y+44))<1e-8).toBe(true);
  }
- expect(new Set(widths.map(w=>w.toFixed(5))).size).toBeGreaterThan(6);
+ expect(new Set(widths).size).toBe(1);
 });
 renderTest('gameplay refinements colored shots knocked dragon and walking frames fit every viewport',async({step,cheat,input,render})=>{
  await step(5);await cheat(ReconstructionReference,{});await step(1);

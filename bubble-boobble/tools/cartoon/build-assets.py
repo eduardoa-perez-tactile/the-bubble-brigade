@@ -211,3 +211,8 @@ for row,kind in enumerate(kinds):
 for col,name in enumerate(['platform-left','platform-middle','platform-right','wall','boss/move-0','item/food-1','item/pink_candy','effect/fire-0']):preview.alpha_composite(images[name],(col*128,7*128))
 preview.save(SOURCE/'normalized-poses.png')
 print('Exported',len(frames),'original cartoon frames, ZERO legacy pixel sprites.')
+
+# Expanded motion clips are maintained from separate whole-strip masters.
+# Keep this hook after the base export so a full art rebuild retains them.
+import runpy
+runpy.run_path(str(ROOT/'tools/cartoon/build-dragon-animation.py'),run_name='__main__')
