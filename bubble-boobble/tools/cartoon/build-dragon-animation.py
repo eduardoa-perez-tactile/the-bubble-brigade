@@ -42,21 +42,22 @@ def recolor(image,color):
 
 # Dated authoring grid: all cells use the same reduction and X origin. The
 # second row has one row-level registration correction, never bbox fitting.
-WALK_SOURCE='walk-source-2026-10-22-v2.png'
-WALK_SCALE=.27
-WALK_ROW_Y=[3,9]
-WALK_SKULL=[(280,162),(284,164),(278,158),(279,153),(274,145),(279,145),(280,143),(281,140)]
+WALK_SOURCE='walk-source-2026-10-22-16-registered.png'
+# Canonical logical128 canvases contain the eight original keys in even slots
+# and genuine authored inbetweens in odd slots. No new per-frame fit is applied.
+_OLD_SKULL=[(280,162),(284,164),(278,158),(279,153),(274,145),(279,145),(280,143),(281,140)]
+_OLD_SKULL_LOGICAL=[(4+x*.27,[3,9][i//4]+y*.27) for i,(x,y) in enumerate(_OLD_SKULL)]
+WALK_SKULL=[]
+for i,p in enumerate(_OLD_SKULL_LOGICAL):
+    nxt=_OLD_SKULL_LOGICAL[(i+1)%8]
+    WALK_SKULL.extend([p,((p[0]+nxt[0])/2,(p[1]+nxt[1])/2)])
 
 def grid_cells(filename,columns,rows):
     sheet=Image.open(SOURCE/filename).convert('RGBA')
     return [sheet.crop((round(x*sheet.width/columns),round(y*sheet.height/rows),round((x+1)*sheet.width/columns),round((y+1)*sheet.height/rows))) for y in range(rows) for x in range(columns)]
 
 def authored_walk():
-    result=[]
-    for i,cell in enumerate(grid_cells(WALK_SOURCE,4,2)):
-        cell=cell.resize((round(cell.width*WALK_SCALE),round(cell.height*WALK_SCALE)),Image.Resampling.LANCZOS)
-        out=Image.new('RGBA',(128,128));out.alpha_composite(cell,(4,WALK_ROW_Y[i//4]));result.append(out)
-    return result
+    return grid_cells(WALK_SOURCE,4,4)
 
 def moving_shot_masters():
     # The contact corrections are measured sole registrations (integer translation
@@ -86,7 +87,7 @@ def build():
                     d=ImageDraw.Draw(frame)
                     if clip=='run':
                         skull_x,skull_y=WALK_SKULL[index]
-                        cx=4+skull_x*WALK_SCALE-39;cy=WALK_ROW_Y[index//4]+skull_y*WALK_SCALE-25
+                        cx=skull_x-39;cy=skull_y-25
                         d.ellipse((round(cx-17),round(cy-6),round(cx+17),round(cy+6)),fill='#292a29');d.ellipse((round(cx-14),round(cy-4),round(cx+16),round(cy+3)),fill=color)
                     else:
                         top=frame.getchannel('A').getbbox()[1]
@@ -128,7 +129,7 @@ def build():
             if not origin_y:animation['frames'][key]['muzzle']=[100,80]
             if key not in atlas['frames']:
                 n=len(atlas['frames']);atlas['frames'][key]={'x':n%16*128,'y':n//16*128,'w':frame.width,'h':frame.height}
-    animation['clips']['run']={'frames':[f'run-{i}' for i in range(8)],'durations':[4]*8,'loop':True}
+    animation['clips']['run']={'frames':[f'run-{i}' for i in range(16)],'durations':[2]*16,'loop':True}
     animation['clips']['shoot']={'frames':[f'shoot-{i}' for i in range(6)],'durations':[2]*6,'loop':False}
     atlas['height']=math.ceil(len(atlas['frames'])/16)*128
     (DEST/'animation.json').write_text(json.dumps(animation,indent=2)+'\n')
@@ -138,10 +139,10 @@ def build():
     for meta in (DEST/'frames/dragon').rglob('*.png.gmeta'):
         meta.write_text(meta.read_text().replace('trim = false','trim = true'))
     preview=ROOT/'.cache/dragon-animation-preview';preview.mkdir(parents=True,exist_ok=True)
-    for clip,count in [('run',8),('shoot',6)]:
+    for clip,count in [('run',16),('shoot',6)]:
         folder=preview/clip;folder.mkdir(exist_ok=True)
         for index in range(count):
             Image.open(DEST/f'frames/dragon/green/{clip}-{index}.png').save(folder/f'{index:02d}.png')
-    print('Exported 8 walking, 6 stationary shooting, 3 moving-shot upper, 8 crouch-walking lower and 2 air lower frames for all ten skins; release0 remains locked.')
+    print('Exported 16 walking, 6 stationary shooting, 3 moving-shot upper, 8 crouch-walking lower and 2 air lower frames for all ten skins; release0 remains locked.')
 
 if __name__=='__main__':build()

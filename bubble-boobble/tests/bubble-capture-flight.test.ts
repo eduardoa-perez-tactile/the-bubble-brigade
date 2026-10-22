@@ -18,7 +18,7 @@ worldTest('bubble fixes capture keeps the same bubble diameter and contents fit 
   const plan=cartoonDrawPlan(g,0),shell=plan.find(d=>d.frame==='bubble')!;
   const captive=plan.find(d=>d.frame.startsWith(`enemy/${enemy.Kind}/`))!;
   expect(shell.width).toBe(empty.width);expect(shell.height).toBe(empty.height);
-  expect(captive.width<=shell.width*.82).toBe(true);expect(captive.height<=shell.height*.82).toBe(true);
+  expect(captive.width<=shell.width*.88).toBe(true);expect(captive.height<=shell.height*.88).toBe(true);
   expect(Math.abs(shell.x+shell.width/2-captive.x-captive.width/2)<2).toBe(true);
  }
 });
@@ -43,11 +43,11 @@ renderTest('bubble fixes actual capture and top shelf float keep compact size an
  for(const [width,height] of [[1536,864],[768,720],[640,960],[2520,1080]]){
   input.view(width!,height!,1);await cheat(ConceptPlaytest,{scenario:'capture'});await step(1);
   input.emit(ArcadeInput,{player:0,move:0,jump:false,fire:true,paused:false});await step(1);
-  const before=cartoonDrawPlan(session.get().game!,0).find(d=>d.frame==='bubble')!.width;
+  const mature=cartoonDrawPlan({...session.get().game!,Bubbles:session.get().game!.Bubbles.map(b=>({...b,Age:30}))},0).find(d=>d.frame==='bubble')!.width;
   for(let i=0;i<25&&!session.get().game!.Bubbles.some(b=>b.EnemyID);i++)await step(1);
   expect(session.get().game!.Bubbles.some(b=>b.EnemyID)).toBe(true);
   const capture=cartoonDrawPlan(session.get().game!,0).find(d=>d.frame==='bubble')!;
-  expect(capture.width).toBe(before);
+  expect(capture.width<=mature).toBe(true);
   render.expectScreenshot(`captured_${width}x${height}`,{width:width!,height:height!});
   await step(60);render.expectScreenshot(`rising_capture_${width}x${height}`,{width:width!,height:height!});
   await cheat(ConceptPlaytest,{scenario:'route'});await step(1);

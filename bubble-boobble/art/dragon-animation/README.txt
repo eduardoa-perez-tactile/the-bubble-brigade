@@ -21,3 +21,13 @@ Moving shots use shoot-locomotion-source-2026-10-22.png (8 crouched walk lowers 
 Review files: contact-review-2026-10-22.png, face-recovery-composite-2026-10-22.png, walk-control-2026-10-22.gif, walk-trial-2026-10-22.gif and moving-shot-preview-2026-10-22.gif. GIFs are synthetic previews, not engine gameplay tests. Root coordinator owns the final engine acceptance and production export.
 
 Other dated source attempts and seam-review sheets document rejected registration approaches; the exporter only consumes the three accepted source names above. No Cuphead reference pixels are used in any production artwork.
+
+October 22 follow-up: 16-drawing walk
+
+Current accepted canonical master: walk-source-2026-10-22-16-registered.png, exactly 4x4 logical 128px canvases. It interleaves the previous eight keys unchanged with eight newly drawn inbetweens. Exposures are two ticks each, so full cycle pace stays 32 ticks while normal grounded pose updates increase from 15 to 30 per second. No duplicated key holds, alpha crossfade, blur, per-frame bbox fitting, or gameplay retiming.
+
+Inbetween source: walk-inbetween-source-2026-10-22.png. Corrected lower-leg regions (rows 92..128) of poses 5/13/15 use walk-inbetween-support-source-2026-10-22.png, retaining the original upper art; these repair raised support feet. A separate guided 16-frame attempt was rejected because it did not follow its stance chart. Existing near/far support geometry is not perfectly uniform, and this pass does not claim continuous foot planting.
+
+Final review: walk16-contact-review-final-2026-10-22.png and walk16-after-final-2026-10-22.gif (synthetic exposure preview). registration16-2026-10-22.json records provenance and limits. All 80 original color walk keys remain RGBA exact at even indices; ten full release anchors remain exact. The separate eight moving-shot lower poses are unchanged; presentation must map the full 16-phase cycle back to their eight keys.
+
+Final registration refinement: odd drawings receive integer horizontal anatomical offsets [+3,-1,+7,-3,+5,+6,+1,0] source pixels to align their head silhouettes with neighboring original keys. This corrects generation drift without changing scale, fitting opaque bounds, moving vertically, or altering sole contact heights. The unregistered 16-frame master is retained as authoring evidence. Final review files are walk16-registered-review-2026-10-22.png and walk16-registered-preview-2026-10-22.gif.

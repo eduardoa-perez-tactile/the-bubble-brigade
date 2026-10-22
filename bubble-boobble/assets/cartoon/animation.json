@@ -435,7 +435,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -453,7 +453,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -471,7 +471,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -489,7 +489,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -507,7 +507,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -525,7 +525,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -543,7 +543,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -561,7 +561,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -579,7 +579,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -597,7 +597,7 @@
         110,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         0
@@ -610,12 +610,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -628,12 +628,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -646,12 +646,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -664,12 +664,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -682,12 +682,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -700,12 +700,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -718,12 +718,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -736,12 +736,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -754,12 +754,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -772,12 +772,12 @@
         120
       ],
       "visualBounds": [
-        20,
-        14,
-        110,
-        123
+        9,
+        13,
+        127,
+        128
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         0
@@ -790,12 +790,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -808,12 +808,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -826,12 +826,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -844,12 +844,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -862,12 +862,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -880,12 +880,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -898,12 +898,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -916,12 +916,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -934,12 +934,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -952,12 +952,12 @@
         120
       ],
       "visualBounds": [
+        20,
         14,
-        13,
-        107,
+        110,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         0
@@ -970,12 +970,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -988,12 +988,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1006,12 +1006,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1024,12 +1024,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1042,12 +1042,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1060,12 +1060,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1078,12 +1078,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1096,12 +1096,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1114,12 +1114,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -1132,12 +1132,12 @@
         120
       ],
       "visualBounds": [
-        17,
-        11,
-        110,
+        1,
+        12,
+        108,
         122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         0
@@ -3042,12 +3042,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3060,12 +3060,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3078,12 +3078,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3096,12 +3096,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3114,12 +3114,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3132,12 +3132,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3150,12 +3150,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3168,12 +3168,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3186,12 +3186,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3204,12 +3204,12 @@
         120
       ],
       "visualBounds": [
-        17,
         14,
-        124,
+        13,
+        107,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         0,
         1
@@ -3222,12 +3222,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3240,12 +3240,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3258,12 +3258,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3276,12 +3276,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3294,12 +3294,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3312,12 +3312,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3330,12 +3330,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3348,12 +3348,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3366,12 +3366,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3384,12 +3384,12 @@
         120
       ],
       "visualBounds": [
+        7,
         5,
-        12,
         109,
         123
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         1,
         1
@@ -3402,12 +3402,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3420,12 +3420,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3438,12 +3438,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3456,12 +3456,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3474,12 +3474,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3492,12 +3492,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3510,12 +3510,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3528,12 +3528,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3546,12 +3546,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3564,12 +3564,12 @@
         120
       ],
       "visualBounds": [
-        15,
-        13,
-        108,
-        123
+        17,
+        11,
+        110,
+        122
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         2,
         1
@@ -3582,12 +3582,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3600,12 +3600,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3618,12 +3618,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3636,12 +3636,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3654,12 +3654,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3672,12 +3672,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3690,12 +3690,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3708,12 +3708,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3726,12 +3726,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -3744,12 +3744,12 @@
         120
       ],
       "visualBounds": [
-        20,
         12,
-        110,
-        123
+        6,
+        109,
+        124
       ],
-      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-v2.png",
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
         3,
         1
@@ -8829,6 +8829,1446 @@
         4,
         1
       ]
+    },
+    "dragon/green/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/blue/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/red/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/yellow/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/purple/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/orange/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/cyan/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/pink/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/ivory/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/slate/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/green/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/blue/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/red/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/yellow/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/purple/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/orange/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/cyan/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/pink/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/ivory/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/slate/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/green/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/blue/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/red/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/yellow/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/purple/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/orange/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/cyan/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/pink/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/ivory/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/slate/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/green/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/blue/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/red/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/yellow/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/purple/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/orange/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/cyan/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/pink/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/ivory/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/slate/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/green/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/blue/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/red/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/yellow/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/purple/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/orange/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/cyan/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/pink/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/ivory/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/slate/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/green/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/blue/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/red/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/yellow/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/purple/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/orange/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/cyan/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/pink/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/ivory/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/slate/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/green/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/blue/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/red/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/yellow/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/purple/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/orange/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/cyan/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/pink/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/ivory/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/slate/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/green/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/blue/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/red/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/yellow/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/purple/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/orange/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/cyan/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/pink/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/ivory/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/slate/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
     }
   },
   "clips": {
@@ -8854,17 +10294,33 @@
         "run-4",
         "run-5",
         "run-6",
-        "run-7"
+        "run-7",
+        "run-8",
+        "run-9",
+        "run-10",
+        "run-11",
+        "run-12",
+        "run-13",
+        "run-14",
+        "run-15"
       ],
       "durations": [
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
       ],
       "loop": true
     },

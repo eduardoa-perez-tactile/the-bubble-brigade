@@ -49,7 +49,10 @@ export function dragonDraws(p:Player,skin:string,tick:number,motion?:boolean|Dra
   if(p.Downed||p.Dead>0||p.Shoot<=0||p.Ground&&!moving)return [full];
   const state=typeof motion==='object'?motion:undefined;
   const total=clips.run.durations.reduce((sum,n)=>sum+n,0);
-  const run=clipFrame('run',state?state.phase*total:p.WalkFrame).replace('run-','');
+  // The crouched shooting gait is a separate eight-drawing clip. Keep its
+  // distance phase when the upright gait gains additional in-between art.
+  const phase=state?state.phase:(Math.max(0,p.WalkFrame)%total)/total;
+  const run=Math.min(7,Math.floor(phase*8));
   const air=(state?.falling??p.VY>0)?1:0;
   // A fixed seam at source row 96 never changes size or jumps with a pose.
   return [
@@ -214,23 +217,6 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       if(pose==='angry')out[out.length-1]!.color=[1,.76,.68,1];
     }
   }
-  for(const b of g.Bubbles){
-    if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
-    const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
-    if(b.EnemyID){
-      const e=g.Enemies.find(e=>e.ID===b.EnemyID);
-      if(e){
-        const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
-        const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
-        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6);
-        else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
-      }
-    }
-    if(composed)centered('bubble',b.X+22,b.Y+22,CARTOON_BUBBLE_SIZE,false,rgba(color));
-    else add('bubble',b.X,b.Y,44,44,false,rgba(color));
-    if(b.Shooter!==undefined)add('badge/'+skin(b.Shooter),b.X+31,b.Y+31,10);
-    if(b.Element)add(effectFrame(b.Element,b.Age),b.X+13,b.Y+13,18);
-  }
   for(const p of g.Projectiles)add(p.Bottle?'boss/bottle-0':effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   for(let index=0;index<g.Players.length;index++){
@@ -266,6 +252,30 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
           {frame:'solid/#ffe08a',x:x-size/6,y:y-size/2,width:size/3,height:size,diamond:true});
       }
     }
+  }
+  // Shells and their contents share one foreground batch: release beads must
+  // remain visible over the mouth, including cropped moving-shot torsos.
+  for(const b of g.Bubbles){
+    if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
+    const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
+    if(b.EnemyID){
+      const e=g.Enemies.find(e=>e.ID===b.EnemyID);
+      if(e){
+        const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
+        const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
+        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6);
+        else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
+      }
+    }
+    // An empty shot grows from the mouth. A point-blank capture completes the
+    // shell immediately around a fixed-size captive, so it never shrinks or
+    // spills outside an immature release bead. Mature captures do not resize.
+    const t=b.EnemyID||b.Shooter===undefined?1:Math.max(0,Math.min(1,b.Age/8));
+    const growth=.1875+.8125*t*t*(3-2*t);
+    const diameter=(composed?CARTOON_BUBBLE_SIZE:44)*growth;
+    centered('bubble',b.X+22,b.Y+22,diameter,false,rgba(color));
+    if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),b.X+22+diameter*9/44,b.Y+22+diameter*9/44,10*growth);
+    if(b.Element)centered(effectFrame(b.Element,b.Age),b.X+22,b.Y+22,18*growth);
   }
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);

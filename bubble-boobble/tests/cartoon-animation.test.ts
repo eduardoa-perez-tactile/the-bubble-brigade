@@ -21,13 +21,13 @@ function close(actual: number, expected: number) {
 worldTest('cartoon animation explicit clip durations loop and clamp at boundaries', () => {
   // Exposures are authored in simulation ticks; no renderer timer delays input.
   const samples: [number, string][] = [
-    [-1, 'run-0'], [0, 'run-0'], [3, 'run-0'], [4, 'run-1'],
-    [7, 'run-1'], [8, 'run-2'], [11, 'run-2'], [12, 'run-3'],
-    [16, 'run-4'], [20, 'run-5'], [24, 'run-6'], [28, 'run-7'],
-    [31, 'run-7'], [32, 'run-0'], [64, 'run-0'],
+    [-1,'run-0'],[0,'run-0'],[1,'run-0'],[2,'run-1'],
+    [3,'run-1'],[4,'run-2'],[7,'run-3'],[8,'run-4'],
+    [15,'run-7'],[16,'run-8'],[24,'run-12'],[30,'run-15'],
+    [31,'run-15'],[32,'run-0'],[64,'run-0'],
   ];
   for (const [tick, frame] of samples) expect(clipFrame('run', tick)).toBe(frame);
-  expect(animation.clips.run.durations).toEqual([4,4,4,4,4,4,4,4]);
+  expect(animation.clips.run.durations).toEqual(Array(16).fill(2));
   for (const [tick, frame] of [[119,'idle-0'],[120,'idle-1'],[126,'idle-1'],[127,'idle-0'],[180,'idle-0']] as const)
     expect(clipFrame('idle', tick)).toBe(frame);
   expect(clipFrame('jump', 17)).toBe('jump-0');

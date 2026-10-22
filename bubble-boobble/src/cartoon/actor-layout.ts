@@ -1,9 +1,10 @@
 /** Presentation envelopes only; collision and firing keep the original body. */
 export const CARTOON_PLAYER_SIZE=141.312;
 export const CARTOON_ENEMY_SIZE=123.648;
-// Match the original 36:44 captive-to-bubble ratio without inflating the shell.
-export const CARTOON_BUBBLE_SIZE=72;
-export const CARTOON_CAPTURED_ENEMY_SIZE=CARTOON_BUBBLE_SIZE*36/44;
+// A shared mature shell leaves room for the folded captive pose without the
+// previous large shrink. Capture itself never changes either envelope.
+export const CARTOON_BUBBLE_SIZE=96;
+export const CARTOON_CAPTURED_ENEMY_SIZE=84;
 export const CARTOON_BOSS_SIZE=193.2;
 export const CARTOON_VISUAL_LEFT=18;
 export const CARTOON_VISUAL_RIGHT=1710;

@@ -1,0 +1,88 @@
+{
+  "status": "16-drawing first implementation; retains prior contact geometry limitations",
+  "source": "walk-source-2026-10-22-16-registered.png",
+  "canvas": [
+    128,
+    128
+  ],
+  "root": [
+    64,
+    120
+  ],
+  "frames": 16,
+  "durations": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "totalTicks": 32,
+  "originalKeyIndices": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14
+  ],
+  "inbetweenSource": "walk-inbetween-source-2026-10-22.png",
+  "supportCorrectionSource": "walk-inbetween-support-source-2026-10-22.png",
+  "correctedLowerRegions": {
+    "5": [
+      0,
+      92,
+      128,
+      128
+    ],
+    "13": [
+      0,
+      92,
+      128,
+      128
+    ],
+    "15": [
+      0,
+      92,
+      128,
+      128
+    ]
+  },
+  "limitations": [
+    "This doubles pose update cadence with unchanged cycle pace; it does not prove perfect physical foot planting.",
+    "The older approved keys still contain small nonuniform support changes; runtime QA and human evaluation determine actual smoothness.",
+    "No automatic image blending, crossfade, motion blur, or per-frame bounding-box fitting used."
+  ],
+  "anatomicalRegistrationX": [
+    0,
+    3,
+    0,
+    -1,
+    0,
+    7,
+    0,
+    -3,
+    0,
+    5,
+    0,
+    6,
+    0,
+    1,
+    0,
+    0
+  ],
+  "registrationMethod": "Integer horizontal translation aligns head silhouette to adjacent original keys. No Y fitting, size fitting, or opaque-bounds recentering."
+}

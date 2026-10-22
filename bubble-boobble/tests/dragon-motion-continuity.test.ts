@@ -75,12 +75,12 @@ worldTest('dragon motion shooting retains locomotion phase air legs and exact re
  Object.assign(p,{X:300,Y:400,Ground:true,Shoot:12,Dead:0,Downed:false,VX:0});
  for(const skin of partyColors)for(const dir of [-1,1]){
   p.Dir=dir;
-  for(let pose=0;pose<8;pose++)for(let shot=12;shot>0;shot--){
+  for(let pose=0;pose<16;pose++)for(let shot=12;shot>0;shot--){
    p.Shoot=shot;p.Ground=true;
-   const state={moving:true,phase:pose/8,falling:false};
+   const state={moving:true,phase:pose/16,falling:false};
    const draws=dragonDraws(p,skin,g.Tick,state,141.312);
    expect(draws.length).toBe(2);expect(draws[0]!.frame).toBe(`dragon/${skin}/shoot-upper-${Math.floor((12-shot)/4)}`);
-   expect(draws[1]!.frame).toBe(`dragon/${skin}/shoot-walk-lower-${pose}`);
+   expect(draws[1]!.frame).toBe(`dragon/${skin}/shoot-walk-lower-${Math.floor(pose/2)}`);
    close(draws[0]!.y+draws[0]!.height,draws[1]!.y);
    close(draws[0]!.height+draws[1]!.height,141.312);
    close(draws[0]!.y+141.312*120/128,p.Y+44);
