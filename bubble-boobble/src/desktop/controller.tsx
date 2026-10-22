@@ -1,7 +1,7 @@
 import { openBrowserFullscreen } from './browser';
 import { developmentMenuEnabled } from './development';
 import { read, app, Time, MaterialGlobals } from '@gameengine/runtime';
-import { createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
+import { setReducedMotion, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
 import { desktopState } from './state.ts';
 import { desktopSaveState } from './save.ts';
@@ -19,6 +19,8 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
  const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session);
+ createEffect(()=>setReducedMotion(!!save().settings.reducedEffects));
+ onCleanup(()=>setReducedMotion(null));
  let fullscreenPreference:boolean|undefined;
  createEffect(()=>{const value=save().settings.fullscreen;if(!desktopSaveState.loaded())return;if(fullscreenPreference!==undefined&&value!==fullscreenPreference)openBrowserFullscreen();fullscreenPreference=value;});
  onCleanup(app.onLifecycle(phase=>{const s=session.get();if(phase==='background'&&desktopState.get().screen==='play'&&control()?.active&&s.active&&s.game&&!s.game.Paused)emit(DesktopIntent,{action:'pause'});}));

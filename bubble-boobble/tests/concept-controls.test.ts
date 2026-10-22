@@ -84,9 +84,9 @@ worldTest('concept controls all authored variants have safe connected navigation
  }
 },{scene:'scenes/arcade.scene.json'});
 
-worldTest('concept controls jump trajectory and unupgraded movement retain production physics',()=>{
+worldTest('concept controls faster courtyard stride retains the production jump trajectory',()=>{
  const reference=createGame(campaign,42),concept=createGame(campaign.map(createCartoonArena),42);
- expect(concept.PlayerBalance).toEqual(productionPlayerBalance);
+ expect(concept.PlayerBalance).toEqual({...productionPlayerBalance,MoveSpeed:4.5,ShoesSpeed:6.3});
  const traces:number[][]=[];
  for(const g of [reference,concept]){
   g.State=State.Playing;g.Freeze=10000;
@@ -149,9 +149,9 @@ worldTest('concept controls actual downed help follows actor at every aspect and
   const base=arenaLayout(g.Level,view),projection=cartoonProjection(g,base),layout={...base,...projection},labels=cartoonRescueLabels(g,view).filter(label=>label.text==='HELP!');
   expect(labels.length).toBe(1);expect(labels[0]!.text).toBe('HELP!');
   const anchor=cartoonHelpAnchor(teammate,layout);
-  expect(labels[0]!.x).toBe(projection.projectX(anchor.x+13));
+  expect(labels[0]!.x).toBe(projection.projectX(anchor.x+8));
   expect(labels[0]!.y).toBe(projection.projectY(anchor.y)+12*layout.scale);
-  expect(labels[0]!.size).toBe(14*layout.scale);
+  expect(labels[0]!.size).toBe(Math.max(8,14*layout.scale));
   expect(labels[0]!.y).toBeLessThan(projection.projectY(teammate.Y));
   const plaque={x:projection.projectX(anchor.x-1),y:projection.projectY(anchor.y-1),w:62*layout.scale,h:26*layout.scale};
   for(const badge of cartoonDrawPlan(g,0,view).filter(draw=>draw.diamond))

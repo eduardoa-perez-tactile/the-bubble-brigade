@@ -19,21 +19,45 @@ export interface CartoonSprite extends CartoonDraw {image:string}
 const capacity = 8192;
 const linear = (v: number) => v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4);
 
-type MotionGlobals={v2:ArrayLike<number>;v3:ArrayLike<number>;v4:ArrayLike<number>;v5:ArrayLike<number>;v6:ArrayLike<number>;v7:ArrayLike<number>};
-/** Player VX is not simulation movement. Retain only cosmetic walk-counter
- * observations in the existing presentation resource, never in the game doc. */
+export type MotionGlobals={v2:ArrayLike<number>;v3:ArrayLike<number>;v4:ArrayLike<number>;v5:ArrayLike<number>;v6:ArrayLike<number>;v7:ArrayLike<number>};
+export interface DragonMotion {moving:boolean;phase:number;falling:boolean}
+/** Preserve the current 32-tick normal-speed control (32 × 4.5 game pixels).
+ * Contact geometry can justify a later authored stride; shoes change phase
+ * through actual distance, never through a separate animation speed setting. */
+export const DRAGON_STRIDE_DISTANCE=144;
+const MOTION_FORMAT=2;
+/** Prior root positions and cosmetic phases live only in presentation globals.
+ * Ten X values + ten phase/flag values + tick/valid/count/version fit 24 floats.
+ * Fractional storage is [0,.5), with a safe gap before flag bits; bit 1 is moving, bit 2 remembers actual descent.
+ * Remembering descent keeps zero-displacement arcade apex holds on one pose. */
 export function cartoonMotion(game:GameState|null,previous:MotionGlobals){
-  const frames=Array.from({length:10},(_,i)=>game?.Players[i]?.WalkFrame??0);
-  const until=Array.from({length:10},(_,i)=>{
-    if(!game||!previous.v4[3]||game.Tick<previous.v4[2]!)return 0;
-    const old=(i<4?previous.v2:i<8?previous.v3:previous.v4)[i%4]!;
-    if(frames[i]!<old)return 0;
-    return frames[i]!==old?game.Tick+3:(i<4?previous.v5:i<8?previous.v6:previous.v7)[i%4]!;
-  });
-  const moving=until.map((end,i)=>!!game?.Players[i]&&end>(game?.Tick??0));
-  const vec=(a:readonly number[],start:number):[number,number,number,number]=>[a[start]??0,a[start+1]??0,a[start+2]??0,a[start+3]??0];
-  return {moving,globals:{v2:vec(frames,0),v3:vec(frames,4),v4:[frames[8]!,frames[9]!,game?.Tick??0,game?1:0] as [number,number,number,number],
-    v5:vec(until,0),v6:vec(until,4),v7:vec(until,8)}};
+  const old=[...Array.from(previous.v2),...Array.from(previous.v3),...Array.from(previous.v4),
+    ...Array.from(previous.v5),...Array.from(previous.v6),...Array.from(previous.v7)];
+  const valid=!!game&&old[21]===1&&old[23]===MOTION_FORMAT&&old[22]===game.Players.length&&game.Tick>=old[20]!;
+  const elapsed=valid?game!.Tick-old[20]!:0;
+  const values=Array<number>(24).fill(0),states:DragonMotion[]=[];
+  for(let i=0;i<10;i++){
+    const p=game?.Players[i],encoded=valid?old[10+i]!:0;
+    let phase=2*(encoded-Math.floor(encoded)),moving=false,falling=encoded>=4;
+    if(p){
+      const distance=valid?Math.abs(p.X-old[i]!):0;
+      // Ignore respawns, wraps and editor teleports. A landing may contribute
+      // its final grounded sample; no distance accrued in the air is replayed.
+      const travel=valid&&elapsed>0&&distance<=8*elapsed+.01&&p.Ground&&p.Lives>0&&!p.Dead&&!p.Downed;
+      moving=elapsed===0&&valid?(Math.floor(encoded)&2)!==0:travel&&distance>.001;
+      if(travel)phase=(phase+distance/DRAGON_STRIDE_DISTANCE)%1;
+      if(p.Ground||p.VY<0)falling=false;
+      else if(p.VY>0)falling=true;
+      else if(!valid)falling=false;
+      values[i]=p.X;
+    }else{phase=0;falling=false;}
+    states.push({moving,phase,falling});
+    values[10+i]=Math.min(phase,.999999)*.5+(moving?2:0)+(falling?4:0);
+  }
+  values[20]=game?.Tick??0;values[21]=game?1:0;values[22]=game?.Players.length??0;values[23]=MOTION_FORMAT;
+  const vec=(start:number):[number,number,number,number]=>[values[start]!,values[start+1]!,values[start+2]!,values[start+3]!];
+  return {states,moving:states.map(s=>s.moving),phases:states.map(s=>s.phase),
+    globals:{v2:vec(0),v3:vec(4),v4:vec(8),v5:vec(12),v6:vec(16),v7:vec(20)}};
 }
 
 /** Native sprites retain original bounds; the scene's shared stencil crops UVs. */

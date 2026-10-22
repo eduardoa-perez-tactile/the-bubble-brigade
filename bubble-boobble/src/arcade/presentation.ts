@@ -1,3 +1,4 @@
+import {cartoonRewardLabel,cartoonRewardColor} from '../cartoon/reward-feedback';
 import { menuBubble, menuDragon } from '../desktop/animation';
 import { arenaLayout } from './arena-layout';
 import { arenaBackdrop, bubblePose, dragonPose, dragonShadow, dragonBadges, rect, ring, sparkle, popQuads, advanceFeel, emptyFeel, cueQuads, packFeel, unpackFeel, feelColors, type FeelState } from './juice';
@@ -80,6 +81,7 @@ interface Draw {
   text: string;
   size: number;
   footer?: boolean;
+  reward?: boolean;
   pixelOnly?: boolean;
   color?: readonly [number, number, number];
 }
@@ -310,6 +312,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
         ? label(p.Text, p.X, p.Y + 48, 12)
         : image("pop", 0, p.X, p.Y + 48, 44),
     );
+    if(p.Text)out[out.length-1]!.reward=true;
     if(g.Party&&p.Text){const d=out[out.length-1]!;d.y-=Math.max(0,12-(45-p.Life));d.size=Number(p.Text)>=400?15:11;d.color=Number(p.Text)>=400?[255,240,170]:[180,230,255];}
   }
   if(g.Party){
@@ -560,7 +563,7 @@ export const ArcadeFeelSystem=defineSystem({
   query:query(write(CameraShake)),
   run(ctx,q){
     const current=session.get(),g=current.game;
-    if(!current.active||!g?.Party){if(ctx.get(ArcadeFeel).header[2])ctx.set(ArcadeFeel,packFeel(emptyFeel()));return;}
+    if(!current.active||!g||(!g.Party&&g.Level.arena!=='cartoon-courtyard')){if(ctx.get(ArcadeFeel).header[2])ctx.set(ArcadeFeel,packFeel(emptyFeel()));return;}
     const old=unpackFeel(ctx.get(ArcadeFeel));
     const next=advanceFeel(old,g,ctx.get(Time).step);
     const reduced=!!desktopSaveState.get().settings.reducedEffects;
@@ -625,12 +628,12 @@ export const ArcadePresentation = defineSystem({
     // Cartoon art uses the native filtered sprite batch and a shared stencil.
     // The fallback retains the static quad compositor and original source pixels.
     const modern = cartoonScene && session.get().active && g && ['play','pause','result'].includes(ui.screen)
-      ? cartoonSprites(cartoonDrawPlan(g,g.Tick,ctx.get(ViewInfo),feel,motion?.moving),plan.clip)
+      ? cartoonSprites(cartoonDrawPlan(g,g.Tick,ctx.get(ViewInfo),feel,motion?.states,!!desktopSaveState.get().settings.reducedEffects),plan.clip)
       : cartoonScene && ui.screen==='editor'
-        ? cartoonSprites(cartoonEditorDrawPlan(ui.level,ctx.get(Time).step,desktopSaveState.get().profiles[desktopSaveState.get().active]?.avatar??'green'),plan.clip)
-        : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;
+        ? cartoonSprites(cartoonEditorDrawPlan(ui.level,desktopSaveState.get().settings.reducedEffects?0:ctx.get(Time).step,desktopSaveState.get().profiles[desktopSaveState.get().active]?.avatar??'green'),plan.clip)
+        : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,desktopSaveState.get().settings.reducedEffects?0:ctx.get(Time).step,ui.selected),plan.clip) : null;
     const rescueLabels = modern && g && ['play','pause'].includes(ui.screen)
-      ? cartoonRescueLabels(g,ctx.get(ViewInfo)) : [];
+      ? cartoonRescueLabels(g,ctx.get(ViewInfo),feel) : [];
     const textLayout=modern&&g?.Level.arena==='cartoon-courtyard'?arenaLayout(g.Level,ctx.get(ViewInfo)):null;
     const textProjection=textLayout&&g?cartoonProjection(g,textLayout):null;
     if(modern && modern.length>q.mesh.count)throw new Error(`Cartoon presentation needs ${modern.length} slots; preserved pool has ${q.mesh.count}`);
@@ -709,6 +712,7 @@ export const ArcadePresentation = defineSystem({
         }
         const source=plan.texts[slot-1];
         let d=source??rescueLabels[slot-1-plan.texts.length];
+        if(modern&&source?.text==='SAVED!')d=undefined;
         // The preserved pixel plan has already applied its linear world layout.
         // Lower only its world text through the same projection as native art;
         // UI/footer and the independently projected identity labels stay owned
@@ -717,6 +721,10 @@ export const ArcadePresentation = defineSystem({
           x:textProjection.projectX((source.x-textLayout.x)/textLayout.scale),
           y:textProjection.projectY((source.y-textLayout.y)/textLayout.scale),
           size:source.size/textLayout.scale*textProjection.scale};
+        if(modern&&source?.reward&&d){
+          const scale=textProjection?.scale??1;
+          d=cartoonRewardLabel({...d,x:d.x+22*scale,size:(Number(source.text)>=400?36:28)*scale},ctx.get(ViewInfo));
+        }
         if (!d || modern && (d.footer || ('pixelOnly' in d && d.pixelOnly))) {
           if (c.col(Text2D).visible[i]) c.set(Text2D, i, { visible: false });
           continue;
@@ -731,6 +739,9 @@ export const ArcadePresentation = defineSystem({
           font: modern ? "cartoon/fonts/BreeSerif-Regular" : "reference/arcade",
           size: d.size,
           color: (() => {
+            // Cartoon rewards keep their bright ink; legacy banner recoloring
+            // and RGB dimming belong to the preserved pixel presentation.
+            if(modern&&('reward' in d&&d.reward))return cartoonRewardColor(d.color??[255,220,106],fade);
             let [r, g, b] = d.color ?? [255, 220, 106];
             if (
               banner &&
@@ -755,9 +766,9 @@ export const ArcadePresentation = defineSystem({
               "ff"
             );
           })(),
-          align: modern && 'worldNumber' in d && d.worldNumber ? "Center" : "Left",
-          outlineWidth: modern && 'worldNumber' in d && d.worldNumber ? .08 : 0,
-          outlineColor: "#172124ff",
+          align: modern && (('worldNumber' in d && d.worldNumber)||('playerName' in d && d.playerName)||('reward' in d && d.reward)) ? "Center" : "Left",
+          outlineWidth: modern && (('worldNumber' in d && d.worldNumber)||('playerName' in d && d.playerName)||('reward' in d && d.reward)) ? .08 : 0,
+          outlineColor: modern&&('reward' in d&&d.reward)?cartoonRewardColor([23,33,36],fade):'#172124ff',
           order: modern ? 10000 + slot : slot,
         });
       }

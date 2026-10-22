@@ -102,7 +102,7 @@ export function arenaBackdrop(g:GameState,reduced=false):PixelQuad[] {
   }
   return out;
 }
-export type FeelCue={kind:'jump'|'land'|'turn'|'rescue'|'boss-hit'|'clear'|'victory'|'capture';x:number;y:number;at:number;slot:number;strength?:number;};
+export type FeelCue={kind:'jump'|'land'|'turn'|'rescue'|'boss-hit'|'clear'|'victory'|'capture'|'bubble-bounce';x:number;y:number;at:number;slot:number;strength?:number;};
 type Snapshot={tick:number;wave:number;phase:string;state:number;hp:number;bossMode:string;players:{x:number;y:number;ground:boolean;vy:number;jumping:boolean;dir:number;downed:boolean;lives:number}[]};
 export type FeelState={clock:number;step:number;previous:Snapshot|null;cues:FeelCue[];};
 export const emptyFeel=():FeelState=>({clock:0,step:0,previous:null,cues:[]});
@@ -110,7 +110,7 @@ export const emptyFeel=():FeelState=>({clock:0,step:0,previous:null,cues:[]});
 // remain interned for the lifetime of the engine session and eventually exhaust it.
 const feelPhases=['prepare','combat','rest','boss'];
 const feelModes=['','moving','windup','captured'];
-const feelKinds:FeelCue['kind'][]=['jump','land','turn','rescue','boss-hit','clear','victory','capture'];
+const feelKinds:FeelCue['kind'][]=['jump','land','turn','rescue','boss-hit','clear','victory','capture','bubble-bounce'];
 export function packFeel(f:FeelState){
  const p=f.previous;
  const players=(read:(p:NonNullable<FeelState['previous']>['players'][number])=>number)=>Array.from({length:10},(_,i)=>p?.players[i]?read(p.players[i]!):0);
@@ -128,7 +128,7 @@ export function unpackFeel(f:ReturnType<typeof packFeel>):FeelState{
 }
 /** Bounded presentation history; persisted in a sim:false resource, never in match state. */
 export function advanceFeel(old:FeelState,g:GameState,step:number):FeelState {
-  const previous=old.previous,reset=!previous||g.Tick<previous.tick||g.Party!.Wave<previous.wave;
+  const previous=old.previous,reset=!previous||g.Tick<previous.tick||(g.Party?.Wave??g.LevelIndex)<previous.wave;
   const clock=reset?0:old.clock+(g.Paused?0:Math.max(0,step-old.step));
   const cues=reset?[]:old.cues.filter(c=>clock-c.at<75);
   const add=(kind:FeelCue['kind'],x:number,y:number,slot=0,strength=1)=>cues.push({kind,x,y,slot,at:clock,strength});
@@ -139,15 +139,24 @@ export function advanceFeel(old:FeelState,g:GameState,step:number):FeelState {
       if(before.downed)add('rescue',p.X+24,p.Y+72,i);
       else if(p.Ground&&!before.ground&&((before.vy??0)>0||before.jumping)&&Math.abs(p.Y-before.y)<80)add('land',p.X+24,p.Y+92,i,Math.max(.4,Math.min(1,before.vy/10)));
       if(before.ground&&!p.Ground&&p.VY<0&&Math.abs(p.Y-before.y)<80)add('jump',before.x+24,before.y+92,i);
+      // A successful bounce reverses an airborne descent and snaps the feet
+      // exactly to this surviving bubble's existing bounce plane. Derive the
+      // visual cue here; no decoration is written into authoritative state.
+      if(g.Level.arena==='cartoon-courtyard'&&!before.ground&&!before.downed&&before.vy>=0&&!p.Ground&&p.VY<0&&p.Dead===0){
+        const bounced=g.Bubbles.find(b=>!b.Removed&&b.Age>20&&!(g.Party&&b.ThunderShot)&&
+          Math.abs(p.Y+ActorSize-b.Y)<.001&&p.X+ActorSize>b.X+4&&p.X<b.X+36);
+        if(bounced&&!cues.some(c=>c.kind==='bubble-bounce'&&c.slot===bounced.ID&&c.at===clock))
+          add('bubble-bounce',bounced.X+22,bounced.Y+22,bounced.ID);
+      }
       if(before.dir!==p.Dir)add('turn',p.X+24,p.Y+96,i);
     }
-    const b=g.Party!.Boss;
+    const b=g.Party?.Boss;
     if(b&&b.HP<previous.hp&&b.Mode!=='captured')add('boss-hit',b.X+48,b.Y+96);
     if(b?.Mode==='captured'&&previous.bossMode!=='captured')add('capture',b.X+48,b.Y+96);
-    if(g.Party!.Phase==='rest'&&previous.phase!=='rest')add('clear',384,175);
+    if(g.Party?.Phase==='rest'&&previous.phase!=='rest')add('clear',384,175);
     if(g.State===4&&previous.state!==4)add('victory',384,230);
   }
-  return {clock,step,cues:cues.slice(-32),previous:{tick:g.Tick,wave:g.Party!.Wave,phase:g.Party!.Phase,state:g.State,hp:g.Party!.Boss?.HP??0,bossMode:g.Party!.Boss?.Mode??'',players:g.Players.map(p=>({x:p.X,y:p.Y,ground:p.Ground,vy:p.VY,jumping:p.JumpStep!==undefined,dir:p.Dir,downed:!!p.Downed,lives:p.Lives}))}};
+  return {clock,step,cues:cues.slice(-32),previous:{tick:g.Tick,wave:g.Party?.Wave??g.LevelIndex,phase:g.Party?.Phase??'',state:g.State,hp:g.Party?.Boss?.HP??0,bossMode:g.Party?.Boss?.Mode??'',players:g.Players.map(p=>({x:p.X,y:p.Y,ground:p.Ground,vy:p.VY,jumping:p.JumpStep!==undefined,dir:p.Dir,downed:!!p.Downed,lives:p.Lives}))}};
 }
 export function cueQuads(state:FeelState,reduced=false):PixelQuad[] {
   const out:PixelQuad[]=[];
@@ -174,7 +183,7 @@ export function cueQuads(state:FeelState,reduced=false):PixelQuad[] {
       if(age<10)ring(out,c.x,c.y,28+age*3,'#fff3c4',age);
     }else if(c.kind==='capture'){
       if(age<35)ring(out,c.x,c.y,40+age*1.1,'#9de8ff',age);
-    }else if(!reduced&&age<65){
+    }else if((c.kind==='clear'||c.kind==='victory')&&!reduced&&age<65){
       const count=c.kind==='victory'?36:18;
       for(let i=0;i<count;i++){
         const vx=((i*17%23)-11)*.48,vy=-2.5-(i%7)*.6;

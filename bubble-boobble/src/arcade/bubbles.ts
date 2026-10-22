@@ -1,3 +1,6 @@
+import {cartoonBubbleTouchesEnemy} from '../cartoon/capture-contact';
+import {cartoonBubbleTouchesPlayer} from '../cartoon/bubble-contact';
+import {cartoonShotOrigin} from '../cartoon/coordinates';
 import { arenaWidth, arenaHeight } from './types';
 import { hitBossWithThunder } from './boss';
 import { startPlayerJump } from './physics';
@@ -48,9 +51,10 @@ export function shootBubble(g: GameState, player: number) {
     balance = g.PlayerBalance ?? productionPlayerBalance,
     speed = p.Power.Blue ? balance.BlueBubbleSpeed : balance.BubbleSpeed,
     reach = p.Power.Pink ? balance.PinkBubbleRange : balance.BubbleRange;
+  const origin=g.Level.arena==='cartoon-courtyard'?cartoonShotOrigin(p.X,p.Y,p.Dir):{x:p.X+p.Dir*18,y:p.Y+2};
   g.NextID++;
   g.Bubbles.push({
-    ...bubble(p.X + p.Dir * 18, p.Y + 2),
+    ...bubble(origin.x,origin.y),
     ID: g.NextID,
     Shooter: player,
     Dir: p.Dir,
@@ -76,7 +80,7 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
           if (
             b.Element === '' && g.Party?.Phase !== 'prepare' &&
             e.State === EnemyState.Active &&
-            intersects(b.X, b.Y, 40, 40, e.X + 3, e.Y + 3, 38, 38)
+            (g.Level.arena==='cartoon-courtyard'?cartoonBubbleTouchesEnemy(g,b,e):intersects(b.X, b.Y, 40, 40, e.X + 3, e.Y + 3, 38, 38))
           ) {
             b.EnemyID = e.ID;
             e.State = EnemyState.Trapped;
@@ -93,8 +97,13 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
         }
       }
     } else {
-      const ceiling = g.Level.number === 24 ? 9 * Tile : 2 * Tile;
-      if (b.Y > ceiling) b.Y -= 1.15;
+      const cartoon=g.Level.arena==='cartoon-courtyard';
+      const ceiling = cartoon ? -2 * Tile : g.Level.number === 24 ? 9 * Tile : 2 * Tile;
+      if (cartoon) {
+        // The top shelf is already above the old arena's ceiling. Rise into the
+        // courtyard headroom; shots born higher never snap down to a platform.
+        if(b.Y>ceiling)b.Y=Math.max(ceiling,b.Y-1.15);
+      } else if (b.Y > ceiling) b.Y -= 1.15;
       else b.Y = goFMA(goSin(b.Age / 28), 4, ceiling);
       b.X = goFMA(goSin(goFMA(b.ID, 1.7, b.Age / 60)), 0.2, b.X);
     }
@@ -137,7 +146,21 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
         g.Sounds.push("jump");
         continue;
       }
-      if (intersects(p.X + 4, p.Y + 4, 36, 36, b.X, b.Y, 40, 40))
+      if(g.Level.arena==='cartoon-courtyard') {
+        // Reserve the existing descending Jump lane until its unchanged bounce
+        // plane is crossed. The larger painted shell must not steal that bounce.
+        const approachingBounce=!(g.Party&&b.ThunderShot)&&!p.Ground&&input.Jump&&p.VY>=0&&
+          p.Y+ActorSize-p.VY<=b.Y+10&&p.X+ActorSize>b.X+4&&p.X<b.X+36;
+        // Once boosted above the old contact plane, let the player separate.
+        // Painted overlap during ascent must not immediately undo the bounce.
+        const leavingAbove=p.VY<0&&p.Y+ActorSize<=b.Y&&p.X+ActorSize>b.X+4&&p.X<b.X+36;
+        // The enlarged mouth/head overlaps a forward shot longer than the old
+        // pixel body, especially with shoes. Holding forward fire should not
+        // turn those empty owner shots into accidental contact pops. Captives,
+        // teammates, elements, stopping and turning retain normal pop contact.
+        const firingPastOwnShot=b.Shooter===player&&!b.EnemyID&&!b.Element&&input.Fire&&input.Move*b.Dir>0;
+        if(!approachingBounce&&!leavingAbove&&!firingPastOwnShot&&cartoonBubbleTouchesPlayer(p,b))popBubble(g,i,player);
+      } else if (intersects(p.X + 4, p.Y + 4, 36, 36, b.X, b.Y, 40, 40))
         popBubble(g, i, player);
     }
   }

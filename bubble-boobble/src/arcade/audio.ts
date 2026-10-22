@@ -27,9 +27,10 @@ export const ArcadeAudioSystem=defineSystem({
   // future voices, while mute unloads/stops them instead of changing their bus.
   if(old.sound<0)ctx.events.emit(SetBusVolume,{bus:'SFX',volume:1});
   if(old.sound!==save.settings.sound)ctx.setField(ArcadeAudio,'sound',save.settings.sound);
-  // Party sounds are coalesced per fixed step and use meaningful voice priorities.
-  // Classic keeps its original gain and ordering contract.
-  if(g?.Party&&!muted&&!paused&&save.settings.sound>0){
+  // The illustrated game uses restrained, coalesced cues in both adventure and
+  // party play. The preserved pixel campaign keeps its gain and ordering contract.
+  const expressive=!!g&&(!!g.Party||g.Level.arena==='cartoon-courtyard');
+  if(g&&expressive&&!muted&&!paused&&save.settings.sound>0){
     const gain=save.settings.sound/100;
     const play=(sound:string,volume:number,priority:number,pitch=1,maxVoices=2)=>ctx.events.emit(PlaySound,{sound,volume:gain*volume,priority,pitch,maxVoices});
     if(g.Sounds.includes('shoot'))play('audio/bubble-shot',.48,10,1+(g.Tick%5)*.025,3);
@@ -39,9 +40,7 @@ export const ArcadeAudioSystem=defineSystem({
     for(const sound of ['death','item','laser','fire','water','jump'])if(g.Sounds.includes(sound))
       play(`reference/audio/${sound}`,sound==='jump'?.3:sound==='laser'?.45:.65,sound==='death'?100:sound==='item'?60:20,1,sound==='laser'?2:3);
   }
-  // Six simultaneous dragons can produce dozens of piercing pops. Party mode
-  // keeps the visual pop feedback while retaining the other gameplay cues.
-  if(g&&!g.Party&&!muted&&save.settings.sound>0)for(const sound of g.Sounds)if(sound!=='opening'&&!(g.Party&&sound==='pop')){
+  if(g&&!expressive&&!muted&&save.settings.sound>0)for(const sound of g.Sounds)if(sound!=='opening'){
    // Only the global 24-voice cap applies; disable the per-sound cap.
    // Supported mixer rule rejects an incoming cue when every occupied voice has
    // higher priority. Strict decrease also preserves order within one step.

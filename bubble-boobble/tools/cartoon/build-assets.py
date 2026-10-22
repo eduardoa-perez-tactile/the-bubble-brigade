@@ -193,7 +193,7 @@ atlas.save(SOURCE/'normalized-atlas.png')
 (DEST/'atlas-layout.json').write_text(json.dumps(dict(width=atlas.width,height=atlas.height,frames=frames),indent=2)+'\n')
 (DEST/'animation.json').write_text(json.dumps(dict(feet=[64,120],frames=metadata,clips={
 'idle':{'frames':['idle-0','idle-1','idle-0'],'durations':[120,7,53],'loop':True},
-'run':{'frames':['run-0','run-1','run-2','run-3'],'durations':[5,4,5,4],'loop':True},
+'run':{'frames':['run-0','run-1','run-2','run-3'],'durations':[6,6,6,6],'loop':True},
 'jump':{'frames':['jump-0','jump-1'],'durations':[18,42],'loop':False},
 'shoot':{'frames':['shoot-0','shoot-1'],'durations':[4,8],'loop':False},
 'hurt':{'frames':['hurt-0'],'durations':[12],'loop':False},
@@ -211,3 +211,15 @@ for row,kind in enumerate(kinds):
 for col,name in enumerate(['platform-left','platform-middle','platform-right','wall','boss/move-0','item/food-1','item/pink_candy','effect/fire-0']):preview.alpha_composite(images[name],(col*128,7*128))
 preview.save(SOURCE/'normalized-poses.png')
 print('Exported',len(frames),'original cartoon frames, ZERO legacy pixel sprites.')
+
+# Expanded motion clips are maintained from separate whole-strip masters.
+# Keep this hook after the base export so a full art rebuild retains them.
+import runpy
+runpy.run_path(str(ROOT/'tools/cartoon/build-dragon-animation.py'),run_name='__main__')
+
+runpy.run_path(str(ROOT/'tools/cartoon/build-enemy-animation.py'),run_name='__main__')
+runpy.run_path(str(ROOT/'tools/cartoon/build-capture-profiles.py'),run_name='__main__')
+
+# Preserve the procedural bubble wash alongside the shared ink rim.
+import runpy
+runpy.run_path(str(Path(__file__).with_name("build-feedback-assets.py")),run_name="__main__")

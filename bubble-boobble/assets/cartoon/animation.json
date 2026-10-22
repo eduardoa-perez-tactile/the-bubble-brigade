@@ -429,18 +429,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -450,18 +447,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -471,18 +465,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -492,18 +483,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -513,18 +501,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -534,18 +519,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -555,18 +537,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -576,18 +555,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -597,18 +573,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -618,18 +591,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        20,
-        12,
-        108,
-        120
+        17,
+        13,
+        110,
+        122
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        2,
+        0,
         0
       ],
       "master": "run-0"
@@ -639,18 +609,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -660,18 +627,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -681,18 +645,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -702,18 +663,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -723,18 +681,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -744,18 +699,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -765,18 +717,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -786,18 +735,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -807,18 +753,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -828,18 +771,15 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        22,
-        12,
-        106,
-        120
+        9,
+        13,
+        127,
+        128
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        3,
+        1,
         0
       ],
       "master": "run-1"
@@ -849,19 +789,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -870,19 +807,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -891,19 +825,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -912,19 +843,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -933,19 +861,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -954,19 +879,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -975,19 +897,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -996,19 +915,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -1017,19 +933,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -1038,19 +951,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        18,
-        12,
-        109,
-        120
+        20,
+        14,
+        110,
+        123
       ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
       "sourceCell": [
-        0,
-        1
+        2,
+        0
       ],
       "master": "run-2"
     },
@@ -1059,19 +969,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1080,19 +987,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1101,19 +1005,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1122,19 +1023,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1143,19 +1041,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1164,19 +1059,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1185,19 +1077,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1206,19 +1095,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1227,19 +1113,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1248,19 +1131,16 @@
         64,
         120
       ],
-      "muzzle": [
-        101,
-        57
-      ],
       "visualBounds": [
-        13,
-        12,
-        114,
-        120
-      ],
-      "sourceCell": [
         1,
-        1
+        12,
+        108,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        0
       ],
       "master": "run-3"
     },
@@ -1689,229 +1569,236 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
         0,
-        2
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/blue/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        1,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/red/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        2,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/yellow/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        3,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/purple/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        4,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/orange/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        5,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/cyan/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        6,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/pink/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        7,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/ivory/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        8,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/slate/shoot-0": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
         0,
         20,
         100,
         120
       ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
       "sourceCell": [
-        0,
-        2
+        9,
+        0
       ],
-      "master": "shoot-0"
+      "master": "shoot-0",
+      "muzzle": [
+        100,
+        80
+      ]
     },
     "dragon/green/shoot-1": {
       "feet": [
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -1920,19 +1807,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -1941,19 +1825,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -1962,19 +1843,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -1983,19 +1861,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2004,19 +1879,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2025,19 +1897,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2046,19 +1915,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2067,19 +1933,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2088,19 +1951,16 @@
         64,
         120
       ],
-      "muzzle": [
-        100,
-        80
-      ],
       "visualBounds": [
-        0,
-        20,
-        100,
+        11,
+        32,
+        116,
         120
       ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
       "master": "shoot-1"
     },
@@ -2529,22 +2389,42 @@
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        10,
+        37,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
       "sourceCell": [
         0,
         0
-      ],
-      "derivative": false
+      ]
     },
     "enemy/zenchan/walk-1": {
       "feet": [
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        10,
+        37,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
       "sourceCell": [
         1,
         0
-      ],
-      "derivative": false
+      ]
     },
     "enemy/zenchan/angry-0": {
       "feet": [
@@ -2617,22 +2497,50 @@
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        14,
+        27,
+        103,
+        104
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
       "sourceCell": [
         0,
-        1
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        82,
+        76
+      ]
     },
     "enemy/monsta/walk-1": {
       "feet": [
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        37,
+        105,
+        103
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
       "sourceCell": [
         1,
-        1
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        82,
+        76
+      ]
     },
     "enemy/monsta/angry-0": {
       "feet": [
@@ -2705,22 +2613,50 @@
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        42,
+        40,
+        121,
+        115
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
       "sourceCell": [
         0,
-        2
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        82,
+        76
+      ]
     },
     "enemy/pulpul/walk-1": {
       "feet": [
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        39,
+        43,
+        123,
+        118
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
       "sourceCell": [
         1,
-        2
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        82,
+        76
+      ]
     },
     "enemy/pulpul/angry-0": {
       "feet": [
@@ -2881,22 +2817,50 @@
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        5,
+        15,
+        114,
+        121
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
       "sourceCell": [
         0,
-        4
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        76,
+        72
+      ]
     },
     "enemy/invader/walk-1": {
       "feet": [
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        4,
+        21,
+        113,
+        127
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
       "sourceCell": [
         1,
-        4
+        0
       ],
-      "derivative": false
+      "bodyAnchor": [
+        76,
+        72
+      ]
     },
     "enemy/invader/angry-0": {
       "feet": [
@@ -2969,22 +2933,42 @@
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        12,
+        19,
+        115,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
       "sourceCell": [
         0,
-        5
-      ],
-      "derivative": false
+        0
+      ]
     },
     "enemy/mighta/walk-1": {
       "feet": [
         64,
         120
       ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        13,
+        23,
+        115,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
       "sourceCell": [
         1,
-        5
-      ],
-      "derivative": false
+        0
+      ]
     },
     "enemy/mighta/angry-0": {
       "feet": [
@@ -3051,6 +3035,7240 @@
         5
       ],
       "derivative": true
+    },
+    "dragon/green/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/blue/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/red/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/yellow/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/purple/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/orange/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/cyan/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/pink/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/ivory/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/slate/run-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        14,
+        13,
+        107,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "run-4"
+    },
+    "dragon/green/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/blue/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/red/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/yellow/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/purple/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/orange/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/cyan/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/pink/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/ivory/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/slate/run-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        7,
+        5,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "run-5"
+    },
+    "dragon/green/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/blue/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/red/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/yellow/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/purple/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/orange/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/cyan/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/pink/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/ivory/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/slate/run-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        11,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "run-6"
+    },
+    "dragon/green/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/blue/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/red/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/yellow/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/purple/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/orange/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/cyan/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/pink/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/ivory/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/slate/run-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        12,
+        6,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "master": "run-7"
+    },
+    "dragon/green/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/blue/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/red/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/yellow/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/purple/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/orange/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/cyan/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/pink/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/ivory/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/slate/shoot-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        10,
+        32,
+        118,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "master": "shoot-2"
+    },
+    "dragon/green/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/blue/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/red/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/yellow/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/purple/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/orange/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/cyan/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/pink/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/ivory/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/slate/shoot-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        11,
+        20,
+        116,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "master": "shoot-3"
+    },
+    "dragon/green/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/blue/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/red/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/yellow/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/purple/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/orange/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/cyan/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/pink/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/ivory/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/slate/shoot-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        18,
+        15,
+        110,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "master": "shoot-4"
+    },
+    "dragon/green/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/blue/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        23,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/red/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/yellow/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/purple/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/orange/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/cyan/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/pink/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/ivory/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "dragon/slate/shoot-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        26,
+        14,
+        101,
+        120
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "master": "shoot-5"
+    },
+    "enemy/zenchan/walk-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        37,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "enemy/zenchan/walk-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        37,
+        116,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "enemy/zenchan/walk-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        10,
+        36,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "enemy/zenchan/walk-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        36,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "enemy/zenchan/walk-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        10,
+        37,
+        118,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "enemy/zenchan/walk-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        36,
+        117,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/zenchan-source.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "enemy/mighta/walk-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        22,
+        17,
+        106,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "enemy/mighta/walk-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        15,
+        16,
+        112,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "enemy/mighta/walk-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        10,
+        19,
+        118,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "enemy/mighta/walk-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        12,
+        23,
+        115,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "enemy/mighta/walk-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        16,
+        19,
+        111,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "enemy/mighta/walk-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        12,
+        18,
+        116,
+        120
+      ],
+      "sourceSheet": "art/enemy-animation/mighta-source.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "enemy/monsta/walk-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        9,
+        26,
+        108,
+        108
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/monsta/walk-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        8,
+        36,
+        103,
+        103
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        3,
+        0
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/monsta/walk-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        11,
+        22,
+        104,
+        104
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/monsta/walk-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        8,
+        16,
+        103,
+        105
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/monsta/walk-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        8,
+        37,
+        104,
+        103
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/monsta/walk-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        12,
+        22,
+        103,
+        104
+      ],
+      "sourceSheet": "art/enemy-animation/monsta-source.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        34,
+        33,
+        123,
+        108
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        40,
+        28,
+        122,
+        111
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        3,
+        0
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        43,
+        22,
+        121,
+        103
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        41,
+        26,
+        121,
+        106
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        31,
+        33,
+        122,
+        117
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/pulpul/walk-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        32,
+        38,
+        119,
+        117
+      ],
+      "sourceSheet": "art/enemy-animation/pulpul-source.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ]
+    },
+    "enemy/invader/walk-2": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        15,
+        23,
+        114,
+        121
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/invader/walk-3": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        20,
+        24,
+        122,
+        121
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        3,
+        0
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/invader/walk-4": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        20,
+        16,
+        128,
+        122
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/invader/walk-5": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        16,
+        12,
+        114,
+        121
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/invader/walk-6": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        19,
+        12,
+        127,
+        123
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/invader/walk-7": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        128
+      ],
+      "visualBounds": [
+        8,
+        25,
+        115,
+        124
+      ],
+      "sourceSheet": "art/enemy-animation/invader-source.png",
+      "sourceCell": [
+        3,
+        1
+      ],
+      "bodyAnchor": [
+        76,
+        72
+      ]
+    },
+    "enemy/banebou/body-0": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        88
+      ],
+      "visualBounds": [
+        8,
+        23,
+        118,
+        88
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "sourceRect": [
+        0,
+        0,
+        128,
+        88
+      ]
+    },
+    "enemy/banebou/spring-0": {
+      "feet": [
+        64,
+        32
+      ],
+      "canvasSize": [
+        128,
+        16
+      ],
+      "visualBounds": [
+        23,
+        0,
+        120,
+        16
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "sourceRect": [
+        0,
+        88,
+        128,
+        104
+      ]
+    },
+    "enemy/banebou/feet-0": {
+      "feet": [
+        64,
+        16
+      ],
+      "canvasSize": [
+        128,
+        24
+      ],
+      "visualBounds": [
+        23,
+        0,
+        120,
+        16
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "sourceRect": [
+        0,
+        104,
+        128,
+        128
+      ]
+    },
+    "enemy/banebou/body-1": {
+      "feet": [
+        64,
+        120
+      ],
+      "canvasSize": [
+        128,
+        88
+      ],
+      "visualBounds": [
+        8,
+        22,
+        120,
+        88
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "sourceRect": [
+        0,
+        0,
+        128,
+        88
+      ]
+    },
+    "enemy/banebou/spring-1": {
+      "feet": [
+        64,
+        32
+      ],
+      "canvasSize": [
+        128,
+        16
+      ],
+      "visualBounds": [
+        26,
+        0,
+        117,
+        16
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "sourceRect": [
+        0,
+        88,
+        128,
+        104
+      ]
+    },
+    "enemy/banebou/feet-1": {
+      "feet": [
+        64,
+        16
+      ],
+      "canvasSize": [
+        128,
+        24
+      ],
+      "visualBounds": [
+        26,
+        0,
+        113,
+        16
+      ],
+      "sourceSheet": "art/enemy-animation/banebou-anchors.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "sourceRect": [
+        0,
+        104,
+        128,
+        128
+      ]
+    },
+    "dragon/green/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/green/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/green/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/green/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/green/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/green/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/green/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/green/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/green/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/green/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/green/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/green/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/green/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/blue/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/blue/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/blue/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/blue/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/blue/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/blue/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/red/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/red/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/red/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/red/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/red/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/red/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/red/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/red/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/red/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/red/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/red/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/red/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/red/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/yellow/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        3,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/yellow/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/yellow/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/yellow/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/yellow/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/yellow/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/purple/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        4,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/purple/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/purple/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/purple/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/purple/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/purple/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/orange/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        5,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/orange/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/orange/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/orange/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/orange/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/orange/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/cyan/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        6,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/cyan/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/cyan/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/cyan/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/cyan/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/cyan/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/pink/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        7,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/pink/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/pink/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/pink/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/pink/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/pink/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/ivory/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        8,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/ivory/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/ivory/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/ivory/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/ivory/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/ivory/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/slate/shoot-upper-0": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        100,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/release-anchors.png",
+      "sourceCell": [
+        9,
+        0
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/slate/shoot-upper-1": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/slate/shoot-upper-2": {
+      "canvasSize": [
+        128,
+        96
+      ],
+      "sourceOrigin": [
+        0,
+        0
+      ],
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        0,
+        20,
+        103,
+        96
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-head-recovery-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "faceRecoveryPatch": [
+        58,
+        56,
+        104,
+        92
+      ],
+      "muzzle": [
+        100,
+        80
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        0
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        5,
+        0,
+        77,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        0
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-2": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        90,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        0
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-3": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        97,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        0
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-4": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        94,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        0
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-5": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        12,
+        0,
+        86,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        0,
+        1
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-6": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        10,
+        0,
+        88,
+        27
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        1,
+        1
+      ]
+    },
+    "dragon/slate/shoot-walk-lower-7": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        0,
+        0,
+        91,
+        26
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        2,
+        1
+      ]
+    },
+    "dragon/slate/shoot-air-lower-0": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        11,
+        0,
+        80,
+        20
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        3,
+        1
+      ]
+    },
+    "dragon/slate/shoot-air-lower-1": {
+      "canvasSize": [
+        128,
+        32
+      ],
+      "sourceOrigin": [
+        0,
+        96
+      ],
+      "feet": [
+        64,
+        24
+      ],
+      "visualBounds": [
+        19,
+        0,
+        84,
+        25
+      ],
+      "sourceSheet": "art/dragon-animation/shoot-locomotion-source-2026-10-22.png",
+      "sourceCell": [
+        4,
+        1
+      ]
+    },
+    "dragon/green/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/blue/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/red/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/yellow/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/purple/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/orange/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/cyan/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/pink/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/ivory/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/slate/run-8": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        17,
+        14,
+        124,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        2
+      ],
+      "master": "run-8"
+    },
+    "dragon/green/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/blue/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/red/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/yellow/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/purple/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/orange/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/cyan/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/pink/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/ivory/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/slate/run-9": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        125,
+        128
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        2
+      ],
+      "master": "run-9"
+    },
+    "dragon/green/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/blue/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/red/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/yellow/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/purple/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/orange/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/cyan/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/pink/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/ivory/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/slate/run-10": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        5,
+        12,
+        109,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        2
+      ],
+      "master": "run-10"
+    },
+    "dragon/green/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/blue/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/red/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/yellow/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/purple/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/orange/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/cyan/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/pink/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/ivory/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/slate/run-11": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        8,
+        0,
+        109,
+        124
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        2
+      ],
+      "master": "run-11"
+    },
+    "dragon/green/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/blue/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/red/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/yellow/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/purple/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/orange/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/cyan/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/pink/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/ivory/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/slate/run-12": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        15,
+        13,
+        108,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        0,
+        3
+      ],
+      "master": "run-12"
+    },
+    "dragon/green/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/blue/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/red/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/yellow/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/purple/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/orange/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/cyan/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/pink/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/ivory/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/slate/run-13": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        2,
+        1,
+        127,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        1,
+        3
+      ],
+      "master": "run-13"
+    },
+    "dragon/green/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/blue/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/red/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/yellow/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/purple/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/orange/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/cyan/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/pink/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/ivory/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/slate/run-14": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        20,
+        12,
+        110,
+        123
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        2,
+        3
+      ],
+      "master": "run-14"
+    },
+    "dragon/green/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/blue/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/red/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/yellow/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/purple/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/orange/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/cyan/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/pink/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/ivory/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
+    },
+    "dragon/slate/run-15": {
+      "feet": [
+        64,
+        120
+      ],
+      "visualBounds": [
+        4,
+        4,
+        110,
+        122
+      ],
+      "sourceSheet": "art/dragon-animation/walk-source-2026-10-22-16-registered.png",
+      "sourceCell": [
+        3,
+        3
+      ],
+      "master": "run-15"
     }
   },
   "clips": {
@@ -3072,13 +10290,37 @@
         "run-0",
         "run-1",
         "run-2",
-        "run-3"
+        "run-3",
+        "run-4",
+        "run-5",
+        "run-6",
+        "run-7",
+        "run-8",
+        "run-9",
+        "run-10",
+        "run-11",
+        "run-12",
+        "run-13",
+        "run-14",
+        "run-15"
       ],
       "durations": [
-        5,
-        4,
-        5,
-        4
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
       ],
       "loop": true
     },
@@ -3096,11 +10338,19 @@
     "shoot": {
       "frames": [
         "shoot-0",
-        "shoot-1"
+        "shoot-1",
+        "shoot-2",
+        "shoot-3",
+        "shoot-4",
+        "shoot-5"
       ],
       "durations": [
-        4,
-        8
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
       ],
       "loop": false
     },
@@ -3134,5 +10384,38 @@
     "flower",
     "square",
     "spade"
-  ]
+  ],
+  "enemies": {
+    "zenchan": {
+      "frames": 8,
+      "ticksPerFrame": 4,
+      "anchor": "feet"
+    },
+    "mighta": {
+      "frames": 8,
+      "ticksPerFrame": 4,
+      "anchor": "feet"
+    },
+    "monsta": {
+      "frames": 8,
+      "ticksPerFrame": 3,
+      "anchor": "body"
+    },
+    "pulpul": {
+      "frames": 8,
+      "ticksPerFrame": 2,
+      "anchor": "body"
+    },
+    "invader": {
+      "frames": 8,
+      "ticksPerFrame": 5,
+      "anchor": "body"
+    },
+    "banebou": {
+      "frames": 2,
+      "ticksPerFrame": 16,
+      "anchor": "feet",
+      "rig": "spring"
+    }
+  }
 }

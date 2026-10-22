@@ -1,0 +1,1621 @@
+{
+  "referenceRoot": "/Users/eduardoleale/workspace/art/cuphead",
+  "timing": "Reference exposure, frame rate, pivots and state routing are unverified; ascending numeric filename order checked visually. No Cuphead speed inferred.",
+  "sequences": {
+    "Cuphead run": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "6bcf95a446ad7a5a2748d47a85efd5e38eda05681076adce687a72008833d061"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "a89e19a81af4f43a50bbe01c962ff8d0f02302c7e11373b0dd7230260b24b476"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "0867a8aa86589825cac986b31c83e31e0adeeb3f1185a70f91de53938b73fc5e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "5dc1fe6c2d1b9eadf8cf0a41db765b04a3eeed29f8d3f5071b6865ea814a7a9a"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "6497ecf23a822b4f24ba98d31dae8c6590d1e3bf4578e88750e648f1d38d6d8b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0006.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 6,
+        "sha256": "0081c265bee29d9df342b6f8e17696fb710863d2b701a66e7ba23646e1b09151"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0007.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 7,
+        "sha256": "d1616429d6e62ab58c62d5c96530094c18a7af1ab57b463a144b330f6a501afd"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0008.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 8,
+        "sha256": "df39e8142a60636022de4df0a4cda9580caf803acd0385ba2c512ccc4bafb37d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0009.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 9,
+        "sha256": "83c57ca84b3718e8801fd1ec759b8ffb294da689d963a939a77135e41002d0ec"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0010.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 10,
+        "sha256": "9d1781b5efba90a5d6669c82b8cd4e0400eb0154eb66bce552a65b854e7ba222"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0011.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 11,
+        "sha256": "840e111a9e1f1d178ef71426da67e7e93654696b6c15fd4f3d777c1c2485a5be"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0012.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 12,
+        "sha256": "687e2a4a4bee567a347ed140ac6f87658de581646af59ce3bdb3284007f31df3"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0013.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 13,
+        "sha256": "c67e4d96970ad92e80f3cabeddf61f42a0aed848a2ddef607886375a96c801de"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0014.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 14,
+        "sha256": "cd6db120a221a5b7d0f8dda7b6e8d35b76a1f23d757ea3e883db4b27ab3a03dc"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0015.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 15,
+        "sha256": "5530fb8b3f15fbdcd69c406a8e0e122a11625a2bd9238547794763777b6ed872"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_0016.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 16,
+        "sha256": "c1d1ade7c2d93d2fce903de98160b99068d6c3dcae341b97cce6d76dae6e4b3d"
+      }
+    ],
+    "Cuphead idle": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_idle_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "64120f43e46a10881b52d2ff65a5172c430f530522a0732c71f4654255d727dd"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_idle_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "e9ef91e764938ff001f3e7ee63e3d0e8fea310498e897c2d5fe90c872fb83c98"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_idle_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "999b4c7cb0ad486b0a33345586191b39ab6a1cc80a64209c1c296d941b5ba2e5"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_idle_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "9612aa7a60ac53e6d91d8b607fdb3052d0e103f6ced8929025400228adf8b034"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_idle_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "9fdc852f664403ba32aba22d58c941fabdf23559ce5c3e10e1bddcea87bff054"
+      }
+    ],
+    "Cuphead jump": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "d03e2a092719868c637e4f315bef71bbf13ff5c290b4a239a1d5146a3d109266"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "4028fc8bd52669576474ab45c231735562531b68fd1510efc2ca1d83bfe5e0c4"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "c0fca482c9cc868147765a7abac2f7e527ab9c95b5f45a55a3f403abd3150bc3"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "44278fe29b8279699d4e154e3773100bf51700425633833c3d273f99ae56427d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "e91641e35424da1f01332239d81168548c7680c8d07b3fef275979e871fbafed"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0006.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 6,
+        "sha256": "0205a37c5f915ecc0f50b78f4aaa9dbdc1d242acfef00864f177056833360a8b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0007.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 7,
+        "sha256": "a7f25e969eaa0dae8750c93a710fbb199b8aea1944a851fb29cc8c9b2eacfb6f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_jump_0008.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 8,
+        "sha256": "020bb277be668621900c8e75864bd5f56d768a1d1955ba223af0eaf6da818679"
+      }
+    ],
+    "Cuphead shoot": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "1b0df245226faff97d47995cccdb43c6ac4eacd05481bf99f702de279180a54e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "e51eab9ae982f3a93ec06ab872f4cf60bdc740c3248d52667324c240bb9d5f0d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "95f4c7b19cfa688f971206e8efe52f164167069eba3d5b618f392bc05e717472"
+      }
+    ],
+    "Cuphead shoot boil": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_boil_0001.png",
+        "size": [
+          560,
+          560
+        ],
+        "number": 1,
+        "sha256": "0f380de3ea9d0a497ed586c489eec633670b29f4bd1ae4e005acb11471a5b174"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_boil_0002.png",
+        "size": [
+          560,
+          560
+        ],
+        "number": 2,
+        "sha256": "f0568fcad31b769b044afab7e87d56bb314bf29dc23e74e928ae8cbca0cb91aa"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_shoot_straight_boil_0003.png",
+        "size": [
+          560,
+          560
+        ],
+        "number": 3,
+        "sha256": "9c698b71bac07dd58ed26c7efcfb4686a95755f6651053f7d6996029529fbf61"
+      }
+    ],
+    "Cuphead run shoot": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "daee22f86a838b733012149cfcaa5d6b206558f66de9d91ac2ca79f2349614a7"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "0028b547f3ae35466a27f48d8f740138504d86fe9e1cd7208caab1833760c5eb"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "9c8c19dfa0c91d569459d4d9a9feadf68ba731abab75b2c6b7715e2b2366bebd"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "690b3aeb52c595190a308fd780ea95d2e3076401ebf8bdd0ca628d3eaa117357"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "a0d5a9ae196e163b81aca32ea11b4f5b3fb0c52906b37c99a56ff260e5ad3119"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0006.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 6,
+        "sha256": "34fb5fdbfc104ef18dcc9ecb82e9d055089ea49d92980bf2ac37632ad85dde68"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0007.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 7,
+        "sha256": "11b325201ce3cfd1f7b19055847e7e85a09908071414bf525e4f1771fba0fefc"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0008.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 8,
+        "sha256": "5156454f18fcb2ef536b811542a6e6d0161f473fa61f10ae36d02b13feac3e79"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0009.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 9,
+        "sha256": "aa74d2088964dc8324d6249c7a8e3dbc245d8c197d7458aa586e9e2697a13dd7"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0010.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 10,
+        "sha256": "08e9d4bca1c8cc1944d9800d5d7f9264718f517ceb0294b47bbd06ef56cc4755"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0011.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 11,
+        "sha256": "dfc53252eeeb22227dad59215a26e80af45c14332128503f6b3dac9d70c398ac"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0012.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 12,
+        "sha256": "665d0aed7185e853598765bf0d1d07d498218ce89657683adbd647c26d690664"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0013.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 13,
+        "sha256": "df14170828c877afe5cf735a559834ed74e46c7a8d6231c73bb2820fb72125c9"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0014.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 14,
+        "sha256": "b33cb42fbd5e750115fa1c303d0fe0a298b032af7fe64a1c1d4a503cb1cfe673"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0015.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 15,
+        "sha256": "d602f026638ffaec479c5e4b2b559703a10c5b23d9b986d1fb04e334180a331f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_shoot_0016.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 16,
+        "sha256": "e972ef426f24598c6c3e0de3100c838a2187958e3292c53c63b595664e6b92ab"
+      }
+    ],
+    "Cuphead turn": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_turnaround_0001.png",
+        "size": [
+          560,
+          560
+        ],
+        "number": 1,
+        "sha256": "ad764f9cd1920fb82c428dee8ff3284a1dd76220022e6d2162546575a85c06aa"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_run_turnaround_0002.png",
+        "size": [
+          560,
+          560
+        ],
+        "number": 2,
+        "sha256": "a42967444ad9e204bb52df9ce008149dbe41b262702fb995a7295133591b81fc"
+      }
+    ],
+    "Cuphead hit": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "7d63305a2fde872e6ab364acccd0b82514c1f7cd3fd67005b1a9601c77074c45"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "d232097cc96b1b649b2ae05d9516a4888aac75d7680eb467c73f8421782aebf7"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "2c5e3a86fddb6bbc2d347b4bb05c43ad250019df770c657ad57fba7821f44fd7"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "b1bbdbadc2c7b011451839e30fb75e916094a49758632e6f09a0b7648cb4e50d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "a4f9251e5049c1c6e8c87798963d7972df1f7bb9b4d2b49360c135d3d6510787"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_0006.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 6,
+        "sha256": "d0104a09e88d228ef96c36e0be0e4efa930aa9b10c62b43660a5189347f9454f"
+      }
+    ],
+    "Cuphead air hit": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0001.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 1,
+        "sha256": "5876c4f469d7bc2502c3dd048a778be5744c3a0785e7d6dcfa03b908466c4b82"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0002.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 2,
+        "sha256": "897ef71e34bdef7a7d1c6d130f51e238169c547e152cc2444b954ec119f55d4d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0003.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 3,
+        "sha256": "20e55dacab052470bdc74e19e033ae5cf76a581b8ceb984316a304633da0912f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0004.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 4,
+        "sha256": "9e4f6e652c0db65a2bcaab16b143691da6a4c10b5486765330bd5870429be7df"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0005.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 5,
+        "sha256": "f36c1fe102f2bee80ae3ea0c50df6a0f0bab247781afa7262bc42c9f10c8432d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/playable-characters/108720-cuphead/Cuphead/Cuphead/cuphead_hit_air_0006.png",
+        "size": [
+          512,
+          512
+        ],
+        "number": 6,
+        "sha256": "0071c700b4f27d4d00123fab77d19f6eaa3a7bab9903e74a75da810913f8d86b"
+      }
+    ],
+    "daisy takeoff": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0001.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 1,
+        "sha256": "f02d2892fcce045741085c4f5ca5a02c9b2021be8ebdfcbbd6f501ca474afd8e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0002.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 2,
+        "sha256": "d7bd4b7e787aa62c5d26cf1aaa1a3dd939c2e9844fe4cc73f62d562d323bd702"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0003.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 3,
+        "sha256": "c5126e3f265f563490c85d9a182065d5aa172dc0dbc1051946d00f8997d3dfb4"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0004.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 4,
+        "sha256": "42f549bdef03923290b6208ba774603dfa90890ec92771267554a4030187b904"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0005.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 5,
+        "sha256": "eb9f4c5abcc6ed8401e038be63b355a2c13026ba2a453642b4e60c6e6d951f58"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0006.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 6,
+        "sha256": "0cdc36b1cc91feca0386d582f86c4a80a0ff8315c456c45cd3327aab1bed58ae"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0007.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 7,
+        "sha256": "a65740e0edc15b6f47df5f6cc7688de08d82cc892fd9c9f79bb8fd74c44f9f6b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump A/flowergrunt_jump_A_0008.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 8,
+        "sha256": "3baf6fce1ae4189b4481407eb2f65fd121b2601cab6d5738ce07d633e835a5c6"
+      }
+    ],
+    "daisy jump": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0001.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 1,
+        "sha256": "1d5ce4af12ef4ef03eb01e5eb441cf7645faf3ea5e5ab844025131086b6732c6"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0002.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 2,
+        "sha256": "0c378e605c362d17178e18e846250cc188837dc140ed449b6d365055fb1b778e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0003.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 3,
+        "sha256": "08950fddc0266fe761deec5be5edb9b5b427fd2aade211277699c41d37d12331"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0004.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 4,
+        "sha256": "a1ecc8455d17bf93de630b084a9e678b0262b93f9071f87ed12645359f32c956"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0005.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 5,
+        "sha256": "c4b1468fec690b107fba3e85c82182177298313aecc0680c116bcb1943efe190"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0006.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 6,
+        "sha256": "fa41f225f5d86d562f21ba09bc3a87c0dcafcd951caa353210f5a1fc5cb9c925"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0007.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 7,
+        "sha256": "6a1ca6d9148ca152dbcc55f0db4cf4e3c5780228a7c778385712b1bad0a21c15"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0008.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 8,
+        "sha256": "8de03cf2c62ecaf4952eeed1a1a92f4c52d3984c6d1e1397d7332eef30173b71"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0009.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 9,
+        "sha256": "c303c223ef76b64cfeac1c3d69c6acd51e78d8afd81301d919a87a634e637437"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0010.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 10,
+        "sha256": "f341b5fa0035593b72452710e281f003375cff212b04f1c6f04bc5394e669cf4"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0011.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 11,
+        "sha256": "16a1ae4eb88304c2afa5c98faa62afb5e54304db8f29154263cf8b488ea51288"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0012.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 12,
+        "sha256": "5e84c16fa56e76ec6f09c98f08e27827b1e33eace96b3e1121aec434594281fc"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0013.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 13,
+        "sha256": "e1a7524bdc7c19083170c371fb72f652abfa24f69976b430a2c14b9e0fc6f5d8"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0014.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 14,
+        "sha256": "133d31e7b11ccb4e4fd01e2c80a65c59d9d1a3fc27502b49af31932c64058989"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0015.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 15,
+        "sha256": "b6685c79419d759ff5a7084215b2a752f1c9dd11a1cddfdfdadf4be0c501965f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0016.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 16,
+        "sha256": "ae58e3520b28fe4fdc5ade15131899c7fb20bbf3a3463f7308215df6eed657f5"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0017.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 17,
+        "sha256": "a66216107830adc387fe9bce9104a67189cc5b2dfaec5385a8b0e77cb9ab1e9f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0018.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 18,
+        "sha256": "0d032391e7cd5f3bbfc18954eb340929d707c0574e0d7c06404b977dbed52fc0"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0019.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 19,
+        "sha256": "1c07c987297a83a3b4b2a4f7f9bd153e19f247587268ac56adce6f8d756faa6e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0020.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 20,
+        "sha256": "6035e8541191ef8161f3055f32eda49f7187982645a0487e42e891b313c724ed"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Jump B/flowergrunt_jump_B_0021.png",
+        "size": [
+          233,
+          336
+        ],
+        "number": 21,
+        "sha256": "41fd2765947af0c0e70c94dffd12468f78103166dfd965564a80fbe32a1e505c"
+      }
+    ],
+    "daisy land": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0001.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 1,
+        "sha256": "c7875878e4c8a4b730a382c5286d1eeb04e985b1dc7d1ef0daf37ad4d2de2b0f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0002.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 2,
+        "sha256": "04be25348aff579c785e0e8527c0a6b1bdd802f821a9c0667cf6d14658f89bac"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0003.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 3,
+        "sha256": "d5b6676f7c2db7b93cfdb1acabc6c23d83db3916e3e0fbc6a6450a87c03cbc9d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0004.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 4,
+        "sha256": "ca098e09067e395d52e51affc0c65cde9595db431575e8bd1652bb7df44fed0d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0005.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 5,
+        "sha256": "08e696a953c45bb559b2f5e6499dae52de8c9c643012698a5f125a014dfa8568"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0006.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 6,
+        "sha256": "898c5c6c504e624f0efb10aa346b4dfc8ef61583b63a0b9d13729da5a1f453c2"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0007.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 7,
+        "sha256": "bc44993590cd562bf3a05d3bf9a0a6c4a42ccbd046c09ccc0a1d315cb6fa0f88"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0008.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 8,
+        "sha256": "27db178a425bb4421ea4f7decf1326cad0f15ce740ef8ffafe9908cd1a93b97b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0009.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 9,
+        "sha256": "add1a61cecb0bfd6e0758c2b82436fb6c68a65f93415ff5750c5088dba56e0b9"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0010.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 10,
+        "sha256": "7fbfe915ee96cbfbb3e3e75f6fedb8447f45c760d6d175d6648cf36d3993f773"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Land/flowergrunt_land_0011.png",
+        "size": [
+          295,
+          295
+        ],
+        "number": 11,
+        "sha256": "7157bddf11ab5088e6354aa5b8d63fcd1f8e770782089ad8fb10a4fe19a4ec52"
+      }
+    ],
+    "daisy run": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0001.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 1,
+        "sha256": "75b8ff6a6a77eff8be2ff2f3e11edcdb340370d9f016867e12bff13b82686c58"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0002.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 2,
+        "sha256": "fdef9d58f384137d6ad658ba7d5dba1d11c17f11cf665c5b592ef812941543e8"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0003.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 3,
+        "sha256": "9a3bfa0c261d666099a635cfe34bd84771e2308eb1e4cb170805577ee059a6ec"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0004.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 4,
+        "sha256": "de526386cd41e66f58757943714f03b042456a9184ec68768da66db1205d5991"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0005.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 5,
+        "sha256": "e269df810407dba8c42bb4b9b07735ea992a3a845522a1a771353418c99e6497"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0006.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 6,
+        "sha256": "4c7c3f337e9b7ef6a3ebe376c74ffb2572b86cec02757059a3abed4068fa438b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0007.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 7,
+        "sha256": "154fe484b122005317c56cd3579ca4b111fb77f5d48d8e5a121f29ce34f1c2b2"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0008.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 8,
+        "sha256": "62f9e5dd9a6f964d00053569eba8c358b14ca3d4984478874cabfc9adf655254"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0009.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 9,
+        "sha256": "54a1a3dfc3db9decdc302e294eed6e95cac386d3399f60bd3863aeefc1e9c641"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0010.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 10,
+        "sha256": "33867bbb29d2b5a467cb82c1a96be3856b5438b808689114910d0e73d02cb10a"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0011.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 11,
+        "sha256": "94aac684e5eac2a09728c333f9c3ad93a6efe78c258a2d4978811407106be974"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0012.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 12,
+        "sha256": "2e2dd1d8eb0d3c84d13709f6b1e87c18bdc0861c648b8deab6c7a73a0e7f74e3"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0013.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 13,
+        "sha256": "5aad5fd4ca903773b9633ceb379941b3b8a3b9d16e23dfb5917e12ed6b8e7b64"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0014.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 14,
+        "sha256": "1f87dd93aef2513dff576bed54255b0cb608b23b34260b999ba7d1afd0261fd6"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0015.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 15,
+        "sha256": "ff3d39117f45612a25125d04aa77e6ca49500aac2a3e14ab69a660392bd00c29"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Deadly Daisy/Run/flowergrunt_run_0016.png",
+        "size": [
+          233,
+          233
+        ],
+        "number": 16,
+        "sha256": "f6f3e86c3a469cbe60a2c7f57e6d2b6fd62fe3b3deac4ab6ac267ee198e2534d"
+      }
+    ],
+    "acorn drop": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Drop/acorn_drop_0001.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 1,
+        "sha256": "67752fc1688f3652a45131e2f4de81f67ee0931165536a60e64167a166accce3"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Drop/acorn_drop_0002.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 2,
+        "sha256": "83f3d349f210c53d50b559e69155addb77bd863bc81c0085b5b6a8833e58cc18"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Drop/acorn_drop_0003.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 3,
+        "sha256": "24020825729a630aa6822d0fdc59b3bbba744584dabe29b59d442f9c5b9b6242"
+      }
+    ],
+    "acorn fall": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0004.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 4,
+        "sha256": "1fb60154a7153ff17b95a443d695a617801ac2fc246c5ce15f61ee46fa1d530e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0005.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 5,
+        "sha256": "63f5b5baf896d5535aa65e18af3c868fbc27a45e30576a7e2ba2f094b8fee465"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0006.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 6,
+        "sha256": "81f645e94f6469e92d33ae9161636daf09931d00e0691c92f07ad0a1549ebc32"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0007.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 7,
+        "sha256": "f32394a7e4247bfc1e41e7d1050de7d07135af52dfa732d8883c1f243e5a4e23"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0008.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 8,
+        "sha256": "dc438de2454a59860426469e6ff7aff7e6f8b72670037a719c7deec847a21603"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0009.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 9,
+        "sha256": "363bbebcfa8ca65f47ce6209d4fe354512b57e7beb80ebd2aa6f5cb373d5ba58"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0010.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 10,
+        "sha256": "3a2ea7c8d21023ed7e430a91451aa09a3eca3083d056dff166075a37b23fedc4"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0011.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 11,
+        "sha256": "1e9f0a1c9da41d42d5422fd603c283bca7329272b523d4b97d0e8f6c15468660"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0012.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 12,
+        "sha256": "bd9522a28efe3d2a3483a5ec008bf48ca5de1ead93321991a8a792803419c870"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0013.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 13,
+        "sha256": "7611a9a7e61b8c0126e0c1c5a4264d6f2ee7787260cee53345e632a8d11f7937"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0014.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 14,
+        "sha256": "a6ae8feccfdf54f2fcd7868a6d23e3f68351741d8d36ec6a2f8229dd67735db6"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0015.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 15,
+        "sha256": "c6d1b4e60f436c8f2f4ab1a4644206673085986304e107a1d7b7e11106b80832"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0016.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 16,
+        "sha256": "2f50a6e7196ad14361800a4f41d80c24842bb36fe4d15d2c647644d143078880"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fall/acorn_drop_0017.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 17,
+        "sha256": "d4dec7e42b6adb2817aebd55a607c7e2d4b8f7854de3f9c6e85a1f2475c67e23"
+      }
+    ],
+    "acorn fly": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0001.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 1,
+        "sha256": "f8743dc20d280821b24b9e9f6c553b794b6870695e562b8cda2d62ed432889a2"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0002.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 2,
+        "sha256": "ae2313e3798132f2c2ac5daf32c3061154d50d2cf739b26dc885766e0973297b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0003.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 3,
+        "sha256": "218d697c5554452ea351e166f485f791cf4f82416fd2d9ebe65bdf407cb49ccc"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0004.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 4,
+        "sha256": "24eeed25dca3065fd4f52ae2d266498998a310d7610d6551f128639d5d0fb324"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0005.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 5,
+        "sha256": "6c10cea25c6d11c175253ffa042a03f61b0e7e872aedb7995eb44f98b3093684"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0006.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 6,
+        "sha256": "bd5ab00c8b0632ea67f568fd9df512a26fec88347ce78f875fac59340d9b7c7d"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0007.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 7,
+        "sha256": "8922f2b18d47cae368157f6eb25e60ea4150acb595e08f6199eeee066ffe74a1"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0008.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 8,
+        "sha256": "de58585ce87eaffdcc7be7bb200159f3963047a4490490553bb81cd223747da8"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0009.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 9,
+        "sha256": "c9c2f23f86068e2d01863d1c3528062a6508ae55ef38a858208d8cf04eb35433"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0010.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 10,
+        "sha256": "7a476108c4f989e782c62198b2406f70529a6e262ac685b1a3c31a0f8569533a"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/181706-forest-follies-enemies/Cuphead/Forest Follies Enemies/Aggravating Acorn/Fly/acorn_fly_0011.png",
+        "size": [
+          169,
+          169
+        ],
+        "number": 11,
+        "sha256": "660ac90fedd703fcdceeea1e540bb596a427ab6f263b86d1dad1d50de56d8147"
+      }
+    ],
+    "dragonfly idle": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0001.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 1,
+        "sha256": "6b3029df8df35de765b65193101a649ad0b94b23777756d35acdb893927852b5"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0002.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 2,
+        "sha256": "65b3b97ff80065ad809d3acd7e3d72967e5aca56ac6a918f145a3ac3a3adc255"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0003.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 3,
+        "sha256": "c9fd532c00a669dfc9462a430711ee69b73e5c6a64f7737fbcb97ca44f0db947"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0004.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 4,
+        "sha256": "cde656feaa04c16b715bd9e833d354f9e78e2c0259bffe66ba731b9bd4696a4b"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0005.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 5,
+        "sha256": "18ca2b1246a7525a862149fd39715a3a87eb625a9d994791f01f3df498914140"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0006.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 6,
+        "sha256": "077b04c46b370dff0fcca4583aa6cdbf685ae999db562e8aae43cd40a52d6ff3"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0007.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 7,
+        "sha256": "d8cb224372aa14e622c85ac2547ad847ec05453d06c0de30e4e4189529b8ed34"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0008.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 8,
+        "sha256": "bc2c6ca8a560d4d21943092b2eb61f97ea326eacc4a957bddae3ea0a3ac34c31"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0009.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 9,
+        "sha256": "e0a9e4ea74a78edb74cee2e2eac15c0bb5ec8eadcd327ec4974deb10008de01e"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0010.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 10,
+        "sha256": "4b66e9a263585997af58e6b4554f5314f290c5a5e2dfd4a20bf4864958fb1a27"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle/lv1_2_dragonfly_idle_0011.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 11,
+        "sha256": "d5da8f93fd632bb29055be1413887e6fc8007bd3d170b52d88dfa754e2ffc600"
+      }
+    ],
+    "dragonfly warning": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0001.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 1,
+        "sha256": "97a124fc199a978ead106e0d28957eee88875ab8aa46daa2e18af73a6445f11f"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0002.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 2,
+        "sha256": "a0e3a798280ae0df5ca116ecfb052968eabc638acc8ead115f204a0e909632ff"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0003.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 3,
+        "sha256": "f4a0fbc011263696366a6eb2ba69e9ff0ac4c32f96a5b6f16012d819c0169d38"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0004.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 4,
+        "sha256": "ac0c53e5a31666cff7c75a838757294844c5f007ef4b02f662ee681d40ad9682"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0005.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 5,
+        "sha256": "46c9b92f859b31aa10a84f96d99fdbef5161d00d0853e6e5035ff1a3e3626926"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0006.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 6,
+        "sha256": "70a67aca50b99caf08adb23ae6f3847d047369d016beb7a65fcb6696a21168ad"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Idle to Attack/lv1_2_dragonfly_attack_warning_0007.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 7,
+        "sha256": "35b53156bb21e1ef615201bc377671661f65b249dacd45af48df7417a96613a9"
+      }
+    ],
+    "dragonfly attack": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack/lv1_2_dragonfly_attack_0001.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 1,
+        "sha256": "b3388b216f141b253921a2b66de9b2e8141e74140345e7c894a5c4acd46cde28"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack/lv1_2_dragonfly_attack_0002.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 2,
+        "sha256": "89c6d3861b000c3eddb492ddc5a590dbcdb051550adf98fc58119dcaa893a9bf"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack/lv1_2_dragonfly_attack_0003.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 3,
+        "sha256": "d0b6be857f892819f0f124b96dc6eb015263a1f890d31d1841a67711179c10e1"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack/lv1_2_dragonfly_attack_0004.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 4,
+        "sha256": "fe5c35dfa402036969da9aa595bc4b241080c65cdd38c6ac1a55f8dba7251fbb"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack/lv1_2_dragonfly_attack_0005.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 5,
+        "sha256": "13cb560e17bb1880d191602d342c329ea4b2e3e4fc83a0af5c4cc1478aa622e5"
+      }
+    ],
+    "dragonfly recover": [
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack To Idle/lv1_2_dragonfly_trans_to_idle_0001.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 1,
+        "sha256": "3768cfb9545ed002e427c5d69240ab1806f797651a57d4864ce6c019f9a4d881"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack To Idle/lv1_2_dragonfly_trans_to_idle_0002.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 2,
+        "sha256": "f0a95bb41e7054dbca041e9cbd05cbe70c9e7ea1ca9d88c35b295fcf80a267a0"
+      },
+      {
+        "path": "/Users/eduardoleale/workspace/art/cuphead/extracted/enemies/158519-treetop-trouble-enemies/Cuphead/Treetop Trouble Enemies/Dragonfly/Attack To Idle/lv1_2_dragonfly_trans_to_idle_0003.png",
+        "size": [
+          987,
+          947
+        ],
+        "number": 3,
+        "sha256": "bcdf4d8711936e4c7bba15b7578736ed2375082235a52c15708543e0140565c6"
+      }
+    ]
+  }
+}

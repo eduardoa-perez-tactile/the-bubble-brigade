@@ -21,27 +21,29 @@ function close(actual: number, expected: number) {
 worldTest('cartoon animation explicit clip durations loop and clamp at boundaries', () => {
   // Exposures are authored in simulation ticks; no renderer timer delays input.
   const samples: [number, string][] = [
-    [-1, 'run-0'], [0, 'run-0'], [4, 'run-0'], [5, 'run-1'],
-    [8, 'run-1'], [9, 'run-2'], [13, 'run-2'], [14, 'run-3'],
-    [17, 'run-3'], [18, 'run-0'], [36, 'run-0'],
+    [-1,'run-0'],[0,'run-0'],[1,'run-0'],[2,'run-1'],
+    [3,'run-1'],[4,'run-2'],[7,'run-3'],[8,'run-4'],
+    [15,'run-7'],[16,'run-8'],[24,'run-12'],[30,'run-15'],
+    [31,'run-15'],[32,'run-0'],[64,'run-0'],
   ];
   for (const [tick, frame] of samples) expect(clipFrame('run', tick)).toBe(frame);
-  expect(animation.clips.run.durations).toEqual([5, 4, 5, 4]);
+  expect(animation.clips.run.durations).toEqual(Array(16).fill(2));
   for (const [tick, frame] of [[119,'idle-0'],[120,'idle-1'],[126,'idle-1'],[127,'idle-0'],[180,'idle-0']] as const)
     expect(clipFrame('idle', tick)).toBe(frame);
   expect(clipFrame('jump', 17)).toBe('jump-0');
   expect(clipFrame('jump', 18)).toBe('jump-1');
   expect(clipFrame('jump', 10000)).toBe('jump-1');
   expect(clipFrame('shoot', -12)).toBe('shoot-0');
-  expect(clipFrame('shoot', 3)).toBe('shoot-0');
-  expect(clipFrame('shoot', 4)).toBe('shoot-1');
-  expect(clipFrame('shoot', 10000)).toBe('shoot-1');
+  expect(clipFrame('shoot', 1)).toBe('shoot-0');
+  expect(clipFrame('shoot', 2)).toBe('shoot-1');
+  expect(clipFrame('shoot', 4)).toBe('shoot-2');
+  expect(clipFrame('shoot', 10000)).toBe('shoot-5');
   for (const clip of ['hurt', 'down'] as const) {
     expect(clipFrame(clip, -12)).toBe(`${clip}-0`);
     expect(clipFrame(clip, 10000)).toBe(`${clip}-0`);
     expect(animation.clips[clip].loop).toBe(false);
   }
-  expect(animation.clips.shoot.durations).toEqual([4, 8]);
+  expect(animation.clips.shoot.durations).toEqual([2,2,2,2,2,2]);
   expect(animation.clips.hurt.durations).toEqual([12]);
   expect(animation.clips.down.durations).toEqual([90]);
 });
@@ -120,23 +122,31 @@ worldTest('cartoon mirrored shoot muzzle stays within four pixels of the actual 
   }
 });
 
-worldTest('cartoon trapped imp changes captured warning and escape presentation at sourced thresholds', () => {
+worldTest('cartoon trapped imp preserves its folded pose and changes warning ink at sourced thresholds', () => {
   const g = game(), e = g.Enemies[0]!;
   Object.assign(e, { Kind: 'zenchan', State: EnemyState.Trapped });
   g.Enemies = [e];
   g.Bubbles = [{ ...bubble(260, 220), ID: 900, EnemyID: e.ID, Floating: true }];
-  const samples: [number, string][] = [
-    [0, 'captured-0'], [1000, 'captured-0'], [1001, 'warning-0'],
-    [1200, 'warning-0'], [1201, 'escape-0'],
+  const samples: [number, readonly number[]][] = [
+    [0, [129/255,185/255,75/255]], [1000, [129/255,185/255,75/255]],
+    [1001, [246/255,182/255,78/255]], [1200, [246/255,182/255,78/255]],
+    [1201, [237/255,101/255,85/255]],
   ];
-  for (const [age, pose] of samples) {
+  let registeredSize: number[] | undefined;
+  for (const [age, ink] of samples) {
     g.Bubbles[0]!.CapturedAge = age;
     const before = JSON.stringify(g);
     const plan = cartoonDrawPlan(g, 30);
     const imps = plan.filter(draw => draw.frame.startsWith('enemy/zenchan/'));
     expect(imps.length).toBe(1);
-    expect(imps[0]!.frame).toBe(`enemy/zenchan/${pose}`);
-    expect(plan.some(draw => draw.frame === 'bubble')).toBe(true);
+    expect(imps[0]!.frame).toBe('enemy/zenchan/captured-0');
+    expect(!!imps[0]!.flip).toBe(false);
+    const size = [imps[0]!.width, imps[0]!.height];
+    if (registeredSize) expect(size).toEqual(registeredSize);
+    registeredSize = size;
+    const shell = plan.find(draw => draw.frame === 'bubble')!;
+    expect(!!shell).toBe(true);
+    expect(shell.color!.slice(0,3)).toEqual(ink);
     expect(JSON.stringify(g)).toBe(before);
   }
 });
@@ -183,7 +193,7 @@ worldTest('cartoon animation uses real walk counters and action clocks without c
   Object.assign(p,{Shoot:12,Ground:true});
   expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-0');
   p.Shoot=8;
-  expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-1');
+  expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/shoot-2');
   Object.assign(p,{Shoot:0,Ground:false,VY:-3});
   expect(dragonDraw(p,'green',10000).frame).toBe('dragon/green/jump-0');
   p.VY=3;

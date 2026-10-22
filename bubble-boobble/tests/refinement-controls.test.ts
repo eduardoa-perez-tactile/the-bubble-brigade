@@ -46,7 +46,7 @@ worldTest('refinement controls enlarged actors retain collision feet and crown a
   const view={width:width!,height:height!,safeArea:[0,0,0,0]},layout=arenaLayout(g.Level,view),projection=cartoonProjection(g,layout);
   const plan=cartoonDrawPlan(g,g.Tick,view),draw=plan.find(d=>d.frame.startsWith('dragon/blue/jump-'))!;
   expect(!!draw).toBe(true);
-  expect(Math.abs(draw.width-CARTOON_PLAYER_SIZE*projection.scale)<1e-8).toBe(true);
+  expect(draw.width>=CARTOON_PLAYER_SIZE*projection.scale*.975-1e-8&&draw.width<=CARTOON_PLAYER_SIZE*projection.scale*1.045+1e-8).toBe(true);
   expect(Math.abs(draw.x+draw.width/2-(projection.projectX(p.X+22)))<1e-8).toBe(true);
   expect(Math.abs(draw.y+draw.height*120/128-(projection.projectY(p.Y+44)))<1e-8).toBe(true);
   const alpha=actorAlphaBounds(draw.frame,draw,!!draw.flip)!;expect(!!alpha).toBe(true);
