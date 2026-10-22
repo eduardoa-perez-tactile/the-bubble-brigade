@@ -1,4 +1,5 @@
 import {cartoonHudBounds} from './hud-layout';
+import {cartoonBubbleState} from './bubble-state';
 import {cartoonBubbleShape,cartoonFeedback} from './feedback';
 import {cartoonDragonFeedback,cartoonDragonShadow,cartoonGroundDust,cartoonBossFeedback} from './actor-feedback';
 import { cartoonProjection } from './projection';
@@ -222,13 +223,13 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const p of g.Projectiles)add(p.Bottle?'boss/bottle-0':effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
-  const bubblePaints=g.Bubbles.filter(b=>!(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)).map(b=>{
+  const bubblePaints=g.Bubbles.map(b=>{
     const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
     const t=b.EnemyID||b.Shooter===undefined?1:Math.max(0,Math.min(1,b.Age/16));
     const growth=.18+.82*t*t*(3-2*t),diameter=(composed?CARTOON_BUBBLE_SIZE:44)*growth;
     let bounceAge=Infinity;
     for(const cue of feel?.cues??[])if(cue.kind==='bubble-bounce'&&cue.slot===b.ID)bounceAge=feel!.clock-cue.at;
-    return {b,color,growth,diameter,shape:cartoonBubbleShape(b,diameter,reduced,bounceAge),
+    return {b,color,growth,diameter,state:cartoonBubbleState(b,!!g.Party,color,reduced),shape:cartoonBubbleShape(b,diameter,reduced,bounceAge),
       foreground:b.Shooter!==undefined&&!b.EnemyID&&!b.Floating&&b.Age<=6};
   });
   const drawBubbles=(foreground:boolean)=>{
@@ -236,19 +237,19 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     // must not wash color over another captive when bubbles overlap.
     for(const part of ['body','captive','rim'] as const)for(const paint of bubblePaints){
       if(paint.foreground!==foreground)continue;
-      const {b,color,growth,diameter,shape}=paint;
+      const {b,color,growth,diameter,shape,state}=paint;
       if(part==='body'){
-        out.push({frame:'bubble-body',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(color)});
+        out.push({frame:'bubble-body',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(color,state.bodyAlpha)});
       }else if(part==='captive'&&b.EnemyID){
         const e=g.Enemies.find(e=>e.ID===b.EnemyID);
         if(e){
-          const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
-          const rock=state==='escape'&&!reduced?Math.sin(b.Age*.8)*2:0;
-          if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),shape.x+rock,shape.y,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6,undefined,shape.offsetY);
-          else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
+          // The warning/escape assets are angry running poses, not captive poses.
+          // Keep the folded silhouette; danger belongs to the surrounding ink.
+          if(composed)centered(cartoonEnemyFrame(e.Kind,'bubble',b.Age),shape.x+state.captiveOffset,shape.y,CARTOON_CAPTURED_ENEMY_SIZE,false,undefined,shape.offsetY);
+          else add(cartoonEnemyFrame(e.Kind,'bubble',b.Age),b.X+4+state.captiveOffset,b.Y+3,36,36);
         }
       }else if(part==='rim'){
-        out.push({frame:'bubble',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(color)});
+        out.push({frame:'bubble',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(state.rim,state.rimAlpha)});
         if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),shape.x+diameter*9/44,shape.y+diameter*9/44,10*growth,false,undefined,shape.offsetY);
         if(b.Element)centered(effectFrame(b.Element,b.Age),shape.x,shape.y,18*growth,false,undefined,shape.offsetY);
       }

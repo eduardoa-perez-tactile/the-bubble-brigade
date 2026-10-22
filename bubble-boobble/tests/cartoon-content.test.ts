@@ -39,15 +39,24 @@ worldTest('cartoon complete content redraws every campaign enemy family and comb
   }
 }, { scene });
 
-worldTest('cartoon complete content keeps capture warning and escape distinct for all enemy families', () => {
+worldTest('cartoon complete content keeps captive pose stable and danger ink distinct for all enemy families', () => {
   const g = createGame(campaign, 42), original = g.Enemies[0]!;
   g.Players = []; g.Items = [];
-  for (const family of families) for (const [age, pose] of [[30,'captured'],[1100,'warning'],[1250,'escape']] as const) {
+  const stages = [[30,[129/255,185/255,75/255]],[1100,[246/255,182/255,78/255]],[1250,[237/255,101/255,85/255]]] as const;
+  for (const family of families) {
+   let registeredSize: number[] | undefined;
+   for (const [age, ink] of stages) {
     g.Enemies = [{ ...original, ID: 900, Kind: family, State: EnemyState.Trapped }];
     g.Bubbles = [{ ...bubble(300,220), ID: 901, EnemyID: 900, CapturedAge: age, Age: 30, Floating: true }];
     const draws = inspect(g);
-    expect(draws.some(draw => draw.frame.startsWith(`enemy/${family}/${pose}-`))).toBe(true);
-    expect(draws.some(draw => draw.frame === 'bubble')).toBe(true);
+    const captive = draws.find(draw => draw.frame === `enemy/${family}/captured-0`)!;
+    expect(!!captive).toBe(true);expect(!!captive.flip).toBe(false);
+    const size = [captive.width,captive.height];
+    if (registeredSize) expect(size).toEqual(registeredSize);
+    registeredSize = size;
+    const shell = draws.find(draw => draw.frame === 'bubble')!;
+    expect(!!shell).toBe(true);expect(shell.color!.slice(0,3)).toEqual(ink);
+   }
   }
 }, { scene });
 

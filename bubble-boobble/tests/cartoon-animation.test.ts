@@ -122,23 +122,31 @@ worldTest('cartoon mirrored shoot muzzle stays within four pixels of the actual 
   }
 });
 
-worldTest('cartoon trapped imp changes captured warning and escape presentation at sourced thresholds', () => {
+worldTest('cartoon trapped imp preserves its folded pose and changes warning ink at sourced thresholds', () => {
   const g = game(), e = g.Enemies[0]!;
   Object.assign(e, { Kind: 'zenchan', State: EnemyState.Trapped });
   g.Enemies = [e];
   g.Bubbles = [{ ...bubble(260, 220), ID: 900, EnemyID: e.ID, Floating: true }];
-  const samples: [number, string][] = [
-    [0, 'captured-0'], [1000, 'captured-0'], [1001, 'warning-0'],
-    [1200, 'warning-0'], [1201, 'escape-0'],
+  const samples: [number, readonly number[]][] = [
+    [0, [129/255,185/255,75/255]], [1000, [129/255,185/255,75/255]],
+    [1001, [246/255,182/255,78/255]], [1200, [246/255,182/255,78/255]],
+    [1201, [237/255,101/255,85/255]],
   ];
-  for (const [age, pose] of samples) {
+  let registeredSize: number[] | undefined;
+  for (const [age, ink] of samples) {
     g.Bubbles[0]!.CapturedAge = age;
     const before = JSON.stringify(g);
     const plan = cartoonDrawPlan(g, 30);
     const imps = plan.filter(draw => draw.frame.startsWith('enemy/zenchan/'));
     expect(imps.length).toBe(1);
-    expect(imps[0]!.frame).toBe(`enemy/zenchan/${pose}`);
-    expect(plan.some(draw => draw.frame === 'bubble')).toBe(true);
+    expect(imps[0]!.frame).toBe('enemy/zenchan/captured-0');
+    expect(!!imps[0]!.flip).toBe(false);
+    const size = [imps[0]!.width, imps[0]!.height];
+    if (registeredSize) expect(size).toEqual(registeredSize);
+    registeredSize = size;
+    const shell = plan.find(draw => draw.frame === 'bubble')!;
+    expect(!!shell).toBe(true);
+    expect(shell.color!.slice(0,3)).toEqual(ink);
     expect(JSON.stringify(g)).toBe(before);
   }
 });

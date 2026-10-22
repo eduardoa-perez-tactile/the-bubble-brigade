@@ -129,12 +129,12 @@ export function startPlayerJump(g: GameState, b: Body, referenceImpulse = -11.5)
   else b.VY = referenceImpulse;
   b.Ground = false;
 }
-function jumpDisplacement(step: number): number {
+function jumpDisplacement(step: number, terminal = 3): number {
   for (const [dy, duration] of jumpSegments) {
     if (step < duration) return dy;
     step -= duration;
   }
-  return 3; // Completed jump: continue with the steady ledge-fall step.
+  return terminal; // Pixel campaign retains its original steady ledge-fall step.
 }
 export function movePlayer(g: GameState, b: Body, dx: number, shoes = false) {
   const arcade = g.PlayerBalance?.ArcadeMotion !== false;
@@ -144,10 +144,13 @@ export function movePlayer(g: GameState, b: Body, dx: number, shoes = false) {
     const count = cadence[phase]!;
     b.MotionTick = (phase + 1) % cadence.length;
     if (b.JumpStep !== undefined) {
+      const cartoon=g.Level.arena==='cartoon-courtyard';
       let dy = 0;
-      for (let i = 0; i < count; i++) dy += jumpDisplacement(b.JumpStep++);
+      for (let i = 0; i < count; i++) dy += jumpDisplacement(b.JumpStep++,cartoon?6:3);
       b.VY = dy;
-      if (b.JumpStep >= 61) delete b.JumpStep;
+      // A deep courtyard fall must not halve its descent when the table
+      // finishes. Hold its final 6-unit substep until landing resets the state.
+      if (b.JumpStep >= 61) { if(cartoon)b.JumpStep=61; else delete b.JumpStep; }
     } else if (b.VY < 0) {
       // Preserve an externally supplied upward impulse (old sessions/dev scenarios)
       // until its apex. Normal jumps and bubble boosts always use the table above.
