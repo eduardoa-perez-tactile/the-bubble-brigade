@@ -96,7 +96,12 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   expect(Math.abs(position[0]!-expected.x)<.01).toBe(true);
   expect(Math.abs(position[1]!-(720-expected.y))<.01).toBe(true);
   const base=arenaLayout(g.Level,{width:width!,height:height!,safeArea:[0,0,0,0]}),projection=cartoonProjection(g,base),layout={...base,...projection};
-  const plaqueCenter={x:expected.x+17*layout.scale,y:expected.y};
+  const dragonOrders=world.entities(Sprite).map(entity=>world.get(entity,Sprite)).filter(sprite=>sprite.visible&&(sprite.image??'').startsWith('cartoon/frames/dragon/')).map(sprite=>sprite.order);
+  const knockStars=world.entities(Sprite).filter(entity=>{const sprite=world.get(entity,Sprite),offset=world.get(entity,VisualOffset);return sprite.visible&&sprite.image==='cartoon/white'&&Math.abs(offset.rotation[2]!)>.1&&Math.abs(sprite.size[0]!-sprite.size[1]!)>.02;});
+  expect(knockStars.length).toBe(6);
+  for(const star of knockStars)expect(world.get(star,Sprite).order>Math.max(...dragonOrders)).toBe(true);
+  // HELP text begins at anchor+8; the60px plaque is centered at anchor+30.
+  const plaqueCenter={x:expected.x+22*layout.scale,y:expected.y};
   const cream=world.entities(Sprite).find(entity=>{const sprite=world.get(entity,Sprite);if(!sprite.visible||(sprite.image??'')!=='cartoon/white')return false;const at=world.get(entity,VisualOffset).position;return Math.abs(sprite.size[0]!-60*layout.scale)<.02&&Math.abs(sprite.size[1]!-24*layout.scale)<.02&&Math.abs(at[0]!-plaqueCenter.x)<.02&&Math.abs(720-at[1]!-plaqueCenter.y)<.02;});
   expect(!!cream).toBe(true);
   const creamSprite=world.get(cream!,Sprite),creamAt=world.get(cream!,VisualOffset).position;
@@ -107,7 +112,10 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
   expect(glyphCenter-text.size/2>=box.y-.02&&glyphCenter+text.size/2<=box.y+box.h+.02).toBe(true);
   expect(box.y>=48-.02).toBe(true);expect(glyphCenter-text.size/2>=48-.02).toBe(true);
   for(const entity of world.entities(Sprite)){
-   const sprite=world.get(entity,Sprite),offset=world.get(entity,VisualOffset);if(!sprite.visible||sprite.image!=='cartoon/white'||Math.abs(offset.rotation[2]!)<.1)continue;
+   const sprite=world.get(entity,Sprite),offset=world.get(entity,VisualOffset);
+   // Only numbered identity diamonds must avoid the plaque. Knock stars use
+   // tapered rotated quads and intentionally orbit above the shared callout.
+   if(!sprite.visible||sprite.image!=='cartoon/white'||Math.abs(offset.rotation[2]!)<.1||Math.abs(sprite.size[0]!-sprite.size[1]!)>.02)continue;
    const at=offset.position,span=(sprite.size[0]!+sprite.size[1]!)/Math.SQRT2,rect={x:at[0]!-span/2,y:720-at[1]!-span/2,w:span,h:span};
    expect(rect.y>=48-.02).toBe(true);
    expect(rect.x<box.x+box.w&&rect.x+rect.w>box.x&&rect.y<box.y+box.h&&rect.y+rect.h>box.y).toBe(false);

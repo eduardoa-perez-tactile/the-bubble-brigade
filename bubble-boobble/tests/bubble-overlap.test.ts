@@ -42,7 +42,9 @@ renderTest('bubble overlap native mature contacts pop while fresh shots stay vis
    expect(session.get().game!.Enemies.filter(e=>e.State===EnemyState.Trapped).length).toBe(1);
    const sprites=world.entities(Sprite).map(e=>world.get(e,Sprite)).filter(s=>s.visible);
    const dragons=sprites.filter(s=>s.image?.startsWith('cartoon/frames/dragon/'));
-   const shells=sprites.filter(s=>s.image==='cartoon/frames/bubble'),largest=Math.max(...shells.map(s=>s.size[0]));
+   // Pop feedback reuses the colored bubble texture; the dedicated white rim
+   // identifies actual bubbles independently of the size of expanding pop rings.
+   const shells=sprites.filter(s=>s.image==='cartoon/frames/bubble-shine'),largest=Math.max(...shells.map(s=>s.size[0]));
    const mature=shells.filter(s=>s.size[0]>largest*.5);
    expect(dragons.length>0).toBe(true);expect(mature.length).toBe(1);
    for(const b of mature)for(const d of dragons)expect(b.order<d.order).toBe(true);

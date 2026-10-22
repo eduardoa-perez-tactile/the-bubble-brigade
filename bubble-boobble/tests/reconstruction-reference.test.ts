@@ -4,6 +4,7 @@ import {ReconstructionReference,ReconstructionReward} from '../src/cartoon/recon
 import {session} from '../src/arcade/session';
 import {arenaLayout} from '../src/arcade/arena-layout';
 import {cartoonProjection} from '../src/cartoon/projection';
+import {cartoonHudBounds} from '../src/cartoon/hud-layout';
 import {actorAlphaBounds,projectBounds} from './helpers/refinement-fit';
 import contract from '../docs/concept-reconstruction/reference-layout.json';
 
@@ -47,7 +48,8 @@ renderTest('reconstruction checkpoint controlled reference poses preserve measur
    for(const error of [actual.x-target.x,actual.y-target.y,actual.x+actual.width-target.x-target.width,actual.y+actual.height-target.y-target.height])expect(Math.abs(error)<=4).toBe(true);
   }
   render.expectScreenshot(`fixed_reference_${name}`,{width,height});
-  // A real scored particle must use the same nonlinear projection as actors.
+  // A real reward remains centered on its44px particle footprint through the
+  // nonlinear projection, with readable type clamped clear of the HUD.
   await cheat(ReconstructionReward,{});
   const rewarded=session.get().game!,particle=rewarded.Particles.find(p=>p.Text==='800')!;
   expect(rewarded.Score).toBe(13140);expect(!!particle).toBe(true);
@@ -56,11 +58,14 @@ renderTest('reconstruction checkpoint controlled reference poses preserve measur
   expect(rewards.length).toBe(1);
   const reward=world.get(rewards[0]!,Text2D),at=world.get(rewards[0]!,VisualOffset).position;
   const lift=Math.max(0,12-(45-particle.Life));
-  expect(Math.abs(at[0]!-rewardProjection.projectX(particle.X))<.02).toBe(true);
-  expect(Math.abs(720-at[1]!-rewardProjection.projectY(particle.Y-lift))<.02).toBe(true);
-  expect(Math.abs(reward.size-15*rewardProjection.scale)<.02).toBe(true);
-  const visibleReward=input.worldToScreen([at[0]!,at[1]!]);
-  expect(visibleReward[1]!>=header.y+header.height&&visibleReward[1]!<=footer.y).toBe(true);
+  expect(Math.abs(at[0]!-rewardProjection.projectX(particle.X+22))<.02).toBe(true);
+  expect(reward.size>=16&&reward.size<=20).toBe(true);
+  expect(reward.align).toBe('Center');expect(reward.outlineWidth>.07).toBe(true);
+  const hud=cartoonHudBounds({width,height,safeArea:[0,0,0,0]});
+  const expectedY=Math.max(hud.top+reward.size/2+4,Math.min(hud.bottom-reward.size/2-4,rewardProjection.projectY(particle.Y-lift)));
+  expect(Math.abs(720-at[1]!-expectedY)<.02).toBe(true);
+  const visibleReward=projectBounds({x:at[0]!-reward.size/2,y:720-at[1]!-reward.size/2,width:reward.size,height:reward.size},point=>input.worldToScreen(point));
+  expect(visibleReward.y>=header.y+header.height&&visibleReward.y+visibleReward.height<=footer.y).toBe(true);
   expect(render.stats({width,height}).drawCalls).toBeLessThanOrEqual(14);
   render.expectScreenshot(`fixed_reward_${name}`,{width,height});
  }
