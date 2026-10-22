@@ -1,9 +1,10 @@
-/** Presentation envelopes only; collision and firing keep the original body. */
+/** Authored art envelopes. Platform and damage collision keep the original body;
+ * bubble-contact.ts uses these dimensions for cartoon head/body pop contact. */
 export const CARTOON_PLAYER_SIZE=141.312;
 export const CARTOON_ENEMY_SIZE=123.648;
 // A shared mature shell leaves room for the folded captive pose without the
 // previous large shrink. Capture itself never changes either envelope.
-export const CARTOON_BUBBLE_SIZE=96;
+export const CARTOON_BUBBLE_SIZE=110;
 export const CARTOON_CAPTURED_ENEMY_SIZE=84;
 export const CARTOON_BOSS_SIZE=193.2;
 export const CARTOON_VISUAL_LEFT=18;

@@ -218,3 +218,7 @@ import runpy
 runpy.run_path(str(ROOT/'tools/cartoon/build-dragon-animation.py'),run_name='__main__')
 
 runpy.run_path(str(ROOT/'tools/cartoon/build-enemy-animation.py'),run_name='__main__')
+
+# Preserve the procedural bubble wash alongside the shared ink rim.
+import runpy
+runpy.run_path(str(Path(__file__).with_name("build-feedback-assets.py")),run_name="__main__")

@@ -1,0 +1,39 @@
+# Bubble readability and stronger jump contact — 22 October 2026
+
+## What changed
+
+The old main bubble was an empty transparent center surrounded by a narrow ink ring, so character tint barely appeared. Main gameplay bubbles now have a separate neutral translucent wash, tinted by the existing dragon palette. This wash is drawn behind the captive; the original rim remains in front. Shared capture/rescue/pop rings retain their original transparent centers.
+
+The mature visual canvas increases from 96 to 110 (about 15%). Empty shots grow from 18% to full size over 16 ticks instead of 8, so small, middle and full stages remain visible beyond the initial release. No collision, projectile speed, firing cooldown or mouth position changed. Captives retain the fixed 84 canvas. Point-blank capture still completes the enclosing shell rather than shrinking the enemy into a release bead.
+
+A dedicated warm, inked dust-puff master replaces the thin ring previously stretched into tiny dust wisps. Takeoff has 3 lobes lasting 18 ticks; landing has 5 lasting 22 ticks. Landing birth crown spans 75×30 game units, with stronger opacity, outward bloom and upward drift. Only the latest live contact event per player is shown, bounding ten simultaneous landings to 50 sprites. The puff is bottom-registered and projected from its supporting floor, then drawn in front of shoes for visibility. Reduced mode omits all dust.
+
+Import provenance and rebuild commands are in `art/feedback/README.md`. The dust master is generated art, normalized by cropping alpha>2 bounds and proportional scaling; the color wash is reproducible procedural art. The existing rim is unchanged.
+
+## Verification
+
+- 348 V8 logic tests pass under phone-low memory class.
+- 385-step recorded controls hash trace matches its pre-change baseline exactly (`2eb03350686a5b7d`).
+- Native ten-player shooting shows the growth at ticks 1/3/5/8/12/16/24 and all ten colored surfaces; peak 14 draw calls.
+- Dedicated 100-step native jump scenario observes actual takeoff and landing cues, asserts visible puff sizes and expiry, verifies reduced-mode removal, and captures final contact/bloom frames; peak 13 draw calls.
+- The combined jump/shoot/capture/rescue/cluster scenario remains at 14 draw calls.
+- A separate test checks dust bottom anchoring at all four screen aspects. Body/captive/rim order and stable captive size are covered.
+- Engine check passes typecheck, validation, desktop cook and cooked smoke, retaining the existing camera/tile/pipeline-record warnings. Physical-phone thermal/GPU and Hermes measurements are not claimed.
+
+Reviewed native images are the bubble appearance and bubble juice test goldens. Small changes can pass the engine's golden tolerance without replacing an old reference, so final takeoff/landing captures use explicit final snapshot names and were reviewed after the last geometry adjustment.
+
+This work includes the earlier cartoon-feedback changes. Unrelated files and preserved migration evidence are untouched.
+
+## Overlapping bubbles and the dragon silhouette
+
+The screenshot follow-up exposed an overly broad foreground rule. Mature and captured bubble groups now draw behind the dragon; only a fresh, uncaptured, moving release (first six ticks) crosses the muzzle in front. Within each depth group, all color washes draw before every captive, followed by the rims and ownership marks. An overlapping bubble's wash can no longer tint a neighboring enemy drawing.
+
+Two regressions first failed against the old ordering, then passed. The native overlap fixture recreates three trapped enemies and an empty bubble around the crown-platform dragon's head, with and without a fresh shot, across four viewport shapes. It checks actual sprite order and keeps the dragon's face readable. All 351 V8 logic tests pass; engine check passes. No bubble or enemy size, position, hitbox, movement or capture rule changed in this follow-up.
+
+## Visible contact and bounce squash
+
+Cartoon pop contact now uses mirrored, pose-aware head and torso circles against a mature bubble circle in fixed authored coordinates. This intentionally changes cartoon popping to match the visible artwork; capture boxes, chain reach, platform and damage collision, scoring and timers retain their existing rules. The preserved pixel arena keeps its original contact test. The existing descending held-Jump bounce takes priority, and a boosted dragon can separate upward without the larger painted contact immediately popping the bubble.
+
+A successful airborne bounce creates a bounded presentation cue tied to the surviving bubble ID. Its shell compresses to 80% height, rebounds slightly, and settles over 18 ticks. The top anchor stays fixed relative to the floating shell; the captive and ownership mark translate with it, while captive size stays constant. Reduced effects removes the deformation. The cue is stored only in the existing presentation resource and pauses with gameplay.
+
+Final verification: 361 V8 T0 tests pass under phone-low; all nine recorded concept-control hash traces match their pre-squash baseline. Native empty/occupied bounce sequences cover landscape and portrait at impact, rebound and recovery, peaking at 13 draw calls. Native overlap/contact and capture/flight scenarios also pass (peaks 10 and 14). Engine check passes typecheck, validation, desktop cook and cooked smoke. Hermes verification remains unavailable because its host binary is absent; the existing pipeline-record release warning remains unresolved.

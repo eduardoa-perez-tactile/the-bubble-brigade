@@ -1,3 +1,4 @@
+import {cartoonBubbleTouchesPlayer} from '../cartoon/bubble-contact';
 import {cartoonShotOrigin} from '../cartoon/coordinates';
 import { arenaWidth, arenaHeight } from './types';
 import { hitBossWithThunder } from './boss';
@@ -144,7 +145,16 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
         g.Sounds.push("jump");
         continue;
       }
-      if (intersects(p.X + 4, p.Y + 4, 36, 36, b.X, b.Y, 40, 40))
+      if(g.Level.arena==='cartoon-courtyard') {
+        // Reserve the existing descending Jump lane until its unchanged bounce
+        // plane is crossed. The larger painted shell must not steal that bounce.
+        const approachingBounce=!(g.Party&&b.ThunderShot)&&!p.Ground&&input.Jump&&p.VY>=0&&
+          p.Y+ActorSize-p.VY<=b.Y+10&&p.X+ActorSize>b.X+4&&p.X<b.X+36;
+        // Once boosted above the old contact plane, let the player separate.
+        // Painted overlap during ascent must not immediately undo the bounce.
+        const leavingAbove=p.VY<0&&p.Y+ActorSize<=b.Y&&p.X+ActorSize>b.X+4&&p.X<b.X+36;
+        if(!approachingBounce&&!leavingAbove&&cartoonBubbleTouchesPlayer(p,b))popBubble(g,i,player);
+      } else if (intersects(p.X + 4, p.Y + 4, 36, 36, b.X, b.Y, 40, 40))
         popBubble(g, i, player);
     }
   }

@@ -24,7 +24,7 @@ worldTest('bubble fixes capture keeps the same bubble diameter and contents fit 
 });
 worldTest('bubble fixes shots from every shelf travel then rise without snapping down to a platform',()=>{
  for(const feet of [72,192,312,432,528])for(const dir of [-1,1]){
-  const g=game(),p=g.Players[0]!;g.Enemies=[];g.Party!.Phase='combat';
+  const g=game(),p=g.Players[0]!;g.Enemies=[];g.Party!.Phase='combat';g.Players=[p]; // Isolate flight from other players' legitimate body contact.
   Object.assign(p,{X:800,Y:feet-44,Dir:dir,Invincible:0});g.Bubbles=[];shootBubble(g,0);
   const b=g.Bubbles[0]!,startY=b.Y;
   let prior=b.Y;for(let tick=0;tick<140;tick++){
@@ -49,7 +49,12 @@ renderTest('bubble fixes actual capture and top shelf float keep compact size an
   const capture=cartoonDrawPlan(session.get().game!,0).find(d=>d.frame==='bubble')!;
   expect(capture.width<=mature).toBe(true);
   render.expectScreenshot(`captured_${width}x${height}`,{width:width!,height:height!});
-  await step(60);render.expectScreenshot(`rising_capture_${width}x${height}`,{width:width!,height:height!});
+  const popped=session.get().game!.Counters.Popped;
+  await step(60);
+  // This close capture overlaps the dragon's painted body: once its fresh-shot
+  // grace expires it must pop, rather than float through the player's head.
+  expect(session.get().game!.Counters.Popped>popped).toBe(true);
+  render.expectScreenshot(`contact_pop_${width}x${height}`,{width:width!,height:height!});
   await cheat(ConceptPlaytest,{scenario:'route'});await step(1);
   input.emit(ArcadeInput,{player:1,move:0,jump:false,fire:true,paused:false});await step(1);
   const initial=session.get().game!.Bubbles[0]!.Y;

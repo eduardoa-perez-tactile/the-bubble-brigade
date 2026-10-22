@@ -1,9 +1,12 @@
+import {cartoonHudBounds} from './hud-layout';
+import {cartoonBubbleShape,cartoonFeedback} from './feedback';
+import {cartoonDragonFeedback,cartoonDragonShadow,cartoonGroundDust,cartoonBossFeedback} from './actor-feedback';
 import { cartoonProjection } from './projection';
 import { cartoonTierRows } from './arena';
 import { arenaLayout } from '../arcade/arena-layout';
 import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BUBBLE_SIZE,CARTOON_CAPTURED_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
-import { cartoonHelpAnchor } from './help-layout';
-import { EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
+import { cartoonHelpAnchors } from './help-layout';
+import { State, EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
 import { partyColors } from '../arcade/party-config';
 import type { FeelState } from '../arcade/juice';
 import { desktopSaveState } from '../desktop/save';
@@ -29,11 +32,11 @@ export function playerClip(p:Player,moving?:boolean):Clip {
   return (moving??Math.abs(p.VX)>.01)?'run':'idle';
 }
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
-export function dragonDraw(p:Player,skin:string,tick:number,moving?:boolean|DragonMotion,size=64):CartoonDraw {
+export function dragonDraw(p:Player,skin:string,tick:number,moving?:boolean|DragonMotion,size=64,reduced=false):CartoonDraw {
   const motion=typeof moving==='object'?moving:undefined;
   const clip=playerClip(p,motion?motion.moving:moving as boolean|undefined);
   // Walking has drawn weight transfer; an extra scale pulse fights those poses.
-  const squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
+  const squash=clip==='idle'&&!reduced?Math.sin(tick*Math.PI/90)*.012:0;
   const w=size*(1+squash),h=size*(1-squash);
   const clock=clip==='run'?(motion?motion.phase*clips.run.durations.reduce((sum,n)=>sum+n,0):p.WalkFrame):clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
     clip==='jump'?((motion?.falling??p.VY>0)?clips.jump.durations[0]!:0):tick;
@@ -43,8 +46,8 @@ export function dragonDraw(p:Player,skin:string,tick:number,moving?:boolean|Drag
 /** Bespoke crouched legs attach to registered release/recovery torsos. The source
  * coordinates are retained exactly, including the first-tick shot muzzle.
  * Stationary shooting still plays all six original whole-body pictures. */
-export function dragonDraws(p:Player,skin:string,tick:number,motion?:boolean|DragonMotion,size=64):CartoonDraw[]{
-  const full=dragonDraw(p,skin,tick,motion,size);
+export function dragonDraws(p:Player,skin:string,tick:number,motion?:boolean|DragonMotion,size=64,reduced=false):CartoonDraw[]{
+  const full=dragonDraw(p,skin,tick,motion,size,reduced);
   const moving=typeof motion==='object'?motion.moving:motion??Math.abs(p.VX)>.01;
   if(p.Downed||p.Dead>0||p.Shoot<=0||p.Ground&&!moving)return [full];
   const state=typeof motion==='object'?motion:undefined;
@@ -119,11 +122,12 @@ export function cartoonEditorDrawPlan(level:Level,tick:number,avatar:string):Car
 }
 
 /** Read-only lowering from the same authoritative state as the preserved pixel path. */
-export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly (boolean|DragonMotion)[]):CartoonDraw[]{
+export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly (boolean|DragonMotion)[],reduced=false):CartoonDraw[]{
   const baseLayout=arenaLayout(g.Level,view),composed=g.Level.arena==='cartoon-courtyard';
   const projection=composed?cartoonProjection(g,baseLayout):undefined;
-  const layout={...baseLayout,...(projection?{scale:projection.scale,projectY:projection.projectY,inverseY:projection.inverseY}: {})};
+  const layout={...baseLayout,...(projection?{scale:projection.scale,projectX:projection.projectX,inverseX:projection.inverseX,projectY:projection.projectY,inverseY:projection.inverseY}: {})};
   const out:CartoonDraw[]=[],markers:CartoonDraw[]=[];
+  const helps=cartoonHelpAnchors(g,{...layout,footerTop:view?cartoonHudBounds(view).bottom:672});
   const px=(x:number)=>projection?projection.projectX(x):layout.x+x*layout.scale;
   const py=(y:number)=>projection?projection.projectY(y):layout.y+y*layout.scale;
   const add=(frame:string,x:number,y:number,width:number,height=width,flip=false,color?:CartoonDraw['color'])=>{
@@ -131,7 +135,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     out.push({frame,x:px(x),y:py(y),width:width*layout.scale,height:height*layout.scale,flip,color});
   };
   const marker=(frame:string,x:number,y:number,width:number,height=width,diamond=false)=>markers.push({frame,x:px(x),y:py(y),width:width*layout.scale,height:height*layout.scale,diamond});
-  const centered=(frame:string,x:number,y:number,size:number,flip=false,color?:CartoonDraw['color'])=>out.push({frame,x:px(x)-size*layout.scale/2,y:py(y)-size*layout.scale/2,width:size*layout.scale,height:size*layout.scale,flip,color});
+  const centered=(frame:string,x:number,y:number,size:number,flip=false,color?:CartoonDraw['color'],offsetY=0)=>out.push({frame,x:px(x)-size*layout.scale/2,y:py(y)+(offsetY-size/2)*layout.scale,width:size*layout.scale,height:size*layout.scale,flip,color});
   const actor=(frame:string,x:number,feet:number,size:number,flip=false)=>{
     out.push({frame,x:px(x),y:py(feet)-size*layout.scale*120/128,width:size*layout.scale,height:size*layout.scale,flip});
   };
@@ -178,11 +182,9 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   const save=desktopSaveState.get(),avatar=save.profiles[save.active]?.avatar??'green';
   const skin=(index:number)=>g.Party?partyColors[index%partyColors.length]!:index===1?'blue':avatar;
-  for(const p of g.Players)if(p.Lives>0&&!p.Downed){
-    for(let row=Math.max(0,Math.ceil((p.Y+44)/24));row<levelRows(g.Level);row++){
-      if(row*24-p.Y>180)break;
-      if(g.Level.tiles[row]?.[Math.floor((p.X+22)/24)]){add('shadow',p.X+5,row*24-5,34,10);break;}
-    }
+  for(const p of g.Players){
+    const shadow=cartoonDragonShadow(g,p);
+    if(shadow)add(shadow.frame,shadow.x,shadow.y,shadow.width,shadow.height,false,shadow.color);
   }
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
@@ -198,6 +200,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   if(boss){
     const pose=boss.Mode==='captured'?'captured':boss.Mode==='windup'?'attack':'move';
     if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)actor(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X+48-(composed?CARTOON_BOSS_SIZE:112)/2,composed?entrance(boss.Y,0)+96:entrance(boss.Y,0)-16+112*120/128,composed?CARTOON_BOSS_SIZE:112,boss.Dir<0);
+    if(out[out.length-1]?.frame.startsWith('boss/'))out[out.length-1]=cartoonBossFeedback(out[out.length-1]!,boss,feel,reduced);
   }
   for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
   for(let index=0;index<g.Enemies.length;index++){
@@ -219,16 +222,57 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const p of g.Projectiles)add(p.Bottle?'boss/bottle-0':effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
+  const bubblePaints=g.Bubbles.filter(b=>!(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)).map(b=>{
+    const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
+    const t=b.EnemyID||b.Shooter===undefined?1:Math.max(0,Math.min(1,b.Age/16));
+    const growth=.18+.82*t*t*(3-2*t),diameter=(composed?CARTOON_BUBBLE_SIZE:44)*growth;
+    let bounceAge=Infinity;
+    for(const cue of feel?.cues??[])if(cue.kind==='bubble-bounce'&&cue.slot===b.ID)bounceAge=feel!.clock-cue.at;
+    return {b,color,growth,diameter,shape:cartoonBubbleShape(b,diameter,reduced,bounceAge),
+      foreground:b.Shooter!==undefined&&!b.EnemyID&&!b.Floating&&b.Age<=6};
+  });
+  const drawBubbles=(foreground:boolean)=>{
+    // Paint every surface first, then contents, then ink. A neighboring surface
+    // must not wash color over another captive when bubbles overlap.
+    for(const part of ['body','captive','rim'] as const)for(const paint of bubblePaints){
+      if(paint.foreground!==foreground)continue;
+      const {b,color,growth,diameter,shape}=paint;
+      if(part==='body'){
+        out.push({frame:'bubble-body',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(color)});
+      }else if(part==='captive'&&b.EnemyID){
+        const e=g.Enemies.find(e=>e.ID===b.EnemyID);
+        if(e){
+          const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
+          const rock=state==='escape'&&!reduced?Math.sin(b.Age*.8)*2:0;
+          if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),shape.x+rock,shape.y,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6,undefined,shape.offsetY);
+          else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
+        }
+      }else if(part==='rim'){
+        out.push({frame:'bubble',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(color)});
+        if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),shape.x+diameter*9/44,shape.y+diameter*9/44,10*growth,false,undefined,shape.offsetY);
+        if(b.Element)centered(effectFrame(b.Element,b.Age),shape.x,shape.y,18*growth,false,undefined,shape.offsetY);
+      }
+    }
+  };
+  // Mature and trapped bubbles belong behind the character silhouette. Only
+  // the small fresh release crosses the muzzle in front of the dragon.
+  drawBubbles(false);
   for(let index=0;index<g.Players.length;index++){
     const p=g.Players[index]!;
     if(!cartoonPlayerVisible(p,g.Party?.Phase,g.LevelTicks,!!g.Party))continue;
-    const help=p.Downed?cartoonHelpAnchor(p,layout):undefined;
+    const help=helps.get(index);
     if(help){
       marker('solid/#3c3630',help.x-1,help.y-1,62,26);
       marker('solid/#fff0c9',help.x,help.y,60,24);
       marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
     }
-    for(const draw of dragonDraws(p,skin(index),tick,motion?.[index],composed?CARTOON_PLAYER_SIZE:64)){
+    // Respawn bodies have not resolved Ground during the ready countdown.
+    // Show an idle pose until the first physics step, without changing that body
+    // or confusing a real jump's zero-velocity apex holds with a grounded state.
+    const spawning=!g.Party&&(g.State===State.Ready||g.State===State.Playing&&g.LevelTicks===0)
+      &&!p.Ground&&p.VY===0&&p.JumpStep===undefined&&!p.Shoot&&!p.Dead&&!p.Downed;
+    const pose=spawning?{...p,Ground:true,VX:0}:p;
+    for(const draw of cartoonDragonFeedback(dragonDraws(pose,skin(index),tick,spawning?false:motion?.[index],composed?CARTOON_PLAYER_SIZE:64,reduced),pose,index,feel,reduced)){
       // Cropped layers retain their source offset from one common feet root.
       // Reanchoring each crop by its own height would separate torso and legs.
       if(projection)out.push({...draw,x:px(draw.x),y:py(p.Y+44)+(draw.y-(p.Y+44))*layout.scale,width:draw.width*layout.scale,height:draw.height*layout.scale});
@@ -244,45 +288,27 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       // Three small stars orbit over the knocked-out dragon until rescued.
       const feet=py(p.Y+44),head=help?py(help.y)-20*layout.scale:feet-70*layout.scale;
       for(let star=0;star<3;star++){
-        const phase=tick*Math.PI/30+star*Math.PI*2/3;
-        const size=(20+3*Math.sin(phase))*layout.scale;
-        const x=px(p.X+22)+Math.cos(phase)*32*layout.scale,y=head+Math.sin(phase)*6*layout.scale;
+        const phase=(reduced?0:tick*Math.PI/30)+star*Math.PI*2/3;
+        const size=(20+(reduced?0:3*Math.sin(phase)))*layout.scale;
+        const x=(help?px(help.x+30):px(p.X+22))+Math.cos(phase)*32*layout.scale,y=head+Math.sin(phase)*6*layout.scale;
         // Two tapered diamonds form a readable four-point sparkle without another texture.
-        out.push({frame:'solid/#ffe08a',x:x-size/2,y:y-size/6,width:size,height:size/3,diamond:true},
+        markers.push({frame:'solid/#ffe08a',x:x-size/2,y:y-size/6,width:size,height:size/3,diamond:true},
           {frame:'solid/#ffe08a',x:x-size/6,y:y-size/2,width:size/3,height:size,diamond:true});
       }
     }
   }
-  // Shells and their contents share one foreground batch: release beads must
-  // remain visible over the mouth, including cropped moving-shot torsos.
-  for(const b of g.Bubbles){
-    if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
-    const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
-    if(b.EnemyID){
-      const e=g.Enemies.find(e=>e.ID===b.EnemyID);
-      if(e){
-        const state=b.CapturedAge>1200?'escape':b.CapturedAge>1000?'warning':'bubble';
-        const rock=state==='escape'?Math.sin(b.Age*.8)*2:0;
-        if(composed)centered(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+22+rock,b.Y+22,CARTOON_CAPTURED_ENEMY_SIZE,state==='escape'&&b.Age%12<6);
-        else add(cartoonEnemyFrame(e.Kind,state,b.Age),b.X+4+rock,b.Y+3,36,36,state==='escape'&&b.Age%12<6);
-      }
-    }
-    // An empty shot grows from the mouth. A point-blank capture completes the
-    // shell immediately around a fixed-size captive, so it never shrinks or
-    // spills outside an immature release bead. Mature captures do not resize.
-    const t=b.EnemyID||b.Shooter===undefined?1:Math.max(0,Math.min(1,b.Age/8));
-    const growth=.1875+.8125*t*t*(3-2*t);
-    const diameter=(composed?CARTOON_BUBBLE_SIZE:44)*growth;
-    centered('bubble',b.X+22,b.Y+22,diameter,false,rgba(color));
-    if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),b.X+22+diameter*9/44,b.Y+22+diameter*9/44,10*growth);
-    if(b.Element)centered(effectFrame(b.Element,b.Age),b.X+22,b.Y+22,18*growth);
+  // Dust crowns cross the shoes briefly; drawing them behind the whole dragon
+  // hides most of the takeoff/landing contact burst.
+  for(const dust of cartoonGroundDust(feel,reduced)){
+    add(dust.frame,dust.x,dust.y,dust.width,dust.height,!!dust.flip,dust.color);
+    out[out.length-1]!.y=py(dust.groundY)+(dust.y-dust.groundY)*layout.scale;
   }
+  drawBubbles(true);
+  const feedback=cartoonFeedback(g,feel,reduced);
+  for(const d of feedback.sprites)add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);
+  for(const d of feedback.accents){add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);if(d.diamond)out[out.length-1]!.diamond=true;}
   for(const p of g.Particles)if(!p.Text){const size=20+Math.max(0,12-p.Life)*1.8;add('pop',p.X+22-size/2,p.Y+22-size/2,size,size,false,[1,1,1,Math.min(1,p.Life/8)]);}
-  for(const cue of feel?.cues??[]){
-    const age=feel!.clock-cue.at;
-    if(cue.kind==='rescue'&&age<24)add('pop',cue.x-26-age*.3,cue.y-48-26-age*.3,52+age*.6,52+age*.6,false,[.6,1,.8,1-age/24]);
-  }
   return out;
 }
