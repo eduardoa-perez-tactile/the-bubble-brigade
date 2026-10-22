@@ -50,10 +50,10 @@ export function cartoonFeedback(g:GameState,feel:FeelState|undefined,reduced=fal
  }
  for(const p of g.Particles.filter(p=>!p.Text).slice(-18)){
   const age=Math.max(0,15-p.Life),t=Math.min(1,age/15),x=p.X+22,y=p.Y+22;
-  ring(x,y,24+(reduced?0:age*2.5),[1,.94,.74,.6*(1-t)]);
+  ring(x,y,96+(reduced?0:age*44/15),[1,.94,.74,.7*(1-t)]);
   if(!reduced)for(let i=0;i<3;i++){
-   const angle=i*Math.PI*2/3+.4,r=8+age*1.4;
-   sprite('bubble',x+Math.cos(angle)*r,y+Math.sin(angle)*r+age*.25,5-2*t,5-2*t,[.72,.9,1,.5*(1-t)]);
+   const angle=i*Math.PI*2/3+.4,r=38+age*2.5;
+   sprite('bubble',x+Math.cos(angle)*r,y+Math.sin(angle)*r+age*.25,10-4*t,10-4*t,[.72,.9,1,.5*(1-t)]);
   }
  }
  for(const cue of feel?.cues.slice(-16)??[]){

@@ -6,6 +6,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[2]
 DEST=ROOT/'assets/cartoon'
 runpy.run_path(str(Path(__file__).with_name('build-bubble-body.py')),run_name='__main__')
+runpy.run_path(str(Path(__file__).with_name('build-bubble-shine.py')),run_name='__main__')
 source=Image.open(ROOT/'art/feedback/dust-puff-source-2026-10-22.png').convert('RGBA')
 # Ignore alpha<=2 stray generation noise when finding the drawing boundary.
 source=source.crop(source.getchannel('A').point(lambda v:255 if v>2 else 0).getbbox());source.thumbnail((128,64),Image.Resampling.LANCZOS)

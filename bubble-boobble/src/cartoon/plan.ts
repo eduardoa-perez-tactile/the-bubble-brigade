@@ -1,3 +1,4 @@
+import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonHudBounds} from './hud-layout';
 import {cartoonBubbleState} from './bubble-state';
 import {cartoonBubbleShape,cartoonFeedback} from './feedback';
@@ -189,8 +190,11 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
-    if(composed)out.push({frame:itemFrame(item.Power,item.Food),x:px(item.X),y:py(item.Y+32)-32*layout.scale,width:32*layout.scale,height:32*layout.scale});
-    else add(itemFrame(item.Power,item.Food),item.X,item.Y,32);
+    const size=composed?CARTOON_PICKUP_SIZE:48;
+    // Uniform art scaling retains source proportions and the original pickup's
+    // center/floor registration. Its 32-unit collection footprint never moves.
+    out.push({frame:itemFrame(item.Power,item.Food),x:px(item.X+16)-size*layout.scale/2,
+      y:py(item.Y+32)-size*layout.scale,width:size*layout.scale,height:size*layout.scale});
   }
   const entrance=(y:number,index:number)=>{
     if(g.Party?.Phase!=='prepare')return y;
@@ -235,7 +239,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const drawBubbles=(foreground:boolean)=>{
     // Paint every surface first, then contents, then ink. A neighboring surface
     // must not wash color over another captive when bubbles overlap.
-    for(const part of ['body','captive','rim'] as const)for(const paint of bubblePaints){
+    for(const part of ['body','captive','rim','shine'] as const)for(const paint of bubblePaints){
       if(paint.foreground!==foreground)continue;
       const {b,color,growth,diameter,shape,state}=paint;
       if(part==='body'){
@@ -248,6 +252,10 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
           if(composed)centered(cartoonEnemyFrame(e.Kind,'bubble',b.Age),shape.x+state.captiveOffset,shape.y,CARTOON_CAPTURED_ENEMY_SIZE,false,undefined,shape.offsetY);
           else add(cartoonEnemyFrame(e.Kind,'bubble',b.Age),b.X+4+state.captiveOffset,b.Y+3,36,36);
         }
+      }else if(part==='shine'){
+        // Neutral white reflections sit above the colored meniscus. Keeping
+        // them untinted preserves contrast for every owner and danger stage.
+        out.push({frame:'bubble-shine',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:[1,1,1,1]});
       }else if(part==='rim'){
         out.push({frame:'bubble',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(state.rim,state.rimAlpha)});
         if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),shape.x+diameter*9/44,shape.y+diameter*9/44,10*growth,false,undefined,shape.offsetY);
@@ -306,10 +314,18 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   drawBubbles(true);
   const feedback=cartoonFeedback(g,feel,reduced);
-  for(const d of feedback.sprites)add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);
+  for(const d of feedback.sprites){
+    add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);
+    // Effect envelopes are uniform about the projected center, including when
+    // a large pop crosses one of the authored platform projection knots.
+    out[out.length-1]!.y=py(d.y+d.height/2)-d.height*layout.scale/2;
+  }
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);
   for(const d of feedback.accents){add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);if(d.diamond)out[out.length-1]!.diamond=true;}
-  for(const p of g.Particles)if(!p.Text){const size=20+Math.max(0,12-p.Life)*1.8;add('pop',p.X+22-size/2,p.Y+22-size/2,size,size,false,[1,1,1,Math.min(1,p.Life/8)]);}
+  for(const p of g.Particles.filter(p=>!p.Text).slice(-18)){
+    const size=cartoonPopSize(p.Life);
+    centered('pop',p.X+22,p.Y+22,size,false,[1,1,1,Math.min(1,p.Life/6)]);
+  }
   return out;
 }

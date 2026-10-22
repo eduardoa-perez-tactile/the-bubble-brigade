@@ -1,3 +1,4 @@
+import {cartoonBubbleTouchesEnemy} from '../cartoon/capture-contact';
 import {cartoonBubbleTouchesPlayer} from '../cartoon/bubble-contact';
 import {cartoonShotOrigin} from '../cartoon/coordinates';
 import { arenaWidth, arenaHeight } from './types';
@@ -79,7 +80,7 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
           if (
             b.Element === '' && g.Party?.Phase !== 'prepare' &&
             e.State === EnemyState.Active &&
-            intersects(b.X, b.Y, 40, 40, e.X + 3, e.Y + 3, 38, 38)
+            (g.Level.arena==='cartoon-courtyard'?cartoonBubbleTouchesEnemy(g,b,e):intersects(b.X, b.Y, 40, 40, e.X + 3, e.Y + 3, 38, 38))
           ) {
             b.EnemyID = e.ID;
             e.State = EnemyState.Trapped;
@@ -153,7 +154,12 @@ export function updateBubbles(g: GameState, inputs: Input[]) {
         // Once boosted above the old contact plane, let the player separate.
         // Painted overlap during ascent must not immediately undo the bounce.
         const leavingAbove=p.VY<0&&p.Y+ActorSize<=b.Y&&p.X+ActorSize>b.X+4&&p.X<b.X+36;
-        if(!approachingBounce&&!leavingAbove&&cartoonBubbleTouchesPlayer(p,b))popBubble(g,i,player);
+        // The enlarged mouth/head overlaps a forward shot longer than the old
+        // pixel body, especially with shoes. Holding forward fire should not
+        // turn those empty owner shots into accidental contact pops. Captives,
+        // teammates, elements, stopping and turning retain normal pop contact.
+        const firingPastOwnShot=b.Shooter===player&&!b.EnemyID&&!b.Element&&input.Fire&&input.Move*b.Dir>0;
+        if(!approachingBounce&&!leavingAbove&&!firingPastOwnShot&&cartoonBubbleTouchesPlayer(p,b))popBubble(g,i,player);
       } else if (intersects(p.X + 4, p.Y + 4, 36, 36, b.X, b.Y, 40, 40))
         popBubble(g, i, player);
     }
