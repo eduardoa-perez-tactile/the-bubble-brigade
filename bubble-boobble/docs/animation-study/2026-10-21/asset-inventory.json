@@ -1,0 +1,326 @@
+{
+  "scope": "Current working tree, including previous uncommitted enemy animation improvements; not just Git HEAD.",
+  "ticksPerSecond": 60,
+  "dragonClips": {
+    "idle": {
+      "frames": [
+        "idle-0",
+        "idle-1",
+        "idle-0"
+      ],
+      "durations": [
+        120,
+        7,
+        53
+      ],
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "run-0",
+        "run-1",
+        "run-2",
+        "run-3",
+        "run-4",
+        "run-5",
+        "run-6",
+        "run-7"
+      ],
+      "durations": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "jump-0",
+        "jump-1"
+      ],
+      "durations": [
+        18,
+        42
+      ],
+      "loop": false
+    },
+    "shoot": {
+      "frames": [
+        "shoot-0",
+        "shoot-1",
+        "shoot-2",
+        "shoot-3",
+        "shoot-4",
+        "shoot-5"
+      ],
+      "durations": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "loop": false
+    },
+    "hurt": {
+      "frames": [
+        "hurt-0"
+      ],
+      "durations": [
+        12
+      ],
+      "loop": false
+    },
+    "down": {
+      "frames": [
+        "down-0"
+      ],
+      "durations": [
+        90
+      ],
+      "loop": false
+    }
+  },
+  "enemyClips": {
+    "zenchan": {
+      "frames": 8,
+      "ticksPerFrame": 4,
+      "anchor": "feet"
+    },
+    "mighta": {
+      "frames": 8,
+      "ticksPerFrame": 4,
+      "anchor": "feet"
+    },
+    "monsta": {
+      "frames": 8,
+      "ticksPerFrame": 3,
+      "anchor": "body"
+    },
+    "pulpul": {
+      "frames": 8,
+      "ticksPerFrame": 2,
+      "anchor": "body"
+    },
+    "invader": {
+      "frames": 8,
+      "ticksPerFrame": 5,
+      "anchor": "body"
+    },
+    "banebou": {
+      "frames": 2,
+      "ticksPerFrame": 16,
+      "anchor": "feet",
+      "rig": "spring"
+    }
+  },
+  "referenceSequences": {
+    "Cuphead run": 16,
+    "Cuphead idle": 5,
+    "Cuphead jump": 8,
+    "Cuphead shoot": 3,
+    "Cuphead shoot boil": 3,
+    "Cuphead run shoot": 16,
+    "Cuphead turn": 2,
+    "Cuphead hit": 6,
+    "Cuphead air hit": 6,
+    "daisy takeoff": 8,
+    "daisy jump": 21,
+    "daisy land": 11,
+    "daisy run": 16,
+    "acorn drop": 3,
+    "acorn fall": 14,
+    "acorn fly": 11,
+    "dragonfly idle": 11,
+    "dragonfly warning": 7,
+    "dragonfly attack": 5,
+    "dragonfly recover": 3
+  },
+  "sourceCode": {
+    "src/cartoon/plan.ts": "66b39edb97c554d3c7201aeba766ec12aef9d00fd02521f7d4bc7ffc363bf33b",
+    "src/cartoon/renderer.ts": "87e4803030d4ec8f56cc9129d3e3132b2a69c5ae8d90b710f57c9a6d87156433",
+    "src/cartoon/actor-layout.ts": "96b5aa425ed32253b1c057bacdc756c71176a61fe1c46550d5bb041cc7a195d4",
+    "src/arcade/player.ts": "921f788bbf42ee3ff8a95446f4a35a733d4dbe9aad72af6186afef36a3c5b717",
+    "src/arcade/physics.ts": "978a6af7111e19c257ae2ff546fdf9e14d2819566f92bdaee1b750c5f67cc273",
+    "src/arcade/enemies.ts": "6cd372cd7446e758d450fd533bc0462fdfc4d3b13b8b2a67b83174e6035dfdea",
+    "src/arcade/boss.ts": "5b8fb44e3444952b9eb8d0c7ae1e1ef193189740e088b23d70b9955242fede33"
+  },
+  "enemyIdenticalRasterAliases": {
+    "zenchan": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ],
+    "mighta": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ],
+    "monsta": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ],
+    "pulpul": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ],
+    "invader": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ],
+    "banebou": [
+      [
+        "angry-0.png",
+        "escape-0.png",
+        "shoot-0.png",
+        "warning-0.png"
+      ]
+    ]
+  },
+  "greenFrameAlphaBounds": {
+    "down-0.png": [
+      8,
+      63,
+      120,
+      120
+    ],
+    "hurt-0.png": [
+      16,
+      12,
+      112,
+      120
+    ],
+    "idle-0.png": [
+      26,
+      12,
+      102,
+      120
+    ],
+    "idle-1.png": [
+      25,
+      12,
+      102,
+      120
+    ],
+    "jump-0.png": [
+      20,
+      12,
+      107,
+      120
+    ],
+    "jump-1.png": [
+      16,
+      12,
+      112,
+      120
+    ],
+    "run-0.png": [
+      20,
+      15,
+      107,
+      120
+    ],
+    "run-1.png": [
+      22,
+      15,
+      106,
+      120
+    ],
+    "run-2.png": [
+      18,
+      15,
+      109,
+      120
+    ],
+    "run-3.png": [
+      21,
+      13,
+      107,
+      120
+    ],
+    "run-4.png": [
+      20,
+      15,
+      107,
+      120
+    ],
+    "run-5.png": [
+      23,
+      16,
+      105,
+      120
+    ],
+    "run-6.png": [
+      18,
+      15,
+      110,
+      120
+    ],
+    "run-7.png": [
+      24,
+      12,
+      104,
+      120
+    ],
+    "shoot-0.png": [
+      0,
+      20,
+      100,
+      120
+    ],
+    "shoot-1.png": [
+      11,
+      32,
+      116,
+      120
+    ],
+    "shoot-2.png": [
+      10,
+      32,
+      118,
+      120
+    ],
+    "shoot-3.png": [
+      11,
+      20,
+      116,
+      120
+    ],
+    "shoot-4.png": [
+      18,
+      15,
+      110,
+      120
+    ],
+    "shoot-5.png": [
+      26,
+      14,
+      101,
+      120
+    ]
+  }
+}

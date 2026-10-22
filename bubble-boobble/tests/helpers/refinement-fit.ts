@@ -3,8 +3,9 @@ import animation from '../../assets/cartoon/animation.json';
 
 export interface Bounds {x:number;y:number;width:number;height:number}
 export function actorAlphaBounds(frame:string,rect:Bounds,flip=false):Bounds|null {
-  const current=(animation.frames as Record<string,{visualBounds?:number[]}>)[frame]?.visualBounds;
-  const source=current?{size:[128,128],alpha:current}:(alpha.frames as Record<string,{size:number[];alpha:number[]}>)[frame];
+  const metadata=(animation.frames as Record<string,{visualBounds?:number[];canvasSize?:number[]}>)[frame];
+  const current=metadata?.visualBounds;
+  const source=current?{size:metadata?.canvasSize??[128,128],alpha:current}:(alpha.frames as Record<string,{size:number[];alpha:number[]}>)[frame];
   if(!source)return null;
   const [left,top,right,bottom]=source.alpha as [number,number,number,number];
   const [width,height]=source.size as [number,number];

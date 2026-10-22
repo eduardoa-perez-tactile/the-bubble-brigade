@@ -12,14 +12,16 @@ import {ArcadeInput} from '../src/schema.gen';
 const views=[[768,720],[1536,864],[640,960],[2520,1080]] as const;
 const game=()=>createPartyGame(campaign,42,Array.from({length:10},()=> 'human' as const),10,'cartoon');
 worldTest('shot framing bubble origin meets the enlarged mouth at every shelf and in both directions',()=>{
- for(const direction of [-1,1])for(const feet of [-54,72,192,312,432,528])for(const [width,height] of views){
-  const g=game(),p=g.Players[0]!;Object.assign(p,{X:800,Y:feet-44,Dir:direction,Shoot:12,Invincible:0});
+ for(const ground of [false,true])for(const direction of [-1,1])for(const feet of [-54,72,192,312,432,528])for(const [width,height] of views){
+  const g=game(),p=g.Players[0]!;Object.assign(p,{X:800,Y:feet-44,Dir:direction,Shoot:12,Invincible:0,Ground:ground});
   g.Bubbles=[];shootBubble(g,0);
   const draws=cartoonDrawPlan(g,0,{width,height,safeArea:[0,0,0,0]});
-  const dragon=draws.find(d=>d.frame==='dragon/green/shoot-0')!,shot=draws.find(d=>d.frame==='bubble')!;
-  const muzzle=animation.frames['dragon/green/shoot-0'].muzzle;
+  const dragon=draws.find(d=>d.frame==='dragon/green/shoot-0'||d.frame==='dragon/green/shoot-upper-0')!,shot=draws.find(d=>d.frame==='bubble')!;
+  const source=(animation.frames as Record<string,{muzzle?:number[];canvasSize?:number[]}>)[dragon.frame]!;
+  const muzzle=source.muzzle!;expect(muzzle).toEqual([100,80]);
+  const sourceHeight=source.canvasSize?.[1]??128;
   const mouthX=dragon.x+dragon.width*(dragon.flip?128-muzzle[0]!:muzzle[0]!)/128;
-  const mouthY=dragon.y+dragon.height*muzzle[1]!/128;
+  const mouthY=dragon.y+dragon.height*muzzle[1]!/sourceHeight;
   expect(Math.abs(shot.x+shot.width/2-mouthX)<.01).toBe(true);
   expect(Math.abs(shot.y+shot.height/2-mouthY)<.01).toBe(true);
  }

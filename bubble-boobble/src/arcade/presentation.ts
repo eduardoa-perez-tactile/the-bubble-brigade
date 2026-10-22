@@ -625,7 +625,7 @@ export const ArcadePresentation = defineSystem({
     // Cartoon art uses the native filtered sprite batch and a shared stencil.
     // The fallback retains the static quad compositor and original source pixels.
     const modern = cartoonScene && session.get().active && g && ['play','pause','result'].includes(ui.screen)
-      ? cartoonSprites(cartoonDrawPlan(g,g.Tick,ctx.get(ViewInfo),feel,motion?.moving),plan.clip)
+      ? cartoonSprites(cartoonDrawPlan(g,g.Tick,ctx.get(ViewInfo),feel,motion?.states),plan.clip)
       : cartoonScene && ui.screen==='editor'
         ? cartoonSprites(cartoonEditorDrawPlan(ui.level,ctx.get(Time).step,desktopSaveState.get().profiles[desktopSaveState.get().active]?.avatar??'green'),plan.clip)
         : cartoonScene ? cartoonSprites(cartoonMenuDrawPlan(ui.screen,ctx.get(Time).step,ui.selected),plan.clip) : null;

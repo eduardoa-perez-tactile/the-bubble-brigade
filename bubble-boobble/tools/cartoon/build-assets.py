@@ -216,3 +216,5 @@ print('Exported',len(frames),'original cartoon frames, ZERO legacy pixel sprites
 # Keep this hook after the base export so a full art rebuild retains them.
 import runpy
 runpy.run_path(str(ROOT/'tools/cartoon/build-dragon-animation.py'),run_name='__main__')
+
+runpy.run_path(str(ROOT/'tools/cartoon/build-enemy-animation.py'),run_name='__main__')

@@ -8,7 +8,7 @@ import { partyColors } from '../arcade/party-config';
 import type { FeelState } from '../arcade/juice';
 import { desktopSaveState } from '../desktop/save';
 import animation from '../../assets/cartoon/animation.json';
-import type { CartoonDraw } from './renderer';
+import type { CartoonDraw, DragonMotion } from './renderer';
 import { partyCardRect } from '../desktop/layout';
 
 type Clip = keyof typeof animation.clips;
@@ -21,29 +21,61 @@ export function clipFrame(clip:Clip, tick:number):string {
   for(let i=0;i<c.frames.length;i++){if(time<c.durations[i]!)return c.frames[i]!;time-=c.durations[i]!;}
   return c.frames[c.frames.length-1]!;
 }
-export function playerClip(p:Player,moving=false):Clip {
+export function playerClip(p:Player,moving?:boolean):Clip {
   if(p.Downed)return 'down';
   if(p.Dead>0)return p.Dead>72?'hurt':'down';
   if(p.Shoot>0)return 'shoot';
   if(!p.Ground)return 'jump';
-  return moving||Math.abs(p.VX)>.01?'run':'idle';
+  return (moving??Math.abs(p.VX)>.01)?'run':'idle';
 }
 /** Feet stay fixed even when a drawing changes size, flips, or squashes. */
-export function dragonDraw(p:Player,skin:string,tick:number,moving=false,size=64):CartoonDraw {
-  const clip=playerClip(p,moving);
+export function dragonDraw(p:Player,skin:string,tick:number,moving?:boolean|DragonMotion,size=64):CartoonDraw {
+  const motion=typeof moving==='object'?moving:undefined;
+  const clip=playerClip(p,motion?motion.moving:moving as boolean|undefined);
   // Walking has drawn weight transfer; an extra scale pulse fights those poses.
   const squash=clip==='idle'?Math.sin(tick*Math.PI/90)*.012:0;
   const w=size*(1+squash),h=size*(1-squash);
-  const clock=clip==='run'?p.WalkFrame:clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
-    clip==='jump'?(p.VY<0?0:clips.jump.durations[0]!):tick;
+  const clock=clip==='run'?(motion?motion.phase*clips.run.durations.reduce((sum,n)=>sum+n,0):p.WalkFrame):clip==='shoot'?12-p.Shoot:clip==='hurt'?90-p.Dead:
+    clip==='jump'?((motion?.falling??p.VY>0)?clips.jump.durations[0]!:0):tick;
   return {frame:`dragon/${skin}/${clipFrame(clip,clock)}`,
     x:p.X+22-w*.5,y:p.Y+44-h*120/128,width:w,height:h,flip:p.Dir<0};
 }
+/** Bespoke crouched legs attach to registered release/recovery torsos. The source
+ * coordinates are retained exactly, including the first-tick shot muzzle.
+ * Stationary shooting still plays all six original whole-body pictures. */
+export function dragonDraws(p:Player,skin:string,tick:number,motion?:boolean|DragonMotion,size=64):CartoonDraw[]{
+  const full=dragonDraw(p,skin,tick,motion,size);
+  const moving=typeof motion==='object'?motion.moving:motion??Math.abs(p.VX)>.01;
+  if(p.Downed||p.Dead>0||p.Shoot<=0||p.Ground&&!moving)return [full];
+  const state=typeof motion==='object'?motion:undefined;
+  const total=clips.run.durations.reduce((sum,n)=>sum+n,0);
+  const run=clipFrame('run',state?state.phase*total:p.WalkFrame).replace('run-','');
+  const air=(state?.falling??p.VY>0)?1:0;
+  // A fixed seam at source row 96 never changes size or jumps with a pose.
+  return [
+    {...full,frame:`dragon/${skin}/shoot-upper-${Math.min(2,Math.floor((12-p.Shoot)/4))}`,height:size*96/128},
+    {...full,frame:`dragon/${skin}/${p.Ground?`shoot-walk-lower-${run}`:`shoot-air-lower-${air}`}`,
+      y:full.y+size*96/128,height:size*32/128},
+  ];
+}
 /** Every supported family has original cartoon masters; no pixel aliases escape here. */
 export function cartoonEnemyFrame(kind:string,state:string,tick:number):string {
-  const pose=state==='walk'?`walk-${Math.floor(Math.max(0,tick)/6)%2}`
+  const clip=(animation.enemies as Record<string,{frames:number;ticksPerFrame:number}>)[kind];
+  const pose=(state==='walk'||state==='angry')&&clip
+    ?`walk-${Math.floor(Math.max(0,tick)/clip.ticksPerFrame)%clip.frames}`
     :state==='bubble'?'captured-0':state==='shoot-angry'?'shoot-0':`${state}-0`;
   return `enemy/${kind}/${pose}`;
+}
+/** Native spring articulation: rigid body and planted feet, only coils stretch. */
+export function hopperDraws(x:number,feet:number,size:number,tick:number,flip=false,angry=false):CartoonDraw[]{
+  const unit=size/128,phase=Math.max(0,tick)%32,pose=Math.floor(phase/16);
+  const spring=(16+4*Math.sin(phase*Math.PI/16))*unit,footTop=feet-16*unit;
+  const common={x:x-size/2,width:size,flip,color:angry?[1,.76,.68,1] as const:undefined};
+  return [
+    {...common,frame:`enemy/banebou/body-${pose}`,y:footTop-spring-88*unit,height:88*unit},
+    {...common,frame:`enemy/banebou/spring-${pose}`,y:footTop-spring,height:spring},
+    {...common,frame:`enemy/banebou/feet-${pose}`,y:footTop,height:24*unit},
+  ];
 }
 const effectFrame=(element:string,tick:number)=>`effect/${element}-${element==='fire'?Math.floor(Math.max(0,tick)/6)%2:0}`;
 const itemFrame=(power:string|undefined,food:number)=>power?`item/${power}`:`item/food-${food}`;
@@ -84,7 +116,7 @@ export function cartoonEditorDrawPlan(level:Level,tick:number,avatar:string):Car
 }
 
 /** Read-only lowering from the same authoritative state as the preserved pixel path. */
-export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly boolean[]):CartoonDraw[]{
+export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;height:number;safeArea:ArrayLike<number>},feel?:FeelState,motion?:readonly (boolean|DragonMotion)[]):CartoonDraw[]{
   const baseLayout=arenaLayout(g.Level,view),composed=g.Level.arena==='cartoon-courtyard';
   const projection=composed?cartoonProjection(g,baseLayout):undefined;
   const layout={...baseLayout,...(projection?{scale:projection.scale,projectY:projection.projectY,inverseY:projection.inverseY}: {})};
@@ -173,7 +205,14 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
     const size=composed?CARTOON_ENEMY_SIZE:56;
-    actor(cartoonEnemyFrame(e.Kind,pose,e.Age),e.X+22-size/2,y+44,size,e.Dir<0);
+    const flyer=e.Kind==='monsta'||e.Kind==='pulpul'||e.Kind==='invader';
+    const clock=g.Party?.Phase==='prepare'&&flyer?tick+index*3:e.Age;
+    if(e.Kind==='banebou'&&(pose==='walk'||pose==='angry')){
+      out.push(...hopperDraws(px(e.X+22),py(y+44),size*layout.scale,clock,e.Dir<0,e.Angry));
+    }else{
+      actor(cartoonEnemyFrame(e.Kind,pose,clock),e.X+22-size/2,y+44,size,e.Dir<0);
+      if(pose==='angry')out[out.length-1]!.color=[1,.76,.68,1];
+    }
   }
   for(const b of g.Bubbles){
     if(b.Age>450&&!b.EnemyID&&!b.Element&&b.Age%12<3)continue;
@@ -203,9 +242,12 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       marker('solid/#fff0c9',help.x,help.y,60,24);
       marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
     }
-    const draw=dragonDraw(p,skin(index),tick,!!motion?.[index],composed?CARTOON_PLAYER_SIZE:64);
-    if(projection)out.push({...draw,x:px(draw.x),y:py(p.Y+44)-draw.height*layout.scale*120/128,width:draw.width*layout.scale,height:draw.height*layout.scale});
-    else add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
+    for(const draw of dragonDraws(p,skin(index),tick,motion?.[index],composed?CARTOON_PLAYER_SIZE:64)){
+      // Cropped layers retain their source offset from one common feet root.
+      // Reanchoring each crop by its own height would separate torso and legs.
+      if(projection)out.push({...draw,x:px(draw.x),y:py(p.Y+44)+(draw.y-(p.Y+44))*layout.scale,width:draw.width*layout.scale,height:draw.height*layout.scale});
+      else add(draw.frame,draw.x,draw.y,draw.width,draw.height,draw.flip);
+    }
     if(g.Party||g.Players.length>1){
       const badge=cartoonBadgeAnchor(p,layout,help);
       const color=colors[partyColors.findIndex(c=>c===skin(index))]??colors[index%10]!;

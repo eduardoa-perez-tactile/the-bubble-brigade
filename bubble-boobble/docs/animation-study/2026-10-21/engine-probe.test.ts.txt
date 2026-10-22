@@ -1,0 +1,54 @@
+/** One-off inspection probe; copy to tests/animation-study-inspection.test.ts,
+ * run through gameengine test, then remove. No production module is edited. */
+import {expect,worldTest} from '@gameengine/test';
+import campaign from '../data/levels.json';
+import {createPartyGame} from '../src/arcade/party';
+import {stepGame} from '../src/arcade/game';
+import {hurtPlayer} from '../src/arcade/player';
+import {updateEnemies} from '../src/arcade/enemies';
+import {arenaHeight,EnemyState,State} from '../src/arcade/types';
+import {cartoonMotion} from '../src/cartoon/renderer';
+import {cartoonDrawPlan,dragonDraw,hopperDraws} from '../src/cartoon/plan';
+import {CARTOON_PLAYER_SIZE} from '../src/cartoon/actor-layout';
+const idle={Move:0,Jump:false,Fire:false};
+const zeros=()=>({v2:[0,0,0,0],v3:[0,0,0,0],v4:[0,0,0,0],v5:[0,0,0,0],v6:[0,0,0,0],v7:[0,0,0,0]});
+function fixture(){
+ const g=createPartyGame(campaign,42,['human','human','human','human','human','human'],10,'cartoon');
+ g.Party!.Phase='combat';g.Party!.Timer=0;g.Party!.ToSpawn=0;g.Party!.Telegraphs=[];
+ g.State=State.Playing;g.Freeze=10000;
+ for(const p of g.Players)p.Invincible=100000;
+ Object.assign(g.Players[0]!,{X:320,Y:arenaHeight(g)-24-44,Ground:true,WalkFrame:0,Shoot:0,Cooldown:0,MotionTick:0});
+ return g;
+}
+worldTest('animation study inspection current clocks transitions movement and anchors',()=>{
+ const output:Record<string,unknown>={};
+ for(const mode of ['normal','shoes','blocked','moving-shot','air-shot','stop-resume']){
+  const g=fixture(),p=g.Players[0]!;if(mode==='shoes')p.Power.Shoes=true;if(mode==='blocked')p.X=48;
+  let previous=cartoonMotion(g,zeros()).globals;const start=p.X,samples=[];
+  for(let tick=0;tick<32;tick++){
+   const moving=mode==='stop-resume'?(tick<10||tick>=15):true;
+   stepGame(g,[{Move:moving?(mode==='blocked'?-1:1):0,Fire:(mode==='moving-shot'||mode==='air-shot')&&tick===0,Jump:mode==='air-shot'&&tick===0},idle,idle,idle,idle,idle]);
+   const motion=cartoonMotion(g,previous);previous=motion.globals;
+   const d=dragonDraw(p,'green',g.Tick,motion.moving[0],CARTOON_PLAYER_SIZE);
+   samples.push({t:tick+1,x:p.X,y:p.Y,vy:p.VY,ground:p.Ground,walk:p.WalkFrame,shoot:p.Shoot,moving:motion.moving[0],frame:d.frame,drawWidth:d.width,drawHeight:d.height});
+   const before=JSON.stringify(g);cartoonDrawPlan(g,g.Tick);expect(JSON.stringify(g)).toBe(before);
+  }
+  output[mode]={distance:p.X-start,samples};
+ }
+ const g=fixture(),p=g.Players[0]!,jump=[];
+ for(let tick=0;tick<70;tick++){
+  stepGame(g,[{...idle,Jump:tick===0},idle,idle,idle,idle,idle]);
+  jump.push({t:tick+1,y:p.Y,vy:p.VY,ground:p.Ground,frame:dragonDraw(p,'green',g.Tick,false).frame});
+ }
+ output.jump=jump;
+ const hit=fixture();hit.Players[0]!.Invincible=0;hurtPlayer(hit,0);
+ output.partyHit={downed:hit.Players[0]!.Downed,dead:hit.Players[0]!.Dead,frame:dragonDraw(hit.Players[0]!,'green',hit.Tick).frame};
+ const hop=fixture(),e=hop.Enemies[0]!;
+ Object.assign(e,{Kind:'banebou',X:320,Y:arenaHeight(hop)-24-44,Ground:true,Age:0,State:EnemyState.Active,Angry:false,Dir:1,Shoot:0});hop.Enemies=[e];const hops=[];
+ for(let tick=0;tick<40;tick++){
+  updateEnemies(hop);const [body,spring,feet]=hopperDraws(0,0,128,e.Age);
+  hops.push({age:e.Age,y:e.Y,vy:e.VY,ground:e.Ground,body:body!.frame,springHeight:spring!.height,feetTop:feet!.y});
+ }
+ output.hopper=hops;
+ console.log('ANIMATION_STUDY '+JSON.stringify(output));
+});

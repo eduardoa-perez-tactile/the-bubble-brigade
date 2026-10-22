@@ -1,0 +1,123 @@
+{
+  "status": "first implementation review; approximate measured contact evidence, not a claim of continuous foot planting",
+  "walkSource": "walk-source-2026-10-22-v2.png",
+  "canvas": [
+    128,
+    128
+  ],
+  "root": [
+    64,
+    120
+  ],
+  "sharedScale": 0.27,
+  "sharedX": 4,
+  "rowY": [
+    3,
+    9
+  ],
+  "observedPoseExtentsYExclusive": [
+    120,
+    121,
+    121,
+    120,
+    120,
+    121,
+    120,
+    121
+  ],
+  "estimatedSupportX": [
+    79,
+    78,
+    54,
+    80,
+    80,
+    77,
+    53,
+    78
+  ],
+  "estimatedSkullCentersInSourceCells": [
+    [
+      280,
+      162
+    ],
+    [
+      284,
+      164
+    ],
+    [
+      278,
+      158
+    ],
+    [
+      279,
+      153
+    ],
+    [
+      274,
+      145
+    ],
+    [
+      279,
+      145
+    ],
+    [
+      280,
+      143
+    ],
+    [
+      281,
+      140
+    ]
+  ],
+  "controlDurations": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "syntheticTrialDurations": [
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3
+  ],
+  "movingShotSource": "shoot-locomotion-source-2026-10-22.png",
+  "movingShotSharedScale": 0.31,
+  "movingShotSharedOrigin": [
+    -12,
+    8
+  ],
+  "movingShotLowerContactYCorrection": [
+    0,
+    -1,
+    1,
+    0,
+    1,
+    -1,
+    0,
+    -1,
+    0,
+    0
+  ],
+  "movingShotLowerY": 96,
+  "movingShotRecoveryFaceRectangle": [
+    58,
+    56,
+    104,
+    92
+  ],
+  "limitations": [
+    "Support travels are not a uniform approximately41sourcepixel stance;90gamepixel cycle not justified by this sheet.",
+    "Contact keys are clearer, but near/far leg exchange is still subtle.",
+    "Support contours vary by about one sourcepixel under fixedgrid export; atlasroot is not evidence of exact footplant.",
+    "Synthetic GIF timing is an exposure illustration; engine renders/replays remain the acceptance workflow."
+  ]
+}

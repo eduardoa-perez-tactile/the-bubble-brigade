@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-21",
+  "scope": "Analysis and study artifacts only; previous uncommitted gameplay/art changes preserved.",
+  "productionFilesCompared": 2401,
+  "productionChanges": [],
+  "newProductionFiles": [],
+  "referenceFramesCompared": 175,
+  "referenceChanges": [],
+  "sourceLinksMissing": [],
+  "focusedEngineTests": {
+    "passed": 7,
+    "failed": 0,
+    "memoryClass": "phone-low",
+    "goldensUpdated": false,
+    "dragonRenderSteps": 54,
+    "enemyRenderSteps": 51,
+    "dragonPeakDrawCalls": 13,
+    "enemyPeakDrawCalls": 12
+  },
+  "inspectionProbe": {
+    "passed": true,
+    "temporaryTestRemoved": true,
+    "method": "Existing sim/presentation functions inside a Game Engine worldTest on isolated fixtures; not a live-controller recording."
+  },
+  "engineCheck": {
+    "passed": true,
+    "warnings": "Existing reference-tile/camera warnings and stale pipeline recording; see engine-check.log."
+  },
+  "timingEvidence": "Cuphead source exposure/FPS/pivot/runtime routing unverified. Suggested durations are our proposals.",
+  "comparisonSheets": 11,
+  "referenceDrawingsInspected": 175,
+  "referenceGroupsInspected": 20
+}
