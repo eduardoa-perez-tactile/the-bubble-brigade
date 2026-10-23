@@ -231,6 +231,26 @@
     "partyJump10": [],
     "partyFire10": [],
     "partyJoin10": [],
-    "partyPause10": []
+    "partyPause10": [],
+    "mapX": [
+      {
+        "negative": "KeyA",
+        "positive": "KeyD"
+      },
+      {
+        "negative": "ArrowLeft",
+        "positive": "ArrowRight"
+      }
+    ],
+    "mapY": [
+      {
+        "negative": "KeyS",
+        "positive": "KeyW"
+      },
+      {
+        "negative": "ArrowDown",
+        "positive": "ArrowUp"
+      }
+    ]
   }
 }

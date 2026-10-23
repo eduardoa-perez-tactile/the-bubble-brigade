@@ -1,0 +1,50 @@
+{
+  "district": 5,
+  "libraryIndex": "/Users/eduardoleale/workspace/art/cuphead/INDEX.md",
+  "assets": [
+    {
+      "asset": "assets/overworld-district-5/west.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182342-inkwell-hell/Cuphead/Inkwell Hell/world4_main_01.png",
+      "sourceCollection": "182342-inkwell-hell",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/182342/",
+      "width": 1091,
+      "height": 1570,
+      "sha256": "779de62062faba66c0cec5ca2aadbb7d3654c69d1dea9f554e0be3a54a2732dc",
+      "bytes": 2019797,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-5/east.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182342-inkwell-hell/Cuphead/Inkwell Hell/world4_main_02.png",
+      "sourceCollection": "182342-inkwell-hell",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/182342/",
+      "width": 1091,
+      "height": 1570,
+      "sha256": "266951114afe0e44b0a811f533db98a4ac68bb4444957d65ef240dd0cdbabb1a",
+      "bytes": 2018302,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-5/mausoleum.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle I/Mausoleum/world1_icon_mausoleum_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 325,
+      "height": 425,
+      "sha256": "0a5d5fe019331e4209d5548a9f219bcb15eb775a386af89ecc5d9153f78edec7",
+      "bytes": 73089,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-5/shop.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle I/Porkrind's Emporium/world1_icon_shop_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 325,
+      "height": 425,
+      "sha256": "bb55a46ac8bddf153adf3099aac2a571a3f043a9f872be164bee2410f5f63352",
+      "bytes": 75271,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    }
+  ]
+}

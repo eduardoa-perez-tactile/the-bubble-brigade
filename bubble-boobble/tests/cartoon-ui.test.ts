@@ -63,5 +63,10 @@ renderTest('cartoon title branding preserves menu actions', async ({ input, step
   render.stats({ width: 640, height: 960 });
   await ui.press('cartoon-main.choose-mode');
   await step(1);
+  expect(desktopState.get().screen).toBe('overworld-panel');
+  expect(desktopState.get().overworldPanel).toBe('menu');
+  render.stats({width:640,height:960});
+  const arcade=ui.interactables().find(button=>button.label==='ARCADE MODES')!;
+  await ui.press(arcade.id!);await step(1);
   expect(desktopState.get().screen).toBe('modes');
 }, { scene: 'scenes/cartoon.scene.json' });

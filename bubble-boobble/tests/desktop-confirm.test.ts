@@ -12,6 +12,9 @@ worldTest('desktop physical Enter opens title and activates the selected menu it
   input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('settings');
   input.key(38, false); await step(1);
   input.emit(DesktopIntent, { action: 'menu' }); await step(1);
+  input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('overworld-panel');
+  input.key(38, false); await step(1);
+  input.key(53, true); await step(1); input.key(53, false); await step(1);
   input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('modes');
   input.key(38, false); await step(1); input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('play');
   expect(desktopGameRequest.get().action).toBe('start');
@@ -30,6 +33,8 @@ worldTest('desktop short Enter taps confirm settings mode and start AI co-op', a
   input.emit(DesktopIntent, { action: 'select', index: 4 }); await step(1); await tap();
   expect(desktopState.get().playMode).toBe('ai');
   input.emit(DesktopIntent, { action: 'menu' }); await step(1); await tap();
+  expect(desktopState.get().screen).toBe('overworld-panel');
+  input.emit(DesktopIntent,{action:'select',index:1});await step(1);await tap();
   expect(desktopState.get().screen).toBe('modes'); await tap();
   expect(desktopState.get().screen).toBe('play'); expect(desktopGameRequest.get().mode).toBe('ai');
 }, { scene });
@@ -39,7 +44,9 @@ worldTest('desktop repeat Enter events activate once until release', async ({ in
   for (let i = 0; i < 5; i++) { input.key(38, true); await step(1); }
   expect(desktopState.get().screen).toBe('menu');
   input.key(38, false); await step(1); input.key(38, true); await step(1);
-  expect(desktopState.get().screen).toBe('modes');
+  expect(desktopState.get().screen).toBe('overworld-panel');
+  for(let i=0;i<3;i++){input.key(38,true);await step(1);}
+  expect(desktopState.get().screen).toBe('overworld-panel');
 }, { scene });
 worldTest('desktop short Space taps confirm menus while profile Space remains text', async ({ input, step }) => {
   await step(3);

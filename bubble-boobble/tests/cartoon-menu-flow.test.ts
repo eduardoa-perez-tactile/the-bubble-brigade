@@ -22,6 +22,11 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
     }
     await ui.press('cartoon-main.choose-mode');
     await step(1);
+    expect(desktopState.get().screen).toBe('overworld-panel');
+    expect(desktopState.get().overworldPanel).toBe('menu');
+    render.stats({width,height});
+    const arcade=ui.interactables().find(button=>button.label==='ARCADE MODES')!;
+    await ui.press(arcade.id!);await step(1);
     expect(desktopState.get().screen).toBe('modes');
     const stats=render.stats({width,height});
     expect(stats.drawCalls).toBeLessThanOrEqual(14);

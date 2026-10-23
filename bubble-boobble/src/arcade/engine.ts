@@ -1,3 +1,5 @@
+import { encounterById, availableEncounter } from '../overworld/content';
+import { adventureForProfile } from '../overworld/progression';
 import { cartoonFlowStartsRun } from '../cartoon/flow-timing';
 import { partyRanking } from './party-config';
 import { partyPads, reducePartyPadInput, readPartyAction, applyPartyAction } from './party-input';
@@ -23,7 +25,15 @@ export const ArcadeStep=defineSystem({
     let handledPauseRequest=false;
     if(request.sequence!==control.requestSequence){
       ctx.setField(ArcadeControl,'requestSequence',request.sequence);
-      if(request.action==='start'||request.action==='party'||request.action==='playtest'){
+      if(request.action==='adventure'){
+        const encounter=encounterById(request.encounterId??''),owner=desktopSaveState.get().profiles[request.profileIndex??-1];
+        const progress=owner?adventureForProfile(owner):null;
+        if(encounter&&progress&&availableEncounter(encounter.id,progress)&&progress.pending&&progress.pending.id===request.attemptId&&progress.pending.encounterId===encounter.id){
+          const level=createCartoonArena((campaign as Level[])[encounter.level-1]!);
+          if(encounter.trial)level.enemies=level.enemies.slice(0,3);
+          const game=createGame([level],1,1);if(encounter.trial)game.Players[0]!.Lives=1;current={active:true,mode:'adventure-encounter',game};session.set(current);
+        }
+      }else if(request.action==='start'||request.action==='party'||request.action==='playtest'){
         const custom=request.action==='playtest'&&request.customLevel;
         const levels=request.cartoon?(campaign as Level[]).map(createCartoonArena):(campaign as Level[]);
         const game=request.action==='party'?createPartyGame(campaign as Level[],1,request.partySlots,10,request.cartoon?'cartoon':'original'):createGame(custom?[custom]:levels,1,request.players);
