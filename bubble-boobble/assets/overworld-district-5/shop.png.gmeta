@@ -8,3 +8,6 @@ atlas = "overworld-district-5"
 compression = "astc6x6"
 max_size = 512
 trim = false
+
+[settings.platform.desktop]
+compression = "none"

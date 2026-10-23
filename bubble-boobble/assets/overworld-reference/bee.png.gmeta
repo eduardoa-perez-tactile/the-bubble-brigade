@@ -11,3 +11,6 @@ trim = false
 
 [settings.overrides.phone-low]
 max_size = 1024
+
+[settings.platform.desktop]
+compression = "none"

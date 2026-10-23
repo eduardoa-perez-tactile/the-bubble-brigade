@@ -47,7 +47,7 @@ function assertAvatar(ctx:WorldTestContext,width:number,height:number,safe:reado
   // The actual normalized frame has a shared [64,120] foot anchor, content top12.
   const head=ctx.input.worldToScreen([actor.x,actor.y+actor.height*(.5-12/128)]),feet=ctx.input.worldToScreen([actor.x,actor.y+actor.height*(.5-120/128)]);
   const left=ctx.input.worldToScreen([actor.x-actor.width*42/128,actor.y]),right=ctx.input.worldToScreen([actor.x+actor.width*42/128,actor.y]);
-  if(head[1]!<safe[1]||feet[1]!>height-safe[3]||left[0]!<safe[0]||right[0]!>width-safe[2])throw new Error('Avatar clips viewport: '+JSON.stringify({width,height,safe,head,feet,left,right}));
+  if(head[1]!<safe[1]!||feet[1]!>height-safe[3]!||left[0]!<safe[0]!||right[0]!>width-safe[2]!)throw new Error('Avatar clips viewport: '+JSON.stringify({width,height,safe,head,feet,left,right}));
   if(feet[1]!-head[1]!<40)throw new Error('Avatar smaller than40px: '+JSON.stringify({width,height,head,feet}));
 }
 
