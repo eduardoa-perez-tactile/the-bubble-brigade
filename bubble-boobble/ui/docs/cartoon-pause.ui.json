@@ -1,0 +1,137 @@
+{
+  "$schemaVersion": 1,
+  "guid": "78b93aae-4727-434d-899e-1e5982c3a7d6",
+  "name": "cartoon-pause",
+  "title": "Cartoon pause",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon pause",
+      "style": {
+        "w": 460,
+        "h": 470,
+        "pad": 24,
+        "bg": "#e7d7b0",
+        "radius": 0,
+        "dir": "column",
+        "align": "center",
+        "gap": 10,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "cp_title",
+        "cp_subtitle",
+        "cp_rule",
+        "cp_actions",
+        "cp_hint"
+      ]
+    },
+    "cp_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "{title}",
+      "style": {
+        "w": 410,
+        "h": 66,
+        "fontSize": 48,
+        "textAlign": "center",
+        "color": "#302b25"
+      }
+    },
+    "cp_subtitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "{subtitle}",
+      "style": {
+        "w": 400,
+        "h": 54,
+        "fontSize": 15,
+        "textAlign": "center",
+        "color": "#4c443a"
+      }
+    },
+    "cp_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 360,
+        "h": 2,
+        "bg": "#827451"
+      }
+    },
+    "cp_actions": {
+      "type": "repeat",
+      "doc": "cartoon-defeat-action",
+      "property": "actions",
+      "style": {
+        "gap": 7,
+        "dir": "column",
+        "align": "center"
+      }
+    },
+    "cp_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "ESC / B TO RETURN",
+      "style": {
+        "w": 360,
+        "h": 22,
+        "fontSize": 13,
+        "textAlign": "center",
+        "color": "#5b5141"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "dialog",
+    "dims": true,
+    "safe": false,
+    "enter": {
+      "set": {
+        "root": {
+          "opacity": 0,
+          "ty": 16
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "root": {
+          "opacity": 0,
+          "ty": 8
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 160
+  },
+  "properties": {
+    "title": {
+      "type": "text",
+      "default": "PAUSED"
+    },
+    "subtitle": {
+      "type": "text",
+      "default": "THE BUBBLE BRIGADE"
+    },
+    "actions": {
+      "type": "list",
+      "of": "cartoon-defeat-action",
+      "default": []
+    }
+  }
+}

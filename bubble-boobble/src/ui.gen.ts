@@ -29,13 +29,13 @@ declare module '@gameengine/ui' {
      *   - `profiles`: list of cartoon-profile-row
      *   - `scores`: list of cartoon-score-row
      *   - `keyRows`: list of cartoon-key-row
-     *   - `settings`: list of cartoon-action
+     *   - `optionRows`: list of cartoon-option-row
      * Events: `pick (<item>)`, `new-profile`, `menu`, `press (<item>) (<item>)`, `space`, `delete-char`, `create-profile`, `profiles`, `press (<item>)`
      * Code areas: `settingsAvatar`
      * Refs: `heading`, `new-profile`, `menu`, `menu`, `space`, `delete-char`, `create-profile`, `profiles`
      */
     'cartoon-account': {
-      props: { page: 'profiles' | 'scores' | 'new-profile' | 'settings'; title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; name: string | { loc: string } | LocText; status: string | { loc: string } | LocText; statsName: string | { loc: string } | LocText; stats: string | { loc: string } | LocText; backSelected: boolean; newSelected: boolean; spaceSelected: boolean; deleteSelected: boolean; createSelected: boolean; cancelSelected: boolean; showStatus: boolean; profiles: readonly { key: string; label?: string | { loc: string } | LocText; avatar?: string; selected?: boolean }[]; scores: readonly { key: string; name?: string | { loc: string } | LocText; score?: string | { loc: string } | LocText; round?: string | { loc: string } | LocText; record?: string | { loc: string } | LocText }[]; keyRows: readonly { key: string; keys?: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] }[]; settings: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] };
+      props: { page: 'profiles' | 'scores' | 'new-profile' | 'settings'; title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; name: string | { loc: string } | LocText; status: string | { loc: string } | LocText; statsName: string | { loc: string } | LocText; stats: string | { loc: string } | LocText; backSelected: boolean; newSelected: boolean; spaceSelected: boolean; deleteSelected: boolean; createSelected: boolean; cancelSelected: boolean; showStatus: boolean; profiles: readonly { key: string; label?: string | { loc: string } | LocText; avatar?: string; selected?: boolean }[]; scores: readonly { key: string; name?: string | { loc: string } | LocText; score?: string | { loc: string } | LocText; round?: string | { loc: string } | LocText; record?: string | { loc: string } | LocText }[]; keyRows: readonly { key: string; keys?: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] }[]; optionRows: readonly { key: string; label?: string | { loc: string } | LocText; value?: string | { loc: string } | LocText; selected?: boolean; adjustable?: boolean }[] };
       areas: 'settingsAvatar';
       refs: 'heading' | 'new-profile' | 'menu' | 'space' | 'delete-char' | 'create-profile' | 'profiles';
     };
@@ -51,6 +51,20 @@ declare module '@gameengine/ui' {
      */
     'cartoon-action': {
       props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon arrival: a view, screen (ui/docs/cartoon-arrival.ui.json)
+     *
+     * Properties:
+     *   - `mode`: text, default "BUBBLE MADNESS"
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-arrival': {
+      props: { mode: string | { loc: string } | LocText };
       areas: never;
       refs: never;
     };
@@ -81,6 +95,64 @@ declare module '@gameengine/ui' {
      */
     'cartoon-cell': {
       props: { image: string; label: string | { loc: string } | LocText };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon defeat: a view, screen (ui/docs/cartoon-defeat.ui.json)
+     *
+     * Properties:
+     *   - `progressLabel`: text, default "WAVE 01 / 10 REACHED"
+     *   - `score`: text, default "SCORE 0000000"
+     *   - `hint`: text, default "ENTER / PAD A TO CONFIRM"
+     *   - `context`: text, default "ONE MORE RUN. ONE MORE CHANCE."
+     *   - `detailLabel`: text, default "TEAM DETAILS"
+     *   - `portrait`: image, default "cartoon/frames/dragon/green/idle-0"
+     *   - `details`: yesno, default false
+     *   - `ready`: yesno, default false
+     *   - `retrySelected`: yesno, default false
+     *   - `leaveSelected`: yesno, default false
+     *   - `detailsSelected`: yesno, default false
+     *   - `progress`: number, default 0
+     *   - `ranking`: list of cartoon-defeat-row
+     * Events: `restart`, `leave`, `result-details`
+     * Code areas: none
+     * Refs: `restart`, `leave`, `result-details`
+     * Samples (`view render doc:cartoon-defeat --sample …`): `settled`, `gated`, `details`
+     */
+    'cartoon-defeat': {
+      props: { progressLabel: string | { loc: string } | LocText; score: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; context: string | { loc: string } | LocText; detailLabel: string | { loc: string } | LocText; portrait: string; details: boolean; ready: boolean; retrySelected: boolean; leaveSelected: boolean; detailsSelected: boolean; progress: number; ranking: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; kills?: string | { loc: string } | LocText }[] };
+      areas: never;
+      refs: 'restart' | 'leave' | 'result-details';
+    };
+    /**
+     * Cartoon defeat action: a widget, button (ui/docs/cartoon-defeat-action.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "RETRY RUN"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-defeat-action': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon defeat row: a widget (ui/docs/cartoon-defeat-row.ui.json)
+     *
+     * Properties:
+     *   - `rank`: text, default ""
+     *   - `name`: text, default ""
+     *   - `kills`: text, default ""
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-defeat-row': {
+      props: { rank: string | { loc: string } | LocText; name: string | { loc: string } | LocText; kills: string | { loc: string } | LocText };
       areas: never;
       refs: never;
     };
@@ -214,15 +286,19 @@ declare module '@gameengine/ui' {
      *   - `rosterTopBadges`: list of cartoon-roster-badge
      *   - `rosterBottomBadges`: list of cartoon-roster-badge
      *   - `rosterWideBadges`: list of cartoon-roster-badge
+     *   - `cueStage`: enum off | ready-ink | ready-hold | ready-out | action-smear | action-hold | action-out, default "off"
+     *   - `cueFade`: enum zero | eighth | quarter | three-eighths | half | five-eighths | three-quarters | seven-eighths | full, default "full"
+     *   - `showReadyArt`: yesno, default false
+     *   - `showActionArt`: yesno, default false
      * Events: none
      * Code areas: none
-     * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-architecture`, `footer-paper`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`
-     * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`
+     * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-architecture`, `footer-paper`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`, `cue-art`, `cue-action`
+     * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`, `action`, `smear`
      */
     'cartoon-hud': {
-      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[] };
+      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; cueStage: 'off' | 'ready-ink' | 'ready-hold' | 'ready-out' | 'action-smear' | 'action-hold' | 'action-out'; cueFade: 'zero' | 'eighth' | 'quarter' | 'three-eighths' | 'half' | 'five-eighths' | 'three-quarters' | 'seven-eighths' | 'full'; showReadyArt: boolean; showActionArt: boolean };
       areas: never;
-      refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-architecture' | 'footer-paper' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue';
+      refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-architecture' | 'footer-paper' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue' | 'cue-art' | 'cue-action';
     };
     /**
      * Cartoon Key Button: a widget, button (ui/docs/cartoon-key-button.ui.json)
@@ -265,15 +341,15 @@ declare module '@gameengine/ui' {
      *   - `showStatus`: yesno, default false
      *   - `status`: text, default ""
      *   - `thirdLabel`: text, default "QUIT"
-     * Events: `choose-mode`, `settings`, `quit`
+     * Events: `choose-mode`, `settings`, `quit`, `menu`
      * Code areas: none
-     * Refs: `title-card`, `choose-mode`, `settings`, `quit`
+     * Refs: `title-card`, `choose-mode`, `settings`, `quit`, `menu`
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
       props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText };
       areas: never;
-      refs: 'title-card' | 'choose-mode' | 'settings' | 'quit';
+      refs: 'title-card' | 'choose-mode' | 'settings' | 'quit' | 'menu';
     };
     /**
      * Cartoon Mode Card: a widget, button (ui/docs/cartoon-mode-card.ui.json)
@@ -300,14 +376,45 @@ declare module '@gameengine/ui' {
      *   - `classicSelected`: yesno, default false
      *   - `madnessSelected`: yesno, default false
      *   - `backSelected`: yesno, default false
-     * Events: `classic-mode`, `madness-mode`, `mode-back`
+     * Events: `mode-back`, `classic-mode`, `madness-mode`
      * Code areas: none
-     * Refs: `classic-mode`, `madness-mode`, `mode-back`
+     * Refs: `mode-back`, `classic-mode`, `madness-mode`
      */
     'cartoon-modes': {
       props: { classicSelected: boolean; madnessSelected: boolean; backSelected: boolean };
       areas: never;
-      refs: 'classic-mode' | 'madness-mode' | 'mode-back';
+      refs: 'mode-back' | 'classic-mode' | 'madness-mode';
+    };
+    /**
+     * Cartoon option row: a widget, button (ui/docs/cartoon-option-row.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `value`: text, default ""
+     *   - `selected`: yesno, default false
+     *   - `adjustable`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-option-row': {
+      props: { label: string | { loc: string } | LocText; value: string | { loc: string } | LocText; selected: boolean; adjustable: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon outcome: a view, screen (ui/docs/cartoon-outcome.ui.json)
+     *
+     * Properties:
+     *   - `art`: image, default "cartoon/ui/cues/brigade-down"
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-outcome': {
+      props: { art: string };
+      areas: never;
+      refs: never;
     };
     /**
      * Cartoon Party: a view, screen (ui/docs/cartoon-party.ui.json)
@@ -346,6 +453,22 @@ declare module '@gameengine/ui' {
       props: { status: string | { loc: string } | LocText; heading: string | { loc: string } | LocText; mode0: string | { loc: string } | LocText; sel0: boolean; mode1: string | { loc: string } | LocText; sel1: boolean; mode2: string | { loc: string } | LocText; sel2: boolean; mode3: string | { loc: string } | LocText; sel3: boolean; mode4: string | { loc: string } | LocText; sel4: boolean; mode5: string | { loc: string } | LocText; sel5: boolean; startSelected: boolean; backSelected: boolean; startLabel: string | { loc: string } | LocText; mode6: string | { loc: string } | LocText; sel6: boolean; mode7: string | { loc: string } | LocText; sel7: boolean; mode8: string | { loc: string } | LocText; sel8: boolean; mode9: string | { loc: string } | LocText; sel9: boolean };
       areas: never;
       refs: 'dragon-0' | 'dragon-1' | 'dragon-2' | 'dragon-3' | 'dragon-4' | 'dragon-5' | 'start-party' | 'menu' | 'dragon-6' | 'dragon-7' | 'dragon-8' | 'dragon-9';
+    };
+    /**
+     * Cartoon pause: a view, dialog (ui/docs/cartoon-pause.ui.json)
+     *
+     * Properties:
+     *   - `title`: text, default "PAUSED"
+     *   - `subtitle`: text, default "THE BUBBLE BRIGADE"
+     *   - `actions`: list of cartoon-defeat-action
+     * Events: `press (<item>)`
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-pause': {
+      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; actions: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] };
+      areas: never;
+      refs: never;
     };
     /**
      * Cartoon Podium: a widget (ui/docs/cartoon-podium.ui.json)
@@ -554,6 +677,19 @@ declare module '@gameengine/ui' {
     'cartoon-small-action': {
       props: { label: string | { loc: string } | LocText; selected: boolean };
       areas: never;
+      refs: never;
+    };
+    /**
+     * Cartoon transition: a view, screen (ui/docs/cartoon-transition.ui.json)
+     *
+     * Properties: none
+     * Events: none
+     * Code areas: `aperture`
+     * Refs: none
+     */
+    'cartoon-transition': {
+      props: {};
+      areas: 'aperture';
       refs: never;
     };
     /**

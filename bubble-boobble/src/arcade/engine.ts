@@ -1,3 +1,4 @@
+import { cartoonFlowStartsRun } from '../cartoon/flow-timing';
 import { partyRanking } from './party-config';
 import { partyPads, reducePartyPadInput, readPartyAction, applyPartyAction } from './party-input';
 import { createPartyGame } from './party';
@@ -48,6 +49,10 @@ export const ArcadeStep=defineSystem({
     }
     if(control.skip){ctx.setField(ArcadeControl,'skip',false);return;}
     if(!current.active||!current.game)return;
+    // A new arena remains frozen under the cover and Classic's Ready lead-in.
+    // The original preparation countdown starts only once the scene is fully introduced.
+    const arrival=desktopState.get();
+    if(arrival.cartoon&&arrival.transitionAction&&cartoonFlowStartsRun(arrival.transitionAction))return;
     const inputs:Input[]=reducePartyPadInput(partyPads.get().pads,[]).inputs.slice(0,current.game.Players.length);
     let pause=false;
     for(const c of q.chunks())for(let i=0;i<c.length;i++){
@@ -68,10 +73,18 @@ export const ArcadeStep=defineSystem({
     }
     if(!pause && ctx.events.count(ArcadeInput)===0 && current.game.Sounds.length===0 && (current.game.Paused||current.game.State===3||current.game.State===4))return;
     const game=copyGame(current.game);
-    if(pause&&!handledPauseRequest&&desktopState.get().screen==='play'){game.Paused=!game.Paused;showDesktopPause(game.Paused);}
+    if(pause&&!handledPauseRequest&&desktopState.get().screen==='play'&&!desktopState.get().transitionAction){game.Paused=!game.Paused;showDesktopPause(game.Paused);}
     for(const e of ctx.events.read(ArcadeInput)){
       if(inputs[e.player])inputs[e.player]={Move:e.move,Jump:e.jump,Fire:e.fire};
-      game.Paused=e.paused;
+      if(!desktopState.get().cartoon||!desktopState.get().transitionAction)game.Paused=e.paused;
+    }
+    // A menu/Retry press must be released before it can become a gameplay action.
+    // This document latch is driven only by recorded inputs; preparation still allows fresh practice fire.
+    const uiState=desktopState.get();
+    if(uiState.cartoon&&(uiState.pauseClosing||uiState.screen==='pause'||uiState.screen==='settings'&&uiState.settingsReturn==='pause'||uiState.partyEditing))game.Paused=true;
+    if(uiState.cartoon&&uiState.gameplayInputArmed===false){
+      if(inputs.every(i=>!i.Fire&&!i.Jump))desktopState.set({...uiState,gameplayInputArmed:true});
+      else for(const input of inputs){input.Fire=false;input.Jump=false;}
     }
     const screen=desktopState.get().screen;
     if((screen==='play'||screen==='pause')&&game.Paused!==(screen==='pause'))showDesktopPause(game.Paused);

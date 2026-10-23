@@ -1,0 +1,51 @@
+{
+  "$schemaVersion": 1,
+  "guid": "60068bef-de47-41e6-9e37-4b3fa550b350",
+  "name": "cartoon-outcome",
+  "title": "Cartoon outcome",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon outcome",
+      "style": {
+        "w": "100%",
+        "h": 720,
+        "pad": 0
+      },
+      "children": [
+        "co_word"
+      ]
+    },
+    "co_word": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.45
+        ],
+        "w": "78%",
+        "h": 240
+      },
+      "property": "art"
+    }
+  },
+  "view": {
+    "behaviour": "screen",
+    "safe": false
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "art": {
+      "type": "image",
+      "default": "cartoon/ui/cues/brigade-down"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "path": "assets/cartoon/ui/cues/bravo.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "5b2d8013b75c76c53c33cd188f45271e9885f0d30a4ced9fe15e2ed70094ef15",
+    "source": "built-in imagegen, original lettering; local Cuphead frames visual reference only",
+    "prompt": "docs/ui-ux-cuphead-proposal/bravo-prompt.txt"
+  },
+  {
+    "path": "assets/cartoon/ui/cues/ready.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "b607072b2bb7202f8ba349bd93d393fe47873e4b0e0bdbd204f30eea7cae5432",
+    "source": "built-in imagegen, original lettering; local Cuphead frames visual reference only",
+    "prompt": "docs/ui-ux-cuphead-proposal/ready-prompt.txt"
+  },
+  {
+    "path": "assets/cartoon/ui/cues/brigade-down.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "a55e3dd4f6ae73efc3314899d48fa604ca3a238ac8d6770cd5f03c04eac24657",
+    "source": "built-in imagegen, original lettering; local Cuphead frames visual reference only",
+    "prompt": "docs/ui-ux-cuphead-proposal/brigade-down-prompt.txt"
+  },
+  {
+    "path": "assets/cartoon/ui/cues/bubble-up.png",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "c219aa16e45825f06cd52c670edc11f22fb6259e5456285e25b90bbf44a9f012",
+    "source": "built-in imagegen, original lettering; local Cuphead frames visual reference only",
+    "prompt": "docs/ui-ux-cuphead-proposal/bubble-up-prompt.txt"
+  }
+]

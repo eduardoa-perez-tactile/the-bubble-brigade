@@ -1,0 +1,81 @@
+{
+  "$schemaVersion": 1,
+  "guid": "27086fd5-4f74-4e7d-8df7-f7c3b82e4f9e",
+  "name": "cartoon-defeat-row",
+  "title": "Cartoon defeat row",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon defeat row",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "radius": 0,
+        "w": 350,
+        "h": 23,
+        "gap": 8
+      },
+      "children": [
+        "dr_rank",
+        "dr_name",
+        "dr_kills"
+      ]
+    },
+    "dr_rank": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "property": "rank",
+      "style": {
+        "w": 32,
+        "h": 23,
+        "fontSize": 16,
+        "fitMin": 12,
+        "color": "#282725"
+      }
+    },
+    "dr_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "property": "name",
+      "style": {
+        "w": 236,
+        "h": 23,
+        "fontSize": 16,
+        "fitMin": 12,
+        "color": "#282725"
+      }
+    },
+    "dr_kills": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "property": "kills",
+      "style": {
+        "w": 50,
+        "h": 23,
+        "fontSize": 16,
+        "fitMin": 12,
+        "color": "#282725"
+      }
+    }
+  },
+  "properties": {
+    "rank": {
+      "type": "text",
+      "default": ""
+    },
+    "name": {
+      "type": "text",
+      "default": ""
+    },
+    "kills": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

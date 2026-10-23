@@ -1,0 +1,4 @@
+.cartoon-arrival-screen { background-color:#000000; }
+.cartoon-arrival { width:680px; height:480px; max-width:94%; font-family:"cartoon/fonts/BreeSerif-Regular"; border-width:3px; border-color:#b8b79c; border-radius:14px; }
+.cartoon-arrival .ud-cartoon-arrival__root { border-width:1px; border-color:#73765e; }
+.cartoon-arrival .ud-cartoon-arrival__ca_title { font-family:"cartoon/fonts/Rye-Regular"; }

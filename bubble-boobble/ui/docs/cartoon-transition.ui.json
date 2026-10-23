@@ -1,0 +1,34 @@
+{
+  "$schemaVersion": 1,
+  "guid": "40c571e8-8b83-4dbe-809b-913c3c7b1d32",
+  "name": "cartoon-transition",
+  "title": "Cartoon transition",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon transition",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0
+      },
+      "children": [
+        "ct_aperture"
+      ]
+    },
+    "ct_aperture": {
+      "type": "codeArea",
+      "name": "Code area",
+      "key": "aperture",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen"
+  }
+}

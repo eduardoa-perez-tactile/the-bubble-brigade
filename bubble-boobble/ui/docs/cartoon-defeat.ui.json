@@ -1,0 +1,572 @@
+{
+  "$schemaVersion": 1,
+  "guid": "d1af2fa8-e9b0-4e30-b6bb-b9ff1bf5aa5b",
+  "name": "cartoon-defeat",
+  "title": "Cartoon defeat",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon defeat",
+      "style": {
+        "w": 440,
+        "h": 650,
+        "pad": 0,
+        "bg": "#dfd5bf",
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      },
+      "children": [
+        "df_border",
+        "df_heading",
+        "df_story",
+        "df_details",
+        "df_score",
+        "df_actions",
+        "df_hint"
+      ]
+    },
+    "df_border": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_inside"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          14
+        ],
+        "w": 412,
+        "h": 622,
+        "bg": "#40544d"
+      }
+    },
+    "df_inside": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          3,
+          3
+        ],
+        "w": 406,
+        "h": 616,
+        "bg": "#e6dcc5",
+        "fit": "fill"
+      }
+    },
+    "df_heading": {
+      "type": "label",
+      "name": "Label",
+      "text": "BRIGADE DOWN",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          29
+        ],
+        "w": 370,
+        "h": 36,
+        "fontSize": 28,
+        "fitMin": 20,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "df_story": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_circle",
+        "df_context",
+        "df_progress_label",
+        "df_track",
+        "df_start",
+        "df_finish"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          76
+        ],
+        "w": 360,
+        "h": 340
+      }
+    },
+    "df_circle": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_portrait_inside"
+      ],
+      "style": {
+        "pad": 5,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 160,
+        "h": 160,
+        "radius": 80,
+        "bg": "#272725"
+      }
+    },
+    "df_portrait_inside": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_portrait"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 150,
+        "h": 150,
+        "radius": 75,
+        "bg": "#9baaa3",
+        "clip": true
+      }
+    },
+    "df_portrait": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": 150,
+        "h": 150
+      },
+      "property": "portrait"
+    },
+    "df_context": {
+      "type": "label",
+      "name": "Label",
+      "text": "{context}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          177
+        ],
+        "w": 350,
+        "h": 50,
+        "fontSize": 18,
+        "fitMin": 14,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "df_progress_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{progressLabel}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          242
+        ],
+        "w": 350,
+        "h": 24,
+        "fontSize": 17,
+        "fitMin": 12,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "df_track": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_marker"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          20,
+          290
+        ],
+        "w": 320,
+        "h": 3,
+        "bg": "#282725"
+      }
+    },
+    "df_start": {
+      "type": "label",
+      "name": "Label",
+      "text": "START",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          20,
+          310
+        ],
+        "w": 120,
+        "h": 22,
+        "fontSize": 12,
+        "color": "#282725"
+      }
+    },
+    "df_finish": {
+      "type": "label",
+      "name": "Label",
+      "text": "FINISH",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          -20,
+          310
+        ],
+        "w": 120,
+        "h": 22,
+        "fontSize": 12,
+        "textAlign": "right",
+        "color": "#282725"
+      }
+    },
+    "df_details": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_details_title",
+        "df_rows"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          88
+        ],
+        "w": 350,
+        "h": 310,
+        "dir": "column",
+        "gap": 5
+      },
+      "show": "details"
+    },
+    "df_details_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "TEAM DETAILS / KILLS",
+      "style": {
+        "w": 350,
+        "h": 26,
+        "fontSize": 19,
+        "fitMin": 14,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "df_rows": {
+      "type": "repeat",
+      "doc": "cartoon-defeat-row",
+      "property": "ranking"
+    },
+    "df_score": {
+      "type": "label",
+      "name": "Label",
+      "text": "{score}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          419
+        ],
+        "w": 350,
+        "h": 24,
+        "fontSize": 18,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "df_actions": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "df_restart",
+        "df_leave",
+        "df_details_action"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          452
+        ],
+        "w": 350,
+        "h": 138,
+        "dir": "column"
+      }
+    },
+    "df_restart": {
+      "type": "use",
+      "doc": "cartoon-defeat-action",
+      "key": "restart",
+      "props": {
+        "label": "RETRY RUN",
+        "selected": {
+          "property": "retrySelected"
+        }
+      }
+    },
+    "df_leave": {
+      "type": "use",
+      "doc": "cartoon-defeat-action",
+      "key": "leave",
+      "props": {
+        "label": "MAIN MENU",
+        "selected": {
+          "property": "leaveSelected"
+        }
+      }
+    },
+    "df_details_action": {
+      "type": "use",
+      "doc": "cartoon-defeat-action",
+      "key": "result-details",
+      "props": {
+        "label": {
+          "property": "detailLabel"
+        },
+        "selected": {
+          "property": "detailsSelected"
+        }
+      }
+    },
+    "df_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "{hint}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          601
+        ],
+        "w": 350,
+        "h": 22,
+        "fontSize": 11,
+        "fitMin": 8,
+        "textAlign": "center",
+        "color": "#4b4940"
+      }
+    },
+    "df_marker": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          -6,
+          -5
+        ],
+        "w": 12,
+        "h": 12,
+        "radius": 6,
+        "bg": "#9e302b",
+        "attach": true
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen",
+    "safe": false
+  },
+  "properties": {
+    "progressLabel": {
+      "type": "text",
+      "default": "WAVE 01 / 10 REACHED"
+    },
+    "score": {
+      "type": "text",
+      "default": "SCORE 0000000"
+    },
+    "hint": {
+      "type": "text",
+      "default": "ENTER / PAD A TO CONFIRM"
+    },
+    "context": {
+      "type": "text",
+      "default": "ONE MORE RUN. ONE MORE CHANCE."
+    },
+    "detailLabel": {
+      "type": "text",
+      "default": "TEAM DETAILS"
+    },
+    "portrait": {
+      "type": "image",
+      "default": "cartoon/frames/dragon/green/idle-0"
+    },
+    "details": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "df_story": {
+              "hide": true
+            }
+          }
+        }
+      }
+    },
+    "ready": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "no": {
+          "set": {
+            "df_actions": {
+              "opacity": 0.4
+            }
+          }
+        }
+      }
+    },
+    "retrySelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "leaveSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "detailsSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "progress": {
+      "type": "number",
+      "default": 0,
+      "format": "value",
+      "drivers": [
+        {
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "empty": {
+            "set": {
+              "df_marker": {
+                "tx": 0
+              }
+            }
+          },
+          "full": {
+            "set": {
+              "df_marker": {
+                "tx": 320
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ranking": {
+      "type": "list",
+      "of": "cartoon-defeat-row",
+      "default": []
+    }
+  },
+  "samples": {
+    "settled": {
+      "ready": true,
+      "progress": 0.4,
+      "progressLabel": "WAVE 05 / 10 REACHED",
+      "retrySelected": true
+    },
+    "gated": {
+      "ready": false
+    },
+    "details": {
+      "ready": true,
+      "details": true,
+      "detailsSelected": true,
+      "detailLabel": "BACK TO CARD"
+    }
+  },
+  "transition": {
+    "type": "instant"
+  }
+}

@@ -1,6 +1,7 @@
 import { defineView, Screen, Widget } from '@gameengine/ui';
 import type { CartoonHudModel, RosterSlot } from './hud-model';
 import { partyColors, partyNames } from '../arcade/party-config';
+import { cueFade } from './intro-cue';
 const roster: RosterSlot[] = partyColors.map((skin, slot) => ({key:`dragon-${slot}`,number:String(slot+1),color:skin,condition:'ready',name:partyNames[slot]!,status:slot===0?'PLAYER 1':'AI TEAMMATE',portrait:`cartoon/reconstruction/ui/portraits/${skin}`,active:true,down:false}));
 
 const playing: CartoonHudModel = {
@@ -17,8 +18,12 @@ export const CartoonHudView = defineView<CartoonHudModel>({
     playing,
     rescue: { ...playing, rosterAll: roster.map((p,index)=>index===7?{...p,status:'RESCUE ME!',down:true,condition:'rescue' as const}:p), rosterBottom: roster.slice(5).map((p,index)=>index===2?{...p,status:'RESCUE ME!',down:true,condition:'rescue' as const}:p) },
     ready: { ...playing, score: '0000000', round: 'WAVE 1 / 10', high: '10 / 10',
-      showBanner: true, banner: 'WAVE 1 IN 3S', hint: 'GET INTO POSITION',
-      showStartCue: true, startCue: '3', startHint: 'MOVE AT GO!' },
+      showBanner: false, banner: '', hint: '', showStartCue: true,
+      cueArt: 'cartoon/ui/cues/ready', cueStage: 'ready-hold', cueOpacity: 1 },
+    action: { ...playing, showStartCue: true, cueArt: 'cartoon/ui/cues/bubble-up', cueStage: 'action-hold', cueOpacity: 1 },
+    smear: { ...playing, showStartCue: true, cueArt: 'cartoon/ui/cues/bubble-up', cueStage: 'action-smear', cueOpacity: 1 },
+    clearing: { ...playing, showStartCue: true, cueArt: 'cartoon/ui/cues/bubble-up', cueStage: 'action-out', cueOpacity: 0.4 },
+    reduced: { ...playing, showStartCue: true, cueArt: 'cartoon/ui/cues/bubble-up', cueStage: 'action-hold', cueOpacity: 0.4 },
     clear: { ...playing, showBanner: true, banner: 'GREEN - LAST KILL!',
       hint: 'WAVE 3 CLEAR!', detail: 'NEXT WAVE IN 3S' },
     boss: { ...playing, round: 'WAVE 10 / 10', highTitle: 'BOSS HP', high: '12 / 20',
@@ -46,6 +51,9 @@ export const CartoonHudView = defineView<CartoonHudModel>({
       shade: () => model().shade, party: () => !!model().party,
       startCue: () => model().startCue ?? '', startHint: () => model().startHint ?? '',
       showStartCue: () => !!model().showStartCue,
+      showReadyArt: () => !!model().showStartCue && (model().showReadyArt ?? model().cueArt === 'cartoon/ui/cues/ready'),
+      showActionArt: () => !!model().showStartCue && (model().showActionArt ?? model().cueArt === 'cartoon/ui/cues/bubble-up'),
+      cueStage: () => model().cueStage ?? 'off', cueFade: () => cueFade(model().cueOpacity ?? 0),
     }} />
   </Screen>,
 });

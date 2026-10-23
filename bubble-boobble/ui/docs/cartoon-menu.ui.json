@@ -10,8 +10,8 @@
       "type": "element",
       "name": "Cartoon menu",
       "style": {
-        "w": 768,
-        "h": 720,
+        "w": "100%",
+        "h": "100%",
         "pad": 0,
         "position": "anchored",
         "anchor": [
@@ -28,18 +28,9 @@
         "fit": "fill"
       },
       "children": [
-        "cm_title_card",
-        "cm_illustrated_logo",
-        "cm_start",
-        "cm_settings",
-        "cm_quit",
-        "cm_tagline",
-        "cm_prompt",
         "cm_hint",
         "cm_status",
-        "cm_billing",
-        "cm_mascot_left",
-        "cm_mascot_right"
+        "cm_composition"
       ]
     },
     "cm_title_card": {
@@ -145,15 +136,15 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          218,
-          328
+          0,
+          342
         ],
         "w": 332,
-        "h": 44
+        "h": 96
       },
       "props": {
         "label": "START GAME",
@@ -169,15 +160,15 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          218,
-          388
+          0,
+          450
         ],
         "w": 332,
-        "h": 44
+        "h": 96
       },
       "props": {
         "label": "SETTINGS",
@@ -193,15 +184,15 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          218,
-          448
+          0,
+          558
         ],
         "w": 332,
-        "h": 44
+        "h": 96
       },
       "props": {
         "label": {
@@ -224,11 +215,11 @@
         ],
         "offset": [
           0,
-          444
+          416
         ],
-        "w": 680,
+        "w": 560,
         "h": 26,
-        "fontSize": 16,
+        "fontSize": 15,
         "fitMin": 12,
         "textAlign": "center",
         "weight": 800,
@@ -240,7 +231,8 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "cm_prompt_text"
+        "cm_prompt_text",
+        "cm_title_start"
       ],
       "style": {
         "pad": 0,
@@ -251,10 +243,10 @@
         ],
         "offset": [
           0,
-          490
+          486
         ],
-        "w": 500,
-        "h": 44
+        "w": 360,
+        "h": 96
       },
       "show": "titleMode"
     },
@@ -263,13 +255,14 @@
       "name": "Label",
       "text": "PRESS ENTER TO START",
       "style": {
-        "w": 500,
+        "w": 360,
         "h": 32,
-        "fontSize": 24,
+        "fontSize": 25,
         "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#30271e"
+        "color": "#30271e",
+        "hide": true
       },
       "show": "promptVisible"
     },
@@ -281,15 +274,15 @@
         "position": "anchored",
         "anchor": [
           0.5,
-          0
+          1
         ],
         "offset": [
           0,
-          678
+          -24
         ],
         "w": 680,
         "h": 20,
-        "fontSize": 12,
+        "fontSize": 13,
         "fitMin": 9,
         "textAlign": "center",
         "color": "#30271e"
@@ -303,11 +296,11 @@
         "position": "anchored",
         "anchor": [
           0.5,
-          0
+          1
         ],
         "offset": [
           0,
-          702
+          -4
         ],
         "w": 680,
         "h": 16,
@@ -347,15 +340,15 @@
         "size": 32,
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          60,
-          508
+          -256,
+          438
         ],
-        "w": 140,
-        "h": 140
+        "w": 168,
+        "h": 168
       }
     },
     "cm_mascot_right": {
@@ -366,15 +359,15 @@
         "size": 32,
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          568,
-          508
+          256,
+          438
         ],
-        "w": 140,
-        "h": 140
+        "w": 168,
+        "h": 168
       }
     },
     "cm_illustrated_logo": {
@@ -394,6 +387,45 @@
         ],
         "w": 460,
         "h": 307
+      }
+    },
+    "cm_composition": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cm_title_card",
+        "cm_illustrated_logo",
+        "cm_start",
+        "cm_settings",
+        "cm_quit",
+        "cm_tagline",
+        "cm_prompt",
+        "cm_billing",
+        "cm_mascot_left",
+        "cm_mascot_right"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "w": 768,
+        "h": 720
+      }
+    },
+    "cm_title_start": {
+      "type": "use",
+      "doc": "cartoon-button",
+      "key": "menu",
+      "style": {
+        "w": 360,
+        "h": 96
+      },
+      "props": {
+        "label": "PRESS ENTER OR TAP",
+        "selected": false
       }
     }
   },
@@ -436,16 +468,19 @@
               "h": 400,
               "offset": [
                 0,
-                16
+                0
               ]
             },
             "cm_billing": {
               "hide": true
             },
             "cm_mascot_left": {
-              "hide": true
+              "hide": false
             },
             "cm_mascot_right": {
+              "hide": false
+            },
+            "cm_hint": {
               "hide": true
             }
           }

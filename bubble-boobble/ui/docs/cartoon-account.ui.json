@@ -23,7 +23,6 @@
           0,
           0
         ],
-        "image": "cartoon/ui/theatre-paper",
         "fit": "fill"
       },
       "children": [
@@ -528,7 +527,10 @@
         "da_setting_list",
         "da_settings_avatar",
         "da_stats_name",
-        "da_stats"
+        "da_stats",
+        "da_options_title",
+        "da_options_subtitle",
+        "da_options_rule"
       ],
       "style": {
         "pad": 0,
@@ -538,19 +540,20 @@
           0
         ],
         "offset": [
-          0,
-          0
+          94,
+          40
         ],
-        "w": 768,
-        "h": 720,
-        "hide": true
+        "w": 580,
+        "h": 640,
+        "hide": true,
+        "bg": "#e6dcc5"
       }
     },
     "da_setting_list": {
       "type": "element",
       "name": "Element",
       "children": [
-        "da_setting_rows"
+        "da_option_rows"
       ],
       "style": {
         "pad": 0,
@@ -560,34 +563,29 @@
           0
         ],
         "offset": [
-          164,
-          154
+          45,
+          134
         ],
         "dir": "column",
-        "gap": 12
+        "gap": 6
       }
-    },
-    "da_setting_rows": {
-      "type": "repeat",
-      "doc": "cartoon-action",
-      "property": "settings"
     },
     "da_settings_avatar": {
       "type": "codeArea",
       "name": "Code area",
       "key": "settingsAvatar",
       "style": {
-        "w": 60,
+        "w": 44,
         "position": "anchored",
         "anchor": [
           0,
           0
         ],
         "offset": [
-          336,
-          514
+          36,
+          546
         ],
-        "h": 60
+        "h": 44
       }
     },
     "da_stats_name": {
@@ -601,12 +599,15 @@
           0
         ],
         "offset": [
-          0,
-          592
+          28,
+          555
         ],
-        "fontSize": 12,
+        "fontSize": 13,
         "color": "#30271e",
-        "outline": 0
+        "outline": 0,
+        "w": 390,
+        "h": 22,
+        "fitMin": 10
       },
       "property": "statsName"
     },
@@ -621,12 +622,15 @@
           0
         ],
         "offset": [
-          0,
-          622
+          28,
+          585
         ],
-        "fontSize": 10,
+        "fontSize": 11,
         "color": "#30271e",
-        "outline": 0
+        "outline": 0,
+        "w": 470,
+        "h": 20,
+        "fitMin": 9
       },
       "property": "stats"
     },
@@ -670,6 +674,75 @@
         "outline": 0
       },
       "property": "status"
+    },
+    "da_option_rows": {
+      "type": "repeat",
+      "doc": "cartoon-option-row",
+      "property": "optionRows"
+    },
+    "da_options_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "OPTIONS",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          28
+        ],
+        "w": 490,
+        "h": 48,
+        "fontSize": 34,
+        "fitMin": 24,
+        "textAlign": "center",
+        "color": "#2d2a24"
+      }
+    },
+    "da_options_subtitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "SELECT TO CHANGE / LEFT AND RIGHT TO ADJUST",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          85
+        ],
+        "w": 490,
+        "h": 22,
+        "fontSize": 12,
+        "fitMin": 9,
+        "textAlign": "center",
+        "color": "#514a3d"
+      }
+    },
+    "da_options_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          36,
+          118
+        ],
+        "w": 508,
+        "h": 2,
+        "bg": "#6b7358"
+      }
     }
   },
   "view": {
@@ -693,6 +766,9 @@
           "set": {
             "da_profiles": {
               "hide": false
+            },
+            "root": {
+              "image": "cartoon/ui/theatre-paper"
             }
           }
         },
@@ -700,6 +776,9 @@
           "set": {
             "da_scores": {
               "hide": false
+            },
+            "root": {
+              "image": "cartoon/ui/theatre-paper"
             }
           }
         },
@@ -707,13 +786,23 @@
           "set": {
             "da_new_profile": {
               "hide": false
+            },
+            "root": {
+              "image": "cartoon/ui/theatre-paper"
             }
           }
         },
         "settings": {
           "set": {
             "da_settings": {
-              "hide": false
+              "hide": false,
+              "bg": "#e6dcc5"
+            },
+            "root": {
+              "bg": "#00000000"
+            },
+            "da_heading": {
+              "hide": true
             }
           }
         }
@@ -786,9 +875,9 @@
       "of": "cartoon-key-row",
       "default": []
     },
-    "settings": {
+    "optionRows": {
       "type": "list",
-      "of": "cartoon-action",
+      "of": "cartoon-option-row",
       "default": []
     }
   }

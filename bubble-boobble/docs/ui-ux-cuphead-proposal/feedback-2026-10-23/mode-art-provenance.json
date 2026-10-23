@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-23",
+  "assets": [
+    {
+      "asset": "assets/cartoon/ui/modes/classic-campaign.png",
+      "source": "exec-8e24c948-9c9b-43b6-9a0e-683f72e57efb.png",
+      "brief": "Original vintage ink/gouache castle journey and ascending platform route. No dragon portrait or lettering."
+    },
+    {
+      "asset": "assets/cartoon/ui/modes/wave-survival.png",
+      "source": "exec-a2b66588-1c22-4265-ad99-0b86c41099a5.png",
+      "brief": "Original vintage ink/gouache crowded castle arena, incoming enemy waves, bubble rescues and boss silhouette. No dragon portrait or lettering."
+    }
+  ],
+  "import": {
+    "max_size": 512,
+    "atlas": "cartoon-mode-cards",
+    "compression": "none",
+    "trim": false
+  },
+  "note": "Generated source bytes copied intact into project. No extracted Cuphead artwork copied."
+}

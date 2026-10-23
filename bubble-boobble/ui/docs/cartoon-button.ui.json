@@ -20,7 +20,8 @@
         "justify": "center"
       },
       "children": [
-        "cb_label"
+        "cb_label",
+        "cb_pointer"
       ]
     },
     "cb_label": {
@@ -28,20 +29,55 @@
       "name": "Label",
       "text": "{label}",
       "style": {
-        "fontSize": 24,
+        "fontSize": 32,
         "weight": 800,
         "color": "#30271e",
         "w": 300,
-        "h": 26,
+        "h": 46,
         "textAlign": "center",
         "fitMin": 12
+      }
+    },
+    "cb_pointer": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cb_pointer_ink"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.5
+        ],
+        "offset": [
+          18,
+          0
+        ],
+        "w": 24,
+        "h": 44
+      },
+      "show": "selected"
+    },
+    "cb_pointer_ink": {
+      "type": "label",
+      "name": "Label",
+      "text": ">",
+      "style": {
+        "w": 24,
+        "h": 44,
+        "fontSize": 28,
+        "weight": 800,
+        "color": "#a6472d",
+        "textAlign": "center"
       }
     }
   },
   "behaviour": "button",
   "transition": {
     "type": "easeOut",
-    "ms": 120
+    "ms": 90
   },
   "properties": {
     "label": {
@@ -55,10 +91,11 @@
         "yes": {
           "set": {
             "root": {
-              "bg": "#30271e"
+              "bg": "#00000000"
             },
             "cb_label": {
-              "color": "#f1e3bf"
+              "color": "#a6472d",
+              "tx": 4
             }
           }
         }
@@ -69,7 +106,21 @@
     "pressed": {
       "set": {
         "root": {
-          "scale": 0.96
+          "scale": 1
+        },
+        "cb_label": {
+          "scale": 0.96,
+          "color": "#a6472d"
+        }
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.38
+        },
+        "cb_pointer": {
+          "hide": true
         }
       }
     }

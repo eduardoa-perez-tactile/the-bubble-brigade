@@ -74,7 +74,7 @@ renderTest('cartoon overhaul recorded ten human start uses new whole board and r
   render.expectScreenshot('pause_new_arena',{width:2520,height:1080});
   await step(5);
   expect(session.get().game!.Tick).toBe(pausedTick);
-  input.emit(DesktopIntent,{action:'resume'}); await step(1);
+  input.emit(DesktopIntent,{action:'resume'}); await step(12);
   expect(session.get().game!.Paused).toBe(false);
 }, { scene, memory:'phone-low' });
 

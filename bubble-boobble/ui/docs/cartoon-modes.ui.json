@@ -10,10 +10,10 @@
       "type": "element",
       "name": "Cartoon modes",
       "style": {
-        "w": 768,
-        "h": 720,
+        "w": "100%",
+        "h": "100%",
         "pad": 0,
-        "bg": "#f1e3bf",
+        "bg": "#181718",
         "position": "anchored",
         "anchor": [
           0.5,
@@ -23,23 +23,18 @@
           0,
           0
         ],
-        "image": "cartoon/ui/theatre-paper",
         "fit": "fill"
       },
       "children": [
-        "ms_brand",
-        "ms_header",
-        "ms_title",
-        "ms_classic",
-        "ms_madness",
         "ms_back",
-        "ms_hint"
+        "ms_hint",
+        "ms_composition"
       ]
     },
     "ms_brand": {
       "type": "label",
       "name": "Label",
-      "text": "THE BUBBLE BRIGADE",
+      "text": "BRIGADE PICTURES PRESENTS",
       "style": {
         "position": "anchored",
         "anchor": [
@@ -48,11 +43,14 @@
         ],
         "offset": [
           0,
-          32
+          34
         ],
-        "fontSize": 12,
-        "color": "#30271e",
-        "outline": 0
+        "fontSize": 16,
+        "color": "#d9cba9",
+        "outline": 0,
+        "w": 620,
+        "h": 24,
+        "textAlign": "center"
       }
     },
     "ms_header": {
@@ -78,7 +76,7 @@
     "ms_title": {
       "type": "label",
       "name": "Label",
-      "text": "GAME MODE SELECT",
+      "text": "CHOOSE YOUR ADVENTURE",
       "style": {
         "position": "anchored",
         "anchor": [
@@ -89,9 +87,12 @@
           0,
           88
         ],
-        "fontSize": 26,
-        "color": "#30271e",
-        "outline": 0
+        "fontSize": 34,
+        "color": "#fff0c9",
+        "outline": 0,
+        "w": 680,
+        "h": 48,
+        "textAlign": "center"
       }
     },
     "ms_classic": {
@@ -101,24 +102,24 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          100,
-          168
+          -148,
+          174
         ],
         "w": 272,
         "h": 380
       },
       "props": {
         "label": "CLASSIC",
-        "description": "25 ROUNDS / ARCADE CAMPAIGN",
+        "description": "25-ROUND CAMPAIGN",
         "players": "1-2 DRAGONS",
         "selected": {
           "property": "classicSelected"
         },
-        "hero": "cartoon/frames/dragon/green/idle-0"
+        "hero": "cartoon/ui/modes/classic-campaign"
       }
     },
     "ms_madness": {
@@ -128,24 +129,24 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
+          0.5,
           0
         ],
         "offset": [
-          396,
-          168
+          148,
+          174
         ],
         "w": 272,
         "h": 380
       },
       "props": {
         "label": "WAVE SURVIVAL",
-        "description": "WAVES / RESCUES / FINAL BOSS",
+        "description": "RESCUES / FINAL BOSS",
         "players": "1-10 DRAGONS",
         "selected": {
           "property": "madnessSelected"
         },
-        "hero": "cartoon/frames/dragon/blue/idle-0"
+        "hero": "cartoon/ui/modes/wave-survival"
       }
     },
     "ms_back": {
@@ -155,15 +156,15 @@
       "style": {
         "position": "anchored",
         "anchor": [
-          0,
-          0
+          0.5,
+          1
         ],
         "offset": [
-          264,
-          606
+          0,
+          -38
         ],
         "w": 240,
-        "h": 44
+        "h": 96
       },
       "props": {
         "label": "BACK",
@@ -180,16 +181,43 @@
         "position": "anchored",
         "anchor": [
           0.5,
-          0
+          1
         ],
         "offset": [
           0,
-          674
+          -16
         ],
-        "fontSize": 10,
+        "fontSize": 11,
         "textAlign": "center",
-        "color": "#30271e",
-        "outline": 0
+        "color": "#d9cba9",
+        "outline": 0,
+        "w": 680,
+        "h": 32
+      }
+    },
+    "ms_composition": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ms_brand",
+        "ms_header",
+        "ms_title",
+        "ms_classic",
+        "ms_madness"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          -24
+        ],
+        "w": 768,
+        "h": 620
       }
     }
   },

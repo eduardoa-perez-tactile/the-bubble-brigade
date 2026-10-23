@@ -1,0 +1,8 @@
+/* Two immutable images, mutually exclusive visibility. No texture swap,
+   crossfade, displaced duplicates or at-rest animation can stack the words. */
+.cartoon-hud .ud-cartoon-hud__ch_cue_art,
+.cartoon-hud .ud-cartoon-hud__ch_action_art {
+  object-fit: contain;
+  image-swap: cut;
+  pointer-events: none;
+}

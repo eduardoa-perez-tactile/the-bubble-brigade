@@ -3,7 +3,7 @@ Shared authored-grid scale for walk, explicit [64,120] root, linear-filtered exp
 Never regenerates historical masters, other artwork, or migration evidence.
 """
 from pathlib import Path
-from PIL import Image, ImageDraw
+from PIL import Image
 import colorsys, json, math, uuid
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'art/dragon-animation'
@@ -45,13 +45,6 @@ def recolor(image,color):
 WALK_SOURCE='walk-source-2026-10-22-16-registered.png'
 # Canonical logical128 canvases contain the eight original keys in even slots
 # and genuine authored inbetweens in odd slots. No new per-frame fit is applied.
-_OLD_SKULL=[(280,162),(284,164),(278,158),(279,153),(274,145),(279,145),(280,143),(281,140)]
-_OLD_SKULL_LOGICAL=[(4+x*.27,[3,9][i//4]+y*.27) for i,(x,y) in enumerate(_OLD_SKULL)]
-WALK_SKULL=[]
-for i,p in enumerate(_OLD_SKULL_LOGICAL):
-    nxt=_OLD_SKULL_LOGICAL[(i+1)%8]
-    WALK_SKULL.extend([p,((p[0]+nxt[0])/2,(p[1]+nxt[1])/2)])
-
 def grid_cells(filename,columns,rows):
     sheet=Image.open(SOURCE/filename).convert('RGBA')
     return [sheet.crop((round(x*sheet.width/columns),round(y*sheet.height/rows),round((x+1)*sheet.width/columns),round((y+1)*sheet.height/rows))) for y in range(rows) for x in range(columns)]
@@ -69,7 +62,24 @@ def moving_shot_masters():
         out=Image.new('RGBA',(128,128));out.alpha_composite(cell,(-12,8+contact_y[i]));lower.append(out.crop((0,96,128,128)))
     return lower
 
-def build():
+def release_anchor(anchors,slot,skin,color):
+    frame=anchors.crop((slot*128,0,(slot+1)*128,128))
+    if skin=='blue':
+        # The preserved release sheet bakes in the retired procedural head oval.
+        # Restore only its exact drawing rectangle from the clean green anchor;
+        # all pixels elsewhere (including muzzle/waist/soles) stay RGBA exact.
+        clean=anchors.crop((0,0,128,128))
+        top=clean.getchannel('A').getbbox()[1]
+        box=(23,top+3,58,top+16)
+        frame.paste(recolor(clean,color).crop(box),(box[0],box[1]))
+    return frame
+
+def save_frame(frame,path):
+    if not path.exists() or Image.open(path).convert('RGBA').tobytes()!=frame.tobytes():
+        frame.save(path)
+
+def build(skin_filter=None):
+    if skin_filter and skin_filter not in SKINS:raise ValueError('Unknown dragon skin')
     animation=json.loads((DEST/'animation.json').read_text())
     atlas=json.loads((DEST/'atlas-layout.json').read_text())
     walk=authored_walk()
@@ -79,21 +89,13 @@ def build():
     for clip,masters,columns,filename in [('run',walk,4,WALK_SOURCE),('shoot',shoot,3,'shoot-source.png')]:
         for index,master in enumerate(masters):
             for skin,color in SKINS.items():
+                if skin_filter and skin!=skin_filter:continue
                 frame=recolor(master,color)
                 if clip=='shoot' and index==0:
                     anchors=Image.open(SOURCE/'release-anchors.png').convert('RGBA')
-                    slot=list(SKINS).index(skin);frame=anchors.crop((slot*128,0,(slot+1)*128,128))
-                if skin=='blue' and not (clip=='shoot' and index==0):
-                    d=ImageDraw.Draw(frame)
-                    if clip=='run':
-                        skull_x,skull_y=WALK_SKULL[index]
-                        cx=skull_x-39;cy=skull_y-25
-                        d.ellipse((round(cx-17),round(cy-6),round(cx+17),round(cy+6)),fill='#292a29');d.ellipse((round(cx-14),round(cy-4),round(cx+16),round(cy+3)),fill=color)
-                    else:
-                        top=frame.getchannel('A').getbbox()[1]
-                        d.ellipse((23,top+3,57,top+15),fill='#292a29');d.ellipse((26,top+5,56,top+12),fill=color)
+                    slot=list(SKINS).index(skin);frame=release_anchor(anchors,slot,skin,color)
                 key=f'dragon/{skin}/{clip}-{index}'
-                path=DEST/'frames'/(key+'.png');frame.save(path)
+                path=DEST/'frames'/(key+'.png');save_frame(frame,path)
                 meta=path.with_suffix('.png.gmeta')
                 if not meta.exists():
                     meta.write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/"+key)}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = true\n')
@@ -108,19 +110,20 @@ def build():
     recovery=[cell.resize((128,128),Image.Resampling.LANCZOS) for cell in grid_cells('shoot-head-recovery-source-2026-10-22.png',2,1)]
     anchors=Image.open(SOURCE/'release-anchors.png').convert('RGBA')
     for slot,(skin,color) in enumerate(SKINS.items()):
-        upper=anchors.crop((slot*128,0,(slot+1)*128,96))
+        if skin_filter and skin!=skin_filter:continue
+        upper=release_anchor(anchors,slot,skin,color).crop((0,0,128,96))
         parts=[('shoot-upper-0',upper,0,'release-anchors.png',slot)]
         for i,face in enumerate(recovery):
             recovering=upper.copy()
             # Face-only compositing preserves the original skull, body, hands,
-            # tail, blue crest, and the exact waist row 92..96 for every skin.
+            # tail and the exact waist row 92..96 for every skin.
             patch=recolor(face,color).crop((58,56,104,92))
             recovering.paste(patch,(58,56))
             parts.append((f'shoot-upper-{i+1}',recovering,0,'shoot-head-recovery-source-2026-10-22.png',i))
         parts.extend((f'shoot-walk-lower-{i}' if i<8 else f'shoot-air-lower-{i-8}',recolor(master,color),96,'shoot-locomotion-source-2026-10-22.png',i) for i,master in enumerate(lower))
         for suffix,frame,origin_y,filename,index in parts:
             key=f'dragon/{skin}/{suffix}'
-            path=DEST/'frames'/(key+'.png');frame.save(path)
+            path=DEST/'frames'/(key+'.png');save_frame(frame,path)
             meta=path.with_suffix('.png.gmeta')
             if not meta.exists():
                 meta.write_text(f'guid = "{uuid.uuid5(uuid.NAMESPACE_URL,"bubble-brigade-cartoon/"+key)}"\nimporter = "texture"\n\n[settings]\nkind = "sprite"\natlas = "cartoon"\nfilter = "linear"\ncompression = "none"\ntrim = true\n')
@@ -136,13 +139,17 @@ def build():
     (DEST/'atlas-layout.json').write_text(json.dumps(atlas,indent=2)+'\n')
     # Trim only transparent texels; the engine preserves the authored 128px bounds
     # and pivot. This makes room for the extra poses without shrinking their art.
-    for meta in (DEST/'frames/dragon').rglob('*.png.gmeta'):
+    for meta in (DEST/'frames/dragon'/skin_filter if skin_filter else DEST/'frames/dragon').rglob('*.png.gmeta'):
         meta.write_text(meta.read_text().replace('trim = false','trim = true'))
+    if skin_filter and skin_filter!='green':
+        print('Scoped expanded dragon export:',skin_filter);return
     preview=ROOT/'.cache/dragon-animation-preview';preview.mkdir(parents=True,exist_ok=True)
     for clip,count in [('run',16),('shoot',6)]:
         folder=preview/clip;folder.mkdir(exist_ok=True)
         for index in range(count):
             Image.open(DEST/f'frames/dragon/green/{clip}-{index}.png').save(folder/f'{index:02d}.png')
-    print('Exported 16 walking, 6 stationary shooting, 3 moving-shot upper, 8 crouch-walking lower and 2 air lower frames for all ten skins; release0 remains locked.')
+    print('Exported 16 walking, 6 stationary shooting, 3 moving-shot upper, 8 crouch-walking lower and 2 air lower frames for all ten skins; release0 stays anchored; the retired blue oval is removed.')
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--skin',choices=list(SKINS));args=parser.parse_args();build(args.skin)

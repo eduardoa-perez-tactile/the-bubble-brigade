@@ -11,7 +11,7 @@ export const CartoonMenuView = defineView<DesktopModel>({
     main: desktopModel({ ...initialDesktopState, screen: 'menu' }, initialDesktopSave),
     titleHidden: desktopModel(initialDesktopState, initialDesktopSave, 66),
   },
-  render: (model, { intent }) => <Screen safeArea class="desktop-screen">
+  render: (model, { intent }) => <Screen safeArea class="desktop-screen cartoon-menu-screen">
     <Widget class="cartoon-menu" doc="cartoon-menu" id="cartoon-main" props={{
       thirdLabel: () => model().buttons[2]?.label ?? 'QUIT',titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
       status: () => model().status, showStatus: () => !!model().status,

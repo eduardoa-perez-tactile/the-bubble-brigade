@@ -1,0 +1,15 @@
+.cartoon-pause { width:460px; height:470px; font-family:"cartoon/fonts/BreeSerif-Regular"; border-width:3px; border-color:#6b7358; }
+.cartoon-pause .ud-cartoon-pause__cp_title { font-family:"cartoon/fonts/Rye-Regular"; }
+.cartoon-pause .ud-cartoon-pause__root { border-width:1px; border-color:#524938; }
+@media (aspect < 0.75) { .cartoon-pause { max-width:94%; } }
+/* Portrait web/touch layouts use spare height for genuine finger-sized rows. */
+@media (aspect < 0.7) {
+ .cartoon-pause { width:720px; height:900px; }
+ .cartoon-pause .ud-cartoon-pause__root { width:720px; height:900px; }
+ .cartoon-pause .ud-cartoon-pause__cp_title { width:640px; height:86px; font-size:54px; }
+ .cartoon-pause .ud-cartoon-pause__cp_subtitle { width:640px; height:64px; font-size:24px; }
+ .cartoon-pause .ud-cartoon-pause__cp_rule { width:640px; }
+ .cartoon-pause .ud-cartoon-defeat-action__root { width:640px; height:96px; }
+ .cartoon-pause .ud-cartoon-defeat-action__da_label { width:560px; height:60px; font-size:40px; text-fit:30px 40px; }
+ .cartoon-pause .ud-cartoon-pause__cp_hint { width:640px; height:30px; font-size:20px; }
+}

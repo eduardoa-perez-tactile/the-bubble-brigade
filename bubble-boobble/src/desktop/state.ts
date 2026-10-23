@@ -1,34 +1,47 @@
+import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { updatePartyPads } from '../arcade/party-input';
 import { defaultPartySlots, partySize, type DragonResult } from '../arcade/party-config';
 import type { PartySlot } from '../arcade/types';
-import { defineDoc, defineSystem, query, read, ActionState, TextInput, PointerHover, PointerDown, KeyEvent } from '@gameengine/runtime';
+import { defineDoc, defineSystem, query, read, ActionState, TextInput, PointerHover, PointerDown, KeyEvent, ViewInfo } from '@gameengine/runtime';
 import type { DocHandle, DocValue } from '@gameengine/runtime';
 import { DesktopIntent, ArcadeControl } from '../schema.gen.ts';
 import campaignData from '../../data/levels.json';
 import type { Level } from '../arcade/types.ts';
 import { cloneLevel, paintLevel, validateLevel } from './editor.ts';
 import { desktopSaveState } from './save.ts';
-import { partyGridSelection, modeGridSelection, desktopButtonRect } from './layout.ts';
+import { partyGridSelection, modeGridSelection, desktopButtonRect, cartoonMenuHoverRect } from './layout.ts';
 import { getDesktopButtons } from './model.ts';
 const campaign=campaignData as Level[];
 export type PlayMode='solo'|'ai'|'human';
 export type DesktopScreen='title'|'menu'|'profiles'|'new-profile'|'settings'|'scores'|'help'|'credits'|'editor'|'play'|'pause'|'result'|'party'|'modes';
 export const RESULT_INPUT_DELAY = 45;
-export interface DesktopState {cartoon?:boolean;dragonResults?:DragonResult[];resultStartedStep?:number;resultReady?:boolean;developmentMenu?:boolean;partySlots:PartySlot[];partyRun:boolean;partyEditing:boolean;screen:DesktopScreen;confirmKeys:number;playMode:PlayMode;name:string;status:string;statusStartedStep:number;selected:number;custom:boolean;recorded:boolean;won:boolean;score:number;round:number;tool:number;template:number;painting:boolean;deleteHeldAt:number;level:Level;history:Level[]}
+export interface DesktopState {cartoon?:boolean;resultDetails?:boolean;settingsReturn?:"menu"|"pause";pauseClosing?:boolean;resumeStartedStep?:number;pauseConfirm?:"restart"|"leave"|"";gameplayInputArmed?:boolean;transitionHasTitle?:boolean;transitionAction?:string;transitionStartedStep?:number;transitionCommitted?:boolean;dragonResults?:DragonResult[];resultStartedStep?:number;resultReady?:boolean;developmentMenu?:boolean;partySlots:PartySlot[];partyRun:boolean;partyEditing:boolean;screen:DesktopScreen;confirmKeys:number;playMode:PlayMode;name:string;status:string;statusStartedStep:number;selected:number;custom:boolean;recorded:boolean;won:boolean;score:number;round:number;tool:number;template:number;painting:boolean;deleteHeldAt:number;level:Level;history:Level[]}
 export const initialDesktopState:DesktopState={developmentMenu:false,partySlots:defaultPartySlots.slice(),partyRun:false,partyEditing:false,screen:'title',confirmKeys:0,playMode:'solo',name:'',status:'',statusStartedStep:-1,selected:0,custom:false,recorded:false,won:false,score:0,round:1,tool:0,template:0,painting:false,deleteHeldAt:-1,level:cloneLevel(campaign[0]!),history:[]};
 export const desktopState=defineDoc('desktop-ui',initialDesktopState as unknown as DocValue) as unknown as DocHandle<DesktopState>;
 export interface DesktopGameRequest {cartoon?:boolean;sequence:number;action:string;mode:PlayMode;players:number;level:number;customLevel:Level|null;partySlots?:PartySlot[]}
 export const desktopGameRequest=defineDoc('desktop-game-request',{sequence:0,action:'',mode:'solo',players:1,level:1,customLevel:null} as DocValue) as unknown as DocHandle<DesktopGameRequest>;
 const request=(action:string,custom=false)=>desktopGameRequest.set({sequence:desktopGameRequest.get().sequence+1,action,mode:desktopState.get().playMode??'solo',partySlots:desktopState.get().partySlots?.slice(),players:desktopState.get().playMode==='ai'||desktopState.get().playMode==='human'?2:1,level:1,customLevel:custom?cloneLevel(desktopState.get().level):null,...(desktopState.get().cartoon?{cartoon:true}:{})});
 export function showDesktopPause(paused=true){const s=desktopState.get();desktopState.set({...s,screen:paused?'pause':'play',selected:0});}
-export function finishDesktopRun(won:boolean,score:number,round:number,dragonResults:DragonResult[]=[]){const s=desktopState.get();if(!s.recorded&&!s.custom&&!s.partyRun&&desktopSaveState.loaded())desktopSaveState.dispatch('record',{won,score,round},0);desktopState.set({...s,screen:'result',dragonResults,resultStartedStep:-1,resultReady:false,recorded:true,won,score,round,selected:0});}
+export function finishDesktopRun(won:boolean,score:number,round:number,dragonResults:DragonResult[]=[]){const s=desktopState.get();if(!s.recorded&&!s.custom&&!s.partyRun&&desktopSaveState.loaded())desktopSaveState.dispatch('record',{won,score,round},0);desktopState.set({...s,screen:'result',resultDetails:false,dragonResults,resultStartedStep:-1,resultReady:false,recorded:true,won,score,round,selected:0});}
 export function setDesktopRunScore(score:number,round:number){const s=desktopState.get();if(s.score!==score||s.round!==round)desktopState.set({...s,score,round});}
 export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  let s=desktopState.get();
- if(s.screen==='result'&&!s.resultReady&&['restart','leave'].includes(action))return;
+ if(s.screen==='result'&&!s.resultReady&&['restart','leave','result-details','ui-activate','menu','result-exit'].includes(action))return;
+ if(s.transitionAction&&action!=='transition-commit'&&action!=='transition-finish')return;
+ if(s.pauseClosing&&!(action==='resume'&&value==='ready'))return;
  const patch=(p:Partial<DesktopState>)=>{s={...s,...p,...(p.status!==undefined?{statusStartedStep:-1}:{})};desktopState.set(s);};
  const navigate=(screen:DesktopScreen)=>patch({screen,selected:0,status:''});
  const remember=()=>patch({history:[...s.history,cloneLevel(s.level)].slice(-50)});
+ if(action==='transition-finish'){patch({transitionAction:'',transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:false});return;}
+ if(action==='transition-commit'){const next=s.transitionAction;if(!next||s.transitionCommitted)return;patch({transitionAction:'',transitionCommitted:true});desktopAction(next,'',0,0,0,now);const after=desktopState.get();desktopState.set({...after,transitionAction:next,transitionStartedStep:s.transitionStartedStep,transitionCommitted:true,transitionHasTitle:!!s.transitionHasTitle,gameplayInputArmed:['start','start-party','restart','test-level'].includes(next)?false:after.gameplayInputArmed});return;}
+ if(action==='ui-activate'){const key=value;if(s.cartoon&&s.screen==='pause'&&!s.pauseConfirm&&['restart','leave'].includes(key)){patch({pauseConfirm:key as 'restart'|'leave',selected:0});return;}const next=key==='classic-mode'?'start':key;const covered=s.cartoon&&(['start','restart','leave','test-level'].includes(next)||next==='start-party'&&!s.partyEditing);if(covered){if(next==='start-party'&&!s.partySlots.includes('human')){patch({status:'SELECT AT LEAST ONE HUMAN'});return;}patch({transitionAction:next,transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:next==='start'||next==='start-party'});return;}desktopAction(next,'',index,x,y,now);return;}
+ if(action==='result-exit'&&s.cartoon&&s.screen==='result'){desktopAction('ui-activate','leave');return;}
+ if(action==='result-details'&&s.screen==='result'){patch({resultDetails:!s.resultDetails,selected:2});return;}
+ if(action==='cancel-run-action'){patch({pauseConfirm:'',selected:0});return;}
+ if(action==='confirm-run-action'&&s.pauseConfirm){patch({transitionAction:s.pauseConfirm,transitionStartedStep:-1,transitionCommitted:false,pauseConfirm:''});return;}
+ if(action==='settings'&&s.cartoon){patch({settingsReturn:s.screen==='pause'?'pause':'menu'});navigate('settings');return;}
+ if(action==='menu'&&s.screen==='settings'&&s.settingsReturn==='pause'){patch({settingsReturn:'menu'});navigate('pause');return;}
+ if(action==='resume'&&s.pauseConfirm){patch({pauseConfirm:'',selected:0});return;}
  // Presentation chooses a theme through recorded input before simulation uses it.
  if(action==='cartoon-mode'){if(!s.cartoon)patch({cartoon:true});return;}
  if(action==='development-menu'){const enabled=index===1;if(s.developmentMenu!==enabled)patch({developmentMenu:enabled,selected:s.screen==='menu'?0:s.selected});return;}
@@ -55,7 +68,7 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  if(action==='delete-char'){patch({name:s.name.slice(0,-1)});return;}
  if(['avatar','music','sound','fullscreen','effects'].includes(action)){if(desktopSaveState.loaded())desktopSaveState.dispatch('setting',{action,delta:index===-1?-25:25},now);return;}
  if(action==='pause'){request('pause');showDesktopPause();return;}
- if(action==='resume'){request('resume');navigate('play');return;}
+ if(action==='resume'){if(s.cartoon&&s.screen==='pause'&&!s.pauseClosing){patch({pauseClosing:true,resumeStartedStep:-1});return;}request('resume');patch({pauseClosing:false,resumeStartedStep:-1,...(s.cartoon?{gameplayInputArmed:false}:{})});navigate('play');return;}
  if(action==='start'||action==='restart'||action==='test-level'){
   if(action==='restart'&&s.partyRun){desktopAction('start-party');return;}
   const custom=action==='test-level'||action==='restart'&&s.custom;
@@ -77,15 +90,18 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  if(action==='element'){remember();const choices=['','water','thunder','fire'];const special=choices[(choices.indexOf(s.level.special)+1)%4]!;patch({level:{...s.level,special,special_count:special?16:0}});return;}
  if(action==='theme'){remember();const number=s.level.number%25+1;patch({level:{...s.level,number,tiles:s.level.tiles.map(row=>row.map(t=>t?number:0))}});}
 }
-export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(ArcadeControl)],query:query(read(ActionState)),events:[DesktopIntent,TextInput,PointerHover,PointerDown,KeyEvent],run(ctx,q){
+export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(ArcadeControl),read(ViewInfo)],query:query(read(ActionState)),events:[DesktopIntent,TextInput,PointerHover,PointerDown,KeyEvent],run(ctx,q){
  if(!ctx.get(ArcadeControl).active)return;
+ const transition=desktopState.get();
+ if(transition.transitionAction){if((transition.transitionStartedStep??-1)<0)desktopState.set({...transition,transitionStartedStep:ctx.step});else {const elapsed=ctx.step-transition.transitionStartedStep!;const timing=cartoonFlowTiming(!!transition.transitionHasTitle,transition.transitionAction,transition.partyRun);if(elapsed>=timing.finishAt)desktopAction('transition-finish');else if(elapsed>=timing.commitAt&&!transition.transitionCommitted)desktopAction('transition-commit','',0,0,0,ctx.time);}}
+ const resuming=desktopState.get();if(resuming.pauseClosing){if((resuming.resumeStartedStep??-1)<0)desktopState.set({...resuming,resumeStartedStep:ctx.step});else if(ctx.step-resuming.resumeStartedStep!>=10)desktopAction('resume','ready');}
  const pads=updatePartyPads(ctx.input);
  const padScreen=desktopState.get().screen;
  if(padScreen==='party')for(const slot of pads.joinedSlots)desktopAction('party-join','',slot);
  else if(pads.pause&&(padScreen==='play'||padScreen==='pause'))desktopAction(padScreen==='pause'?'resume':'pause');
  const status=desktopState.get();if(status.status){if(status.statusStartedStep<0)desktopState.set({...status,statusStartedStep:ctx.step});else if(ctx.step-status.statusStartedStep>=300)desktopState.set({...status,status:'',statusStartedStep:-1});}
  if(desktopState.get().screen==='title'&&ctx.events.count(PointerDown))desktopAction('menu');
- for(const pointer of ctx.events.read(PointerHover)){const s=desktopState.get(),p=desktopSaveState.get(),buttons=getDesktopButtons(s,p);for(let i=0;i<buttons.length;i++){const r=desktopButtonRect(s,p,i);if(r&&pointer.world[0]>=r.x&&pointer.world[0]<r.x+r.width&&720-pointer.world[1]>=r.y&&720-pointer.world[1]<r.y+r.height&&s.selected!==i){desktopAction('select','',i);break;}}}
+ for(const pointer of ctx.events.read(PointerHover)){const s=desktopState.get(),p=desktopSaveState.get(),buttons=getDesktopButtons(s,p);for(let i=0;i<buttons.length;i++){const native=s.cartoon&&['menu','modes'].includes(s.screen);const r=native?cartoonMenuHoverRect(s,i,ctx.get(ViewInfo)):desktopButtonRect(s,p,i);const px=native?pointer.screen[0]:pointer.world[0],py=native?pointer.screen[1]:720-pointer.world[1];if(r&&px>=r.x&&px<r.x+r.width&&py>=r.y&&py<r.y+r.height&&s.selected!==i){desktopAction('select','',i);break;}}}
  for(const e of ctx.events.read(DesktopIntent))desktopAction(e.action,e.value,e.index,e.x,e.y,ctx.time);
  for(const c of q.chunks())for(let i=0;i<c.length;i++)if(c.is(ActionState,i,'name','fullscreen')&&c.col(ActionState).justPressed[i])desktopAction('fullscreen','',0,0,0,ctx.time);
  // ActionState reflects the final held state, so a down/up pair within one step can lose justPressed.
@@ -98,7 +114,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
    if(pads.menuXEdge&&menuState.screen==='modes')desktopAction('select','',modeGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='party')desktopAction('select','',partyGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='settings'){const b=buttons[desktopState.get().selected];if(b)desktopAction(b.key,'',pads.menuXEdge);}
-   if(pads.menuBack)desktopAction(menuState.screen==='pause'?'resume':menuState.screen==='new-profile'?'profiles':'menu');
+   if(pads.menuBack)desktopAction(menuState.screen==='pause'?'resume':menuState.cartoon&&menuState.screen==='result'?(menuState.resultDetails?'result-details':'result-exit'):menuState.screen==='new-profile'?'profiles':'menu');
  }
  let s=desktopState.get(),held=s.confirmKeys??0;
  for(const e of ctx.events.read(KeyEvent)){
@@ -134,9 +150,9 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='settings'){const b=buttons[s.selected];if(b)desktopAction(b.key,'',a.value[i]!<0?-1:1);}
   if(c.is(ActionState,i,'name','confirm')&&s.screen!=='result')confirm=true;
   if(c.is(ActionState,i,'name','profileConfirm'))profileConfirm=true;
-  if(c.is(ActionState,i,'name','back'))desktopAction(s.screen==='pause'?'resume':s.screen==='new-profile'?'profiles':'menu');
+  if(c.is(ActionState,i,'name','back'))desktopAction(s.screen==='pause'?'resume':s.cartoon&&s.screen==='result'?(s.resultDetails?'result-details':'result-exit'):s.screen==='new-profile'?'profiles':'menu');
   if(s.screen==='editor'){if(editorModifier&&c.is(ActionState,i,'name','undo'))desktopAction('undo');if(editorModifier&&c.is(ActionState,i,'name','save'))desktopAction('save-level');if(c.is(ActionState,i,'name','playtest'))desktopAction('test-level');}
  }
  s=desktopState.get();
- if(s.screen===inputScreen&&(s.screen!=='result'||s.resultReady)&&(s.screen==='new-profile'?profileConfirm:confirm)){const b=getDesktopButtons(s,desktopSaveState.get())[s.selected];if(b)desktopAction(b.key,'',0,0,0,ctx.time);}
+ if(s.screen===inputScreen&&(s.screen!=='result'||s.resultReady)&&(s.screen==='new-profile'?profileConfirm:confirm)){const b=getDesktopButtons(s,desktopSaveState.get())[s.selected];if(b)desktopAction('ui-activate',b.key,0,0,0,ctx.time);}
 }});
