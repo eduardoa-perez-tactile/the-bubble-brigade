@@ -1,5 +1,34 @@
 # Overworld performance review
 
+## Current original-art validation
+
+Measured 23 October 2026 after replacing all copied map/flag assets with five original district plates, the original completion pennant and 240 original oblique dragon frames. The fresh Android phone-low cook includes both `courtyard-gameplay` and `overworld-shared` pinned for the map phase.
+
+| Declared resident content | MiB | Project gate |
+|---|---:|---:|
+| Map-phase peak | 37.18 | 48 MiB |
+| courtyard-gameplay | 35.21 | 40 MiB |
+| overworld-district-1 | 0.17 | 2 MiB |
+| overworld-district-2 | 0.17 | 2 MiB |
+| overworld-district-3 | 0.17 | 2 MiB |
+| overworld-district-4 | 0.17 | 2 MiB |
+| overworld-district-5 | 0.17 | 2 MiB |
+| overworld-shared | 1.81 | 2 MiB |
+
+All memory gates pass without relaxing budgets or reducing the new dragon frames. Shared content uses 1.81 MiB of its 2 MiB gate. The command was `gameengine memory report --device phone-low --always courtyard-gameplay,overworld-shared --cook --json`. Terrain retains mobile ASTC6x6, phone-low 1024 and desktop uncompressed compatibility imports. Both original image bytes and generated provenance remain intact.
+
+`gameengine check` passes typecheck, validation with existing warnings, UI-document coverage, desktop cook and 600-frame cooked smoke. The installed built-in Standard-material metadata warning (`7946469ed20397e0`) remains; successful check does not establish release packaging eligibility. The existing diagnosis is recorded in `RENDER-REVIEW.md`.
+
+Current original-art verification also passes 452/452 V8 T0, four scoped T1 cases, four cooked campaign cases and the 681-step replay without divergence. These results validate the replacement integration, not physical-phone performance. Compact current evidence, exact bytes/gates and check details are tracked in `docs/overworld/evidence/original-art-validation-perf.json`; raw reports are `.gameengine/overworld-original-{phone-low-memory,check,full-t0,adventure-t1,screen-fit-t1,cooked-campaign,replay}.json`.
+
+Declared asset-group residency is not total RAM. No new original-art CPU/GC/RSS or transition soak was run. The earlier source-art soak below exceeded 32 MiB JS guidance after combat; bounded retained heap remains unverified. Physical phone GPU time, thermals, RSS, cold loading and Hermes/web parity remain unverified. No phone-performance guarantee follows from desktop or cooked-residency results.
+
+## Historical copied-art prototype measurements
+
+The remainder describes superseded source-art assets and captures. Its 36.50 MiB peak and CPU/heap figures must not be presented as measurements of the current original artwork.
+
+**Historical prototype evidence:** these measurements predate the current original-art/map/dragon replacement and must not be used as the final performance verdict for the replacement assets. Repeat cooked memory and render checks after integration.
+
 Measured 2026-10-23. Scope: `src/overworld`, desktop documents/controller/state/model/save, Arcade encounter integration, schema and district asset groups. The runtime sample used the release V8 host on an Apple M2 Max, Metal, mobile render tier, paused headless mode with UI layout. CPU timings are comparative desktop measurements, not phone performance guarantees.
 
 | Measurement | Observed | Budget / interpretation |

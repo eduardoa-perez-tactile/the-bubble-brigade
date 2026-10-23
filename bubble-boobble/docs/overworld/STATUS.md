@@ -1,48 +1,43 @@
-# Overworld implementation status
+# Original Adventure overworld status
 
-Status: **implemented and verified ready for user playtest**. No additional art approval gate was imposed. User playtest and explicit approval remain mandatory before merge. PR #10 stays draft; auto-merge is disabled.
+Status: **original artwork implemented and verified for user playtest**. PR #10 remains draft and unmerged. User playtest and explicit approval are required before merging.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
+Project: `bubble-boobble/`
 Branch: `codex/walkable-overworld`
 Baseline: `76d82db`
-Draft PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
+PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
 
-## Implemented
+## Current artwork
 
-Five free-roaming production maps follow the supplied Cuphead source geography: downtown, woodland, carnival, DLC island and Hell. Source-aligned polygon walking, scenery collision, contextual entrances, foreground occlusion and bounded engine camera following replace the rejected fantasy/grid direction. Selected source assets have provenance manifests and StudioMDHR credit under `tools/overworld/` and this folder. The rejected art is excluded from production.
+Five original paintings replace the copied prototype: Bubblebrook Quay, Fernfall Gardens, Pinwheel Fair, Cloudtop Springs and Emberglass Works. The user accepted the first map layout and requested compliance with the Theatrical Cel Adventure guide. Its revision preserves the composition while simplifying texture and using broad painted shapes, restrained world colors and clear playfield contrast. Cuphead supplied visual and interaction research only; no Cuphead raster was passed to generation.
 
-All 25 existing rounds are physical destinations. Adventure runs one selected encounter, saves its result once, retries that encounter and returns to its entrance with a completion flag. Five district gates, guide reward, hidden coins, discoverable shortcuts, optional one-life trials, keepsakes, journal travel and per-profile version-2 save migration are integrated. Classic and Bubble Madness remain under Arcade Modes. Original profile records are preserved.
+A new original dragon sheet provides eight angled directions, planted idle and alternating walk contacts. The 24 pose slots are normalized to one foot anchor and derive all ten existing skin palettes. Front/back second contacts mirror their symmetric first contact; six other direction pairs use separately drawn contacts. Guide and vendor use the same oblique character artwork. Idle holds still. See `tools/overworld/OBLIQUE-DRAGON.md`.
 
-The Brigade’s existing dragon identity supplies side-facing animation and source-seeded up/down poses, with ten existing skin palettes and consistent foot anchors. District textures load/release through engine asset groups; phone-low overrides are authored. Presentation uses a bounded 48-slot pool and skips unchanged derived work.
+All 17 copied feature PNG identities are absent from the current assets tree, verified by `tools/overworld/audit-original-art.py`. The external reference library, baseline UI art and archived migration evidence remain untouched. Git history was not rewritten. Original prompts, generated source images and hashes are recorded in `tools/overworld/original-art-manifest.json` and `original-map-prompts.json`.
 
-## Verified
+## Gameplay retained and aligned
 
-- Baseline before feature: 427/427 V8 T0.
-- Current full V8 T0: **456/456 passing**, `.gameengine/overworld-handoff-t0.json` (final rerun, 13,758 steps).
-- Complete 25-encounter/five-map campaign: 3,158 recorded steps, including gates, optionality, one-time rewards, keepsakes, settings and correct returns. `.gameengine/overworld-campaign-t0.json`.
-- All 55 POIs reachable; production doorway approach/leave/re-approach, normalized movement, coast/building collision, held Enter, compressed controller-A taps, profile isolation, delayed storage and interrupted resume are tested.
-- Actual-button T1 journey passes: Start Game → Begin Adventure → inspect → play → result → return, 681 steps. Six new checkpoints reviewed. `.gameengine/overworld-production-t1.json`.
-- Presentation optimization: 13/13 focused tests pass with identical engine hash traces before/after `skipUnchanged`; `.gameengine/overworld-optimized-hash.json`.
-- `gameengine check` passes typecheck, validation with existing warnings, UI-document coverage, desktop cook and 600-frame cooked smoke. Latest: `.gameengine/overworld-terrain-fix-check.json`.
-- Cooked actual-button journey passes all 681 steps with the final dragon art. Two cooked screen-fit cases pass 280 + 111 steps, checking slim portrait through ultrawide screens, safe-area panels, readable labels and an avatar at least 40 pixels tall. `.gameengine/overworld-cooked-render-fixed-final.json`, `.gameengine/overworld-cooked-source-fit.json`.
-- All 16 terrain imports use a desktop-only uncompressed compatibility override after the compressed standalone texture path failed in the cooked host. Mobile ASTC remains configured; original source PNG bytes are unchanged.
-- Adventure structural replay uses 16 draws against its 50-draw gate. Pipeline coverage was recorded across desktop, mobile and compat tiers. Replay verification passes 681 steps without divergence.
-- Five actual production map captures inspected: `.gameengine/overworld-production-map-{1..5}.png`. All four settled directional captures inspected: `.gameengine/overworld-facing-{up,down,left,right}.png`.
+All 25 rounds and 55 map interactions retain stable IDs and per-profile saves. Walkable polygons, full visible building obstacles, coastlines, stairs and bridges follow each new painting. A single painted plate supplies each district; roofs are obstacles rather than separately composited occlusion layers. Native bounded camera following uses Cover fit and view size260, verified to avoid hard landscape map edges.
 
-## Regression review and limitations
+Adventure supports selected encounter play, retry and entrance return, completion flags, district gates, one-time rewards, hidden coins, guide rewards, optional trials, keepsakes, shortcuts and journal travel. Existing save migration and profile isolation remain. Classic and Bubble Madness are available under Arcade Modes. District and shared sprites load through explicit asset groups; the presentation uses a bounded pool.
 
-Final broad T1: **103 tests, 86 passed, 17 failed**. The failure names exactly match the exported pre-feature baseline (99 tests, 82 passed, 17 failed), with zero additional failures. The same inherited Cuphead UI structural budget fails (15 draws against 14); all other structural budgets, including Adventure, pass. Seven additional legacy render families were isolated to native camera shake sampling after entity registration changed, plus the Arcade menu preview animation phase after its new routing. Seventeen images were individually reviewed and selectively refreshed; tolerances and inherited goldens remain unchanged. See `RENDER-REVIEW.md` and `render-review-summary.json`.
+## Replacement verification
 
-Pipeline recording covers all three tiers. The installed validator reports an unknown hash that is proven to be the current Standard material embedded in its own host: installed generated builtin metadata is missing. This package validation warning remains documented with exact hash evidence; no legitimate pipeline records were removed.
+- Full V8 logic suite: **452/452 passed**. The previous copied-reference QA tests were removed and an eight-heading movement/idle test added; compare counts in that context.
+- Original geometry and directional tests: **9/9 passed**. All55 interactions are reachable, all25 encounter return anchors are safe, and actual lighthouse approach/leave/re-approach works.
+- Focused Adventure campaign, save, resume and flow tests: **16/16 passed**.
+- Four focused render cases pass at the final camera framing: responsive map/card/guide, journal/shop, actual681-step menu-to-encounter-to-return journey and250-step encounter flow. Only intentional Adventure images were refreshed and reviewed.
+- Actual native harbor capture: `.gameengine/overworld-original-map-1.png`. Original pose preview: `tools/overworld/source/oblique-normalized/preview.png`.
+- Final cooked campaign: **4/4 passed**, including the complete 25-encounter campaign and 681-step button journey. Recorded replay: **681 steps, no divergence**.
+- `gameengine check` passes typecheck, validation with existing warnings, UI-document coverage, desktop cook and 600-frame cooked smoke.
+- Android phone-low declared asset peak: **37.18 MiB / 48 MiB**. Shared character atlas: **1.81 MiB / 2 MiB**. Every district group passes its 2 MiB gate; no budgets were raised and no character downscale was needed.
+- Portable current evidence: `evidence/original-art-final-tests.json` and `evidence/original-art-validation-perf.json`.
 
-Final cooked campaign: **4/4 passing**, including the complete campaign and 681-step actual-button journey. Final replay verification: **681 steps, zero divergence**. Portable reports are tracked under `evidence/final-test-summary.json` and `evidence/final-check.json`.
+Previous copied-art render and performance approvals are historical. `RENDER-REVIEW.md` records the prior baseline comparison (17 inherited T1 failures, including the inherited Cuphead structural15/14 draw failure); it is not a fresh full-suite render verdict for these original paintings. The installed pipeline validator's Standard-material metadata warning is separately proven in `evidence/pipeline-builtin-proof.json`.
 
-Final Android phone-low declared asset peak is **36.50 MiB against 48 MiB**, with courtyard and shared sprites included. All asset-group gates pass. Fresh normal district travel/combat/return passes, with 9-13 draws, zero pending assets and zero render validation errors. The five-cycle soak retained constant entity and asset counts, but several JS heap samples exceeded low-end guidance; bounded retained heap and physical-phone performance remain unverified. Exact runtime group refcounts were not exposed by the aggregate telemetry. See `PERFORMANCE.md` and `evidence/performance-summary.json`.
+Hermes and the Web/WASM host are unavailable, so cross-runtime parity is unverified. No physical phone was used. Prior transition samples exceeded low-end JS heap guidance; bounded retained heap, GPU/thermal behavior, hardware controllers, OS focus and browser storage durability require corresponding environments. See `PERFORMANCE.md`. Automated playtests use Game Engine only.
 
-Hermes host is not installed. The Web/WASM host is also unbuilt (`target/wasm32-unknown-emscripten/release/gameengine-host.js` missing), so cross-runtime parity is unverified. Native hardware controller/OS focus/browser persistence and physical phone GPU/thermal behavior require hands-on verification. All automated playtesting stays inside Game Engine; no standalone/browser/OS control.
+## Handoff rule
 
-## Delivery rules
-
-Parallel agent implementation and review are complete. Thirty-minute heartbeat `bubble-brigade-overworld-progress` is paused at this playtest handoff. All reviewable checkpoints are committed and pushed. Preserve archived migration evidence and the original checkout/editor. Never merge or enable auto-merge; the user must playtest and explicitly approve first.
-
-Playtest instructions: `docs/overworld/PLAYTEST.md`. Original analysis/plan: `docs/cuphead-overworld-plan.md`.
+Commit and push checkpoints, keep PR draft, and never merge or enable auto-merge before the user's playtest and explicit approval. Thirty-minute screenshot updates are paused at this verified playtest handoff. Playtest instructions are in `PLAYTEST.md`.

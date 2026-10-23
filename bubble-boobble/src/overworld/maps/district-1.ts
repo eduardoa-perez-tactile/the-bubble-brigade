@@ -9,7 +9,7 @@ export const district1Map:SourceMap={
   "y": 768
  },
  "scale": 0.65,
- "viewSize": 300,
+ "viewSize": 260,
  "spawn": {
   "x": 727.579,
   "y": 1365.742

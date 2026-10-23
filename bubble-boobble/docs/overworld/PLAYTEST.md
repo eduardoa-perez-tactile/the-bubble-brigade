@@ -1,5 +1,7 @@
 # Adventure map playtest
 
+**Current build:** five original Brigade maps and an eight-direction oblique dragon replace the copied-art prototype. Use the current branch and captures; prior source-art screenshots are superseded.
+
 Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble` in Game Engine and press Play. This is the isolated `codex/walkable-overworld` project; the original checkout is preserved. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
 
 ## Controls
@@ -11,7 +13,7 @@ Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade
 
 ## Suggested checks
 
-1. Walk around the waterfront, behind foreground scenery, across stairs and onto the beach. Try diagonal movement, shore boundaries and narrow passages. The camera should follow without exposing a hard map edge or losing the dragon.
+1. Walk around Bubblebrook Quay, across the canal bridges and along the stairs and paved waterfront. Try all eight walking directions, then stop and check the held facing and planted idle. Test shore boundaries, building obstacles and narrow passages. The camera should follow without exposing a hard map edge or losing the dragon.
 2. Approach an entrance, walk away, then return. Its prompt should appear only nearby. Inspect a locked entrance and verify its prerequisite explanation.
 3. Play an available encounter. Lose and retry, then win and return. Retry should keep the same encounter; return should place you at that entrance with a completion flag. Replaying a clear must not repeat its first-clear coin reward.
 4. Clear three encounters and claim the guide’s 15 coins. Find the hidden five-coin cache, discover the shortcut, buy a keepsake and inspect the journal. Repeat claims and purchases to check that rewards and costs occur once.

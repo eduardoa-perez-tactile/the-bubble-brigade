@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-23",
+  "revisionScope": "Original five-map artwork and eight-direction oblique Brigade dragon. No Cuphead source pixels in production maps/characters.",
+  "fullV8T0": {
+    "command": "gameengine test --tier t0 --js v8 --json",
+    "ok": true,
+    "passed": 452,
+    "total": 452
+  },
+  "scopedOriginalArtT1": {
+    "commands": [
+      "gameengine test --tier t1 --filter '*overworld*' --update-goldens --json",
+      "gameengine test --tier t1 --filter 'adventure*' --update-goldens --record-replays --json"
+    ],
+    "ok": true,
+    "tests": [
+      {
+        "name": "adventure campaign actual menu begin play intro results and map return buttons",
+        "ok": true,
+        "steps": 681
+      },
+      {
+        "name": "adventure flow encounter document Play button starts the focused encounter",
+        "ok": true,
+        "steps": 250
+      },
+      {
+        "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+        "ok": true,
+        "steps": 310
+      },
+      {
+        "name": "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+        "ok": true,
+        "steps": 111
+      }
+    ]
+  },
+  "cookedCampaign": {
+    "command": "gameengine test --cooked --tier t0,t1 --filter 'adventure campaign*' --json",
+    "ok": true,
+    "tests": [
+      {
+        "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+        "steps": 3158,
+        "ok": true
+      },
+      {
+        "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+        "steps": 148,
+        "ok": true
+      },
+      {
+        "name": "adventure campaign actual menu begin play intro results and map return buttons",
+        "steps": 681,
+        "ok": true
+      },
+      {
+        "name": "adventure campaign branches and all five district gates are reachable",
+        "steps": 0,
+        "ok": true
+      }
+    ]
+  },
+  "replayVerify": {
+    "ok": true,
+    "results": {
+      "v8": {
+        "ok": true,
+        "steps": 681,
+        "firstDivergence": null
+      }
+    }
+  },
+  "camera": {
+    "fit": "Cover",
+    "nativeWorldView": true,
+    "viewSize": 260,
+    "landscapeHalfExtents": [
+      462.22223,
+      260
+    ],
+    "reason": "Painted1536px terrain atscale0.65 contains full16:9neighborhood view without former40pxsidebars."
+  },
+  "artRegistration": {
+    "directions": 8,
+    "runtimeSkinFrames": 240,
+    "frameCanvas": [
+      128,
+      128
+    ],
+    "footAnchor": [
+      64,
+      120
+    ],
+    "idle": "held planted pose",
+    "contacts": "two distinct contacts; direct front/back opposite contact mirrored from same authored counterpart"
+  },
+  "captures": {
+    "map1": ".gameengine/overworld-original-map-1.png",
+    "map5": ".gameengine/overworld-original-map-5.png",
+    "eightFacings": ".gameengine/overworld-original-eight-facings.png",
+    "walkContacts": [
+      ".gameengine/overworld-original-walk-contact-0.png",
+      ".gameengine/overworld-original-walk-contact-1.png"
+    ]
+  },
+  "limits": [
+    "V8release engine host; physicalphone performance notestablished.",
+    "Humanplaytestapprovalrequired beforemerge."
+  ],
+  "captureViewport": {
+    "event": {
+      "type": "view",
+      "width": 1280,
+      "height": 720,
+      "scale": 1,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "requiredBeforeStepping": true,
+    "reason": "The live screenshot output size does not itself record the viewport used by deterministic WorldViewFollow bounds. Omitting this event caused a capture-only4pxedge during motion; productionlookahead.08 remains correct.",
+    "movingCenter": [
+      -36.977783,
+      -239.20001
+    ],
+    "halfExtents": [
+      462.22223,
+      260
+    ],
+    "computedLeftEdge": -499.200013,
+    "terrainLeftBound": -499.2,
+    "cameraEvidence": "original-moving-camera.json",
+    "image": ".gameengine/overworld-original-west-bound.png"
+  },
+  "resultGoldenRefresh": {
+    "command": "gameengine test --tier t1 --filter 'adventure campaign actual menu*' --update-goldens --json",
+    "ok": true,
+    "steps": 681,
+    "reason": "Remove only intentionally renamed resultgolden before rerecord; comparator tolerance had retained historical HoneycombTower pixels. Reviewed new BubbleLighthouse label."
+  }
+}

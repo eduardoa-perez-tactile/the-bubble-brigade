@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "status": "Current original Brigade artwork; visual/render/collision and phone-low revalidation pending",
+  "status": "Current original Brigade artwork; scoped integration, cooked campaign, replay, check and phone-low declared asset gates pass; physical phone and retained heap unverified",
   "generation": {
     "tool": "OpenAI built-in image_gen",
     "mode": "Initial text generation followed by refinements/new districts referencing our generated original plate only",
@@ -77,5 +77,6 @@
     "method": "Independently authored native geometric primitives rasterized with Pillow; no input image"
   },
   "dragonProvenance": "tools/overworld/OBLIQUE-DRAGON.md",
-  "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json"
+  "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json",
+  "validationEvidence": "docs/overworld/evidence/original-art-validation-perf.json"
 }

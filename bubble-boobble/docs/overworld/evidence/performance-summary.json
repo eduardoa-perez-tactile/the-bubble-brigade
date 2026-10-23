@@ -279,5 +279,6 @@
     "shortCycle": ".gameengine/overworld-postfix-sanity/stages.json",
     "fiveCycle": ".gameengine/overworld-transition-soak/samples.json"
   },
-  "review": "docs/overworld/PERFORMANCE.md"
+  "review": "docs/overworld/PERFORMANCE.md",
+  "status": "Historical copied-art prototype measurement; original map/dragon replacements require fresh measurement."
 }
