@@ -6,8 +6,9 @@ sampled instruments, with more room for musical breathing and ensemble interplay
 They are sequenced demos, not live performances or final production loops.
 
 The cartoon-jazz direction and these menu/gameplay excerpts were approved on
-23 October 2026. Full production loops, remaining cues and runtime integration
-follow as a separate implementation slice.
+23 October 2026. Derived loops are now wired into the illustrated game; see the
+[playback integration](../../docs/audio-production/playback-integration.md).
+Remaining production cues and effects are separate work.
 
 Open [the listening page](index.html), or play the WAVs directly:
 

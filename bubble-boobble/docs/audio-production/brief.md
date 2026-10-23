@@ -1,8 +1,10 @@
 # The Bubble Brigade audio production brief
 
 Status: sampled 1930s–1940s cartoon-jazz direction and the menu/gameplay excerpts
-approved on 23 October 2026. Production loops, remaining cues and runtime integration
-are the next slice; the approved excerpts are still review assets outside the game.
+approved on 23 October 2026. Their derived streaming loops now drive the illustrated
+game's menu and gameplay; see [playback integration](playback-integration.md).
+The review excerpts stay outside shipping assets. Remaining production cues and SFX
+replacement remain separate work.
 This audit reads assets and code; it does not claim listening assessment of existing recordings.
 Preserve original assets, classic behavior, source provenance and archived migration evidence.
 
@@ -64,10 +66,10 @@ Lengths and tempos are targets to audition, not runtime constraints or measured 
 Wave breaks can reduce music gain briefly and use a clear cue. Pause should silence/soften the current
 music without restarting it; a distinct pause composition is unnecessary. A quiet results bed is optional.
 
-## Current music inventory and selection
+## Preserved classic music inventory and selection
 
-All five playable converted WAV keys live under `reference/audio/`; original YM keys are `bubble-N`.
-`src/arcade/audio.ts` maps the logical selections below; `opening` aliases menu but is not independently
+All five preserved classic WAV keys live under `reference/audio/`; original YM keys are `bubble-N`.
+`src/arcade/music-policy.ts` maps the classic logical selections below; `opening` aliases menu but is not independently
 selected by its current track expression. `g.Sounds` token `opening` is explicitly excluded from SFX.
 
 | WAV key | Logical selection | Trigger |

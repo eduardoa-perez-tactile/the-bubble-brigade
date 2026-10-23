@@ -3,22 +3,29 @@ import { ActionState, app, defineSystem, query, read, write, PlayMusic, StopMusi
 import { ArcadeAudio, ArcadeControl, ArcadePlatformState, DesktopIntent } from '../schema.gen.ts';
 import { session } from './session.ts';
 import { desktopGameRequest, desktopSaveState, desktopState } from '../desktop/index.ts';
-const tracks:Record<string,string>={theme:'music-bubble-1',menu:'music-bubble-2',opening:'music-bubble-2',hurry:'music-bubble-3',gameover:'music-bubble-4',win:'music-bubble-5'};
+import {isIllustratedMusicTrack,selectArcadeMusic,usesIllustratedMusic} from './music-policy';
 export const ArcadeAudioSystem=defineSystem({
  name:'ArcadeAudioSystem',after:['ArcadeStep'],query:query(read(ActionState)),resources:[read(ArcadeControl),write(ArcadeAudio)],events:[DesktopIntent],
  runIf:{resource:ArcadeControl,field:'active',value:true},
  run(ctx,q){
   const old=ctx.get(ArcadeAudio),s=session.get(),save=desktopSaveState.get();let muted=old.muted,native=old.native,sfxPriority=old.sfxPriority;
   for(const intent of ctx.events.read(DesktopIntent))if(intent.action==='native-audio')native=intent.value==='1';
-  if(native!==old.native){ctx.setField(ArcadeAudio,'native',native);if(native)ctx.events.emit(StopMusic,{fade:0});}
+  if(native!==old.native)ctx.setField(ArcadeAudio,'native',native);
   if(desktopState.get().screen!=='new-profile')for(const c of q.chunks())for(let i=0;i<c.length;i++)if(c.is(ActionState,i,'name','mute')&&c.col(ActionState).justPressed[i])muted=!muted;
   const g=s.active?s.game:null;
-  const track=!g?'menu':g.State===4?'win':g.State===3?'gameover':g.Hurry?'hurry':'theme';
   const paused=!!g?.Paused;
   // A held introduction does not advance event-bearing gameplay frames.
   const flow=desktopState.get();
+  const {track,asset}=selectArcadeMusic(flow,g);
+  const nativeOwnsMusic=native&&!usesIllustratedMusic(flow);
+  const oldNativeOwnsMusic=old.native&&!isIllustratedMusicTrack(old.track);
+  const ownerChanged=nativeOwnsMusic!==oldNativeOwnsMusic;
   const introducing=!!flow.cartoon&&cartoonFlowStartsRun(flow.transitionAction??'');
-  if(track!==old.track||native!==old.native){if(!native)ctx.events.emit(PlayMusic,{track:`reference/audio/${tracks[track]}`,crossfade:0});ctx.setField(ArcadeAudio,'track',track);}
+  if(track!==old.track||ownerChanged){
+   if(!nativeOwnsMusic&&asset)ctx.events.emit(PlayMusic,{track:asset,crossfade:0});
+   else if(!asset||ownerChanged)ctx.events.emit(StopMusic,{fade:0});
+   ctx.setField(ArcadeAudio,'track',track);
+  }
   if(muted!==old.muted){
    ctx.setField(ArcadeAudio,'muted',muted);
    // Go stops existing players on mute; a silent bus would let them resurface.
@@ -26,7 +33,7 @@ export const ArcadeAudioSystem=defineSystem({
    ctx.events.emit(muted?UnloadSoundBank:LoadSoundBank,{bank:'audio/juice.bank'});
    if(muted)sfxPriority=2147483647; // Unload stops every older bank voice before reuse.
   }
-  if(old.music!==save.settings.music||old.muted!==muted||old.paused!==paused||old.native!==native){ctx.events.emit(SetBusVolume,{bus:'Music',volume:native||muted||paused?0:save.settings.music/100});ctx.setField(ArcadeAudio,'music',save.settings.music);}
+  if(old.music!==save.settings.music||old.muted!==muted||old.paused!==paused||ownerChanged){ctx.events.emit(SetBusVolume,{bus:'Music',volume:nativeOwnsMusic||muted||paused?0:save.settings.music/100});ctx.setField(ArcadeAudio,'music',save.settings.music);}
   // Source SFX players keep the gain they had when created. Settings affect
   // future voices, while mute unloads/stops them instead of changing their bus.
   if(old.sound<0)ctx.events.emit(SetBusVolume,{bus:'SFX',volume:1});
