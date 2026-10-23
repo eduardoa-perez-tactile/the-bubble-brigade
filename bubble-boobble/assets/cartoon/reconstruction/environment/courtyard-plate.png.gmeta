@@ -1,7 +1,7 @@
 guid = "1c4032a3-a805-55f0-96c9-06c992bcb06b"
 importer = "texture"
 [settings]
-kind = "sprite"
+kind = "texture"
 filter = "linear"
 compression = "none"
 trim = false

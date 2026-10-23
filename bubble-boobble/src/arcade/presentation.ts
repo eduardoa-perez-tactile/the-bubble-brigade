@@ -52,6 +52,7 @@ import { isCartoonClearColor } from '../cartoon/theme';
 const PIXEL_SLOT_BASE = 65536;
 const STATIC_QUAD = 'pixel-renderer/static-quad.gltf';
 const PIXEL_MATERIAL = 'materials/pixel-ordered.mat.json';
+const COURTYARD_MATERIAL = 'materials/courtyard-motion.mat.json';
 const animations: Readonly<Record<string, readonly string[]>> = manifest;
 const atlasRects: Readonly<Record<string, readonly number[]>> = atlas.rects;
 export function referenceFrame(name: string, tick: number): string {
@@ -658,6 +659,18 @@ export const ArcadePresentation = defineSystem({
         offsets.rotation[m]=offsets.rotation[m+1]=offsets.rotation[m+2]=0;offsets.rotation[m+3]=1;
         if (modern) {
           const d=modern[quad]!,color=d.color??[1,1,1,1];
+          if(d.backgroundTick!==undefined){
+            // One opaque plate behind the native sprite batch. Its UV warp
+            // moves the original painted features without doubled silhouettes.
+            if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);
+            if(assetKey(c.col(MeshRenderer).mesh[i]!)!==STATIC_QUAD)c.setField(MeshRenderer,i,'mesh',STATIC_QUAD);
+            if(assetKey(materials[i]!)!==COURTYARD_MATERIAL)c.setField(MeshRenderer,i,'material',COURTYARD_MATERIAL);
+            offsets.position[t]=d.x+d.width/2;offsets.position[t+1]=720-d.y-d.height/2;offsets.position[t+2]=0;
+            offsets.scale[t]=d.width;offsets.scale[t+1]=d.height;offsets.scale[t+2]=1;
+            params[m]=d.backgroundTick;params[m+1]=d.backgroundMotion?1:0;params[m+2]=1-fade;params[m+3]=0;
+            colors[m]=colors[m+1]=colors[m+2]=colors[m+3]=1;
+            continue;
+          }
           if(c.col(MeshRenderer).mesh[i])c.setField(MeshRenderer,i,'mesh',null);
           offsets.position[t]=d.x+d.width/2;offsets.position[t+1]=720-d.y-d.height/2;offsets.position[t+2]=0;
           offsets.scale[t]=offsets.scale[t+1]=offsets.scale[t+2]=1;

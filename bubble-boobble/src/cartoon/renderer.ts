@@ -13,6 +13,9 @@ export interface CartoonDraw {
   /** Rotated white quad; width/height describe its final axis-aligned bounds. */
   diamond?: boolean;
   color?: readonly [number, number, number, number?];
+  /** A painted plate rendered once through its localized native UV material. */
+  backgroundTick?: number;
+  backgroundMotion?: boolean;
 }
 export interface CartoonSprite extends CartoonDraw {image:string}
 // Over five times a fully occupied 44×30 arena plus its combat actors.
