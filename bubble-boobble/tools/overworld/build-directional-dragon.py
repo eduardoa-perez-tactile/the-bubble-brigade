@@ -1,3 +1,4 @@
+# Historical six-frame prototype builder; not used by current production. See build-oblique-dragon.py.
 """Package the one seeded six-frame ImageGen edit with the established Brigade skin palette.
 The sprite-pipeline normalizer provides one shared scale and bottom-center anchor.
 Runtime mirrors the front walk alternating key, preserving a readable opposite-foot stride.

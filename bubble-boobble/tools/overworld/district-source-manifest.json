@@ -8,7 +8,8 @@
       1944
     ],
     "sha256": "f28898beee1cc2cfab1b969f6702a9c9892dca8d1889e8ab4406166119e3aae7",
-    "transformation": "none; original native plate"
+    "transformation": "none; original native plate",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
   },
   {
     "district": 3,
@@ -19,12 +20,14 @@
       1369
     ],
     "sha256": "8be4c70f1cad62620b8e065b5c852ba2697c0c3ab0a3d8e952b6ec2f2aff56f9",
-    "transformation": "none; original native plate"
+    "transformation": "none; original native plate",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
   },
   {
     "file": "assets/overworld-shared/cleared-flag.png",
     "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/102765-level-flags/Cuphead/Level Flags/Boss - Simple/Loop/boss_flag_noA_noContract_0017.png",
     "sha256": "ffacc15d71e1a09fe4b266321a9b3081e23c04de67880e69fba9ec62c2c47666",
-    "transformation": "none; one static completion-flag frame"
+    "transformation": "none; one static completion-flag frame",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
   }
 ]

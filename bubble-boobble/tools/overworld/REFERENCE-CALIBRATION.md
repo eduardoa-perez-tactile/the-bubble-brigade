@@ -1,4 +1,6 @@
-# Inkwell Isle III source-reference calibration
+# Superseded Inkwell Isle III calibration record
+
+**Historical prototype only.** Current production art must be original Brigade work. The copied assets and reference-only QA path described below are being removed; this record documents the earlier calibration and does not authorize importing them again. The user reference library is unchanged.
 
 23 October 2026. This is an explicit source-reference prototype used to correct the rejected generic fantasy map direction. It is not original Bubble Brigade production artwork and is not evidence that the full Adventure feature is complete.
 

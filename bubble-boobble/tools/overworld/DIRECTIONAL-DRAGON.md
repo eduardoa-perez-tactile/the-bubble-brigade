@@ -1,5 +1,7 @@
 # Directional Brigade character
 
+**Superseded prototype.** This six-frame pack has been removed from runtime assets. Current original eight-direction production art and its build instructions are in `OBLIQUE-DRAGON.md`; do not run this historical build to repopulate the shared atlas.
+
 23 October 2026, built-in OpenAI ImageGen **edit** of the shipped game sprite `assets/cartoon/frames/dragon/green/idle-0.png`. The shipped sprite is the identity seed, rather than the rejected fantasy character. That earlier character is not imported or referenced by production rendering.
 
 One whole horizontal strip contains front idle/two front walking keys/back idle/two back walking keys. Prompt invariants: same slender green dragon; cream muzzle, face and belly; black oval eyes; rosy cheeks; rounded yellow head/back spikes; short green tail; thin arms; cream mitten hands and oversized cream shoes; flat dark-ink outlines and flat fills; **no horns, no new outfit, no bulky redesign, no watercolor dragon**. Output has a real transparent background and no ground, UI, text or scenery. Front looks toward the viewer; back has no face/eyes on the rear of the head.

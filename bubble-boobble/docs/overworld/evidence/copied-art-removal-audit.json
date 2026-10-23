@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-23",
+  "scope": "Only feature-introduced copied Cuphead map/landmark/flag assets. Reference library, baseline UI and archived migration evidence unchanged.",
+  "copiedPngCount": 17,
+  "assets": [
+    {
+      "asset": "assets/overworld-reference/bee.png",
+      "sha256": "1d2dca0767511ab882d321277a5e062f344564b62673c4633b28361a82dbfd98",
+      "status": "removed; replaced by original district-1 painting",
+      "metadata": "assets/overworld-reference/bee.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-reference/mainland03.png",
+      "sha256": "2d2404b2bf717846e0d566f3d37911de6cd383aaaa242c021c5c931a3d25b501",
+      "status": "removed; replaced by original district-1 painting",
+      "metadata": "assets/overworld-reference/mainland03.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-reference/top03.png",
+      "sha256": "c009b789ebdb56c872496721c73013d579a565ce2d1ccf2bf1dc22f5b2e4f6e6",
+      "status": "removed; replaced by original district-1 painting",
+      "metadata": "assets/overworld-reference/top03.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-2/base.png",
+      "sha256": "f28898beee1cc2cfab1b969f6702a9c9892dca8d1889e8ab4406166119e3aae7",
+      "status": "removed; replaced by original district-2 painting",
+      "metadata": "assets/overworld-district-2/base.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-3/base.png",
+      "sha256": "8be4c70f1cad62620b8e065b5c852ba2697c0c3ab0a3d8e952b6ec2f2aff56f9",
+      "status": "removed; replaced by original district-3 painting",
+      "metadata": "assets/overworld-district-3/base.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/bakery.png",
+      "sha256": "69444f94d1d62fc97cf4d0c4bb3eb002c3f86408a6eb649896d889aae455f652",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/bakery.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/cactus.png",
+      "sha256": "e6cf4851a250ea910130881f38d7ed696dfaf4dceff74a7cf8bf8d6d8a36f671",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/cactus.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/cart.png",
+      "sha256": "9f4c452792bd4101795165344bea5b078f52147f67c4d12bd274b176e3664992",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/cart.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/cave.png",
+      "sha256": "93e14a3b10f48c188af608b532388a03b463cc88c9fb390ffb711f3394e4fb85",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/cave.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/foreground.png",
+      "sha256": "5aafc3c85bfbb4dd3bbe7e131da3e6e4010d06d9bd9ab5577d9c7ac714b10942",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/foreground.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/igloo.png",
+      "sha256": "3803a07fb4dea9e03ca8df77f5f4869d123d6c65c3db2ec3384c1552438e518f",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/igloo.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-4/land.png",
+      "sha256": "1f2226d2168e708ddd3f7972fd3ac430d2f525424b78cd27c284ea09c47bf03a",
+      "status": "removed; replaced by original district-4 painting",
+      "metadata": "assets/overworld-district-4/land.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-5/east.png",
+      "sha256": "266951114afe0e44b0a811f533db98a4ac68bb4444957d65ef240dd0cdbabb1a",
+      "status": "removed; replaced by original district-5 painting",
+      "metadata": "assets/overworld-district-5/east.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-5/mausoleum.png",
+      "sha256": "0a5d5fe019331e4209d5548a9f219bcb15eb775a386af89ecc5d9153f78edec7",
+      "status": "removed; replaced by original district-5 painting",
+      "metadata": "assets/overworld-district-5/mausoleum.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-5/shop.png",
+      "sha256": "bb55a46ac8bddf153adf3099aac2a571a3f043a9f872be164bee2410f5f63352",
+      "status": "removed; replaced by original district-5 painting",
+      "metadata": "assets/overworld-district-5/shop.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-district-5/west.png",
+      "sha256": "779de62062faba66c0cec5ca2aadbb7d3654c69d1dea9f554e0be3a54a2732dc",
+      "status": "removed; replaced by original district-5 painting",
+      "metadata": "assets/overworld-district-5/west.png.gmeta"
+    },
+    {
+      "asset": "assets/overworld-shared/cleared-flag.png",
+      "copiedSha256": "ffacc15d71e1a09fe4b266321a9b3081e23c04de67880e69fba9ec62c2c47666",
+      "status": "replaced with original authored bubble pennant",
+      "replacementSha256": "316421bf1fe31e22c9cd419004fbcb200f5e4219c61c09f44be4f903021ac052",
+      "source": "tools/overworld/build-cleared-flag.py"
+    }
+  ],
+  "status": "All17 copied feature PNG identities removed or replaced; original source library, protected baseline art and Git history unchanged.",
+  "currentTreeHashAudit": {
+    "baseline": "76d82db",
+    "pngsScanned": 1190,
+    "copiedIdentities": 17,
+    "featureCopiedHashMatches": [],
+    "protectedBaselineHashMatches": [],
+    "pass": true,
+    "boundary": "Current assets tree only; original reference library and Git history were not modified. Baseline asset matches are reported, never removed."
+  }
+}

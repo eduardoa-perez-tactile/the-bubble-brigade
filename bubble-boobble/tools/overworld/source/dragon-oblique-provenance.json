@@ -1,0 +1,31 @@
+{
+  "provider": "built-in OpenAI image_gen",
+  "mode": "identity-preserving edit",
+  "seed": "assets/cartoon/frames/dragon/green/idle-0.png",
+  "generatedSheet": "tools/overworld/source/dragon-eightway-source-edit-v3.png",
+  "sha256": "7a402151af8e97f7a3767c21a614eccacc669937de154406afa818f16608ceee",
+  "runtimeFrames": 240,
+  "directions": [
+    "down",
+    "down-right",
+    "right",
+    "up-right",
+    "up",
+    "up-left",
+    "left",
+    "down-left"
+  ],
+  "framesPerDirection": 3,
+  "frameSize": [
+    128,
+    128
+  ],
+  "footAnchor": [
+    64,
+    120
+  ],
+  "borrowedCupheadPixels": false,
+  "generationDetails": "tools/overworld/OBLIQUE-DRAGON.md",
+  "sourceToolOutput": "exec-e5b2feb9-ac94-4179-af80-2a933a6bbfdc.png",
+  "derivedFrames": "down-walk-1 and up-walk-1 mirror their matching authored walk-0 contact"
+}

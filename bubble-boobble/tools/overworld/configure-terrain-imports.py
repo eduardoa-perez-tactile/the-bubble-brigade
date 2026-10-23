@@ -1,4 +1,4 @@
-"""Reapply native map import compatibility after copying source artwork.
+"""Reapply original Brigade map import compatibility after asset import.
 
 Keep Android/iOS ASTC6x6; desktop uses RGBA because the current cooked host
 rejects the compressed standalone terrain texture binding under phone-low T1.
@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 root = Path(__file__).resolve().parents[2]
-folders = ['overworld-reference'] + [f'overworld-district-{i}' for i in range(2, 6)]
+folders = ['overworld-original']
 for folder in folders:
     for path in sorted((root / 'assets' / folder).rglob('*.gmeta')):
         content = path.read_text()

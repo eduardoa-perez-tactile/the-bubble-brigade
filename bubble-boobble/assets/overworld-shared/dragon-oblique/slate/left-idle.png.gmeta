@@ -1,0 +1,10 @@
+guid = "6e63c886-5e7e-4744-8ad2-b09be7efe2b0"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+filter = "linear"
+atlas = "overworld-shared"
+compression = "astc6x6"
+trim = false
+max_size = 128
