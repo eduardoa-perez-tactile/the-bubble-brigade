@@ -1,6 +1,8 @@
 # The Bubble Brigade audio production brief
 
-Status: production planning and direction demos; no final style or soundtrack approved.
+Status: sampled 1930s–1940s cartoon-jazz direction and the menu/gameplay excerpts
+approved on 23 October 2026. Production loops, remaining cues and runtime integration
+are the next slice; the approved excerpts are still review assets outside the game.
 This audit reads assets and code; it does not claim listening assessment of existing recordings.
 Preserve original assets, classic behavior, source provenance and archived migration evidence.
 
@@ -37,7 +39,8 @@ avoid imitating or quoting the inherited composition. Demos are review assets, n
 | B: Bubble Swing Brigade | Small swing band, brushed drums, bouncing bass, playful brass | Energetic team comedy; buoyant combat rhythm |
 | C: Enchanted Toybox | Celesta, marimba, bassoon, plucked strings, soft percussion | Warm, magical and approachable |
 
-Recommendation: A with some of B's bounce during combat. This is a recommendation, not a selected style.
+Selected direction: the revised sampled cartoon-jazz ensemble, developing A's atmosphere
+with B's rhythmic bounce during combat. The initial three comparisons remain reference material.
 Judge the demos on character, melodic recall, fatigue, intelligibility under effects and loop potential.
 An arrangement sketch or procedural mockup must be labeled honestly; it does not establish the quality
 of a performed or generated final orchestration. Keep editable sources, generation settings and provenance.

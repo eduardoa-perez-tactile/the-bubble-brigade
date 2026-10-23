@@ -5,6 +5,10 @@
 sampled instruments, with more room for musical breathing and ensemble interplay.
 They are sequenced demos, not live performances or final production loops.
 
+The cartoon-jazz direction and these menu/gameplay excerpts were approved on
+23 October 2026. Full production loops, remaining cues and runtime integration
+follow as a separate implementation slice.
+
 Open [the listening page](index.html), or play the WAVs directly:
 
 | Role | Excerpt | Approach |
