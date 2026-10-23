@@ -101,7 +101,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
  else if(pads.pause&&(padScreen==='play'||padScreen==='pause'))desktopAction(padScreen==='pause'?'resume':'pause');
  const status=desktopState.get();if(status.status){if(status.statusStartedStep<0)desktopState.set({...status,statusStartedStep:ctx.step});else if(ctx.step-status.statusStartedStep>=300)desktopState.set({...status,status:'',statusStartedStep:-1});}
  if(desktopState.get().screen==='title'&&ctx.events.count(PointerDown))desktopAction('menu');
- for(const pointer of ctx.events.read(PointerHover)){const s=desktopState.get(),p=desktopSaveState.get(),buttons=getDesktopButtons(s,p);for(let i=0;i<buttons.length;i++){const native=s.cartoon&&['menu','modes'].includes(s.screen);const r=native?cartoonMenuHoverRect(s,i,ctx.get(ViewInfo)):desktopButtonRect(s,p,i);const px=native?pointer.screen[0]:pointer.world[0],py=native?pointer.screen[1]:720-pointer.world[1];if(r&&px>=r.x&&px<r.x+r.width&&py>=r.y&&py<r.y+r.height&&s.selected!==i){desktopAction('select','',i);break;}}}
+ for(const pointer of ctx.events.read(PointerHover)){const s=desktopState.get(),p=desktopSaveState.get(),buttons=getDesktopButtons(s,p);if(s.cartoon&&s.screen==='result'&&s.won)continue;for(let i=0;i<buttons.length;i++){const native=s.cartoon&&['menu','modes'].includes(s.screen);const r=native?cartoonMenuHoverRect(s,i,ctx.get(ViewInfo)):desktopButtonRect(s,p,i);const px=native?pointer.screen[0]:pointer.world[0],py=native?pointer.screen[1]:720-pointer.world[1];if(r&&px>=r.x&&px<r.x+r.width&&py>=r.y&&py<r.y+r.height&&s.selected!==i){desktopAction('select','',i);break;}}}
  for(const e of ctx.events.read(DesktopIntent))desktopAction(e.action,e.value,e.index,e.x,e.y,ctx.time);
  for(const c of q.chunks())for(let i=0;i<c.length;i++)if(c.is(ActionState,i,'name','fullscreen')&&c.col(ActionState).justPressed[i])desktopAction('fullscreen','',0,0,0,ctx.time);
  // ActionState reflects the final held state, so a down/up pair within one step can lose justPressed.
@@ -111,6 +111,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
  if(menuState.screen!=='play'){
    const buttons=getDesktopButtons(menuState,desktopSaveState.get());
    if(pads.menuYEdge&&buttons.length)desktopAction('select','',menuState.screen==='modes'?modeGridSelection(menuState.selected,0,pads.menuYEdge):menuState.screen==='party'?partyGridSelection(menuState.selected,0,pads.menuYEdge):(menuState.selected+pads.menuYEdge+buttons.length)%buttons.length);
+   if(pads.menuXEdge&&menuState.cartoon&&menuState.screen==='result'&&menuState.won)desktopAction('select','',(menuState.selected+pads.menuXEdge+buttons.length)%buttons.length);
    if(pads.menuXEdge&&menuState.screen==='modes')desktopAction('select','',modeGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='party')desktopAction('select','',partyGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='settings'){const b=buttons[desktopState.get().selected];if(b)desktopAction(b.key,'',pads.menuXEdge);}
@@ -145,6 +146,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
   if(s.screen==='new-profile'&&c.is(ActionState,i,'name','delete')){if(a.pressed[i]){const started=s.deleteHeldAt<0?ctx.step:s.deleteHeldAt;if(s.deleteHeldAt<0)desktopState.set({...s,deleteHeldAt:started});const held=ctx.step-started;if(held===0||held>30&&held%3===0)desktopAction('delete-char');}else if(s.deleteHeldAt>=0)desktopState.set({...s,deleteHeldAt:-1});}
   if(!a.justPressed[i])continue;const buttons=getDesktopButtons(s,desktopSaveState.get());
   if(c.is(ActionState,i,'name','menuY')){const delta=a.value[i]!<0?-1:1;const selected=s.screen==='modes'?modeGridSelection(s.selected,0,delta):s.screen==='party'?partyGridSelection(s.selected,0,delta):(s.selected+delta+buttons.length)%buttons.length;desktopAction('select','',selected);}
+  if(c.is(ActionState,i,'name','menuX')&&s.cartoon&&s.screen==='result'&&s.won)desktopAction('select','',(s.selected+(a.value[i]!<0?-1:1)+buttons.length)%buttons.length);
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='modes')desktopAction('select','',modeGridSelection(s.selected,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='party')desktopAction('select','',partyGridSelection(s.selected,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='settings'){const b=buttons[s.selected];if(b)desktopAction(b.key,'',a.value[i]!<0?-1:1);}

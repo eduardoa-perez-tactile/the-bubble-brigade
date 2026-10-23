@@ -10,7 +10,7 @@ import {CartoonBossShowcase} from '../src/cartoon/boss.cheats';
 import {session} from '../src/arcade/session';
 const scene='scenes/cartoon.scene.json';
 const views=[[768,720],[1680,720],[640,960],[2520,1080]] as const;
-worldTest('cartoon boss silhouette and foreground bottles stay larger and readable across views',()=>{
+worldTest('cartoon boss silhouette and foreground fireballs stay larger and readable across views',()=>{
  const g=createPartyGame(campaign,42,Array.from({length:10},()=> 'human' as const),10,'cartoon');
  g.Party!.Wave=10;preparePartyWave(g);g.Party!.Phase='boss';g.LevelTicks=300;
  const boss=g.Party!.Boss!;
@@ -22,7 +22,7 @@ worldTest('cartoon boss silhouette and foreground bottles stay larger and readab
   const draws=cartoonDrawPlan(g,300,{width,height,safeArea:[0,0,0,0]},undefined,undefined,reduced);
   const b=draws.find(d=>d.frame==='boss/simple-windup')!,p=draws.find(d=>d.frame.startsWith('dragon/green/idle-'))!;
   expect(b.height/p.height>=2).toBe(true);
-  const bottle=draws.find(d=>d.frame==='boss/bottle-0')!;
+  const bottle=draws.find(d=>d.frame==='boss/fireball')!;
   expect(bottle.height/p.height>=.4).toBe(true);
   expect(draws.indexOf(bottle)>draws.indexOf(p)).toBe(true);
   expect(draws.some(d=>d.frame==='solid/#f6b64e')).toBe(true);
@@ -45,9 +45,9 @@ renderTest('cartoon boss readable scale windup fan and capture on phone low',asy
  let peak=0;
  const shot=(name:string,width:number,height:number)=>{
   const stats=render.stats({width,height});peak=Math.max(peak,stats.drawCalls);
-  // Boss HP adds one UI batch to combat; the enlarged art, warning and wakes
-  // must fit the existing sprite/marker batches. Wide HUD uses one more batch.
-  expect(stats.drawCalls).toBeLessThanOrEqual(baseline.get(width)!+1);
+  // Dedicated boss labels and the animated health track add at most three UI batches.
+  // Fireballs, enlarged lightning and actor motion reuse existing sprite/marker batches.
+  expect(stats.drawCalls).toBeLessThanOrEqual(baseline.get(width)!+3);
   render.expectScreenshot(name,{width,height});
  };
  for(const [width,height]of views){
@@ -64,7 +64,7 @@ renderTest('cartoon boss readable scale windup fan and capture on phone low',asy
  }
  await cheat(CartoonBossShowcase,{captured:true});
  input.view(640,960,1);await step(1);shot('captured',640,960);
- expect(peak).toBeLessThanOrEqual(15);console.log(JSON.stringify({peakDrawCalls:peak}));
+ expect(peak).toBeLessThanOrEqual(17);console.log(JSON.stringify({peakDrawCalls:peak}));
 },{scene,memory:'phone-low'});
 
 worldTest('cartoon bellows boss freeze windup release and low health select actual action poses',()=>{

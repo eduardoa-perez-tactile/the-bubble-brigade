@@ -149,7 +149,7 @@ export interface Counters {
 export type PartySlot = 'human' | 'ai' | 'empty';
 export interface PartyBoss {
   X:number; Y:number; HP:number; MaxHP:number; Tick:number; Invulnerable:number;
-  VX:number; VY:number; Dir:number; Mode:'moving'|'windup'|'captured'; Timer:number;
+  VX:number; VY:number; Dir:number; Mode:'moving'|'windup'|'captured'|'defeated'; Timer:number;
 }
 export interface PartyState {
   Kills?: number[];

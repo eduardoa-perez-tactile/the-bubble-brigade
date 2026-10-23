@@ -111,6 +111,8 @@ function enrageLastEnemy(g:GameState) {
 export function stepParty(g:GameState,inputs:Input[]) {
   const p=g.Party!;
   g.Tick++;
+  // The final pop is a protected four-second curtain call, with no new shots or damage.
+  if(p.Boss?.Mode==='defeated'){stepBoss(g);return;}
   // Every occupied slot counts, including AI teammates and the final dragon.
   // Check before phase handling so a wiped team cannot enter another wave.
   if(partySurvivorCount(g)===0){g.State=State.GameOver;return;}

@@ -17,6 +17,7 @@ export interface RosterSlot {
   down: boolean;
 }
 export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>> {
+  bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
   classicPortrait?: string;
   waveLabel?: string;
   showStatus?: boolean;
@@ -49,8 +50,12 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
   });
   const preparingOrGo = game.Party.Phase === 'prepare' ||
     (game.State === 1 && (game.Party.Phase === 'combat' || game.Party.Phase === 'boss') && game.LevelTicks < (game.Party.Boss ? 180 : 120));
-  return { ...base, ...cue, startCue, startHint: '', showStatus: base.highTitle === 'BOSS HP' || base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
+  const boss=game.Party.Boss;
+  const victory=boss?.Mode==='defeated',captured=boss?.Mode==='captured';
+  const needsPower=game.Players.some(p=>p.Lives>0&&!p.Downed&&!p.Power.Thunder);
+  const instruction=!boss||victory?'':captured?'HE IS TRAPPED!  TOUCH THE GIANT BUBBLE TO FINISH':needsPower?'PICK UP A GLOWING CANISTER TO CHARGE YOUR BUBBLES':'SHOOT, THEN JUMP INTO YOUR BUBBLE: LIGHTNING HITS THE DRAGON';
+  return { ...base, ...cue, bossActive:!!boss,bossHealth:boss?.HP??0,bossMaximum:boss?.MaxHP??1,bossCaptured:captured,bossVictory:victory,freeze:instruction, startCue, startHint: '', showStatus: !boss && base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
     // Keep rest, boss capture and finisher feedback; remove duplicate prep/GO plaques.
-    showBanner: base.showBanner && (!preparingOrGo || !!base.celebrationColor && base.celebrationColor !== 'none' || game.Party.Boss?.Mode === 'captured'),
+    showBanner: !boss && base.showBanner && (!preparingOrGo || !!base.celebrationColor && base.celebrationColor !== 'none' || game.Party.Boss?.Mode === 'captured'),
     rosterAll: roster, rosterTop: roster.slice(0, 5), rosterBottom: roster.slice(5) };
 }

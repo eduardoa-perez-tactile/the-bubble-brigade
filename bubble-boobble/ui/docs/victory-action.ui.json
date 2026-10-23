@@ -1,0 +1,86 @@
+{
+  "$schemaVersion": 1,
+  "guid": "6d249b7f-2683-428e-ba40-abbde4d7d3f8",
+  "name": "victory-action",
+  "title": "Victory action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Victory action",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": 0,
+        "grow": 1,
+        "h": 48,
+        "justify": "center"
+      },
+      "children": [
+        "va_label"
+      ]
+    },
+    "va_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": "88%",
+        "h": 42,
+        "fontSize": 25,
+        "fitMin": 17,
+        "textAlign": "center",
+        "color": "#fff1cb",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#173549"
+      }
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "CONTINUE"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "va_label": {
+              "color": "#ffd366",
+              "scale": 1.06
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "va_label": {
+          "ty": 2,
+          "scale": 0.97
+        }
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.4
+        }
+      }
+    }
+  }
+}

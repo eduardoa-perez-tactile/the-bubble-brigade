@@ -65,7 +65,7 @@ renderTest('cartoon overhaul recorded ten human start uses new whole board and r
     expect(projection.projectX(levelWidth(g.Level)-48) <= layout.viewportRight + .001).toBe(true);
     expect(projection.projectY(3*24) >= hud.top - .001).toBe(true);
     expect(projection.projectY(22*24) <= hud.bottom + .001).toBe(true);
-    expect(render.stats({width:width!,height:height!}).drawCalls).toBeLessThanOrEqual(14);
+    expect(render.stats({width:width!,height:height!}).drawCalls).toBeLessThanOrEqual(17);
     render.expectScreenshot(`new_arena_${width}x${height}`,{width:width!,height:height!});
   }
   input.emit(DesktopIntent,{action:'pause'}); await step(1);
@@ -87,7 +87,7 @@ renderTest('cartoon overhaul complete enemy item elemental boss rescue and victo
     if (scenario === 'enemies' || scenario === 'capture')
       expect(new Set(g.Enemies.map(enemy=>enemy.Kind)).size).toBe(6);
     if (scenario === 'items') expect(g.Items.length).toBe(38);
-    expect(render.stats({width:1536,height:1440}).drawCalls).toBeLessThanOrEqual(14);
+    expect(render.stats({width:1536,height:1440}).drawCalls).toBeLessThanOrEqual(17);
     render.expectScreenshot(`complete_${scenario}`,{width:1536,height:1440});
   }
   await cheat(CartoonOverhaul,{scenario:'rescue'});
@@ -100,7 +100,7 @@ renderTest('cartoon overhaul complete enemy item elemental boss rescue and victo
   expect(session.get().game!.Players[1]!.Downed).toBe(false);
   expect(session.get().game!.Players[1]!.Lives).toBe(1);
   render.expectScreenshot('complete_rescued',{width:1536,height:1440});
-  await cheat(CartoonOverhaul,{scenario:'victory'}); await step(2);
+  await cheat(CartoonOverhaul,{scenario:'victory'}); await step(362);
   expect(session.get().game!.State).toBe(4);
   expect(desktopState.get().screen).toBe('result');
   render.expectScreenshot('complete_victory',{width:1536,height:1440});

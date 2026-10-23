@@ -14,7 +14,7 @@ export function createBoss(team:number,level?:Level):PartyBoss {
 /** Individual floor pickups are replenished after deaths; collecting one never deprives a teammate. */
 export function ensureThunderPickups(g:GameState) {
   const b=g.Party?.Boss;
-  if(!b||b.Mode==='captured')return;
+  if(!b||(b.Mode==='captured'||b.Mode==='defeated'))return;
   const needed=g.Players.filter(p=>alive(p)&&!p.Power.Thunder).length;
   let present=g.Items.filter(i=>i.Power==='thunder_potion').length;
   for(let i=0;present<needed&&i<g.Players.length;i++) {
@@ -32,40 +32,43 @@ export function captureBoss(g:GameState) {
 /** Called at every swept lightning position, so fast bolts cannot tunnel through the boss. */
 export function hitBossWithThunder(g:GameState,x:number,y:number,w:number,h:number):boolean {
   const b=g.Party?.Boss;
-  if(g.Party?.Phase!=='boss'||!b||b.Mode==='captured'||!intersects(x,y,w,h,b.X,b.Y,bossSize,bossSize))return false;
+  if(g.Party?.Phase!=='boss'||!b||(b.Mode==='captured'||b.Mode==='defeated')||!intersects(x,y,w,h,b.X,b.Y,bossSize,bossSize))return false;
   b.HP--;b.Invulnerable=8;addScore(g,100,b.X,b.Y);
   // Invulnerable is a visual hit flash, not a gate: simultaneous teammates' bolts all count.
   if(b.HP<=0)captureBoss(g);
   return true;
 }
-function bottleFan(g:GameState) {
+function fireballFan(g:GameState) {
   const b=g.Party!.Boss!,dir=b.Dir;
-  // Fixed slopes avoid platform-dependent trig and give clear gaps between bottles.
+  // Fixed slopes avoid platform-dependent trig and give clear gaps between fireballs.
   for(const slope of [-1.2,-.8,-.4,0,.4,.8,1.2])
     g.Projectiles.push({...body(b.X+48+dir*40,b.Y+38),VX:dir*3.8,VY:slope*3.2,Bottle:true,Laser:false,Age:0,Removed:false});
-  g.Sounds.push('laser');
+  g.Sounds.push('fire');
 }
 export function stepBoss(g:GameState) {
   const b=g.Party!.Boss!;b.Tick++;
   if(b.Invulnerable>0)b.Invulnerable--;
+  if(b.Mode==='defeated'){if(++b.Timer>=240)g.State=State.Won;return;}
   if(b.HP<=0&&b.Mode!=='captured')captureBoss(g);
   if(b.Mode==='captured') {
     b.Timer++;
     // Settle within reach of the floor. No timed escape/restart in the co-op adaptation.
     b.Y=Math.min(arenaHeight(g)-Tile-bossSize,b.Y+1.5);
-    if(b.Timer<30)return;
+    if(b.Timer<(g.Level.arena==='cartoon-courtyard'?120:30))return;
     const finisher=g.Players.findIndex(p=>alive(p)&&intersects(p.X,p.Y,ActorSize,ActorSize,b.X,b.Y,bossSize,bossSize));
     if(finisher>=0) {
       recordPartyKill(g,finisher);
       recordPartyLastKill(g,finisher);
-      addScore(g,5000,b.X,b.Y);g.State=State.Won;g.Bubbles=[];g.Effects=[];g.Sounds.push('opening');
+      addScore(g,5000,b.X,b.Y);
+      if(g.Level.arena==='cartoon-courtyard'){b.Mode='defeated';b.Timer=0;}else g.State=State.Won;
+      g.Bubbles=[];g.Effects=[];g.Projectiles=[];g.Items=[];g.Sounds.push('opening');
     }
     return;
   }
   if(b.Tick%120===0)ensureThunderPickups(g);
   if(g.Freeze>0)return;
   if(b.Mode==='windup') {
-    if(--b.Timer<=0){bottleFan(g);b.Mode='moving';b.Timer=b.HP*3<=b.MaxHP?100:150;}
+    if(--b.Timer<=0){fireballFan(g);b.Mode='moving';b.Timer=b.HP*3<=b.MaxHP?100:150;}
     return;
   }
   const speed=b.HP*3<=b.MaxHP?1.25:1;

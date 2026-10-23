@@ -1,0 +1,603 @@
+{
+  "$schemaVersion": 1,
+  "guid": "3d2d2bb9-add7-47ef-954e-b4702ebb5f40",
+  "name": "cartoon-victory",
+  "title": "Cartoon victory",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon victory",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0,
+        "bg": "#194f70"
+      },
+      "children": [
+        "cv_backdrop",
+        "cv_stage"
+      ]
+    },
+    "cv_backdrop": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/results/backdrop",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%",
+        "pivot": "centre",
+        "safeArea": "full"
+      }
+    },
+    "cv_stage": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_title",
+        "cv_eyebrow",
+        "cv_main",
+        "cv_details",
+        "cv_actions",
+        "cv_hint"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "96%",
+        "h": 720,
+        "pivot": "centre"
+      }
+    },
+    "cv_title": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/results/title",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          8
+        ],
+        "w": "94%",
+        "h": 176
+      },
+      "point": "results-title"
+    },
+    "cv_eyebrow": {
+      "type": "label",
+      "name": "Label",
+      "text": "{eyebrow}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          184
+        ],
+        "w": "94%",
+        "h": 22,
+        "fontSize": 17,
+        "fitMin": 13,
+        "textAlign": "center",
+        "color": "#142d40",
+        "weight": 800
+      }
+    },
+    "cv_main": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_hero",
+        "cv_hero_caption",
+        "cv_board"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          214
+        ],
+        "w": "100%",
+        "h": 414
+      }
+    },
+    "cv_hero": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/results/hero",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.25,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "40%",
+        "h": 390,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "point": "hero"
+    },
+    "cv_hero_caption": {
+      "type": "label",
+      "name": "Label",
+      "text": "{heroCaption}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.25,
+          0
+        ],
+        "offset": [
+          0,
+          391
+        ],
+        "w": "43%",
+        "h": 24,
+        "fontSize": 23,
+        "fitMin": 16,
+        "textAlign": "center",
+        "color": "#fff3ce",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#163348",
+        "pivot": [
+          0.5,
+          0
+        ]
+      }
+    },
+    "cv_board": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_frame",
+        "cv_tally",
+        "cv_metrics",
+        "cv_rule",
+        "cv_outcome"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.72,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "53%",
+        "h": 414,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "point": "scoreboard"
+    },
+    "cv_tally": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE FINAL TALLY",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          42
+        ],
+        "w": "76%",
+        "h": 24,
+        "fontSize": 18,
+        "fitMin": 13,
+        "textAlign": "center",
+        "color": "#fff1cb"
+      }
+    },
+    "cv_metrics": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_metric_rows"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          86
+        ],
+        "w": "84%",
+        "h": 224,
+        "dir": "column",
+        "gap": 6
+      }
+    },
+    "cv_metric_rows": {
+      "type": "repeat",
+      "doc": "victory-metric",
+      "property": "metrics"
+    },
+    "cv_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          310
+        ],
+        "w": "84%",
+        "h": 1,
+        "bg": "#d6b975"
+      }
+    },
+    "cv_outcome": {
+      "type": "label",
+      "name": "Label",
+      "text": "{outcome}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          335
+        ],
+        "w": "72%",
+        "h": 44,
+        "fontSize": 25,
+        "fitMin": 15,
+        "textAlign": "center",
+        "color": "#ffd366",
+        "weight": 800
+      }
+    },
+    "cv_details": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_detail_frame",
+        "cv_detail_heading",
+        "cv_rankings",
+        "cv_detail_ribbon"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          216
+        ],
+        "w": "84%",
+        "h": 430
+      },
+      "show": "details",
+      "point": "team-board"
+    },
+    "cv_detail_heading": {
+      "type": "label",
+      "name": "Label",
+      "text": "{detailHeading}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          32
+        ],
+        "w": "76%",
+        "h": 30,
+        "fontSize": 27,
+        "fitMin": 20,
+        "textAlign": "center",
+        "color": "#ffd366"
+      }
+    },
+    "cv_rankings": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_rank_rows"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          75
+        ],
+        "w": "80%",
+        "h": 220,
+        "dir": "column"
+      },
+      "point": "ranking-list"
+    },
+    "cv_rank_rows": {
+      "type": "repeat",
+      "doc": "victory-rank",
+      "property": "ranking"
+    },
+    "cv_actions": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cv_action_rows"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          650
+        ],
+        "w": "90%",
+        "h": 48,
+        "dir": "row",
+        "gap": 16
+      },
+      "point": "actions"
+    },
+    "cv_action_rows": {
+      "type": "repeat",
+      "doc": "victory-action",
+      "property": "buttons"
+    },
+    "cv_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "{hint}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          702
+        ],
+        "w": "94%",
+        "h": 16,
+        "fontSize": 12,
+        "fitMin": 9,
+        "textAlign": "center",
+        "color": "#fff3ce",
+        "shadowX": 1,
+        "shadowY": 1,
+        "shadowColor": "#163348"
+      },
+      "point": "input-hint"
+    },
+    "cv_detail_ribbon": {
+      "type": "label",
+      "name": "Label",
+      "text": "EVERY DRAGON COUNTS",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          348
+        ],
+        "w": "72%",
+        "h": 44,
+        "fontSize": 25,
+        "fitMin": 15,
+        "textAlign": "center",
+        "color": "#fff3ce",
+        "weight": 800
+      },
+      "point": "ranking-ribbon"
+    },
+    "cv_frame": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "image": "cartoon/ui/results/scoreboard",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%"
+      }
+    },
+    "cv_detail_frame": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "image": "cartoon/ui/results/scoreboard",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen",
+    "safe": true,
+    "enter": {
+      "set": {
+        "root": {
+          "opacity": 0
+        },
+        "cv_title": {
+          "ty": -18
+        },
+        "cv_hero": {
+          "tx": -24
+        },
+        "cv_board": {
+          "tx": 24
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "root": {
+          "opacity": 0
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 500
+  },
+  "properties": {
+    "eyebrow": {
+      "type": "text",
+      "default": ""
+    },
+    "heroCaption": {
+      "type": "text",
+      "default": ""
+    },
+    "outcome": {
+      "type": "text",
+      "default": ""
+    },
+    "hint": {
+      "type": "text",
+      "default": ""
+    },
+    "detailHeading": {
+      "type": "text",
+      "default": ""
+    },
+    "details": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cv_main": {
+              "hide": true
+            }
+          }
+        }
+      }
+    },
+    "ready": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "no": {
+          "set": {
+            "cv_actions": {
+              "opacity": 0.4
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "list",
+      "of": "victory-metric",
+      "default": []
+    },
+    "ranking": {
+      "type": "list",
+      "of": "victory-rank",
+      "default": []
+    },
+    "buttons": {
+      "type": "list",
+      "of": "victory-action",
+      "default": []
+    }
+  }
+}
