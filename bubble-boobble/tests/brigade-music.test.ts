@@ -1,6 +1,7 @@
 import {expect,worldTest} from '@gameengine/test';
-import {PlayMusic,StopMusic} from '@gameengine/runtime';
+import {PlayMusic,StopMusic,Time} from '@gameengine/runtime';
 import {ArcadeAudio,DesktopIntent} from '../src/schema.gen';
+import {cartoonFlowTiming} from '../src/cartoon/flow-timing';
 import {desktopState} from '../src/desktop/state';
 import {ResetArcade} from '../src/arcade/arcade.cheats';
 import {CartoonOverhaul} from '../src/cartoon/overhaul.cheats';
@@ -130,4 +131,35 @@ worldTest('brigade music bridge posting policy uses the latest theme after healt
  // /state builds its policy after /health, using the current document and
  // audio resource even if the logical track has not switched this step yet.
  expect(nativeBridgeMusicState(flow,'bubble-2',false)).toEqual({track:'',muted:true});
+},{scene});
+
+for(const action of ['start','start-party'])worldTest(`brigade music ${action} crossfades once under cover and stays continuous through gameplay reveal`,async({step,input,world,audio})=>{
+ await step(8);
+ input.emit(DesktopIntent,{action:'party'});await step(1);
+ input.emit(DesktopIntent,{action:'ui-activate',value:action});await step(2);
+ const flow=desktopState.get(),origin=flow.transitionStartedStep!;
+ const timing=cartoonFlowTiming(true,action,action==='start-party');
+ let changes=0;
+ for(let age=world.resource(Time).step-origin;age<=timing.finishAt+5;age++){
+  const requests=world.events(PlayMusic);
+  changes+=requests.length;
+  for(const request of requests){
+   expect(request.track).toBe('audio/brigade/gameplay');
+   expect(request.crossfade).toBeGreaterThanOrEqual(.75);
+   expect(request.crossfade).toBeLessThanOrEqual(1);
+   expect(age>=timing.commitAt).toBe(true);
+   expect(age<timing.revealEndAt).toBe(true);
+  }
+  expect(world.events(StopMusic).length).toBe(0);
+  expect(audio.status().music).toBe(age<timing.commitAt?'audio/brigade/menu':'audio/brigade/gameplay');
+  expect(audio.status().buses.Music).toBeGreaterThan(0);
+  await step(1);
+ }
+ expect(changes).toBe(1);
+ // Returning to the menu uses the same smooth handoff without a stop in between.
+ input.emit(DesktopIntent,{action:'leave'});await step(1);
+ const back=world.events(PlayMusic);
+ expect(back.map(e=>e.track)).toEqual(['audio/brigade/menu']);
+ expect(back[0]!.crossfade).toBeGreaterThanOrEqual(.75);
+ expect(world.events(StopMusic).length).toBe(0);
 },{scene});

@@ -88,3 +88,19 @@ The results below describe the music playback slice. SFX validation is tracked i
 - Cross-runtime verification is unavailable because the Hermes host is not installed.
   A native headless session disables audio output, so no live speaker/DAC verification
   is claimed; the cooked tests use the supported offline audio mixer.
+
+
+## Smooth menu/gameplay handoff
+
+Illustrated menu and gameplay streams overlap with a 0.8-second crossfade when the
+run commits behind the transition cover. The fade spans the main scene reveal;
+returning to the menu uses the same overlap. Previously these changes explicitly
+requested zero seconds and cut the outgoing stream immediately. Startup, classic
+music, outcome stops and native ownership retain their existing behavior. No
+additional music assets, banks or gameplay timing changes are required.
+
+Regression tests drive both solo and party Start through the actual covered flow,
+checking one positive-duration music request, no intervening stop, continuous track
+selection and a positive effective Music bus through reveal and Ready. They also
+check the reverse menu handoff. Offline mixer status does not expose each stream's
+fade envelope; subjective transition balance remains a listening check.
