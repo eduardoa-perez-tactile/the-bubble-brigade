@@ -11,7 +11,10 @@ renderTest('madness release menu and mode cards fit and launch both modes',async
  input.emit(DesktopIntent,{action:'development-menu',index:0});input.emit(DesktopIntent,{action:'menu'});await step(2);
  render.stats({width:768,height:720});expect(ui.interactables().map(b=>b.label).sort()).toEqual(['QUIT','SETTINGS','START GAME']);
  render.expectScreenshot('release_menu',{width:768,height:720});
- const start=ui.interactables().find(b=>b.label==='START GAME')!;await ui.press(start.id!);await step(2);expect(desktopState.get().screen).toBe('modes');
+ const start=ui.interactables().find(b=>b.label==='START GAME')!;await ui.press(start.id!);await step(2);
+ expect(desktopState.get().screen).toBe('overworld-panel');expect(desktopState.get().overworldPanel).toBe('menu');
+ render.stats({width:768,height:720});const arcade=ui.interactables().find(b=>b.label==='ARCADE MODES')!;
+ await ui.press(arcade.id!);await step(2);expect(desktopState.get().screen).toBe('modes');
  for(const [width,height] of [[768,720],[1680,720],[640,960]]) {
   input.view(width!,height!,1);await step(1);render.stats({width:width!,height:height!});
   const cards=ui.interactables().filter(b=>b.rect.height>200*Math.min(width!/768,height!/720));expect(cards.length).toBe(2);
@@ -19,7 +22,10 @@ renderTest('madness release menu and mode cards fit and launch both modes',async
  }
  input.view(768,720,1);await step(1);render.stats({width:768,height:720});render.expectDrawCalls('<=',14,{width:768,height:720});render.expectScreenshot('classic_card',{width:768,height:720});
  const classic=ui.interactables().find(b=>b.rect.x===100)!;await ui.press(classic.id!);await step(2);expect(session.get().game!.Party).toBe(undefined);expect(desktopState.get().screen).toBe('play');
- input.emit(DesktopIntent,{action:'leave'});input.emit(DesktopIntent,{action:'choose-mode'});input.emit(DesktopIntent,{action:'select',index:1});await step(2);render.stats({width:768,height:720});render.expectScreenshot('madness_card',{width:768,height:720});
+ input.emit(DesktopIntent,{action:'leave'});await step(2);render.stats({width:768,height:720});
+ await ui.press(ui.interactables().find(b=>b.label==='START GAME')!.id!);await step(2);render.stats({width:768,height:720});
+ await ui.press(ui.interactables().find(b=>b.label==='ARCADE MODES')!.id!);await step(2);
+ input.emit(DesktopIntent,{action:'select',index:1});await step(2);render.stats({width:768,height:720});render.expectScreenshot('madness_card',{width:768,height:720});
  const madness=ui.interactables().find(b=>b.rect.x===396)!;await ui.press(madness.id!);await step(2);expect(desktopState.get().screen).toBe('party');
 },{scene});
 renderTest('madness menu stays simple with development enabled',async({input,step,render,ui})=>{

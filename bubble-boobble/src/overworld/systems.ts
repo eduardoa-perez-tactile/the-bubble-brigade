@@ -19,7 +19,13 @@ export const OverworldSystem=defineSystem({
       if(c.is(ActionState,i,'name','confirm')){confirm ||= !!a.pressed[i];pressed ||= !!a.justPressed[i];}
       if(c.is(ActionState,i,'name','pause')||c.is(ActionState,i,'name','back'))pause ||= !!a.justPressed[i];
     }
-    for(const event of ctx.input)if(event.type==='gamepadButton'&&event.pad===0&&event.down&&(event.button===6||event.button===1))pause=true;
+    for(const event of ctx.input){
+      if(event.type!=='gamepadButton'||event.pad!==0)continue;
+      // Canonical south/A is button0, the same mapping used by party-input. Keep
+      // its edge even when down and up are both recorded before the next step.
+      if(event.button===0){if(event.down&&!(confirmKeys&4))pressed=true;confirmKeys=event.down?confirmKeys|4:confirmKeys&~4;}
+      if(event.down&&(event.button===6||event.button===1))pause=true;
+    }
     // DesktopSystem reduces raw recorded controller events once per step; read its sim latch.
     const pad=partyPads.get().pads[0];
     if(pad){
