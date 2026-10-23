@@ -1,3 +1,4 @@
+import {uiAudioSnapshot,uiAudioCue,classicIntroAudioStage,type UIAudioSnapshot} from './ui-audio';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { CartoonOutcomeView } from '../cartoon/outcome.view';
 import { CartoonArrivalView, type CartoonArrivalModel } from '../cartoon/arrival.view';
@@ -6,7 +7,7 @@ import { CartoonDefeatView } from '../cartoon/defeat.view';
 import { CartoonTransitionView, type CartoonTransitionModel } from '../cartoon/transition.view';
 import { openBrowserFullscreen } from './browser';
 import { developmentMenuEnabled } from './development';
-import { read, app, assets, quality, Time, MaterialGlobals } from '@gameengine/runtime';
+import { read, app, assets, audio, quality, Time, MaterialGlobals } from '@gameengine/runtime';
 import { setReducedMotion, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
 import { desktopState } from './state.ts';
@@ -30,6 +31,22 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
  const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session);
+ let previousUIAudio:UIAudioSnapshot|undefined,previousIntroAudio='off';
+ createEffect(()=>{
+  const s=state(),p=save(),a=platform(),next=uiAudioSnapshot(s,p),sound=uiAudioCue(previousUIAudio,next);
+  previousUIAudio=next;
+  if(sound&&control()?.active&&!a?.muted&&p.settings.sound>0)
+   audio.play(`audio/brigade/sfx/${sound}`,{bus:'UI',volume:p.settings.sound/100*.45,priority:40,maxVoices:2});
+ });
+ createEffect(()=>{
+  const s=state(),p=save(),a=platform(),g=arcade();
+  const step=s.cartoon&&g.active&&g.game&&!g.game.Party&&s.transitionAction?(clock()?.step??0):0;
+  const stage=classicIntroAudioStage(s,g.active?g.game:null,step);
+  if(stage===null)return;
+  const changed=stage!==previousIntroAudio;previousIntroAudio=stage;
+  if(changed&&stage!=='off'&&control()?.active&&!a?.muted&&p.settings.sound>0)
+   audio.play(`audio/brigade/sfx/${stage==='go'?'go':'countdown-tick'}`,{volume:p.settings.sound/100*.55,priority:80,maxVoices:1});
+ });
  createEffect(()=>setReducedMotion(!!save().settings.reducedEffects));
  createEffect(()=>quality.setTargetFps(state().cartoon&&state().screen!=='play'?30:null));
  onCleanup(()=>quality.setTargetFps(null));

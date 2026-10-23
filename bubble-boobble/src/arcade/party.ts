@@ -80,7 +80,7 @@ function revive(g:GameState,index:number) {
   const x=dragon.X,y=dragon.Y;
   dragon.Lives=1;respawn(g,index);
   Object.assign(g.Players[index]!,{X:x,Y:y,Downed:false,Invincible:180});
-  g.Sounds.push('item');
+  g.Sounds.push(g.Level.arena==='cartoon-courtyard'?'rescue':'item');
 }
 function rescues(g:GameState) {
   for(let i=0;i<g.Players.length;i++) {

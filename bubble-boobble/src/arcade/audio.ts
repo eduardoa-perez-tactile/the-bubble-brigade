@@ -4,6 +4,7 @@ import { ArcadeAudio, ArcadeControl, ArcadePlatformState, DesktopIntent } from '
 import { session } from './session.ts';
 import { desktopGameRequest, desktopSaveState, desktopState } from '../desktop/index.ts';
 import {isIllustratedMusicTrack,selectArcadeMusic,usesIllustratedMusic} from './music-policy';
+import {brigadeSfxBank,brigadeStepSounds} from './sfx-policy';
 export const ArcadeAudioSystem=defineSystem({
  name:'ArcadeAudioSystem',after:['ArcadeStep'],query:query(read(ActionState)),resources:[read(ArcadeControl),write(ArcadeAudio)],events:[DesktopIntent],
  runIf:{resource:ArcadeControl,field:'active',value:true},
@@ -31,8 +32,12 @@ export const ArcadeAudioSystem=defineSystem({
    // Go stops existing players on mute; a silent bus would let them resurface.
    ctx.events.emit(muted?UnloadSoundBank:LoadSoundBank,{bank:'reference/audio/sfx.bank'});
    ctx.events.emit(muted?UnloadSoundBank:LoadSoundBank,{bank:'audio/juice.bank'});
+   if(flow.cartoon)ctx.events.emit(muted?UnloadSoundBank:LoadSoundBank,{bank:brigadeSfxBank});
    if(muted)sfxPriority=2147483647; // Unload stops every older bank voice before reuse.
-  }
+  }else if(flow.cartoon&&!muted&&!isIllustratedMusicTrack(old.track))ctx.events.emit(LoadSoundBank,{bank:brigadeSfxBank});
+  // A palette change also stops existing new voices before classic mute takes
+  // responsibility for its original two banks.
+  if(!flow.cartoon&&isIllustratedMusicTrack(old.track))ctx.events.emit(UnloadSoundBank,{bank:brigadeSfxBank});
   if(old.music!==save.settings.music||old.muted!==muted||old.paused!==paused||ownerChanged){ctx.events.emit(SetBusVolume,{bus:'Music',volume:nativeOwnsMusic||muted||paused?0:save.settings.music/100});ctx.setField(ArcadeAudio,'music',save.settings.music);}
   // Source SFX players keep the gain they had when created. Settings affect
   // future voices, while mute unloads/stops them instead of changing their bus.
@@ -41,6 +46,11 @@ export const ArcadeAudioSystem=defineSystem({
   // The illustrated game uses restrained, coalesced cues in both adventure and
   // party play. The preserved pixel campaign keeps its gain and ordering contract.
   const expressive=!!g&&(!!g.Party||g.Level.arena==='cartoon-courtyard');
+  if(g&&flow.cartoon&&!muted&&!paused&&!introducing&&save.settings.sound>0){
+   const gain=save.settings.sound/100;
+   for(const cue of brigadeStepSounds(g))ctx.events.emit(PlaySound,{...cue,volume:gain*cue.volume});
+  }
+  if(!flow.cartoon){
   if(g&&expressive&&!muted&&!paused&&!introducing&&save.settings.sound>0){
     const gain=save.settings.sound/100;
     const play=(sound:string,volume:number,priority:number,pitch=1,maxVoices=2)=>ctx.events.emit(PlaySound,{sound,volume:gain*volume,priority,pitch,maxVoices});
@@ -58,6 +68,7 @@ export const ArcadeAudioSystem=defineSystem({
    if(sfxPriority===-2147483648)throw new Error('SFX priority capacity exhausted; mute to stop voices and reset the cursor');
    ctx.events.emit(PlaySound,{sound:`reference/audio/${sound}`,volume:save.settings.sound/100,maxVoices:0,priority:sfxPriority});
    sfxPriority--;
+  }
   }
   if(sfxPriority!==old.sfxPriority)ctx.setField(ArcadeAudio,'sfxPriority',sfxPriority);
   if(old.paused!==paused)ctx.setField(ArcadeAudio,'paused',paused);

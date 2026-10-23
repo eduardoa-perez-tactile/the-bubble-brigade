@@ -29,7 +29,10 @@ worldTest('brigade music illustrated gameplay stays audible across native readin
   input.emit(DesktopIntent,{action:'native-audio',value});await step(1);
   expect(world.resource(ArcadeAudio).native).toBe(value==='1');
   expect(audio.status().music).toBe('audio/brigade/gameplay');
-  expect(audio.status().buses.Music).toBe(.5);
+  // UI cues duck the effective mixer gain; the saved target stays unchanged.
+  expect(world.resource(ArcadeAudio).music).toBe(50);
+  expect(audio.status().buses.Music).toBeGreaterThan(0);
+  expect(audio.status().buses.Music).toBeLessThanOrEqual(.5);
   expect(world.events(PlayMusic).length).toBe(0);
   expect(world.events(StopMusic).length).toBe(0);
  }
@@ -85,7 +88,12 @@ worldTest('brigade music mute pause and slider change gain without restarting ap
  input.emit(DesktopIntent,{action:'native-audio',value:'1'});await step(1);
  const assertGain=(volume:number)=>{
   expect(audio.status().music).toBe('audio/brigade/gameplay');
-  expect(audio.status().buses.Music).toBe(volume);
+  expect(world.resource(ArcadeAudio).music).toBe(25);
+  if(volume===0)expect(audio.status().buses.Music).toBe(0);
+  else{
+   expect(audio.status().buses.Music).toBeGreaterThan(0);
+   expect(audio.status().buses.Music).toBeLessThanOrEqual(volume);
+  }
   expect(world.events(PlayMusic).length).toBe(0);
  };
  input.emit(DesktopIntent,{action:'music',index:-1});await step(1);assertGain(.25);

@@ -1,0 +1,30 @@
+{
+  "sounds": [
+    "audio/brigade/sfx/bubble-shot",
+    "audio/brigade/sfx/bubble-pop",
+    "audio/brigade/sfx/capture",
+    "audio/brigade/sfx/jump",
+    "audio/brigade/sfx/bubble-bounce",
+    "audio/brigade/sfx/land",
+    "audio/brigade/sfx/player-downed",
+    "audio/brigade/sfx/rescue",
+    "audio/brigade/sfx/food-pickup",
+    "audio/brigade/sfx/power-up",
+    "audio/brigade/sfx/fire",
+    "audio/brigade/sfx/water",
+    "audio/brigade/sfx/thunder",
+    "audio/brigade/sfx/explosion",
+    "audio/brigade/sfx/boss-hit",
+    "audio/brigade/sfx/boss-windup",
+    "audio/brigade/sfx/boss-capture",
+    "audio/brigade/sfx/countdown-tick",
+    "audio/brigade/sfx/go",
+    "audio/brigade/sfx/wave-clear",
+    "audio/brigade/sfx/victory",
+    "audio/brigade/sfx/defeat",
+    "audio/brigade/sfx/ui-navigate",
+    "audio/brigade/sfx/ui-confirm",
+    "audio/brigade/sfx/ui-back",
+    "audio/brigade/sfx/ui-unavailable"
+  ]
+}
