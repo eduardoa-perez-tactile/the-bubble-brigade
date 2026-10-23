@@ -10,6 +10,7 @@ export interface AdventureEncounter {
   rewardCoins: number;
   requiresAny: string[];
   requiresAll: string[];
+  trial?: boolean;
 }
 export interface AdventureDistrict {
   id: string;
@@ -39,7 +40,13 @@ export const encounters: AdventureEncounter[] = districts.flatMap(district => di
   requiresAny:index===2 ? district.encounterIds.slice(0,2) : [],
   requiresAll:index>=3 ? [district.encounterIds[2]!] : [],
 })));
-export const encounterById = (id:string):AdventureEncounter|undefined => encounters.find(encounter=>encounter.id===id);
+/** Optional one-life capture/pop trials never gate the main 25-encounter campaign. */
+export const trials: AdventureEncounter[] = districts.map(district=>({
+  id:`trial-${district.index+1}`,name:`${district.name} Mastery`,districtId:district.id,
+  level:district.index*5+1,x:-560,y:260,rewardCoins:10,requiresAny:[],requiresAll:[],trial:true,
+}));
+export const encounterById = (id:string):AdventureEncounter|undefined => encounters.find(encounter=>encounter.id===id)??trials.find(encounter=>encounter.id===id);
+export const trialForDistrict = (districtId:string):AdventureEncounter|undefined => trials.find(trial=>trial.districtId===districtId);
 export const districtById = (id:string):AdventureDistrict|undefined => districts.find(district=>district.id===id);
 export function availableDistrict(id:string, progress:AdventureProgress):boolean {
   const district=districtById(id);

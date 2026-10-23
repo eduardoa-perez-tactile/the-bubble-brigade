@@ -1,3 +1,4 @@
+import { overworldState } from '../overworld/state';
 import {cartoonFlowStartsRun} from '../cartoon/flow-timing';
 import {cartoonRewardLabel,cartoonRewardColor} from '../cartoon/reward-feedback';
 import { menuBubble, menuDragon } from '../desktop/animation';
@@ -614,6 +615,12 @@ export const ArcadePresentation = defineSystem({
   resources: [read(ArcadeControl), read(Time), read(ArcadeFeel), read(ViewInfo), write(MaterialGlobals)],
   runIf: { resource: ArcadeControl, field: "active", value: true },
   run(ctx, q) {
+    if(overworldState.get().active){
+      for(const c of q.visuals.chunks())for(let i=0;i<c.length;i++){c.setField(Sprite,i,'visible',false);c.setField(Text2D,i,'visible',false);c.setField(Shape,i,'visible',false);}
+      for(const c of q.mesh.chunks())for(let i=0;i<c.length;i++){c.setField(Sprite,i,'visible',false);c.set(VisualOffset,i,{scale:[0,0,0]});}
+      for(const c of q.masks.chunks())for(let i=0;i<c.length;i++)c.set(SpriteMask,i,{size:[0,0]});
+      return;
+    }
     const feel=unpackFeel(ctx.get(ArcadeFeel));
     const plan = sceneDraws(ctx.get(Time).step,feel,ctx.get(ViewInfo)),
       ui = desktopState.get(),

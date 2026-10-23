@@ -18,6 +18,6 @@ export const CartoonMenuView = defineView<DesktopModel>({
       startSelected: () => model().selected === 0,
       settingsSelected: () => model().selected === 1,
       quitSelected: () => model().selected === 2,
-    }} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='quit'?(model().buttons[2]?.key??key):key); }} />
+    }} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-menu':key==='quit'?(model().buttons[2]?.key??key):key); }} />
   </Screen>,
 });

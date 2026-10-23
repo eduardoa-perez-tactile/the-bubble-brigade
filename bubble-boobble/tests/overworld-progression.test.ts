@@ -1,7 +1,7 @@
 import { expect, worldTest } from '@gameengine/test';
 import { desktopSave, initialDesktopSave } from '../src/desktop/save.ts';
-import { districts, encounters, availableDistrict, availableEncounter } from '../src/overworld/content.ts';
-import { initialAdventure, completeAdventure, beginAdventureAttempt, abandonAdventureAttempt, adventureForProfile, setAdventureAnchor, discoverAdventureShortcut, claimAdventureGuideReward, purchaseAdventureItem, claimAdventureCollectible, validAdventure, type AdventureProgress } from '../src/overworld/progression.ts';
+import { districts, encounters, availableDistrict, availableEncounter, trials, trialForDistrict } from '../src/overworld/content.ts';
+import { initialAdventure, completeAdventure, beginAdventureAttempt, abandonAdventureAttempt, adventureForProfile, setAdventureAnchor, discoverAdventureShortcut, claimAdventureGuideReward, purchaseAdventureItem, claimAdventureCollectible, adventureCleared, validAdventure, type AdventureProgress } from '../src/overworld/progression.ts';
 const scene='scenes/arcade.scene.json';
 function clear(progress:AdventureProgress,encounterId:string,score=100):AdventureProgress {
  const begun=beginAdventureAttempt(progress,encounterId);
@@ -94,4 +94,15 @@ worldTest('adventure malformed saves fail closed instead of discarding stored pr
  for(const state of malformed){let rejected=false;try{desktopSave.load({v:2,state});}catch{rejected=true;}expect(rejected).toBe(true);}
  const stored={v:1,state:initialDesktopSave};
  const before=JSON.stringify(stored);desktopSave.load(stored);expect(JSON.stringify(stored)).toBe(before);
+},{scene});
+
+worldTest('adventure optional mastery trials reward once without opening main campaign gates',async()=>{
+ let progress=initialAdventure();
+ expect(trials.length).toBe(5);expect(trialForDistrict('district-1')!.id).toBe('trial-1');
+ expect(availableEncounter('trial-1',progress)).toBe(true);expect(availableEncounter('trial-2',progress)).toBe(false);
+ progress=clear(progress,'trial-1',200);
+ expect(progress.cleared['trial-1']!.bestScore).toBe(200);expect(progress.coins).toBe(10);
+ expect(adventureCleared(progress)).toBe(0);expect(availableEncounter('encounter-3',progress)).toBe(false);
+ progress=clear(progress,'trial-1',100);expect(progress.coins).toBe(10);expect(progress.cleared['trial-1']!.clears).toBe(2);
+ expect(validAdventure(progress)).toBe(true);
 },{scene});

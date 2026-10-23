@@ -74,3 +74,6 @@ export { ArcadeEditorInput } from './arcade/editor-input.ts';
 export { ArcadeAudioSystem, ArcadePlatform } from './arcade/audio.ts';
 
 export { DesktopPlatformBridge } from './desktop-platform/index.ts';
+
+export { OverworldSystem, OverworldTargetSystem } from './overworld/systems';
+export { OverworldVisualPool, OverworldPresentation } from './overworld/presentation';

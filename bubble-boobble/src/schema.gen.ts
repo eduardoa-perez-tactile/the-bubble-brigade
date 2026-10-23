@@ -592,6 +592,27 @@ export const schemaIr = {
       "sim": true,
       "fields": [],
       "package": "The Bubble Brigade"
+    },
+    {
+      "name": "OverworldVisual",
+      "kind": "component",
+      "sim": true,
+      "fields": [
+        {
+          "name": "slot",
+          "kind": "u32",
+          "scalar": "u32",
+          "lanes": 1
+        }
+      ],
+      "package": "The Bubble Brigade"
+    },
+    {
+      "name": "OverworldAvatar",
+      "kind": "component",
+      "sim": true,
+      "fields": [],
+      "package": "The Bubble Brigade"
     }
   ],
   "commands": [],
@@ -865,3 +886,17 @@ export type PortVisualViews = Record<string, never>;
 export type PortVisualValue = Record<string, never>;
 /** PortVisual (component, sim) */
 export const PortVisual = typeToken<PortVisualViews, PortVisualValue>('PortVisual', 'component');
+
+export interface OverworldVisualViews {
+  slot: Uint32Array;
+}
+export interface OverworldVisualValue {
+  slot: number;
+}
+/** OverworldVisual (component, sim) */
+export const OverworldVisual = typeToken<OverworldVisualViews, OverworldVisualValue>('OverworldVisual', 'component', { sig: 'slot:u32:1', read: (v: OverworldVisualViews, i: number, o: Record<string, unknown>) => { o.slot = v.slot[i]; return o; } });
+
+export type OverworldAvatarViews = Record<string, never>;
+export type OverworldAvatarValue = Record<string, never>;
+/** OverworldAvatar (component, sim) */
+export const OverworldAvatar = typeToken<OverworldAvatarViews, OverworldAvatarValue>('OverworldAvatar', 'component');

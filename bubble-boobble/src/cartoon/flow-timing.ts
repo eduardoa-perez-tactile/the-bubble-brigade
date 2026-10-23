@@ -14,7 +14,7 @@ export interface CartoonFlowTiming {
   revealSteps: number;
 }
 export function cartoonFlowStartsRun(action: string): boolean {
-  return action === 'start' || action === 'start-party' || action === 'restart' || action === 'test-level';
+  return action === 'adventure-play' || action === 'start' || action === 'start-party' || action === 'restart' || action === 'test-level';
 }
 export function cartoonFlowTiming(hasTitle: boolean, action: string, partyRun = false): CartoonFlowTiming {
   const timing = hasTitle ? CARTOON_LAUNCH_TIMING : CARTOON_RETRY_TIMING;

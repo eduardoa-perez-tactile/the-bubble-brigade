@@ -1,0 +1,17 @@
+.overworld-screen { width:100%;height:100%;align-items:center;justify-content:center;font-family:"cartoon/fonts/BreeSerif-Regular"; }
+.overworld-hud-screen {pointer-events:none;}
+.overworld-hud {width:100%;height:720px;}
+.overworld-hud .ud-overworld-hud__owh_menu {pointer-events:auto;}
+.overworld-card {width:100%;height:100%;}
+.overworld-card .ud-overworld-encounter__owe_title,
+.overworld-card .ud-overworld-dialogue__owd_speaker,
+.overworld-hud .ud-overworld-hud__owh_district {font-family:"cartoon/fonts/Rye-Regular";}
+.overworld-card .ud-overworld-dialogue__owd_message,
+.overworld-card .ud-overworld-dialogue__owd_detail,
+.overworld-card .ud-overworld-encounter__owe_description,
+.overworld-card .ud-overworld-encounter__owe_status {white-space:pre-wrap;}
+@media (aspect < 1.2) {
+.overworld-hud .ud-overworld-hud__owh_place {width:270px;}
+.overworld-card .ud-overworld-dialogue__ow_panel,
+.overworld-card .ud-overworld-encounter__ow_panel {width:94%;padding:16px;}
+}

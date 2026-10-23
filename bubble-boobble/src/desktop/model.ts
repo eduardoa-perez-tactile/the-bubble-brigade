@@ -1,3 +1,6 @@
+import { adventurePanel } from '../overworld/panels';
+import { encounterById, availableEncounter } from '../overworld/content';
+import { adventureForProfile } from '../overworld/progression';
 import { WEB_BUILD } from './build-flags';
 import { partyNames, partyColors, defaultPartySlots } from '../arcade/party-config';
 import type { DesktopState } from './state.ts';
@@ -7,15 +10,18 @@ export interface DesktopButton {key:string;label:string}
 const button=(key:string,label:string):DesktopButton=>({key,label});
 export function getDesktopButtons(s:DesktopState,p:DesktopSave):DesktopButton[]{
  switch(s.screen){
+ case 'overworld':return [];
+ case 'overworld-panel':return adventurePanel(s,p).buttons;
+ case 'overworld-card':return [...(availableEncounter(s.adventureEncounter??'',adventureForProfile(p.profiles[p.active]!))?[button('adventure-play','PLAY ENCOUNTER')]:[]),button('overworld-back','BACK TO MAP')];
  case 'title':return [button('menu','PRESS ENTER TO START')];
- case 'menu':return [button('choose-mode','START GAME'),button('settings','SETTINGS'),WEB_BUILD?button('help','HOW TO PLAY'):button('quit','QUIT')];
+ case 'menu':return [button('adventure-menu','START GAME'),button('settings','SETTINGS'),WEB_BUILD?button('help','HOW TO PLAY'):button('quit','QUIT')];
  case 'modes':return [button('classic-mode','CLASSIC MODE'),button('madness-mode','BUBBLE MADNESS'),button('mode-back','BACK')];
  case 'party':return [...(s.partySlots??defaultPartySlots).map((slot,i)=>button(`party-slot:${i}`,`${partyNames[i]} / ${slot==='human'?`HUMAN - PAD ${i+1}`:slot.toUpperCase()}`)),button('start-party',s.partyEditing?'RESUME SURVIVAL':'START SURVIVAL'),button('menu','BACK')];
  case 'profiles':return [...p.profiles.map((v,i)=>button(`profile:${i}`,`${i===p.active?'* ':''}${v.name}`)),button('new-profile','NEW PROFILE'),button('menu','BACK')];
  case 'new-profile':return [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('').map(c=>button(`char:${c}`,c)),button('char: ','SPACE'),button('delete-char','DEL'),button('create-profile','CREATE PROFILE'),button('profiles','CANCEL')];
  case 'settings':return [button('avatar',`DRAGON: ${p.profiles[p.active]!.avatar.toUpperCase()}`),button('music',`MUSIC: ${p.settings.music}%`),button('sound',`SOUND: ${p.settings.sound}%`),button('fullscreen',WEB_BUILD?'BROWSER FULLSCREEN':`FULLSCREEN: ${p.settings.fullscreen?'ON':'OFF'}`),button('play-mode',`MODE: ${s.playMode==='ai'?'AI CO-OP':s.playMode==='human'?'HUMAN CO-OP':'SOLO'}`),button('effects',`EFFECTS: ${p.settings.reducedEffects?'REDUCED':'FULL'}`),button('menu','BACK')];
- case 'pause':return s.cartoon?(s.pauseConfirm?[button('cancel-run-action','KEEP PLAYING'),button('confirm-run-action',s.pauseConfirm==='restart'?'RESTART RUN':'END RUN')]:[button('resume','RESUME'),button('restart','RESTART RUN'),button('settings','OPTIONS'),button('leave',s.custom?'BACK TO EDITOR':'END RUN'),...(s.partyRun?[button('party','TEAM SETUP')]:[])]):[button('resume','RESUME'),button('restart','RESTART'),button('leave',s.custom?'BACK TO EDITOR':'END RUN'),...(s.partyRun?[button('party','TEAM SETUP')]:[])];
- case 'result':return s.cartoon&&!s.won?[button('restart','RETRY RUN'),button('leave',s.custom?'BACK TO EDITOR':'MAIN MENU'),button('result-details',s.resultDetails?'BACK TO CARD':s.partyRun?'TEAM DETAILS':'RUN DETAILS')]:[button('restart','PLAY AGAIN'),button('leave',s.custom?'BACK TO EDITOR':'MAIN MENU')];
+ case 'pause':if(s.adventure)return s.pauseConfirm?[button('cancel-run-action','KEEP PLAYING'),button('confirm-run-action',s.pauseConfirm==='restart'?'RETRY ENCOUNTER':'RETURN TO MAP')]:[button('resume','RESUME'),button('restart','RETRY ENCOUNTER'),button('settings','OPTIONS'),button('leave','RETURN TO MAP')];return s.cartoon?(s.pauseConfirm?[button('cancel-run-action','KEEP PLAYING'),button('confirm-run-action',s.pauseConfirm==='restart'?'RESTART RUN':'END RUN')]:[button('resume','RESUME'),button('restart','RESTART RUN'),button('settings','OPTIONS'),button('leave',s.custom?'BACK TO EDITOR':'END RUN'),...(s.partyRun?[button('party','TEAM SETUP')]:[])]):[button('resume','RESUME'),button('restart','RESTART'),button('leave',s.custom?'BACK TO EDITOR':'END RUN'),...(s.partyRun?[button('party','TEAM SETUP')]:[])];
+ case 'result':if(s.adventure)return [button('restart','RETRY ENCOUNTER'),button('leave','RETURN TO MAP')];return s.cartoon&&!s.won?[button('restart','RETRY RUN'),button('leave',s.custom?'BACK TO EDITOR':'MAIN MENU'),button('result-details',s.resultDetails?'BACK TO CARD':s.partyRun?'TEAM DETAILS':'RUN DETAILS')]:[button('restart','PLAY AGAIN'),button('leave',s.custom?'BACK TO EDITOR':'MAIN MENU')];
  case 'editor':return [button('template-prev','<'),button('template',`COPY ROUND ${String(s.template+1).padStart(2,'0')}`),button('template-next','>'),button('new','NEW'),button('undo','UNDO'),...editorTools.map((t,i)=>button(`tool:${i}`,`${i===s.tool?'> ':''}${t}`)),button('save-level','SAVE'),button('load-level','LOAD'),button('test-level','PLAY TEST'),button('menu','BACK'),button('element',`BUBBLES: ${s.level.special.toUpperCase()||'NONE'}`),button('theme',`TILE: ${String(s.level.number).padStart(2,'0')}`)];
  case 'play':return [];
  default:return [button('menu','BACK')];
