@@ -4,6 +4,27 @@ Status: production planning and direction demos; no final style or soundtrack ap
 This audit reads assets and code; it does not claim listening assessment of existing recordings.
 Preserve original assets, classic behavior, source provenance and archived migration evidence.
 
+## Revised musical target — 1930s–1940s cartoon jazz
+
+The first synthesized directions were liked compositionally but sounded too electronic.
+The revised target is a small acoustic cartoon-jazz ensemble: clarinet and muted-brass
+call-and-response, stride-style piano, upright bass and restrained brushed percussion.
+Menu music should feel mischievous and mysterious; gameplay should have a faster swing
+pulse with gaps for effects. Use breath-sized phrases, chord-aware bass movement,
+contrasting short/held articulations, expression curves and restrained timing variation.
+Avoid continuous bell leads, rigid repeated attacks and a modern heavy drum backbeat.
+
+The [second review batch](../../art/audio-period-band/index.html) contains new menu and
+gameplay excerpts rendered with sampled instruments. These remain sequenced composition
+demos, not live-band recordings, final masters or seamless production loops. The original
+mathematical synthesis sketches stay available for comparison. The current limited sample
+bank will not provide every expressive scoop, fall, growl or connected reed articulation;
+audition decides whether it is sufficient or a more expressive production source is needed.
+
+Historical reference: the Smithsonian's [Benny Carter lesson](https://www.americanhistory.si.edu/explore/projects/smithsonian-jazz/education/bennys-music-class)
+discusses alternating reeds/brass and soloist/section exchanges; its [1932 Minnie the Moocher record](https://www.si.edu/object/minnie-moocher%3Anmaahc_A2015.273.2.9.1abc)
+provides period cartoon/jazz context. These are style references, not compositions to copy.
+
 ## Creative options and first review
 
 Create three comparable 30–45-second instrumental menu demos plus a six-cue sound palette

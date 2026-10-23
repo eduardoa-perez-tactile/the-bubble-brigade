@@ -4,6 +4,9 @@ First review batch, 23 October 2026. These original synthesized sketches compare
 three directions before selecting the game's production sound. They are not final
 orchestrations, seamless gameplay loops or live replacements.
 
+The [revised sampled-instrument cartoon-jazz batch](../audio-period-band/index.html)
+develops the preferred 1930s–1940s character after this first synthesized comparison.
+
 Open [the listening page](index.html) locally in a browser, or play the WAV files
 directly. It uses native audio controls, makes no network requests and never
 autoplays. Starting a clip pauses the others. Previewing audio here is human
