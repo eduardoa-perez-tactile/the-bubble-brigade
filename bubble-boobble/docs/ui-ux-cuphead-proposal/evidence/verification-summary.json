@@ -1,0 +1,42 @@
+{
+  "flowTests": [
+    {
+      "host": "v8",
+      "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+      "ok": false,
+      "steps": 46,
+      "errors": [
+        "Missing mobile/metal golden"
+      ]
+    },
+    {
+      "host": "v8",
+      "name": "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+      "ok": false,
+      "steps": 208,
+      "errors": [
+        "Missing mobile/metal golden"
+      ]
+    },
+    {
+      "host": "v8",
+      "name": "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+      "ok": false,
+      "steps": 48,
+      "errors": [
+        "Missing mobile/metal golden"
+      ]
+    }
+  ],
+  "inputTests": [
+    {
+      "name": "desktop physical Enter opens title and activates the selected menu item once",
+      "ok": true
+    },
+    {
+      "name": "desktop physical Enter tap between simulation steps is not dropped",
+      "ok": true
+    }
+  ],
+  "note": "No baseline updates. M2 Max Metal mobile tier is not a phone performance measurement."
+}

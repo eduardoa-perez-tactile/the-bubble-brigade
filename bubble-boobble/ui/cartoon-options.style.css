@@ -1,0 +1,25 @@
+/* Original ruled options panel, scoped to settings so profiles keep their layout. */
+.cartoon-options-screen { background-color: #bcb09a; }
+.cartoon-account-settings .ud-cartoon-account__da_settings { border-width: 3px; border-color: #6b7358; }
+.cartoon-account-settings .ud-cartoon-account__da_options_title { font-family: "cartoon/fonts/Rye-Regular"; }
+.cartoon-account-settings .cartoon-settings-portrait { width: 44px; height: 44px; }
+/* Tall phones trade spare height for readable values and finger-sized rows. */
+@media (aspect < 0.7) {
+ .cartoon-account.cartoon-account-settings { height: 1040px; }
+ .cartoon-account-settings .ud-cartoon-account__da_settings { anchor: 0.5 0.5; pivot: 0.5 0.5; left: 0px; top: 0px; width: 720px; height: 1000px; }
+ .cartoon-account-settings .ud-cartoon-account__da_options_title { top: 30px; width: 640px; height: 64px; font-size: 42px; text-fit: 32px 42px; }
+ .cartoon-account-settings .ud-cartoon-account__da_options_subtitle { top: 106px; width: 640px; height: 30px; font-size: 16px; text-fit: 12px 16px; }
+ .cartoon-account-settings .ud-cartoon-account__da_options_rule { left: 40px; top: 144px; width: 640px; }
+ .cartoon-account-settings .ud-cartoon-account__da_setting_list { left: 40px; top: 164px; gap: 10px; }
+ .cartoon-account-settings .ud-cartoon-option-row__root { width: 640px; height: 84px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_label { left: 28px; top: 18px; width: 282px; height: 48px; font-size: 30px; text-fit: 20px 30px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_value { left: 350px; top: 18px; width: 230px; height: 48px; font-size: 30px; text-fit: 20px 30px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_left { left: 316px; top: 21px; height: 44px; font-size: 28px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_right { left: 602px; top: 21px; height: 44px; font-size: 28px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_pointer { top: 21px; height: 44px; font-size: 28px; }
+ .cartoon-account-settings .ud-cartoon-option-row__op_rule { left: 24px; top: 83px; width: 606px; }
+ .cartoon-account-settings .ud-cartoon-account__da_settings_avatar { left: 40px; top: 862px; width: 64px; height: 64px; }
+ .cartoon-account-settings .cartoon-settings-portrait { width: 64px; height: 64px; }
+ .cartoon-account-settings .ud-cartoon-account__da_stats_name { left: 32px; top: 866px; width: 480px; height: 28px; font-size: 18px; text-fit: 13px 18px; }
+ .cartoon-account-settings .ud-cartoon-account__da_stats { left: 32px; top: 908px; width: 550px; height: 24px; font-size: 15px; text-fit: 11px 15px; }
+}

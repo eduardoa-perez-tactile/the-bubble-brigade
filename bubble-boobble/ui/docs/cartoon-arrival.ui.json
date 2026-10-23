@@ -1,0 +1,114 @@
+{
+  "$schemaVersion": 1,
+  "guid": "2f0d2a8c-2607-46cb-81cc-75c0b18e6e02",
+  "name": "cartoon-arrival",
+  "title": "Cartoon arrival",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon arrival",
+      "style": {
+        "w": 680,
+        "h": 480,
+        "pad": 36,
+        "bg": "#151711",
+        "radius": 12,
+        "align": "center",
+        "dir": "column",
+        "gap": 20,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "ca_studio",
+        "ca_in",
+        "ca_title",
+        "ca_mode",
+        "ca_billing"
+      ]
+    },
+    "ca_studio": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE BUBBLE BRIGADE",
+      "style": {
+        "w": 600,
+        "h": 44,
+        "fontSize": 24,
+        "color": "#eee3c7",
+        "textAlign": "center"
+      }
+    },
+    "ca_in": {
+      "type": "label",
+      "name": "Label",
+      "text": "in",
+      "style": {
+        "w": 500,
+        "h": 36,
+        "fontSize": 23,
+        "color": "#eee3c7",
+        "textAlign": "center"
+      }
+    },
+    "ca_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "COURTYARD CAPER",
+      "style": {
+        "w": 600,
+        "h": 130,
+        "fontSize": 62,
+        "fitMin": 40,
+        "color": "#eee3c7",
+        "textAlign": "center"
+      }
+    },
+    "ca_mode": {
+      "type": "label",
+      "name": "Label",
+      "text": "{mode}",
+      "style": {
+        "w": 600,
+        "h": 42,
+        "fontSize": 22,
+        "color": "#eee3c7",
+        "textAlign": "center"
+      }
+    },
+    "ca_billing": {
+      "type": "label",
+      "name": "Label",
+      "text": "A BUBBLE-BLOWING CARTOON CAPER",
+      "style": {
+        "w": 600,
+        "h": 24,
+        "fontSize": 13,
+        "color": "#b9b69d",
+        "textAlign": "center"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen",
+    "safe": false
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "mode": {
+      "type": "text",
+      "default": "BUBBLE MADNESS"
+    }
+  }
+}

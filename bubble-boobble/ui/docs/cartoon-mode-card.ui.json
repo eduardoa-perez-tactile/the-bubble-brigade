@@ -13,7 +13,7 @@
         "dir": "row",
         "pad": 0,
         "align": "center",
-        "bg": "#f1e3bf",
+        "bg": "#00000000",
         "radius": 0,
         "w": 272,
         "h": 380
@@ -28,7 +28,8 @@
         "mc_description",
         "mc_players",
         "mc_badge",
-        "mc_hero"
+        "mc_hero",
+        "mc_focus"
       ]
     },
     "mc_left": {
@@ -48,7 +49,8 @@
         ],
         "w": 4,
         "h": 380,
-        "bg": "#30271e"
+        "bg": "#30271e",
+        "hide": true
       }
     },
     "mc_right": {
@@ -68,7 +70,8 @@
         ],
         "w": 4,
         "h": 380,
-        "bg": "#30271e"
+        "bg": "#30271e",
+        "hide": true
       }
     },
     "mc_top": {
@@ -88,7 +91,8 @@
         ],
         "w": 272,
         "h": 4,
-        "bg": "#30271e"
+        "bg": "#30271e",
+        "hide": true
       }
     },
     "mc_bottom": {
@@ -108,7 +112,8 @@
         ],
         "w": 272,
         "h": 4,
-        "bg": "#30271e"
+        "bg": "#30271e",
+        "hide": true
       }
     },
     "mc_footer": {
@@ -128,7 +133,7 @@
         ],
         "w": 264,
         "h": 124,
-        "bg": "#e1c99c"
+        "bg": "#00000000"
       }
     },
     "mc_label": {
@@ -143,13 +148,13 @@
         ],
         "offset": [
           0,
-          272
+          266
         ],
-        "fontSize": 24,
-        "color": "#30271e",
+        "fontSize": 28,
+        "color": "#d9cba9",
         "outline": 0,
         "w": 248,
-        "h": 30,
+        "h": 38,
         "fitMin": 16,
         "textAlign": "center"
       }
@@ -168,12 +173,12 @@
           0,
           312
         ],
-        "fontSize": 13,
-        "color": "#30271e",
+        "fontSize": 20,
+        "color": "#d9cba9",
         "outline": 0,
         "w": 248,
-        "h": 27,
-        "fitMin": 10,
+        "h": 32,
+        "fitMin": 18,
         "textAlign": "center"
       }
     },
@@ -191,11 +196,11 @@
           0,
           348
         ],
-        "fontSize": 14,
-        "color": "#30271e",
+        "fontSize": 22,
+        "color": "#d9cba9",
         "outline": 0,
         "w": 248,
-        "h": 20,
+        "h": 32,
         "fitMin": 12,
         "textAlign": "center"
       }
@@ -214,12 +219,13 @@
           0
         ],
         "offset": [
-          8,
-          8
+          80,
+          0
         ],
         "w": 112,
         "h": 24,
-        "bg": "#c68b39"
+        "bg": "#00000000",
+        "hide": true
       },
       "show": "selected"
     },
@@ -228,8 +234,8 @@
       "name": "Label",
       "text": "SELECTED",
       "style": {
-        "fontSize": 10,
-        "color": "#30271e",
+        "fontSize": 11,
+        "color": "#e1b35c",
         "position": "anchored",
         "anchor": [
           0.5,
@@ -255,16 +261,39 @@
         ],
         "offset": [
           0,
-          38
+          24
         ],
-        "w": 170,
-        "h": 190
+        "w": 208,
+        "h": 224
       },
       "property": "hero"
+    },
+    "mc_focus": {
+      "type": "label",
+      "name": "Label",
+      "text": ">",
+      "show": "selected",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          -132,
+          267
+        ],
+        "w": 24,
+        "h": 38,
+        "fontSize": 28,
+        "color": "#e1b35c",
+        "attach": true
+      }
     }
   },
   "transition": {
-    "type": "instant"
+    "type": "easeOut",
+    "ms": 90
   },
   "behaviour": "button",
   "properties": {
@@ -297,6 +326,9 @@
             },
             "mc_bottom": {
               "bg": "#a6472d"
+            },
+            "mc_label": {
+              "color": "#e1b35c"
             }
           }
         }
@@ -305,6 +337,22 @@
     "hero": {
       "type": "image",
       "default": "cartoon/frames/dragon/green/idle-0"
+    }
+  },
+  "states": {
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.4
+        }
+      }
+    },
+    "pressed": {
+      "set": {
+        "mc_hero": {
+          "scale": 0.97
+        }
+      }
     }
   }
 }

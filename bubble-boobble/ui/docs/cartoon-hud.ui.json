@@ -429,23 +429,26 @@
       "name": "Element",
       "children": [
         "ch_start_text",
-        "ch_start_hint"
+        "ch_start_hint",
+        "ch_cue_echo_left",
+        "ch_cue_echo_right",
+        "ch_cue_art"
       ],
       "style": {
         "pad": 0,
         "position": "anchored",
         "anchor": [
           0.5,
-          0
+          0.48
         ],
         "offset": [
-          -132,
-          6
+          0,
+          0
         ],
-        "w": 40,
-        "h": 36,
-        "bg": "#f1e3bf",
-        "radius": 6
+        "w": "78%",
+        "h": 490,
+        "radius": 0,
+        "pivot": "centre"
       },
       "show": "showStartCue",
       "point": "start-cue"
@@ -461,7 +464,8 @@
         "fitMin": 16,
         "textAlign": "center",
         "weight": 800,
-        "color": "#30271e"
+        "color": "#30271e",
+        "hide": true
       }
     },
     "ch_start_hint": {
@@ -1270,6 +1274,78 @@
         "h": 64
       },
       "show": "party"
+    },
+    "ch_cue_echo_left": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/cues/bubble-up",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          -14,
+          0
+        ],
+        "w": "100%",
+        "h": "100%",
+        "opacity": 0.3,
+        "hide": true
+      },
+      "property": "cueArt",
+      "point": "cue-echo-left"
+    },
+    "ch_cue_echo_right": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/cues/bubble-up",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          14,
+          0
+        ],
+        "w": "100%",
+        "h": "100%",
+        "opacity": 0.3,
+        "hide": true
+      },
+      "property": "cueArt",
+      "point": "cue-echo-right"
+    },
+    "ch_cue_art": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/cues/ready",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%",
+        "opacity": 1,
+        "hide": false
+      },
+      "property": "cueArt",
+      "point": "cue-art"
     }
   },
   "view": {
@@ -1451,7 +1527,155 @@
       "type": "list",
       "of": "cartoon-roster-badge",
       "default": []
+    },
+    "cueArt": {
+      "type": "image",
+      "default": "cartoon/ui/cues/ready"
+    },
+    "cueStage": {
+      "type": "enum",
+      "values": [
+        "off",
+        "ready-ink",
+        "ready-hold",
+        "ready-out",
+        "action-smear",
+        "action-hold",
+        "action-out"
+      ],
+      "default": "off",
+      "poses": {
+        "action-smear": {
+          "set": {
+            "ch_cue_echo_left": {
+              "hide": false
+            },
+            "ch_cue_echo_right": {
+              "hide": false
+            }
+          }
+        },
+        "action-out": {
+          "set": {
+            "ch_cue_echo_left": {
+              "hide": false,
+              "opacity": 0.18
+            },
+            "ch_cue_echo_right": {
+              "hide": false,
+              "opacity": 0.18
+            }
+          }
+        },
+        "ready-ink": {
+          "set": {
+            "ch_cue_art": {
+              "scale": 1,
+              "w": "62%"
+            }
+          }
+        },
+        "ready-hold": {
+          "set": {
+            "ch_cue_art": {
+              "scale": 1,
+              "w": "62%"
+            }
+          }
+        },
+        "ready-out": {
+          "set": {
+            "ch_cue_art": {
+              "scale": 1,
+              "w": "62%"
+            }
+          }
+        }
+      }
+    },
+    "cueFade": {
+      "type": "enum",
+      "values": [
+        "zero",
+        "eighth",
+        "quarter",
+        "three-eighths",
+        "half",
+        "five-eighths",
+        "three-quarters",
+        "seven-eighths",
+        "full"
+      ],
+      "default": "full",
+      "poses": {
+        "zero": {
+          "set": {
+            "ch_start": {
+              "opacity": 0
+            }
+          }
+        },
+        "eighth": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.125
+            }
+          }
+        },
+        "quarter": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.25
+            }
+          }
+        },
+        "three-eighths": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.375
+            }
+          }
+        },
+        "half": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.5
+            }
+          }
+        },
+        "five-eighths": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.625
+            }
+          }
+        },
+        "three-quarters": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.75
+            }
+          }
+        },
+        "seven-eighths": {
+          "set": {
+            "ch_start": {
+              "opacity": 0.875
+            }
+          }
+        },
+        "full": {
+          "set": {
+            "ch_start": {
+              "opacity": 1
+            }
+          }
+        }
+      }
     }
+  },
+  "transition": {
+    "type": "instant"
   },
   "samples": {
     "playing": {
@@ -1463,18 +1687,13 @@
       "party": true
     },
     "ready": {
-      "name": "TEAM SCORE",
-      "score": "0000000",
-      "round": "WAVE 1 / 10",
-      "highTitle": "DRAGONS",
-      "high": "10 / 10",
-      "party": true,
-      "showBanner": true,
-      "banner": "WAVE 1 IN 3S",
-      "hint": "GET INTO POSITION",
-      "showStartCue": true,
-      "startCue": "3",
-      "startHint": "MOVE AT GO!"
+      "cueFade": "full"
+    },
+    "action": {
+      "cueFade": "full"
+    },
+    "smear": {
+      "cueFade": "full"
     }
   }
 }

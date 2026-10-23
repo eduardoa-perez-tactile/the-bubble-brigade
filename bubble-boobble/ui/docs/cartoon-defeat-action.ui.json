@@ -1,0 +1,98 @@
+{
+  "$schemaVersion": 1,
+  "guid": "15825dc4-ad85-42ff-8fb5-f836b2b99e9f",
+  "name": "cartoon-defeat-action",
+  "title": "Cartoon defeat action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon defeat action",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "radius": 12,
+        "w": 350,
+        "h": 46,
+        "justify": "center"
+      },
+      "children": [
+        "da_label",
+        "da_pointer"
+      ]
+    },
+    "da_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "Label",
+      "property": "label",
+      "style": {
+        "w": 300,
+        "h": 38,
+        "fontSize": 27,
+        "fitMin": 18,
+        "textAlign": "center",
+        "color": "#282725"
+      }
+    },
+    "da_pointer": {
+      "type": "label",
+      "name": "Label",
+      "text": "»",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.5
+        ],
+        "offset": [
+          8,
+          0
+        ],
+        "w": 24,
+        "h": 44,
+        "fontSize": 30,
+        "color": "#9e302b"
+      },
+      "show": "selected"
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "RETRY RUN"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "da_label": {
+              "color": "#9e302b"
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.42
+        }
+      }
+    },
+    "pressed": {
+      "set": {
+        "da_label": {
+          "tx": 2
+        }
+      }
+    }
+  }
+}

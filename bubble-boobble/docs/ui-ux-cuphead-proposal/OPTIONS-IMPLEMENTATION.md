@@ -1,0 +1,9 @@
+# Ruled options panel
+
+The settings route now uses an original cream panel with a narrow muted green rule, separate name/value columns, bracket arrows, horizontal row rules and red text/pointer focus. It removes the ornate full-page theatre paper from settings while retaining the original decoration on profiles, scores and profile creation. The full-screen muted backing bleeds across wide and tall viewports.
+
+Visual reference inspected: `/Users/eduardoleale/workspace/art/cuphead/previews/460635-miscellaneous-menus.jpg`, especially the framed controls panels and row/arrow vocabulary. Local source collection: `/Users/eduardoleale/workspace/art/cuphead/extracted/menus/460635-miscellaneous-menus/Cuphead/Miscellaneous Menus/`. Production uses original UI geometry, bundled Brigade fonts and existing dragon portrait. The reference does not establish input timing or exact panel navigation.
+
+Existing label/value content, cycle actions and selection remain unchanged. Tapping a row invokes its existing action; Left/Right retains its controller-owned adjustment behavior. Arrows are presentation within the row, not independent new touch controls. BACK keeps the existing caller-aware menu/pause action. The presentation uses a unique settings-back element key, mapped immediately to menu, to avoid a collision with hidden account back-button IDs.
+
+Tall phones use spare vertical room for larger values and touch rows without transformed containers. Other account layouts keep their sizes and original content. Engine view renders on Pixel 8 and iPad show no layout warnings. `cuphead ruled options preserve values touch actions and safe fit` passes on V8/phone-low across 768×720, 1680×720, 640×960, 904×2316 and 1620×2160. Seven actions stay inside the viewport, a real Music press changes the saved value, and a real Back press returns to the menu. Measured cost is five draw calls on tall phones and six on the other shapes.

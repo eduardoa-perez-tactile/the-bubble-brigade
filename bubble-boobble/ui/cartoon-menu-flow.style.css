@@ -1,0 +1,21 @@
+/* Full-bleed theatrical surfaces; safeArea remains responsible for actionable content. */
+.cartoon-menu-screen { background-color: #f1e3bf; }
+.cartoon-mode-screen { background-color: #181718; }
+.cartoon-menu-screen .cartoon-menu, .cartoon-mode-screen .cartoon-modes { width: 100%; height: 100%; }
+.cartoon-menu .ud-cartoon-menu__cm_mascot_right { transform: scaleX(-1); }
+.cartoon-menu .ud-cartoon-button__cb_label { font-family: "cartoon/fonts/BreeSerif-Regular"; }
+.cartoon-modes .ud-cartoon-mode-card__mc_label { font-family: "cartoon/fonts/Rye-Regular"; }
+.cartoon-modes .ud-cartoon-action__root { background-color: transparent; }
+.cartoon-modes .ud-cartoon-action__db_label { color: #fff0c9; font-size: 28px; height: 40px; }
+/* On tall displays group the cast with the title, then keep the next action immediately below. */
+@media (aspect < 0.85) {
+  .cartoon-menu .ud-cartoon-menu__cm_composition { height: 900px; }
+  .cartoon-menu .ud-cartoon-menu__cm_billing,
+  .cartoon-menu .ud-cartoon-menu__cm_hint,
+  .cartoon-menu .ud-cartoon-menu__cm_tagline,
+  .cartoon-modes .ud-cartoon-modes__ms_brand,
+  .cartoon-modes .ud-cartoon-modes__ms_hint { display: none; }
+  .cartoon-menu .ud-cartoon-menu__cm_mascot_left,
+  .cartoon-menu .ud-cartoon-menu__cm_mascot_right { top: 684px; }
+}
+.cartoon-modes .ud-cartoon-modes__ms_madness .ud-cartoon-mode-card__mc_hero { transform: scaleX(-1); }

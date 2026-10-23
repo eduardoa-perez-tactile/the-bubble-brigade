@@ -1,0 +1,13 @@
+/* Lettering is original bitmap art in a document; layout keeps its aspect on
+   every viewport. The two displaced silhouettes are short echo poses, not
+   claimed to be authored stroke-morph animation. Nothing loops at rest. */
+.cartoon-hud .ud-cartoon-hud__ch_cue_art,
+.cartoon-hud .ud-cartoon-hud__ch_cue_echo_left,
+.cartoon-hud .ud-cartoon-hud__ch_cue_echo_right {
+  object-fit: contain;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cartoon-hud .ud-cartoon-hud__ch_cue_echo_left,
+  .cartoon-hud .ud-cartoon-hud__ch_cue_echo_right { display: none; }
+}

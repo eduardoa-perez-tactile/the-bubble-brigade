@@ -2,6 +2,7 @@ import type { GameState } from '../arcade/types';
 import { partyColors, partyNames } from '../arcade/party-config';
 import { hudModel, type HudModel } from '../desktop/hud.view';
 import type { DesktopSave } from '../desktop/save';
+import { introCue, type IntroCue } from './intro-cue';
 
 export type RosterCondition = 'ready' | 'rescue' | 'returning' | 'out' | 'open';
 export interface RosterSlot {
@@ -15,7 +16,7 @@ export interface RosterSlot {
   active: boolean;
   down: boolean;
 }
-export interface CartoonHudModel extends HudModel {
+export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>> {
   classicPortrait?: string;
   waveLabel?: string;
   showStatus?: boolean;
@@ -27,7 +28,10 @@ export interface CartoonHudModel extends HudModel {
 /** Presentation adapter: reads the same game snapshot as the original HUD. */
 export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudModel['shade'] = 'normal'): CartoonHudModel {
   const base = hudModel(game, save, shade);
-  if (!game.Party) return { ...base, classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
+  const cue = introCue(game, !!save.settings.reducedEffects, shade === 'normal');
+  const startCue = !cue.showStartCue ? '' : cue.cueArt.endsWith('/ready') ? 'Ready?' : 'BUBBLE UP!';
+  if (!game.Party) return { ...base, ...cue, startCue, startHint: '', showBanner: base.showBanner && game.State !== 0,
+    classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
   const roster = partyColors.map((skin, slot): RosterSlot => {
     const player = game.Players[slot];
     const mode = game.Party!.Slots[slot] ?? 'empty';
@@ -43,7 +47,10 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
     return { key: `dragon-${slot}`, number: String(slot + 1), color: skin, condition,
       name: partyNames[slot]!, status, portrait: `cartoon/reconstruction/ui/portraits/${skin}`, active, down };
   });
-  return { ...base, showStatus: base.highTitle === 'BOSS HP' || base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
-    showStartCue: base.showStartCue && (game.Party.Phase === 'prepare' ? game.Party.Timer <= 90 : game.LevelTicks < 30),
+  const preparingOrGo = game.Party.Phase === 'prepare' ||
+    (game.State === 1 && (game.Party.Phase === 'combat' || game.Party.Phase === 'boss') && game.LevelTicks < (game.Party.Boss ? 180 : 120));
+  return { ...base, ...cue, startCue, startHint: '', showStatus: base.highTitle === 'BOSS HP' || base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
+    // Keep rest, boss capture and finisher feedback; remove duplicate prep/GO plaques.
+    showBanner: base.showBanner && (!preparingOrGo || !!base.celebrationColor && base.celebrationColor !== 'none' || game.Party.Boss?.Mode === 'captured'),
     rosterAll: roster, rosterTop: roster.slice(0, 5), rosterBottom: roster.slice(5) };
 }

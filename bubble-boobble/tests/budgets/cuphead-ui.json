@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/cuphead_actual_start_button_reaches_billing_then_phase_derived_ready_and_clean_combat.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
+}

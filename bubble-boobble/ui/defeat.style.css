@@ -1,0 +1,42 @@
+/* Cuphead death-card composition, original Brigade artwork and honest stage progress.
+   No full-screen paper backing: the stack scrim retains the frozen arena. */
+.cartoon-defeat { width: 440px; height: 650px; font-family: "cartoon/fonts/BreeSerif-Regular"; }
+.cartoon-defeat .ud-cartoon-defeat__df_border { border-width: 2px; border-color: #3e514d; }
+.cartoon-defeat .ud-cartoon-defeat__df_inside { border-width: 1px; border-color: #7e8e80; }
+.cartoon-defeat .ud-cartoon-defeat__df_heading { font-family: "cartoon/fonts/Rye-Regular"; }
+.cartoon-defeat .ud-cartoon-defeat-action__root { border-radius: 0; }
+.cartoon-defeat .ud-cartoon-defeat-action__da_label { font-family: "cartoon/fonts/BreeSerif-Regular"; }
+/* The project fit canvas guarantees 768x720; narrow portrait gains extra height.
+   Card stays centered without transformed containers, keeping touch hitboxes honest. */
+@media (prefers-reduced-motion: reduce) {
+ .cartoon-defeat .ud-cartoon-defeat-action__root { animation: none; }
+}
+/* Tall phones use actual larger layout boxes, keeping hit targets at finger size. */
+@media (aspect < 0.7) {
+ .cartoon-defeat { width: 720px; height: 1100px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_border { left: 14px; top: 14px; width: 692px; height: 1072px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_inside { left: 3px; top: 3px; width: 686px; height: 1066px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_heading { top: 34px; width: 640px; height: 64px; font-size: 44px; text-fit: 32px 44px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_story { top: 114px; width: 640px; height: 500px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_circle { width: 210px; height: 210px; border-radius: 105px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_portrait_inside { width: 200px; height: 200px; border-radius: 100px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_portrait { width: 200px; height: 200px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_context { top: 240px; width: 610px; height: 76px; font-size: 26px; text-fit: 20px 26px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_progress_label { top: 344px; width: 610px; height: 38px; font-size: 25px; text-fit: 18px 25px; }
+ /* Keep the authored 320px progress range; both endpoint labels follow it. */
+ .cartoon-defeat .ud-cartoon-defeat__df_track { left: 160px; top: 416px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_start { left: 160px; top: 440px; height: 30px; font-size: 17px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_finish { left: -160px; top: 440px; height: 30px; font-size: 17px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_score { top: 650px; width: 640px; height: 42px; font-size: 28px; text-fit: 22px 28px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_actions { top: 720px; width: 640px; height: 288px; }
+ .cartoon-defeat .ud-cartoon-defeat-action__root { width: 640px; height: 96px; }
+ .cartoon-defeat .ud-cartoon-defeat-action__da_label { width: 550px; height: 60px; font-size: 36px; text-fit: 26px 36px; }
+ .cartoon-defeat .ud-cartoon-defeat-action__da_pointer { left: 16px; width: 36px; height: 56px; font-size: 36px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_hint { top: 1032px; width: 640px; height: 30px; font-size: 18px; text-fit: 13px 18px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_details { top: 140px; width: 640px; height: 500px; }
+ .cartoon-defeat .ud-cartoon-defeat__df_details_title { width: 640px; height: 42px; font-size: 28px; text-fit: 20px 28px; }
+ .cartoon-defeat .ud-cartoon-defeat-row__root { width: 640px; height: 40px; }
+ .cartoon-defeat .ud-cartoon-defeat-row__dr_rank { width: 60px; height: 36px; font-size: 24px; text-fit: 18px 24px; }
+ .cartoon-defeat .ud-cartoon-defeat-row__dr_name { width: 450px; height: 36px; font-size: 24px; text-fit: 18px 24px; }
+ .cartoon-defeat .ud-cartoon-defeat-row__dr_kills { width: 90px; height: 36px; font-size: 24px; text-fit: 18px 24px; }
+}
