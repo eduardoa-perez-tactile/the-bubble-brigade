@@ -8,6 +8,7 @@ import {session} from '../arcade/session';
 import {desktopState} from '../desktop/state';
 import {NativeAudioReadiness} from './readiness';
 import type {NativeAudioStatus} from './readiness';
+import {nativeBridgeMusicState} from '../arcade/music-policy';
 export interface DesktopLaunchIdentity {readonly launchId:string}
 export function desktopLaunchIdentity():DesktopLaunchIdentity|undefined {
  const descriptor=Object.getOwnPropertyDescriptor(globalThis,'__bubbleDesktopLaunch');
@@ -48,7 +49,8 @@ const bridge=defineUI({name:'DesktopPlatformBridge',root(){
   if(!t||!c?.active||!a||!alive)return;
   const elapsed=t.elapsed;
   const u=ui();
-  const desired=JSON.stringify({fullscreen:s.settings.fullscreen,track:music[a.track]??'bubble-2',volume:s.settings.music/100,paused:nativeMusicPaused(u.screen,g.active,!!g.game?.Paused),muted:a.muted});
+  const nativeMusic=nativeBridgeMusicState(u,music[a.track]??'bubble-2',a.muted);
+  const desired=JSON.stringify({fullscreen:s.settings.fullscreen,track:nativeMusic.track,volume:s.settings.music/100,paused:nativeMusicPaused(u.screen,g.active,!!g.game?.Paused),muted:nativeMusic.muted});
   const observationKey=`${u.screen}/${u.selected}/${g.active}/${g.game?.Paused??false}`;
   if(busy||(desired===sent&&observationKey===observed&&elapsed<nextRetry)||(!token&&elapsed<nextRetry))return;
   busy=true;nextRetry=elapsed+2;
@@ -62,12 +64,19 @@ const bridge=defineUI({name:'DesktopPlatformBridge',root(){
      if(!alive||generation!==requestGeneration)return;
      token=health.token;
     }
-    const response=await net.fetch(endpoint+'/state',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json'},body:JSON.stringify({...JSON.parse(desired),observation:{screen:u.screen,selected:u.selected,gameActive:g.active,gamePaused:!!g.game?.Paused,gameTick:g.game?.Tick??0}}),timeoutMs:500});
+    // Health discovery can yield while a recorded theme change arrives. Build
+    // the actual request from current state immediately before posting it.
+    const currentUI=desktopState.get(),currentGame=session.get(),currentSave=desktopSaveState.get(),currentAudio=audio();
+    if(!currentAudio)throw new Error('Desktop audio state unavailable');
+    const currentMusic=nativeBridgeMusicState(currentUI,music[currentAudio.track]??'bubble-2',currentAudio.muted);
+    const postedDesired=JSON.stringify({fullscreen:currentSave.settings.fullscreen,track:currentMusic.track,volume:currentSave.settings.music/100,paused:nativeMusicPaused(currentUI.screen,currentGame.active,!!currentGame.game?.Paused),muted:currentMusic.muted});
+    const postedObservation=`${currentUI.screen}/${currentUI.selected}/${currentGame.active}/${currentGame.game?.Paused??false}`;
+    const response=await net.fetch(endpoint+'/state',{method:'POST',headers:{authorization:`Bearer ${token}`,'content-type':'application/json'},body:JSON.stringify({...JSON.parse(postedDesired),observation:{screen:currentUI.screen,selected:currentUI.selected,gameActive:currentGame.active,gamePaused:!!currentGame.game?.Paused,gameTick:currentGame.game?.Tick??0}}),timeoutMs:500});
     const applied=response.json<{ok?:boolean;revision?:number}>();
     if(!alive||generation!==requestGeneration)return;
     if(!response.ok||applied.ok!==true)throw new Error(`Desktop adapter HTTP ${response.status}`);
     readiness.acknowledge(applied.revision);
-    sent=desired;observed=observationKey;
+    sent=postedDesired;observed=postedObservation;
    }catch(error){if(alive&&generation===requestGeneration)disconnect(error);}
    finally{busy=false;}
   })();
