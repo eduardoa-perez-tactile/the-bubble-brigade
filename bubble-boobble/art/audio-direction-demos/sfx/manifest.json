@@ -1,0 +1,493 @@
+{
+  "status": "original synthesized sketches; awaiting direction selection; not integrated or shipped",
+  "generator": "tools/audio/build-sfx-demos.py",
+  "seed": 23102026,
+  "generator_sha256": "22a4640a3a43e6f58f17788259bba58d4180dd6eb810c092f9b720e60e16b565",
+  "provenance": "New mathematical oscillators, damped modal resonators and seeded filtered noise. No input samples or recordings. No imitation of original-game material.",
+  "reproduce": "python3 tools/audio/build-sfx-demos.py",
+  "cue_order": [
+    "bubble-shot",
+    "bubble-pop",
+    "capture",
+    "food-pickup",
+    "player-downed",
+    "rescue"
+  ],
+  "loudness": "Hand-mixed relative peaks for comparison, no LUFS normalization; rapid cues quieter than rescue.",
+  "validation": "Emitted PCM checked: 48 kHz / mono / 16-bit, nonempty, peak below -0.45 dBFS, RMS above -60 dBFS, DC below 0.0001 full-scale, zero endpoints.",
+  "palettes": [
+    {
+      "id": "a-haunted-cartoon",
+      "label": "A — Haunted Cartoon Orchestra",
+      "timbre": "Hollow wooden resonators, breathy air and rubbery bubbles",
+      "cues": [
+        {
+          "file": "a-haunted-cartoon/bubble-shot.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 7680,
+          "duration_seconds": 0.16,
+          "peak_dbfs": -7.132,
+          "rms_dbfs": -18.452,
+          "dc_offset_full_scale": 2.9e-07,
+          "decoded_pcm_bytes": 15360,
+          "sha256": "6fabf9d677f99e26919d35df8f2518c3b42db64add105b92e59f0570f78c499c",
+          "cue": "bubble-shot",
+          "description": "Compact upward elastic bubble with a short breath transient; subdued rapid-fire cue.",
+          "seed": 8657428793328509862
+        },
+        {
+          "file": "a-haunted-cartoon/bubble-pop.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 9120,
+          "duration_seconds": 0.19,
+          "peak_dbfs": -6.376,
+          "rms_dbfs": -23.516,
+          "dc_offset_full_scale": 9.1e-07,
+          "decoded_pcm_bytes": 18240,
+          "sha256": "2c9d376c7bfd25a68389cb5d3267781f2363ea6c3cf427ea6e26e19998841c4b",
+          "cue": "bubble-pop",
+          "description": "Fast downward pressure release, wet snap and fizz; distinct from the shot.",
+          "seed": 11669216401509137012
+        },
+        {
+          "file": "a-haunted-cartoon/capture.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 23040,
+          "duration_seconds": 0.48,
+          "peak_dbfs": -4.883,
+          "rms_dbfs": -16.646,
+          "dc_offset_full_scale": -6.4e-08,
+          "decoded_pcm_bytes": 46080,
+          "sha256": "64e3f4b2519d8cd266ba1856dd80b4dc91850f8bbe90c5e3bfcad1291873da55",
+          "cue": "capture",
+          "description": "Double squeeze resolving into a suspended rounded chord; more weight than a pop.",
+          "seed": 2181149533484908968
+        },
+        {
+          "file": "a-haunted-cartoon/food-pickup.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 13920,
+          "duration_seconds": 0.29,
+          "peak_dbfs": -7.959,
+          "rms_dbfs": -20.169,
+          "dc_offset_full_scale": 2e-07,
+          "decoded_pcm_bytes": 27840,
+          "sha256": "950c4c8c09e0aa8828555c356a72456a5fe19f25a0e9a438ef5ae2229a225a17",
+          "cue": "food-pickup",
+          "description": "Tiny two-note ascending reward with a tactile pluck.",
+          "seed": 16066612301750931509
+        },
+        {
+          "file": "a-haunted-cartoon/player-downed.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 34560,
+          "duration_seconds": 0.72,
+          "peak_dbfs": -5.68,
+          "rms_dbfs": -18.432,
+          "dc_offset_full_scale": 7.49e-07,
+          "decoded_pcm_bytes": 69120,
+          "sha256": "6bf1bf36524cfa16ed483d164f830ebdf1b31361bbf9055af844299f33c1e587",
+          "cue": "player-downed",
+          "description": "Descending rubbery tumble with a cushioned noisy thud; no human voice.",
+          "seed": 3324492121166291559
+        },
+        {
+          "file": "a-haunted-cartoon/rescue.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 45120,
+          "duration_seconds": 0.94,
+          "peak_dbfs": -4.014,
+          "rms_dbfs": -17.825,
+          "dc_offset_full_scale": 1.1e-07,
+          "decoded_pcm_bytes": 90240,
+          "sha256": "8f336b64de1fe44d231815685bde51524e85e548c08a6955a7a57ef99af891f9",
+          "cue": "rescue",
+          "description": "Clear three-note ascending flourish with a bright resolving chord.",
+          "seed": 2266532645567000881
+        }
+      ],
+      "audition_cue_order": [
+        "bubble-shot",
+        "bubble-pop",
+        "capture",
+        "food-pickup",
+        "player-downed",
+        "rescue"
+      ],
+      "audition_reel": {
+        "file": "a-haunted-cartoon/audition-reel.wav",
+        "sample_rate_hz": 48000,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frames": 342240,
+        "duration_seconds": 7.13,
+        "peak_dbfs": -4.014,
+        "rms_dbfs": -22.283,
+        "dc_offset_full_scale": 1.25e-07,
+        "decoded_pcm_bytes": 684480,
+        "sha256": "2cb41bdeac383c9b3226f934e327f747b5a282e620f0b430974d6e303d082fc5"
+      },
+      "audition_timeline": [
+        {
+          "cue": "bubble-shot",
+          "start_seconds": 0.45,
+          "duration_seconds": 0.16
+        },
+        {
+          "cue": "bubble-pop",
+          "start_seconds": 1.26,
+          "duration_seconds": 0.19
+        },
+        {
+          "cue": "capture",
+          "start_seconds": 2.1,
+          "duration_seconds": 0.48
+        },
+        {
+          "cue": "food-pickup",
+          "start_seconds": 3.23,
+          "duration_seconds": 0.29
+        },
+        {
+          "cue": "player-downed",
+          "start_seconds": 4.17,
+          "duration_seconds": 0.72
+        },
+        {
+          "cue": "rescue",
+          "start_seconds": 5.54,
+          "duration_seconds": 0.94
+        }
+      ],
+      "cue_decoded_pcm_bytes": 266880
+    },
+    {
+      "id": "b-bubble-swing",
+      "label": "B — Bubble Swing Brigade",
+      "timbre": "Muted brass buzz, brushed noise and bouncy plucked bubbles",
+      "cues": [
+        {
+          "file": "b-bubble-swing/bubble-shot.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 7680,
+          "duration_seconds": 0.16,
+          "peak_dbfs": -7.132,
+          "rms_dbfs": -18.307,
+          "dc_offset_full_scale": -5.32e-07,
+          "decoded_pcm_bytes": 15360,
+          "sha256": "47660040242f9dbb0af3fb3a624d8baf6348bbc712bd15944ccf64103cf1cbc2",
+          "cue": "bubble-shot",
+          "description": "Compact upward elastic bubble with a short breath transient; subdued rapid-fire cue.",
+          "seed": 9456379492370324092
+        },
+        {
+          "file": "b-bubble-swing/bubble-pop.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 9120,
+          "duration_seconds": 0.19,
+          "peak_dbfs": -6.376,
+          "rms_dbfs": -23.782,
+          "dc_offset_full_scale": 1.703e-06,
+          "decoded_pcm_bytes": 18240,
+          "sha256": "1ad7bc0cab5db5e6f61fdb0f16038e8940eb6280d8abe04672820daaa24a53a3",
+          "cue": "bubble-pop",
+          "description": "Fast downward pressure release, wet snap and fizz; distinct from the shot.",
+          "seed": 4820889056858743725
+        },
+        {
+          "file": "b-bubble-swing/capture.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 23040,
+          "duration_seconds": 0.48,
+          "peak_dbfs": -4.883,
+          "rms_dbfs": -17.224,
+          "dc_offset_full_scale": 3e-09,
+          "decoded_pcm_bytes": 46080,
+          "sha256": "36c391d9236bc5118fee6270b05e5a437055a536260cab3f87ad42d65e2ff167",
+          "cue": "capture",
+          "description": "Double squeeze resolving into a suspended rounded chord; more weight than a pop.",
+          "seed": 5782692707882916618
+        },
+        {
+          "file": "b-bubble-swing/food-pickup.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 13920,
+          "duration_seconds": 0.29,
+          "peak_dbfs": -7.959,
+          "rms_dbfs": -19.921,
+          "dc_offset_full_scale": -5.85e-07,
+          "decoded_pcm_bytes": 27840,
+          "sha256": "b922a514ecc163234f3f11960860dfd0152cef721fa642a4554020eb77946199",
+          "cue": "food-pickup",
+          "description": "Tiny two-note ascending reward with a tactile pluck.",
+          "seed": 2779074217489584291
+        },
+        {
+          "file": "b-bubble-swing/player-downed.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 34560,
+          "duration_seconds": 0.72,
+          "peak_dbfs": -5.68,
+          "rms_dbfs": -18.886,
+          "dc_offset_full_scale": -6.26e-07,
+          "decoded_pcm_bytes": 69120,
+          "sha256": "d2750dd9f03b2defc26e2e7fbb511fbf6a30dfb35f2a4d17add616ecaf3445c5",
+          "cue": "player-downed",
+          "description": "Descending rubbery tumble with a cushioned noisy thud; no human voice.",
+          "seed": 1651970119041215119
+        },
+        {
+          "file": "b-bubble-swing/rescue.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 45120,
+          "duration_seconds": 0.94,
+          "peak_dbfs": -4.014,
+          "rms_dbfs": -20.257,
+          "dc_offset_full_scale": -1.07e-07,
+          "decoded_pcm_bytes": 90240,
+          "sha256": "8da7adf818f1b79583e5f77e6bdfedb7c1fcbe7db1914bf1f2cd91d601cb8a13",
+          "cue": "rescue",
+          "description": "Clear three-note ascending flourish with a bright resolving chord.",
+          "seed": 11356148076859175033
+        }
+      ],
+      "audition_cue_order": [
+        "bubble-shot",
+        "bubble-pop",
+        "capture",
+        "food-pickup",
+        "player-downed",
+        "rescue"
+      ],
+      "audition_reel": {
+        "file": "b-bubble-swing/audition-reel.wav",
+        "sample_rate_hz": 48000,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frames": 342240,
+        "duration_seconds": 7.13,
+        "peak_dbfs": -4.014,
+        "rms_dbfs": -23.297,
+        "dc_offset_full_scale": -6.8e-08,
+        "decoded_pcm_bytes": 684480,
+        "sha256": "df64e44f91a2894439f7c915517077f9457ef215deb38ea0be2c3ec2a9c1878c"
+      },
+      "audition_timeline": [
+        {
+          "cue": "bubble-shot",
+          "start_seconds": 0.45,
+          "duration_seconds": 0.16
+        },
+        {
+          "cue": "bubble-pop",
+          "start_seconds": 1.26,
+          "duration_seconds": 0.19
+        },
+        {
+          "cue": "capture",
+          "start_seconds": 2.1,
+          "duration_seconds": 0.48
+        },
+        {
+          "cue": "food-pickup",
+          "start_seconds": 3.23,
+          "duration_seconds": 0.29
+        },
+        {
+          "cue": "player-downed",
+          "start_seconds": 4.17,
+          "duration_seconds": 0.72
+        },
+        {
+          "cue": "rescue",
+          "start_seconds": 5.54,
+          "duration_seconds": 0.94
+        }
+      ],
+      "cue_decoded_pcm_bytes": 266880
+    },
+    {
+      "id": "c-enchanted-toybox",
+      "label": "C — Enchanted Toybox",
+      "timbre": "Soft glass, felted bells, airy fizz and delicate bubbles",
+      "cues": [
+        {
+          "file": "c-enchanted-toybox/bubble-shot.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 7680,
+          "duration_seconds": 0.16,
+          "peak_dbfs": -7.132,
+          "rms_dbfs": -18.594,
+          "dc_offset_full_scale": -3.06e-07,
+          "decoded_pcm_bytes": 15360,
+          "sha256": "c32844c03d3b5c425dbeccada7dec39d759260fdd10fc8a211fb68eb8161f2b5",
+          "cue": "bubble-shot",
+          "description": "Compact upward elastic bubble with a short breath transient; subdued rapid-fire cue.",
+          "seed": 5257270632102025769
+        },
+        {
+          "file": "c-enchanted-toybox/bubble-pop.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 9120,
+          "duration_seconds": 0.19,
+          "peak_dbfs": -6.376,
+          "rms_dbfs": -23.251,
+          "dc_offset_full_scale": -3.815e-06,
+          "decoded_pcm_bytes": 18240,
+          "sha256": "b1d14c8cad46fc21f979c095f4ea8ac879085919e9cbde9d546b0bbe229da424",
+          "cue": "bubble-pop",
+          "description": "Fast downward pressure release, wet snap and fizz; distinct from the shot.",
+          "seed": 12122419377991956053
+        },
+        {
+          "file": "c-enchanted-toybox/capture.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 23040,
+          "duration_seconds": 0.48,
+          "peak_dbfs": -4.883,
+          "rms_dbfs": -17.317,
+          "dc_offset_full_scale": 1.87e-07,
+          "decoded_pcm_bytes": 46080,
+          "sha256": "e2342fc201ab04f1c9d09360c37028c228e3d55fdc0170fd65a300bd1edd6dc4",
+          "cue": "capture",
+          "description": "Double squeeze resolving into a suspended rounded chord; more weight than a pop.",
+          "seed": 17563652606026992068
+        },
+        {
+          "file": "c-enchanted-toybox/food-pickup.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 13920,
+          "duration_seconds": 0.29,
+          "peak_dbfs": -7.959,
+          "rms_dbfs": -19.745,
+          "dc_offset_full_scale": 2.57e-07,
+          "decoded_pcm_bytes": 27840,
+          "sha256": "364bd042bf6ce54741681e7dc996f9405c4889a013deeb953b4c8895a719a271",
+          "cue": "food-pickup",
+          "description": "Tiny two-note ascending reward with a tactile pluck.",
+          "seed": 7054098300020589413
+        },
+        {
+          "file": "c-enchanted-toybox/player-downed.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 34560,
+          "duration_seconds": 0.72,
+          "peak_dbfs": -5.68,
+          "rms_dbfs": -18.445,
+          "dc_offset_full_scale": -5.36e-07,
+          "decoded_pcm_bytes": 69120,
+          "sha256": "69a6b36d03740b36c9fa847bb8507eae58147d7a64c8a3742f2bbc6231b25494",
+          "cue": "player-downed",
+          "description": "Descending rubbery tumble with a cushioned noisy thud; no human voice.",
+          "seed": 7698123785732611548
+        },
+        {
+          "file": "c-enchanted-toybox/rescue.wav",
+          "sample_rate_hz": 48000,
+          "channels": 1,
+          "bits_per_sample": 16,
+          "frames": 45120,
+          "duration_seconds": 0.94,
+          "peak_dbfs": -4.014,
+          "rms_dbfs": -17.124,
+          "dc_offset_full_scale": 2e-09,
+          "decoded_pcm_bytes": 90240,
+          "sha256": "c33654319f2cf93217182bc623b5e483b3e74182ed1ea3b2487a65bd05f71ffb",
+          "cue": "rescue",
+          "description": "Clear three-note ascending flourish with a bright resolving chord.",
+          "seed": 10157466670566569384
+        }
+      ],
+      "audition_cue_order": [
+        "bubble-shot",
+        "bubble-pop",
+        "capture",
+        "food-pickup",
+        "player-downed",
+        "rescue"
+      ],
+      "audition_reel": {
+        "file": "c-enchanted-toybox/audition-reel.wav",
+        "sample_rate_hz": 48000,
+        "channels": 1,
+        "bits_per_sample": 16,
+        "frames": 342240,
+        "duration_seconds": 7.13,
+        "peak_dbfs": -4.014,
+        "rms_dbfs": -22.135,
+        "dc_offset_full_scale": -1.39e-07,
+        "decoded_pcm_bytes": 684480,
+        "sha256": "faa0c75bce68b9ac889c8bcffb4497b36b72bfedd2b77b1b313f6633d2796b1e"
+      },
+      "audition_timeline": [
+        {
+          "cue": "bubble-shot",
+          "start_seconds": 0.45,
+          "duration_seconds": 0.16
+        },
+        {
+          "cue": "bubble-pop",
+          "start_seconds": 1.26,
+          "duration_seconds": 0.19
+        },
+        {
+          "cue": "capture",
+          "start_seconds": 2.1,
+          "duration_seconds": 0.48
+        },
+        {
+          "cue": "food-pickup",
+          "start_seconds": 3.23,
+          "duration_seconds": 0.29
+        },
+        {
+          "cue": "player-downed",
+          "start_seconds": 4.17,
+          "duration_seconds": 0.72
+        },
+        {
+          "cue": "rescue",
+          "start_seconds": 5.54,
+          "duration_seconds": 0.94
+        }
+      ],
+      "cue_decoded_pcm_bytes": 266880
+    }
+  ],
+  "all_18_cues_decoded_pcm_bytes": 800640,
+  "decoded_memory_note": "48,000 samples/second × 1 channel × 2 bytes. Reels are review-only duplicates, excluded from this cue total."
+}
