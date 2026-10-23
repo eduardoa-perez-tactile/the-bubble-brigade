@@ -43,10 +43,10 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   const current=map(),next=current.active?`overworld-${current.districtId}`:'';
   if(next===activeMapGroup)return;
   const previous=activeMapGroup;activeMapGroup=next;
-  if(next)void loading.run({name:next,load:[next],unload:previous?[previous]:[],model:{label:districtById(current.districtId)?.name??'Opening the map'}});
-  else if(previous)assets.release(previous);
+  if(next)void loading.run({name:next,load:previous?[next]:['overworld-shared',next],unload:previous?[previous]:[],model:{label:districtById(current.districtId)?.name??'Opening the map'}});
+  else if(previous){assets.release(previous);assets.release('overworld-shared');}
  });
- onCleanup(()=>{if(activeMapGroup)assets.release(activeMapGroup);});
+ onCleanup(()=>{if(activeMapGroup){assets.release(activeMapGroup);assets.release('overworld-shared');}});
  let previousUIAudio:UIAudioSnapshot|undefined,previousIntroAudio='off';
  createEffect(()=>{
   const s=state(),p=save(),a=platform(),next=uiAudioSnapshot(s,p),sound=uiAudioCue(previousUIAudio,next);

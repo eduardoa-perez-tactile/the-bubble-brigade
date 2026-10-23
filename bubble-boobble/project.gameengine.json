@@ -88,6 +88,11 @@
         "include": [
           "assets/overworld-district-5/**"
         ]
+      },
+      "overworld-shared": {
+        "include": [
+          "assets/overworld-shared/**"
+        ]
       }
     }
   },
