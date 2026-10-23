@@ -1,0 +1,76 @@
+{
+  "$schemaVersion": 1,
+  "guid": "482bbc2b-8e15-4246-bc53-bf65e05a6c6a",
+  "name": "victory-metric",
+  "title": "Victory metric",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Victory metric",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": "100%",
+        "h": 50
+      },
+      "children": [
+        "vm_label",
+        "vm_dots",
+        "vm_value"
+      ]
+    },
+    "vm_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": "57%",
+        "h": 44,
+        "fontSize": 25,
+        "fitMin": 17,
+        "color": "#f7edc9"
+      }
+    },
+    "vm_dots": {
+      "type": "label",
+      "name": "Label",
+      "text": ".....",
+      "style": {
+        "w": "7%",
+        "h": 44,
+        "fontSize": 24,
+        "fitMin": 10,
+        "color": "#a7afa2",
+        "textAlign": "center"
+      }
+    },
+    "vm_value": {
+      "type": "label",
+      "name": "Label",
+      "text": "{value}",
+      "style": {
+        "w": "36%",
+        "h": 44,
+        "fontSize": 29,
+        "fitMin": 17,
+        "color": "#ffd366",
+        "textAlign": "right"
+      }
+    }
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "value": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

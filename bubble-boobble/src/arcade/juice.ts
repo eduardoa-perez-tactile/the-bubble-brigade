@@ -109,7 +109,7 @@ export const emptyFeel=():FeelState=>({clock:0,step:0,previous:null,cues:[]});
 // Numeric resource fields are overwritten in place. Changing JSON strings would
 // remain interned for the lifetime of the engine session and eventually exhaust it.
 const feelPhases=['prepare','combat','rest','boss'];
-const feelModes=['','moving','windup','captured'];
+const feelModes=['','moving','windup','captured','defeated'];
 const feelKinds:FeelCue['kind'][]=['jump','land','turn','rescue','boss-hit','clear','victory','capture','bubble-bounce'];
 export function packFeel(f:FeelState){
  const p=f.previous;
@@ -154,7 +154,8 @@ export function advanceFeel(old:FeelState,g:GameState,step:number,countdownEnabl
     if(b&&b.HP<previous.hp&&b.Mode!=='captured')add('boss-hit',b.X+48,b.Y+96);
     if(b?.Mode==='captured'&&previous.bossMode!=='captured')add('capture',b.X+48,b.Y+96);
     if(g.Party?.Phase==='rest'&&previous.phase!=='rest')add('clear',384,175);
-    if(g.State===4&&previous.state!==4)add('victory',384,230);
+    if(b?.Mode==='defeated'&&previous.bossMode!=='defeated')add('victory',b.X+48,b.Y+48);
+    else if(g.State===4&&previous.state!==4&&b?.Mode!=='defeated')add('victory',384,230);
   }
   const countdown=g.Paused?(reset?-1:previous?.countdown??-1):countdownEnabled&&g.Party?.Phase==='prepare'?g.Party.Timer:-1;
   return {clock,step,cues:cues.slice(-32),previous:{tick:g.Tick,wave:g.Party?.Wave??g.LevelIndex,phase:g.Party?.Phase??'',state:g.State,hp:g.Party?.Boss?.HP??0,bossMode:g.Party?.Boss?.Mode??'',countdown,players:g.Players.map(p=>({x:p.X,y:p.Y,ground:p.Ground,vy:p.VY,jumping:p.JumpStep!==undefined,dir:p.Dir,downed:!!p.Downed,lives:p.Lives}))}};

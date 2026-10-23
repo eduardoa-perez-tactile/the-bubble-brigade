@@ -2,6 +2,7 @@
 import { createMemo, defineView, Screen, Widget, Particles, Sprite } from '@gameengine/ui';
 import { desktopModel, type DesktopModel } from '../desktop/model.ts';
 import { initialDesktopState } from '../desktop/state.ts';
+import {victoryPresentation} from './results-model';
 import { initialDesktopSave } from '../desktop/save.ts';
 const portrait=(skin:string)=>`cartoon/frames/dragon/${skin}/idle-0`;
 export const CartoonShellView=defineView<DesktopModel>({name:'CartoonShell',samples:Object.fromEntries((['help','credits','pause','result'] as const).map(screen=>[screen,desktopModel({...initialDesktopState,screen},initialDesktopSave)])),render:(model,{intent})=><Screen safeArea class="desktop-screen"><Widget doc="cartoon-shell" id="desktop-shell" class={()=>`cartoon-shell cartoon-${model().page}`}  codeAreas={{confetti:()=>Particles({effect:'fx/team-victory.vfx.json',emitting:()=>model().celebrate,restart:()=>model().celebrate?1:0,seed:42,style:{width:'680px',height:'300px'}})}} props={{resultReady:()=>model().resultReady,resultHint:()=>model().resultHint,celebration:()=>model().celebrate?1:0,resultScore:()=>model().resultScore,resultStats:()=>model().resultStats,showResultStats:()=>model().showResultStats,page:()=>model().page as Exclude<DesktopModel['page'],'party'|'modes'>,title:()=>model().title,subtitle:()=>model().page==='credits'?'THE BUBBLE BRIGADE / ART AND TECHNOLOGY':model().subtitle,body:()=>model().body,status:()=>model().status,buttons:()=>model().buttons,keys:()=>model().keys,rows:()=>model().rows,logo:()=>model().logo}} onIntent={(_,e)=>intent(e.item??e.path.at(-1)!)}/></Screen>});
@@ -40,11 +41,18 @@ export const CartoonPartyView=defineView<DesktopModel>({
 
 export const CartoonModeView=defineView<DesktopModel>({name:'CartoonModes',samples:{classic:desktopModel({...initialDesktopState,screen:'modes',selected:0},initialDesktopSave),madness:desktopModel({...initialDesktopState,screen:'modes',selected:1},initialDesktopSave)},render:(model,{intent})=><Screen safeArea class="desktop-screen cartoon-mode-screen"><Widget doc="cartoon-modes" id="mode-select" class="cartoon-modes" props={{classicSelected:()=>model().selected===0,madnessSelected:()=>model().selected===1,backSelected:()=>model().selected===2}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/></Screen>});
 
-const resultSample=(won:boolean,count=10)=>desktopModel({...initialDesktopState,screen:'result',partyRun:true,won,score:58200,round:10,resultReady:true,dragonResults:Array.from({length:count},(_,slot)=>({slot,kills:30-slot*3}))},initialDesktopSave);
+const resultSample=(won:boolean,count=10)=>desktopModel({...initialDesktopState,cartoon:true,screen:'result',partyRun:true,won,score:58200,round:10,resultReady:true,dragonResults:Array.from({length:count},(_,slot)=>({slot,kills:30-slot*3}))},initialDesktopSave);
 export const CartoonResultsView=defineView<DesktopModel>({
- name:'CartoonResults',samples:{victory:resultSample(true),sixDragons:resultSample(true,6),soloDragon:resultSample(true,1),twoDragons:resultSample(true,2),classic:desktopModel({...initialDesktopState,screen:'result',won:true,resultReady:true},initialDesktopSave)},
- render:(model,{intent})=><Screen safeArea class="desktop-screen cartoon-results-screen"><Widget doc="cartoon-results" id="run-results" class="cartoon-results"
- props={{eyebrow:()=>model().resultParty?'BRIGADE SURVIVAL / TEAM RESULTS':model().resultEyebrow,title:()=>model().resultParty?'BRIGADE VICTORY!':model().resultTitle,subtitle:()=>model().resultSubtitle,score:()=>model().resultScore,champion:()=>model().resultChampion,stats:()=>model().resultStats,hint:()=>model().resultHint,won:()=>model().resultWon,party:()=>model().resultParty,moreRanks:()=>model().resultList.length>0,ready:()=>model().resultReady,showStats:()=>model().showResultStats,ranking:()=>model().resultList.map(r=>({...r,image:portrait(r.color)})),podium:()=>model().podium.map(p=>({...p,image:portrait(p.image.split('/').at(-1)??'green')})),buttons:()=>model().buttons}}
- codeAreas={{confetti:()=>Particles({effect:'fx/team-victory.vfx.json',emitting:()=>model().celebrate,restart:()=>model().celebrate?1:0,seed:42,style:{width:'672px',height:'193px'}})}}
- onIntent={(_,e)=>intent(e.item??e.path.at(-1)!)}/></Screen>,
+ name:'CartoonResults',description:'Theatrical Brigade victory with large dragon hero, live score board and optional full team ranking.',
+ samples:{victory:resultSample(true),details:{...resultSample(true),resultDetails:true},sixDragons:resultSample(true,6),soloDragon:resultSample(true,1),twoDragons:resultSample(true,2),classic:desktopModel({...initialDesktopState,cartoon:true,screen:'result',won:true,resultReady:true,round:25,score:46310},initialDesktopSave)},
+ render:(model,{intent})=>{
+  const presentation=createMemo(()=>victoryPresentation(model()));
+  return <Screen class="desktop-screen cartoon-results-screen"><Widget doc="cartoon-victory" id="run-results" class="cartoon-victory"
+   props={{eyebrow:()=>presentation().eyebrow,heroCaption:()=>presentation().heroCaption,outcome:()=>presentation().outcome,
+    detailHeading:()=>presentation().detailHeading,metrics:()=>presentation().metrics,ranking:()=>presentation().ranking,
+    hint:()=>model().resultHint,details:()=>model().resultDetails,ready:()=>model().resultReady,
+    buttons:()=>model().buttons.map(b=>({...b,label:b.key==='result-details'?(model().resultDetails?'BACK TO RESULTS':model().resultParty?'TEAM DETAILS':'RUN DETAILS'):b.label})),
+   }} onIntent={(_,e)=>{if(model().resultReady)intent(e.item??e.path.at(-1)!);}}/>
+  </Screen>;
+ },
 });

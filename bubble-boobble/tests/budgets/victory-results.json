@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/theatrical_victory_hero_board_and_full_ranking_stay_readable_and_navigable_across_screens.greplay",
+  "structural": {
+    "drawCallsMax": 18
+  }
+}

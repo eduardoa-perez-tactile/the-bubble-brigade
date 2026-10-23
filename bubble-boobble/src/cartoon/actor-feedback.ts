@@ -92,11 +92,15 @@ export function cartoonGroundDust(feel:FeelState|undefined,reduced=false):Cartoo
 /** Windup stays readable in reduced mode through the authored attack frame;
  * decorative compression and recoil are disabled. No sim hitstop or new pose. */
 export function cartoonBossFeedback(draw:CartoonDraw,boss:PartyBoss,feel?:FeelState,reduced=false):CartoonDraw{
-  if(reduced||boss.Mode==='captured')return draw;
+  if(reduced)return draw;
+  if(boss.Mode==='captured')return {...draw,y:draw.y+Math.sin(boss.Timer*.08)*5};
   const windup=boss.Mode==='windup'?Math.max(0,Math.min(1,(30-boss.Timer)/30)):0;
   const age=cueAge(feel,'boss-hit'),impact=age<8?1-age/8:0;
-  const sx=1+.035*windup-.025*impact,sy=1-.03*windup+.02*impact;
+  const breath=Math.sin(boss.Tick*.10)*.025;
+  const release=boss.Mode==='moving'&&boss.Timer>132?Math.max(0,(boss.Timer-132)/18):0;
+  const hit=Math.max(impact,boss.Invulnerable/8);
+  const sx=1+breath+.16*windup-.10*hit-.09*release,sy=1-breath-.12*windup+.10*hit+.06*release;
   const center=draw.x+draw.width/2,feet=draw.y+draw.height*120/128;
-  return {...draw,x:center-draw.width*sx/2-boss.Dir*2*impact,
+  return {...draw,x:center-draw.width*sx/2-boss.Dir*(12*hit+9*release),
     y:feet-draw.height*sy*120/128,width:draw.width*sx,height:draw.height*sy};
 }

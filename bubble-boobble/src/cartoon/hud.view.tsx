@@ -32,6 +32,7 @@ export const CartoonHudView = defineView<CartoonHudModel>({
   },
   render: model => <Screen safeArea class="desktop-screen desktop-hud-screen">
     <Widget class="cartoon-hud" doc="cartoon-hud" id="cartoon-hud" props={{
+      bossActive: () => !!model().bossActive,
       showStatus: () => model().showStatus ?? (model().highTitle === 'BOSS HP' || model().highTitle === 'LAST DRAGON'),
       classicPortrait: () => model().classicPortrait ?? 'cartoon/reconstruction/ui/portraits/green',
       waveLabel: () => model().waveLabel ?? model().round.replace(/ \/ \d+$/, ''),
@@ -54,6 +55,10 @@ export const CartoonHudView = defineView<CartoonHudModel>({
       showReadyArt: () => !!model().showStartCue && (model().showReadyArt ?? model().cueArt === 'cartoon/ui/cues/ready'),
       showActionArt: () => !!model().showStartCue && (model().showActionArt ?? model().cueArt === 'cartoon/ui/cues/bubble-up'),
       cueStage: () => model().cueStage ?? 'off', cueFade: () => cueFade(model().cueOpacity ?? 0),
+    }} />
+    <Widget doc="cartoon-boss" id="boss-hud" class="cartoon-boss" props={{
+      active:()=>!!model().bossActive,healthLabel:()=>`${model().bossHealth??0} / ${model().bossMaximum??1}`,health:()=>model().bossHealth??0,maximum:()=>model().bossMaximum??1,
+      captured:()=>!!model().bossCaptured,victory:()=>!!model().bossVictory,guidance:()=>model().freeze,
     }} />
   </Screen>,
 });

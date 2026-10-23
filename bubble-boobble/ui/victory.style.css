@@ -1,5 +1,67 @@
-/* Win presentation is deliberately distinct from the tall defeat card.
-   Static crossed light rays are original document geometry, not copied artwork. */
-.cartoon-results-screen { background-color: #294c62; }
-.cartoon-results .ud-cartoon-results__rr_title { font-family: "cartoon/fonts/Rye-Regular"; }
-.cartoon-results .ud-cartoon-results__rr_radial { pointer-events: none; }
+/* Original theatrical results composition: hero, inked plaque, live metrics. */
+.cartoon-results-screen { background-color: #174d6b; }
+.cartoon-victory { width: 100%; height: 100%; font-family: "cartoon/fonts/BreeSerif-Regular"; }
+.cartoon-victory .ud-cartoon-victory__cv_stage { max-width: 1280px; }
+.cartoon-victory .ud-cartoon-victory__cv_backdrop { object-fit: cover; pointer-events: none; }
+.cartoon-victory .ud-cartoon-victory__cv_title { object-fit: fill; pointer-events: none; }
+.cartoon-victory .ud-cartoon-victory__cv_frame,
+.cartoon-victory .ud-cartoon-victory__cv_detail_frame { background-slice: auto; pointer-events: none; }
+.cartoon-victory .ud-cartoon-victory__cv_hero { object-fit: contain; pointer-events: none; }
+.cartoon-victory .ud-victory-action__root { width: 0; min-width: 0; flex-grow: 1; }
+.cartoon-victory .ud-victory-action__va_label { font-family: "cartoon/fonts/BreeSerif-Regular"; }
+/* On portrait phones the hero sits above the board, with larger actual hitboxes. */
+@media (aspect < 0.7) {
+ .cartoon-victory .ud-cartoon-victory__cv_stage { height: 1100px; }
+ .cartoon-victory .ud-cartoon-victory__cv_title { top: 12px; height: 128px; }
+ .cartoon-victory .ud-cartoon-victory__cv_eyebrow { top: 150px; height: 28px; font-size: 21px; text-fit: 16px 21px; }
+ .cartoon-victory .ud-cartoon-victory__cv_main { top: 188px; height: 750px; }
+ .cartoon-victory .ud-cartoon-victory__cv_hero { anchor: 0.5 0; left: 0px; top: 0px; width: 60%; height: 275px; }
+ .cartoon-victory .ud-cartoon-victory__cv_hero_caption { anchor: 0.5 0; left: 0px; top: 282px; width: 90%; height: 30px; font-size: 25px; }
+ .cartoon-victory .ud-cartoon-victory__cv_board { anchor: 0.5 0; left: 0px; top: 326px; width: 90%; height: 430px; }
+ .cartoon-victory .ud-cartoon-victory__cv_details { top: 208px; width: 94%; height: 750px; }
+ .cartoon-victory .ud-cartoon-victory__cv_detail_heading { top: 60px; height: 44px; font-size: 31px; }
+ .cartoon-victory .ud-cartoon-victory__cv_rankings { top: 125px; width: 80%; height: 400px; }
+ .cartoon-victory .ud-victory-rank__root { height: 40px; }
+ .cartoon-victory .ud-victory-rank__vr_rank,
+ .cartoon-victory .ud-victory-rank__vr_name,
+ .cartoon-victory .ud-victory-rank__vr_mode,
+ .cartoon-victory .ud-victory-rank__vr_kills { height: 38px; font-size: 24px; text-fit: 17px 24px; }
+ .cartoon-victory .ud-cartoon-victory__cv_actions { top: 950px; height: 96px; width: 96%; gap: 8px; }
+ .cartoon-victory .ud-victory-action__root { height: 96px; }
+ .cartoon-victory .ud-victory-action__va_label { height: 72px; font-size: 27px; text-fit: 19px 27px; }
+ .cartoon-victory .ud-cartoon-victory__cv_hint { top: 1065px; height: 24px; font-size: 16px; }
+}
+@media (aspect < 0.5) {
+ .cartoon-victory .ud-cartoon-victory__cv_stage { height: 1520px; }
+ .cartoon-victory .ud-cartoon-victory__cv_title { top: 20px; height: 168px; }
+ .cartoon-victory .ud-cartoon-victory__cv_eyebrow { top: 190px; height: 32px; font-size: 25px; }
+ .cartoon-victory .ud-cartoon-victory__cv_main { top: 240px; height: 1100px; }
+ .cartoon-victory .ud-cartoon-victory__cv_hero { height: 420px; width: 70%; }
+ .cartoon-victory .ud-cartoon-victory__cv_hero_caption { top: 428px; height: 38px; font-size: 29px; }
+ .cartoon-victory .ud-cartoon-victory__cv_board { top: 485px; height: 610px; width: 94%; }
+ .cartoon-victory .ud-cartoon-victory__cv_tally { top: 58px; height: 36px; font-size: 26px; }
+ .cartoon-victory .ud-cartoon-victory__cv_metrics { top: 125px; height: 326px; gap: 12px; }
+ .cartoon-victory .ud-victory-metric__root { height: 70px; }
+ .cartoon-victory .ud-victory-metric__vm_label,
+ .cartoon-victory .ud-victory-metric__vm_dots,
+ .cartoon-victory .ud-victory-metric__vm_value { height: 62px; font-size: 32px; text-fit: 24px 32px; }
+ .cartoon-victory .ud-cartoon-victory__cv_rule { top: 470px; }
+ .cartoon-victory .ud-cartoon-victory__cv_outcome { top: 500px; height: 68px; font-size: 30px; }
+ .cartoon-victory .ud-cartoon-victory__cv_details { top: 290px; height: 1000px; }
+ .cartoon-victory .ud-cartoon-victory__cv_detail_heading { top: 70px; height: 50px; font-size: 37px; }
+ .cartoon-victory .ud-cartoon-victory__cv_rankings { top: 140px; height: 560px; }
+ .cartoon-victory .ud-victory-rank__root { height: 56px; }
+ .cartoon-victory .ud-victory-rank__vr_rank,
+ .cartoon-victory .ud-victory-rank__vr_name,
+ .cartoon-victory .ud-victory-rank__vr_mode,
+ .cartoon-victory .ud-victory-rank__vr_kills { height: 54px; font-size: 29px; text-fit: 20px 29px; }
+ .cartoon-victory .ud-cartoon-victory__cv_actions { top: 1355px; }
+ .cartoon-victory .ud-cartoon-victory__cv_hint { top: 1460px; }
+}
+
+@media (aspect < 0.7) {
+ .cartoon-victory .ud-cartoon-victory__cv_detail_ribbon { top: 620px; height: 60px; font-size: 28px; }
+}
+@media (aspect < 0.5) {
+ .cartoon-victory .ud-cartoon-victory__cv_detail_ribbon { top: 830px; height: 60px; font-size: 32px; }
+}

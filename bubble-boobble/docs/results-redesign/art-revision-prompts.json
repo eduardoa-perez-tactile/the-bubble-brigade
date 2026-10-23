@@ -1,0 +1,22 @@
+{
+  "tool": "built-in imagegen",
+  "reason": "Frame and title style feedback: remove metallic bevel and glossy block lettering; match the soft inked game character.",
+  "prompts": [
+    {
+      "asset": "assets/cartoon/ui/results/scoreboard.png",
+      "references": [
+        "assets/cartoon/ui/results/scoreboard.png",
+        "assets/cartoon/ui/results/hero.png"
+      ],
+      "prompt": "Use case: style-transfer. Asset type: transparent game results plaque. Image 1 is edit target and exact silhouette/layout template. Image 2 is the game character and authoritative ink/palette style reference. Redraw image 1 to match the soft 1930s cel cartoon style of image 2. Keep EXACT outer silhouette, proportions, broad blank dark charcoal inner text area, and blank cream ribbon at bottom in the exact same position. Replace elaborate beveled metallic gold frame with a simple warm ivory flat painted border, dark brown hand-ink outline, subtly irregular organic curves, one thin muted ochre accent line. Ribbon should be simple flat cream parchment with restrained cel shadows, no etched hatching or ornate carving. Matte restrained vintage cel paint, softly aged paper, bold clean ink matching character. Preserve broad empty charcoal center for live text. NO text, letters, icons, stars or characters. No shiny metal, no bevel, no 3D rendering, no gradients, no black drop shadow. True transparent background outside silhouette. The body and ribbon proportions MUST match image 1 so existing UI text fits."
+    },
+    {
+      "asset": "assets/cartoon/ui/results/title.png",
+      "references": [
+        "assets/cartoon/ui/results/title.png",
+        "assets/cartoon/ui/results/hero.png"
+      ],
+      "prompt": "Use case: style-transfer. Asset type: transparent title lettering for vintage cartoon game. Image 1 edit target, Image 2 authoritative game character style reference. Completely redesign the lettering in image 1. Exact text: \"THE RESULTS!\" in one single horizontal line. Flat warm ivory/cream hand-lettered vintage storybook slab-serif capitals with gently rounded terminals, subtle playful irregularity, elegant broad letterforms, soft dark-brown ink outline and very small ochre offset shadow. Inspired by 1930s illustrated animation title cards and aged parchment, matching soft inked cartoon character in image 2. Keep readable coherent baseline with a gentle arch, wide composition about 4.1:1 visible artwork bounds. Fill transparent canvas generously. Absolutely no shiny orange/yellow, no glossy highlights, no giant black extruded shadow, no 3D, no sans-serif comic block letters, no metallic bevel. Only exact words THE RESULTS!; no extra ornaments, no plaque, no backdrop. True transparent background."
+    }
+  ]
+}
