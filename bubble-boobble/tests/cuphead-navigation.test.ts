@@ -10,7 +10,7 @@ const scene='scenes/cartoon.scene.json';
 worldTest('cuphead frozen introduction does not replay the last gameplay sound',async({input,step,world})=>{
  await step(8);input.emit(DesktopIntent,{action:'start'});await step(65);
  input.action('fire',1);await step(1);input.action('fire',0);
- const shots=()=>world.events(PlaySound).filter(s=>['audio/bubble-shot','reference/audio/shoot'].includes(s.sound??'')).length;
+ const shots=()=>world.events(PlaySound).filter(s=>['audio/brigade/sfx/bubble-shot'].includes(s.sound??'')).length;
  expect(session.get().game!.Sounds.includes('shoot')).toBe(true);
  expect(shots()).toBeGreaterThan(0);
  input.emit(DesktopIntent,{action:'ui-activate',value:'restart'});

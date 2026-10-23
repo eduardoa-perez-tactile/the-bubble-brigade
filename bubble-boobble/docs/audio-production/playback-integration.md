@@ -9,11 +9,12 @@ existing recorded `cartoon-mode` intent. `music-policy.ts` routes that flow to:
 | Title, menu, modes, team setup and inactive-game settings | `audio/brigade/menu` — Midnight at the Bubble Ballroom |
 | Active campaign, survival, hurry and boss play | `audio/brigade/gameplay` — Brigade Stomp |
 | Pause and settings reached from pause | Current track retained with Music gain zero |
-| Win or defeat | Stop music; retain existing victory/damage sound feedback |
+| Win or defeat | Stop music; use short illustrated victory/defeat sound feedback |
 | Return to inactive-game menus | Menu loop resumes |
 
 Dedicated hurry/boss arrangements and new musical outcome stings remain production
-work. This slice connects the two approved compositions; it does not replace SFX.
+work. The initial playback slice connected the two approved compositions. The subsequent
+[26-cue SFX integration](sfx-integration.md) now replaces illustrated effects and adds UI/round feedback.
 The preserved pixel/reference scenes retain original music, gain, native YM and
 SFX ordering. Classic campaign reached inside the illustrated shell uses new music.
 
@@ -31,7 +32,8 @@ pending streams and cannot restart an original outcome track.
 `assets/audio/brigade/gameplay.wav` is 24 bars at 156 BPM (36.9231 seconds).
 Both are stereo 48 kHz PCM16 authoring masters, matched near -20 dBFS unweighted RMS.
 Their sidecars explicitly stream Opus at 128 kbit/s without normalization. Neither
-track is in a sound bank or asset group; no extra decoded SFX residency is added.
+track is in a sound bank or asset group. The music itself adds no decoded SFX residency;
+the subsequent SFX bank adds the footprint documented separately.
 
 The original approved scores and sampled-instrument license remain in
 `art/audio-period-band/`. GeneralUser GS 2.0.3 by S. Christian Collins supplies the
@@ -66,7 +68,10 @@ translation. Verification results and actual cooked/memory checks are recorded i
 the integration PR; logs remain in ignored cache. All automated gameplay checks use
 the Game Engine. No standalone player, browser automation or desktop input is used.
 
-## Integration verification
+## Music playback verification
+
+The results below describe the music playback slice. SFX validation is tracked in
+[SFX integration](sfx-integration.md) and its integration PR.
 
 - Seven new playback tests pass on loose content and on cooked content with phone-low
   residency enforcement. They inspect the offline mixer's actual music selection and gain.

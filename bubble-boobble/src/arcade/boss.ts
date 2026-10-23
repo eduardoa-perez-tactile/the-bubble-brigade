@@ -27,7 +27,7 @@ export function ensureThunderPickups(g:GameState) {
 export function captureBoss(g:GameState) {
   const b=g.Party!.Boss!;
   b.HP=0;b.Mode='captured';b.Timer=0;b.Invulnerable=0;
-  g.Projectiles=[];g.Bubbles=[];g.Effects=[];g.Items=[];g.Sounds.push('item');
+  g.Projectiles=[];g.Bubbles=[];g.Effects=[];g.Items=[];g.Sounds.push(g.Level.arena==='cartoon-courtyard'?'boss-capture':'item');
 }
 /** Called at every swept lightning position, so fast bolts cannot tunnel through the boss. */
 export function hitBossWithThunder(g:GameState,x:number,y:number,w:number,h:number):boolean {

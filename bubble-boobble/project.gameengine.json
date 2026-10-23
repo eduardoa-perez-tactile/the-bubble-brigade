@@ -70,7 +70,8 @@
   "audio": {
     "banks": [
       "reference/audio/sfx.bank",
-      "audio/juice.bank"
+      "audio/juice.bank",
+      "audio/brigade/sfx/core.bank"
     ],
     "maxVoices": 24,
     "normalize": false

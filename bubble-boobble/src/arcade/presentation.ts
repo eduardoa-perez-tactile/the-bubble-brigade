@@ -1,7 +1,8 @@
+import {cartoonFlowStartsRun} from '../cartoon/flow-timing';
 import {cartoonRewardLabel,cartoonRewardColor} from '../cartoon/reward-feedback';
 import { menuBubble, menuDragon } from '../desktop/animation';
 import { arenaLayout } from './arena-layout';
-import { arenaBackdrop, bubblePose, dragonPose, dragonShadow, dragonBadges, rect, ring, sparkle, popQuads, advanceFeel, emptyFeel, cueQuads, packFeel, unpackFeel, feelColors, type FeelState } from './juice';
+import { arenaBackdrop, bubblePose, dragonPose, dragonShadow, dragonBadges, rect, ring, sparkle, popQuads, advanceFeel, deriveFeelAudio, emptyFeel, cueQuads, packFeel, unpackFeel, feelColors, type FeelState } from './juice';
 import { ArcadeFeel, ArcadeAudio } from '../schema.gen';
 import campaignPreviews from '../../data/levels.json';
 import { partyCardRect } from '../desktop/layout';
@@ -566,14 +567,25 @@ export const ArcadeFeelSystem=defineSystem({
     const current=session.get(),g=current.game;
     if(!current.active||!g||(!g.Party&&g.Level.arena!=='cartoon-courtyard')){if(ctx.get(ArcadeFeel).header[2])ctx.set(ArcadeFeel,packFeel(emptyFeel()));return;}
     const old=unpackFeel(ctx.get(ArcadeFeel));
-    const next=advanceFeel(old,g,ctx.get(Time).step);
+    const flow=desktopState.get(),cartoon=!!flow.cartoon;
+    const introducing=cartoon&&cartoonFlowStartsRun(flow.transitionAction??'');
+    const next=advanceFeel(old,g,ctx.get(Time).step,cartoon&&!introducing);
+    const audioEdges=deriveFeelAudio(old,g,cartoon&&!introducing);
     const reduced=!!desktopSaveState.get().settings.reducedEffects;
     const fresh=next.cues.filter(c=>!old.cues.some(o=>o.kind===c.kind&&o.at===c.at&&o.slot===c.slot));
     if(!ctx.get(ArcadeAudio).muted&&!g.Paused){
       const volume=desktopSaveState.get().settings.sound/100;
-      for(const cue of fresh){
-        const sound=cue.kind==='rescue'?'rescue':cue.kind==='boss-hit'?'boss-hit':cue.kind==='clear'?'wave-clear':cue.kind==='victory'?'victory':'';
-        if(sound&&volume>0)audio.play(`audio/${sound}`,{volume:volume*.7,priority:cue.kind==='rescue'?90:75,maxVoices:2});
+      const played=new Set<string>();
+      for(const cue of [...fresh,...audioEdges]){
+        // Cartoon rescue/capture are authoritative semantic tokens played by
+        // ArcadeAudioSystem; keep their feel visuals without doubling the cue.
+        const original=cue.kind==='rescue'?'rescue':cue.kind==='boss-hit'?'boss-hit':cue.kind==='clear'?'wave-clear':cue.kind==='victory'?'victory':'';
+        const modern=cue.kind==='boss-hit'?'boss-hit':cue.kind==='clear'?'wave-clear':cue.kind==='victory'?'victory':cue.kind==='boss-windup'?'boss-windup':cue.kind==='defeat'?'defeat':cue.kind==='countdown-tick'?'countdown-tick':cue.kind==='go'?'go':cue.kind==='bubble-bounce'?'bubble-bounce':cue.kind==='land'&&('strength' in cue?cue.strength??1:1)>=.6?'land':'';
+        const sound=cartoon?modern:original;
+        if(!sound||cartoon&&played.has(sound)||volume<=0||cartoon&&introducing)continue;
+        played.add(sound);
+        const restrained=sound==='land'||sound==='bubble-bounce';
+        audio.play(cartoon?`audio/brigade/sfx/${sound}`:`audio/${sound}`,{volume:volume*(restrained?.28:.7),priority:cartoon?(restrained?15:cue.kind==='defeat'||cue.kind==='victory'?100:75):cue.kind==='rescue'?90:75,maxVoices:cartoon?(restrained?2:1):2});
       }
     }
     for(const c of q.chunks())for(let i=0;i<c.length;i++){

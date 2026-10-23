@@ -1,0 +1,8 @@
+guid = "46f733e7-161c-41a5-9d98-9744ac80b970"
+importer = "audio"
+
+[settings]
+mono = true
+normalize = false
+codec = "adpcm"
+cooldown = 0.1

@@ -1,5 +1,5 @@
 import {expect,worldTest,renderTest} from '@gameengine/test';
-import {Text2D} from '@gameengine/runtime';
+import {Text2D,PlaySound} from '@gameengine/runtime';
 import campaign from '../data/levels.json';
 import {createPartyGame} from '../src/arcade/party';
 import {bubble} from '../src/arcade/bubbles';
@@ -44,7 +44,7 @@ renderTest('cartoon feedback native bubbles landing capture rescue and reduced e
   if(unpackFeel(world.resource(ArcadeFeel)).cues.some(c=>c.kind==='rescue'))break;
  }
  expect(unpackFeel(world.resource(ArcadeFeel)).cues.some(c=>c.kind==='rescue')).toBe(true);
- expect(audio.sounds().some(s=>s.sound==='audio/rescue')).toBe(true);
+ expect(world.events(PlaySound).some(s=>s.sound==='audio/brigade/sfx/rescue')).toBe(true);
  render.stats({width:768,height:720});
  expect(world.entities(Text2D).some(e=>{const t=world.get(e,Text2D);return t.visible&&t.text==='SAVED!'&&t.size>=12;})).toBe(true);
  for(const [width,height]of [[768,720],[1680,720],[640,960],[2520,1080]]){input.view(width!,height!,1);await step(2);render.stats({width:width!,height:height!});expect(world.entities(Text2D).some(e=>{const t=world.get(e,Text2D);return t.visible&&t.text==='SAVED!'&&t.size>=12;})).toBe(true);shot(`rescue_${width}`,width,height);}
