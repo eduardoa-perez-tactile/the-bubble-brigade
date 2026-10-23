@@ -79,7 +79,7 @@ export const OverworldTargetSystem=defineSystem({
       return;
     }
     if(!q.count){
-      ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:'Contain'});
+      ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:s.reference?'Contain':'Cover'});
       ctx.commands.spawn({OverworldAvatar:{},LocalTransform:{position:[s.x,s.y,0],rotation:[0,0,0,1],scale:[1,1,1]}});return;
     }
     for(const c of q.chunks())for(let i=0;i<c.length;i++){
@@ -87,7 +87,7 @@ export const OverworldTargetSystem=defineSystem({
       if(transform[i*3]!==s.x||transform[i*3+1]!==s.y)c.set(LocalTransform,i,{position:[s.x,s.y,0]});
       const target=c.entity(i);
       if(!s.cameraReady||ctx.get(WorldViewFollow).target!==target){
-        ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:'Contain'});
+        ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:s.reference?'Contain':'Cover'});
         ctx.set(WorldViewFollow,{target,offset:[0,30],damping:0.16,deadZone:[60,35],lookahead:0.08,bounded:true,boundsMin:[bounds.minX,bounds.minY],boundsMax:[bounds.maxX,bounds.maxY],primed:false});
         overworldState.set({...overworldState.get(),cameraReady:true});
       }

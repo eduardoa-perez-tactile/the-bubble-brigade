@@ -52,10 +52,15 @@ worldTest('adventure resume protects owning profile during map and encounter the
  await intent(ctx,'pause');await intent(ctx,'leave');await ctx.loaded();await ctx.step(3);
  expect(progress().pending).toBe(null);await intent(ctx,'overworld-main-menu');await intent(ctx,'profile:1');
  expect(desktopSaveState.get().active).toBe(1);
- await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');await ctx.loaded();await ctx.step(3);
+ await intent(ctx,'adventure-menu');await intent(ctx,'adventure-new');await intent(ctx,'adventure-reset');await ctx.loaded();await ctx.step(3);
+ expect(desktopState.get().adventureProfile).toBe(1);
  expect(progress().coins).toBe(0);expect(progress().cleared).toEqual({});expect(progress().nextAttempt).toBe(1);
  expect(adventureForProfile(desktopSaveState.get().profiles[0]!).nextAttempt).toBe(2);
  expect(adventureForProfile(desktopSaveState.get().profiles[0]!).pending).toBe(null);
+ await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await ctx.step(2);
+ await intent(ctx,'overworld-interact','encounter-1');await intent(ctx,'adventure-play');await ctx.loaded();await ctx.step(2);
+ expect(desktopState.get().adventureProfile).toBe(1);expect(session.get().active).toBe(true);
+ expect(progress().pending!.encounterId).toBe('encounter-1');
 },{scene});
 
 worldTest('adventure recorded controller axes normalize movement and short south-button taps inspect the doorway',async ctx=>{

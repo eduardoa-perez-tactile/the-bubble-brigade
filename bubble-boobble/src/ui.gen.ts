@@ -1131,12 +1131,12 @@ declare module '@gameengine/ui' {
      *   - `help`: text, default ""
      * Events: `menu`
      * Code areas: none
-     * Refs: `menu`
+     * Refs: `coins`, `menu`
      */
     'overworld-hud': {
       props: { district: string | { loc: string } | LocText; progress: string | { loc: string } | LocText; coins: string | { loc: string } | LocText; prompt: string | { loc: string } | LocText; help: string | { loc: string } | LocText };
       areas: never;
-      refs: 'menu';
+      refs: 'coins' | 'menu';
     };
     /**
      * Party dragon card: a widget, button (ui/docs/party-dragon-card.ui.json)

@@ -30,8 +30,8 @@
       "style": {
         "w": "96%",
         "h": 36,
-        "fontSize": 22,
-        "fitMin": 12,
+        "fontSize": 32,
+        "fitMin": 18,
         "color": "#382d25",
         "textAlign": "center"
       }

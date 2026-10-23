@@ -3,7 +3,7 @@ import type {OverworldHudModel,EncounterCardModel,OverworldDialogueModel} from '
 const hud:OverworldHudModel={district:'BRIGADE LANDING',progress:'0 / 5 LANDMARKS CLEARED',coins:'COINS  0',prompt:'',help:'WASD / ARROWS · WALK     ENTER / SPACE · INTERACT'};
 export const OverworldHudView=defineView<OverworldHudModel>({
  name:'OverworldHUD',samples:{explore:hud,entrance:{...hud,prompt:'[ENTER] BUBBLE YARD'}},
- render:(model,{intent})=><Screen safeArea class="overworld-screen overworld-hud-screen"><Widget doc="overworld-hud" class="overworld-hud" props={{district:()=>model().district,progress:()=>model().progress,coins:()=>model().coins,prompt:()=>model().prompt,help:()=>model().help}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/></Screen>,
+ render:(model,{intent})=><Screen safeArea class="overworld-screen overworld-hud-screen"><Widget id="overworld-hud" doc="overworld-hud" class="overworld-hud" props={{district:()=>model().district,progress:()=>model().progress,coins:()=>model().coins,prompt:()=>model().prompt,help:()=>model().help}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/></Screen>,
 });
 const card:EncounterCardModel={title:'Bubble Yard',subtitle:'BRIGADE LANDING · ENCOUNTER 01',description:'Clear the courtyard of troublesome creatures.',status:'READY TO EXPLORE',reward:'FIRST CLEAR · 10 COINS',locked:false,playLabel:'PLAY ENCOUNTER'};
 export const OverworldEncounterView=defineView<EncounterCardModel>({

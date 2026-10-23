@@ -1,7 +1,10 @@
 .overworld-screen { width:100%;height:100%;align-items:center;justify-content:center;font-family:"cartoon/fonts/BreeSerif-Regular"; }
 .overworld-hud-screen {pointer-events:none;}
-.overworld-hud {width:100%;height:720px;}
-.overworld-hud .ud-overworld-hud__owh_menu {pointer-events:auto;}
+.overworld-hud {width:100%;height:100%;}
+.overworld-hud .ud-overworld-hud__owh_menu {pointer-events:auto;height:48px;}
+.overworld-hud .ud-overworld-button__root {width:160px;height:48px;}
+.overworld-hud .ud-overworld-hud__owh_top {height:76px;}
+.overworld-hud .ud-overworld-hud__owh_right {width:170px;height:76px;}
 .overworld-card {width:100%;height:100%;}
 .overworld-card .ud-overworld-encounter__owe_title,
 .overworld-card .ud-overworld-dialogue__owd_speaker,
@@ -14,4 +17,24 @@
 .overworld-hud .ud-overworld-hud__owh_place {width:270px;}
 .overworld-card .ud-overworld-dialogue__ow_panel,
 .overworld-card .ud-overworld-encounter__ow_panel {width:94%;padding:16px;}
+}
+/* Portrait phone windows scale the landscape reference canvas by width. Keep
+   interactive rows at least 44 view px and readable without shrinking the map UI. */
+@media (aspect < 0.55) {
+ .overworld-card .ud-overworld-button__root {width:100%;height:96px;}
+ .overworld-card .ud-overworld-button__owb_label {font-size:36px;height:76px;}
+ .overworld-card .ud-overworld-dialogue__owd_speaker {font-size:42px;height:64px;}
+ .overworld-card .ud-overworld-dialogue__owd_message {font-size:32px;height:320px;}
+ .overworld-card .ud-overworld-dialogue__owd_detail {font-size:28px;height:64px;}
+ .overworld-card .ud-overworld-encounter__owe_title {font-size:46px;height:112px;}
+ .overworld-card .ud-overworld-encounter__owe_subtitle,
+ .overworld-card .ud-overworld-encounter__owe_reward {font-size:30px;height:64px;}
+ .overworld-card .ud-overworld-encounter__owe_description {font-size:32px;height:160px;}
+ .overworld-card .ud-overworld-encounter__owe_status {font-size:30px;height:104px;}
+ .overworld-hud .ud-overworld-hud__owh_top {height:110px;}
+ .overworld-hud .ud-overworld-hud__owh_right {width:240px;height:110px;}
+ .overworld-hud .ud-overworld-hud__owh_menu {width:240px;height:96px;}
+ .overworld-hud .ud-overworld-button__root {width:240px;height:96px;}
+ .overworld-hud .ud-overworld-button__owb_label {font-size:30px;height:76px;}
+ .overworld-hud .ud-overworld-hud__owh_coins {font-size:36px;height:60px;}
 }

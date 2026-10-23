@@ -12,3 +12,19 @@ export const OverworldMapPreview=defineCheat({
   overworldState.set({...s,facing:directions[Math.floor(facing)]??'down'});
  },
 });
+
+import {desktopSaveState} from '../desktop/save';
+import {encounters} from './content';
+import {adventureForProfile} from './progression';
+/** Dense journal fixture for responsive QA; production grants still use normal encounter results. */
+export const OverworldJournalFixture=defineCheat({
+ id:'overworld.journal-fixture',group:'Adventure',title:'Populate a full Adventure journal for layout QA',
+ run(ctx){
+  const index=desktopSaveState.get().active;
+  for(const encounter of encounters.filter(e=>!e.trial)){
+   desktopSaveState.dispatch('adventureBeginAttempt',{profileIndex:index,encounterId:encounter.id},ctx.time);
+   const pending=adventureForProfile(desktopSaveState.get().profiles[index]!).pending;
+   if(pending)desktopSaveState.dispatch('adventureComplete',{profileIndex:index,encounterId:encounter.id,attemptId:pending.id,score:100},ctx.time);
+  }
+ },
+});

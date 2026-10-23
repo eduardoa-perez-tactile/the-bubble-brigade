@@ -27,10 +27,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   if(poi.kind==='encounter'&&p.cleared[local[poi.slot??0]?.id??''])sprite('overworld-shared/cleared-flag',point.x+22,point.y+31,40,60,3500);
   if(poi.kind==='guide')sprite('cartoon/frames/dragon/blue/idle-0',point.x,point.y+28,48,62,2000-point.y);
   if(poi.kind==='vendor')sprite('cartoon/frames/dragon/orange/idle-0',point.x,point.y+28,48,62,2000-point.y);
-  if(poi.kind==='collectible'&&!p.rewardClaims[`${s.districtId}:coin`]){
-   sprite('cartoon/frames/bubble-body',point.x,point.y+10,17,20,3400,[1,.72,.15,1]);
-   text('C',point.x,point.y+9,13,3401,[.30,.17,.03,1]);
-  }
+
  }
  const order=Math.round(2000-s.y),stride=s.moving?Math.abs(Math.sin(s.walkTick*.62))*1.5:0;
  sprite('cartoon/frames/shadow',s.x,s.y,36,10,order-2,[1,1,1,.55]);

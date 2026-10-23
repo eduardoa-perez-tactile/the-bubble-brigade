@@ -1,6 +1,6 @@
 # Adventure map playtest
 
-Open this branch’s `bubble-boobble/` project in Game Engine and press Play. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
+Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble` in Game Engine and press Play. This is the isolated `codex/walkable-overworld` project; the original checkout is preserved. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
 
 ## Controls
 

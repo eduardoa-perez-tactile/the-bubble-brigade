@@ -29,7 +29,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='adventure-reset'){
   if(s.screen!=='overworld-panel'||s.overworldPanel!=='reset'||!desktopSaveState.loaded())return true;
   desktopSaveState.dispatch('adventureReset',{profileIndex},now);enterOverworld(districts[0]!.id);quit();
-  patch({screen:'overworld',adventure:false,adventureEncounter:'',adventureAttempt:'',overworldPanel:'',selected:0});return true;
+  patch({screen:'overworld',adventure:false,adventureEncounter:'',adventureAttempt:'',adventureProfile:profileIndex,overworldPanel:'',selected:0});return true;
  }
  if(action==='adventure-arcade'){suspendOverworld();patch({screen:'modes',adventure:false,selected:0});return true;}
  if(action==='overworld-interact'){

@@ -58,8 +58,8 @@
       "name": "Label",
       "text": "{speaker}",
       "style": {
-        "fontSize": 30,
-        "fitMin": 13,
+        "fontSize": 42,
+        "fitMin": 20,
         "w": "100%",
         "h": 42,
         "color": "#382d25",
@@ -71,8 +71,8 @@
       "name": "Label",
       "text": "{message}",
       "style": {
-        "fontSize": 21,
-        "fitMin": 13,
+        "fontSize": 32,
+        "fitMin": 16,
         "w": "100%",
         "h": 160,
         "color": "#5a4936",
@@ -84,8 +84,8 @@
       "name": "Label",
       "text": "{detail}",
       "style": {
-        "fontSize": 17,
-        "fitMin": 13,
+        "fontSize": 30,
+        "fitMin": 14,
         "w": "100%",
         "h": 42,
         "color": "#88603b",

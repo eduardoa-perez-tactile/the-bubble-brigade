@@ -155,4 +155,4 @@ renderTest('adventure campaign actual menu begin play intro results and map retu
  expect(desktopState.get().screen).toBe('overworld');expect(overworldState.get().focusedPoi).toBe('encounter-1');
  expect(progress().coins).toBe(10);
  ctx.render.expectScreenshot('adventure-cleared-source-map-return',{width:1280,height:720});
-},{scene:'scenes/cartoon.scene.json'});
+},{scene:'scenes/cartoon.scene.json',memory:'phone-low'});

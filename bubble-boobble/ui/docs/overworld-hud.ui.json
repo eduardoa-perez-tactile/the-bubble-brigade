@@ -33,8 +33,7 @@
         "pad": 0,
         "dir": "row",
         "justify": "space-between",
-        "w": "100%",
-        "h": 76
+        "w": "100%"
       }
     },
     "owh_place": {
@@ -93,9 +92,7 @@
         "pad": 0,
         "dir": "column",
         "align": "end",
-        "gap": 6,
-        "w": 170,
-        "h": 76
+        "gap": 6
       }
     },
     "owh_coins": {
@@ -103,15 +100,17 @@
       "name": "Label",
       "text": "{coins}",
       "style": {
-        "fontSize": 24,
+        "fontSize": 36,
         "w": 170,
         "h": 34,
         "color": "#fff0c6",
         "textAlign": "left",
         "shadowX": 1,
         "shadowY": 2,
-        "shadowColor": "#342a20"
-      }
+        "shadowColor": "#342a20",
+        "fitMin": 20
+      },
+      "point": "coins"
     },
     "owh_menu": {
       "type": "use",
@@ -119,10 +118,6 @@
       "key": "menu",
       "props": {
         "label": "MENU · ESC"
-      },
-      "style": {
-        "w": 160,
-        "h": 38
       }
     },
     "owh_bottom": {
