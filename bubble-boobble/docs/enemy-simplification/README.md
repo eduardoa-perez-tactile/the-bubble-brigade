@@ -137,3 +137,15 @@ Per [the Git workflow](../git-workflow.md), “Actual test failures block mergin
 The feature PR stays open for review; the known baseline failures are not called
 passing coverage and no merge is performed. Their diagnosis/fix is separate from
 this presentation-only enemy slice.
+
+### Integration with updated main
+
+Main advanced to 22f267a (courtyard animation and level preloading) during this
+work. It was merged into the feature branch without touching the shared editor
+checkout. The pipeline conflict was resolved by retaining observed current
+records from both branches and deduplicating them. On this integrated head,
+**403 V8 logic cases pass**, the **nine focused simplified T0/T1 cases pass**
+without further golden changes, the 96-step recording still verifies, and engine
+check passes including current pipeline coverage and cooked smoke. The full
+87/97 T1 and independent d465c89 failure classification above precede this main
+integration; they are not represented as a fresh full-suite pass on 22f267a.
