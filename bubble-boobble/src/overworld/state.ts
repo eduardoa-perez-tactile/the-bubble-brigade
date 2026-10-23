@@ -4,7 +4,7 @@ import { encounterById } from './content.ts';
 import { focusedOverworldPoi, isOverworldWalkable, overworldPoi, overworldSpawn, overworldEntrancePoint } from './navigation.ts';
 import type { OverworldPoint } from './navigation.ts';
 
-export type OverworldFacing = 'up'|'down'|'left'|'right';
+export type OverworldFacing = 'up'|'down'|'left'|'right'|'up-left'|'up-right'|'down-left'|'down-right';
 export interface OverworldState {
   active:boolean; reference:boolean; modal:boolean; districtId:string; x:number; y:number; facing:OverworldFacing;
   moving:boolean; focusedPoi:string; tick:number; walkTick:number; inputArmed:boolean; confirmHeld:boolean;

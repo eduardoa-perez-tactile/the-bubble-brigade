@@ -20,7 +20,7 @@ export interface AdventureDistrict {
   encounterIds: string[];
   spawn: { x: number; y: number };
 }
-const districtNames = ['Brigade Landing', 'Whistling Woods', 'Coppercloud Heights', 'Moonlit Marsh', 'Stormglass Citadel'];
+const districtNames = ['Bubblebrook Quay', 'Fernfall Gardens', 'Pinwheel Fair', 'Cloudtop Springs', 'Emberglass Works'];
 const destinationNames = [
   ['Bubble Yard', 'Bellflower Mill', 'Tanglewood Gate', 'Honeycomb Hall', 'Landing Lighthouse'],
   ['Mossy Steps', 'Acorn Arcade', 'Willow Watch', 'Bramble Bridge', 'Woodland Beacon'],

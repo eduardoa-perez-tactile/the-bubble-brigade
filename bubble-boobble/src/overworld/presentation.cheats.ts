@@ -3,12 +3,12 @@ import {desktopAction} from '../desktop/state';
 import {enterOverworld,overworldState} from './state';
 /** Recorded QA entry only. Does not award progress, currency, unlocks or purchases. */
 export const OverworldMapPreview=defineCheat({
- id:'overworld.map-preview',group:'Adventure',title:'Preview physical source map',
- params:{district:{type:'number',min:1,max:5,default:1},facing:{type:'number',min:0,max:3,default:1}},
+ id:'overworld.map-preview',group:'Adventure',title:'Preview original Adventure map',
+ params:{district:{type:'number',min:1,max:5,default:1},facing:{type:'number',min:0,max:7,default:1}},
  run(_ctx,{district,facing}){
   desktopAction('adventure-menu');desktopAction('adventure-continue');
   enterOverworld(`district-${Math.floor(district)}`);
-  const s=overworldState.get(),directions=['up','down','left','right'] as const;
+  const s=overworldState.get(),directions=['up','down','left','right','up-right','down-right','up-left','down-left'] as const;
   overworldState.set({...s,facing:directions[Math.floor(facing)]??'down'});
  },
 });

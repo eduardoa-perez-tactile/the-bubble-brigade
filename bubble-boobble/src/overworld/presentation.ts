@@ -5,7 +5,6 @@ import {getOverworldMap,sourceToWorld} from './maps';
 import {encounters} from './content';
 import {adventureForProfile,type AdventureProgress} from './progression';
 import {desktopSaveState} from '../desktop/save';
-import {referenceDrawPlan} from './reference-presentation';
 
 export interface OverworldDraw {image?:string;text?:string;x:number;y:number;width:number;height:number;order:number;color?:readonly[number,number,number,number];flip?:boolean;fontSize?:number}
 const capacity=48;
@@ -25,17 +24,15 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
  for(const poi of map.pois){
   const point=sourceToWorld(map,poi);
   if(poi.kind==='encounter'&&p.cleared[local[poi.slot??0]?.id??''])sprite('overworld-shared/cleared-flag',point.x+22,point.y+31,40,60,3500);
-  if(poi.kind==='guide')sprite('cartoon/frames/dragon/blue/idle-0',point.x,point.y+28,48,62,2000-point.y);
-  if(poi.kind==='vendor')sprite('cartoon/frames/dragon/orange/idle-0',point.x,point.y+28,48,62,2000-point.y);
+  if(poi.kind==='guide')sprite('overworld-shared/dragon-oblique/blue/down-right-idle',point.x,point.y+28,48,62,2000-point.y);
+  if(poi.kind==='vendor')sprite('overworld-shared/dragon-oblique/orange/down-left-idle',point.x,point.y+28,48,62,2000-point.y);
 
  }
  const order=Math.round(2000-s.y),stride=s.moving?Math.abs(Math.sin(s.walkTick*.62))*1.5:0;
  sprite('cartoon/frames/shadow',s.x,s.y,36,10,order-2,[1,1,1,.55]);
- const vertical=s.facing==='up'||s.facing==='down',phase=Math.floor(s.walkTick/8)%4;
- const directionalFrame=s.moving&&phase%2?`${s.facing}-walk-${phase===1?0:1}`:`${s.facing}-idle`;
- const image=vertical?`overworld-shared/dragon/${avatar}/${directionalFrame}`:`cartoon/frames/dragon/${avatar}/${s.moving?`run-${Math.floor(s.walkTick/4)%16}`:'idle-0'}`;
- const flip=s.facing==='left'||s.facing==='down'&&s.moving&&phase===3;
- sprite(image,s.x,s.y+36+stride,60,76,order,undefined,flip);
+ const phase=Math.floor(s.walkTick/8)%4;
+ const pose=s.moving&&phase%2?`walk-${phase===1?0:1}`:'idle';
+ sprite(`overworld-shared/dragon-oblique/${avatar}/${s.facing}-${pose}`,s.x,s.y+36+stride,60,76,order);
  if(s.moving)for(let i=0;i<2;i++){
   const phase=(s.walkTick+i*8)%18,alpha=(1-phase/18)*.3;
   sprite('cartoon/frames/dust-puff',s.x+(i?8:-8),s.y-phase*.6,9+phase*.5,6+phase*.3,order-3,[1,1,1,alpha]);
@@ -57,7 +54,7 @@ export const OverworldPresentation=defineSystem({
  name:'OverworldPresentation',stage:'LateUpdate',skipUnchanged:true,after:['OverworldVisualPool'],
  query:query(read(OverworldVisual),write(VisualOffset),write(Sprite),write(Text2D)),
  run(ctx,q){const s=overworldState.get(),save=desktopSaveState.get(),profile=save.profiles[save.active];
-  const draws=s.active&&profile?(s.reference?referenceDrawPlan(s):overworldDrawPlan(s,adventureForProfile(profile),profile.avatar)):[];
+  const draws=s.active&&profile?overworldDrawPlan(s,adventureForProfile(profile),profile.avatar):[];
   if(draws.length>capacity)throw new Error(`Overworld sprite capacity ${capacity} exceeded: ${draws.length}`);
   for(const c of q.chunks())for(let i=0;i<c.length;i++){
    const d=draws[c.col(OverworldVisual).slot[i]!];

@@ -2,9 +2,8 @@ import { ActionState, KeyEvent, LocalTransform, WorldView, WorldViewFollow, NO_E
 import { DesktopIntent, OverworldAvatar } from '../schema.gen.ts';
 import { partyPads } from '../arcade/party-input.ts';
 import { focusedOverworldPoi, moveOverworld } from './navigation.ts';
-import { overworldState } from './state.ts';
+import { overworldState, type OverworldFacing } from './state.ts';
 import { getOverworldMap, mapBounds } from './maps.ts';
-import { moveReferenceOverworld, referenceDoorPrompt, REFERENCE_WORLD_BOUNDS, REFERENCE_VIEW_SIZE } from './reference-navigation.ts';
 
 /** Recorded keyboard actions and controller state drive the authoritative walkable avatar. */
 export const OverworldSystem=defineSystem({
@@ -50,16 +49,16 @@ export const OverworldSystem=defineSystem({
       overworldState.set({...s,modal:true,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys});
       ctx.events.emit(DesktopIntent,{action:'overworld-menu',value:'',index:0,x:0,y:0});return;
     }
-    const point=s.reference?moveReferenceOverworld(s,x,y,ctx.dt):moveOverworld(s,x,y,ctx.dt,s.districtId),moving=point.x!==s.x||point.y!==s.y;
-    const facing=moving?(Math.abs(x)>Math.abs(y)?x<0?'left':'right':y>0?'up':'down'):s.facing;
-    const focusedPoi=s.reference?(referenceDoorPrompt(point)?'reference-door':''):focusedOverworldPoi(s.districtId,point.x,point.y);
-    const shortcutLatched=!s.reference&&focusedPoi==='shortcut';
+    const point=moveOverworld(s,x,y,ctx.dt,s.districtId),moving=point.x!==s.x||point.y!==s.y;
+    const facing:OverworldFacing=moving?(Math.abs(x)>=.25&&Math.abs(y)>=.25?`${y>0?'up':'down'}-${x<0?'left':'right'}`:Math.abs(x)>Math.abs(y)?x<0?'left':'right':y>0?'up':'down'):s.facing;
+    const focusedPoi=focusedOverworldPoi(s.districtId,point.x,point.y);
+    const shortcutLatched=focusedPoi==='shortcut';
     if(shortcutLatched&&!s.shortcutLatched)ctx.events.emit(DesktopIntent,{action:'overworld-shortcut',value:'shortcut',index:0,x:0,y:0});
     const interact=armed&&s.inputArmed&&focusedPoi&&(pressed||confirm&&!s.confirmHeld);
     // Count walk frames only while walking, letting idle map scenes settle completely.
     if(moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
-      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick:moving?s.walkTick+1:s.walkTick,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact&&!s.reference});
-    if(interact)ctx.events.emit(DesktopIntent,{action:s.reference?'overworld-reference-door':'overworld-interact',value:focusedPoi,index:0,x:0,y:0});
+      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick:moving?s.walkTick+1:s.walkTick,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
+    if(interact)ctx.events.emit(DesktopIntent,{action:'overworld-interact',value:focusedPoi,index:0,x:0,y:0});
   },
 });
 
@@ -69,7 +68,7 @@ export const OverworldTargetSystem=defineSystem({
   resources:[write(WorldView),write(WorldViewFollow)],
   run(ctx,q){
     const s=overworldState.get();
-    const map=getOverworldMap(s.districtId),bounds=s.reference?REFERENCE_WORLD_BOUNDS:mapBounds(map),orthoSize=s.reference?REFERENCE_VIEW_SIZE:map.viewSize;
+    const map=getOverworldMap(s.districtId),bounds=mapBounds(map),orthoSize=map.viewSize;
     if(!s.active){
       // Only release our own target, so unrelated camera users remain intact.
       for(const c of q.chunks())for(let i=0;i<c.length;i++)if(ctx.get(WorldViewFollow).target===c.entity(i)){
@@ -79,7 +78,7 @@ export const OverworldTargetSystem=defineSystem({
       return;
     }
     if(!q.count){
-      ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:s.reference?'Contain':'Cover'});
+      ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:'Cover'});
       ctx.commands.spawn({OverworldAvatar:{},LocalTransform:{position:[s.x,s.y,0],rotation:[0,0,0,1],scale:[1,1,1]}});return;
     }
     for(const c of q.chunks())for(let i=0;i<c.length;i++){
@@ -87,7 +86,7 @@ export const OverworldTargetSystem=defineSystem({
       if(transform[i*3]!==s.x||transform[i*3+1]!==s.y)c.set(LocalTransform,i,{position:[s.x,s.y,0]});
       const target=c.entity(i);
       if(!s.cameraReady||ctx.get(WorldViewFollow).target!==target){
-        ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:s.reference?'Contain':'Cover'});
+        ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:'Cover'});
         ctx.set(WorldViewFollow,{target,offset:[0,30],damping:0.16,deadZone:[60,35],lookahead:0.08,bounded:true,boundsMin:[bounds.minX,bounds.minY],boundsMax:[bounds.maxX,bounds.maxY],primed:false});
         overworldState.set({...overworldState.get(),cameraReady:true});
       }

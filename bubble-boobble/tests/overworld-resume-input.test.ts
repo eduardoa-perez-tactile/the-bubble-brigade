@@ -70,6 +70,7 @@ worldTest('adventure recorded controller axes normalize movement and short south
  raw([{type:'gamepadAxis',pad:0,axis:0,value:1},{type:'gamepadAxis',pad:0,axis:1,value:1}]);await ctx.step(12);
  const walked=overworldState.get(),dx=walked.x-start.x,dy=walked.y-start.y;
  expect(dx).toBeGreaterThan(0);expect(dy).toBeLessThan(0);
+ expect(overworldState.get().facing).toBe('down-right');
  expect(Math.abs(dx*dx+dy*dy-(OVERWORLD_SPEED*12/60)**2)).toBeLessThan(.01);
  raw([{type:'gamepadAxis',pad:0,axis:0,value:0},{type:'gamepadAxis',pad:0,axis:1,value:0}]);await ctx.step(2);
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await ctx.step(2);

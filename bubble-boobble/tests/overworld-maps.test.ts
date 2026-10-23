@@ -1,8 +1,6 @@
 import {expect,worldTest} from '@gameengine/test';
 import {overworldMaps,sourceToWorld,worldToSource,mapEncounterPoint,mapPoiPoint,mapBounds} from '../src/overworld/maps.ts';
 import type {SourcePolygon} from '../src/overworld/maps.types.ts';
-import district4Provenance from '../docs/overworld/source-provenance-district-4.json';
-import district5Provenance from '../docs/overworld/source-provenance-district-5.json';
 const scene='scenes/arcade.scene.json';
 function twiceArea(polygon:SourcePolygon):number {
  let area=0;for(let i=0;i<polygon.length;i++){const a=polygon[i]!,b=polygon[(i+1)%polygon.length]!;area+=a[0]*b[1]-b[0]*a[1];}return Math.abs(area);
@@ -37,19 +35,17 @@ worldTest('overworld map source transforms preserve every spawn and physical poi
   }
  }
 },{scene});
-worldTest('overworld source provenance records unchanged DLC and Hell art with integrity hashes',async()=>{
- for(const provenance of [district4Provenance,district5Provenance]){
-  const map=overworldMaps[provenance.district-1]!;
-  expect(provenance.assets.length).toBe(map.layers.length);
-  for(const asset of provenance.assets){
-   expect(/^[a-f0-9]{64}$/.test(asset.sha256)).toBe(true);
-   expect(asset.bytes>0&&asset.width>0&&asset.height>0).toBe(true);
-   expect(asset.transformation.startsWith('none; exact source bytes')).toBe(true);
-   expect(map.layers.some(layer=>asset.asset===`assets/${layer.image}.png`)).toBe(true);
-  }
+worldTest('overworld production maps use original square artwork and independently authored geography',async()=>{
+ const silhouettes=new Set<string>();
+ for(const [index,map] of overworldMaps.entries()){
+  expect(map.width).toBe(1536);expect(map.height).toBe(1536);
+  expect(map.origin).toEqual({x:768,y:768});
+  expect(map.layers).toEqual([{image:`overworld-original/district-${index+1}/base`,x:0,y:0,width:1536,height:1536,order:-100}]);
+  expect(map.layers.every(layer=>!layer.image.includes('reference'))).toBe(true);
+  silhouettes.add(JSON.stringify(map.walkable));
+  const firstDoor=map.pois.find(poi=>poi.kind==='encounter'&&poi.slot===0)!;
+  // Every district begins in a real foreground plaza with a nearby doorstep.
+  expect(Math.hypot(firstDoor.x-map.spawn.x,firstDoor.y-map.spawn.y)).toBeLessThan(220);
  }
- const dlc=overworldMaps[3]!,hell=overworldMaps[4]!;
- expect(dlc.width).toBe(3837);expect(dlc.height).toBe(2311);
- expect(hell.width).toBe(2182);expect(hell.height).toBe(1570);
- expect(hell.layers[0]!.x).toBe(0);expect(hell.layers[1]!.x).toBe(1091);
+ expect(silhouettes.size).toBe(5);
 },{scene});

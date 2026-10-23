@@ -73,9 +73,9 @@ worldTest('overworld source POIs keep stable encounter IDs and source-scaled pro
   }
 },{scene});
 
-worldTest('overworld recorded production movement approaches leaves and reapproaches a real map doorway',async({input,step,world})=>{
+worldTest('overworld recorded production movement approaches leaves and reapproaches a real map doorway',async({input,step,world,loaded})=>{
   await step(8);input.emit(DesktopIntent,{action:'adventure-menu'});await step(1);
-  input.emit(DesktopIntent,{action:'adventure-continue'});await step(3);
+  input.emit(DesktopIntent,{action:'adventure-continue'});await loaded();await step(3);
   expect(overworldState.get().active).toBe(true);expect(overworldState.get().reference).toBe(false);
   const map=getOverworldMap('district-1'),door=overworldEntrancePoint('district-1','encounter-1');
   for(let frame=0;frame<180;frame++){
@@ -109,4 +109,18 @@ worldTest('overworld recorded production movement approaches leaves and reapproa
   input.view(2560,1080,1);await step(3);input.view(720,1280,1);await step(3);
   expect(overworldState.get().x).toBe(held.x);expect(overworldState.get().y).toBe(held.y);
   expect(world.resource(WorldView).orthoSize).toBe(map.viewSize);
+},{scene});
+
+worldTest('overworld recorded eight-way walking retains each oblique heading when idle',async({input,step,loaded})=>{
+ await step(8);input.emit(DesktopIntent,{action:'adventure-menu'});await step(1);
+ input.emit(DesktopIntent,{action:'adventure-continue'});await loaded();await step(3);
+ for(const [facing,x,y] of [
+  ['up',0,1],['up-right',1,1],['right',1,0],['down-right',1,-1],
+  ['down',0,-1],['down-left',-1,-1],['left',-1,0],['up-left',-1,1],
+ ] as const){
+  for(let frame=0;frame<2;frame++){input.action('mapX',x);input.action('mapY',y);await step(1);}
+  expect(overworldState.get().facing).toBe(facing);expect(overworldState.get().moving).toBe(true);
+  input.action('mapX',0);input.action('mapY',0);await step(2);
+  expect(overworldState.get().facing).toBe(facing);expect(overworldState.get().moving).toBe(false);
+ }
 },{scene});

@@ -42,11 +42,11 @@ async function inspect(ctx:WorldTestContext,id:string){
 function assertAvatar(ctx:WorldTestContext,width:number,height:number,safe:readonly number[]){
  const s=overworldState.get();
   const save=desktopSaveState.get(),profile=save.profiles[save.active]!,draws=overworldDrawPlan(s,adventureForProfile(profile),profile.avatar);
-  const actor=draws.find(d=>d.image?.includes(`/dragon/${profile.avatar}/`)&&d.x===s.x)!;
+  const actor=draws.find(d=>d.image?.includes(`/dragon-oblique/${profile.avatar}/`)&&d.x===s.x)!;
   expect(!!actor).toBe(true);
   // The actual normalized frame has a shared [64,120] foot anchor, content top12.
   const head=ctx.input.worldToScreen([actor.x,actor.y+actor.height*(.5-12/128)]),feet=ctx.input.worldToScreen([actor.x,actor.y+actor.height*(.5-120/128)]);
-  const left=ctx.input.worldToScreen([actor.x-actor.width*42/128,actor.y]),right=ctx.input.worldToScreen([actor.x+actor.width*42/128,actor.y]);
+  const left=ctx.input.worldToScreen([actor.x-actor.width*54/128,actor.y]),right=ctx.input.worldToScreen([actor.x+actor.width*54/128,actor.y]);
   if(head[1]!<safe[1]!||feet[1]!>height-safe[3]!||left[0]!<safe[0]!||right[0]!>width-safe[2]!)throw new Error('Avatar clips viewport: '+JSON.stringify({width,height,safe,head,feet,left,right}));
   if(feet[1]!-head[1]!<40)throw new Error('Avatar smaller than40px: '+JSON.stringify({width,height,head,feet}));
 }
@@ -68,7 +68,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
   if(width===360)ctx.render.expectScreenshot('slim-source-hud',{width,height});
   if(width===360){
    const start=overworldState.get();
-   for(const source of [{x:1100,y:800},{x:1250,y:900},{x:1350,y:970}]){
+   for(const source of [{x:727.579,y:1253.053},{x:551.196,y:1265.071},{x:404.211,y:1175.885}]){
     const target=sourceToWorld(getOverworldMap('district-1'),source);let arrived=false;
     for(let frame=0;frame<180;frame++){
      const state=overworldState.get(),dx=target.x-state.x,dy=target.y-state.y,length=Math.hypot(dx,dy);
@@ -78,7 +78,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
     }
     expect(arrived).toBe(true);
    }
-   expect(overworldState.get().x-start.x>100).toBe(true);
+   expect(start.x-overworldState.get().x>100).toBe(true);
   }
 
   await inspect(ctx,'encounter-3');expect(desktopState.get().screen).toBe('overworld-card');
