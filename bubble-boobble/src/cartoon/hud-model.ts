@@ -53,7 +53,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
   const boss=game.Party.Boss;
   const victory=boss?.Mode==='defeated',captured=boss?.Mode==='captured';
   const needsPower=game.Players.some(p=>p.Lives>0&&!p.Downed&&!p.Power.Thunder);
-  const instruction=!boss||victory?'':captured?'HE IS TRAPPED!  TOUCH THE GIANT BUBBLE TO FINISH':needsPower?'PICK UP A GLOWING CANISTER TO CHARGE YOUR BUBBLES':'SHOOT, THEN JUMP INTO YOUR BUBBLE: LIGHTNING HITS THE DRAGON';
+  const instruction=!boss||victory?'':captured?'HE IS TRAPPED!  TOUCH THE GIANT BUBBLE TO FINISH':needsPower?'PICK UP A LIGHTNING POTION TO CHARGE YOUR BUBBLES':'SHOOT, THEN JUMP INTO YOUR BUBBLE: LIGHTNING HITS THE DRAGON';
   return { ...base, ...cue, bossActive:!!boss,bossHealth:boss?.HP??0,bossMaximum:boss?.MaxHP??1,bossCaptured:captured,bossVictory:victory,freeze:instruction, startCue, startHint: '', showStatus: !boss && base.highTitle === 'LAST DRAGON', waveLabel: `WAVE ${String(game.Party.Wave).padStart(2, '0')}`,
     // Keep rest, boss capture and finisher feedback; remove duplicate prep/GO plaques.
     showBanner: !boss && base.showBanner && (!preparingOrGo || !!base.celebrationColor && base.celebrationColor !== 'none' || game.Party.Boss?.Mode === 'captured'),

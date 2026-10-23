@@ -21,7 +21,8 @@
       "children": [
         "cr_name",
         "cr_status",
-        "cr_number"
+        "cr_number",
+        "rescue_mark"
       ]
     },
     "cr_name": {
@@ -92,6 +93,28 @@
         "outlineColor": "#191711"
       },
       "property": "number"
+    },
+    "rescue_mark": {
+      "type": "label",
+      "name": "Label",
+      "text": "HELP",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          13,
+          22
+        ],
+        "w": 32,
+        "h": 10,
+        "fontSize": 8,
+        "color": "#fff3c4",
+        "bg": "#b12e29",
+        "hide": true
+      }
     }
   },
   "properties": {
@@ -151,6 +174,9 @@
           "set": {
             "cr_status": {
               "color": "#a6472d"
+            },
+            "rescue_mark": {
+              "hide": false
             }
           }
         },
