@@ -1,0 +1,8 @@
+guid = "50462996-e945-4e74-a28d-0ad741aa02a9"
+importer = "texture"
+[settings]
+kind = "sprite"
+filter = "linear"
+compression = "none"
+trim = false
+atlas = "auto"
