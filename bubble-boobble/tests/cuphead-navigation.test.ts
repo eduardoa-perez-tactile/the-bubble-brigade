@@ -1,3 +1,5 @@
+import {Time,PlaySound} from '@gameengine/runtime';
+import {cartoonFlowTiming} from '../src/cartoon/flow-timing';
 import {expect,worldTest,renderTest} from '@gameengine/test';
 import {DesktopIntent,ArcadeInput} from '../src/schema.gen';
 import {desktopState,desktopGameRequest} from '../src/desktop/state';
@@ -5,20 +7,34 @@ import {session} from '../src/arcade/session';
 import {PartyHit} from '../src/arcade/party.cheats';
 const scene='scenes/cartoon.scene.json';
 
-worldTest('cuphead launch commits only under cover and retry skips billing without losing neutral gate',async({input,step,cheat})=>{
+worldTest('cuphead frozen introduction does not replay the last gameplay sound',async({input,step,world})=>{
+ await step(8);input.emit(DesktopIntent,{action:'start'});await step(65);
+ input.action('fire',1);await step(1);input.action('fire',0);
+ const shots=()=>world.events(PlaySound).filter(s=>['audio/bubble-shot','reference/audio/shoot'].includes(s.sound??'')).length;
+ expect(session.get().game!.Sounds.includes('shoot')).toBe(true);
+ expect(shots()).toBeGreaterThan(0);
+ input.emit(DesktopIntent,{action:'ui-activate',value:'restart'});
+ for(let tick=0;tick<15;tick++){await step(1);expect(shots()).toBe(0);}
+ expect(desktopState.get().transitionAction).toBe('restart');
+},{scene});
+
+worldTest('cuphead launch commits only under cover and retry skips billing without losing neutral gate',async({input,step,cheat,world})=>{
  await step(8);
  input.emit(DesktopIntent,{action:'party'});await step(1);
  input.emit(DesktopIntent,{action:'ui-activate',value:'start-party'});await step(2);
  expect(desktopState.get().transitionAction).toBe('start-party');
  expect(desktopState.get().transitionHasTitle).toBe(true);
- const before=desktopGameRequest.get().sequence;
- await step(70);expect(desktopGameRequest.get().sequence).toBe(before);
- await step(2);expect(desktopGameRequest.get().sequence).toBe(before+1);
+ const before=desktopGameRequest.get().sequence,launch=cartoonFlowTiming(true,'start-party',true),origin=desktopState.get().transitionStartedStep!;
+ const at=async(age:number)=>{const frames=origin+age-world.resource(Time).step;if(frames>0)await step(frames);};
+ await at(launch.commitAt-1);expect(desktopGameRequest.get().sequence).toBe(before);
+ await at(launch.commitAt);expect(desktopGameRequest.get().sequence).toBe(before+1);
  expect(session.get().game!.Party!.Phase).toBe('prepare');
  expect(desktopState.get().transitionCommitted).toBe(true);
  input.emit(DesktopIntent,{action:'ui-activate',value:'start-party'});await step(1);
  expect(desktopGameRequest.get().sequence).toBe(before+1);
- await step(24);expect(desktopState.get().transitionAction).toBe('');
+ await at(launch.finishAt-1);expect(desktopState.get().transitionAction).toBe('start-party');
+ expect(session.get().game!.Party!.Timer).toBe(180);
+ await at(launch.finishAt);expect(desktopState.get().transitionAction).toBe('');
  for(let slot=0;slot<10;slot++)await cheat(PartyHit,{slot});
  await step(1);expect(desktopState.get().screen).toBe('result');
  input.emit(DesktopIntent,{action:'ui-activate',value:'restart'});await step(1);
@@ -26,8 +42,9 @@ worldTest('cuphead launch commits only under cover and retry skips billing witho
  await step(46);expect(desktopState.get().resultReady).toBe(true);
  input.emit(DesktopIntent,{action:'ui-activate',value:'restart'});await step(2);
  expect(desktopState.get().transitionHasTitle).toBe(false);
- await step(18);expect(desktopGameRequest.get().sequence).toBe(before+1);
- await step(5);expect(desktopGameRequest.get().sequence).toBe(before+2);
+ const retry=cartoonFlowTiming(false,'restart',true),retryOrigin=desktopState.get().transitionStartedStep!;
+ await step(retryOrigin+retry.commitAt-1-world.resource(Time).step);expect(desktopGameRequest.get().sequence).toBe(before+1);
+ await step(1);expect(desktopGameRequest.get().sequence).toBe(before+2);
  expect(session.get().game!.Party!.Wave).toBe(1);
 },{scene});
 
@@ -58,27 +75,30 @@ worldTest('cuphead pause options returns to frozen pause and resume waits for th
  expect(session.get().game!.Bubbles.some(b=>b.Shooter===0)).toBe(true);
 },{scene});
 
-renderTest('cuphead actual start button reaches billing then phase derived ready and clean combat',async({input,step,render,ui,cheat})=>{
+renderTest('cuphead actual start button reaches billing then phase derived ready and clean combat',async({input,step,render,ui,cheat,world})=>{
  input.view(1680,720,1);await step(8);
  input.emit(DesktopIntent,{action:'party'});await step(2);render.stats({width:1680,height:720});
  const start=ui.interactables().find(b=>b.label==='START SURVIVAL')!;
- expect(!!start).toBe(true);await ui.press(start.id!);await step(20);
+ expect(!!start).toBe(true);await ui.press(start.id!);await step(2);
+ const launch=cartoonFlowTiming(true,'start-party',true),origin=desktopState.get().transitionStartedStep!;
+ const at=async(age:number)=>{const frames=origin+age-world.resource(Time).step;if(frames>0)await step(frames);};
+ await at(launch.closeAt+2);
  expect(desktopState.get().transitionCommitted).toBe(false);
  render.expectScreenshot('billing',{width:1680,height:720});
- await step(100);expect(desktopState.get().screen).toBe('play');
+ await at(launch.finishAt+12);expect(desktopState.get().screen).toBe('play');
  render.expectScreenshot('ready',{width:1680,height:720});
- await step(140);render.expectScreenshot('combat',{width:1680,height:720});
+ await at(launch.finishAt+182);render.expectScreenshot('combat',{width:1680,height:720});
  expect(session.get().game!.Party!.Phase).toBe('combat');
  expect(desktopState.get().transitionAction).toBe('');
  for(let slot=0;slot<10;slot++)await cheat(PartyHit,{slot});await step(50);
  expect(desktopState.get().screen).toBe('result');
  render.stats({width:1680,height:720});render.expectScreenshot('defeat',{width:1680,height:720});
  console.log('journey defeat actions',JSON.stringify(ui.interactables()));
- const retry=ui.interactables().find(b=>(b.label??'').includes('RETRY RUN'))!;await ui.press(retry.id!);await step(13);
+ const retry=ui.interactables().find(b=>(b.label??'').includes('RETRY RUN'))!;await ui.press(retry.id!);await step(Math.floor(cartoonFlowTiming(false,'restart',true).closeAt/2));
  expect(desktopState.get().transitionAction).toBe('restart');
  expect(desktopState.get().transitionHasTitle).toBe(false);
  render.expectScreenshot('retry_iris',{width:1680,height:720});
- await step(210);expect(session.get().game!.Party!.Wave).toBe(1);
+ await step(cartoonFlowTiming(false,'restart',true).finishAt+182);expect(session.get().game!.Party!.Wave).toBe(1);
  input.emit(DesktopIntent,{action:'pause'});await step(2);render.stats({width:1680,height:720});
  render.expectScreenshot('pause',{width:1680,height:720});
  const options=ui.interactables().find(b=>(b.label??'').includes('OPTIONS'))!;await ui.press(options.id!);await step(2);render.stats({width:1680,height:720});
@@ -89,9 +109,11 @@ renderTest('cuphead actual start button reaches billing then phase derived ready
  expect(session.get().game!.Paused).toBe(false);
 },{scene,memory:'phone-low'});
 
-worldTest('cuphead fresh fire latch includes recorded inputs and keyboard pause cannot interrupt the iris',async({input,step})=>{
+worldTest('cuphead fresh fire latch includes recorded inputs and keyboard pause cannot interrupt the iris',async({input,step,world})=>{
  await step(8);input.emit(DesktopIntent,{action:'party'});await step(1);
- input.action('partyFire1',1);input.emit(DesktopIntent,{action:'ui-activate',value:'start-party'});await step(76);
+ input.action('partyFire1',1);input.emit(DesktopIntent,{action:'ui-activate',value:'start-party'});await step(2);
+ const launch=cartoonFlowTiming(true,'start-party',true),origin=desktopState.get().transitionStartedStep!;
+ await step(origin+launch.commitAt+3-world.resource(Time).step);
  expect(session.get().game!.Party!.Phase).toBe('prepare');
  expect(session.get().game!.Bubbles.some(b=>b.Shooter===0)).toBe(false);
  input.action('pause',1);await step(1);input.action('pause',0);await step(1);
@@ -100,8 +122,11 @@ worldTest('cuphead fresh fire latch includes recorded inputs and keyboard pause 
  expect(session.get().game!.Paused).toBe(false);
  input.action('partyFire1',0);await step(2);
  input.action('partyFire1',1);await step(1);
+ expect(session.get().game!.Bubbles.some(b=>b.Shooter===0)).toBe(false);
+ input.action('partyFire1',0);await step(origin+launch.finishAt+2-world.resource(Time).step);
+ input.action('partyFire1',1);await step(1);
  expect(session.get().game!.Bubbles.some(b=>b.Shooter===0)).toBe(true);
- input.action('partyFire1',0);await step(30);
+ input.action('partyFire1',0);await step(2);
  expect(desktopState.get().transitionAction).toBe('');
  input.action('pause',1);await step(1);input.action('pause',0);await step(1);
  expect(session.get().game!.Paused).toBe(true);
@@ -140,5 +165,17 @@ worldTest('cuphead result back closes details first then exits through cover',as
  input.action('back',1);await step(1);input.action('back',0);await step(1);
  expect(desktopState.get().transitionAction).toBe('leave');
  expect(desktopState.get().screen).toBe('result');
- await step(45);expect(desktopState.get().screen).toBe('menu');
+ await step(cartoonFlowTiming(false,'leave',true).finishAt+1);expect(desktopState.get().screen).toBe('menu');
+},{scene});
+
+worldTest('cuphead classic Ready lead-in follows the complete iris before its unchanged preparation starts',async({input,step,world})=>{
+ await step(8);input.emit(DesktopIntent,{action:'ui-activate',value:'classic-mode'});await step(2);
+ const timing=cartoonFlowTiming(true,'start',false),origin=desktopState.get().transitionStartedStep!;
+ const at=async(age:number)=>{const frames=origin+age-world.resource(Time).step;if(frames>0)await step(frames);};
+ await at(timing.commitAt);expect(session.get().game!.Countdown).toBe(60);
+ await at(timing.revealEndAt);expect(desktopState.get().transitionAction).toBe('start');
+ expect(session.get().game!.Countdown).toBe(60);
+ await at(timing.finishAt-1);expect(session.get().game!.Countdown).toBe(60);
+ await at(timing.finishAt);expect(desktopState.get().transitionAction).toBe('');
+ expect(session.get().game!.Countdown).toBe(59);
 },{scene});

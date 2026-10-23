@@ -18,4 +18,5 @@
   .cartoon-menu .ud-cartoon-menu__cm_mascot_left,
   .cartoon-menu .ud-cartoon-menu__cm_mascot_right { top: 684px; }
 }
-.cartoon-modes .ud-cartoon-modes__ms_madness .ud-cartoon-mode-card__mc_hero { transform: scaleX(-1); }
+/* Mode illustrations keep their authored orientation; no mirrored portrait. */
+.cartoon-modes .ud-cartoon-mode-card__mc_hero { object-fit: cover; }

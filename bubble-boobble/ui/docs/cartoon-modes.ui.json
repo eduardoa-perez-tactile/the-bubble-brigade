@@ -119,7 +119,7 @@
         "selected": {
           "property": "classicSelected"
         },
-        "hero": "cartoon/frames/dragon/green/idle-0"
+        "hero": "cartoon/ui/modes/classic-campaign"
       }
     },
     "ms_madness": {
@@ -146,7 +146,7 @@
         "selected": {
           "property": "madnessSelected"
         },
-        "hero": "cartoon/frames/dragon/blue/idle-0"
+        "hero": "cartoon/ui/modes/wave-survival"
       }
     },
     "ms_back": {

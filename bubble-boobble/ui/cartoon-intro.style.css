@@ -1,13 +1,8 @@
-/* Lettering is original bitmap art in a document; layout keeps its aspect on
-   every viewport. The two displaced silhouettes are short echo poses, not
-   claimed to be authored stroke-morph animation. Nothing loops at rest. */
+/* Two immutable images, mutually exclusive visibility. No texture swap,
+   crossfade, displaced duplicates or at-rest animation can stack the words. */
 .cartoon-hud .ud-cartoon-hud__ch_cue_art,
-.cartoon-hud .ud-cartoon-hud__ch_cue_echo_left,
-.cartoon-hud .ud-cartoon-hud__ch_cue_echo_right {
+.cartoon-hud .ud-cartoon-hud__ch_action_art {
   object-fit: contain;
+  image-swap: cut;
   pointer-events: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  .cartoon-hud .ud-cartoon-hud__ch_cue_echo_left,
-  .cartoon-hud .ud-cartoon-hud__ch_cue_echo_right { display: none; }
 }

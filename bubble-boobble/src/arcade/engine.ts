@@ -1,3 +1,4 @@
+import { cartoonFlowStartsRun } from '../cartoon/flow-timing';
 import { partyRanking } from './party-config';
 import { partyPads, reducePartyPadInput, readPartyAction, applyPartyAction } from './party-input';
 import { createPartyGame } from './party';
@@ -48,6 +49,10 @@ export const ArcadeStep=defineSystem({
     }
     if(control.skip){ctx.setField(ArcadeControl,'skip',false);return;}
     if(!current.active||!current.game)return;
+    // A new arena remains frozen under the cover and Classic's Ready lead-in.
+    // The original preparation countdown starts only once the scene is fully introduced.
+    const arrival=desktopState.get();
+    if(arrival.cartoon&&arrival.transitionAction&&cartoonFlowStartsRun(arrival.transitionAction))return;
     const inputs:Input[]=reducePartyPadInput(partyPads.get().pads,[]).inputs.slice(0,current.game.Players.length);
     let pause=false;
     for(const c of q.chunks())for(let i=0;i<c.length;i++){

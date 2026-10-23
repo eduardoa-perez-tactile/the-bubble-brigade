@@ -1,0 +1,468 @@
+{
+  "command": "python3 tools/cartoon/build-assets.py --dragon-skin blue",
+  "changedFiles": [
+    "assets/cartoon/animation.json",
+    "assets/cartoon/ui/portraits/blue.png",
+    "assets/cartoon/frames/dragon/blue/jump-0.png",
+    "assets/cartoon/frames/dragon/blue/idle-0.png",
+    "assets/cartoon/frames/dragon/blue/shoot-upper-2.png",
+    "assets/cartoon/frames/dragon/blue/idle-1.png",
+    "assets/cartoon/frames/dragon/blue/jump-1.png",
+    "assets/cartoon/frames/dragon/blue/shoot-upper-1.png",
+    "assets/cartoon/frames/dragon/blue/shoot-upper-0.png",
+    "assets/cartoon/frames/dragon/blue/run-15.png",
+    "assets/cartoon/frames/dragon/blue/run-0.png",
+    "assets/cartoon/frames/dragon/blue/run-1.png",
+    "assets/cartoon/frames/dragon/blue/run-14.png",
+    "assets/cartoon/frames/dragon/blue/run-3.png",
+    "assets/cartoon/frames/dragon/blue/run-2.png",
+    "assets/cartoon/frames/dragon/blue/run-13.png",
+    "assets/cartoon/frames/dragon/blue/run-6.png",
+    "assets/cartoon/frames/dragon/blue/hurt-0.png",
+    "assets/cartoon/frames/dragon/blue/run-7.png",
+    "assets/cartoon/frames/dragon/blue/run-12.png",
+    "assets/cartoon/frames/dragon/blue/run-10.png",
+    "assets/cartoon/frames/dragon/blue/run-5.png",
+    "assets/cartoon/frames/dragon/blue/run-4.png",
+    "assets/cartoon/frames/dragon/blue/run-11.png",
+    "assets/cartoon/frames/dragon/blue/run-9.png",
+    "assets/cartoon/frames/dragon/blue/shoot-4.png",
+    "assets/cartoon/frames/dragon/blue/shoot-5.png",
+    "assets/cartoon/frames/dragon/blue/run-8.png",
+    "assets/cartoon/frames/dragon/blue/shoot-2.png",
+    "assets/cartoon/frames/dragon/blue/shoot-3.png",
+    "assets/cartoon/frames/dragon/blue/shoot-1.png",
+    "assets/cartoon/frames/dragon/blue/shoot-0.png",
+    "assets/cartoon/reconstruction/ui/portraits/blue.png"
+  ],
+  "changedFrames": [
+    {
+      "file": "assets/cartoon/frames/dragon/blue/jump-0.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "51cf83ba48dab8a33d8e1c228b686514cffd95603e4d3a8eece7bb39430dbef7"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/idle-0.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "b339d05e1b6a154c9d1a116e8fddcd5feeaf2d073719e3460688c817546ebeee"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-upper-2.png",
+      "changedBounds": [
+        23,
+        23,
+        58,
+        36
+      ],
+      "canvas": [
+        128,
+        96
+      ],
+      "sha256": "e5efb9041a344ae0d66e7d878ab88e4ddc0dd3a2efa9142a96c359f69ab44e3e"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/idle-1.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "3e8a8f66919aa66406d4423c9300ab028b5c4b031714121359cf02de83bac09a"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/jump-1.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "3bcd548b104445ff8decf985f014be3c409c8e05fa62f9262e214af5bb98e365"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-upper-1.png",
+      "changedBounds": [
+        23,
+        23,
+        58,
+        36
+      ],
+      "canvas": [
+        128,
+        96
+      ],
+      "sha256": "314b9f437698e9359d9ca8dcfe45ce697f281358d2c1bccb0fe8b5e814f2f587"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-upper-0.png",
+      "changedBounds": [
+        23,
+        23,
+        58,
+        36
+      ],
+      "canvas": [
+        128,
+        96
+      ],
+      "sha256": "2a900ad1ac2ef6cc2dddc5623e2d5ad9807aa7de89257b0f2b1be982c4edb4c3"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-15.png",
+      "changedBounds": [
+        24,
+        16,
+        59,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "5c184e58889fadaaadca489cf432f5fbd161c92b4572241e2904fec8af64c4a9"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-0.png",
+      "changedBounds": [
+        24,
+        16,
+        59,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "3bc1387191d1ea213c1cad3ba721b884108c31f6b0485609eb2ade2ca5a5589a"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-1.png",
+      "changedBounds": [
+        24,
+        16,
+        59,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "73b3049fdad1ecd59b4ac39931f31d2bb802dc456b6b8e753eef4d72d379faf7"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-14.png",
+      "changedBounds": [
+        24,
+        16,
+        59,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "1e2a434e527d4add734d66e221b8418d45e83f76632bbaab4d1df4b734f7695a"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-3.png",
+      "changedBounds": [
+        24,
+        15,
+        59,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "593d06ea2d4eb958513ec54fc45b760a32b3c29657bf16e947bac5c7d2a3acc5"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-2.png",
+      "changedBounds": [
+        25,
+        16,
+        60,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "82cb4f846dfa8b2d4bdb2b68cacc3d3355627cd15f9e62f3ee32c3fcd5903fa8"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-13.png",
+      "changedBounds": [
+        24,
+        16,
+        59,
+        29
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "a85007d04551ac7efc35b91b334c09552a3be0ece986f6099646365723b6f95e"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-6.png",
+      "changedBounds": [
+        23,
+        13,
+        58,
+        26
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "8a29460443be90b0b067054041ec620ecb9dac09823cf0e1c6511870b94cc00b"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/hurt-0.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "9c78af6910e9ee0e2945f4795c1b8fa94b073749c645e33ad60a1a5de54cac69"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-7.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "2dbb454483d049868bef7269168b5218d07e0551a992f3cedf8756ecbaf93bd2"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-12.png",
+      "changedBounds": [
+        24,
+        17,
+        59,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "4cf3010c5516e3aefbb97fe397ade4b63cacb6eb11aaa37dc8cb0d29bbe6b84a"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-10.png",
+      "changedBounds": [
+        23,
+        17,
+        58,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "5a698fa7c0cb7ab8b98e70f0f71c5380a31b0e639bbcb26d3bbee5fddd7d4a32"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-5.png",
+      "changedBounds": [
+        23,
+        14,
+        58,
+        27
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "6fcd90bd8ec77b324aba28412d0a304e39b9beebea17bacb02e7c98dbad20a8a"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-4.png",
+      "changedBounds": [
+        23,
+        15,
+        58,
+        28
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "4d42b25fd0f2d4ea4118c8970c11c2e2ff47b7631bc015131b39cdf63255ed01"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-11.png",
+      "changedBounds": [
+        23,
+        17,
+        58,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "d47e68ecf529559c3b46781b9ad5c492d8f6547df0c3124f3c45636e374bc84b"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-9.png",
+      "changedBounds": [
+        23,
+        17,
+        58,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "ca62e97c3674ca90eeaa0e6566a7eeb2f7e08ea23f7d853ab2dc10301d348f7d"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-4.png",
+      "changedBounds": [
+        23,
+        18,
+        58,
+        31
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "d907331b1805c4cd1bc04ac21307422959831f7234f9281af4309e7dc356b8b6"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-5.png",
+      "changedBounds": [
+        23,
+        17,
+        58,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "90c64ceb4fddc36814e15c521eae5a3c912819862af4366c189bb12c54f2ac90"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/run-8.png",
+      "changedBounds": [
+        22,
+        17,
+        57,
+        30
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "6791e9ef2456c27be9e1779072aada1e53fd1bc9787c3bd42f441c4c8e4e1e63"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-2.png",
+      "changedBounds": [
+        23,
+        35,
+        58,
+        48
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "6b7f00affd8da91206400af8ddb38e8fbcee0cce942cca40dd00c6b39287bf19"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-3.png",
+      "changedBounds": [
+        23,
+        23,
+        58,
+        36
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "db3edeb65f65a13db1da44f08d59d624fbe1d290195be4cd038bfa8b9d913d83"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-1.png",
+      "changedBounds": [
+        23,
+        35,
+        58,
+        48
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "ff6608cefa5bac27ddea490c6645aa08b3e2865a30764d20ad12f70d245e0bb7"
+    },
+    {
+      "file": "assets/cartoon/frames/dragon/blue/shoot-0.png",
+      "changedBounds": [
+        23,
+        23,
+        58,
+        36
+      ],
+      "canvas": [
+        128,
+        128
+      ],
+      "sha256": "8dd376ed754069b752cad4c0be97add318ab4882dbad8a257ab7f19399625563"
+    }
+  ],
+  "checks": [
+    "all non-blue artwork byte-identical",
+    "all source animation masters byte-identical",
+    "all blue frame canvases unchanged",
+    "all blue alpha silhouettes equal corresponding clean green silhouettes",
+    "every changed frame confined to former oval bounds x<=72,y<=50; muzzle[100,80],feet[64,120],waist92..96 unaffected"
+  ],
+  "idempotentRebuild": "second completed scoped rebuild byte-identical across blue exports, portraits, animation and atlas metadata"
+}

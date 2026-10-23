@@ -5,7 +5,8 @@ No original pixel assets, fixtures, goldens or migration evidence are rewritten.
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageChops, ImageEnhance, ImageOps
-import colorsys, json, math, uuid
+import colorsys, json, math, uuid, sys
+ONLY_DRAGON_SKIN = sys.argv[sys.argv.index("--dragon-skin")+1] if "--dragon-skin" in sys.argv else None
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'docs/cartoon-overhaul'
 DEST=ROOT/'assets/cartoon'
@@ -103,12 +104,36 @@ for i,name in enumerate(hero_names):
         fig=isolate(grid('dragon.png',4,3,i));factor=112/fig.width;fig=fig.resize((112,round(fig.height*factor)),Image.Resampling.LANCZOS)
         master=Image.new('RGBA',(128,128));master.alpha_composite(fig,(8,120-fig.height))
     for skin,color in skins.items():
+        if ONLY_DRAGON_SKIN and skin != ONLY_DRAGON_SKIN: continue
         frame=recolor(master,color)
-        if skin=='blue' and name!='down-0':
-            d=ImageDraw.Draw(frame);box=frame.getchannel('A').getbbox();top=box[1]
-            d.ellipse((23,top+3,57,top+15),fill='#292a29');d.ellipse((26,top+5,56,top+12),fill=color)
         key=f'dragon/{skin}/{name}';put(key,frame)
         metadata[key]={'feet':[64,120],'muzzle':[100,80] if name.startswith('shoot') else [101,57],'visualBounds':list(frame.getchannel('A').getbbox()),'sourceCell':[i%4,i//4],'master':name}
+
+# A scoped correction path never writes other skins, enemy art or historical QA
+# atlases. Expanded run/shoot exports below own those keys; do not briefly replace
+# them with the older base poses during a live-editor hot reload.
+if ONLY_DRAGON_SKIN:
+    if ONLY_DRAGON_SKIN not in skins: raise ValueError('Unknown dragon skin')
+    animation=json.loads((DEST/'animation.json').read_text())
+    changed=[]
+    for key,frame in images.items():
+        if key.rsplit('/',1)[-1].startswith(('run-','shoot-')): continue
+        path=DEST/'frames'/(key+'.png')
+        if not path.exists() or Image.open(path).convert('RGBA').tobytes()!=frame.tobytes():
+            frame.save(path);changed.append(key)
+        animation['frames'][key]['visualBounds']=list(frame.getchannel('A').getbbox())
+    text=json.dumps(animation,indent=2)+'\n'
+    if (DEST/'animation.json').read_text()!=text:(DEST/'animation.json').write_text(text)
+    import runpy
+    runpy.run_path(str(ROOT/'tools/cartoon/build-dragon-animation.py'))['build'](ONLY_DRAGON_SKIN)
+    # The UI portraits are exact, documented crops; no other UI artwork is built.
+    source=DEST/'frames/dragon'/ONLY_DRAGON_SKIN/'idle-0.png'
+    head=Image.open(source).crop((28,8,108,88))
+    for path,image in [(DEST/'ui/portraits'/(ONLY_DRAGON_SKIN+'.png'),head),
+                       (DEST/'reconstruction/ui/portraits'/(ONLY_DRAGON_SKIN+'.png'),head.crop((0,0,80,64)))]:
+        if Image.open(path).convert('RGBA').tobytes()!=image.tobytes():image.save(path)
+    print('Scoped base/portrait export:',ONLY_DRAGON_SKIN,changed)
+    raise SystemExit(0)
 
 kinds=['zenchan','monsta','pulpul','banebou','invader','mighta']
 for row,kind in enumerate(kinds):

@@ -1,5 +1,7 @@
 # Cuphead presentation pass — implementation handoff
 
+**23 October feedback update:** The pacing, mode illustrations and blue-dragon outputs below are superseded by [the feedback pass](../feedback-2026-10-23/README.md) and [Timing Revision 3](../TIMING-REVISION-3.md). Earlier timings and test counts remain historical evidence for checkpoint b59e044.
+
 Implemented 22 October 2026 after approval of [visual revision 2](../VISUAL-REVISION-2.md). This document describes the delivered prototype and its limits. The [original proposal](../PROPOSAL.md) retains the inventory, reference catalog, comparison contact sheets, source paths and proposed later work.
 
 ## The main visual correction

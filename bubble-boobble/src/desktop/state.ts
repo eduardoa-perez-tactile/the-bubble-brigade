@@ -1,3 +1,4 @@
+import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { updatePartyPads } from '../arcade/party-input';
 import { defaultPartySlots, partySize, type DragonResult } from '../arcade/party-config';
 import type { PartySlot } from '../arcade/types';
@@ -92,7 +93,7 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
 export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(ArcadeControl),read(ViewInfo)],query:query(read(ActionState)),events:[DesktopIntent,TextInput,PointerHover,PointerDown,KeyEvent],run(ctx,q){
  if(!ctx.get(ArcadeControl).active)return;
  const transition=desktopState.get();
- if(transition.transitionAction){if((transition.transitionStartedStep??-1)<0)desktopState.set({...transition,transitionStartedStep:ctx.step});else {const elapsed=ctx.step-transition.transitionStartedStep!;const coveredAt=transition.transitionHasTitle?72:23;if(elapsed>=coveredAt+24)desktopAction('transition-finish');else if(elapsed>=coveredAt&&!transition.transitionCommitted)desktopAction('transition-commit','',0,0,0,ctx.time);}}
+ if(transition.transitionAction){if((transition.transitionStartedStep??-1)<0)desktopState.set({...transition,transitionStartedStep:ctx.step});else {const elapsed=ctx.step-transition.transitionStartedStep!;const timing=cartoonFlowTiming(!!transition.transitionHasTitle,transition.transitionAction,transition.partyRun);if(elapsed>=timing.finishAt)desktopAction('transition-finish');else if(elapsed>=timing.commitAt&&!transition.transitionCommitted)desktopAction('transition-commit','',0,0,0,ctx.time);}}
  const resuming=desktopState.get();if(resuming.pauseClosing){if((resuming.resumeStartedStep??-1)<0)desktopState.set({...resuming,resumeStartedStep:ctx.step});else if(ctx.step-resuming.resumeStartedStep!>=10)desktopAction('resume','ready');}
  const pads=updatePartyPads(ctx.input);
  const padScreen=desktopState.get().screen;

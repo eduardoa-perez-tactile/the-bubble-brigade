@@ -51,7 +51,8 @@ export const CartoonHudView = defineView<CartoonHudModel>({
       shade: () => model().shade, party: () => !!model().party,
       startCue: () => model().startCue ?? '', startHint: () => model().startHint ?? '',
       showStartCue: () => !!model().showStartCue,
-      cueArt: () => model().cueArt ?? 'cartoon/ui/cues/ready',
+      showReadyArt: () => !!model().showStartCue && (model().showReadyArt ?? model().cueArt === 'cartoon/ui/cues/ready'),
+      showActionArt: () => !!model().showStartCue && (model().showActionArt ?? model().cueArt === 'cartoon/ui/cues/bubble-up'),
       cueStage: () => model().cueStage ?? 'off', cueFade: () => cueFade(model().cueOpacity ?? 0),
     }} />
   </Screen>,

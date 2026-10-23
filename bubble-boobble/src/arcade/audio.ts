@@ -1,3 +1,4 @@
+import { cartoonFlowStartsRun } from '../cartoon/flow-timing';
 import { ActionState, app, defineSystem, query, read, write, PlayMusic, StopMusic, SetBusVolume, PlaySound, LoadSoundBank, UnloadSoundBank } from '@gameengine/runtime';
 import { ArcadeAudio, ArcadeControl, ArcadePlatformState, DesktopIntent } from '../schema.gen.ts';
 import { session } from './session.ts';
@@ -14,6 +15,9 @@ export const ArcadeAudioSystem=defineSystem({
   const g=s.active?s.game:null;
   const track=!g?'menu':g.State===4?'win':g.State===3?'gameover':g.Hurry?'hurry':'theme';
   const paused=!!g?.Paused;
+  // A held introduction does not advance event-bearing gameplay frames.
+  const flow=desktopState.get();
+  const introducing=!!flow.cartoon&&cartoonFlowStartsRun(flow.transitionAction??'');
   if(track!==old.track||native!==old.native){if(!native)ctx.events.emit(PlayMusic,{track:`reference/audio/${tracks[track]}`,crossfade:0});ctx.setField(ArcadeAudio,'track',track);}
   if(muted!==old.muted){
    ctx.setField(ArcadeAudio,'muted',muted);
@@ -30,7 +34,7 @@ export const ArcadeAudioSystem=defineSystem({
   // The illustrated game uses restrained, coalesced cues in both adventure and
   // party play. The preserved pixel campaign keeps its gain and ordering contract.
   const expressive=!!g&&(!!g.Party||g.Level.arena==='cartoon-courtyard');
-  if(g&&expressive&&!muted&&!paused&&save.settings.sound>0){
+  if(g&&expressive&&!muted&&!paused&&!introducing&&save.settings.sound>0){
     const gain=save.settings.sound/100;
     const play=(sound:string,volume:number,priority:number,pitch=1,maxVoices=2)=>ctx.events.emit(PlaySound,{sound,volume:gain*volume,priority,pitch,maxVoices});
     if(g.Sounds.includes('shoot'))play('audio/bubble-shot',.48,10,1+(g.Tick%5)*.025,3);
@@ -40,7 +44,7 @@ export const ArcadeAudioSystem=defineSystem({
     for(const sound of ['death','item','laser','fire','water','jump'])if(g.Sounds.includes(sound))
       play(`reference/audio/${sound}`,sound==='jump'?.3:sound==='laser'?.45:.65,sound==='death'?100:sound==='item'?60:20,1,sound==='laser'?2:3);
   }
-  if(g&&!expressive&&!muted&&save.settings.sound>0)for(const sound of g.Sounds)if(sound!=='opening'){
+  if(g&&!expressive&&!muted&&!introducing&&save.settings.sound>0)for(const sound of g.Sounds)if(sound!=='opening'){
    // Only the global 24-voice cap applies; disable the per-sound cap.
    // Supported mixer rule rejects an incoming cue when every occupied voice has
    // higher priority. Strict decrease also preserves order within one step.

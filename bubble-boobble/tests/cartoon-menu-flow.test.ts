@@ -23,7 +23,9 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
     await ui.press('cartoon-main.choose-mode');
     await step(1);
     expect(desktopState.get().screen).toBe('modes');
-    render.stats({width,height});
+    const stats=render.stats({width,height});
+    expect(stats.drawCalls).toBeLessThanOrEqual(14);
+    console.log(JSON.stringify({width,height,modeCardDrawCalls:stats.drawCalls}));
     for (const id of ['classic-mode','madness-mode','mode-back']) {
       const rect=ui.rect(`mode-select.${id}`)!;
       expect(!!rect).toBe(true);

@@ -1,0 +1,10 @@
+guid = "d47c634b-d7fc-4381-849d-e057d233d64a"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "cartoon-mode-cards"
+filter = "linear"
+compression = "none"
+max_size = 512
+trim = false

@@ -430,9 +430,8 @@
       "children": [
         "ch_start_text",
         "ch_start_hint",
-        "ch_cue_echo_left",
-        "ch_cue_echo_right",
-        "ch_cue_art"
+        "ch_cue_art",
+        "ch_action_art"
       ],
       "style": {
         "pad": 0,
@@ -1275,54 +1274,6 @@
       },
       "show": "party"
     },
-    "ch_cue_echo_left": {
-      "type": "icon",
-      "name": "Icon",
-      "image": "cartoon/ui/cues/bubble-up",
-      "style": {
-        "size": 32,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "pivot": "centre",
-        "offset": [
-          -14,
-          0
-        ],
-        "w": "100%",
-        "h": "100%",
-        "opacity": 0.3,
-        "hide": true
-      },
-      "property": "cueArt",
-      "point": "cue-echo-left"
-    },
-    "ch_cue_echo_right": {
-      "type": "icon",
-      "name": "Icon",
-      "image": "cartoon/ui/cues/bubble-up",
-      "style": {
-        "size": 32,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "pivot": "centre",
-        "offset": [
-          14,
-          0
-        ],
-        "w": "100%",
-        "h": "100%",
-        "opacity": 0.3,
-        "hide": true
-      },
-      "property": "cueArt",
-      "point": "cue-echo-right"
-    },
     "ch_cue_art": {
       "type": "icon",
       "name": "Icon",
@@ -1339,13 +1290,35 @@
           0,
           0
         ],
-        "w": "100%",
+        "w": "62%",
         "h": "100%",
         "opacity": 1,
         "hide": false
       },
-      "property": "cueArt",
-      "point": "cue-art"
+      "point": "cue-art",
+      "show": "showReadyArt"
+    },
+    "ch_action_art": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/cues/bubble-up",
+      "style": {
+        "size": 32,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%"
+      },
+      "show": "showActionArt",
+      "point": "cue-action"
     }
   },
   "view": {
@@ -1528,10 +1501,6 @@
       "of": "cartoon-roster-badge",
       "default": []
     },
-    "cueArt": {
-      "type": "image",
-      "default": "cartoon/ui/cues/ready"
-    },
     "cueStage": {
       "type": "enum",
       "values": [
@@ -1546,49 +1515,45 @@
       "default": "off",
       "poses": {
         "action-smear": {
-          "set": {
-            "ch_cue_echo_left": {
-              "hide": false
-            },
-            "ch_cue_echo_right": {
-              "hide": false
-            }
+          "set": {},
+          "transition": {
+            "type": "instant"
           }
         },
         "action-out": {
-          "set": {
-            "ch_cue_echo_left": {
-              "hide": false,
-              "opacity": 0.18
-            },
-            "ch_cue_echo_right": {
-              "hide": false,
-              "opacity": 0.18
-            }
+          "set": {},
+          "transition": {
+            "type": "instant"
           }
         },
         "ready-ink": {
-          "set": {
-            "ch_cue_art": {
-              "scale": 1,
-              "w": "62%"
-            }
+          "set": {},
+          "transition": {
+            "type": "instant"
           }
         },
         "ready-hold": {
-          "set": {
-            "ch_cue_art": {
-              "scale": 1,
-              "w": "62%"
-            }
+          "set": {},
+          "transition": {
+            "type": "instant"
           }
         },
         "ready-out": {
-          "set": {
-            "ch_cue_art": {
-              "scale": 1,
-              "w": "62%"
-            }
+          "set": {},
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "off": {
+          "set": {},
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "action-hold": {
+          "set": {},
+          "transition": {
+            "type": "instant"
           }
         }
       }
@@ -1613,6 +1578,9 @@
             "ch_start": {
               "opacity": 0
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "eighth": {
@@ -1620,6 +1588,9 @@
             "ch_start": {
               "opacity": 0.125
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "quarter": {
@@ -1627,6 +1598,9 @@
             "ch_start": {
               "opacity": 0.25
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "three-eighths": {
@@ -1634,6 +1608,9 @@
             "ch_start": {
               "opacity": 0.375
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "half": {
@@ -1641,6 +1618,9 @@
             "ch_start": {
               "opacity": 0.5
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "five-eighths": {
@@ -1648,6 +1628,9 @@
             "ch_start": {
               "opacity": 0.625
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "three-quarters": {
@@ -1655,6 +1638,9 @@
             "ch_start": {
               "opacity": 0.75
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "seven-eighths": {
@@ -1662,6 +1648,9 @@
             "ch_start": {
               "opacity": 0.875
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         },
         "full": {
@@ -1669,9 +1658,20 @@
             "ch_start": {
               "opacity": 1
             }
+          },
+          "transition": {
+            "type": "instant"
           }
         }
       }
+    },
+    "showReadyArt": {
+      "type": "yesno",
+      "default": false
+    },
+    "showActionArt": {
+      "type": "yesno",
+      "default": false
     }
   },
   "transition": {

@@ -13,7 +13,7 @@
         "dir": "row",
         "pad": 0,
         "align": "center",
-        "bg": "#00000000",
+        "bg": "#eadcb9",
         "radius": 0,
         "w": 272,
         "h": 380
@@ -50,7 +50,7 @@
         "w": 4,
         "h": 380,
         "bg": "#30271e",
-        "hide": true
+        "hide": false
       }
     },
     "mc_right": {
@@ -71,7 +71,7 @@
         "w": 4,
         "h": 380,
         "bg": "#30271e",
-        "hide": true
+        "hide": false
       }
     },
     "mc_top": {
@@ -92,7 +92,7 @@
         "w": 272,
         "h": 4,
         "bg": "#30271e",
-        "hide": true
+        "hide": false
       }
     },
     "mc_bottom": {
@@ -113,7 +113,7 @@
         "w": 272,
         "h": 4,
         "bg": "#30271e",
-        "hide": true
+        "hide": false
       }
     },
     "mc_footer": {
@@ -148,10 +148,10 @@
         ],
         "offset": [
           0,
-          266
+          260
         ],
         "fontSize": 28,
-        "color": "#d9cba9",
+        "color": "#30271e",
         "outline": 0,
         "w": 248,
         "h": 38,
@@ -171,10 +171,10 @@
         ],
         "offset": [
           0,
-          312
+          304
         ],
-        "fontSize": 20,
-        "color": "#d9cba9",
+        "fontSize": 18,
+        "color": "#514533",
         "outline": 0,
         "w": 248,
         "h": 32,
@@ -194,10 +194,10 @@
         ],
         "offset": [
           0,
-          348
+          342
         ],
-        "fontSize": 22,
-        "color": "#d9cba9",
+        "fontSize": 20,
+        "color": "#514533",
         "outline": 0,
         "w": 248,
         "h": 32,
@@ -261,10 +261,10 @@
         ],
         "offset": [
           0,
-          24
+          10
         ],
-        "w": 208,
-        "h": 224
+        "w": 248,
+        "h": 240
       },
       "property": "hero"
     },
@@ -281,12 +281,12 @@
         ],
         "offset": [
           -132,
-          267
+          260
         ],
         "w": 24,
         "h": 38,
         "fontSize": 28,
-        "color": "#e1b35c",
+        "color": "#cc633e",
         "attach": true
       }
     }
@@ -328,7 +328,7 @@
               "bg": "#a6472d"
             },
             "mc_label": {
-              "color": "#e1b35c"
+              "color": "#a6472d"
             }
           }
         }

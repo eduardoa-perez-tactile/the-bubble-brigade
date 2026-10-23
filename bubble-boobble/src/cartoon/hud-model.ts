@@ -2,7 +2,7 @@ import type { GameState } from '../arcade/types';
 import { partyColors, partyNames } from '../arcade/party-config';
 import { hudModel, type HudModel } from '../desktop/hud.view';
 import type { DesktopSave } from '../desktop/save';
-import { introCue, type IntroCue } from './intro-cue';
+import { introCue, type IntroCue, type IntroPresentation } from './intro-cue';
 
 export type RosterCondition = 'ready' | 'rescue' | 'returning' | 'out' | 'open';
 export interface RosterSlot {
@@ -26,9 +26,9 @@ export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showS
 }
 
 /** Presentation adapter: reads the same game snapshot as the original HUD. */
-export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudModel['shade'] = 'normal'): CartoonHudModel {
+export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudModel['shade'] = 'normal', presentation?: IntroPresentation): CartoonHudModel {
   const base = hudModel(game, save, shade);
-  const cue = introCue(game, !!save.settings.reducedEffects, shade === 'normal');
+  const cue = introCue(game, !!save.settings.reducedEffects, shade === 'normal', presentation);
   const startCue = !cue.showStartCue ? '' : cue.cueArt.endsWith('/ready') ? 'Ready?' : 'BUBBLE UP!';
   if (!game.Party) return { ...base, ...cue, startCue, startHint: '', showBanner: base.showBanner && game.State !== 0,
     classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
