@@ -1,0 +1,38 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-10-23",
+  "asset": "invader-source.png",
+  "promptFile": "invader-prompt.txt",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "layout": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "neutral",
+      "alternate",
+      "compress",
+      "air",
+      "captive",
+      "defeated",
+      "fire",
+      "angry"
+    ]
+  },
+  "notes": [
+    "Original sprites inspected as style guidance; successful final generation used verbal style without reference attachment.",
+    "Initial reference-attached call returned output moderation_blocked category other with no output; final simplified prompt succeeded.",
+    "Source remains unmodified. Coordinator should slice each equal cell, crop alpha silhouette, normalize center x=64 and standing contact y=120 in 128px output.",
+    "No runtime or manifest edits by this art agent.",
+    "Targeted built-in imagegen edit removed only emitted puff in firing cell to retain wheel baseline during alpha-bound export. Original source, original generation prompt and original provenance preserved with invader-source-with-puff prefix."
+  ],
+  "editPromptFile": "invader-edit-prompt.txt",
+  "editSource": "invader-source-with-puff.png"
+}

@@ -1,0 +1,39 @@
+{
+  "asset": "boss-source.png",
+  "prompt": "boss-prompt.txt",
+  "generator": "built-in image_gen.imagegen",
+  "generatedDate": "2026-10-23",
+  "transparentBackgroundRequested": true,
+  "sourceFile": "exec-4babb99c-edbc-4479-8e1a-6d352afba5b7.png",
+  "referenceImages": [
+    "assets/cartoon/frames/boss/move-0.png",
+    "assets/cartoon/frames/boss/attack-0.png"
+  ],
+  "referenceRole": "Existing boss illustration style, palette and face reference; humanoid anatomy replaced completely.",
+  "width": 1774,
+  "height": 887,
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "sha256": "ec903b7170ec85cea40fb7f29ab121a13f1cf871fa591fd86af33cfe657b734a",
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "order": "left-to-right, top-to-bottom"
+  },
+  "states": [
+    "move-neutral",
+    "move-alternate",
+    "inflated-windup",
+    "contracted-release",
+    "folded-captured",
+    "dazed-hit",
+    "angry-move",
+    "angry-windup"
+  ],
+  "inspection": "All eight limbless poses inspected; full visible silhouettes fit respective cells. Alpha less than or equal to 8 contains sparse background noise; visible alpha greater than 8 has clear gutters. Revised original copied unchanged; no image editing or alpha modification.",
+  "revisionReference": "boss-source-rejected.png",
+  "revisionReason": "Original first cell whisker crossed nominal grid boundary; regenerated composition with transparent gutters."
+}

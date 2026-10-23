@@ -6,7 +6,7 @@ export const CARTOON_ENEMY_SIZE=123.648;
 // previous large shrink. Capture itself never changes either envelope.
 export const CARTOON_BUBBLE_SIZE=110;
 export const CARTOON_CAPTURED_ENEMY_SIZE=84;
-export const CARTOON_BOSS_SIZE=193.2;
+export const CARTOON_BOSS_SIZE=320;
 export const CARTOON_VISUAL_LEFT=18;
 export const CARTOON_VISUAL_RIGHT=1710;
 export const CARTOON_HEADROOM=152;

@@ -1,3 +1,4 @@
+import {simplifiedEnemyDraws} from './enemy-motion';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
 import {cartoonHudBounds} from './hud-layout';
@@ -68,23 +69,18 @@ export function dragonDraws(p:Player,skin:string,tick:number,motion?:boolean|Dra
   ];
 }
 /** Every supported family has original cartoon masters; no pixel aliases escape here. */
+const simplifiedKinds=['zenchan','mighta','banebou','invader'];
 export function cartoonEnemyFrame(kind:string,state:string,tick:number):string {
+  if(simplifiedKinds.includes(kind)){
+    const pose=state==='bubble'?'captured':state==='warning'||state==='escape'?'captured':
+      state==='walk'?`travel-${Math.floor(Math.max(0,tick)/8)%2}`:state==='shoot-angry'?'shoot':state;
+    return `enemy/${kind}/simple-${pose}`;
+  }
   const clip=(animation.enemies as Record<string,{frames:number;ticksPerFrame:number}>)[kind];
   const pose=(state==='walk'||state==='angry')&&clip
     ?`walk-${Math.floor(Math.max(0,tick)/clip.ticksPerFrame)%clip.frames}`
     :state==='bubble'?'captured-0':state==='shoot-angry'?'shoot-0':`${state}-0`;
   return `enemy/${kind}/${pose}`;
-}
-/** Native spring articulation: rigid body and planted feet, only coils stretch. */
-export function hopperDraws(x:number,feet:number,size:number,tick:number,flip=false,angry=false):CartoonDraw[]{
-  const unit=size/128,phase=Math.max(0,tick)%32,pose=Math.floor(phase/16);
-  const spring=(16+4*Math.sin(phase*Math.PI/16))*unit,footTop=feet-16*unit;
-  const common={x:x-size/2,width:size,flip,color:angry?[1,.76,.68,1] as const:undefined};
-  return [
-    {...common,frame:`enemy/banebou/body-${pose}`,y:footTop-spring-88*unit,height:88*unit},
-    {...common,frame:`enemy/banebou/spring-${pose}`,y:footTop-spring,height:spring},
-    {...common,frame:`enemy/banebou/feet-${pose}`,y:footTop,height:24*unit},
-  ];
 }
 const effectFrame=(element:string,tick:number)=>`effect/${element}-${element==='fire'?Math.floor(Math.max(0,tick)/6)%2:0}`;
 const itemFrame=(power:string|undefined,food:number)=>power?`item/${power}`:`item/food-${food}`;
@@ -206,9 +202,33 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   };
   const boss=g.Party?.Boss;
   if(boss){
-    const pose=boss.Mode==='captured'?'captured':boss.Mode==='windup'?'attack':'move';
-    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2)actor(`boss/${pose==='move'?`move-${Math.floor(boss.Tick/8)%2}`:pose+'-0'}`,boss.X+48-(composed?CARTOON_BOSS_SIZE:112)/2,composed?entrance(boss.Y,0)+96:entrance(boss.Y,0)-16+112*120/128,composed?CARTOON_BOSS_SIZE:112,boss.Dir<0);
-    if(out[out.length-1]?.frame.startsWith('boss/'))out[out.length-1]=cartoonBossFeedback(out[out.length-1]!,boss,feel,reduced);
+    const angry=boss.HP*3<=boss.MaxHP;
+    const released=g.Projectiles.some(p=>p.Bottle&&!p.Removed&&p.Age<10);
+    const frame=boss.Mode==='captured'?'captured':boss.Mode==='windup'?(angry?'angry-windup':'windup'):
+      released?'release':boss.Invulnerable?'hit':angry?'angry':`move-${reduced||g.Freeze>0?0:Math.floor(boss.Tick/8)%2}`;
+    if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2){
+      const size=composed?CARTOON_BOSS_SIZE:144;
+      actor(`boss/simple-${frame}`,
+        boss.X+48-size/2,entrance(boss.Y,0)+96,size,boss.Dir<0);
+      const draw=cartoonBossFeedback(out.pop()!,boss,feel,reduced);
+      // A large airborne silhouette needs room above its root at arena edges.
+      // Fit the art inside the playfield without changing the board framing.
+      const bands=cartoonHudBounds(view??{width:768,height:720,safeArea:[0,0,0,0]});
+      draw.x=Math.max(layout.viewportLeft+8,Math.min(layout.viewportRight-8-draw.width,draw.x));
+      draw.y=Math.max(bands.top+8,Math.min(bands.bottom-draw.height,draw.y));
+      if(boss.Mode==='captured')out.push({frame:'bubble',x:draw.x-8*layout.scale,y:draw.y-8*layout.scale,
+        width:draw.width+16*layout.scale,height:draw.height+16*layout.scale,color:[.65,.9,1,1]});
+      out.push(draw);
+      if(boss.Mode==='windup'){
+        // Solid amber/ink warning remains legible with reduced effects enabled.
+        const size=38*layout.scale,cx=draw.x+draw.width*.5;
+        const cy=Math.max(bands.top+size*.6,draw.y-size*.6);
+        markers.push({frame:'solid/#3c2929',x:cx-size*.6,y:cy-size*.6,width:size*1.2,height:size*1.2,diamond:true},
+          {frame:'solid/#f6b64e',x:cx-size*.5,y:cy-size*.5,width:size,height:size,diamond:true},
+          {frame:'solid/#3c2929',x:cx-size*.07,y:cy-size*.28,width:size*.14,height:size*.36},
+          {frame:'solid/#3c2929',x:cx-size*.07,y:cy+size*.16,width:size*.14,height:size*.14});
+      }
+    }
   }
   for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
   for(let index=0;index<g.Enemies.length;index++){
@@ -219,16 +239,19 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';
     const size=composed?CARTOON_ENEMY_SIZE:56;
-    const flyer=e.Kind==='monsta'||e.Kind==='pulpul'||e.Kind==='invader';
+    const flyer=e.Kind==='monsta'||e.Kind==='pulpul';
     const clock=g.Party?.Phase==='prepare'&&flyer?tick+index*3:e.Age;
-    if(e.Kind==='banebou'&&(pose==='walk'||pose==='angry')){
-      out.push(...hopperDraws(px(e.X+22),py(y+44),size*layout.scale,clock,e.Dir<0,e.Angry));
+    if(simplifiedKinds.includes(e.Kind)){
+      for(const draw of simplifiedEnemyDraws(e,clock,size,reduced)){
+        out.push({...draw,x:px(draw.x),y:py(y+44)+(draw.y-(e.Y+44))*layout.scale,
+          width:draw.width*layout.scale,height:draw.height*layout.scale});
+      }
     }else{
       actor(cartoonEnemyFrame(e.Kind,pose,clock),e.X+22-size/2,y+44,size,e.Dir<0);
       if(pose==='angry')out[out.length-1]!.color=[1,.76,.68,1];
     }
   }
-  for(const p of g.Projectiles)add(p.Bottle?'boss/bottle-0':effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
+  for(const p of g.Projectiles)if(!p.Bottle)add(effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   const bubblePaints=g.Bubbles.map(b=>{
     const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
@@ -322,6 +345,17 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     // Effect envelopes are uniform about the projected center, including when
     // a large pop crosses one of the authored platform projection knots.
     out[out.length-1]!.y=py(d.y+d.height/2)-d.height*layout.scale/2;
+  }
+  // Boss hazards cross the actors and bubbles so a crowded party cannot hide
+  // the fan. Center art on the existing 16px projectile body, with a short
+  // cream/coral wake; reduced mode retains the large, steady bottle alone.
+  for(const p of g.Projectiles)if(p.Bottle&&!p.Removed){
+    const cx=px(p.X+8),cy=py(p.Y+8),unit=layout.scale;
+    if(!reduced)for(const [lag,size,color]of [[3,13,'#ed6555'],[5,8,'#fff0c9']] as const){
+      const x=px(p.X+8-p.VX*lag),y=py(p.Y+8-p.VY*lag);
+      markers.push({frame:'solid/'+color,x:x-size*unit/2,y:y-size*unit/2,width:size*unit,height:size*unit,diamond:true});
+    }
+    out.push({frame:'boss/bottle-0',x:cx-30*unit,y:cy-30*unit,width:60*unit,height:60*unit,flip:p.VX<0});
   }
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);

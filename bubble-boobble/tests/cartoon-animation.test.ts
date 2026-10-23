@@ -139,7 +139,7 @@ worldTest('cartoon trapped imp preserves its folded pose and changes warning ink
     const plan = cartoonDrawPlan(g, 30);
     const imps = plan.filter(draw => draw.frame.startsWith('enemy/zenchan/'));
     expect(imps.length).toBe(1);
-    expect(imps[0]!.frame).toBe('enemy/zenchan/captured-0');
+    expect(imps[0]!.frame).toBe('enemy/zenchan/simple-captured');
     expect(!!imps[0]!.flip).toBe(false);
     const size = [imps[0]!.width, imps[0]!.height];
     if (registeredSize) expect(size).toEqual(registeredSize);

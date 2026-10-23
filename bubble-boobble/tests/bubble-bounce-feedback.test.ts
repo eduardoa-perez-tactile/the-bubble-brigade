@@ -28,9 +28,9 @@ worldTest('bubble bounce feedback compresses rebounds settles and preserves top 
  const resting=cartoonDrawPlan(g,0).find(d=>d.frame==='bubble')!;
  let height=0;
  for(const age of [0,2,4,8,12,18]){
-  const plan=shellAt(age),shell=plan.find(d=>d.frame==='bubble')!,captive=plan.find(d=>d.frame.endsWith('/captured-0'))!;
+  const plan=shellAt(age),shell=plan.find(d=>d.frame==='bubble')!,captive=plan.find(d=>(d.frame.endsWith('/captured-0')||d.frame.endsWith('/simple-captured')))!;
   expect(Math.abs(shell.y-resting.y)<.00001).toBe(true);
-  const regular=cartoonDrawPlan(g,0).find(d=>d.frame.endsWith('/captured-0'))!;
+  const regular=cartoonDrawPlan(g,0).find(d=>(d.frame.endsWith('/captured-0')||d.frame.endsWith('/simple-captured')))!;
   expect(captive.width).toBe(regular.width);expect(captive.height).toBe(regular.height);
   if(age===0){expect(shell.width>resting.width).toBe(true);expect(shell.height<resting.height).toBe(true);height=shell.height;}
   if(age===8)expect(shell.height>resting.height).toBe(true);
@@ -66,7 +66,7 @@ renderTest('bubble bounce feedback native held jump squashes empty and occupied 
   expect(!!cue).toBe(true);expect(session.get().game!.Bubbles.length).toBe(1);expect(session.get().game!.Players[0]!.VY<0).toBe(true);
   const sprites=()=>world.entities(Sprite).map(e=>world.get(e,Sprite)).filter(s=>s.visible);
   const shell=()=>sprites().find(s=>s.image==='cartoon/frames/bubble')!;
-  const captive=()=>sprites().find(s=>s.image?.includes('/captured-0'));
+  const captive=()=>sprites().find(s=>(s.image?.includes('/captured-0')||s.image?.includes('/simple-captured')));
   const initial=Array.from(shell().size),captiveSize=captive()?Array.from(captive()!.size):undefined;
   expect(initial[0]!>initial[1]!).toBe(true);
   for(const age of [0,8,18]){
