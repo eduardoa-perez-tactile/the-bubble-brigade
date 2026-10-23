@@ -65,3 +65,21 @@ These are technical checks, not a claim of subjective loop quality or phone-spea
 translation. Verification results and actual cooked/memory checks are recorded in
 the integration PR; logs remain in ignored cache. All automated gameplay checks use
 the Game Engine. No standalone player, browser automation or desktop input is used.
+
+## Integration verification
+
+- Seven new playback tests pass on loose content and on cooked content with phone-low
+  residency enforcement. They inspect the offline mixer's actual music selection and gain.
+- Seven classic audio tests retain identical per-step baseline hashes.
+- Full V8 run: all 410 logic cases pass; mobile renders pass 82 of 99. All 17 failing
+  visual assertions reproduce on untouched parent commit `b084c4e`, including matching
+  draw counts and screenshot failures. No baselines were rewritten. The full mobile run
+  also reports the existing Cuphead UI structural peak of 15 draws against its 14 budget.
+- Engine check passes typecheck, validation, desktop cook and 600 cooked smoke frames;
+  existing tile/camera warnings remain.
+- Cooked desktop payloads: menu 574,727 bytes; gameplay 596,703 bytes. Phone-low grouped
+  residency reports 36,915,900 bytes against the 201,326,592-byte total budget; music
+  stays outside groups and banks. This does not claim total mixer memory is zero.
+- Cross-runtime verification is unavailable because the Hermes host is not installed.
+  A native headless session disables audio output, so no live speaker/DAC verification
+  is claimed; the cooked tests use the supported offline audio mixer.
