@@ -23,4 +23,4 @@ Please report the district/landmark, input device and steps for any problem, wit
 
 ## Verification limits
 
-Automated gameplay checks use Game Engine recorded input, headless sessions and render tests. Native controller hardware, OS focus, browser storage durability and actual phone GPU/thermal behavior still require hands-on verification. The current app toolchain has no Hermes host, so automated parity with that runtime remains unverified.
+Automated gameplay checks use Game Engine recorded input, headless sessions and render tests. Native controller hardware, OS focus, browser storage durability and actual phone GPU/thermal behavior still require hands-on verification. The current app toolchain has no Hermes host and no built Web/WASM host, so automated cross-runtime parity remains unverified. See `PERFORMANCE.md` for phone-memory limitations and `RENDER-REVIEW.md` for the baseline render failures.

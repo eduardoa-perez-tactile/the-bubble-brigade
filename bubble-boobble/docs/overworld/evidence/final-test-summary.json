@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-23",
+  "runtime": "release V8 host; Metal mobile GPU tier where rendered",
+  "fullT0": {
+    "command": "gameengine test --tier t0 --js v8 --json",
+    "ok": true,
+    "passed": 456,
+    "total": 456,
+    "recordedSteps": 13758
+  },
+  "cookedCampaign": {
+    "command": "gameengine test --cooked --tier t0,t1 --filter 'adventure campaign*' --json",
+    "ok": true,
+    "tests": [
+      {
+        "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+        "tier": "t0",
+        "ok": true,
+        "steps": 3158
+      },
+      {
+        "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+        "tier": "t0",
+        "ok": true,
+        "steps": 148
+      },
+      {
+        "name": "adventure campaign actual menu begin play intro results and map return buttons",
+        "tier": "t1",
+        "ok": true,
+        "steps": 681
+      },
+      {
+        "name": "adventure campaign branches and all five district gates are reachable",
+        "tier": "t0",
+        "ok": true,
+        "steps": 0
+      }
+    ]
+  },
+  "actualButtonReplay": {
+    "command": "gameengine replay verify tests/replays/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons.greplay --js v8 --json",
+    "result": {
+      "ok": true,
+      "results": {
+        "v8": {
+          "ok": true,
+          "steps": 681,
+          "firstDivergence": null
+        }
+      }
+    }
+  },
+  "check": {
+    "command": "gameengine check --json",
+    "evidence": "final-check.json",
+    "ok": true,
+    "knownWarning": "Installed package omits built-in material metadata. Recorded Standard hash7946469ed20397e0 matches the actual release host embedded compiled material; see pipeline-builtin-proof.json."
+  },
+  "limits": [
+    "Hermes and Web/WASM host unavailable; parity unverified.",
+    "Desktop engine measurements do not establish physical-phone GPU or thermal behavior.",
+    "Human playtest and explicit approval required before merge."
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "measuredDate": "2026-10-23",
+  "scope": "Walkable overworld; desktop flow/controller; district/shared asset residency; encounter enter/confirmed leave/return",
+  "environment": {
+    "host": "release V8",
+    "device": "Apple M2 Max",
+    "renderer": "Metal",
+    "renderTier": "mobile",
+    "mode": "paused headless with explicit render probes",
+    "physicalPhone": false
+  },
+  "phoneLowCook": {
+    "platform": "android",
+    "always": [
+      "courtyard-gameplay",
+      "overworld-shared"
+    ],
+    "peak": {
+      "groups": [
+        "courtyard-gameplay",
+        "overworld-shared",
+        "overworld-district-4"
+      ],
+      "resident": 38273388,
+      "textures": 38273388,
+      "audio": 0
+    },
+    "peakMiB": 36.5003,
+    "groups": [
+      {
+        "name": "courtyard-gameplay",
+        "residentBytes": 36915900,
+        "residentMiB": 35.2057
+      },
+      {
+        "name": "overworld-district-1",
+        "residentBytes": 783424,
+        "residentMiB": 0.7471
+      },
+      {
+        "name": "overworld-district-2",
+        "residentBytes": 269568,
+        "residentMiB": 0.2571
+      },
+      {
+        "name": "overworld-district-3",
+        "residentBytes": 220800,
+        "residentMiB": 0.2106
+      },
+      {
+        "name": "overworld-district-4",
+        "residentBytes": 861648,
+        "residentMiB": 0.8217
+      },
+      {
+        "name": "overworld-district-5",
+        "residentBytes": 509552,
+        "residentMiB": 0.4859
+      },
+      {
+        "name": "overworld-shared",
+        "residentBytes": 495840,
+        "residentMiB": 0.4729
+      }
+    ],
+    "gates": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 38273388,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 38273388,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 38273388,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 36915900,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 783424,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 269568,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 220800,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 861648,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 509552,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 495840,
+        "budget": 2097152,
+        "over": false
+      }
+    ],
+    "allGatesPass": true,
+    "command": "gameengine memory report --device phone-low --always courtyard-gameplay,overworld-shared --cook --json"
+  },
+  "postFixShortCycle": {
+    "route": "district 1 \u2192 2 \u2192 1 \u2192 first physical encounter \u2192 pause \u2192 confirmed leave \u2192 same district-1 spawn",
+    "setup": "QA journal fixture unlocks travel; Warp only positions avatar; normal recorded DesktopIntent actions perform travel/play/leave",
+    "checkpoints": [
+      {
+        "stage": "initial-district-1",
+        "rssBytes": 339492864,
+        "jsUsedBytes": 31689208,
+        "jsAllocatedBytes": 38207488,
+        "entities": 151,
+        "loadedAssets": 7,
+        "pendingAssets": 0,
+        "drawCalls": 13,
+        "newPipelines": 0,
+        "validationErrors": []
+      },
+      {
+        "stage": "district-2-before-combat",
+        "rssBytes": 336461824,
+        "jsUsedBytes": 32580312,
+        "jsAllocatedBytes": 38469632,
+        "entities": 151,
+        "loadedAssets": 8,
+        "pendingAssets": 0,
+        "drawCalls": 9,
+        "newPipelines": 0,
+        "validationErrors": []
+      },
+      {
+        "stage": "district-1-before-combat",
+        "rssBytes": 336674816,
+        "jsUsedBytes": 32671832,
+        "jsAllocatedBytes": 38469632,
+        "entities": 151,
+        "loadedAssets": 8,
+        "pendingAssets": 0,
+        "drawCalls": 13,
+        "newPipelines": 0,
+        "validationErrors": []
+      },
+      {
+        "stage": "combat-shared-released",
+        "rssBytes": 367591424,
+        "jsUsedBytes": 36923944,
+        "jsAllocatedBytes": 48168960,
+        "entities": 783,
+        "loadedAssets": 9,
+        "pendingAssets": 0,
+        "drawCalls": 9,
+        "newPipelines": 0,
+        "validationErrors": []
+      },
+      {
+        "stage": "returned-district-1",
+        "rssBytes": 365084672,
+        "jsUsedBytes": 34899576,
+        "jsAllocatedBytes": 48955392,
+        "entities": 783,
+        "loadedAssets": 9,
+        "pendingAssets": 0,
+        "drawCalls": 13,
+        "newPipelines": 0,
+        "validationErrors": []
+      }
+    ]
+  },
+  "earlierFiveCycleSoak": {
+    "preloadArrangement": "Before explicit overworld-shared preload; historical comparison only",
+    "routePerCycle": "1 \u2192 2 \u2192 3 \u2192 4 \u2192 5 \u2192 1 \u2192 encounter enter/confirmed leave",
+    "warmupCycle": 1,
+    "checkpoints": [
+      {
+        "cycle": 1,
+        "rssBytes": 500072448,
+        "jsUsedBytes": 35447560,
+        "jsAllocatedBytes": 49217536,
+        "entities": 783,
+        "loadedAssets": 16,
+        "pendingAssets": 0,
+        "drawCalls": 13
+      },
+      {
+        "cycle": 2,
+        "rssBytes": 501284864,
+        "jsUsedBytes": 33004848,
+        "jsAllocatedBytes": 49479680,
+        "entities": 783,
+        "loadedAssets": 16,
+        "pendingAssets": 0,
+        "drawCalls": 13
+      },
+      {
+        "cycle": 3,
+        "rssBytes": 329646080,
+        "jsUsedBytes": 46203552,
+        "jsAllocatedBytes": 66519040,
+        "entities": 783,
+        "loadedAssets": 16,
+        "pendingAssets": 0,
+        "drawCalls": 13
+      },
+      {
+        "cycle": 4,
+        "rssBytes": 330186752,
+        "jsUsedBytes": 36716496,
+        "jsAllocatedBytes": 66781184,
+        "entities": 783,
+        "loadedAssets": 16,
+        "pendingAssets": 0,
+        "drawCalls": 13
+      },
+      {
+        "cycle": 5,
+        "rssBytes": 331333632,
+        "jsUsedBytes": 46095128,
+        "jsAllocatedBytes": 68091904,
+        "entities": 783,
+        "loadedAssets": 16,
+        "pendingAssets": 0,
+        "drawCalls": 13
+      }
+    ]
+  },
+  "budgets": {
+    "projectPeakMiB": 48,
+    "courtyardMiB": 40,
+    "districtMiB": 2,
+    "sharedMiB": 2,
+    "drawCallsMax": 50,
+    "phoneLowJsGuidanceMiB": 32
+  },
+  "caveats": [
+    "Cooked asset residency estimates are not total application RAM. Desktop loose texture/GPU cache measurements are not Android phone-low residency.",
+    "Post-combat JS used exceeds 32 MiB guidance. No forced full collection or retained-object attribution; neither bounded retained heap nor a leak is established.",
+    "CPU timings and RSS came from a desktop release host, not a physical phone. Sustained GPU time, thermals, phone memory and cold-load targets remain unverified.",
+    "Paused headless frame timing is not gameplay frame rate. idleFrames.enabled was false; battery/frame-skipping savings were not established.",
+    "assets.status exposes aggregate loaded/pending counts, not per-group refcounts. Exact group ownership is statically reviewed, not independently established by these runtime checkpoints.",
+    "Hermes and web hosts were unavailable.",
+    "Per-system timing from a multi-step RPC can be cumulative; use individual stepTimeMs or separately sampled one-step calls."
+  ],
+  "rawEvidence": {
+    "memory": ".gameengine/overworld-phone-low-memory-final.json",
+    "shortCycle": ".gameengine/overworld-postfix-sanity/stages.json",
+    "fiveCycle": ".gameengine/overworld-transition-soak/samples.json"
+  },
+  "review": "docs/overworld/PERFORMANCE.md"
+}

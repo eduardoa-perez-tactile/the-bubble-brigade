@@ -4,7 +4,8 @@ Measured 2026-10-23. Scope: `src/overworld`, desktop documents/controller/state/
 
 | Measurement | Observed | Budget / interpretation |
 |---|---:|---|
-| Cooked phone-low asset-group transition peak, with courtyard pinned | 36.03 MiB | 48 MiB project peak; 128 MiB engine texture limit |
+| Final cooked phone-low map peak, courtyard and shared pinned | 36.50 MiB | 48 MiB project peak limit; all memory gates pass |
+| Shared overworld group | 0.47 MiB | 2 MiB project group limit |
 | Pinned courtyard group | 35.21 MiB | 40 MiB project group limit |
 | District groups 1 / 2 / 3 / 4 / 5 | 0.75 / 0.26 / 0.21 / 0.82 / 0.49 MiB | 2 MiB per district |
 | Stationary, 600 sim steps: step p95 | 0.121 ms | Desktop reference; phone-low guidance is approximately 8 ms per sim step |
@@ -19,11 +20,17 @@ Measured 2026-10-23. Scope: `src/overworld`, desktop documents/controller/state/
 
 ## Interpretation
 
-The measured scenario has no budget blocker. The controller keeps `courtyard-gameplay` pinned throughout the cartoon session, so the memory report explicitly used `--always courtyard-gameplay`. Omitting that option understates map residency. District travel releases the previous map group before loading the next behind a loading cover; release makes content eligible for eviction rather than guaranteeing immediate deallocation.
+The final Android phone-low asset-group report and measured draw calls pass their project gates. The expanded transition soak below leaves the JS heap envelope unverified after all source areas and combat have warmed.
+
+The controller keeps `courtyard-gameplay` pinned throughout the cartoon session. The explicit `overworld-shared` group is now preloaded with the first map, stays pinned across district travel, and is released when leaving maps for combat or the menu. Returning from combat loads the shared group and current district again. Shared content has its own 2 MiB gate. District travel releases the previous district before loading the next behind a loading cover; release makes content eligible for eviction rather than guaranteeing immediate deallocation.
+
+The final report used `gameengine memory report --device phone-low --always courtyard-gameplay,overworld-shared --cook --json`. Its peak is 38,273,388 bytes (36.50 MiB), including courtyard, shared and the largest district (district 4). All 48/40/2 MiB project gates pass. Omitting either pinned group understates that phase's estimate.
+
+Terrain imports retain `compression = "astc6x6"` for mobile cooking, with a phone-low `max_size = 1024` override. Their `[settings.platform.desktop] compression = "none"` override preserves the desktop art comparison without changing mobile ASTC cooking or original PNG bytes. Desktop loose/cooked texture totals must not be substituted for the Android phone-low estimate.
 
 The cooked phone-low report estimates declared asset-group residency. It is not total application RAM and does not include every ungrouped UI/audio allocation or renderer cache. Runtime RSS was sampled separately. Original map PNG bytes are preserved; phone-low texture reduction is configured through import metadata.
 
-JS heap headroom needs a repeated district/combat transition soak. A single walking capture does not establish bounded long-session growth. Compare settled heap after repeated identical cycles, allowing first-use caches to warm before choosing the baseline.
+The initial walking sample's JS heap headroom was followed by the five-cycle soak below. Neither a single capture nor these endpoint readings establish bounded retained heap. Further attribution needs comparable post-collection baselines or a longer allocation profile.
 
 ## Measurement caveats
 
@@ -33,12 +40,50 @@ JS heap headroom needs a repeated district/combat transition soak. A single walk
 - `idleFrames.enabled` was false, so GPU frame skipping was not established. Stationary simulation work was measured, but battery savings were not.
 - No physical phone was used. Sustained GPU time, thermals, device RSS limits, cold-load duration, and the full 2.5-second low-end loading target remain unverified. Hermes and the web host were unavailable in this environment.
 
+
+## Repeated transition soak
+
+A fresh isolated release V8/mobile-tier headless session completed five cycles of normal journal travel `1 → 2 → 3 → 4 → 5 → 1`, followed by entering, pausing and confirming leave from the first encounter. A recorded QA journal fixture unlocked travel; the Warp cheat only positioned the avatar at the physical entrance and the identical final spawn. Cycle 1 warmed caches. No project source, test or golden changed during this run.
+
+| Settled endpoint | RSS MiB | JS used MiB | JS allocated MiB |
+|---|---:|---:|---:|
+| Cycle 1, warm-up | 476.91 | 33.81 | 46.94 |
+| Cycle 2 | 478.06 | 31.48 | 47.19 |
+| Cycle 3 | 314.38 | 44.06 | 63.44 |
+| Cycle 4 | 314.89 | 35.02 | 63.69 |
+| Cycle 5 | 315.98 | 43.96 | 64.94 |
+
+Every endpoint retained exactly 783 entities, 16 loaded assets with zero pending, 195.26 MiB in the runtime texture category, and 440.44 MiB in the GPU texture estimate. These loose desktop measurements warm the original PNGs and are **not** the cooked phone-low group estimate above. The final endpoint rendered 13 draws against the 50-draw gate.
+
+JS used was nonmonotonic, but several samples exceeded the 32 MiB low-end guidance and allocated capacity rose. This does not prove a retained-object leak, and the run does not prove the low-end JS budget. No full collection was forced; normal pause maxima were below 0.862 ms, idle GC work reached 1.98 ms, and no recorded pause exceeded 4 ms. Longer allocation profiling and cooked/device measurements remain required before a phone-memory claim.
+
+Evidence: `.gameengine/overworld-transition-soak/samples.json`, `summary.json`, `environment.json`, and `.gameengine/overworld-transition-soak-run.log`. The prepared runner is `.gameengine/overworld-transition-soak.mjs`. Its final cook/report and optional screenshot were skipped so the coordinator's concurrent final cook could finish safely. Only the runner's own session was stopped.
+
+## Post-fix lifecycle check
+
+After the shared preload and desktop terrain override, a fresh isolated release V8/mobile-tier session completed normal journal travel `1 → 2 → 1`, entered the first physical encounter, paused, confirmed leave and returned to the same district-1 spawn. The QA fixture unlocked travel and Warp positioned the avatar; normal recorded intents performed travel, play and leave. Only this session was stopped.
+
+| Settled stage | RSS MiB | JS used MiB | JS allocated MiB | Loaded assets / pending | Draws |
+|---|---:|---:|---:|---:|---:|
+| initial-district-1 | 323.77 | 30.22 | 36.44 | 7 / 0 | 13 |
+| district-2-before-combat | 320.88 | 31.07 | 36.69 | 8 / 0 | 9 |
+| district-1-before-combat | 321.08 | 31.16 | 36.69 | 8 / 0 | 13 |
+| combat-shared-released | 350.56 | 35.21 | 45.94 | 9 / 0 | 9 |
+| returned-district-1 | 348.17 | 33.28 | 46.69 | 9 / 0 | 13 |
+
+Every settled render had zero new pipelines and zero validation errors. Loading and the normal return path completed. Asset release permits caching, so loaded counts need not decrease. The documented `assets.status` RPC exposes aggregate loaded/pending counts, not group refcounts: these readings do **not** independently prove exact shared-group ownership. Controller inspection confirms first-map preload, retention across travel, balanced release on combat/menu and reload on return; exact runtime refcount assertions require a test using the public script-side `assets.stats()` API. The stage name `combat-shared-released` identifies the expected controller phase, not refcount telemetry.
+
+The short check again exceeds 32 MiB JS guidance after combat. It validates flow and loading completion, not a retained-heap bound or phone performance. Evidence: `.gameengine/overworld-postfix-sanity/{stages,samples,summary,environment}.json`, runner `.gameengine/overworld-postfix-sanity.mjs` and `.gameengine/overworld-postfix-sanity-run.log`.
+
 ## Evidence and regression gates
+
+A compact, tracked summary is saved in `docs/overworld/evidence/performance-summary.json`.
 
 Local measurement artifacts (under the project, normally ignored by Git):
 
 - `.gameengine/overworld-perf-scope.json`
-- `.gameengine/overworld-phone-low-memory.json`
+- `.gameengine/overworld-phone-low-memory-final.json` (fresh Android cook, both pinned groups)
+- `.gameengine/overworld-phone-low-memory.json` (historical, before explicit shared preload)
 - `.gameengine/overworld-perf-idle.json`
 - `.gameengine/overworld-perf-walk.json`
 - `.gameengine/overworld-perf-sampled-walk.json`
@@ -47,4 +92,4 @@ Local measurement artifacts (under the project, normally ignored by Git):
 - `.gameengine/overworld-perf-sampled-markers.json`
 - `.gameengine/overworld-perf-engine.json`
 
-Project gates are `tests/budgets/overworld.json` (50 draws and the recorded Adventure flow) and `tests/budgets/memory.json` (48 MiB peak, 40 MiB courtyard, 2 MiB per district). Run the memory report with the pinned courtyard group included. Add a physical phone-low probe run and settled-heap transition soak before making device performance claims.
+Project gates are `tests/budgets/overworld.json` (50 draws and the recorded Adventure flow) and `tests/budgets/memory.json` (48 MiB peak, 40 MiB courtyard, 2 MiB per district and 2 MiB shared). Run the map-phase memory report with both `courtyard-gameplay,overworld-shared` included in `--always`. The five-cycle soak records the previous preload arrangement; the post-fix check above covers the explicit shared-group change. A physical phone-low probe and further heap attribution remain necessary before device performance claims.
