@@ -1,0 +1,10 @@
+guid = "2b86ea7a-13d8-48e7-b011-e487a8a0cde9"
+importer = "texture"
+[settings]
+kind = "texture"
+filter = "linear"
+compression = "none"
+[settings.overrides.phone-low]
+max_size = 768
+[settings.overrides.phone]
+max_size = 1024

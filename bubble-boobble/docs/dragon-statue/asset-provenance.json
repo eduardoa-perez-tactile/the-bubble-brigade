@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-23",
+  "tool": "Built-in image_gen.imagegen",
+  "mode": "precise-object-edit",
+  "reference": "assets/cartoon/reconstruction/environment/courtyard-plate.png",
+  "output": "assets/cartoon/reconstruction/environment/courtyard-dragon-clean.png",
+  "prompt": "Use case: precise-object-edit. Edit target: supplied painted medieval courtyard game background. Produce a clean background plate for layered animation. Remove ONLY the large stone dragon statue at upper center, including head, horns, jaw and curved neck from approximately x730..925, y65..245 in the 1672x941 source, filling its silhouette with believable matching distant blue-green stone arch masonry, subdued ivy, and shadow. Keep the pedestal untouched. Keep exact scene composition, same framing and 16:9 aspect ratio, all arches, waterfalls, banners, chains, candles, vines and stone texture outside the dragon unchanged. This is a surgical object removal, not a redesign, no new focal objects, no text. The background must contain NO central dragon statue or dragon silhouette. Match the original low-contrast hand-painted cool blue-green background; this image will be sampled only in the small area exposed behind the moving original dragon.",
+  "usage": "Only the original dragon silhouette exposed during articulation samples the generated background. Moving head and jaw retain original painted pixels. Other scenery samples the original courtyard plate."
+}

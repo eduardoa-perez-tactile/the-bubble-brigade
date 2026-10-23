@@ -36,6 +36,19 @@
     ],
     "orientation": "landscape"
   },
+  "assets": {
+    "groups": {
+      "courtyard-gameplay": {
+        "include": [
+          "assets/cartoon/frames/**",
+          "assets/cartoon/reconstruction/environment/**",
+          "assets/pixel-renderer/static-quad.gltf",
+          "assets/materials/courtyard-motion.mat.json",
+          "assets/materials/courtyard-motion.material.ts"
+        ]
+      }
+    }
+  },
   "bundles": [
     {
       "name": "base",

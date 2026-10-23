@@ -45,6 +45,8 @@ worldTest('courtyard ambience remains registered to both sides of the stretched 
     const ambient=cartoonBackgroundDraws(47,target),plan=cartoonDrawPlan(g,47,view);
     const plate=plan[0]!;
     expect(plate.frame).toBe('environment/courtyard-plate');
+    expect(plate.backgroundTick).toBe(47);
+    expect(plate.backgroundMotion).toBe(true);
     expect([plate.x,plate.y,plate.width,plate.height]).toEqual([target.x,target.y,target.width,target.height]);
     expect(plan.slice(1,1+ambient.length)).toEqual(ambient);
     expect(plan[1+ambient.length]!.frame.startsWith('environment/platform-')).toBe(true);
@@ -62,7 +64,13 @@ worldTest('courtyard ambience remains registered to both sides of the stretched 
     const sprites=cartoonSprites(ambient,{left:target.x,top:target.y,right:target.x+target.width,bottom:target.y+target.height});
     expect(sprites.length).toBe(ambient.length);
     expect(sprites.every(s=>s.image==='cartoon/reconstruction/environment/ambient-soft')).toBe(true);
-    expect(cartoonDrawPlan(g,47,view,undefined,undefined,true).some(d=>d.frame==='environment/ambient-soft')).toBe(false);
+    const reducedPlan=cartoonDrawPlan(g,47,view,undefined,undefined,true);
+    expect(reducedPlan.some(d=>d.frame==='environment/ambient-soft')).toBe(false);
+    expect(reducedPlan[0]!.backgroundMotion).toBe(false);
+    expect(reducedPlan[0]!.backgroundTick).toBe(0);
+    const plateSprite=cartoonSprites([plate],{left:target.x,top:target.y,right:target.x+target.width,bottom:target.y+target.height})[0]!;
+    expect(plateSprite.backgroundTick).toBe(47);
+    expect(plateSprite.backgroundMotion).toBe(true);
   }
   expect(JSON.stringify(g)).toBe(before);
 },{scene});
@@ -123,4 +131,68 @@ renderTest('courtyard ambience native water and candle motion stays visible and 
   }
   expect(peak).toBeLessThanOrEqual(14);
   console.log(JSON.stringify({courtyardPeakDrawCalls:peak}));
+},{scene,memory:'phone-low'});
+
+
+renderTest('courtyard scenery native banners chains dragon and plants move with the gameplay clock',async({step,input,cheat,render})=>{
+  await step(5);
+  let peak=0;
+  for(const [width,height]of [[1536,864],[640,960],[2520,1080]] as const){
+    input.view(width,height,1);await step(1);await cheat(ConceptPlaytest,{scenario:'route'});await step(2);
+    const layout=arenaLayout(session.get().game!.Level,{width,height,safeArea:[0,0,0,0]});
+    // Probe painted texture detail, not just added glows: displaced edges of a
+    // banner, suspended chain links and ivy foliage must really move.
+    // Twelve samples per prop survive downscaling without relying on a golden.
+    const sourceGroups=[
+      {name:'banner',x:548,y:130,dx:14,dy:19},
+      {name:'chain',x:640,y:115,dx:5,dy:19},
+      {name:'dragon',x:867,y:129,dx:3,dy:3},
+      {name:'plants',x:1540,y:490,dx:12,dy:8},
+    ];
+    const points:[number,number][]=sourceGroups.flatMap(({x,y,dx,dy})=>
+      [-1,0,1].flatMap(column=>[-1,0,1,2].map(row=>{
+        const logicalX=layout.viewportLeft+(x+column*dx)*(layout.viewportRight-layout.viewportLeft)/1672;
+        const logicalY=layout.viewportTop+(y+row*dy)*(layout.viewportBottom-layout.viewportTop)/941;
+        const pixel=input.worldToScreen([logicalX,720-logicalY]);
+        return [Math.round(pixel[0]),Math.round(pixel[1])] as [number,number];
+      })));
+    const initial=render.probe({width,height,points});
+    const changed=sourceGroups.map(()=>false);
+    // Include both breeze phases and the slower dragon's atmospheric pulse.
+    for(const elapsed of [19,41,77,163]){
+      await step(elapsed);
+      const animated=render.probe({width,height,points});
+      for(let group=0;group<sourceGroups.length;group++){
+        changed[group] ||= animated.points.slice(group*12,(group+1)*12).some((p,i)=>
+          p.rgba.slice(0,3).some((v,c)=>v!==initial.points[group*12+i]!.rgba[c]));
+      }
+      peak=Math.max(peak,render.stats({width,height}).drawCalls);
+    }
+    console.log(JSON.stringify({courtyardSceneryMotion:{width,height,props:sourceGroups.map((g,i)=>[g.name,changed[i]])}}));
+    expect(changed).toEqual([true,true,true,true]);
+
+    // Pause through real input. The scenery must retain exactly the same
+    // native pixels even as presentation frames continue to render.
+    input.emit(DesktopIntent,{action:'pause'});await step(20);
+    expect(session.get().game!.Paused).toBe(true);
+    const pausedTick=session.get().game!.Tick,paused=render.probe({width,height,points});
+    await step(60);
+    expect(session.get().game!.Tick).toBe(pausedTick);
+    expect(render.probe({width,height,points}).points).toEqual(paused.points);
+
+    // Reduced Effects must reach the native plate material as well as the
+    // overlays. Resume gameplay to prove scenery remains still at new ticks.
+    input.emit(DesktopIntent,{action:'effects'});await step(1);
+    expect(desktopSaveState.get().settings.reducedEffects).toBe(true);
+    input.emit(DesktopIntent,{action:'resume'});await step(20);
+    expect(session.get().game!.Paused).toBe(false);
+    const reducedTick=session.get().game!.Tick,reduced=render.probe({width,height,points});
+    await step(60);
+    expect(session.get().game!.Tick).toBeGreaterThan(reducedTick);
+    expect(render.probe({width,height,points}).points).toEqual(reduced.points);
+    input.emit(DesktopIntent,{action:'effects'});await step(1);
+    expect(desktopSaveState.get().settings.reducedEffects).toBe(false);
+  }
+  expect(peak).toBeLessThanOrEqual(14);
+  console.log(JSON.stringify({courtyardSceneryPeakDrawCalls:peak}));
 },{scene,memory:'phone-low'});

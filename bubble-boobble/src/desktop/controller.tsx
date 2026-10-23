@@ -6,7 +6,7 @@ import { CartoonDefeatView } from '../cartoon/defeat.view';
 import { CartoonTransitionView, type CartoonTransitionModel } from '../cartoon/transition.view';
 import { openBrowserFullscreen } from './browser';
 import { developmentMenuEnabled } from './development';
-import { read, app, quality, Time, MaterialGlobals } from '@gameengine/runtime';
+import { read, app, assets, quality, Time, MaterialGlobals } from '@gameengine/runtime';
 import { setReducedMotion, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
 import { desktopState } from './state.ts';
@@ -21,6 +21,11 @@ import { CartoonMenuView } from '../cartoon/menu.view.tsx';
 import { CartoonShellView, CartoonAccountView, CartoonPartyView, CartoonModeView, CartoonResultsView, CartoonEditorView } from '../cartoon/screens.view.tsx';
 const desktopUI=defineUI({name:'DesktopUI',root(){
  const control=useResource(ArcadeControl),clock=useResource(Time),platform=useResource(ArcadeAudio),materials=useResource(MaterialGlobals);
+ // Read and upload gameplay art during the cartoon title/menu. The first
+ // courtyard draw must not start loading its material or shared sprite atlas.
+ let courtyardLoaded=false;
+ createEffect(()=>{if(!courtyardLoaded&&materials()?.v1[0]===1){courtyardLoaded=true;assets.load('courtyard-gameplay');}});
+ onCleanup(()=>{if(courtyardLoaded)assets.release('courtyard-gameplay');});
  let developmentReported=false;let cartoonReported=false;
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});

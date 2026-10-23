@@ -138,7 +138,8 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const actor=(frame:string,x:number,feet:number,size:number,flip=false)=>{
     out.push({frame,x:px(x),y:py(feet)-size*layout.scale*120/128,width:size*layout.scale,height:size*layout.scale,flip});
   };
-  out.push({frame:composed?'environment/courtyard-plate':'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop});
+  out.push({frame:composed?'environment/courtyard-plate':'courtyard',x:layout.viewportLeft,y:layout.viewportTop,width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop,
+    ...(composed?{backgroundTick:reduced?0:Math.max(0,tick),backgroundMotion:!reduced}:{})});
   if(composed)out.push(...cartoonBackgroundDraws(tick,{x:layout.viewportLeft,y:layout.viewportTop,
     width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop},reduced));
   const columns=levelColumns(g.Level);
