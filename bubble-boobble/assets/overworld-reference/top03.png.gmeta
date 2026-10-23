@@ -1,0 +1,10 @@
+guid = "b4147eb2-d3df-4e0e-bbc8-1e5142342462"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+filter = "linear"
+atlas = "none"
+compression = "none"
+max_size = 2048
+trim = false

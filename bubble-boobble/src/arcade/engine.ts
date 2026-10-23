@@ -28,7 +28,7 @@ export const ArcadeStep=defineSystem({
       if(request.action==='adventure'){
         const encounter=encounterById(request.encounterId??''),owner=desktopSaveState.get().profiles[request.profileIndex??-1];
         const progress=owner?adventureForProfile(owner):null;
-        if(encounter&&progress&&availableEncounter(encounter.id,progress)&&progress.pending?.id===request.attemptId&&progress.pending.encounterId===encounter.id){
+        if(encounter&&progress&&availableEncounter(encounter.id,progress)&&progress.pending&&progress.pending.id===request.attemptId&&progress.pending.encounterId===encounter.id){
           const level=createCartoonArena((campaign as Level[])[encounter.level-1]!);
           if(encounter.trial)level.enemies=level.enemies.slice(0,3);
           const game=createGame([level],1,1);if(encounter.trial)game.Players[0]!.Lives=1;current={active:true,mode:'adventure-encounter',game};session.set(current);

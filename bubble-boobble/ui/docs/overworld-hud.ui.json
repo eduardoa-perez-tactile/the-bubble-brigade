@@ -25,6 +25,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "owh_coins",
         "owh_place",
         "owh_right"
       ],
@@ -54,7 +55,8 @@
         "bg": "#eee0bcf5",
         "radius": 5,
         "w": 300,
-        "h": 76
+        "h": 76,
+        "hide": true
       }
     },
     "owh_district": {
@@ -85,7 +87,6 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "owh_coins",
         "owh_menu"
       ],
       "style": {
@@ -94,7 +95,7 @@
         "align": "end",
         "gap": 6,
         "w": 170,
-        "h": 92
+        "h": 76
       }
     },
     "owh_coins": {
@@ -106,7 +107,7 @@
         "w": 170,
         "h": 34,
         "color": "#fff0c6",
-        "textAlign": "right",
+        "textAlign": "left",
         "shadowX": 1,
         "shadowY": 2,
         "shadowColor": "#342a20"
@@ -136,7 +137,8 @@
         "dir": "column",
         "align": "center",
         "gap": 6,
-        "h": 76
+        "h": 76,
+        "hide": true
       }
     },
     "owh_prompt": {

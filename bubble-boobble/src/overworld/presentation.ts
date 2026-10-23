@@ -1,3 +1,4 @@
+import {referenceDrawPlan} from './reference-presentation';
 import {defineSystem,query,read,write,LocalTransform,VisualOffset,Sprite,Text2D} from '@gameengine/runtime';
 import {OverworldVisual} from '../schema.gen';
 import {overworldState,type OverworldState} from './state';
@@ -11,7 +12,7 @@ const capacity=128;
 const ink:[number,number,number,number]=[.16,.12,.08,1];
 const palettes:readonly (readonly[number,number,number,number])[]=[[1,1,1,1],[.88,1,.84,1],[1,.91,.78,1],[.82,.89,1,1],[.88,.82,1,1]];
 /** Data lowering only; positive-Y world positions go directly to native sprites. */
-export function overworldDrawPlan(s:OverworldState,p:AdventureProgress):OverworldDraw[]{
+export function rejectedOverworldDrawPlan(s:OverworldState,p:AdventureProgress):OverworldDraw[]{
  const out:OverworldDraw[]=[],district=Math.max(0,Number(s.districtId.split('-')[1])-1),tint=palettes[district]??palettes[0]!;
  const sprite=(image:string,x:number,y:number,width:number,height:number,order:number,color?:readonly[number,number,number,number])=>out.push({image,x,y,width,height,order,color});
  const solid=(x:number,y:number,width:number,height:number,color:readonly[number,number,number,number],order:number)=>sprite('cartoon/white',x,y,width,height,order,color);
@@ -78,14 +79,14 @@ export const OverworldPresentation=defineSystem({
  name:'OverworldPresentation',stage:'LateUpdate',after:['OverworldVisualPool'],
  query:query(read(OverworldVisual),write(VisualOffset),write(Sprite),write(Text2D)),
  run(ctx,q){const s=overworldState.get(),save=desktopSaveState.get(),profile=save.profiles[save.active];
-  const draws=s.active&&profile?overworldDrawPlan(s,adventureForProfile(profile)):[];
+  const draws=s.active&&profile?(s.reference?referenceDrawPlan(s):rejectedOverworldDrawPlan(s,adventureForProfile(profile))):[];
   if(draws.length>capacity)throw new Error(`Overworld sprite capacity ${capacity} exceeded: ${draws.length}`);
   for(const c of q.chunks())for(let i=0;i<c.length;i++){
    const d=draws[c.col(OverworldVisual).slot[i]!];
    if(!d){if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);if(c.col(Text2D).visible[i])c.setField(Text2D,i,'visible',false);continue;}
    c.set(VisualOffset,i,{position:[d.x,d.y,0],scale:[1,1,1]});
-   c.set(Sprite,i,{image:d.image??'',visible:!!d.image,size:[d.width,d.height],anchor:[.5,.5],order:d.order,color:d.color??[1,1,1,1],unlit:true,blend:'Alpha',maskInteraction:'None'});
-   c.set(Text2D,i,{visible:!!d.text,text:d.text??'',font:'cartoon/fonts/BreeSerif-Regular',size:d.fontSize??16,align:'Center',color:d.color??ink,order:d.order});
+   c.set(Sprite,i,{image:d.image??'',visible:!!d.image,size:[d.width,d.height],anchor:[.5,.5],order:d.order,color:d.color?[...d.color]:[1,1,1,1],unlit:true,blend:'Alpha',maskInteraction:'None'});
+   c.set(Text2D,i,{visible:!!d.text,text:d.text??'',font:'cartoon/fonts/BreeSerif-Regular',size:d.fontSize??16,align:'Center',color:d.color?[...d.color]:ink,order:d.order});
   }
  },
 });

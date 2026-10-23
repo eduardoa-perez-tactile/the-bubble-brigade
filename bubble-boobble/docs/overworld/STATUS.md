@@ -21,9 +21,19 @@ The first generated fantasy-map art and rectangular path composition are rejecte
 
 The corrected direction uses the supplied video's downtown composition: curved promenade, oblique cartoon building façades, palm planting beds, stairs and coast. Continuous free movement is bounded by actual geography. Entrances are door thresholds within the scenery; no grid paths, evenly spaced level nodes or permanent per-building signboards. Source-reference calibration uses the local Inkwell Isle III `world3_mainland_03` layer and matching landmark/top pieces, with exact provenance.
 
-All three agents were interrupted when the user stopped work; presentation and navigation agents then received narrow correction tasks. Scheduled progress updates were paused during the stop. The user has not approved corrected art yet.
+All three agents were interrupted when the user stopped work; presentation and navigation agents then received narrow correction tasks. Scheduled progress updates were paused during the stop, then reactivated with the corrected art direction. The user has not approved corrected art yet.
 
-Latest actual engine screenshot: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/.gameengine/overworld-first-landscape.png` (1280×720, first map render; HUD positioning still being polished).
+## Corrected source-reference sample
+
+- Actual Cuphead Mainland03 and Honeycomb Herald source layers replace the generated fantasy art in the explicit calibration mode. Foreground Top03 is aligned at source offset `(309,39)` using three matching source-image regions.
+- The original game's green dragon is a temporary character proxy; no new generated fantasy dragon is used.
+- Independent traced ground polygons permit continuous roaming around the curved promenade, eastern street, stairs and beach. Buildings, planting beds, seawalls and beach fixtures provide collision.
+- Recorded `overworld.reference` QA input enters this isolated sample; it does not represent completed production Adventure integration. Legacy WIP and its encounter registry are retained for recovery, not accepted artwork.
+- **5/5 V8 reference tests pass**, including recorded approach/leave/re-approach at the real doorway, continued walking after confirm, and off-axis movement, plus a 184-step continuous promenade–stairs–beach traversal with collision assertions each step. Hermes is unavailable; no cross-runtime parity claim.
+- Latest actual engine sample: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/.gameengine/overworld-source-reference-v2.png` (1280×720).
+- Earlier focused Adventure integration: 10/10 V8 tests passed before this source-reference mode. Current `gameengine check` passes: typecheck, validation (existing camera/tile warnings), UI-document coverage, desktop cook and 600-frame cooked smoke. Full feature regression/render coverage remains pending.
+
+Rejected first render (do not reuse as current status screenshot): `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/.gameengine/overworld-first-landscape.png` (1280×720, first map render; HUD positioning still being polished).
 
 Draft PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
 Pushed checkpoints: `2630527` plan/playtest gate, `d9a30f1` progression/save migration.
@@ -38,3 +48,5 @@ Testing stays within Game Engine tests, headless sessions, replays and view/rend
 ## Evidence
 
 Plan: `docs/cuphead-overworld-plan.md`. Screenshot paths and test results will be recorded as they become available. No completed-feature or performance claims yet.
+
+Corrected input-driven captures: `.gameengine/overworld-source-reference-door.png` and `.gameengine/overworld-source-reference-stairs.png`, absolute paths under the worktree project above. Source reference mode is a visual/free-roaming calibration, not the finished campaign map.
