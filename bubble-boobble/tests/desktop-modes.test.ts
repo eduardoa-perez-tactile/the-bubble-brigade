@@ -8,16 +8,16 @@ const scene='scenes/arcade.scene.json';
 declare const __gameengine_host:(op:string,arg:string)=>string;
 worldTest('desktop main menu has only start settings and quit in every build',async({input,step})=>{
  const menu={...initialDesktopState,screen:'menu' as const};
- expect(getDesktopButtons(menu,initialDesktopSave).map(b=>b.key)).toEqual(['choose-mode','settings','quit']);
+ expect(getDesktopButtons(menu,initialDesktopSave).map(b=>b.key)).toEqual(['adventure-menu','settings','quit']);
  expect(desktopButtonRect(menu,initialDesktopSave,2)).toEqual({x:218,y:448,width:332,height:44});
  expect(desktopButtonRect(menu,initialDesktopSave,3)).toBe(null);
  expect(desktopModel(menu,initialDesktopSave).developmentMenu).toBe(false);
  await step(5);input.emit(DesktopIntent,{action:'menu'});await step(1);
  input.emit(DesktopIntent,{action:'development-menu',index:1});await step(1);
  expect(desktopState.get().developmentMenu).toBe(true);
- expect(getDesktopButtons(desktopState.get(),initialDesktopSave).map(b=>b.key)).toEqual(['choose-mode','settings','quit']);
+ expect(getDesktopButtons(desktopState.get(),initialDesktopSave).map(b=>b.key)).toEqual(['adventure-menu','settings','quit']);
  input.emit(DesktopIntent,{action:'development-menu',index:0});await step(1);
- expect(getDesktopButtons(desktopState.get(),initialDesktopSave).map(b=>b.key)).toEqual(['choose-mode','settings','quit']);
+ expect(getDesktopButtons(desktopState.get(),initialDesktopSave).map(b=>b.key)).toEqual(['adventure-menu','settings','quit']);
 },{scene});
 worldTest('desktop mode chooser records classic and madness requests and returns to menu',async({input,step})=>{
  await step(5);input.emit(DesktopIntent,{action:'choose-mode'});await step(1);

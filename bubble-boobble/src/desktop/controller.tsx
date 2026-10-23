@@ -14,7 +14,7 @@ import { CartoonDefeatView } from '../cartoon/defeat.view';
 import { CartoonTransitionView, type CartoonTransitionModel } from '../cartoon/transition.view';
 import { openBrowserFullscreen } from './browser';
 import { developmentMenuEnabled } from './development';
-import { read, app, assets, audio, quality, Time, MaterialGlobals } from '@gameengine/runtime';
+import { read, app, assets, loading, audio, quality, Time, MaterialGlobals } from '@gameengine/runtime';
 import { setReducedMotion, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
 import { desktopState } from './state.ts';
@@ -38,6 +38,15 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
  const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session),map=useDoc(overworldState);
+ let activeMapGroup='';
+ createEffect(()=>{
+  const current=map(),next=current.active?`overworld-${current.districtId}`:'';
+  if(next===activeMapGroup)return;
+  const previous=activeMapGroup;activeMapGroup=next;
+  if(next)void loading.run({name:next,load:[next],unload:previous?[previous]:[],model:{label:districtById(current.districtId)?.name??'Opening the map'}});
+  else if(previous)assets.release(previous);
+ });
+ onCleanup(()=>{if(activeMapGroup)assets.release(activeMapGroup);});
  let previousUIAudio:UIAudioSnapshot|undefined,previousIntroAudio='off';
  createEffect(()=>{
   const s=state(),p=save(),a=platform(),next=uiAudioSnapshot(s,p),sound=uiAudioCue(previousUIAudio,next);

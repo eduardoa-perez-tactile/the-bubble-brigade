@@ -1,3 +1,4 @@
+import {getOverworldMap,mapBounds} from './maps';
 import { availableDistrict, availableEncounter, districtById, districts, encounterById, encounters } from './content.ts';
 
 export interface AdventureAnchor { districtId:string; x:number; y:number }
@@ -29,7 +30,7 @@ export function validAdventure(progress:AdventureProgress):boolean {
   const district=districtById(progress.anchor.districtId);
   return !!district && availableDistrict(district.id,progress)
     && Number.isFinite(progress.anchor.x)&&Number.isFinite(progress.anchor.y)
-    && Math.abs(progress.anchor.x)<=800&&Math.abs(progress.anchor.y)<=500
+    && Math.abs(progress.anchor.x)<=4096&&Math.abs(progress.anchor.y)<=4096
     && integer(progress.coins) && Number.isSafeInteger(progress.nextAttempt)&&progress.nextAttempt>0
     && (progress.pending===null || (record(progress.pending)&&!!encounterById(progress.pending.encounterId)&&progress.pending.id===`attempt-${progress.nextAttempt-1}`))
     && !!progress.purchases && Object.entries(progress.purchases).every(([key,value])=>adventureShop.some(item=>item.id===key)&&value===true)
@@ -55,7 +56,8 @@ export function completeAdventure(progress:AdventureProgress,payload:AdventureCo
 }
 /** Only persist safe map positions in a district this profile can enter. */
 export function setAdventureAnchor(progress:AdventureProgress,anchor:AdventureAnchor):AdventureProgress {
-  if(!availableDistrict(anchor.districtId,progress)||!Number.isFinite(anchor.x)||!Number.isFinite(anchor.y)||Math.abs(anchor.x)>800||Math.abs(anchor.y)>500)return progress;
+  const bounds=mapBounds(getOverworldMap(anchor.districtId));
+  if(!availableDistrict(anchor.districtId,progress)||!Number.isFinite(anchor.x)||!Number.isFinite(anchor.y)||anchor.x<bounds.minX||anchor.x>bounds.maxX||anchor.y<bounds.minY||anchor.y>bounds.maxY)return progress;
   return {...progress,anchor:{...anchor}};
 }
 export function discoverAdventureShortcut(progress:AdventureProgress,id:string):AdventureProgress {

@@ -34,8 +34,8 @@ worldTest('overworld reference promenade permits off-axis movement and local doo
   expect(referenceWorldToSource(walked).y).toBeLessThan(1000);
 },{scene});
 
-worldTest('overworld reference recorded free-roam approaches leaves and reapproaches the real doorway',async({input,step,cheat,world})=>{
-  await step(8);await cheat(ReferenceOverworld,{});await step(3);
+worldTest('overworld reference recorded free-roam approaches leaves and reapproaches the real doorway',async({input,step,cheat,world,loaded})=>{
+  await step(8);await cheat(ReferenceOverworld,{});await loaded();await step(3);
   expect(overworldState.get().reference).toBe(true);
   expect(overworldState.get().active).toBe(true);
   expect(overworldState.get().focusedPoi).toBe('');
@@ -57,7 +57,7 @@ worldTest('overworld reference recorded free-roam approaches leaves and reapproa
 },{scene});
 
 worldTest('overworld reference recorded route continuously connects promenade stairs and beach',async({input,step,cheat})=>{
-  await step(8);await cheat(ReferenceOverworld,{});await step(3);
+  await step(8);await cheat(ReferenceOverworld,{});await loaded();await step(3);
   // Follow the visible bend of the seafront and descend the stair fan; every move is
   // recorded player input, with no warps between these ground-plane locations.
   for(const source of [{x:1100,y:800},{x:1250,y:900},{x:1350,y:970},{x:1350,y:1090},{x:1450,y:1100},{x:1580,y:1100}]){

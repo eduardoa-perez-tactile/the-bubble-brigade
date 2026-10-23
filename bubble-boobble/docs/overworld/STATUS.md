@@ -1,6 +1,6 @@
 # Overworld implementation status
 
-Status: ART DIRECTION CORRECTION. On 23 October 2026 the user rejected the first map screenshot: the art must follow the analyzed Cuphead map and be a free-roaming scenic world.
+Status: PRODUCTION INTEGRATION AND QA. The user resumed implementation with “continue then”. The source-faithful free-roaming direction is mandatory; no additional art-approval gate is imposed before completing the feature.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
 Branch: `codex/walkable-overworld`
@@ -17,11 +17,11 @@ The original checkout/editor remains untouched. Only work owned by this feature 
 
 Baseline Game Engine V8 T0: **427/427 passing** on the unchanged baseline. Focused progression initial pass: 4/4 V8. Hermes host is not installed.
 
-The first generated fantasy-map art and rectangular path composition are rejected. Do not polish or expand that direction. Existing simulation/progression work is preserved, but feature expansion is held while a reference-faithful engine sample is prepared.
+The first generated fantasy-map art and rectangular path composition are rejected. Do not polish or expand that direction. The rejected art is excluded from the runtime. Production now uses five source-aligned maps with native landmark entrances and polygonal walking geography.
 
 The corrected direction uses the supplied video's downtown composition: curved promenade, oblique cartoon building façades, palm planting beds, stairs and coast. Continuous free movement is bounded by actual geography. Entrances are door thresholds within the scenery; no grid paths, evenly spaced level nodes or permanent per-building signboards. Source-reference calibration uses the local Inkwell Isle III `world3_mainland_03` layer and matching landmark/top pieces, with exact provenance.
 
-All three agents were interrupted when the user stopped work; presentation and navigation agents then received narrow correction tasks. Scheduled progress updates were paused during the stop, then reactivated with the corrected art direction. The user has not approved corrected art yet.
+All three agents were interrupted when the user stopped work; presentation and navigation agents then received narrow correction tasks. Scheduled progress updates were paused during the stop, then reactivated with the corrected art direction. The user resumed development; final acceptance remains their playtest before any merge.
 
 ## Corrected source-reference sample
 
@@ -50,3 +50,12 @@ Testing stays within Game Engine tests, headless sessions, replays and view/rend
 Plan: `docs/cuphead-overworld-plan.md`. Screenshot paths and test results will be recorded as they become available. No completed-feature or performance claims yet.
 
 Corrected input-driven captures: `.gameengine/overworld-source-reference-door.png` and `.gameengine/overworld-source-reference-stairs.png`, absolute paths under the worktree project above. Source reference mode is a visual/free-roaming calibration, not the finished campaign map.
+
+## Production continuation
+
+- All five production districts use their original source geography: downtown, woodland, carnival, DLC island, and Hell. All 25 encounter entrances plus 30 side-content points are mapped to scenery.
+- Continuous walking, collision, contextual interaction, per-profile progression, one-time coins, optional trials, keepsakes, gated travel, and return-to-entrance are integrated into Adventure. Classic/Madness remain accessible through Arcade Modes.
+- Source textures load by district and release on travel/combat. The game’s green dragon has source-seeded directional art; no rejected fantasy art is used.
+- Production geometry tests passed, including all 55 POIs and recorded doorway/diagonal traversal. Full T0 regression initially reported 444/449; five menu/loading expectations were updated and rerun is pending. New complete 25-encounter campaign and physical-button T1 journeys are under verification.
+- This checkpoint is work in progress. Current test totals, reviewed production screenshots, render budgets and final engine check will replace pending status after verification.
+- PR #10 remains draft and must not merge until the user playtests and explicitly approves.

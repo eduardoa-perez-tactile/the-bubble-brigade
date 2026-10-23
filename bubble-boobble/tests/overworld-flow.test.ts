@@ -5,6 +5,7 @@ import { desktopSaveState } from '../src/desktop/save.ts';
 import { adventureForProfile } from '../src/overworld/progression.ts';
 import { encounterById } from '../src/overworld/content.ts';
 import { overworldState } from '../src/overworld/state.ts';
+import { overworldEntrancePoint } from '../src/overworld/navigation';
 import { session } from '../src/arcade/session.ts';
 import { OverworldResolveEncounter, WarpOverworld } from '../src/overworld/overworld.cheats.ts';
 const scene='scenes/arcade.scene.json';
@@ -15,12 +16,12 @@ async function enter(ctx:WorldTestContext) {
  await ctx.step(5);expect(desktopSaveState.loaded()).toBe(true);
  await intent(ctx,'cartoon-mode');
  await intent(ctx,'adventure-menu');expect(desktopState.get().overworldPanel).toBe('menu');
- await intent(ctx,'adventure-continue');await ctx.step(2);
+ await intent(ctx,'adventure-continue');await ctx.loaded();await ctx.step(2);
  expect(desktopState.get().screen).toBe('overworld');expect(session.get().active).toBe(false);
 }
 async function card(ctx:WorldTestContext,id:string) {
  const destination=encounterById(id)!;
- await ctx.cheat(WarpOverworld,{x:destination.x,y:destination.y-36});await ctx.step(2);
+ await ctx.cheat(WarpOverworld,overworldEntrancePoint(destination.districtId,id));await ctx.step(2);
  expect(overworldState.get().focusedPoi).toBe(destination.trial?'trial':id);
  // Confirmation travels through the same recorded map input path as Enter / controller A.
  ctx.input.action('confirm',1);await ctx.step(2);ctx.input.action('confirm',0);await ctx.step(2);

@@ -1,7 +1,7 @@
 import { defineDoc } from '@gameengine/runtime';
 import type { DocHandle, DocValue } from '@gameengine/runtime';
 import { encounterById } from './content.ts';
-import { focusedOverworldPoi, isOverworldWalkable, overworldPoi, overworldSpawn } from './navigation.ts';
+import { focusedOverworldPoi, isOverworldWalkable, overworldPoi, overworldSpawn, overworldEntrancePoint } from './navigation.ts';
 import type { OverworldPoint } from './navigation.ts';
 
 export type OverworldFacing = 'up'|'down'|'left'|'right';
@@ -18,12 +18,12 @@ export const overworldState=defineDoc('overworld',initialOverworldState as unkno
 /** Call from sim only. Loading a map requires neutral input before interaction can arm. */
 export function enterOverworld(districtId:string,anchor?:OverworldPoint|string):void {
   const s=overworldState.get(),point=typeof anchor==='string'?overworldPoi(districtId,anchor):anchor;
-  const p=point&&isOverworldWalkable(point.x,point.y)?point:overworldSpawn(districtId);
-  overworldState.set({...s,active:true,reference:false,modal:false,districtId,x:p.x,y:p.y,moving:false,focusedPoi:focusedOverworldPoi(districtId,p.x,p.y),inputArmed:false,confirmHeld:false,cameraReady:false,shortcutLatched:false});
+  const p=point&&isOverworldWalkable(point.x,point.y,districtId)?point:overworldSpawn(districtId);
+  overworldState.set({...s,active:true,reference:false,modal:false,districtId,x:p.x,y:p.y,moving:false,focusedPoi:focusedOverworldPoi(districtId,p.x,p.y),inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false,shortcutLatched:false});
 }
-export function suspendOverworld():void { const s=overworldState.get();overworldState.set({...s,active:false,modal:false,moving:false,inputArmed:false,cameraReady:false}); }
+export function suspendOverworld():void { const s=overworldState.get();overworldState.set({...s,active:false,modal:false,moving:false,inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false}); }
 export function setOverworldModal(modal:boolean):void { const s=overworldState.get();overworldState.set({...s,modal,moving:false,inputArmed:false}); }
 export function returnToEntrance(encounterId:string):void {
   const encounter=encounterById(encounterId);
-  if(encounter)enterOverworld(encounter.districtId,{x:encounter.x,y:encounter.y-36});
+  if(encounter)enterOverworld(encounter.districtId,overworldEntrancePoint(encounter.districtId,encounterId));
 }

@@ -22,9 +22,9 @@ export const OverworldResolveEncounter=defineCheat({
 export const WarpOverworld=defineCheat({
   id:'overworld.warp',group:'Adventure',title:'Walkable map position',
   description:'Moves the active map avatar to a valid world point for navigation and screenshot checks.',
-  params:{x:{type:'number',min:-800,max:800,default:0},y:{type:'number',min:-500,max:500,default:-280}},
+  params:{x:{type:'number',min:-4096,max:4096,default:0},y:{type:'number',min:-4096,max:4096,default:-280}},
   run(_ctx,{x,y}){
-    const s=overworldState.get();if(!s.active||!(s.reference?isReferenceWalkable({x,y}):isOverworldWalkable(x,y)))return;
+    const s=overworldState.get();if(!s.active||!(s.reference?isReferenceWalkable({x,y}):isOverworldWalkable(x,y,s.districtId)))return;
     overworldState.set({...s,x,y,modal:false,moving:false,inputArmed:false,focusedPoi:s.reference?(referenceDoorPrompt({x,y})?'reference-door':''):focusedOverworldPoi(s.districtId,x,y)});
   },
 });

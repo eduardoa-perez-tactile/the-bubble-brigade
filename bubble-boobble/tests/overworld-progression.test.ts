@@ -1,5 +1,6 @@
 import { expect, worldTest } from '@gameengine/test';
 import { desktopSave, initialDesktopSave } from '../src/desktop/save.ts';
+import {getOverworldMap,mapBounds} from '../src/overworld/maps';
 import { districts, encounters, availableDistrict, availableEncounter, trials, trialForDistrict } from '../src/overworld/content.ts';
 import { initialAdventure, completeAdventure, beginAdventureAttempt, abandonAdventureAttempt, adventureForProfile, setAdventureAnchor, discoverAdventureShortcut, claimAdventureGuideReward, purchaseAdventureItem, claimAdventureCollectible, adventureCleared, validAdventure, type AdventureProgress } from '../src/overworld/progression.ts';
 const scene='scenes/arcade.scene.json';
@@ -66,7 +67,7 @@ worldTest('adventure profile isolation safe anchors abandoned attempts and optio
  expect(completeAdventure(progress,{encounterId:'encounter-1',attemptId:abandonedId,score:100})).toEqual(progress);
  expect(setAdventureAnchor(progress,{districtId:'district-2',x:0,y:0})).toEqual(progress);
  expect(setAdventureAnchor(progress,{districtId:'district-1',x:Infinity,y:0})).toEqual(progress);
- expect(setAdventureAnchor(progress,{districtId:'district-1',x:801,y:0})).toEqual(progress);
+ expect(setAdventureAnchor(progress,{districtId:'district-1',x:mapBounds(getOverworldMap('district-1')).maxX+1,y:0})).toEqual(progress);
  progress=setAdventureAnchor(progress,{districtId:'district-1',x:30,y:-100});
  expect(progress.anchor).toEqual({districtId:'district-1',x:30,y:-100});
  progress=discoverAdventureShortcut(progress,'district-1:shortcut');

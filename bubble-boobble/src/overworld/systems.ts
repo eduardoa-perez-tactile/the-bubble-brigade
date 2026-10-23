@@ -1,8 +1,9 @@
 import { ActionState, KeyEvent, LocalTransform, WorldView, WorldViewFollow, NO_ENTITY, defineSystem, query, read, write } from '@gameengine/runtime';
 import { DesktopIntent, OverworldAvatar } from '../schema.gen.ts';
 import { partyPads } from '../arcade/party-input.ts';
-import { focusedOverworldPoi, moveOverworld, OVERWORLD_BOUNDS } from './navigation.ts';
+import { focusedOverworldPoi, moveOverworld } from './navigation.ts';
 import { overworldState } from './state.ts';
+import { getOverworldMap, mapBounds } from './maps.ts';
 import { moveReferenceOverworld, referenceDoorPrompt, REFERENCE_WORLD_BOUNDS, REFERENCE_VIEW_SIZE } from './reference-navigation.ts';
 
 /** Recorded keyboard actions and controller state drive the authoritative walkable avatar. */
@@ -43,7 +44,7 @@ export const OverworldSystem=defineSystem({
       overworldState.set({...s,modal:true,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys});
       ctx.events.emit(DesktopIntent,{action:'overworld-menu',value:'',index:0,x:0,y:0});return;
     }
-    const point=s.reference?moveReferenceOverworld(s,x,y,ctx.dt):moveOverworld(s,x,y,ctx.dt),moving=point.x!==s.x||point.y!==s.y;
+    const point=s.reference?moveReferenceOverworld(s,x,y,ctx.dt):moveOverworld(s,x,y,ctx.dt,s.districtId),moving=point.x!==s.x||point.y!==s.y;
     const facing=moving?(Math.abs(x)>Math.abs(y)?x<0?'left':'right':y>0?'up':'down'):s.facing;
     const focusedPoi=s.reference?(referenceDoorPrompt(point)?'reference-door':''):focusedOverworldPoi(s.districtId,point.x,point.y);
     const shortcutLatched=!s.reference&&focusedPoi==='shortcut';
@@ -62,7 +63,7 @@ export const OverworldTargetSystem=defineSystem({
   resources:[write(WorldView),write(WorldViewFollow)],
   run(ctx,q){
     const s=overworldState.get();
-    const bounds=s.reference?REFERENCE_WORLD_BOUNDS:OVERWORLD_BOUNDS,orthoSize=s.reference?REFERENCE_VIEW_SIZE:300;
+    const map=getOverworldMap(s.districtId),bounds=s.reference?REFERENCE_WORLD_BOUNDS:mapBounds(map),orthoSize=s.reference?REFERENCE_VIEW_SIZE:map.viewSize;
     if(!s.active){
       // Only release our own target, so unrelated camera users remain intact.
       for(const c of q.chunks())for(let i=0;i<c.length;i++)if(ctx.get(WorldViewFollow).target===c.entity(i)){

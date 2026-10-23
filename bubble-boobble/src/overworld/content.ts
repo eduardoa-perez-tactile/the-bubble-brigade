@@ -1,3 +1,4 @@
+import {getOverworldMap,sourceToWorld,mapEncounterPoint,mapPoiPoint} from './maps';
 import type { AdventureProgress } from './progression.ts';
 
 export interface AdventureEncounter {
@@ -27,23 +28,22 @@ const destinationNames = [
   ['Lantern Landing', 'Firefly Ferry', 'Moonpool Crossing', 'Reedpipe Ruins', 'Marshlight Manor'],
   ['Crystal Courtyard', 'Stormglass Foundry', 'Tempest Terrace', 'Brigade Battlements', 'Skybell Summit'],
 ];
-const positions = [[-320,-160],[320,-160],[0,40],[-300,240],[300,240]] as const;
 /** Stable IDs survive destination renames and future changes to the campaign ordering. */
 export const districts: AdventureDistrict[] = districtNames.map((name,index) => ({
   id: `district-${index+1}`, name, index,
   encounterIds: Array.from({length:5}, (_,i) => `encounter-${index*5+i+1}`),
-  spawn: { x:0, y:-280 },
+  spawn: sourceToWorld(getOverworldMap(`district-${index+1}`),getOverworldMap(`district-${index+1}`).spawn),
 }));
 export const encounters: AdventureEncounter[] = districts.flatMap(district => district.encounterIds.map((id,index) => ({
-  id, name: destinationNames[district.index]![index]!, districtId:district.id,
-  level:district.index*5+index+1, x:positions[index]![0], y:positions[index]![1], rewardCoins:10,
+  id, name:getOverworldMap(district.id).pois.find(poi=>poi.kind==='encounter'&&poi.slot===index)?.label??destinationNames[district.index]![index]!, districtId:district.id,
+  level:district.index*5+index+1, ...mapEncounterPoint(district.id,index), rewardCoins:10,
   requiresAny:index===2 ? district.encounterIds.slice(0,2) : [],
   requiresAll:index>=3 ? [district.encounterIds[2]!] : [],
 })));
 /** Optional one-life capture/pop trials never gate the main 25-encounter campaign. */
 export const trials: AdventureEncounter[] = districts.map(district=>({
-  id:`trial-${district.index+1}`,name:`${district.name} Mastery`,districtId:district.id,
-  level:district.index*5+1,x:-560,y:260,rewardCoins:10,requiresAny:[],requiresAll:[],trial:true,
+  id:`trial-${district.index+1}`,name:getOverworldMap(district.id).pois.find(poi=>poi.kind==='trial')?.label??`${district.name} Mastery`,districtId:district.id,
+  level:district.index*5+1,...mapPoiPoint(district.id,'trial'),rewardCoins:10,requiresAny:[],requiresAll:[],trial:true,
 }));
 export const encounterById = (id:string):AdventureEncounter|undefined => encounters.find(encounter=>encounter.id===id)??trials.find(encounter=>encounter.id===id);
 export const trialForDistrict = (districtId:string):AdventureEncounter|undefined => trials.find(trial=>trial.districtId===districtId);
