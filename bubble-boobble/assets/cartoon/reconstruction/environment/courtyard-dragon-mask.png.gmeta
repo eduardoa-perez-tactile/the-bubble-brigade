@@ -1,0 +1,7 @@
+guid = "e61af5ae-8e5d-4e60-9769-5a60c37db8b6"
+importer = "texture"
+[settings]
+kind = "texture"
+filter = "linear"
+srgb = false
+compression = "none"

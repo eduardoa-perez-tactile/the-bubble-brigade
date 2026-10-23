@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "name": "CourtyardMotion",
+  "model": "unlit",
+  "blend": "opaque",
+  "alphaCutoff": 0.5,
+  "doubleSided": true,
+  "cull": "none",
+  "uniformSize": 16,
+  "params": [
+    {
+      "name": "alphaCutoff",
+      "type": "f32",
+      "offset": 0,
+      "default": [
+        0.5
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "plate",
+      "binding": 1,
+      "default": "white",
+      "srgb": true
+    },
+    {
+      "name": "cleanPlate",
+      "binding": 2,
+      "default": "white",
+      "srgb": true
+    },
+    {
+      "name": "dragonMask",
+      "binding": 3,
+      "default": "black",
+      "srgb": false
+    }
+  ],
+  "samplerBinding": 4,
+  "wgsl": "// Material CourtyardMotion (@gameengine/materials, compiled; do not edit).\nstruct MaterialParams {\n  p_alphaCutoff: f32,\n};\n@group(2) @binding(0) var<uniform> material: MaterialParams;\n@group(2) @binding(1) var tex_plate: texture_2d<f32>;\n@group(2) @binding(2) var tex_cleanPlate: texture_2d<f32>;\n@group(2) @binding(3) var tex_dragonMask: texture_2d<f32>;\n@group(2) @binding(4) var material_sampler: sampler;\n\nfn courtyard_dragon_mask(p:vec2f)->vec3f {\n let at=(p-vec2f(720.0,55.0))/vec2f(210.0,193.0);\n // The authored contours have an empty border; clamp sampling stays zero.\n return textureSampleLevel(tex_dragonMask,material_sampler,clamp(at,vec2f(0.0),vec2f(1.0)),0.0).rgb;\n}\nfn courtyard_ease(a:f32,b:f32,t:f32)->f32 {let u=clamp((t-a)/(b-a),0.0,1.0);return u*u*(3.0-2.0*u);}\nfn courtyard_unrotate(p:vec2f,pivot:vec2f,angle:f32)->vec2f {\n let c=cos(angle);let s=sin(angle);let d=p-pivot;\n return pivot+vec2f(c*d.x+s*d.y,-s*d.x+c*d.y);\n}\nfn courtyard_open_mouth(p:vec2f,angle:f32)->f32 {\n let a=vec2f(838.0,151.0);let b=vec2f(895.0,165.0);\n let c=courtyard_unrotate(b,a,-angle);\n let ab=b-a;let bc=c-b;let ca=a-c;\n let d0=(ab.x*(p.y-a.y)-ab.y*(p.x-a.x))/length(ab);\n let d1=(bc.x*(p.y-b.y)-bc.y*(p.x-b.x))/max(length(bc),0.001);\n let d2=(ca.x*(p.y-c.y)-ca.y*(p.x-c.x))/max(length(ca),0.001);\n return smoothstep(-0.4,0.4,min(d0,min(d1,d2)))*smoothstep(0.0,0.025,angle);\n}\nfn courtyard_mask(p: vec2f, lo: vec2f, hi: vec2f, feather: f32) -> f32 {\n let enter = smoothstep(lo, lo + vec2f(feather), p);\n let leave = vec2f(1.0) - smoothstep(hi - vec2f(feather), hi, p);\n return enter.x * enter.y * leave.x * leave.y;\n}\nfn courtyard_cloth(p: vec2f, lo: vec2f, hi: vec2f, t: f32, phase: f32) -> vec2f {\n let mask = courtyard_mask(p, lo, hi, 8.0);\n let hang = clamp((p.y - lo.y) / (hi.y - lo.y), 0.0, 1.0);\n // The pole stays pinned; the hem has a broad sway plus a travelling ripple.\n let breeze = sin(t * 0.022 + phase) * 4.5;\n let ripple = sin(t * 0.041 - hang * 7.0 + phase) * 2.2;\n return vec2f((breeze + ripple) * hang * hang, sin(t * 0.031 + phase) * hang * 0.8) * mask;\n}\nfn courtyard_chain(p: vec2f, x: f32, bottom: f32, t: f32, phase: f32) -> vec2f {\n let mask = courtyard_mask(p, vec2f(x - 13.0, -12.0), vec2f(x + 13.0, bottom), 5.0);\n let hang = clamp(p.y / bottom, 0.0, 1.0);\n return vec2f(sin(t * 0.013 + phase) * 3.1 * hang, 0.0) * mask;\n}\nfn courtyard_plant(p: vec2f, lo: vec2f, hi: vec2f, rootAtTop: f32, t: f32, phase: f32) -> vec2f {\n let mask = courtyard_mask(p, lo, hi, 14.0);\n let height = clamp((p.y - lo.y) / (hi.y - lo.y), 0.0, 1.0);\n let tip = mix(1.0 - height, height, rootAtTop);\n let wind = sin(t * 0.025 + phase) * 2.7 + sin(t * 0.047 + p.y * 0.035 + phase) * 0.9;\n return vec2f(wind * tip, sin(t * 0.03 + phase) * tip * 0.55) * mask;\n}\nfn courtyard_sample(at: vec2f, control: vec4f) -> vec4f {\n let p = at * vec2f(1672.0, 941.0);\n let t = control.x;\n var offset = vec2f(0.0);\n // Region branches keep the local wave arithmetic off the rest of the plate.\n if (control.y > 0.5) {\n  if (p.y < 245.0) {\n   if (p.x > 490.0 && p.x < 606.0) {\n    offset += courtyard_cloth(p, vec2f(490.0,-8.0),vec2f(606.0,215.0),t,0.0);\n   } else if (p.x > 1077.0 && p.x < 1202.0) {\n    offset += courtyard_cloth(p,vec2f(1077.0,-8.0),vec2f(1202.0,247.0),t,1.8);\n   }\n   if (p.x > 455.0 && p.x < 483.0) { offset += courtyard_chain(p,469.0,82.0,t,0.2); }\n   if (p.x > 627.0 && p.x < 655.0) { offset += courtyard_chain(p,641.0,211.0,t,1.2); }\n   if (p.x > 1054.0 && p.x < 1082.0) { offset += courtyard_chain(p,1068.0,214.0,t,2.0); }\n   if (p.x > 1208.0 && p.x < 1236.0) { offset += courtyard_chain(p,1222.0,183.0,t,2.7); }\n  }\n  // Leaf clusters are small, feathered patches pinned at their stone roots.\n  // Central arch masonry and every gameplay platform remain steady.\n  if (p.x < 300.0 && p.y > 710.0) { offset += courtyard_plant(p,vec2f(54.0,710.0),vec2f(300.0,907.0),0.0,t,0.4); }\n  if (p.x > 1370.0 && p.y > 718.0) { offset += courtyard_plant(p,vec2f(1370.0,718.0),vec2f(1617.0,909.0),0.0,t,1.6); }\n  if (p.x > 405.0 && p.x < 573.0 && p.y > 330.0 && p.y < 445.0) { offset += courtyard_plant(p,vec2f(405.0,330.0),vec2f(573.0,445.0),0.0,t,1.1); }\n  if (p.x > 539.0 && p.x < 687.0 && p.y > 421.0 && p.y < 511.0) { offset += courtyard_plant(p,vec2f(539.0,421.0),vec2f(687.0,511.0),0.0,t,2.5); }\n  if (p.x > 1093.0 && p.x < 1244.0 && p.y > 214.0 && p.y < 342.0) { offset += courtyard_plant(p,vec2f(1093.0,214.0),vec2f(1244.0,342.0),1.0,t,3.2); }\n  if (p.x > 1473.0 && p.x < 1618.0 && p.y > 398.0 && p.y < 582.0) { offset += courtyard_plant(p,vec2f(1473.0,398.0),vec2f(1618.0,582.0),1.0,t,4.0); }\n }\n var c = textureSample(tex_plate, material_sampler, (p - offset) / vec2f(1672.0,941.0));\n if(control.y>0.5 && p.x>720.0 && p.x<930.0 && p.y>55.0 && p.y<248.0){\n  let cycle=t-floor(t/1080.0)*1080.0;\n  let head=courtyard_ease(60.0,135.0,cycle)*(1.0-courtyard_ease(270.0,360.0,cycle));\n  let jaw=courtyard_ease(115.0,175.0,cycle)*(1.0-courtyard_ease(245.0,310.0,cycle));\n  // This bypass keeps original pixels exactly intact throughout the long rest.\n  if(head>0.000001){\n   let headSource=courtyard_unrotate(p-vec2f(0.0,-2.0*head),vec2f(779.0,228.0),-0.065*head);\n   let sourceMask=courtyard_dragon_mask(p);\n   let headMask=courtyard_dragon_mask(headSource);\n   let clean=textureSampleLevel(tex_cleanPlate,material_sampler,at,0.0);\n   c=mix(c,clean,sourceMask.r);\n   let headColor=textureSampleLevel(tex_plate,material_sampler,headSource/vec2f(1672.0,941.0),0.0);\n   // A closed jaw is one intact layer: no cut/cavity or doubled feather edge.\n   if(jaw<=0.000001){\n    c=mix(c,headColor,headMask.r);\n   }else{\n    let jawSource=courtyard_unrotate(headSource,vec2f(838.0,151.0),0.24*jaw);\n    let jawMask=courtyard_dragon_mask(jawSource);\n    let cavity=max(headMask.b*headMask.r,courtyard_open_mouth(headSource,0.24*jaw));\n    c=mix(c,vec4f(0.025,0.065,0.075,1.0),cavity);\n    c=mix(c,headColor,headMask.r*(1.0-headMask.g));\n    let jawColor=textureSampleLevel(tex_plate,material_sampler,jawSource/vec2f(1672.0,941.0),0.0);\n    c=mix(c,jawColor,jawMask.g);\n   }\n  }\n }\n return vec4f(c.rgb * control.z, c.a);\n}\n\nconst MATERIAL_MODEL: u32 = 1u;\nconst MATERIAL_FOG: bool = false;\nfn material_surface(in: SurfaceInput) -> SurfaceOutput {\n  var out = surface_defaults();\n  let v0: vec4f = courtyard_sample(in.uv, in.instance_params);\n  let v1: vec3f = v0.xyz;\n  let v2: f32 = v0.w;\n  out.base_color = v1;\n  out.alpha = v2;\n  return out;\n}\n",
+  "hash": "06def836e9fb6209",
+  "sourceHash": "835334a3eeb9c978"
+}

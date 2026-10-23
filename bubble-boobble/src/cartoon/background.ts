@@ -1,3 +1,4 @@
+import { cartoonDragonPose, cartoonDragonPoint, DRAGON_STATUE_RIG } from './dragon-statue';
 import type { CartoonDraw } from './renderer';
 
 /** Coordinates belong to the painted 1672 × 941 plate, not the gameplay world.
@@ -59,15 +60,17 @@ export function cartoonBackgroundDraws(tick:number,bounds:CartoonBackgroundBound
     soft(candle.x+sway,candle.y-1,5.2,flame,[1,.55,.09,.65]);
     soft(candle.x+sway*.5,candle.y,2.5,flame*.7,[1,.91,.5,.79]);
   }
-  // The cloth's paint and dragon crests remain untouched. Broad, low-contrast
-  // folds drift across each hanging banner to suggest a slow courtyard breeze.
-  for(const [index,banner] of [{x:548,y:90,width:78,height:160},{x:1134,y:106,width:83,height:188}].entries()){
-    const phase=t/75+index*2.4;
-    for(let fold=0;fold<3;fold++){
-      const drift=Math.sin(phase+fold*1.9)*7;
-      soft(banner.x-24+fold*24+drift,banner.y+Math.sin(phase)*3,17,banner.height,
-        fold%2?[.12,.025,.035,.10]:[.68,.26,.19,.08]);
-    }
+  // The glint follows the rigid head; the exhale leaves the articulated jaw.
+  const pose=cartoonDragonPose(t),cycle=t%DRAGON_STATUE_RIG.period;
+  const eye=cartoonDragonPoint(DRAGON_STATUE_RIG.eye,pose);
+  soft(eye[0],eye[1],22,17,[.08,.75,.7,.19*pose.awakening]);
+  soft(eye[0],eye[1],5.5,3.5,[.43,1,.82,.78*pose.awakening]);
+  const mouth=cartoonDragonPoint(DRAGON_STATUE_RIG.mouth,pose,'jaw');
+  for(let i=0;i<4;i++){
+    const age=(cycle-175-i*17)/108,visible=age>0&&age<1;
+    const travel=Math.max(0,Math.min(1,age)),alpha=visible?Math.sin(travel*Math.PI)*.15:0;
+    const size=9+travel*23;
+    soft(mouth[0]+travel*48,mouth[1]-travel*29+Math.sin(travel*5+i)*3,size,size*.55,[.48,.77,.75,alpha]);
   }
   return out;
 }
