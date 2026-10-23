@@ -5,6 +5,9 @@ importer = "texture"
 kind = "sprite"
 filter = "linear"
 atlas = "none"
-compression = "none"
+compression = "astc6x6"
 max_size = 2048
 trim = false
+
+[settings.overrides.phone-low]
+max_size = 1024

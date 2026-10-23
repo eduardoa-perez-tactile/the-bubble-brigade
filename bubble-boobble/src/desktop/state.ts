@@ -1,11 +1,12 @@
+import {desktopState,desktopGameRequest,type DesktopState,type DesktopScreen,type PlayMode} from './documents.ts';
+export {desktopState,desktopGameRequest,initialDesktopState} from './documents.ts';
+export type {DesktopState,DesktopScreen,DesktopGameRequest,PlayMode} from './documents.ts';
 import { handleAdventureAction } from '../overworld/flow';
-import { adventureForProfile } from '../overworld/progression';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { updatePartyPads } from '../arcade/party-input';
 import { defaultPartySlots, partySize, type DragonResult } from '../arcade/party-config';
 import type { PartySlot } from '../arcade/types';
-import { defineDoc, defineSystem, query, read, ActionState, TextInput, PointerHover, PointerDown, KeyEvent, ViewInfo } from '@gameengine/runtime';
-import type { DocHandle, DocValue } from '@gameengine/runtime';
+import { defineSystem, query, read, ActionState, TextInput, PointerHover, PointerDown, KeyEvent, ViewInfo } from '@gameengine/runtime';
 import { DesktopIntent, ArcadeControl } from '../schema.gen.ts';
 import campaignData from '../../data/levels.json';
 import type { Level } from '../arcade/types.ts';
@@ -14,14 +15,7 @@ import { desktopSaveState } from './save.ts';
 import { partyGridSelection, modeGridSelection, desktopButtonRect, cartoonMenuHoverRect } from './layout.ts';
 import { getDesktopButtons } from './model.ts';
 const campaign=campaignData as Level[];
-export type PlayMode='solo'|'ai'|'human';
-export type DesktopScreen='title'|'menu'|'profiles'|'new-profile'|'settings'|'scores'|'help'|'credits'|'editor'|'play'|'pause'|'result'|'party'|'modes'|'overworld'|'overworld-card'|'overworld-panel';
 export const RESULT_INPUT_DELAY = 45;
-export interface DesktopState {cartoon?:boolean;resultDetails?:boolean;settingsReturn?:DesktopScreen;adventure?:boolean;adventureEncounter?:string;adventureAttempt?:string;adventureProfile?:number;overworldPanel?:string;panelMessage?:string;adventureTrial?:boolean;pauseClosing?:boolean;resumeStartedStep?:number;pauseConfirm?:"restart"|"leave"|"";gameplayInputArmed?:boolean;transitionHasTitle?:boolean;transitionAction?:string;transitionStartedStep?:number;transitionCommitted?:boolean;dragonResults?:DragonResult[];resultStartedStep?:number;resultReady?:boolean;developmentMenu?:boolean;partySlots:PartySlot[];partyRun:boolean;partyEditing:boolean;screen:DesktopScreen;confirmKeys:number;playMode:PlayMode;name:string;status:string;statusStartedStep:number;selected:number;custom:boolean;recorded:boolean;won:boolean;score:number;round:number;tool:number;template:number;painting:boolean;deleteHeldAt:number;level:Level;history:Level[]}
-export const initialDesktopState:DesktopState={developmentMenu:false,partySlots:defaultPartySlots.slice(),partyRun:false,partyEditing:false,screen:'title',confirmKeys:0,playMode:'solo',name:'',status:'',statusStartedStep:-1,selected:0,custom:false,recorded:false,won:false,score:0,round:1,tool:0,template:0,painting:false,deleteHeldAt:-1,level:cloneLevel(campaign[0]!),history:[]};
-export const desktopState=defineDoc('desktop-ui',initialDesktopState as unknown as DocValue) as unknown as DocHandle<DesktopState>;
-export interface DesktopGameRequest {cartoon?:boolean;sequence:number;action:string;mode:PlayMode;players:number;level:number;customLevel:Level|null;partySlots?:PartySlot[];encounterId?:string;attemptId?:string;profileIndex?:number}
-export const desktopGameRequest=defineDoc('desktop-game-request',{sequence:0,action:'',mode:'solo',players:1,level:1,customLevel:null} as DocValue) as unknown as DocHandle<DesktopGameRequest>;
 const request=(action:string,custom=false)=>desktopGameRequest.set({sequence:desktopGameRequest.get().sequence+1,action,mode:desktopState.get().playMode??'solo',partySlots:desktopState.get().partySlots?.slice(),players:desktopState.get().playMode==='ai'||desktopState.get().playMode==='human'?2:1,level:1,customLevel:custom?cloneLevel(desktopState.get().level):null,...(desktopState.get().cartoon?{cartoon:true}:{})});
 export function showDesktopPause(paused=true){const s=desktopState.get();desktopState.set({...s,screen:paused?'pause':'play',selected:0});}
 export function finishDesktopRun(won:boolean,score:number,round:number,dragonResults:DragonResult[]=[]){const s=desktopState.get();if(s.adventure&&!s.recorded&&desktopSaveState.loaded()){if(won)desktopSaveState.dispatch('adventureComplete',{profileIndex:s.adventureProfile!,encounterId:s.adventureEncounter!,attemptId:s.adventureAttempt!,score},0);else desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},0);}else if(!s.adventure&&!s.recorded&&!s.custom&&!s.partyRun&&desktopSaveState.loaded())desktopSaveState.dispatch('record',{won,score,round},0);desktopState.set({...s,screen:'result',resultDetails:false,dragonResults,resultStartedStep:-1,resultReady:false,recorded:true,won,score,round,selected:0});}

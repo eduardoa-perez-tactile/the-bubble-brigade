@@ -1,5 +1,5 @@
 /** Recorded-intent adapter between the desktop shell, map simulation and encounter runner. */
-import { desktopState, desktopGameRequest, type DesktopState } from '../desktop/state';
+import { desktopState, desktopGameRequest, type DesktopState } from '../desktop/documents.ts';
 import { desktopSaveState } from '../desktop/save';
 import { adventureForProfile, adventureCleared, adventureShop } from './progression';
 import { districts, districtById, encounterById, trialForDistrict, availableDistrict, availableEncounter } from './content';
