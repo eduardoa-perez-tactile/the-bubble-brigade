@@ -25,7 +25,7 @@ worldTest('bubble overlap mature captives stay behind the dragon while the fresh
 worldTest('bubble overlap all floating color washes precede every captive drawing',()=>{
  const g=createGame([createCartoonArena(campaign[0]!)],42);g.Enemies=Array.from({length:3},(_,i)=>({...g.Enemies[0]!,ID:800+i,State:EnemyState.Trapped}));
  g.Bubbles=g.Enemies.map((e,i)=>({...bubble(300+i*20,200),ID:900+i,Age:60,Floating:true,EnemyID:e.ID,CapturedAge:40,Shooter:0}));
- const plan=cartoonDrawPlan(g,0),bodies=plan.map((d,i)=>({d,i})).filter(({d})=>d.frame==='bubble-body'),contents=plan.map((d,i)=>({d,i})).filter(({d})=>d.frame.includes('/captured-'));
+ const plan=cartoonDrawPlan(g,0),bodies=plan.map((d,i)=>({d,i})).filter(({d})=>d.frame==='bubble-body'),contents=plan.map((d,i)=>({d,i})).filter(({d})=>(d.frame.includes('/captured-')||d.frame.endsWith('/simple-captured')));
  expect(bodies.length).toBe(3);expect(contents.length).toBe(3);
  expect(Math.max(...bodies.map(b=>b.i))<Math.min(...contents.map(c=>c.i))).toBe(true);
 });

@@ -1,7 +1,7 @@
 import { expect, worldTest } from '@gameengine/test';
 import campaign from '../data/levels.json';
 import atlas from '../assets/cartoon/atlas-layout.json';
-import { cartoonDrawPlan } from '../src/cartoon/plan';
+import { cartoonEnemyFrame, cartoonDrawPlan } from '../src/cartoon/plan';
 import { createGame } from '../src/arcade/game';
 import { createPartyGame, preparePartyWave } from '../src/arcade/party';
 import { bubble, effect } from '../src/arcade/bubbles';
@@ -49,7 +49,7 @@ worldTest('cartoon complete content keeps captive pose stable and danger ink dis
     g.Enemies = [{ ...original, ID: 900, Kind: family, State: EnemyState.Trapped }];
     g.Bubbles = [{ ...bubble(300,220), ID: 901, EnemyID: 900, CapturedAge: age, Age: 30, Floating: true }];
     const draws = inspect(g);
-    const captive = draws.find(draw => draw.frame === `enemy/${family}/captured-0`)!;
+    const captive = draws.find(draw => draw.frame === cartoonEnemyFrame(family,'bubble',30))!;
     expect(!!captive).toBe(true);expect(!!captive.flip).toBe(false);
     const size = [captive.width,captive.height];
     if (registeredSize) expect(size).toEqual(registeredSize);
@@ -79,8 +79,8 @@ worldTest('cartoon complete content redraws elemental effects projectiles and bo
   g.Party!.Phase = 'boss'; g.Players = []; g.Enemies = []; g.Items = []; g.Bubbles = [];
   for (const mode of ['moving','windup','captured'] as const) {
     Object.assign(g.Party!.Boss!, { Mode: mode, Invulnerable: 0, Tick: 0 });
-    const pose = mode === 'moving' ? 'move' : mode === 'windup' ? 'attack' : 'captured';
-    expect(inspect(g).some(draw => draw.frame.startsWith(`boss/${pose}-`))).toBe(true);
+    const pose = mode === 'moving' ? 'move-' : mode === 'windup' ? 'windup' : 'captured';
+    expect(inspect(g).some(draw => draw.frame.startsWith(`boss/simple-${pose}`))).toBe(true);
   }
   for (const element of ['fire','water','thunder']) {
     g.Effects = [{ ...effect(300,220), Element: element, Age: 0, Life: 60 }];

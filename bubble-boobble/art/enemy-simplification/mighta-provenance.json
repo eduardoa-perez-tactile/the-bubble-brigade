@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-10-23",
+  "source": "mighta-source.png",
+  "sha256": "78c4e736512d3d5a8310211d2753750aebb62ffc04a7f233e6a181f96d68208a",
+  "width": 1774,
+  "height": 887,
+  "alpha": true,
+  "layout": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "prompt": "mighta-prompt.txt",
+  "reference": "assets/cartoon/frames/enemy/mighta/walk-0.png",
+  "referenceRole": "style and palette only; replacement anatomy",
+  "originalGeneratedFile": "exec-8b15e8fa-5f05-4617-89e8-cab6e0987d55.png",
+  "notes": [
+    "Original generated image preserved without modification.",
+    "Normalize per-cell alpha bounds to consistent runtime scale and contact baseline before export.",
+    "Requested 2048x1024; built-in tool returned 1774x887."
+  ]
+}

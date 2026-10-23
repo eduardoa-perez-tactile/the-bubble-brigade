@@ -5,7 +5,7 @@ import {createCartoonArena} from '../src/cartoon/arena';
 import {bubble} from '../src/arcade/bubbles';
 import {EnemyState} from '../src/arcade/types';
 import {cartoonBubbleState} from '../src/cartoon/bubble-state';
-import {cartoonDrawPlan} from '../src/cartoon/plan';
+import {cartoonEnemyFrame,cartoonDrawPlan} from '../src/cartoon/plan';
 import {CartoonBubbleStates} from '../src/cartoon/bubble-state.cheats';
 import {DesktopIntent} from '../src/schema.gen';
 import {Sprite} from '@gameengine/runtime';
@@ -20,7 +20,7 @@ worldTest('bubble state feedback distinguishes captive thresholds without changi
   e.Kind=kind;b.CapturedAge=age;const before=JSON.stringify(g),state=cartoonBubbleState(b,false,'#81b94b');
   expect(state.stage).toBe(stage);
   const plan=cartoonDrawPlan(g,0),body=plan.find(d=>d.frame==='bubble-body')!,rim=plan.find(d=>d.frame==='bubble')!,c=plan.find(d=>d.frame.startsWith(`enemy/${e.Kind}/`))!;
-  expect(c.frame).toBe(`enemy/${e.Kind}/captured-0`);expect(!!c.flip).toBe(false);
+  expect(c.frame).toBe(cartoonEnemyFrame(e.Kind,'bubble',0));expect(!!c.flip).toBe(false);
   if(size)expect(c.width).toBe(size);size=c.width;
   if(originalBody)expect(JSON.stringify(body.color)).toBe(originalBody);originalBody=JSON.stringify(body.color);
   expect(JSON.stringify(rim.color?.slice(0,3))===JSON.stringify(body.color?.slice(0,3))).toBe(stage==='normal');
@@ -49,7 +49,7 @@ worldTest('bubble state feedback reduced effects preserves static danger colors 
  for(const age of [60,61,65,72]){
   b.Age=age;const before=JSON.stringify(g),state=cartoonBubbleState(b,false,'#81b94b',true),plan=cartoonDrawPlan(g,age,undefined,undefined,undefined,true);
   expect(state.rim).toBe('#ed6555');expect(state.rimAlpha).toBe(1);expect(state.captiveOffset).toBe(0);
-  const contact=plan.filter(d=>d.frame==='bubble'||d.frame==='bubble-body'||d.frame.endsWith('/captured-0'));
+  const contact=plan.filter(d=>d.frame==='bubble'||d.frame==='bubble-body'||(d.frame.endsWith('/captured-0')||d.frame.endsWith('/simple-captured')));
   if(stable)expect(JSON.stringify(contact)).toBe(stable);stable=JSON.stringify(contact);
   expect(JSON.stringify(g)).toBe(before);
  }
@@ -61,7 +61,7 @@ renderTest('bubble state feedback native danger row remains readable across land
   const before=JSON.stringify(session.get().game),sprites=world.entities(Sprite).map(e=>world.get(e,Sprite)).filter(s=>s.visible);
   expect(sprites.filter(s=>s.image==='cartoon/frames/bubble').length).toBe(5);
   const captives=sprites.filter(s=>s.image?.startsWith('cartoon/frames/enemy/'));
-  expect(captives.length).toBe(3);expect(captives.every(s=>s.image!.endsWith('captured-0'))).toBe(true);
+  expect(captives.length).toBe(3);expect(captives.every(s=>(s.image!.endsWith('captured-0')||s.image!.endsWith('simple-captured')))).toBe(true);
   expect(captives.every(s=>s.size[0]===captives[0]!.size[0])).toBe(true);
   peak=Math.max(peak,render.stats({width:width!,height:height!}).drawCalls);
   render.expectScreenshot(`danger_states_${width}`,{width:width!,height:height!});

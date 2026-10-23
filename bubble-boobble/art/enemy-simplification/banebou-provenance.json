@@ -1,0 +1,35 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-10-23",
+  "asset": "banebou-source.png",
+  "promptFile": "banebou-prompt.txt",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "layout": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "neutral",
+      "alternate",
+      "compress",
+      "air",
+      "captive",
+      "defeated",
+      "alert",
+      "angry"
+    ]
+  },
+  "notes": [
+    "Original sprites inspected as style guidance; successful final generation used verbal style without reference attachment.",
+    "Initial reference-attached call returned output moderation_blocked category other with no output; final simplified prompt succeeded.",
+    "Source remains unmodified. Coordinator should slice each equal cell, crop alpha silhouette, normalize center x=64 and standing contact y=120 in 128px output.",
+    "No runtime or manifest edits by this art agent."
+  ]
+}

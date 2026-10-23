@@ -1,0 +1,97 @@
+{
+  "zenchan": {
+    "source": "art/enemy-simplification/zenchan-source.png",
+    "sha256": "b210ffa3bf87b8f8b69720d360eec1680e5102317f0c35663970f3b7652c6ef3",
+    "size": [
+      1774,
+      887
+    ],
+    "scale": 0.3112391930835735,
+    "states": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "mighta": {
+    "source": "art/enemy-simplification/mighta-source.png",
+    "sha256": "78c4e736512d3d5a8310211d2753750aebb62ffc04a7f233e6a181f96d68208a",
+    "size": [
+      1774,
+      887
+    ],
+    "scale": 0.30601092896174864,
+    "states": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "banebou": {
+    "source": "art/enemy-simplification/banebou-source.png",
+    "sha256": "4a4195d27765cd846229bfb93fe7ac45bbd11ab9a65dbc7d3e7e13ab77287bfe",
+    "size": [
+      1774,
+      887
+    ],
+    "scale": 0.2577565632458234,
+    "states": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "invader": {
+    "source": "art/enemy-simplification/invader-source.png",
+    "sha256": "7cf3dfa82ca0fab6f1cb33efc82c8eb3f9c39ae6149a0804109a346d6976977c",
+    "size": [
+      1774,
+      887
+    ],
+    "scale": 0.2962962962962963,
+    "states": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "boss": {
+    "source": "art/enemy-simplification/boss-source.png",
+    "sha256": "ec903b7170ec85cea40fb7f29ab121a13f1cf871fa591fd86af33cfe657b734a",
+    "size": [
+      1774,
+      887
+    ],
+    "scale": 0.3076923076923077,
+    "states": [
+      "move-0",
+      "move-1",
+      "windup",
+      "release",
+      "captured",
+      "hit",
+      "angry",
+      "angry-windup"
+    ]
+  }
+}

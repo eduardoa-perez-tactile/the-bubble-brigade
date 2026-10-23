@@ -24,7 +24,7 @@ worldTest('bubble white rim preserves amber and red danger ink and fixed captive
  g.Bubbles=[{...bubble(800,250),ID:900,Age:60,Shooter:0,EnemyID:e.ID,Floating:true}];
  let size=0;
  for(const age of [100,1001,1201]){
-  g.Bubbles[0]!.CapturedAge=age;const before=JSON.stringify(g),plan=cartoonDrawPlan(g,0),rim=plan.find(d=>d.frame==='bubble')!,shine=plan.find(d=>d.frame==='bubble-shine')!,captive=plan.find(d=>d.frame.endsWith('captured-0'))!;
+  g.Bubbles[0]!.CapturedAge=age;const before=JSON.stringify(g),plan=cartoonDrawPlan(g,0),rim=plan.find(d=>d.frame==='bubble')!,shine=plan.find(d=>d.frame==='bubble-shine')!,captive=plan.find(d=>(d.frame.endsWith('captured-0')||d.frame.endsWith('simple-captured')))!;
   expect(shine.color).toEqual([1,1,1,1]);expect(rim.color![0]===rim.color![1]).toBe(false);
   if(size)expect(captive.width).toBe(size);size=captive.width;expect(JSON.stringify(g)).toBe(before);
  }

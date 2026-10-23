@@ -210,7 +210,7 @@
    "program": "materials/pixel-ordered.material.ts"
   }
  ],
- "mobile": [
+ "compat": [
   {
    "r": "2d",
    "key": {
@@ -335,7 +335,7 @@
    "program": "materials/pixel-ordered.material.ts"
   }
  ],
- "compat": [
+ "mobile": [
   {
    "r": "2d",
    "key": {

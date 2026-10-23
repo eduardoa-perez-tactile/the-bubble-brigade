@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-10-23",
+  "source": "zenchan-source.png",
+  "sha256": "b210ffa3bf87b8f8b69720d360eec1680e5102317f0c35663970f3b7652c6ef3",
+  "width": 1774,
+  "height": 887,
+  "alpha": true,
+  "layout": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "travel-0",
+      "travel-1",
+      "compress",
+      "air",
+      "captured",
+      "dead",
+      "shoot",
+      "angry"
+    ]
+  },
+  "prompt": "zenchan-prompt.txt",
+  "reference": "assets/cartoon/frames/enemy/zenchan/walk-0.png",
+  "referenceRole": "style and palette only; replacement anatomy",
+  "originalGeneratedFile": "exec-080560a9-6f79-4005-aafb-c7fb3c0c014c.png",
+  "notes": [
+    "Original generated image preserved without modification.",
+    "Normalize per-cell alpha bounds to consistent runtime scale and contact baseline before export.",
+    "Requested 2048x1024; built-in tool returned 1774x887."
+  ]
+}
