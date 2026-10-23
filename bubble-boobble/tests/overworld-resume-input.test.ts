@@ -86,3 +86,17 @@ worldTest('adventure recorded shortcut traversal discovers once without opening 
  expect(Object.keys(progress().discoveredShortcuts)).toEqual(['district-1:shortcut']);
  expect(progress().coins).toBe(0);expect(progress().cleared).toEqual({});
 },{scene});
+
+worldTest('adventure delayed save load blocks Continue without overwriting stored progress',async ctx=>{
+ const started=beginAdventureAttempt(initialAdventure(),'encounter-1');
+ const savedProgress=completeAdventure(started,{encounterId:'encounter-1',attemptId:started.pending!.id,score:100});
+ const saved={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure:savedProgress}]};
+ ctx.services.mock('storage.read',{delayFrames:40,result:{found:true,version:1,savedAt:1,data:desktopSave.store(saved),recovered:false}});
+ await ctx.step(5);await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');
+ expect(desktopSaveState.loaded()).toBe(false);expect(overworldState.get().active).toBe(false);
+ expect(desktopState.get().status).toBe('SAVE IS LOADING');
+ expect(ctx.services.calls('storage.write').length).toBe(0);
+ await ctx.step(50);expect(desktopSaveState.loaded()).toBe(true);expect(progress().coins).toBe(10);
+ await intent(ctx,'adventure-continue');await ctx.loaded();await ctx.step(3);
+ expect(overworldState.get().active).toBe(true);expect(progress().cleared['encounter-1']!.clears).toBe(1);expect(progress().coins).toBe(10);
+},{scene});

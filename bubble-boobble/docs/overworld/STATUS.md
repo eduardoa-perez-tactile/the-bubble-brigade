@@ -1,61 +1,39 @@
 # Overworld implementation status
 
-Status: PRODUCTION INTEGRATION AND QA. The user resumed implementation with “continue then”. The source-faithful free-roaming direction is mandatory; no additional art-approval gate is imposed before completing the feature.
+Status: production feature integrated; final render, screen-fit and performance verification in progress. The user resumed development with “continue then”. No additional art approval gate is imposed before finishing the feature. User playtest and explicit approval remain mandatory before merge.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
 Branch: `codex/walkable-overworld`
-Baseline: `76d82db` from this repository's main.
-
-The original checkout/editor remains untouched. Only work owned by this feature is committed here.
-
-## Current work
-
-- Coordinator: desktop flow, encounter runner, integration, engine verification, checkpoint commits/pushes and PR.
-- Progression agent: 25 encounters across five districts, per-profile Adventure save migration and one-time rewards.
-- Map simulation agent: deterministic movement, proximity, collision and bounded following camera.
-- Presentation agent: illustrated map, new UI documents, contextual prompts and encounter/dialogue views.
-
-Baseline Game Engine V8 T0: **427/427 passing** on the unchanged baseline. Focused progression initial pass: 4/4 V8. Hermes host is not installed.
-
-The first generated fantasy-map art and rectangular path composition are rejected. Do not polish or expand that direction. The rejected art is excluded from the runtime. Production now uses five source-aligned maps with native landmark entrances and polygonal walking geography.
-
-The corrected direction uses the supplied video's downtown composition: curved promenade, oblique cartoon building façades, palm planting beds, stairs and coast. Continuous free movement is bounded by actual geography. Entrances are door thresholds within the scenery; no grid paths, evenly spaced level nodes or permanent per-building signboards. Source-reference calibration uses the local Inkwell Isle III `world3_mainland_03` layer and matching landmark/top pieces, with exact provenance.
-
-All three agents were interrupted when the user stopped work; presentation and navigation agents then received narrow correction tasks. Scheduled progress updates were paused during the stop, then reactivated with the corrected art direction. The user resumed development; final acceptance remains their playtest before any merge.
-
-## Corrected source-reference sample
-
-- Actual Cuphead Mainland03 and Honeycomb Herald source layers replace the generated fantasy art in the explicit calibration mode. Foreground Top03 is aligned at source offset `(309,39)` using three matching source-image regions.
-- The original game's green dragon is a temporary character proxy; no new generated fantasy dragon is used.
-- Independent traced ground polygons permit continuous roaming around the curved promenade, eastern street, stairs and beach. Buildings, planting beds, seawalls and beach fixtures provide collision.
-- Recorded `overworld.reference` QA input enters this isolated sample; it does not represent completed production Adventure integration. Legacy WIP and its encounter registry are retained for recovery, not accepted artwork.
-- **5/5 V8 reference tests pass**, including recorded approach/leave/re-approach at the real doorway, continued walking after confirm, and off-axis movement, plus a 184-step continuous promenade–stairs–beach traversal with collision assertions each step. Hermes is unavailable; no cross-runtime parity claim.
-- Latest actual engine sample: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/.gameengine/overworld-source-reference-v2.png` (1280×720).
-- Earlier focused Adventure integration: 10/10 V8 tests passed before this source-reference mode. Current `gameengine check` passes: typecheck, validation (existing camera/tile warnings), UI-document coverage, desktop cook and 600-frame cooked smoke. Full feature regression/render coverage remains pending.
-
-Rejected first render (do not reuse as current status screenshot): `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/.gameengine/overworld-first-landscape.png` (1280×720, first map render; HUD positioning still being polished).
-
+Baseline: `76d82db`
 Draft PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
-Pushed checkpoints: `2630527` plan/playtest gate, `d9a30f1` progression/save migration.
+
+## Implemented
+
+Five free-roaming production maps follow the supplied Cuphead source geography: downtown, woodland, carnival, DLC island and Hell. Source-aligned polygon walking, scenery collision, contextual entrances, foreground occlusion and bounded engine camera following replace the rejected fantasy/grid direction. Selected source assets have provenance manifests and StudioMDHR credit under `tools/overworld/` and this folder. The rejected art is excluded from production.
+
+All 25 existing rounds are physical destinations. Adventure runs one selected encounter, saves its result once, retries that encounter and returns to its entrance with a completion flag. Five district gates, guide reward, hidden coins, discoverable shortcuts, optional one-life trials, keepsakes, journal travel and per-profile version-2 save migration are integrated. Classic and Bubble Madness remain under Arcade Modes. Original profile records are preserved.
+
+The Brigade’s existing dragon identity supplies side-facing animation and source-seeded up/down poses, with ten existing skin palettes and consistent foot anchors. District textures load/release through engine asset groups; phone-low overrides are authored. Presentation uses a bounded 48-slot pool and skips unchanged derived work.
+
+## Verified
+
+- Baseline before feature: 427/427 V8 T0.
+- Current full V8 T0: **456/456 passing**, `.gameengine/overworld-final-t0.json`.
+- Complete 25-encounter/five-map campaign: 3,158 recorded steps, including gates, optionality, one-time rewards, keepsakes, settings and correct returns. `.gameengine/overworld-campaign-t0.json`.
+- All 55 POIs reachable; production doorway approach/leave/re-approach, normalized movement, coast/building collision, held Enter, compressed controller-A taps, profile isolation, delayed storage and interrupted resume are tested.
+- Actual-button T1 journey passes: Start Game → Begin Adventure → inspect → play → result → return, 681 steps. Six new checkpoints reviewed. `.gameengine/overworld-production-t1.json`.
+- Presentation optimization: 13/13 focused tests pass with identical engine hash traces before/after `skipUnchanged`; `.gameengine/overworld-optimized-hash.json`.
+- `gameengine check` passes typecheck, validation with existing warnings, UI-document coverage, desktop cook and 600-frame cooked smoke. `.gameengine/overworld-final-check.json`.
+- Five actual production map captures inspected: `.gameengine/overworld-production-map-{1..5}.png`. Three settled side/front facing captures inspected; up-facing capture needs its loading-exit cover to settle before final recapture.
+
+## Remaining verification
+
+Responsive panel/card checks, broader T1 regression classification, structural replay budget/pipeline recording and mobile-tier CPU/memory review remain in progress. The first production map frame measured 12 draw calls; no device performance claim is made.
+
+Hermes host is not installed. The Web/WASM host is also unbuilt (`target/wasm32-unknown-emscripten/release/gameengine-host.js` missing), so cross-runtime parity is unverified. Native hardware controller/OS focus/browser persistence and physical phone GPU/thermal behavior require hands-on verification. All automated playtesting stays inside Game Engine; no standalone/browser/OS control.
 
 ## Delivery rules
 
-Post a very short summary with actual Game Engine screenshots to this chat every 30 minutes. Automation: `bubble-brigade-overworld-progress`.
-Commit and push reviewable checkpoints frequently; preserve archived migration evidence.
-Create a draft PR and keep it updated. **Never merge or enable auto-merge. User must playtest and explicitly approve first.**
-Testing stays within Game Engine tests, headless sessions, replays and view/render captures. No standalone/browser/OS playtests.
+Coordinate parallel agents and post a short summary with actual screenshots every 30 minutes. Active heartbeat: `bubble-brigade-overworld-progress`. Commit and push reviewable checkpoints frequently. Preserve archived migration evidence and the original checkout/editor. Never merge or enable auto-merge; the user must playtest and explicitly approve first.
 
-## Evidence
-
-Plan: `docs/cuphead-overworld-plan.md`. Screenshot paths and test results will be recorded as they become available. No completed-feature or performance claims yet.
-
-Corrected input-driven captures: `.gameengine/overworld-source-reference-door.png` and `.gameengine/overworld-source-reference-stairs.png`, absolute paths under the worktree project above. Source reference mode is a visual/free-roaming calibration, not the finished campaign map.
-
-## Production continuation
-
-- All five production districts use their original source geography: downtown, woodland, carnival, DLC island, and Hell. All 25 encounter entrances plus 30 side-content points are mapped to scenery.
-- Continuous walking, collision, contextual interaction, per-profile progression, one-time coins, optional trials, keepsakes, gated travel, and return-to-entrance are integrated into Adventure. Classic/Madness remain accessible through Arcade Modes.
-- Source textures load by district and release on travel/combat. The game’s green dragon has source-seeded directional art; no rejected fantasy art is used.
-- Production geometry tests passed, including all 55 POIs and recorded doorway/diagonal traversal. Full T0 regression initially reported 444/449; five menu/loading expectations were updated and rerun is pending. New complete 25-encounter campaign and physical-button T1 journeys are under verification.
-- This checkpoint is work in progress. Current test totals, reviewed production screenshots, render budgets and final engine check will replace pending status after verification.
-- PR #10 remains draft and must not merge until the user playtests and explicitly approves.
+Playtest instructions: `docs/overworld/PLAYTEST.md`. Original analysis/plan: `docs/cuphead-overworld-plan.md`.

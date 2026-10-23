@@ -49,7 +49,7 @@ async function finish(ctx:WorldTestContext,id:string){
 async function close(ctx:WorldTestContext){await intent(ctx,'overworld-back');await ctx.step(2);}
 async function press(ctx:WorldTestContext,label:string){
  ctx.render.stats({width:1280,height:720});
- const button=ctx.ui.interactables().find(value=>value.label===label);
+ const button=ctx.ui.interactables().find(value=>value.label===label||value.label===`${label} >`);
  if(!button?.id)throw new Error(`No visible button: ${label}`);
  await ctx.ui.press(button.id);await ctx.step(1);
 }
@@ -136,6 +136,10 @@ worldTest('adventure campaign held physical Enter released inside an encounter r
 // Root QA owns reviewing and recording these goldens. This test only declares the intended checkpoints.
 renderTest('adventure campaign actual menu begin play intro results and map return buttons',async ctx=>{
  ctx.input.view(1280,720,1);await ctx.step(8);await ctx.loaded();await intent(ctx,'cartoon-mode');await intent(ctx,'menu');
+ // The production title-to-menu iris must finish before the real Start button is exposed.
+ await ctx.step(180);expect(desktopState.get().screen).toBe('menu');
+ ctx.render.stats({width:1280,height:720});
+ ctx.render.expectScreenshot('adventure-main-menu-before-start',{width:1280,height:720});
  await press(ctx,'START GAME');expect(desktopState.get().overworldPanel).toBe('menu');
  await press(ctx,'BEGIN ADVENTURE');await ctx.loaded();await ctx.step(3);
  expect(overworldState.get().reference).toBe(false);expect(desktopState.get().screen).toBe('overworld');
@@ -151,4 +155,4 @@ renderTest('adventure campaign actual menu begin play intro results and map retu
  expect(desktopState.get().screen).toBe('overworld');expect(overworldState.get().focusedPoi).toBe('encounter-1');
  expect(progress().coins).toBe(10);
  ctx.render.expectScreenshot('adventure-cleared-source-map-return',{width:1280,height:720});
-},{scene});
+},{scene:'scenes/cartoon.scene.json'});

@@ -56,7 +56,7 @@ worldTest('overworld reference recorded free-roam approaches leaves and reapproa
   expect(overworldState.get().focusedPoi).toBe('');
 },{scene});
 
-worldTest('overworld reference recorded route continuously connects promenade stairs and beach',async({input,step,cheat})=>{
+worldTest('overworld reference recorded route continuously connects promenade stairs and beach',async({input,step,cheat,loaded})=>{
   await step(8);await cheat(ReferenceOverworld,{});await loaded();await step(3);
   // Follow the visible bend of the seafront and descend the stair fan; every move is
   // recorded player input, with no warps between these ground-plane locations.

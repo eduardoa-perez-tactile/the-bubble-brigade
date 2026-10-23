@@ -51,13 +51,13 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({
- name:'OverworldVisualPool',stage:'Update',before:['OverworldPresentation'],query:query(read(OverworldVisual)),
+ name:'OverworldVisualPool',stage:'Update',skipUnchanged:true,before:['OverworldPresentation'],query:query(read(OverworldVisual)),
  run(ctx,q){if(!overworldState.get().active)return;const count=q.count;
   for(let slot=count;slot<capacity;slot++)ctx.commands.spawn({OverworldVisual:{slot},LocalTransform:{},VisualOffset:{},Sprite:{visible:false},Text2D:{font:'cartoon/fonts/BreeSerif-Regular',visible:false}});
  },
 });
 export const OverworldPresentation=defineSystem({
- name:'OverworldPresentation',stage:'LateUpdate',after:['OverworldVisualPool'],
+ name:'OverworldPresentation',stage:'LateUpdate',skipUnchanged:true,after:['OverworldVisualPool'],
  query:query(read(OverworldVisual),write(VisualOffset),write(Sprite),write(Text2D)),
  run(ctx,q){const s=overworldState.get(),save=desktopSaveState.get(),profile=save.profiles[save.active];
   const draws=s.active&&profile?(s.reference?referenceDrawPlan(s):overworldDrawPlan(s,adventureForProfile(profile),profile.avatar)):[];

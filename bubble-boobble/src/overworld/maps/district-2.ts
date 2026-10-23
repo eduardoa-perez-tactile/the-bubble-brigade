@@ -18,7 +18,7 @@ export const district2Map:SourceMap={
   {kind:'encounter',slot:2,x:260,y:1350,label:'Mossy Rock Garden'},
   {kind:'encounter',slot:3,x:460,y:1470,label:'Old Oak Crossing'},
   {kind:'encounter',slot:4,x:515,y:615,label:'Upper Woodland Path'},
-  {kind:'guide',x:475,y:1030,label:'Woodland Guide'},
+  {kind:'guide',x:580,y:1000,label:'Woodland Guide'},
   {kind:'vendor',x:690,y:1460,label:'Trail Supplies'},
   {kind:'trial',x:555,y:1590,label:'Deepwood Trial'},
   {kind:'collectible',x:185,y:1430,label:'Hidden Grove Coin',radius:26},
