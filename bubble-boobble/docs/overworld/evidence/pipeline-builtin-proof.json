@@ -1,0 +1,12 @@
+{
+  "host": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host",
+  "embeddedMaterial": {
+    "name": "Standard",
+    "model": "pbr",
+    "hash": "7946469ed20397e0",
+    "sourceHash": "9e64948b570f5ddc"
+  },
+  "validatorSource": ".gameengine/engine/tools/cli/src/pipelines-check.ts:knownProgramHashes",
+  "missingMetadataDirectory": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/crates/gameengine-render/src/materials",
+  "diagnosis": "Recorded hash belongs to actual host embedded Standard material; installed CLI omits its generated metadata directory from knownProgramHashes input."
+}
