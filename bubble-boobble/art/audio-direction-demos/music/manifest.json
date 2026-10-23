@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "seed": 23102026,
+  "generator": "tools/audio/build-music-demos.py",
+  "generator_sha256": "a60031f471aa33435860c7d855d806b0d53b2f1f3da5de1f8f10b1da525483da",
+  "command": "python3 tools/audio/build-music-demos.py",
+  "dependencies": "Python 3 standard library only",
+  "provenance": "Original programmatically composed melody, harmony and synthesis. No external samples, recordings, or music-generation service used.",
+  "purpose": "Menu direction comparison; not shipped or wired into the game.",
+  "limitations": [
+    "Synthesized timbral sketches, not orchestral recordings or final production masters.",
+    "Resolving 16-bar excerpts with a decay tail; not seamless loops.",
+    "Compared at -20 dBFS unweighted RMS; not perceptual LUFS normalization.",
+    "Technical waveform checks do not establish subjective listening quality."
+  ],
+  "shared_motif": {
+    "key": "D minor",
+    "meter": "4/4",
+    "bars": [
+      [
+        [
+          0,
+          74,
+          0.7
+        ],
+        [
+          1,
+          77,
+          0.4
+        ],
+        [
+          1.5,
+          81,
+          0.8
+        ],
+        [
+          3,
+          79,
+          0.7
+        ]
+      ],
+      [
+        [
+          0,
+          77,
+          0.8
+        ],
+        [
+          1.5,
+          76,
+          0.4
+        ],
+        [
+          2,
+          74,
+          1.4
+        ]
+      ],
+      [
+        [
+          0,
+          74,
+          0.4
+        ],
+        [
+          0.5,
+          77,
+          0.4
+        ],
+        [
+          1.5,
+          81,
+          0.8
+        ],
+        [
+          3,
+          84,
+          0.7
+        ]
+      ],
+      [
+        [
+          0,
+          82,
+          0.8
+        ],
+        [
+          1.5,
+          81,
+          0.4
+        ],
+        [
+          2,
+          79,
+          0.7
+        ],
+        [
+          3,
+          76,
+          0.7
+        ]
+      ],
+      [
+        [
+          0,
+          77,
+          0.7
+        ],
+        [
+          1,
+          79,
+          0.4
+        ],
+        [
+          1.5,
+          81,
+          0.8
+        ],
+        [
+          3,
+          77,
+          0.7
+        ]
+      ],
+      [
+        [
+          0,
+          79,
+          0.8
+        ],
+        [
+          1.5,
+          77,
+          0.4
+        ],
+        [
+          2,
+          74,
+          1.3
+        ]
+      ],
+      [
+        [
+          0,
+          76,
+          0.4
+        ],
+        [
+          0.5,
+          73,
+          0.4
+        ],
+        [
+          1.5,
+          69,
+          0.8
+        ],
+        [
+          3,
+          73,
+          0.7
+        ]
+      ],
+      [
+        [
+          0,
+          74,
+          2.8
+        ]
+      ]
+    ],
+    "event_format": [
+      "beat_offset",
+      "MIDI_pitch",
+      "held_beats"
+    ],
+    "arrangement": "Eight-bar phrase repeated with arrangement variation; final bar resolves."
+  },
+  "demos": [
+    {
+      "id": "A",
+      "file": "a-haunted-cartoon-orchestra.wav",
+      "title": "Haunted Cartoon Orchestra",
+      "brief": "Playful D-minor clarinet-like lead, pizzicato chords, xylophone replies, soft bass and light percussion.",
+      "bpm": 110,
+      "bars": 16,
+      "duration_seconds": 36.709083,
+      "peak_dbfs": -6.629,
+      "rms_dbfs": -20.0,
+      "clipped_samples": 0,
+      "frames": 1762036,
+      "channels": 2,
+      "sample_rate": 48000,
+      "bits_per_sample": 16,
+      "bytes": 7048188,
+      "sha256": "bd9203baa7d60c97cf778e6b6d411d241e46c4c0474536a80f34d279051dde9b",
+      "note_events": 233
+    },
+    {
+      "id": "B",
+      "file": "b-bubble-swing-brigade.wav",
+      "title": "Bubble Swing Brigade",
+      "brief": "Swung brass/reed character, walking bass, syncopated horn chords and quiet brushes; same melodic motif.",
+      "bpm": 128,
+      "bars": 16,
+      "duration_seconds": 31.8,
+      "peak_dbfs": -6.706,
+      "rms_dbfs": -20.0,
+      "clipped_samples": 0,
+      "frames": 1526400,
+      "channels": 2,
+      "sample_rate": 48000,
+      "bits_per_sample": 16,
+      "bytes": 6105644,
+      "sha256": "a5da8edfe44d9d9e409a72e94c3f7887ee051969c1fa796a6e0fc39dcfea407c",
+      "note_events": 388
+    },
+    {
+      "id": "C",
+      "file": "c-enchanted-toybox.wav",
+      "title": "Enchanted Toybox",
+      "brief": "Gentle celesta-like melody, marimba arpeggios and bassoon-like bass/countermelody; same melodic motif.",
+      "bpm": 100,
+      "bars": 16,
+      "duration_seconds": 40.2,
+      "peak_dbfs": -3.734,
+      "rms_dbfs": -20.0,
+      "clipped_samples": 0,
+      "frames": 1929600,
+      "channels": 2,
+      "sample_rate": 48000,
+      "bits_per_sample": 16,
+      "bytes": 7718444,
+      "sha256": "15bca9741025a3e6d75b8b143d76131a19d9d51be1897eea2fd1c9a47ac6bcb2",
+      "note_events": 164
+    }
+  ]
+}

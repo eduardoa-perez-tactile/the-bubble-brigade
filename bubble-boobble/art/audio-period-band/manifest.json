@@ -1,0 +1,91 @@
+{
+  "status": "Sampled-instrument composition review; not live recordings or production loops; not integrated",
+  "sample_bank": {
+    "name": "GeneralUser GS 2.0.3",
+    "author": "S. Christian Collins",
+    "source": "https://github.com/mrbumpy409/GeneralUser-GS/tree/684543d5e5efaef08d02be50dcda8d552478fa60",
+    "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe",
+    "license": "LICENSE-GeneralUser-GS.txt",
+    "license_sha256": "88726e4b018fb66050054b6633a2996335b0f8fd4186251c20d0546fa0ab44fc",
+    "license_upstream_sha256": "7b32efefdf95ce38a043799f0659853ddc00fbaa14d8c50f0aca16b9b8b405be",
+    "license_normalization": "CRLF to LF only; full license text retained.",
+    "provenance": "Third-party instrument samples; full upstream license and provenance disclosure retained."
+  },
+  "sources": {
+    "tools/audio/compose-period-band.py": "1a08a3a4f80abc2fb823bd116e9c098ce5f483343a5776a9e1333294ea0ea585",
+    "tools/audio/render-period-band.py": "14037567f1f9c43a0ea00efc60c93e9705f09a5d9b4827b3f3c8458d4b7c05b7",
+    "tools/audio/build-period-demos.py": "06bf476242ba0421521602e6e6541c0318ca31507ea72e1450bcc92094f9fee3",
+    "tools/audio/fetch-period-bank.py": "91b94f1cf7368bc5b759b89a1e86ebe5582f953be2f65dd00c74c0a4201685eb"
+  },
+  "master": "55 Hz high-pass, 8.5 kHz low-pass, stereo side gain .65, quiet edges, -20 dBFS unweighted RMS target with -1.5 dBFS peak ceiling. No perceptual LUFS claim.",
+  "demos": [
+    {
+      "file": "gameplay-brigade-stomp.wav",
+      "sha256": "acba068d1a69f1705189e9e0b94650dff9ffd2d8214cc81487266034a432f731",
+      "frames": 1916308,
+      "duration_seconds": 39.923083,
+      "sample_rate": 48000,
+      "channels": 2,
+      "bits_per_sample": 16,
+      "peak_dbfs": -3.794,
+      "rms_dbfs": -20.0,
+      "dc_offset_per_channel": [
+        -3.105412978693926e-09,
+        -6.608955826451176e-09
+      ],
+      "title": "Brigade Stomp",
+      "description": "Energetic acoustic swing hot jazz for gameplay. Short alto-sax/clarinet hooks, clipped brass responses, upright walking bass and brush ride. Stop-time holes leave room for bubble captures and rescues; C minor with chromatic approaches and dominant/diminished color.",
+      "bpm": 156,
+      "score_file": "scores/gameplay-brigade-stomp.json",
+      "score_sha256": "6b788dc33f44f28eed7b03a4b6218962fdaec3a0c5ca0ef6b539cc5f14d8953b",
+      "renderer": {
+        "title": "Brigade Stomp",
+        "renderer": "FluidSynth",
+        "version": "2.6.1",
+        "frames": 1916308,
+        "sample_rate": 48000,
+        "channels": 2,
+        "format": "float32 WAV",
+        "tracks": 8,
+        "events": 1466,
+        "stale_noteoffs": 0,
+        "peak": 0.06106920540332794,
+        "rms": 0.01091506067877128
+      }
+    },
+    {
+      "file": "menu-midnight-ballroom.wav",
+      "sha256": "5e4920e13cbe21a4c82ce815b84d0453cf72be74458aa44e74ea82505d9b7125",
+      "frames": 1850667,
+      "duration_seconds": 38.555563,
+      "sample_rate": 48000,
+      "channels": 2,
+      "bits_per_sample": 16,
+      "peak_dbfs": -2.835,
+      "rms_dbfs": -20.0,
+      "dc_offset_per_channel": [
+        5.326283839488681e-09,
+        7.123698509780528e-09
+      ],
+      "title": "Midnight at the Bubble Ballroom",
+      "description": "Jaunty, gently creepy small-band hot jazz menu: stride piano, breathy clarinet, muted-trumpet answers, upright bass and brushes. Original syncopated C-minor phrases with chromatic neighbors and minor-sixth/diminished harmony.",
+      "bpm": 108,
+      "score_file": "scores/menu-midnight-ballroom.json",
+      "score_sha256": "ec8b60495c50938a22c41b335c474efc130c19958c01537a05fcf3f820de6c17",
+      "renderer": {
+        "title": "Midnight at the Bubble Ballroom",
+        "renderer": "FluidSynth",
+        "version": "2.6.1",
+        "frames": 1850667,
+        "sample_rate": 48000,
+        "channels": 2,
+        "format": "float32 WAV",
+        "tracks": 6,
+        "events": 850,
+        "stale_noteoffs": 23,
+        "peak": 0.060797519981861115,
+        "rms": 0.009047785302214546
+      }
+    }
+  ]
+}
