@@ -23,7 +23,12 @@ export const ArcadeAudioSystem=defineSystem({
   const ownerChanged=nativeOwnsMusic!==oldNativeOwnsMusic;
   const introducing=!!flow.cartoon&&cartoonFlowStartsRun(flow.transitionAction??'');
   if(track!==old.track||ownerChanged){
-   if(!nativeOwnsMusic&&asset)ctx.events.emit(PlayMusic,{track:asset,crossfade:0});
+   if(!nativeOwnsMusic&&asset){
+    // Overlap the illustrated tracks across the 0.8-second scene reveal.
+    // Keep the source game's immediate music changes and ownership handoffs.
+    const crossfade=usesIllustratedMusic(flow)&&isIllustratedMusicTrack(old.track)&&old.track!=='brigade-silent'?.8:0;
+    ctx.events.emit(PlayMusic,{track:asset,crossfade});
+   }
    else if(!asset||ownerChanged)ctx.events.emit(StopMusic,{fade:0});
    ctx.setField(ArcadeAudio,'track',track);
   }
