@@ -177,3 +177,10 @@
  .cartoon-hud .ud-cartoon-hud__ch_narrow_portraits,
  .cartoon-hud .ud-cartoon-hud__ch_narrow_badges { display: none; }
 }
+/* Rescue stays visible directly on the portrait in both roster layouts. */
+.cartoon-hud .ud-cartoon-roster-slot__rescue_mark { text-align: center; font-family: "cartoon/fonts/BreeSerif-Regular"; }
+@media (aspect >= 1.6) {
+ .cartoon-hud .ud-cartoon-hud__ch_roster_wide .ud-cartoon-roster-slot__rescue_mark {
+  anchor: 0.5 0; pivot: 0.5 0; left: 0px; top: 56px; width: 64px; height: 14px; font-size: 11px; text-fit: 10px 11px;
+ }
+}

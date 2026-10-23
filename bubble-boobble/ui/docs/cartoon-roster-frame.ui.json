@@ -215,10 +215,11 @@
         "rescue": {
           "set": {
             "crf_face_border": {
-              "bg": "#a6472d"
+              "bg": "#cf422f",
+              "pad": 4
             },
             "crf_face_paper": {
-              "bg": "#e9c7a1"
+              "bg": "#ffb48b"
             }
           }
         },

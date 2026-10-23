@@ -102,20 +102,22 @@ export function arenaBackdrop(g:GameState,reduced=false):PixelQuad[] {
   }
   return out;
 }
-export type FeelCue={kind:'jump'|'land'|'turn'|'rescue'|'boss-hit'|'clear'|'victory'|'capture'|'bubble-bounce';x:number;y:number;at:number;slot:number;strength?:number;};
-type Snapshot={tick:number;wave:number;phase:string;state:number;hp:number;bossMode:string;countdown:number;players:{x:number;y:number;ground:boolean;vy:number;jumping:boolean;dir:number;downed:boolean;lives:number}[]};
+export type FeelCue={kind:'jump'|'land'|'turn'|'rescue'|'boss-hit'|'clear'|'victory'|'capture'|'bubble-bounce'|'enemy-jump'|'enemy-land';x:number;y:number;at:number;slot:number;strength?:number;};
+type Snapshot={tick:number;wave:number;phase:string;state:number;hp:number;bossMode:string;countdown:number;enemies?:{id:number;x:number;y:number;vy:number;ground:boolean}[];players:{x:number;y:number;ground:boolean;vy:number;jumping:boolean;dir:number;downed:boolean;lives:number}[]};
 export type FeelState={clock:number;step:number;previous:Snapshot|null;cues:FeelCue[];};
 export const emptyFeel=():FeelState=>({clock:0,step:0,previous:null,cues:[]});
 // Numeric resource fields are overwritten in place. Changing JSON strings would
 // remain interned for the lifetime of the engine session and eventually exhaust it.
 const feelPhases=['prepare','combat','rest','boss'];
 const feelModes=['','moving','windup','captured','defeated'];
-const feelKinds:FeelCue['kind'][]=['jump','land','turn','rescue','boss-hit','clear','victory','capture','bubble-bounce'];
+const feelKinds:FeelCue['kind'][]=['jump','land','turn','rescue','boss-hit','clear','victory','capture','bubble-bounce','enemy-jump','enemy-land'];
 export function packFeel(f:FeelState){
  const p=f.previous;
  const players=(read:(p:NonNullable<FeelState['previous']>['players'][number])=>number)=>Array.from({length:10},(_,i)=>p?.players[i]?read(p.players[i]!):0);
+ const enemies=(read:(e:NonNullable<Snapshot['enemies']>[number])=>number)=>Array.from({length:32},(_,i)=>p?.enemies?.[i]?read(p.enemies[i]!):0);
  const cues=(read:(c:FeelCue)=>number)=>Array.from({length:32},(_,i)=>f.cues[i]?read(f.cues[i]!):0);
- return {header:[f.clock,f.step,p?1:0,p?.tick??0,p?.wave??0,feelPhases.indexOf(p?.phase??''),p?.state??0,p?.hp??0,feelModes.indexOf(p?.bossMode??''),p?.players.length??0,f.cues.length,p?.countdown??-1],
+ return {header:[f.clock,f.step,p?1:0,p?.tick??0,p?.wave??0,feelPhases.indexOf(p?.phase??''),p?.state??0,p?.hp??0,feelModes.indexOf(p?.bossMode??''),p?.players.length??0,f.cues.length,p?.countdown??-1,p?.enemies?.length??0],
+  enemyID:enemies(e=>e.id),enemyX:enemies(e=>e.x),enemyY:enemies(e=>e.y),enemyVY:enemies(e=>e.vy),enemyGround:enemies(e=>e.ground?1:0),
   playerX:players(p=>p.x),playerY:players(p=>p.y),playerVY:players(p=>p.vy),
   playerFlags:players(p=>(p.ground?1:0)|(p.jumping?2:0)|(p.downed?4:0)),playerDir:players(p=>p.dir),playerLives:players(p=>p.lives),
   cueKind:cues(c=>feelKinds.indexOf(c.kind)),cueX:cues(c=>c.x),cueY:cues(c=>c.y),cueAt:cues(c=>c.at),cueSlot:cues(c=>c.slot),cueStrength:cues(c=>c.strength??1)};
@@ -123,6 +125,7 @@ export function packFeel(f:FeelState){
 export function unpackFeel(f:ReturnType<typeof packFeel>):FeelState{
  const h=f.header;
  return {clock:h[0]!,step:h[1]!,previous:h[2]?{tick:h[3]!,wave:h[4]!,phase:feelPhases[h[5]!]??'',state:h[6]!,hp:h[7]!,bossMode:feelModes[h[8]!]??'',countdown:h[11]??-1,
+  enemies:Array.from({length:h[12]??0},(_,i)=>({id:f.enemyID[i]!,x:f.enemyX[i]!,y:f.enemyY[i]!,vy:f.enemyVY[i]!,ground:!!f.enemyGround[i]})),
   players:Array.from({length:h[9]!},(_,i)=>({x:f.playerX[i]!,y:f.playerY[i]!,vy:f.playerVY[i]!,ground:!!(f.playerFlags[i]!&1),jumping:!!(f.playerFlags[i]!&2),downed:!!(f.playerFlags[i]!&4),dir:f.playerDir[i]!,lives:f.playerLives[i]!}))}:null,
   cues:Array.from({length:h[10]!},(_,i)=>({kind:feelKinds[f.cueKind[i]!]!,x:f.cueX[i]!,y:f.cueY[i]!,at:f.cueAt[i]!,slot:f.cueSlot[i]!,strength:f.cueStrength[i]!}))};
 }
@@ -150,6 +153,13 @@ export function advanceFeel(old:FeelState,g:GameState,step:number,countdownEnabl
       }
       if(before.dir!==p.Dir)add('turn',p.X+24,p.Y+96,i);
     }
+    if(g.Level.arena==='cartoon-courtyard')for(const e of g.Enemies.slice(0,32)){
+      if(e.State!==0||e.Kind==='monsta'||e.Kind==='pulpul')continue;
+      const before=previous.enemies?.find(p=>p.id===e.ID);
+      if(!before||Math.abs(e.Y-before.y)>80)continue;
+      if(before.ground&&!e.Ground&&e.VY<0)add('enemy-jump',before.x+24,before.y+92,e.ID);
+      if(!before.ground&&e.Ground&&before.vy>0)add('enemy-land',e.X+24,e.Y+92,e.ID);
+    }
     const b=g.Party?.Boss;
     if(b&&b.HP<previous.hp&&b.Mode!=='captured')add('boss-hit',b.X+48,b.Y+96);
     if(b?.Mode==='captured'&&previous.bossMode!=='captured')add('capture',b.X+48,b.Y+96);
@@ -158,7 +168,7 @@ export function advanceFeel(old:FeelState,g:GameState,step:number,countdownEnabl
     else if(g.State===4&&previous.state!==4&&b?.Mode!=='defeated')add('victory',384,230);
   }
   const countdown=g.Paused?(reset?-1:previous?.countdown??-1):countdownEnabled&&g.Party?.Phase==='prepare'?g.Party.Timer:-1;
-  return {clock,step,cues:cues.slice(-32),previous:{tick:g.Tick,wave:g.Party?.Wave??g.LevelIndex,phase:g.Party?.Phase??'',state:g.State,hp:g.Party?.Boss?.HP??0,bossMode:g.Party?.Boss?.Mode??'',countdown,players:g.Players.map(p=>({x:p.X,y:p.Y,ground:p.Ground,vy:p.VY,jumping:p.JumpStep!==undefined,dir:p.Dir,downed:!!p.Downed,lives:p.Lives}))}};
+  return {clock,step,cues:cues.slice(-32),previous:{tick:g.Tick,wave:g.Party?.Wave??g.LevelIndex,phase:g.Party?.Phase??'',state:g.State,hp:g.Party?.Boss?.HP??0,bossMode:g.Party?.Boss?.Mode??'',countdown,enemies:g.Enemies.slice(0,32).map(e=>({id:e.ID,x:e.X,y:e.Y,vy:e.VY,ground:e.Ground})),players:g.Players.map(p=>({x:p.X,y:p.Y,ground:p.Ground,vy:p.VY,jumping:p.JumpStep!==undefined,dir:p.Dir,downed:!!p.Downed,lives:p.Lives}))}};
 }
 export interface FeelAudioCue {kind:'boss-windup'|'boss-capture'|'defeat'|'countdown-tick'|'go'}
 /** Ephemeral audio edges never consume the 32 visual-history slots. */

@@ -34,7 +34,7 @@ export function spawnFood(g: GameState, x: number, y: number) {
   g.Items.push({
     ...item(
       Math.max(2 * Tile, Math.min(arenaWidth(g) - 2 * Tile - 32, x)),
-      Math.max(Tile, Math.min(arenaHeight(g) - 2 * Tile, y)),
+      Math.max(Tile, Math.min((g.Level.arena==='cartoon-courtyard'?(arenaRows(g)-1)*Tile-32:arenaHeight(g)-2*Tile), y)),
     ),
     Food: rewardFood(g),
   });
@@ -108,6 +108,9 @@ export function updateItems(g: GameState) {
       continue;
     }
     if (it.Power === "" && !it.Stationary) {
+      // Recover drops from defeated actors already below the lowest support.
+      const floor=(arenaRows(g)-1)*Tile;
+      if(g.Level.arena==='cartoon-courtyard'&&it.Y+32>floor){it.Y=floor-32;it.VY=0;}
       const oldFeet = it.Y + 32;
       it.VY = Math.min(6, it.VY + 0.3);
       const newFeet = oldFeet + it.VY;

@@ -11008,186 +11008,146 @@
     },
     "boss/simple-move-0": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        12,
-        22,
-        116,
-        120
+        34,
+        60,
+        350,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        0,
-        0
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-move-1": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        12,
-        19,
-        115,
-        120
+        35,
+        54,
+        348,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        1,
-        0
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-windup": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        8,
-        19,
-        120,
-        120
+        22,
+        52,
+        362,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        2,
-        0
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-release": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        11,
-        35,
-        117,
-        120
+        31,
+        100,
+        352,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        3,
-        0
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-captured": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        16,
-        31,
-        111,
-        120
+        47,
+        88,
+        337,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        0,
-        1
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-hit": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        14,
-        30,
-        113,
-        120
+        41,
+        86,
+        342,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        1,
-        1
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-angry": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        12,
-        27,
-        116,
-        120
+        33,
+        78,
+        350,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        2,
-        1
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     },
     "boss/simple-angry-windup": {
       "feet": [
-        64,
-        120
+        192,
+        360
       ],
       "canvasSize": [
-        128,
-        128
+        384,
+        384
       ],
       "visualBounds": [
-        8,
-        26,
-        120,
-        120
+        22,
+        73,
+        361,
+        360
       ],
-      "sourceSheet": "art/enemy-simplification/boss-source.png",
-      "sourceCell": [
-        3,
-        1
-      ],
-      "sourceScale": 0.3076923076923077,
+      "sourceSheet": "art/combat-feedback/boss-source.png",
       "rig": "single-body"
     }
   },

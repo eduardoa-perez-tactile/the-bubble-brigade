@@ -98,7 +98,37 @@
           "name": "header",
           "kind": "array",
           "scalar": "f64",
-          "lanes": 12
+          "lanes": 13
+        },
+        {
+          "name": "enemyID",
+          "kind": "array",
+          "scalar": "i32",
+          "lanes": 32
+        },
+        {
+          "name": "enemyX",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyY",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyVY",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyGround",
+          "kind": "array",
+          "scalar": "i32",
+          "lanes": 32
         },
         {
           "name": "playerX",
