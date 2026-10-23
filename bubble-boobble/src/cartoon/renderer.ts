@@ -12,8 +12,6 @@ export interface CartoonDraw {
   flip?: boolean;
   /** Rotated white quad; width/height describe its final axis-aligned bounds. */
   diamond?: boolean;
-  /** Clockwise screen-space rotation in radians, about the sprite center. */
-  rotation?: number;
   color?: readonly [number, number, number, number?];
   /** A painted plate rendered once through its localized native UV material. */
   backgroundTick?: number;

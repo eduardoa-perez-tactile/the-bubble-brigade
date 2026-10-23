@@ -1,6 +1,7 @@
 import {expect,worldTest,renderTest} from '@gameengine/test';
 import campaign from '../data/levels.json';
 import {createPartyGame,preparePartyWave} from '../src/arcade/party';
+import {bubble,popBubble} from '../src/arcade/bubbles';
 import {spawnFood,updateItems,item} from '../src/arcade/items';
 import {updateEnemies} from '../src/arcade/enemies';
 import {body,EnemyState,Tile} from '../src/arcade/types';
@@ -28,7 +29,7 @@ worldTest('combat feedback courtyard ground enemies share the dragon jump displa
  const e=g.Enemies[0]!,dragon=body(e.X,e.Y);startPlayerJump(g,dragon);
  for(let tick=0;tick<35;tick++){updateEnemies(g);movePlayer(g,dragon,0);expect(e.Y).toBe(dragon.Y);}
 },{scene});
-worldTest('combat feedback lightning uses branching bolts and potions have no bubble shell',()=>{
+worldTest('combat feedback lightning uses existing artwork and potions have no bubble shell',()=>{
  const g=game();g.Party!.Wave=10;preparePartyWave(g);g.Party!.Phase='boss';
  g.Items=[{...item(800,400),Power:'thunder_potion'}];g.Bubbles=[];
  g.Effects=[{...body(900,320),ID:9001,Life:120,Spread:false,Element:'thunder',Age:8,Dir:1,Removed:false} as typeof g.Effects[number]];
@@ -86,4 +87,20 @@ worldTest('combat feedback fireballs cycle four authored frames and reduced effe
   expect(cartoonDrawPlan(g,300,undefined,undefined,undefined,true).find(d=>d.frame.startsWith('boss/fireball-'))!.frame).toBe('boss/fireball-0');
  }
  expect(frames.size).toBe(4);
+},{scene});
+
+worldTest('combat feedback popped lightning bubble reuses the existing bolt sprite in both directions',()=>{
+ for(const Dir of [-1,1]){
+  const g=game();g.Party!.Wave=10;preparePartyWave(g);g.Party!.Phase='boss';
+  g.Items=[];g.Effects=[];g.Players[0]!.Dir=Dir;
+  g.Bubbles=[{...bubble(800,300),Element:'thunder',ThunderShot:true,Age:30,Dir,Shooter:0}];
+  popBubble(g,0,0);expect(g.Effects.length).toBe(1);g.Bubbles=[];
+  for(const reduced of [false,true]){
+   const draws=cartoonDrawPlan(g,300,undefined,undefined,undefined,reduced);
+   const bolt=draws.find(d=>d.frame==='effect/thunder-0');
+   expect(!!bolt).toBe(true);expect(bolt!.flip).toBe(Dir<0);
+   expect(bolt!.width).toBe(bolt!.height);
+   expect(draws.some(d=>d.frame==='solid/#b77cff')).toBe(false);
+  }
+ }
 },{scene});

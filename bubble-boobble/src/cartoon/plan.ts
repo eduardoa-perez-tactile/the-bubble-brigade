@@ -268,20 +268,9 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const p of g.Projectiles)if(!p.Bottle)add(effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects){
     if(effect.Element==='thunder'){
-      // Connected zigzags, with a cream core and branching sparks, follow the
-      // swept hit body. No rectangular background strip or stretched icon.
-      const u=layout.scale,cx=px(effect.X+20),cy=py(effect.Y+16);
-      const phase=reduced?0:Math.floor(effect.Age/2)%3;
-      const points=[[-58,0],[-35,-8-phase*2],[-12,7],[8,-9],[29,6+phase*2],[58,0]];
-      const segment=(ax:number,ay:number,bx:number,by:number,color:string,thickness:number)=>{
-        const dx=(bx-ax)*u,dy=(by-ay)*u,width=Math.sqrt(dx*dx+dy*dy)+thickness*u;
-        markers.push({frame:'solid/'+color,x:cx+(ax+bx)*u/2-width/2,y:cy+(ay+by)*u/2-thickness*u/2,
-          width,height:thickness*u,rotation:Math.atan2(dy,dx)});
-      };
-      for(const [color,thickness] of [['#b77cff',9],['#ffe08a',6],['#fff7d9',2.5]] as const){
-        for(let i=1;i<points.length;i++)segment(points[i-1]![0]!,points[i-1]![1]!,points[i]![0]!,points[i]![1]!,color,thickness);
-        segment(-12,7,-28,24,color,thickness*.65);segment(29,6+phase*2,43,-17,color,thickness*.65);
-      }
+      // Use the same authored lightning drawing as the charged bubble. Keep
+      // its square canvas and center it on the swept collision body.
+      centered('effect/thunder-0',effect.X+20,effect.Y+16,80,effect.Dir<0);
     }else add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   }
   const bubblePaints=g.Bubbles.map(b=>{

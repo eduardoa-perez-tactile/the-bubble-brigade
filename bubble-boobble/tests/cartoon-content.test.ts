@@ -84,7 +84,7 @@ worldTest('cartoon complete content redraws elemental effects projectiles and bo
   }
   for (const element of ['fire','water','thunder']) {
     g.Effects = [{ ...effect(300,220), Element: element, Age: 0, Life: 60 }];
-    expect(inspect(g).some(draw => element==='thunder'?draw.rotation!==undefined:draw.frame.startsWith(`effect/${element}-`))).toBe(true);
+    expect(inspect(g).some(draw => draw.frame.startsWith(`effect/${element}-`))).toBe(true);
     g.Bubbles = [{ ...bubble(420,220), Element: element, Age: 30 }];
     expect(inspect(g).some(draw => draw.frame.startsWith(`effect/${element}-`))).toBe(true);
     g.Bubbles = [];
