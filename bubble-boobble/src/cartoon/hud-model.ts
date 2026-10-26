@@ -17,7 +17,7 @@ export interface RosterSlot {
   down: boolean;
 }
 export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>> {
-  bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
+  episode?:boolean; bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
   classicPortrait?: string;
   waveLabel?: string;
   showStatus?: boolean;
@@ -31,7 +31,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
   const base = hudModel(game, save, shade);
   const cue = introCue(game, !!save.settings.reducedEffects, shade === 'normal', presentation);
   const startCue = !cue.showStartCue ? '' : cue.cueArt.endsWith('/ready') ? 'Ready?' : 'BUBBLE UP!';
-  if (!game.Party) return { ...base, ...cue, startCue, startHint: '', showBanner: base.showBanner && game.State !== 0,
+  if (!game.Party) return { ...base, ...cue, ...(game.Level.episode?{episode:true,showStatus:!!game.Level.episode.waves,round:game.Level.episode.title.toUpperCase(),banner:game.State===2?'EPISODE CLEAR!':base.banner,highTitle:game.Level.episode.waves?'ACT':'EPISODE',high:game.Level.episode.waves?`${(game.EpisodeWave??0)+1} / 2`:String(game.Level.number)}:{}),startCue, startHint: '', showBanner: base.showBanner && game.State !== 0,
     classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
   const roster = partyColors.map((skin, slot): RosterSlot => {
     const player = game.Players[slot];

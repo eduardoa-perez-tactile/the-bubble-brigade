@@ -2,7 +2,7 @@ import { expect, renderTest } from '@gameengine/test';
 import { DesktopIntent } from '../src/schema.gen';
 import { desktopState } from '../src/desktop/state';
 
-renderTest('cartoon theatrical menus preserve touch navigation across screen shapes', async ({input,step,render,ui}) => {
+renderTest('cartoon theatrical menus preserve touch navigation across screen shapes', async ({input,step,render,ui,loaded}) => {
   input.view(360,880,1);
   await step(3);
   render.stats({width:360,height:880});
@@ -14,7 +14,7 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
     input.emit(DesktopIntent,{action:'menu'});
     await step(2);
     render.stats({width,height});
-    for (const id of ['choose-mode','settings','quit']) {
+    for (const id of ['choose-mode','adventure-arcade','settings','quit']) {
       const rect=ui.rect(`cartoon-main.${id}`)!;
       expect(!!rect).toBe(true);
       expect(rect.x>=0 && rect.y>=0 && rect.x+rect.width<=width+1 && rect.y+rect.height<=height+1).toBe(true);
@@ -22,8 +22,9 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
     }
     await ui.press('cartoon-main.choose-mode');
     await step(1);
-    expect(desktopState.get().screen).toBe('overworld-panel');
-    expect(desktopState.get().overworldPanel).toBe('menu');
+    await loaded();await step(2);
+    expect(desktopState.get().screen).toBe('overworld');
+    input.emit(DesktopIntent,{action:'overworld-main-menu'});await step(2);
     render.stats({width,height});
     const arcade=ui.interactables().find(button=>button.label==='ARCADE MODES')!;
     await ui.press(arcade.id!);await step(1);

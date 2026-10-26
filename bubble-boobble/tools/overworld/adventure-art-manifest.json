@@ -1,0 +1,196 @@
+{
+  "date": "2026-10-26",
+  "generator": "Built-in image_gen",
+  "purpose": "Original Adventure episode scenery and map foreground",
+  "prompts": [
+    {
+      "key": "lighthouse",
+      "prompt": "Production background painting for The Bubble Brigade, an original theatrical cel adventure. Wide landscape 16:9, painted gouache and watercolor scenic depth, 1930s color cartoon theatre, broad matte shapes, warm cream stone and subdued blue teal sea, selective dark ink on near props, hazy quiet distant layers. Not photorealistic, not 3D, no pixel art, no tiny repeating texture. Side-on 2D platform-game stage, no characters, no text, no UI, NO floating platforms: separate game platforms will be drawn over the scene. Leave the middle 75 percent spacious and low contrast for bright inked dragon actors and platforms; frame with stronger near silhouettes at extreme sides. Ground/deck occupies bottom 12 percent. This is an actual shipping stage background, not a mockup. Scene: inside a charming harbor lighthouse, cylindrical warm sandstone walls and huge arched windows showing soft teal harbor and distant sails; giant brass lantern housing partly visible overhead, curved stairs recessed into background, ropes and a quiet navigation desk far right. Morning amber light and cool sea reflections; pale muted center, dark framing at sides. Strong tall vertical architectural identity, no giant castle, no central statue.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-ec3b7134-7cfc-4eca-94f4-04960cdb1ef3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "shipping"
+    },
+    {
+      "key": "post-office",
+      "prompt": "Production background painting for The Bubble Brigade, an original theatrical cel adventure. Wide landscape 16:9, painted gouache and watercolor scenic depth, 1930s color cartoon theatre, broad matte shapes, warm cream stone and subdued blue teal sea, selective dark ink on near props, hazy quiet distant layers. Not photorealistic, not 3D, no pixel art, no tiny repeating texture. Side-on 2D platform-game stage, no characters, no text, no UI, NO floating platforms: separate game platforms will be drawn over the scene. Leave the middle 75 percent spacious and low contrast for bright inked dragon actors and platforms; frame with stronger near silhouettes at extreme sides. Ground/deck occupies bottom 12 percent. This is an actual shipping stage background, not a mockup. Scene: a whimsical shell-shaped harbor post office sorting hall; coral pink shell ribs form the ceiling; cream painted pigeonholes and little shelves filled with envelopes recessed into the far wall; a postal counter at far right and piles of parcels on extreme left and right. Quiet warm peach and sea-green color story. Open central floor, no readable writing or signs.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-8588bc6d-e6d6-4a77-9361-c09d80df1180.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "shipping"
+    },
+    {
+      "key": "sailcloth",
+      "prompt": "Production background painting for The Bubble Brigade, an original theatrical cel adventure. Wide landscape 16:9, painted gouache and watercolor scenic depth, 1930s color cartoon theatre, broad matte shapes, warm cream stone and subdued blue teal sea, selective dark ink on near props, hazy quiet distant layers. Not photorealistic, not 3D, no pixel art, no tiny repeating texture. Side-on 2D platform-game stage, no characters, no text, no UI, NO floating platforms: separate game platforms will be drawn over the scene. Leave the middle 75 percent spacious and low contrast for bright inked dragon actors and platforms; frame with stronger near silhouettes at extreme sides. Ground/deck occupies bottom 12 percent. This is an actual shipping stage background, not a mockup. Scene: harbor sailmakers' loft; vaulted timber rafters, huge cream canvas sails hanging at rear in broad quiet folds, thin rigging lines at far sides, tall windows showing teal sea; muted ivory, faded coral, ochre wood, deep blue framing. Broad open center with no walkable painted ledges. Rich sense of height but restrained details.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-559dc521-0253-49e5-b9cb-42a5d2f9e5ff.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "shipping"
+    },
+    {
+      "key": "pump-station",
+      "prompt": "Production background painting for The Bubble Brigade, an original theatrical cel adventure. Wide landscape 16:9, painted gouache and watercolor scenic depth, 1930s color cartoon theatre, broad matte shapes, warm cream stone and subdued blue teal sea, selective dark ink on near props, hazy quiet distant layers. Not photorealistic, not 3D, no pixel art, no tiny repeating texture. Side-on 2D platform-game stage, no characters, no text, no UI, NO floating platforms: separate game platforms will be drawn over the scene. Leave the middle 75 percent spacious and low contrast for bright inked dragon actors and platforms; frame with stronger near silhouettes at extreme sides. Ground/deck occupies bottom 12 percent. This is an actual shipping stage background, not a mockup. Scene: pearl water pumping station; large teal reservoir tanks, copper pipes rising at the far side walls, three round portholes with subdued sea beyond; a huge circular pressure mechanism recessed into background, warm cream limestone floor. Quiet desaturated turquoise center with controlled coral and brass accents. Clear mechanical silhouette, matte painted metal, no shiny 3D rendering.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-dcf936f0-bec7-4457-8c22-b022d5ca893d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "shipping"
+    },
+    {
+      "key": "tugboat",
+      "prompt": "Production background painting for The Bubble Brigade, an original theatrical cel adventure. Wide landscape 16:9, painted gouache and watercolor scenic depth, 1930s color cartoon theatre, broad matte shapes, warm cream stone and subdued blue teal sea, selective dark ink on near props, hazy quiet distant layers. Not photorealistic, not 3D, no pixel art, no tiny repeating texture. Side-on 2D platform-game stage, no characters, no text, no UI, NO floating platforms: separate game platforms will be drawn over the scene. Leave the middle 75 percent spacious and low contrast for bright inked dragon actors and platforms; frame with stronger near silhouettes at extreme sides. Ground/deck occupies bottom 12 percent. This is an actual shipping stage background, not a mockup. Scene: deck of a cheerful old harbor tugboat at late golden afternoon; broad wood planks at bottom, cream cabin with teal portholes at far right, smokestack near edge, coiled ropes and life ring only at extremes; sweeping distant harbor, pale peach clouds, blue cliffs and tiny quiet silhouettes of sailboats behind. Big open low-contrast central sky, strong near deck frame. This is the district finale, theatrical and warm.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-2faa3f98-4847-4d34-9216-3e30c3fedb75.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "shipping"
+    },
+    {
+      "key": "garden",
+      "prompt": "Production side-on 2D game background, wide 16:9 landscape, original The Bubble Brigade theatrical cel adventure. Painterly gouache scenic depth, broad matte shapes and restrained detail, cream warm playfield against quiet cool background, inked near silhouettes only at extreme edges. Bright moving dragon actors will be added later. No characters, no writing, no UI, no floating platforms, no central obstruction. Keep central 75% low contrast and spacious; floor only bottom 12%. Hand-painted 1930s color cartoon scenery, not 3D, not realistic, not pixel art. A fern garden conservatory interior, broad leaf silhouettes framing extreme sides, warm cream stone arch windows overlooking softly layered lilac-green woodland and a tranquil pond, muted moss and blue-green color story, tiny workbench at far right, deep atmospheric middle.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-6fc73756-ec71-4c8d-8bbb-334fb46ea270.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "superseded"
+    },
+    {
+      "key": "fair",
+      "prompt": "Production side-on 2D game background, wide 16:9 landscape, original The Bubble Brigade theatrical cel adventure. Painterly gouache scenic depth, broad matte shapes and restrained detail, cream warm playfield against quiet cool background, inked near silhouettes only at extreme edges. Bright moving dragon actors will be added later. No characters, no writing, no UI, no floating platforms, no central obstruction. Keep central 75% low contrast and spacious; floor only bottom 12%. Hand-painted 1930s color cartoon scenery, not 3D, not realistic, not pixel art. A seaside fairground backstage pavilion, faded coral and ivory tent roof, painted wooden framing and folded striped scenery at far edges, distant quiet pastel carnival and teal sea through a broad open back, warm golden late afternoon, comic festive identity with calm center.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-0caa3275-55fd-4114-bcf3-62e19e202c28.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "superseded"
+    },
+    {
+      "key": "springs",
+      "prompt": "Production side-on 2D game background, wide 16:9 landscape, original The Bubble Brigade theatrical cel adventure. Painterly gouache scenic depth, broad matte shapes and restrained detail, cream warm playfield against quiet cool background, inked near silhouettes only at extreme edges. Bright moving dragon actors will be added later. No characters, no writing, no UI, no floating platforms, no central obstruction. Keep central 75% low contrast and spacious; floor only bottom 12%. Hand-painted 1930s color cartoon scenery, not 3D, not realistic, not pixel art. A cloudtop bathhouse terrace, creamy stone arches and lavender mountains with quiet cloud banks, broad distant steaming pools and a turquoise horizon, plum ropes and rolled towels only at extreme edges, soft airy cream lavender blue palette, theatrical painted depth.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-b929e5e0-9cd0-4231-bcff-c100cb573130.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "superseded"
+    },
+    {
+      "key": "foundry",
+      "prompt": "Production side-on 2D game background, wide 16:9 landscape, original The Bubble Brigade theatrical cel adventure. Painterly gouache scenic depth, broad matte shapes and restrained detail, cream warm playfield against quiet cool background, inked near silhouettes only at extreme edges. Bright moving dragon actors will be added later. No characters, no writing, no UI, no floating platforms, no central obstruction. Keep central 75% low contrast and spacious; floor only bottom 12%. Hand-painted 1930s color cartoon scenery, not 3D, not realistic, not pixel art. Interior of an old coastal glass foundry, huge dim plum and blue teal arches, copper boiler silhouettes far behind, restrained amber furnace light at extreme sides, dusty rose floor, deep hazy blue center, strong graphic silhouettes, matte painterly metal and softly glowing glass.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-c405b6f7-5656-47c1-92f4-fa8c5dbc1c93.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "superseded"
+    },
+    {
+      "key": "foreground",
+      "prompt": "Single isolated foreground prop for an original painted cartoon harbor game: a broad dense clump of windswept dark bottle-green and teal fern fronds with two large palm leaves, low irregular mound of warm stone at its base. Oblique overhead view, hand-painted gouache, selective dark ink near edges, broad readable shapes, restrained texture, no white highlights, no realistic glossy rendering. A clean cutout with real transparent alpha background, no ground plane, no shadow outside the object, no text. Wide silhouette, foliage occupies nearly all image. Used for foreground occlusion over small walking dragons in a seaside village.",
+      "outputHint": "Generated images are saved to /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0 as /Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-07392c6d-5e6f-4025-bca7-fa803f70a77f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "status": "superseded"
+    },
+    {
+      "key": "foreground-simplified",
+      "status": "shipping",
+      "sourcePath": "/Users/eduardoleale/.codex/generated_images/01a177ea-0508-7500-878e-d5b69d960fb0/exec-39402ef4-600c-4ec5-b177-97e94e973cb1.png",
+      "shippingPath": "assets/overworld-shared/foreground.png",
+      "prompt": "Edit this foreground game prop into a MUCH SIMPLER painted shrub matching a quiet 1930s color cartoon map. Preserve a genuinely transparent background. Replace the mass of tiny fern fronds with only six broad rounded wind-swept leaves and two broad palm leaves. Use three large matte desaturated blue-green color masses, soft gouache edges, sparse selective dark ink, no fine leaf veins, no mottled grain, no little highlights, no black or green haze outside the silhouette. Lower the height: a squat, grounded shrub with a few warm cream stones at its base. Keep a wide composition with a clean clear bottom contact line. It should read as a painted scenery cutout at 80 pixels wide, with bright game characters clearly more saturated than it. No text, no cast shadow or rectangular backdrop."
+    }
+  ],
+  "shippingFiles": [
+    {
+      "path": "assets/adventure/fair-1.png",
+      "sha256": "243835180eac833490ade676c0d49bc6729f6b770fc11aba4a7c0ad395b21b74"
+    },
+    {
+      "path": "assets/adventure/fair-2.png",
+      "sha256": "8f5610ce455f064d2f097269dd797edccb768c0bbc88d45ae5a1613411bef1bf"
+    },
+    {
+      "path": "assets/adventure/fair-3.png",
+      "sha256": "165d204fa333b214362cfeb135f8b7e912accacef24c3f99b6f7fc731268e759"
+    },
+    {
+      "path": "assets/adventure/fair-4.png",
+      "sha256": "f0f4d57e9d61d1a3b8c582abcaaffbda6ad72fccabe3137c7545eab3ee0b7a45"
+    },
+    {
+      "path": "assets/adventure/fair-5.png",
+      "sha256": "eb3a92ce76a8b9646cebffca7a37887f53a8ada038e757884416576f306407ec"
+    },
+    {
+      "path": "assets/adventure/foundry-1.png",
+      "sha256": "e84681d03c3b70425753aec4cdc76b20fb510f4056179064383c2f681f931efe"
+    },
+    {
+      "path": "assets/adventure/foundry-2.png",
+      "sha256": "b036002d4e35378207b99f2ee9d816839665cfe69d955893d839c084010bd3fc"
+    },
+    {
+      "path": "assets/adventure/foundry-3.png",
+      "sha256": "2417deef90665a4b152e41e58043c6f8c0b23b61995be537a52799edd8f1bbf8"
+    },
+    {
+      "path": "assets/adventure/foundry-4.png",
+      "sha256": "257e60645dffa34fb395ebfd6fcb835b86d5726accd5d5ab93f5e35ef8006085"
+    },
+    {
+      "path": "assets/adventure/foundry-5.png",
+      "sha256": "a8304726d03cdae420bfbde367e90acf4d44d35cfa55fc8bfd7b4590a34ca0d5"
+    },
+    {
+      "path": "assets/adventure/garden-1.png",
+      "sha256": "51f9ee56cc610b2ab4b8d2f66d3c52e3ba5c128c13742801474e7d68558c4d5c"
+    },
+    {
+      "path": "assets/adventure/garden-2.png",
+      "sha256": "2b4cd431286c24201a2018584f4413e1554f6ae5ae88cffd01ce44f0047bb2aa"
+    },
+    {
+      "path": "assets/adventure/garden-3.png",
+      "sha256": "549f373d78eb27a3ae496404b4142d72cd0f8b1fa24eae32d738a5eb70eb3b65"
+    },
+    {
+      "path": "assets/adventure/garden-4.png",
+      "sha256": "5d97ebe79bc96cc9f9b4b733e9406a13e425044f5f47d54bddc3648286c0afa1"
+    },
+    {
+      "path": "assets/adventure/garden-5.png",
+      "sha256": "5d32fa5925b668da84bc297ab61b7987b73bf287f4e50b714b4f0d3d611c7d79"
+    },
+    {
+      "path": "assets/adventure/lighthouse.png",
+      "sha256": "5229022f993d43597554e6d48423113eb080df8bb69c0a19b10aaceb8cc27dfb"
+    },
+    {
+      "path": "assets/adventure/post-office.png",
+      "sha256": "4872a4b2ce6957b89e2df511956c532af9e25d556c795e5cdaf80303adb46a99"
+    },
+    {
+      "path": "assets/adventure/pump-station.png",
+      "sha256": "bc0a8534f695480466afe4b3ef458b82e778a593fe7abbc4a71f2c2e4924b803"
+    },
+    {
+      "path": "assets/adventure/sailcloth.png",
+      "sha256": "923fd8d4c977bd3668e1c9047798f3030425cfc7148b073bd59dfe6db9891977"
+    },
+    {
+      "path": "assets/adventure/springs-1.png",
+      "sha256": "cc595bb8c43a841d0af706cdbfeb4d5cadd1b9e08b8828c307d240f09317638b"
+    },
+    {
+      "path": "assets/adventure/springs-2.png",
+      "sha256": "ebca21c461a29e607b9c82d83e255d4607efe46f37662de40d95bc3ac209138b"
+    },
+    {
+      "path": "assets/adventure/springs-3.png",
+      "sha256": "61f5fda73617e6c7d675bffd25bf6211c201c3c0db28f8979f106613510402d9"
+    },
+    {
+      "path": "assets/adventure/springs-4.png",
+      "sha256": "bc2b6665711408db900e51dcdea8228b59449f5983745896888dcda412d3963b"
+    },
+    {
+      "path": "assets/adventure/springs-5.png",
+      "sha256": "b8be94327af7691bd7c8263b79b203d8b2c9e1a0847d9bffb9b78ec8883d0610"
+    },
+    {
+      "path": "assets/adventure/tugboat.png",
+      "sha256": "1bef5c35ef9fe211d6765a11f7847e9b1e2cf3d3c33ad84ad6aab1be7635d412"
+    },
+    {
+      "path": "assets/overworld-shared/cloth/pennant-0.png",
+      "sha256": "719bb79ae050116c524a93911a78d2d589673d561144514e746413a55ace294e"
+    },
+    {
+      "path": "assets/overworld-shared/cloth/pennant-1.png",
+      "sha256": "b675f06f8a417de7b1e15f64eabcd51dc30b5bf826c136bce0ef8df3547a6205"
+    },
+    {
+      "path": "assets/overworld-shared/cloth/pennant-2.png",
+      "sha256": "d1cbe594ddbbfba625af15280f6bd44327fd65d0f1916fd4255990cd740dc1fd"
+    },
+    {
+      "path": "assets/overworld-shared/cloth/pennant-3.png",
+      "sha256": "da650b53a519158d88da71bc1ac3a136cf7a9376a735c1d8cf0d129f13c42477"
+    },
+    {
+      "path": "assets/overworld-shared/foreground.png",
+      "sha256": "03e1c25b01e083b6e9a86a1ddb451f35c1ad98f6ab6f96a97148e823de77d855"
+    }
+  ]
+}

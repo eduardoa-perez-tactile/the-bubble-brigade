@@ -9,6 +9,119 @@ import type { LocText } from '@gameengine/ui';
 declare module '@gameengine/ui' {
   interface UiDocumentTypes {
     /**
+     * Adventure Dialogue: a view, dialog (ui/docs/adventure-dialogue.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of overworld-button
+     *   - `showBack`: yesno, default true
+     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'adventure-dialogue': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showBack: boolean; portrait: string };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Adventure Journal: a view, dialog (ui/docs/adventure-journal.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of overworld-button
+     *   - `showBack`: yesno, default true
+     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'adventure-journal': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showBack: boolean; portrait: string };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Adventure Pause: a view, dialog (ui/docs/adventure-pause.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of overworld-button
+     *   - `showBack`: yesno, default true
+     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'adventure-pause': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showBack: boolean; portrait: string };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Adventure Result: a view, dialog (ui/docs/adventure-result.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of overworld-button
+     *   - `showBack`: yesno, default true
+     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'adventure-result': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showBack: boolean; portrait: string };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Adventure Shop: a view, dialog (ui/docs/adventure-shop.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of adventure-shop-item
+     *   - `showBack`: yesno, default true
+     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'adventure-shop': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean; illustration?: string; detail?: string | { loc: string } | LocText; showArt?: boolean }[]; showBack: boolean; portrait: string };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Adventure shop item: a widget, button (ui/docs/adventure-shop-item.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `selected`: yesno, default false
+     *   - `illustration`: image, default "overworld-shared/cleared-flag"
+     *   - `detail`: text, default ""
+     *   - `showArt`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'adventure-shop-item': {
+      props: { label: string | { loc: string } | LocText; selected: boolean; illustration: string; detail: string | { loc: string } | LocText; showArt: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Cartoon Account: a view, screen (ui/docs/cartoon-account.ui.json)
      *
      * Properties:
@@ -311,13 +424,14 @@ declare module '@gameengine/ui' {
      *   - `showReadyArt`: yesno, default false
      *   - `showActionArt`: yesno, default false
      *   - `bossActive`: yesno, default false
+     *   - `episode`: yesno, default false
      * Events: none
      * Code areas: none
      * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-architecture`, `footer-paper`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`, `cue-art`, `cue-action`
      * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`, `action`, `smear`
      */
     'cartoon-hud': {
-      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; cueStage: 'off' | 'ready-ink' | 'ready-hold' | 'ready-out' | 'action-smear' | 'action-hold' | 'action-out'; cueFade: 'zero' | 'eighth' | 'quarter' | 'three-eighths' | 'half' | 'five-eighths' | 'three-quarters' | 'seven-eighths' | 'full'; showReadyArt: boolean; showActionArt: boolean; bossActive: boolean };
+      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; cueStage: 'off' | 'ready-ink' | 'ready-hold' | 'ready-out' | 'action-smear' | 'action-hold' | 'action-out'; cueFade: 'zero' | 'eighth' | 'quarter' | 'three-eighths' | 'half' | 'five-eighths' | 'three-quarters' | 'seven-eighths' | 'full'; showReadyArt: boolean; showActionArt: boolean; bossActive: boolean; episode: boolean };
       areas: never;
       refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-architecture' | 'footer-paper' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue' | 'cue-art' | 'cue-action';
     };
@@ -362,15 +476,17 @@ declare module '@gameengine/ui' {
      *   - `showStatus`: yesno, default false
      *   - `status`: text, default ""
      *   - `thirdLabel`: text, default "QUIT"
-     * Events: `choose-mode`, `settings`, `quit`, `menu`
+     *   - `firstLabel`: text, default "ADVENTURE"
+     *   - `arcadeSelected`: yesno, default false
+     * Events: `choose-mode`, `settings`, `quit`, `menu`, `adventure-arcade`
      * Code areas: none
-     * Refs: `title-card`, `choose-mode`, `settings`, `quit`, `menu`
+     * Refs: `title-card`, `choose-mode`, `settings`, `quit`, `menu`, `adventure-arcade`
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
-      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText };
+      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean };
       areas: never;
-      refs: 'title-card' | 'choose-mode' | 'settings' | 'quit' | 'menu';
+      refs: 'title-card' | 'choose-mode' | 'settings' | 'quit' | 'menu' | 'adventure-arcade';
     };
     /**
      * Cartoon Mode Card: a widget, button (ui/docs/cartoon-mode-card.ui.json)
@@ -1155,12 +1271,15 @@ declare module '@gameengine/ui' {
      *   - `reward`: text, default ""
      *   - `playLabel`: text, default ""
      *   - `locked`: yesno, default false
+     *   - `illustration`: image, default "adventure/lighthouse"
+     *   - `playSelected`: yesno, default true
+     *   - `backSelected`: yesno, default false
      * Events: `play`, `back`
      * Code areas: none
      * Refs: `play`, `back`
      */
     'overworld-encounter': {
-      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; description: string | { loc: string } | LocText; status: string | { loc: string } | LocText; reward: string | { loc: string } | LocText; playLabel: string | { loc: string } | LocText; locked: boolean };
+      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; description: string | { loc: string } | LocText; status: string | { loc: string } | LocText; reward: string | { loc: string } | LocText; playLabel: string | { loc: string } | LocText; locked: boolean; illustration: string; playSelected: boolean; backSelected: boolean };
       areas: never;
       refs: 'play' | 'back';
     };
@@ -1173,12 +1292,13 @@ declare module '@gameengine/ui' {
      *   - `coins`: text, default ""
      *   - `prompt`: text, default ""
      *   - `help`: text, default ""
+     *   - `showPrompt`: yesno, default false
      * Events: `menu`
      * Code areas: none
      * Refs: `coins`, `menu`
      */
     'overworld-hud': {
-      props: { district: string | { loc: string } | LocText; progress: string | { loc: string } | LocText; coins: string | { loc: string } | LocText; prompt: string | { loc: string } | LocText; help: string | { loc: string } | LocText };
+      props: { district: string | { loc: string } | LocText; progress: string | { loc: string } | LocText; coins: string | { loc: string } | LocText; prompt: string | { loc: string } | LocText; help: string | { loc: string } | LocText; showPrompt: boolean };
       areas: never;
       refs: 'coins' | 'menu';
     };

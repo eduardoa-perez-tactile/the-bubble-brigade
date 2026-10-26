@@ -1,0 +1,162 @@
+{
+  "$schemaVersion": 1,
+  "guid": "e1aa03c9-2828-4e5b-9f70-b36460107bbd",
+  "name": "adventure-result",
+  "title": "Adventure Result",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Overworld dialogue",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 24,
+        "align": "center",
+        "justify": "center"
+      },
+      "children": [
+        "ow_panel"
+      ]
+    },
+    "ow_panel": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ow_rule",
+        "ow_portrait",
+        "owd_speaker",
+        "owd_message",
+        "owd_detail",
+        "owd_buttons",
+        "owd_back"
+      ],
+      "style": {
+        "pad": 24,
+        "dir": "column",
+        "align": "center",
+        "gap": 10,
+        "w": 570,
+        "h": "auto",
+        "bg": "#f0e4c6",
+        "radius": 0
+      }
+    },
+    "ow_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 3,
+        "bg": "#8c5a35"
+      }
+    },
+    "owd_speaker": {
+      "type": "label",
+      "name": "Label",
+      "text": "{speaker}",
+      "style": {
+        "fontSize": 34,
+        "fitMin": 20,
+        "w": "100%",
+        "h": 46,
+        "color": "#382d25",
+        "textAlign": "center"
+      }
+    },
+    "owd_message": {
+      "type": "label",
+      "name": "Label",
+      "text": "{message}",
+      "style": {
+        "fontSize": 24,
+        "fitMin": 16,
+        "w": "100%",
+        "h": 82,
+        "color": "#5a4936",
+        "textAlign": "center"
+      }
+    },
+    "owd_detail": {
+      "type": "label",
+      "name": "Label",
+      "text": "{detail}",
+      "style": {
+        "fontSize": 18,
+        "fitMin": 14,
+        "w": "100%",
+        "h": 46,
+        "color": "#88603b",
+        "textAlign": "center"
+      }
+    },
+    "owd_buttons": {
+      "type": "repeat",
+      "doc": "overworld-button",
+      "property": "buttons",
+      "style": {
+        "gap": 8,
+        "w": "100%"
+      }
+    },
+    "owd_back": {
+      "type": "use",
+      "doc": "overworld-button",
+      "key": "back",
+      "props": {
+        "label": "BACK"
+      },
+      "style": {
+        "w": "100%"
+      },
+      "show": "showBack"
+    },
+    "ow_portrait": {
+      "type": "icon",
+      "image": "overworld-shared/dragon-oblique/blue/down-right-idle",
+      "property": "portrait",
+      "style": {
+        "w": 85,
+        "h": 92
+      }
+    }
+  },
+  "view": {
+    "behaviour": "dialog",
+    "dims": true
+  },
+  "properties": {
+    "speaker": {
+      "type": "text",
+      "default": ""
+    },
+    "message": {
+      "type": "text",
+      "default": ""
+    },
+    "detail": {
+      "type": "text",
+      "default": ""
+    },
+    "buttons": {
+      "type": "list",
+      "of": "overworld-button",
+      "default": []
+    },
+    "showBack": {
+      "type": "yesno",
+      "default": true
+    },
+    "portrait": {
+      "type": "image",
+      "default": "overworld-shared/dragon-oblique/blue/down-right-idle"
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 160
+  }
+}

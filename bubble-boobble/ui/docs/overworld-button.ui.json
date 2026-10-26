@@ -13,10 +13,10 @@
         "dir": "row",
         "pad": 0,
         "align": "center",
-        "bg": "#ead9ad",
-        "radius": 4,
+        "bg": "#00000000",
+        "radius": 0,
         "w": 280,
-        "h": 46,
+        "h": 48,
         "justify": "center"
       },
       "children": [
@@ -30,9 +30,9 @@
       "style": {
         "w": "96%",
         "h": 36,
-        "fontSize": 32,
+        "fontSize": 23,
         "fitMin": 18,
-        "color": "#382d25",
+        "color": "#30271e",
         "textAlign": "center"
       }
     }
@@ -50,7 +50,11 @@
         "yes": {
           "set": {
             "root": {
-              "bg": "#c6984b"
+              "bg": "#00000000"
+            },
+            "owb_label": {
+              "color": "#a6472d",
+              "tx": 5
             }
           }
         }

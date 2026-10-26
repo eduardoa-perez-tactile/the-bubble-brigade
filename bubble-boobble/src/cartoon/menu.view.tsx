@@ -8,16 +8,16 @@ export const CartoonMenuView = defineView<DesktopModel>({
   name: 'CartoonMenu',
   samples: {
     title: desktopModel(initialDesktopState, initialDesktopSave),
-    main: desktopModel({ ...initialDesktopState, screen: 'menu' }, initialDesktopSave),
+    main: desktopModel({ ...initialDesktopState, screen: 'menu',cartoon:true }, initialDesktopSave),
     titleHidden: desktopModel(initialDesktopState, initialDesktopSave, 66),
   },
   render: (model, { intent }) => <Screen safeArea class="desktop-screen cartoon-menu-screen">
     <Widget class="cartoon-menu" doc="cartoon-menu" id="cartoon-main" props={{
-      thirdLabel: () => model().buttons[2]?.label ?? 'QUIT',titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
+      firstLabel:()=>model().buttons[0]?.label??'BEGIN ADVENTURE',arcadeSelected:()=>model().selected===1,thirdLabel: () => model().buttons[3]?.label ?? 'QUIT',titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
       status: () => model().status, showStatus: () => !!model().status,
       startSelected: () => model().selected === 0,
-      settingsSelected: () => model().selected === 1,
-      quitSelected: () => model().selected === 2,
-    }} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-menu':key==='quit'?(model().buttons[2]?.key??key):key); }} />
+      settingsSelected: () => model().selected === 2,
+      quitSelected: () => model().selected === 3,
+    }} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-continue':key==='quit'?(model().buttons[3]?.key??key):key); }} />
   </Screen>,
 });

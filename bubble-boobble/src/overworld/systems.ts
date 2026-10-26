@@ -1,4 +1,4 @@
-import { ActionState, KeyEvent, LocalTransform, WorldView, WorldViewFollow, NO_ENTITY, defineSystem, query, read, write } from '@gameengine/runtime';
+import { ActionState, KeyEvent, LocalTransform, ViewInfo, WorldView, WorldViewFollow, NO_ENTITY, defineSystem, query, read, write } from '@gameengine/runtime';
 import { DesktopIntent, OverworldAvatar } from '../schema.gen.ts';
 import { partyPads } from '../arcade/party-input.ts';
 import { focusedOverworldPoi, moveOverworld } from './navigation.ts';
@@ -65,10 +65,14 @@ export const OverworldSystem=defineSystem({
 /** A sim entity supplies position to the built-in WorldViewFollow; no custom camera integration. */
 export const OverworldTargetSystem=defineSystem({
   name:'OverworldTargetSystem',after:['OverworldSystem'],query:query(read(OverworldAvatar),write(LocalTransform)),
-  resources:[write(WorldView),write(WorldViewFollow)],
+  resources:[read(ViewInfo),write(WorldView),write(WorldViewFollow)],
   run(ctx,q){
     const s=overworldState.get();
     const map=getOverworldMap(s.districtId),bounds=mapBounds(map),orthoSize=map.viewSize;
+    const viewport=ctx.get(ViewInfo),aspect=Math.max(.2,viewport.width/Math.max(1,viewport.height));
+    // A close portrait view has much less horizontal room than the design frame.
+    // Keep follow slack proportional to the visible ground so a walking dragon cannot clip.
+    const deadZoneX=Math.min(60,orthoSize*Math.min(16/9,aspect)*.18);
     if(!s.active){
       // Only release our own target, so unrelated camera users remain intact.
       for(const c of q.chunks())for(let i=0;i<c.length;i++)if(ctx.get(WorldViewFollow).target===c.entity(i)){
@@ -85,9 +89,9 @@ export const OverworldTargetSystem=defineSystem({
       const transform=c.col(LocalTransform).position;
       if(transform[i*3]!==s.x||transform[i*3+1]!==s.y)c.set(LocalTransform,i,{position:[s.x,s.y,0]});
       const target=c.entity(i);
-      if(!s.cameraReady||ctx.get(WorldViewFollow).target!==target){
+      if(!s.cameraReady||ctx.get(WorldViewFollow).target!==target||Math.abs(ctx.get(WorldViewFollow).deadZone[0]!-deadZoneX)>.01){
         ctx.set(WorldView,{center:[s.x,s.y],orthoSize,designAspect:16/9,fit:'Cover'});
-        ctx.set(WorldViewFollow,{target,offset:[0,30],damping:0.16,deadZone:[60,35],lookahead:0.08,bounded:true,boundsMin:[bounds.minX,bounds.minY],boundsMax:[bounds.maxX,bounds.maxY],primed:false});
+        ctx.set(WorldViewFollow,{target,offset:[0,30],damping:0.16,deadZone:[deadZoneX,35],lookahead:0.08,bounded:true,boundsMin:[bounds.minX,bounds.minY],boundsMax:[bounds.maxX,bounds.maxY],primed:false});
         overworldState.set({...overworldState.get(),cameraReady:true});
       }
       return;

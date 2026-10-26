@@ -1,0 +1,10 @@
+guid = "5c208eb8-2d72-4d25-8887-2d832f25bb8c"
+importer = "texture"
+[settings]
+kind = "sprite"
+atlas = "overworld-shared"
+compression = "astc6x6"
+trim = false
+max_size = 128
+[settings.overrides.phone-low]
+max_size = 64

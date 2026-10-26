@@ -49,7 +49,7 @@ export function cartoonMenuHoverRect(s:DesktopState,index:number,view:{width:num
  const w=view.width-l!-r!,h=view.height-t!-b!,u=Math.min(w/768,h/720);
  const cx=l!+w/2,cy=t!+h/2,tall=view.width/view.height<.85;
  const rect=(x:number,y:number,width:number,height:number)=>({x:cx+x*u,y:cy+y*u,width:width*u,height:height*u});
- if(s.screen==='menu')return index>=0&&index<3?rect(-166,-(tall?900:720)/2+342+index*108,332,96):null;
+ if(s.screen==='menu')return index>=0&&index<4?rect(-301,-(tall?900:720)/2+260+index*108,332,96):null;
  if(s.screen==='modes')return index===0?rect(-284,-310-24+174,272,380):index===1?rect(12,-310-24+174,272,380):index===2?{x:cx-120*u,y:t!+h-(38+96)*u,width:240*u,height:96*u}:null;
  return null;
 }

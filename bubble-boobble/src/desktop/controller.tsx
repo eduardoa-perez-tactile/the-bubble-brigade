@@ -1,3 +1,4 @@
+import {episodeForLevel} from '../adventure/episodes';
 import { OverworldHudView, OverworldEncounterView, OverworldPanelView } from '../overworld/views';
 import { overworldState } from '../overworld/state';
 import { overworldPoi } from '../overworld/navigation';
@@ -38,6 +39,14 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
  const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session),map=useDoc(overworldState);
+ let activeEpisodeGroup='';
+ createEffect(()=>{const current=state(),selected=(current.screen==='overworld-card'||current.adventure)?encounterById(current.adventureEncounter??''):undefined;
+  const episode=selected?episodeForLevel(selected.level):undefined,next=episode?`adventure-${episode.theme}`:'';
+  if(next===activeEpisodeGroup)return;const previous=activeEpisodeGroup;activeEpisodeGroup=next;
+  if(next)void loading.run({name:next,load:[next],unload:previous?[previous]:[],model:{label:episode?.title??'Opening the episode'}});
+  else if(previous)assets.release(previous);
+ });
+ onCleanup(()=>{if(activeEpisodeGroup)assets.release(activeEpisodeGroup);});
  let activeMapGroup='';
  createEffect(()=>{
   const current=map(),next=current.active?`overworld-${current.districtId}`:'';
@@ -95,7 +104,7 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  };
  createEffect(()=>{const m=map(),p=save(),d=districtById(m.districtId)??districts[0]!,progress=adventureForProfile(p.profiles[p.active]!);
   if(!m.active){mapHud?.close({immediate:true});mapHud=undefined;return;}
-  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi?`ENTER / A · ${poi.label}`:'',help:'WASD / ARROWS · WALK     ENTER / A · INTERACT     ESC · MENU'};
+  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi?`ENTER / A · ${poi.label}`:'',help:adventureCleared(progress)===0&&m.walkTick<120?'WASD / ARROWS · WALK     ENTER / A · VISIT':''};
   if(mapHud)mapHud.update(model);else mapHud=views.push(OverworldHudView,model,{onIntent:mapIntent});
  });
  let mapPanel:ViewHandle<any>|undefined,mapPanelKind='';
@@ -103,8 +112,8 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   if(s.screen==='overworld-panel'){kind='panel';model=adventurePanel(s,p);}
   else if(s.screen==='overworld-card'){
    const e=encounterById(s.adventureEncounter??''),progress=adventureForProfile(p.profiles[p.active]!);
-   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={title:e.name,subtitle:`${districtById(e.districtId)!.name} · ENCOUNTER ${e.level}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':'Capture the creatures in bubbles, then pop them to clear the courtyard.',status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
-  }else if(s.screen==='result'&&s.adventure){kind='result';const e=encounterById(s.adventureEncounter??'');model={title:s.won?'LANDMARK CLEARED!':'TRY AGAIN, BRIGADE',subtitle:e?.name??'ADVENTURE',body:`SCORE ${s.score}\n${s.won?'Your progress and first-clear reward are saved.':'Your cleared landmarks are safe. Retry this encounter or return to explore.'}`,status:s.resultReady?'ENTER / A TO CONFIRM':'RELEASE CONTROLS — GET READY',buttons:s.resultReady?getDesktopButtons(s,p).map((b,i)=>({...b,selected:i===s.selected})):[]};}
+   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={selected:s.selected,illustration:`adventure/${episodeForLevel(e.level).theme}`,title:episodeForLevel(e.level).title,subtitle:`${e.name.toUpperCase()} · ${episodeForLevel(e.level).subtitle}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':episodeForLevel(e.level).description,status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
+  }else if(s.screen==='result'&&s.adventure){kind='result';const e=encounterById(s.adventureEncounter??'');model={presentation:'adventure-result',portrait:`overworld-shared/dragon-oblique/${p.profiles[p.active]!.avatar}/down-idle`,title:s.won?'BRAVO, BRIGADE!':'TRY AGAIN, BRIGADE',subtitle:e?episodeForLevel(e.level).title:'ADVENTURE',body:`${s.won?(e&&adventureForProfile(p.profiles[p.active]!).cleared[e.id]?.clears===1?`FIRST CLEAR · +${e.rewardCoins} COINS`:'REPLAY COMPLETE'):'ONE MORE TRY?'}\nSCORE ${s.score}`,status:s.resultReady?'ENTER / A TO CONFIRM':'RELEASE CONTROLS — GET READY',buttons:s.resultReady?getDesktopButtons(s,p).map((b,i)=>({...b,selected:i===s.selected})):[]};}
   if(!kind){mapPanel?.close({immediate:true});mapPanel=undefined;mapPanelKind='';return;}
   if(kind!==mapPanelKind){mapPanel?.close({immediate:true});mapPanel=views.push(kind==='card'?OverworldEncounterView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
   else mapPanel?.update(model);

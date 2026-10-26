@@ -20,3 +20,7 @@
 }
 /* Mode illustrations keep their authored orientation; no mirrored portrait. */
 .cartoon-modes .ud-cartoon-mode-card__mc_hero { object-fit: cover; }
+/* Large main-menu rows retain readable labels on the narrow canvas. */
+@media (aspect < 0.85) {
+ .cartoon-menu .ud-cartoon-button__cb_label {font-size:40px;height:72px;}
+}

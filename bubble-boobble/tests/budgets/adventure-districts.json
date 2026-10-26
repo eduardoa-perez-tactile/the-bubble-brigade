@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/adventure_remaining_twenty_episodes_load_distinct_scenery_and_return_safely.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}

@@ -26,6 +26,7 @@ export interface Cell {
 }
 export interface Level {
   arena?: 'courtyard' | 'cartoon-courtyard';
+  episode?: import('../adventure/episodes').AdventureEpisode;
   number: number;
   tiles: number[][];
   enemies: ({
@@ -166,6 +167,7 @@ export interface PartyState {
   Boss?:PartyBoss;
 }
 export interface GameState {
+  EpisodeWave?: number;
   Party?: PartyState;
   Companion?: CompanionState;
   Companions?: (CompanionState | null)[];

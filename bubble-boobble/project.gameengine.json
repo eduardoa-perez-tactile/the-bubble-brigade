@@ -93,6 +93,131 @@
         "include": [
           "assets/overworld-shared/**"
         ]
+      },
+      "adventure-lighthouse": {
+        "include": [
+          "assets/adventure/lighthouse.png"
+        ]
+      },
+      "adventure-post-office": {
+        "include": [
+          "assets/adventure/post-office.png"
+        ]
+      },
+      "adventure-sailcloth": {
+        "include": [
+          "assets/adventure/sailcloth.png"
+        ]
+      },
+      "adventure-pump-station": {
+        "include": [
+          "assets/adventure/pump-station.png"
+        ]
+      },
+      "adventure-tugboat": {
+        "include": [
+          "assets/adventure/tugboat.png"
+        ]
+      },
+      "adventure-garden-1": {
+        "include": [
+          "assets/adventure/garden-1.png"
+        ]
+      },
+      "adventure-garden-2": {
+        "include": [
+          "assets/adventure/garden-2.png"
+        ]
+      },
+      "adventure-garden-3": {
+        "include": [
+          "assets/adventure/garden-3.png"
+        ]
+      },
+      "adventure-garden-4": {
+        "include": [
+          "assets/adventure/garden-4.png"
+        ]
+      },
+      "adventure-garden-5": {
+        "include": [
+          "assets/adventure/garden-5.png"
+        ]
+      },
+      "adventure-fair-1": {
+        "include": [
+          "assets/adventure/fair-1.png"
+        ]
+      },
+      "adventure-fair-2": {
+        "include": [
+          "assets/adventure/fair-2.png"
+        ]
+      },
+      "adventure-fair-3": {
+        "include": [
+          "assets/adventure/fair-3.png"
+        ]
+      },
+      "adventure-fair-4": {
+        "include": [
+          "assets/adventure/fair-4.png"
+        ]
+      },
+      "adventure-fair-5": {
+        "include": [
+          "assets/adventure/fair-5.png"
+        ]
+      },
+      "adventure-springs-1": {
+        "include": [
+          "assets/adventure/springs-1.png"
+        ]
+      },
+      "adventure-springs-2": {
+        "include": [
+          "assets/adventure/springs-2.png"
+        ]
+      },
+      "adventure-springs-3": {
+        "include": [
+          "assets/adventure/springs-3.png"
+        ]
+      },
+      "adventure-springs-4": {
+        "include": [
+          "assets/adventure/springs-4.png"
+        ]
+      },
+      "adventure-springs-5": {
+        "include": [
+          "assets/adventure/springs-5.png"
+        ]
+      },
+      "adventure-foundry-1": {
+        "include": [
+          "assets/adventure/foundry-1.png"
+        ]
+      },
+      "adventure-foundry-2": {
+        "include": [
+          "assets/adventure/foundry-2.png"
+        ]
+      },
+      "adventure-foundry-3": {
+        "include": [
+          "assets/adventure/foundry-3.png"
+        ]
+      },
+      "adventure-foundry-4": {
+        "include": [
+          "assets/adventure/foundry-4.png"
+        ]
+      },
+      "adventure-foundry-5": {
+        "include": [
+          "assets/adventure/foundry-5.png"
+        ]
       }
     }
   },

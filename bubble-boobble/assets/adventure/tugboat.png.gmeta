@@ -1,0 +1,10 @@
+guid = "d95eb1c7-111f-4df4-8911-7aa37578791c"
+importer = "texture"
+[settings]
+atlas = "none"
+compression = "astc6x6"
+max_size = 1536
+trim = false
+filter = "linear"
+[settings.overrides.phone-low]
+max_size = 768

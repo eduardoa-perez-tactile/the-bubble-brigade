@@ -1,0 +1,106 @@
+{
+  "$schemaVersion": 1,
+  "guid": "d263ffa1-8a7e-4b5e-94c0-ba6e21ff89f9",
+  "name": "adventure-shop-item",
+  "title": "Adventure shop item",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "style": {
+        "w": "100%",
+        "h": 100,
+        "dir": "row",
+        "pad": 12,
+        "gap": 16,
+        "align": "center",
+        "bg": "#e6d5ad"
+      },
+      "children": [
+        "portrait",
+        "copy"
+      ]
+    },
+    "portrait": {
+      "type": "icon",
+      "image": "overworld-shared/cleared-flag",
+      "property": "illustration",
+      "style": {
+        "w": 62,
+        "h": 66
+      },
+      "show": "showArt"
+    },
+    "copy": {
+      "type": "element",
+      "style": {
+        "dir": "column",
+        "pad": 0,
+        "grow": 1,
+        "gap": 7
+      },
+      "children": [
+        "name",
+        "detail"
+      ]
+    },
+    "name": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 32,
+        "fontSize": 23,
+        "fitMin": 14,
+        "color": "#30271e"
+      }
+    },
+    "detail": {
+      "type": "label",
+      "text": "{detail}",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 17,
+        "fitMin": 12,
+        "color": "#6f5a40"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#dac18c"
+            },
+            "name": {
+              "color": "#a6472d"
+            }
+          }
+        }
+      }
+    },
+    "illustration": {
+      "type": "image",
+      "default": "overworld-shared/cleared-flag"
+    },
+    "detail": {
+      "type": "text",
+      "default": ""
+    },
+    "showArt": {
+      "type": "yesno",
+      "default": false
+    }
+  }
+}

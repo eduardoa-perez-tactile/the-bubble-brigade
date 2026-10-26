@@ -100,8 +100,8 @@
       "name": "Label",
       "text": "{coins}",
       "style": {
-        "fontSize": 36,
-        "w": 170,
+        "fontSize": 25,
+        "w": 150,
         "h": 34,
         "color": "#fff0c6",
         "textAlign": "left",
@@ -132,8 +132,8 @@
         "dir": "column",
         "align": "center",
         "gap": 6,
-        "h": 76,
-        "hide": true
+        "h": 72,
+        "hide": false
       }
     },
     "owh_prompt": {
@@ -143,21 +143,23 @@
       "style": {
         "fontSize": 23,
         "fitMin": 15,
-        "w": "90%",
-        "h": 32,
-        "color": "#fff2cd",
+        "w": 440,
+        "h": 48,
+        "color": "#30271e",
         "textAlign": "center",
-        "shadowX": 1,
-        "shadowY": 2,
-        "shadowColor": "#30271e"
-      }
+        "shadowX": 0,
+        "shadowY": 0,
+        "shadowColor": "#30271e",
+        "bg": "#f0e4c6ee"
+      },
+      "show": "showPrompt"
     },
     "owh_help": {
       "type": "label",
       "name": "Label",
       "text": "{help}",
       "style": {
-        "fontSize": 16,
+        "fontSize": 14,
         "fitMin": 11,
         "w": "96%",
         "h": 24,
@@ -165,7 +167,8 @@
         "textAlign": "center",
         "shadowX": 1,
         "shadowY": 2,
-        "shadowColor": "#30271e"
+        "shadowColor": "#30271e",
+        "hide": false
       }
     }
   },
@@ -192,6 +195,10 @@
     "help": {
       "type": "text",
       "default": ""
+    },
+    "showPrompt": {
+      "type": "yesno",
+      "default": false
     }
   }
 }

@@ -1,0 +1,986 @@
+{
+  "date": "2026-10-26",
+  "scope": "Adventure map, 25 distinct episode paintings and layouts, authored encounter mechanics and menu flow",
+  "engineCheck": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true
+      },
+      {
+        "name": "typecheck",
+        "ok": true
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true
+      },
+      {
+        "name": "views",
+        "ok": true
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true
+      },
+      {
+        "name": "ui nodes",
+        "ok": true
+      },
+      {
+        "name": "tests (V8 and Hermes)",
+        "ok": true
+      }
+    ]
+  },
+  "logic": {
+    "v8": 480,
+    "hermes": 480,
+    "mismatches": 0
+  },
+  "renderAndFlows": {
+    "brigade-main-navigation": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon theatrical menus preserve touch navigation across screen shapes",
+          "ok": true,
+          "logs": [
+            "{\"width\":360,\"height\":880,\"modeCardDrawCalls\":8}",
+            "{\"width\":768,\"height\":1024,\"modeCardDrawCalls\":7}",
+            "{\"width\":1680,\"height\":720,\"modeCardDrawCalls\":7}"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-hover": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cuphead full bleed menu hover uses recorded viewport geometry instead of legacy button positions",
+          "ok": true,
+          "logs": [
+            "{\"width\":1680,\"height\":720,\"settings\":{\"x\":539,\"y\":476,\"width\":332,\"height\":96}}",
+            "{\"width\":360,\"height\":880,\"settings\":{\"x\":39.21875,\"y\":452.125,\"width\":155,\"height\":45}}",
+            "{\"width\":2316,\"height\":904,\"settings\":{\"x\":864,\"y\":597.6444091796875,\"width\":417,\"height\":120}}"
+          ]
+        }
+      ]
+    },
+    "brigade-title-navigation": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon title branding preserves menu actions",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    },
+    "brigade-menu-route-goldens": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+          "ok": true,
+          "logs": [
+            "cartoon complete menu route peak draws 14"
+          ]
+        },
+        {
+          "name": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+          "ok": true,
+          "logs": [
+            "cartoon complete menu route peak draws 14"
+          ]
+        }
+      ]
+    },
+    "brigade-adventure-final-hud-render": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "Adventure revamp real harbor stage cards and five distinct playable episodes",
+          "ok": true,
+          "logs": [
+            "Adventure episode peak draw calls 11"
+          ]
+        },
+        {
+          "name": "Adventure remaining twenty episodes load distinct scenery and return safely",
+          "ok": true,
+          "logs": [
+            "Remaining Adventure episodes peak draw calls 11"
+          ]
+        },
+        {
+          "name": "Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    },
+    "brigade-map-final-polished": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "living overworld effects advance while the player stands still on phone low",
+          "ok": true,
+          "logs": [
+            "Living overworld peak draw calls 12"
+          ]
+        },
+        {
+          "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+          "ok": true,
+          "logs": []
+        },
+        {
+          "name": "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    },
+    "brigade-revamp-cooked-campaign": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+          "ok": true,
+          "logs": []
+        },
+        {
+          "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+          "ok": true,
+          "logs": []
+        },
+        {
+          "name": "adventure campaign branches and all five district gates are reachable",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    }
+  },
+  "replays": {
+    "brigade-replay-journey-final": {
+      "ok": true,
+      "results": {
+        "v8": {
+          "ok": true,
+          "steps": 712,
+          "firstDivergence": null
+        },
+        "hermes": {
+          "ok": true,
+          "steps": 712,
+          "firstDivergence": null
+        }
+      }
+    },
+    "brigade-replay-harbor-final": {
+      "ok": true,
+      "results": {
+        "v8": {
+          "ok": true,
+          "steps": 982,
+          "firstDivergence": null
+        },
+        "hermes": {
+          "ok": true,
+          "steps": 982,
+          "firstDivergence": null
+        }
+      }
+    },
+    "brigade-replay-districts-final": {
+      "ok": true,
+      "results": {
+        "v8": {
+          "ok": true,
+          "steps": 4002,
+          "firstDivergence": null
+        },
+        "hermes": {
+          "ok": true,
+          "steps": 4002,
+          "firstDivergence": null
+        }
+      }
+    }
+  },
+  "memory": {
+    "ok": true,
+    "device": "phone-low",
+    "platform": "android",
+    "budget": {
+      "total": 201326592,
+      "textures": 134217728,
+      "audio": 33554432
+    },
+    "always": [
+      "courtyard-gameplay",
+      "overworld-shared",
+      "overworld-district-1",
+      "adventure-lighthouse"
+    ],
+    "groups": [
+      {
+        "name": "adventure-fair-1",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/fair-1",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-fair-2",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/fair-2",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-fair-3",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/fair-3",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-fair-4",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/fair-4",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-fair-5",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/fair-5",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-foundry-1",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/foundry-1",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-foundry-2",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/foundry-2",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-foundry-3",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/foundry-3",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-foundry-4",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/foundry-4",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-foundry-5",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/foundry-5",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-garden-1",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/garden-1",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-garden-2",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/garden-2",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-garden-3",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/garden-3",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-garden-4",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/garden-4",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-garden-5",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/garden-5",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-lighthouse",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/lighthouse",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-post-office",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/post-office",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-pump-station",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/pump-station",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-sailcloth",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/sailcloth",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-springs-1",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/springs-1",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-springs-2",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/springs-2",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-springs-3",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/springs-3",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-springs-4",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/springs-4",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-springs-5",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/springs-5",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "adventure-tugboat",
+        "members": 1,
+        "cooked": {
+          "textures": 44800,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 44800,
+        "largest": [
+          {
+            "key": "adventure/tugboat",
+            "kind": "texture",
+            "bytes": 44800
+          }
+        ]
+      },
+      {
+        "name": "courtyard-gameplay",
+        "members": 10,
+        "cooked": {
+          "textures": 40059260,
+          "audio": 0,
+          "other": 7575
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 40059260,
+        "largest": [
+          {
+            "key": "atlas/cartoon/0",
+            "kind": "atlas-page",
+            "bytes": 16777428
+          },
+          {
+            "key": "atlas/cartoon/1",
+            "kind": "atlas-page",
+            "bytes": 15007956
+          },
+          {
+            "key": "atlas/cartoon-reconstruction/0",
+            "kind": "atlas-page",
+            "bytes": 6343888
+          },
+          {
+            "key": "cartoon/reconstruction/environment/courtyard-dragon-mask",
+            "kind": "texture-3d",
+            "bytes": 864608
+          },
+          {
+            "key": "cartoon/reconstruction/environment/courtyard-dragon-clean",
+            "kind": "texture-3d",
+            "bytes": 522800
+          }
+        ]
+      },
+      {
+        "name": "overworld-district-1",
+        "members": 1,
+        "cooked": {
+          "textures": 176400,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 176400,
+        "largest": [
+          {
+            "key": "overworld-original/district-1/base",
+            "kind": "texture",
+            "bytes": 176400
+          }
+        ]
+      },
+      {
+        "name": "overworld-district-2",
+        "members": 1,
+        "cooked": {
+          "textures": 176400,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 176400,
+        "largest": [
+          {
+            "key": "overworld-original/district-2/base",
+            "kind": "texture",
+            "bytes": 176400
+          }
+        ]
+      },
+      {
+        "name": "overworld-district-3",
+        "members": 1,
+        "cooked": {
+          "textures": 176400,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 176400,
+        "largest": [
+          {
+            "key": "overworld-original/district-3/base",
+            "kind": "texture",
+            "bytes": 176400
+          }
+        ]
+      },
+      {
+        "name": "overworld-district-4",
+        "members": 1,
+        "cooked": {
+          "textures": 176400,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 176400,
+        "largest": [
+          {
+            "key": "overworld-original/district-4/base",
+            "kind": "texture",
+            "bytes": 176400
+          }
+        ]
+      },
+      {
+        "name": "overworld-district-5",
+        "members": 1,
+        "cooked": {
+          "textures": 176400,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 176400,
+        "largest": [
+          {
+            "key": "overworld-original/district-5/base",
+            "kind": "texture",
+            "bytes": 176400
+          }
+        ]
+      },
+      {
+        "name": "overworld-shared",
+        "members": 4,
+        "cooked": {
+          "textures": 2031632,
+          "audio": 0,
+          "other": 0
+        },
+        "audio": 0,
+        "streamed": 0,
+        "resident": 2031632,
+        "largest": [
+          {
+            "key": "atlas/overworld-shared/0",
+            "kind": "atlas-page",
+            "bytes": 1805984
+          },
+          {
+            "key": "atlas/overworld-shared/1",
+            "kind": "atlas-page",
+            "bytes": 217040
+          },
+          {
+            "key": "overworld-shared/ambient/lantern-beam",
+            "kind": "texture",
+            "bytes": 4304
+          },
+          {
+            "key": "overworld-shared/ambient/lantern-light",
+            "kind": "texture",
+            "bytes": 4304
+          }
+        ]
+      }
+    ],
+    "peak": {
+      "groups": [
+        "adventure-lighthouse",
+        "courtyard-gameplay",
+        "overworld-district-1",
+        "overworld-shared",
+        "overworld-district-2"
+      ],
+      "resident": 42488492,
+      "textures": 42488492,
+      "audio": 0
+    },
+    "budgets": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 42488492,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 42488492,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 42488492,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 40059260,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 2031632,
+        "budget": 2097152,
+        "over": false
+      }
+    ]
+  },
+  "limitations": {
+    "web": "Engine Web test host has not been built; web lane unavailable.",
+    "androidPackage": "Dry run 56847277 bytes exceeds existing 20971520-byte package limit. No budget raised.",
+    "hardware": "Phone-low residency and draw budgets exercised in engine; physical low-end GPU and thermal performance unmeasured."
+  },
+  "preview": "revamp-preview.jpg",
+  "remainingEpisodes": "other-episodes.jpg",
+  "artManifests": [
+    "../../../tools/overworld/adventure-art-manifest.json",
+    "../../../tools/overworld/adventure-district-art-manifest.json"
+  ]
+}

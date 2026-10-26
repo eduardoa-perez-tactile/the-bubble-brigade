@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/adventure_revamp_real_harbor_stage_cards_and_five_distinct_playable_episodes.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}

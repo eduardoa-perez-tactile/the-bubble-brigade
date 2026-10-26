@@ -27,6 +27,7 @@
         "ow_rule",
         "owe_subtitle",
         "owe_title",
+        "owe_illustration",
         "owe_description",
         "owe_status",
         "owe_reward",
@@ -34,14 +35,14 @@
         "owe_back"
       ],
       "style": {
-        "pad": 24,
+        "pad": 22,
         "dir": "column",
         "align": "center",
-        "gap": 10,
-        "w": 520,
+        "gap": 8,
+        "w": 650,
         "h": "auto",
-        "bg": "#eee0bc",
-        "radius": 8
+        "bg": "#f0e4c6",
+        "radius": 0
       }
     },
     "ow_rule": {
@@ -60,11 +61,11 @@
       "name": "Label",
       "text": "{subtitle}",
       "style": {
-        "fontSize": 30,
+        "fontSize": 17,
         "fitMin": 16,
         "w": "100%",
-        "h": 26,
-        "color": "#8c5a35",
+        "h": 24,
+        "color": "#8a4c37",
         "textAlign": "center"
       }
     },
@@ -73,10 +74,10 @@
       "name": "Label",
       "text": "{title}",
       "style": {
-        "fontSize": 46,
+        "fontSize": 44,
         "fitMin": 22,
         "w": "100%",
-        "h": 80,
+        "h": 64,
         "color": "#382d25",
         "textAlign": "center"
       }
@@ -86,10 +87,10 @@
       "name": "Label",
       "text": "{description}",
       "style": {
-        "fontSize": 32,
+        "fontSize": 21,
         "fitMin": 16,
         "w": "100%",
-        "h": 70,
+        "h": 66,
         "color": "#5a4936",
         "textAlign": "center"
       }
@@ -99,10 +100,10 @@
       "name": "Label",
       "text": "{status}",
       "style": {
-        "fontSize": 30,
+        "fontSize": 18,
         "fitMin": 16,
         "w": "100%",
-        "h": 45,
+        "h": 38,
         "color": "#88603b",
         "textAlign": "center"
       }
@@ -112,10 +113,10 @@
       "name": "Label",
       "text": "{reward}",
       "style": {
-        "fontSize": 30,
+        "fontSize": 17,
         "fitMin": 16,
         "w": "100%",
-        "h": 28,
+        "h": 26,
         "color": "#5a4936",
         "textAlign": "center"
       }
@@ -127,6 +128,9 @@
       "props": {
         "label": {
           "property": "playLabel"
+        },
+        "selected": {
+          "property": "playSelected"
         }
       },
       "style": {
@@ -138,10 +142,23 @@
       "doc": "overworld-button",
       "key": "back",
       "props": {
-        "label": "BACK TO MAP"
+        "label": "BACK TO MAP",
+        "selected": {
+          "property": "backSelected"
+        }
       },
       "style": {
         "w": "100%"
+      }
+    },
+    "owe_illustration": {
+      "type": "icon",
+      "image": "adventure/lighthouse",
+      "property": "illustration",
+      "style": {
+        "w": "100%",
+        "h": 155,
+        "fit": "cover"
       }
     }
   },
@@ -186,6 +203,22 @@
           }
         }
       }
+    },
+    "illustration": {
+      "type": "image",
+      "default": "adventure/lighthouse"
+    },
+    "playSelected": {
+      "type": "yesno",
+      "default": true
+    },
+    "backSelected": {
+      "type": "yesno",
+      "default": false
     }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 160
   }
 }

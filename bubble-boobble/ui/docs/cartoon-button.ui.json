@@ -32,7 +32,7 @@
         "fontSize": 32,
         "weight": 800,
         "color": "#30271e",
-        "w": 300,
+        "w": 266,
         "h": 46,
         "textAlign": "center",
         "fitMin": 12
@@ -52,25 +52,20 @@
           0.5
         ],
         "offset": [
-          18,
+          12,
           0
         ],
-        "w": 24,
-        "h": 44
+        "w": 18,
+        "h": 22
       },
       "show": "selected"
     },
     "cb_pointer_ink": {
-      "type": "label",
-      "name": "Label",
-      "text": ">",
+      "type": "icon",
+      "image": "cartoon/frames/bubble",
       "style": {
-        "w": 24,
-        "h": 44,
-        "fontSize": 28,
-        "weight": 800,
-        "color": "#a6472d",
-        "textAlign": "center"
+        "w": 18,
+        "h": 18
       }
     }
   },

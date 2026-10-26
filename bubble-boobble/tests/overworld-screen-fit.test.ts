@@ -1,3 +1,4 @@
+import {adventureStep} from './support/adventure-time';
 import {expect,renderTest,type WorldTestContext} from '@gameengine/test';
 import {DesktopIntent} from '../src/schema.gen';
 import {desktopState} from '../src/desktop/state';
@@ -18,14 +19,14 @@ const sizes=[
  {width:2520,height:1080,safe:[72,0,0,0]},
 ] as const;
 async function intent(ctx:WorldTestContext,action:string,value=''){
- ctx.input.emit(DesktopIntent,{action,value});await ctx.step(2);
+ ctx.input.emit(DesktopIntent,{action,value});await adventureStep(ctx,2);
 }
 async function enter(ctx:WorldTestContext){
- await ctx.step(8);await ctx.loaded();await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');await ctx.loaded();await ctx.step(4);
+ await adventureStep(ctx,8);await ctx.loaded();await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');await ctx.loaded();await adventureStep(ctx,4);
 }
 function assertButtons(ctx:WorldTestContext,width:number,height:number,safe:readonly number[],minimum:number){
  const buttons=ctx.ui.interactables().filter(b=>b.enabled&&b.hittable);
- expect(buttons.length>=minimum).toBe(true);
+ if(buttons.length<minimum)throw new Error('Too few active controls: '+JSON.stringify({width,height,minimum,screen:desktopState.get().screen,panel:desktopState.get().overworldPanel,buttons:ctx.ui.interactables()}));
  for(const button of buttons){
   const r=button.rect;
   const context=JSON.stringify({width,height,safe,label:button.label,id:button.id,rect:r});
@@ -35,8 +36,8 @@ function assertButtons(ctx:WorldTestContext,width:number,height:number,safe:read
  return buttons;
 }
 async function inspect(ctx:WorldTestContext,id:string){
- await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1',id));await ctx.step(3);
- await intent(ctx,'overworld-interact',id);
+ await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1',id));await adventureStep(ctx,3);
+ await intent(ctx,'overworld-interact',id);await ctx.loaded();await adventureStep(ctx,12);
 }
 
 function assertAvatar(ctx:WorldTestContext,width:number,height:number,safe:readonly number[]){
@@ -55,7 +56,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
  await enter(ctx);
  for(const {width,height,safe}of sizes){
   // Let native WorldViewFollow settle after changing the viewport aspect.
-  ctx.input.view(width,height,1,[...safe]);await ctx.step(20);
+  ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,20);
   ctx.render.stats({width,height});
   const s=overworldState.get(),point=ctx.input.worldToScreen([s.x,s.y+36]);
   expect(point[0]>=safe[0]&&point[0]<=width-safe[2]).toBe(true);
@@ -73,7 +74,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
     for(let frame=0;frame<180;frame++){
      const state=overworldState.get(),dx=target.x-state.x,dy=target.y-state.y,length=Math.hypot(dx,dy);
      if(length<3){arrived=true;break;}
-     ctx.input.action('mapX',dx/length);ctx.input.action('mapY',dy/length);await ctx.step(1);
+     ctx.input.action('mapX',dx/length);ctx.input.action('mapY',dy/length);await adventureStep(ctx,1);
      assertAvatar(ctx,width,height,safe);
     }
     expect(arrived).toBe(true);
@@ -88,22 +89,24 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
   await intent(ctx,'overworld-back');
   await inspect(ctx,'guide');expect(desktopState.get().overworldPanel).toBe('guide');
   ctx.render.stats({width,height});assertButtons(ctx,width,height,safe,2);
+  if(width===360)ctx.render.expectScreenshot('slim-guide',{width,height});
   await intent(ctx,'overworld-back');
  }
 },{scene,memory:'phone-low'});
 
 renderTest('overworld full six-action journal and shop remain readable reachable and bounded on supported extremes',async ctx=>{
- await enter(ctx);await ctx.cheat(OverworldJournalFixture);await ctx.step(3);
+ await enter(ctx);await ctx.cheat(OverworldJournalFixture);await adventureStep(ctx,3);
  for(const {width,height,safe}of sizes){
-  ctx.input.view(width,height,1,[...safe]);await ctx.step(3);
+  ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,3);
   await intent(ctx,'overworld-journal');expect(desktopState.get().overworldPanel).toBe('journal');
   ctx.render.stats({width,height});const rows=assertButtons(ctx,width,height,safe,6);
-  expect(rows.filter(b=>b.id?.includes('overworld-travel')).length).toBe(5);
+  expect(rows.filter(b=>b.id?.includes('overworld-travel')).length).toBe(4);
   if(width===360)ctx.render.expectScreenshot('slim-full-journal',{width,height});
   if(width===2520)ctx.render.expectScreenshot('ultrawide-full-journal',{width,height});
   await intent(ctx,'overworld-back');
   await inspect(ctx,'vendor');expect(desktopState.get().overworldPanel).toBe('vendor');
   ctx.render.stats({width,height});assertButtons(ctx,width,height,safe,3);
+  if(width===360||width===2520)ctx.render.expectScreenshot(`${width===360?'slim':'ultrawide'}-supply-cart`,{width,height});
   await intent(ctx,'overworld-back');
  }
 },{scene,memory:'phone-low'});

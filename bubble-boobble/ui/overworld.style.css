@@ -38,3 +38,48 @@
  .overworld-hud .ud-overworld-button__owb_label {font-size:30px;height:76px;}
  .overworld-hud .ud-overworld-hud__owh_coins {font-size:36px;height:60px;}
 }
+/* Episode surfaces share type and ink, with their own compositions. */
+.overworld-card .ud-adventure-pause__owd_speaker,
+.overworld-card .ud-adventure-journal__owd_speaker,
+.overworld-card .ud-adventure-shop__owd_speaker,
+.overworld-card .ud-adventure-result__owd_speaker,
+.overworld-card .ud-adventure-dialogue__owd_speaker {font-family:"cartoon/fonts/Rye-Regular";}
+.overworld-card .ud-adventure-journal__owd_message,
+.overworld-card .ud-adventure-dialogue__owd_message,
+.overworld-card .ud-adventure-result__owd_message {white-space:pre-wrap;}
+@media (aspect < 1.2) {
+ .overworld-card .ud-adventure-pause__ow_panel,
+ .overworld-card .ud-adventure-journal__ow_panel,
+ .overworld-card .ud-adventure-shop__ow_panel,
+ .overworld-card .ud-adventure-result__ow_panel,
+ .overworld-card .ud-adventure-dialogue__ow_panel {width:94%;padding:16px;}
+}
+@media (aspect < 0.55) {
+ .overworld-card .ud-adventure-journal__owd_message {height:240px;}
+ .overworld-card .ud-adventure-dialogue__owd_message {height:250px;}
+ .overworld-card .ud-adventure-shop__owd_message {height:130px;}
+ .overworld-card .ud-adventure-result__owd_message {height:160px;}
+}
+@media (aspect < 0.55) {
+ .overworld-card .ud-overworld-encounter__owe_play,
+ .overworld-card .ud-overworld-encounter__owe_back {height:96px;}
+}
+@media (aspect < 0.55) {
+ .overworld-card .ud-adventure-pause__owd_speaker,
+ .overworld-card .ud-adventure-journal__owd_speaker,
+ .overworld-card .ud-adventure-shop__owd_speaker,
+ .overworld-card .ud-adventure-result__owd_speaker,
+ .overworld-card .ud-adventure-dialogue__owd_speaker {font-size:42px;height:64px;}
+ .overworld-card .ud-adventure-journal__owd_message {font-size:32px;height:320px;}
+ .overworld-card .ud-adventure-dialogue__owd_message {font-size:32px;height:320px;}
+ .overworld-card .ud-adventure-shop__owd_message,
+ .overworld-card .ud-adventure-result__owd_message {font-size:32px;height:160px;}
+ .overworld-card .ud-adventure-pause__owd_detail,
+ .overworld-card .ud-adventure-journal__owd_detail,
+ .overworld-card .ud-adventure-shop__owd_detail,
+ .overworld-card .ud-adventure-result__owd_detail,
+ .overworld-card .ud-adventure-dialogue__owd_detail {font-size:28px;height:64px;}
+ .overworld-card .ud-adventure-shop-item__root {height:160px;}
+ .overworld-card .ud-adventure-shop-item__name {font-size:32px;height:46px;}
+ .overworld-card .ud-adventure-shop-item__detail {font-size:28px;height:44px;}
+}

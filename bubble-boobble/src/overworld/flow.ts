@@ -4,6 +4,7 @@ import { desktopSaveState } from '../desktop/save';
 import { adventureForProfile, adventureCleared, adventureShop } from './progression';
 import { districts, districtById, encounterById, trialForDistrict, availableDistrict, availableEncounter } from './content';
 import { overworldState, enterOverworld, suspendOverworld, setOverworldModal, returnToEntrance } from './state';
+import {overworldEntrancePoint as importShortcutPoint} from './navigation';
 import { overworldPoi } from './navigation';
 
 export function handleAdventureAction(action:string,value:string,now:number):boolean {
@@ -61,6 +62,12 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='leave'&&s.adventure){
   desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},now);quit();returnToEntrance(s.adventureEncounter!);
   patch({screen:'overworld',adventure:false,recorded:true,pauseConfirm:'',selected:0});return true;
+ }
+ if(action==='overworld-shortcut-travel'&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='shortcut'&&progress.discoveredShortcuts[`${map.districtId}:shortcut`]){
+  const destination=districtById(map.districtId)!.encounterIds[2]!;
+  enterOverworld(map.districtId,importShortcutPoint(map.districtId,destination));
+  const at=overworldState.get();desktopSaveState.dispatch('adventureAnchor',{profileIndex,districtId:at.districtId,x:at.x,y:at.y},now);
+  patch({screen:'overworld',overworldPanel:'',selected:0});return true;
  }
  if(action==='overworld-shortcut'&&map.active&&map.focusedPoi==='shortcut'){desktopSaveState.dispatch('adventureShortcut',{profileIndex,id:`${map.districtId}:shortcut`},now);return true;}
  if(action==='overworld-menu'&&map.active){anchor();panel('pause');return true;}

@@ -13,11 +13,13 @@ export interface CartoonProjection {
 }
 /** Fixed framing includes the full crown jump before play starts. Actors moving,
  * jumping, blinking or being defeated never rescale or reposition the board. */
-export function cartoonProjection(_game:GameState,layout:{x:number;y:number;scale:number;headerBottom?:number}):CartoonProjection {
+export function cartoonProjection(game:GameState,layout:{x:number;y:number;scale:number;headerBottom?:number}):CartoonProjection {
   const baseScale=layout.scale,fit=baseScale*1728/1280,baseY=(y:number)=>layout.y+(cartoonProjectY(y)-612)*fit;
   const floor=layout.y;
   // Highest shelf feet (72), full jump rise (126), plus the standing silhouette.
-  const top=baseY(72-126)-CARTOON_PLAYER_SIZE*108/128*baseScale;
+  const firstShelf=game.Level.episode?game.Level.tiles.findIndex((row,index)=>index>0&&row.slice(2,-2).some(tile=>tile!==0)):3;
+  const highestFeet=(firstShelf<0?22:firstShelf)*24;
+  const top=baseY(highestFeet-126)-CARTOON_PLAYER_SIZE*108/128*baseScale;
   const safeTop=(layout.headerBottom??48)+4;
   const zoom=top<safeTop?Math.max(.35,Math.min(1,(floor-safeTop)/(floor-top))):1;
   const scale=baseScale*zoom,center=layout.x+864*baseScale;

@@ -35,6 +35,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_episode_title_plate",
         "ch_score_card",
         "ch_wave_plaque",
         "ch_round_card",
@@ -228,6 +229,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "ch_episode_plate",
         "ch_arch_left",
         "ch_arch_center",
         "ch_arch_right",
@@ -1319,6 +1321,46 @@
       },
       "show": "showActionArt",
       "point": "cue-action"
+    },
+    "ch_episode_plate": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          14,
+          8
+        ],
+        "w": 350,
+        "h": 44,
+        "pad": 0,
+        "bg": "#f1e3bff0"
+      },
+      "show": "episode",
+      "children": []
+    },
+    "ch_episode_title_plate": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          6
+        ],
+        "w": 282,
+        "h": 36,
+        "pad": 0,
+        "bg": "#f1e3bff0"
+      },
+      "show": "episode",
+      "children": []
     }
   },
   "view": {
@@ -1690,6 +1732,67 @@
           "transition": {
             "type": "easeOut",
             "ms": 450
+          }
+        }
+      }
+    },
+    "episode": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "ch_arch_left": {
+              "hide": true
+            },
+            "ch_arch_center": {
+              "hide": true
+            },
+            "ch_arch_right": {
+              "hide": true
+            },
+            "ch_arch_paper": {
+              "hide": true
+            },
+            "ch_footer_panel": {
+              "hide": true
+            },
+            "ch_wave_plaque": {
+              "hide": true
+            },
+            "ch_score_cherries": {
+              "hide": true
+            },
+            "ch_score_berry": {
+              "hide": true
+            },
+            "ch_brand": {
+              "w": 270,
+              "fontSize": 22
+            },
+            "ch_lives": {
+              "offset": [
+                60,
+                19
+              ],
+              "w": 285,
+              "h": 24,
+              "fontSize": 18
+            },
+            "ch_classic_portrait": {
+              "offset": [
+                20,
+                12
+              ],
+              "w": 36,
+              "h": 36
+            },
+            "ch_controls": {
+              "color": "#fff1d4",
+              "shadowColor": "#30271e",
+              "shadowX": 1,
+              "shadowY": 1
+            }
           }
         }
       }

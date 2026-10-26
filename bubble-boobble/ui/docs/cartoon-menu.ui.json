@@ -23,8 +23,8 @@
           0
         ],
         "clip": true,
-        "bg": "#f1e3bf",
-        "image": "cartoon/ui/theatre-paper",
+        "bg": "#e8dbbb",
+        "image": "adventure/tugboat",
         "fit": "fill"
       },
       "children": [
@@ -139,15 +139,17 @@
           0.5,
           0
         ],
-        "offset": [
-          0,
-          342
-        ],
         "w": 332,
-        "h": 96
+        "h": 96,
+        "offset": [
+          -135,
+          260
+        ]
       },
       "props": {
-        "label": "START GAME",
+        "label": {
+          "property": "firstLabel"
+        },
         "selected": {
           "property": "startSelected"
         }
@@ -163,15 +165,15 @@
           0.5,
           0
         ],
-        "offset": [
-          0,
-          450
-        ],
         "w": 332,
-        "h": 96
+        "h": 96,
+        "offset": [
+          -135,
+          476
+        ]
       },
       "props": {
-        "label": "SETTINGS",
+        "label": "OPTIONS",
         "selected": {
           "property": "settingsSelected"
         }
@@ -187,12 +189,12 @@
           0.5,
           0
         ],
-        "offset": [
-          0,
-          558
-        ],
         "w": 332,
-        "h": 96
+        "h": 96,
+        "offset": [
+          -135,
+          584
+        ]
       },
       "props": {
         "label": {
@@ -277,10 +279,10 @@
           1
         ],
         "offset": [
-          0,
-          -24
+          -135,
+          -35
         ],
-        "w": 680,
+        "w": 430,
         "h": 20,
         "fontSize": 13,
         "fitMin": 9,
@@ -322,10 +324,10 @@
           0
         ],
         "offset": [
-          0,
-          300
+          -135,
+          230
         ],
-        "w": 640,
+        "w": 400,
         "h": 22,
         "fontSize": 12,
         "textAlign": "center",
@@ -344,11 +346,11 @@
           0
         ],
         "offset": [
-          -256,
-          438
+          235,
+          400
         ],
-        "w": 168,
-        "h": 168
+        "w": 220,
+        "h": 220
       }
     },
     "cm_mascot_right": {
@@ -367,7 +369,8 @@
           438
         ],
         "w": 168,
-        "h": 168
+        "h": 168,
+        "hide": true
       }
     },
     "cm_illustrated_logo": {
@@ -382,17 +385,18 @@
           0
         ],
         "offset": [
-          0,
+          -135,
           10
         ],
-        "w": 460,
-        "h": 307
+        "w": 340,
+        "h": 226
       }
     },
     "cm_composition": {
       "type": "element",
       "name": "Element",
       "children": [
+        "cm_menu_wash",
         "cm_title_card",
         "cm_illustrated_logo",
         "cm_start",
@@ -402,7 +406,8 @@
         "cm_prompt",
         "cm_billing",
         "cm_mascot_left",
-        "cm_mascot_right"
+        "cm_mascot_right",
+        "cm_arcade"
       ],
       "style": {
         "pad": 0,
@@ -426,6 +431,49 @@
       "props": {
         "label": "PRESS ENTER OR TAP",
         "selected": false
+      }
+    },
+    "cm_menu_wash": {
+      "type": "element",
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          -135,
+          0
+        ],
+        "w": 460,
+        "h": 720,
+        "bg": "#f1e3bfe8"
+      },
+      "children": []
+    },
+    "cm_arcade": {
+      "type": "use",
+      "doc": "cartoon-button",
+      "key": "adventure-arcade",
+      "props": {
+        "label": "ARCADE MODES",
+        "selected": {
+          "property": "arcadeSelected"
+        }
+      },
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "w": 332,
+        "h": 96,
+        "offset": [
+          -135,
+          368
+        ]
       }
     }
   },
@@ -482,6 +530,12 @@
             },
             "cm_hint": {
               "hide": true
+            },
+            "cm_arcade": {
+              "hide": true
+            },
+            "cm_menu_wash": {
+              "hide": true
             }
           }
         }
@@ -502,6 +556,14 @@
     "thirdLabel": {
       "type": "text",
       "default": "QUIT"
+    },
+    "firstLabel": {
+      "type": "text",
+      "default": "ADVENTURE"
+    },
+    "arcadeSelected": {
+      "type": "yesno",
+      "default": false
     }
   },
   "samples": {

@@ -1,3 +1,4 @@
+import {stepAdventureEpisode} from '../adventure/gameplay';
 import { recordPartyKill, recordPartyLastKill } from './party-config';
 import { arenaWidth, levelColumns, levelRows } from './types';
 import { stepParty, copyParty } from './party';
@@ -104,6 +105,7 @@ export function loadLevel(g: GameState, index: number) {
     food_spawn: { ...g.Campaign[index]!.food_spawn },
   };
   g.LevelTicks = 0;
+  if(g.Level.episode)g.EpisodeWave=0;
   g.Freeze = 0;
   g.SpawnedSpecial = 0;
   g.Hurry = false;
@@ -190,9 +192,10 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
   if (g.State === State.Playing) {
     checkPowerSpawns(g);
     for (let i = 0; i < g.Players.length; i++) checkPlayerHit(g, i);
+    stepAdventureEpisode(g);
     if (remainingEnemies(g) === 0 && g.Players.some(alive)) {
       g.State = State.Clearing;
-      g.Countdown = 7 * TPS;
+      g.Countdown = (g.Level.episode?2:7) * TPS;
       g.Projectiles = [];
     }
   } else if (g.State === State.Clearing) {
