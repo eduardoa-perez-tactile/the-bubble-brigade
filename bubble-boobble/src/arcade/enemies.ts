@@ -9,7 +9,7 @@ import {
   body,
   direction,
 } from "./types";
-import { blocked, moveActor, moveFlying } from "./physics";
+import { blocked, moveActor, moveFlying, startPlayerJump, movePlayer } from "./physics";
 import { target } from "./player";
 import { spawnFood } from "./items";
 import { goSin, goCos, goFMA } from "./trig";
@@ -44,12 +44,14 @@ export function updateEnemies(g: GameState) {
         if (e.Ground) {
           switch (e.Kind) {
             case "banebou":
-              e.VY = e.Angry ? -10 : -7.5;
+              if(g.Level.arena==='cartoon-courtyard')startPlayerJump(g,e);
+              else e.VY = e.Angry ? -10 : -7.5;
               break;
             case "zenchan":
             case "mighta":
               if (e.Cooldown === 0 && t.Y < e.Y - Tile) {
-                e.VY = -11.5;
+                if(g.Level.arena==='cartoon-courtyard')startPlayerJump(g,e);
+                else e.VY = -11.5;
                 e.Dir = direction(t.X - e.X);
                 e.Cooldown = 60;
               }
@@ -86,7 +88,8 @@ export function updateEnemies(g: GameState) {
           g.Sounds.push("laser");
         }
         const oldX = e.X;
-        moveActor(g, e, e.Dir * speed, true);
+        if(g.Level.arena==='cartoon-courtyard')movePlayer(g,e,e.Dir*speed);
+        else moveActor(g, e, e.Dir * speed, true);
         if (Math.abs(e.X - oldX) < 0.01) e.Dir *= -1;
     }
   }

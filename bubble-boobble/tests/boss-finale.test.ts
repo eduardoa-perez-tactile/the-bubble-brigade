@@ -21,9 +21,9 @@ worldTest('boss finale capture gets a readable hold and the finisher celebrates 
  expect(g.Party!.Kills!.reduce((a,n)=>a+n,0)).toBe(kills);
  for(let t=0;t<60;t++)stepGame(g,idle);expect(g.State).toBe(State.Won);
 });
-worldTest('boss guidance names the canister and teaches the lightning pop sequence',()=>{
+worldTest('boss guidance names the potion and teaches the lightning pop sequence',()=>{
  const g=encounter();for(const p of g.Players)p.Power.Thunder=false;
- let hud=cartoonHudModel(g,initialDesktopSave);expect(hud.freeze.includes('CANISTER')).toBe(true);
+ let hud=cartoonHudModel(g,initialDesktopSave);expect(hud.freeze.includes('POTION')).toBe(true);
  for(const p of g.Players)p.Power.Thunder=true;
  hud=cartoonHudModel(g,initialDesktopSave);expect(hud.freeze.includes('JUMP')).toBe(true);expect(hud.freeze.includes('LIGHTNING')).toBe(true);
 });

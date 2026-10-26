@@ -1,6 +1,6 @@
 import { blocked, solid } from './physics';
 import { partySpawn } from './party-config';
-import { ActorSize, Tile, arenaColumns, arenaRows, position, type GameState } from './types';
+import { ActorSize, EnemyState, Tile, arenaColumns, arenaRows, position, type GameState } from './types';
 
 interface Spot { X:number; Y:number }
 export interface EnemySpawn extends Spot { Ground:boolean }
@@ -15,6 +15,7 @@ function supported(g:GameState,p:Spot):boolean {
 }
 /** Only runs when constructing a wave: reserve real footing before allocating flyers. */
 export function partyEnemyFormation(g:GameState,kinds:readonly string[]):EnemySpawn[] {
+ if(g.Level.arena==='cartoon-courtyard')return cartoonEnemyFormation(g,kinds,[],false);
  const protectedSpots:Spot[]=g.Players.filter(p=>p.Lives>0||p.Downed).map(p=>({X:p.X,Y:p.Y}));
  g.Party!.Slots.forEach((slot,index)=>{
   if(slot==='empty')return;
@@ -22,13 +23,13 @@ export function partyEnemyFormation(g:GameState,kinds:readonly string[]):EnemySp
  });
  const clear=(p:Spot)=>!blocked(g,p.X,p.Y,ActorSize)&&!protectedSpots.some(other=>overlaps(p,other,8));
  const ground:Spot[]=[];
- for(let row=g.Level.arena==='cartoon-courtyard'?3:4;row<arenaRows(g);row++)for(let x=2*Tile+2;x+ActorSize<=(arenaColumns(g)-2)*Tile;x+=Tile/2){
+ for(let row=4;row<arenaRows(g);row++)for(let x=2*Tile+2;x+ActorSize<=(arenaColumns(g)-2)*Tile;x+=Tile/2){
   const p={X:x,Y:row*Tile-ActorSize};
   if(supported(g,p)&&clear(p))ground.push(p);
  }
  // Preserve the formation's broad spread and alternating direction as preferred anchors.
  const courtyard:Spot[]=[];
- if(g.Players.length>6)for(const row of g.Level.arena==='cartoon-courtyard'?[3,8,13,18]:[9,14,19,22])for(let col=3;col<=arenaColumns(g)-5;col+=4){
+ if(g.Players.length>6)for(const row of [9,14,19,22])for(let col=3;col<=arenaColumns(g)-5;col+=4){
   const p={X:col*Tile,Y:row*Tile-ActorSize};if(!blocked(g,p.X,p.Y,ActorSize))courtyard.push(p);
  }
  const columns=[0,7,3,4,1,6,2,5],rows=[20,10,15,5];
@@ -63,6 +64,64 @@ export function partyEnemyFormation(g:GameState,kinds:readonly string[]):EnemySp
   }
   if(!spot)throw new Error(`No safe ${flying?'flying':'grounded'} spawn for ${kinds[i]}`);
   placed[i]={...spot,Ground:supported(g,spot)};
+ }
+ return placed as EnemySpawn[];
+}
+
+// Authored spawn envelopes cover the cartoon silhouettes; collision stays 44px.
+// Their vertical reserve also clears adjacent projected platform tiers.
+export const cartoonSpawnWidth=136,cartoonSpawnHeight=116;
+const spawnOverlap=(a:Spot,b:Spot,width=cartoonSpawnWidth,height=cartoonSpawnHeight)=>
+ Math.abs(a.X-b.X)<width&&Math.abs(a.Y-b.Y)<height;
+function protectedCartoonSpots(g:GameState):Spot[]{
+ const spots:Spot[]=g.Players.filter(p=>p.Lives>0||p.Downed).map(p=>({X:p.X,Y:p.Y}));
+ g.Party!.Slots.forEach((slot,index)=>{
+  if(slot==='empty')return;
+  const [X,Y]=position(partySpawn(index,g.Players.length,g.Level),ActorSize,g.Level);spots.push({X,Y});
+ });
+ return spots;
+}
+/** Recheck the warning location before materializing a reinforcement. */
+export function partySpawnSafe(g:GameState,spot:Spot,reserved:readonly Spot[]=[]):boolean{
+ return !blocked(g,spot.X,spot.Y,ActorSize)&&
+  !protectedCartoonSpots(g).some(p=>spawnOverlap(spot,p,148,140))&&
+  !g.Enemies.some(e=>e.State!==EnemyState.Defeated&&spawnOverlap(spot,e))&&
+  !reserved.some(p=>spawnOverlap(spot,p));
+}
+/** Runtime callers may have no free location while players crowd the board. */
+export function partyEnemyReinforcement(g:GameState,kind:string,reserved:readonly Spot[]):EnemySpawn|undefined{
+ return cartoonEnemyFormation(g,[kind],reserved,true)[0];
+}
+function cartoonEnemyFormation(g:GameState,kinds:readonly string[],reserved:readonly Spot[],optional:boolean):EnemySpawn[]{
+ const protectedSpots=protectedCartoonSpots(g);
+ const occupied:Spot[]=[...reserved,...g.Enemies.filter(e=>e.State!==EnemyState.Defeated)];
+ const clear=(p:Spot)=>!blocked(g,p.X,p.Y,ActorSize)&&
+  !protectedSpots.some(other=>spawnOverlap(p,other,148,140))&&
+  !occupied.some(other=>spawnOverlap(p,other));
+ const ground:Spot[]=[],air:Spot[]=[];
+ const right=(arenaColumns(g)-2)*Tile-ActorSize;
+ for(let row=2;row<arenaRows(g);row++)for(let x=2*Tile+2;x<=right;x+=Tile/2){
+  const p={X:x,Y:row*Tile-ActorSize};
+  if(!clear(p))continue;
+  (supported(g,p)?ground:air).push(p);
+ }
+ const placed:(EnemySpawn|undefined)[]=Array(kinds.length),tiers=[3,8,13,18,22];
+ for(const flying of [false,true])for(let index=0;index<kinds.length;index++){
+  if(isFlyingEnemy(kinds[index]!)!==flying)continue;
+  const fraction=(index*7%17)/16;
+  const target={X:2*Tile+(g.Party!.Wave%2?fraction:1-fraction)*(right-2*Tile),
+   Y:tiers[index%tiers.length]!*Tile-ActorSize-(flying?60:0)};
+  let best:Spot|undefined,distance=Infinity;
+  for(const spot of flying?air:ground){
+   const score=Math.abs(spot.X-target.X)+Math.abs(spot.Y-target.Y);
+   if(score>=distance||placed.some(p=>p&&spawnOverlap(spot,p)))continue;
+   best=spot;distance=score;
+  }
+  if(!best){
+   if(optional)return [];
+   throw new Error(`No clear cartoon ${flying?'air':'ground'} spawn for ${kinds[index]}`);
+  }
+  placed[index]={...best,Ground:!flying};
  }
  return placed as EnemySpawn[];
 }

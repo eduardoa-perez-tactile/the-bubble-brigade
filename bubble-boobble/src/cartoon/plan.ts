@@ -191,13 +191,18 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
     const size=composed?CARTOON_PICKUP_SIZE:48;
-    if(item.Power==='thunder_potion'&&g.Party?.Boss){
+    if(item.Power){
       const cx=px(item.X+16),cy=py(item.Y+16),u=layout.scale;
       const pulse=reduced?1:1+.08*Math.sin(tick*.12);
-      out.push({frame:'bubble',x:cx-42*u*pulse,y:cy-42*u*pulse,width:84*u*pulse,height:84*u*pulse,color:[1,.83,.3,1]});
+      // A ground glimmer and rising sparks read as magic without a bubble shell.
+      out.push({frame:'shadow',x:cx-38*u*pulse,y:py(item.Y+32)-5*u,width:76*u*pulse,height:12*u,color:[1,.78,.3,.85]});
+      if(!reduced)for(let i=0;i<3;i++){
+        const age=(tick+i*20)%60,x=cx+(i-1)*28*u,y=cy+(12-age*.8)*u;
+        markers.push({frame:'solid/#ffe08a',x:x-3*u,y:y-3*u,width:6*u,height:6*u,diamond:true,color:[1,1,1,1-age/60]});
+      }
       markers.push({frame:'solid/#231e27',x:cx-18*u,y:cy-70*u,width:36*u,height:28*u,diamond:true},
         {frame:'solid/#ffe08a',x:cx-14*u,y:cy-66*u,width:28*u,height:20*u,diamond:true});
-      centered('effect/thunder-0',item.X+16,item.Y-39,24);
+      centered(item.Power==='thunder_potion'?'effect/thunder-0':'effect/spark-0',item.X+16,item.Y-39,28);
     }
     // Uniform art scaling retains source proportions and the original pickup's
     // center/floor registration. Its 32-unit collection footprint never moves.
@@ -239,7 +244,17 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       }
     }
   }
-  for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
+  for(const spawn of g.Party?.Telegraphs??[]){
+    if(spawn.Kind&&spawn.Ticks>60)continue;
+    const pulse=reduced?1:1+.12*Math.sin(spawn.Ticks*.2),u=layout.scale;
+    const cx=px(spawn.X+22),feet=py(spawn.Y+44);
+    out.push({frame:'shadow',x:cx-48*u*pulse,y:feet-5*u,width:96*u*pulse,height:10*u,color:[1,.85,.4,.8]});
+    const y=feet-64*u;
+    markers.push({frame:'solid/#231e27',x:cx-16*u,y:y-22*u,width:32*u,height:32*u,diamond:true},
+      {frame:'solid/#ffe08a',x:cx-12*u,y:y-18*u,width:24*u,height:24*u,diamond:true},
+      {frame:'solid/#231e27',x:cx-2*u,y:y-14*u,width:4*u,height:10*u},
+      {frame:'solid/#231e27',x:cx-2*u,y:y,width:4*u,height:4*u});
+  }
   for(let index=0;index<g.Enemies.length;index++){
     const e=g.Enemies[index]!;
     if(e.State===EnemyState.Trapped||e.State===EnemyState.Defeated&&e.DeadTicks===0)continue;
@@ -251,7 +266,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const flyer=e.Kind==='monsta'||e.Kind==='pulpul';
     const clock=g.Party?.Phase==='prepare'&&flyer?tick+index*3:e.Age;
     if(simplifiedKinds.includes(e.Kind)){
-      for(const draw of simplifiedEnemyDraws(e,clock,size,reduced)){
+      for(const draw of simplifiedEnemyDraws(e,clock,size,reduced,feel)){
         out.push({...draw,x:px(draw.x),y:py(y+44)+(draw.y-(e.Y+44))*layout.scale,
           width:draw.width*layout.scale,height:draw.height*layout.scale});
       }
@@ -263,12 +278,9 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const p of g.Projectiles)if(!p.Bottle)add(effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects){
     if(effect.Element==='thunder'){
-      // A broad directional bolt, centered on the same swept collision body.
-      const length=120,u=layout.scale,cx=px(effect.X+20),cy=py(effect.Y+16);
-      markers.push({frame:'solid/#231e27',x:cx-length*u/2,y:cy-9*u,width:length*u,height:18*u},
-        {frame:'solid/#ffd84d',x:cx-length*u/2,y:cy-6*u,width:length*u,height:12*u},
-        {frame:'solid/#fff7d9',x:cx-length*u/2,y:cy-2*u,width:length*u,height:4*u});
-      add('effect/thunder-0',effect.X-30,effect.Y-10,100,52,effect.Dir<0);
+      // Use the same authored lightning drawing as the charged bubble. Keep
+      // its square canvas and center it on the swept collision body.
+      centered('effect/thunder-0',effect.X+20,effect.Y+16,80,effect.Dir<0);
     }else add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
   }
   const bubblePaints=g.Bubbles.map(b=>{
@@ -318,11 +330,6 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const p=g.Players[index]!;
     if(!cartoonPlayerVisible(p,g.Party?.Phase,g.LevelTicks,!!g.Party))continue;
     const help=helps.get(index);
-    if(help){
-      marker('solid/#3c3630',help.x-1,help.y-1,62,26);
-      marker('solid/#fff0c9',help.x,help.y,60,24);
-      marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
-    }
     // Respawn bodies have not resolved Ground during the ready countdown.
     // Show an idle pose until the first physics step, without changing that body
     // or confusing a real jump's zero-velocity apex holds with a grounded state.
@@ -379,7 +386,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       const x=px(p.X+8-p.VX*lag),y=py(p.Y+8-p.VY*lag);
       markers.push({frame:'solid/'+color,x:x-size*unit/2,y:y-size*unit/2,width:size*unit,height:size*unit,diamond:true});
     }
-    out.push({frame:'boss/fireball',x:cx-(p.VX<0?28:88)*unit,y:cy-32*unit,width:116*unit,height:64*unit,flip:p.VX<0});
+    out.push({frame:`boss/fireball-${reduced?0:Math.floor(p.Age/4)%4}`,x:cx-(p.VX<0?20:108)*unit,y:cy-32*unit,width:128*unit,height:64*unit,flip:p.VX<0});
 
   }
   if(boss?.Mode==='defeated'&&!reduced){

@@ -1,6 +1,6 @@
 import { createPartyArena } from './party-arena';
 import { createCartoonArena } from '../cartoon/arena';
-import { partyEnemyFormation } from './party-spawns';
+import { partyEnemyFormation,partySpawnSafe,partyEnemyReinforcement } from './party-spawns';
 import { createBoss, ensureThunderPickups, stepBoss } from './boss';
 import { createGame, remainingEnemies } from './game';
 import { enableCompanion, companionInput, warmPartyNavigation } from './companion';
@@ -52,13 +52,24 @@ export function preparePartyWave(g:GameState) {
   const count=partyWaveBudget(p.Wave,occupied(g));
   const variety=Math.min(kinds.length,p.Wave+1);
   const waveKinds=Array.from({length:count},(_,index)=>kinds[(index+p.Wave-1)%variety]!);
-  const formation=partyEnemyFormation(g,waveKinds);
+  const staged=g.Level.arena==='cartoon-courtyard';
+  const opening=staged?Math.min(count,3+Math.ceil(occupied(g)/4)):count;
+  // Later groups may reuse a location after the previous actors have moved.
+  // Only each arriving group reserves simultaneous silhouette space.
+  const formation=partyEnemyFormation(g,waveKinds.slice(0,opening));
+  if(staged)for(let start=opening;start<count;start+=4)
+    formation.push(...partyEnemyFormation(g,waveKinds.slice(start,start+4)));
   for(let index=0;index<count;index++) {
+    if(index>=opening){
+      const spawn=formation[index]!;
+      p.Telegraphs.push({...spawn,Kind:waveKinds[index]!,Ticks:(1+Math.floor((index-opening)/4))*180});
+      continue;
+    }
     const spawn=formation[index]!,x=spawn.X,y=spawn.Y;
     g.NextID++;
     g.Enemies.push({...body(x,y),Ground:spawn.Ground,ID:g.NextID,Kind:waveKinds[index]!,State:EnemyState.Active,Dir:x<arenaWidth(g)/2?1:-1,Vertical:index%2?1:-1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:index*.6,CarriedBy:0,CarryTicks:0});
   }
-  p.Spawned=count;
+  p.Spawned=opening;p.ToSpawn=count-opening;
 }
 function beginWave(g:GameState) {
   const p=g.Party!;
@@ -67,13 +78,29 @@ function beginWave(g:GameState) {
 }
 function spawnTelegraphs(g:GameState) {
   const p=g.Party!;
-  const ready=p.Telegraphs.filter(t=>--t.Ticks<=0);
-  p.Telegraphs=p.Telegraphs.filter(t=>t.Ticks>0);
-  for(const t of ready) {
+  if(g.Level.arena==='cartoon-courtyard'&&g.Freeze>0)return;
+  const pending:typeof p.Telegraphs=[];
+  let warnings=p.Telegraphs.filter(t=>t.Kind&&t.Ticks<=60).length;
+  for(const t of p.Telegraphs){
+    if(t.Kind&&t.Ticks===61&&warnings>=4){pending.push(t);continue;}
+    t.Ticks--;
+    if(t.Kind&&t.Ticks===60)warnings++;
+    if(t.Kind&&(t.Ticks===60||t.Ticks<=0)){
+      const reserved=p.Telegraphs.filter(other=>other!==t&&other.Ticks<=60);
+      if(!partySpawnSafe(g,t,reserved)){
+        const location=partyEnemyReinforcement(g,t.Kind,reserved);
+        if(location)Object.assign(t,location);
+        // Every relocation gets a full visible warning. A crowded arena waits.
+        t.Ticks=60;pending.push(t);continue;
+      }
+    }
+    if(t.Ticks>0){pending.push(t);continue;}
     g.NextID++;
-    const variety=Math.min(kinds.length,p.Wave+1);
-    g.Enemies.push({...body(t.X,t.Y),ID:g.NextID,Kind:kinds[(g.NextID-1)%variety]!,State:EnemyState.Active,Dir:t.X<arenaWidth(g)/2?1:-1,Vertical:1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:0,CarriedBy:0,CarryTicks:0});
+    const variety=Math.min(kinds.length,p.Wave+1),kind=t.Kind??kinds[(g.NextID-1)%variety]!;
+    g.Enemies.push({...body(t.X,t.Y),Ground:t.Ground??false,ID:g.NextID,Kind:kind,State:EnemyState.Active,Dir:t.X<arenaWidth(g)/2?1:-1,Vertical:1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:0,CarriedBy:0,CarryTicks:0});
+    if(t.Kind){p.Spawned++;p.ToSpawn--;warnings--;}
   }
+  p.Telegraphs=pending;
 }
 function revive(g:GameState,index:number) {
   const dragon=g.Players[index]!;

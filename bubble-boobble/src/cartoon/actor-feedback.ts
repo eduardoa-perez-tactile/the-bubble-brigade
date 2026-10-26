@@ -55,18 +55,19 @@ export type CartoonGroundDustDraw=CartoonDraw&{groundY:number};
 
 /** A short, opaque cream crown gives takeoff and landing a readable silhouette
  * even at phone scale. Three takeoff lobes peel away; a landing adds two smaller
- * outer curls. One active event per player bounds a ten-player landing to 50
- * atlas sprites. FeelCue uses the pixel feet (+92); cartoon feet are +44. */
+ * outer curls. One active event per actor and the 32-cue history cap bound the
+ * burst to 160 atlas sprites. FeelCue uses pixel feet (+92); cartoon feet are +44. */
 export function cartoonGroundDust(feel:FeelState|undefined,reduced=false):CartoonGroundDustDraw[]{
   if(reduced||!feel)return [];
   const out:CartoonGroundDustDraw[]=[];
-  let shownSlots=0;
+  const shownSlots=new Set<string>();
   for(let index=feel.cues.length-1;index>=0;index--){
     const c=feel.cues[index]!;
-    if(c.kind!=='land'&&c.kind!=='jump'||c.slot<0||c.slot>=10)continue;
-    const landing=c.kind==='land',age=feel.clock-c.at,life=landing?22:18;
-    if(age<0||age>=life||shownSlots&(1<<c.slot))continue;
-    shownSlots|=1<<c.slot;
+    if(!['land','jump','enemy-land','enemy-jump'].includes(c.kind))continue;
+    const landing=c.kind==='land'||c.kind==='enemy-land',age=feel.clock-c.at,life=landing?22:18;
+    const key=(c.kind.startsWith('enemy-')?'enemy':'player')+c.slot;
+    if(age<0||age>=life||shownSlots.has(key))continue;
+    shownSlots.add(key);
     const t=age/life,strength=Math.max(.4,Math.min(1,c.strength??1));
     // Even a soft landing is legible; stronger falls add breadth rather than
     // multiplying transparent particles. Expansion eases out, then fades.

@@ -22,7 +22,7 @@ worldTest('cartoon boss silhouette and foreground fireballs stay larger and read
   const draws=cartoonDrawPlan(g,300,{width,height,safeArea:[0,0,0,0]},undefined,undefined,reduced);
   const b=draws.find(d=>d.frame==='boss/simple-windup')!,p=draws.find(d=>d.frame.startsWith('dragon/green/idle-'))!;
   expect(b.height/p.height>=2).toBe(true);
-  const bottle=draws.find(d=>d.frame==='boss/fireball')!;
+  const bottle=draws.find(d=>d.frame.startsWith('boss/fireball-'))!;
   expect(bottle.height/p.height>=.4).toBe(true);
   expect(draws.indexOf(bottle)>draws.indexOf(p)).toBe(true);
   expect(draws.some(d=>d.frame==='solid/#f6b64e')).toBe(true);
