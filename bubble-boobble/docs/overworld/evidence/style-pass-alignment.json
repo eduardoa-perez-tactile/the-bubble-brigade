@@ -1,0 +1,1201 @@
+{
+  "scope": "Style-only replacement of original Bubble Brigade maps. No geometry/camera/POI edits authorized by this review.",
+  "baseline": "Before this corrective style pass; direct comparison with original plates, not sequential intermediate candidates.",
+  "method": "Visual comparison of complete plates and selected enlarged regions, supplemented by local grayscale-edge SSD displacement fits (Gaussian blur0.7). Coordinates are native1254px. Fits are diagnostics affected by paint/detail changes, not exact feature tracking or a pixel-exact guarantee. Search radius12px for accepted districts1–4;32px for both the rejected and corrected foundry candidates. All maps were compared directly with BEFORE plates.",
+  "limits": [
+    "No engine commands were used during this read-only review.",
+    "Collision/POI source hashes establish unchanged authored data; they do not alone establish artwork alignment.",
+    "Diffuse cloud/foliage/haze silhouettes can change without structural floor movement. Cloudtop perimeter details are explicitly accepted paint differences.",
+    "Rejected-map fits that land at the search boundary are inconclusive and must not be read as measured shifts; the rejection uses multiple reliable interior matches and visual comparison."
+  ],
+  "maps": [
+    {
+      "districtId": "district-1",
+      "baselineArtSha256": "c696e1028530378f4f8d11d55e2aceb1ec7cfe8ecdd53ab5b94fddf4f2485fb9",
+      "candidateArtSha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-1c8dd579-489f-4a94-a66c-e8c2242045f4.png",
+      "productionAsset": "assets/overworld-original/district-1/base.png",
+      "baselineDimensions": [
+        1254,
+        1254
+      ],
+      "candidateDimensions": [
+        1254,
+        1254
+      ],
+      "geometryFile": "src/overworld/maps/district-1.ts",
+      "baselineGeometrySha256": "fcfba70f17dbb48e8db7f17c095001943616ae88bc3b6905b5d4bce8dc9d9f18",
+      "currentGeometrySha256": "fcfba70f17dbb48e8db7f17c095001943616ae88bc3b6905b5d4bce8dc9d9f18",
+      "geometrySourceUnchanged": true,
+      "verdict": "approved-style-only",
+      "review": "Approved: doors/bridge/coast0–2px, upper stairs and arch about3px. No structural route drift. Gate approach remains clear.",
+      "regionDiagnostics": [
+        {
+          "region": "lighthouse-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 30.815
+        },
+        {
+          "region": "shell-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 30.764
+        },
+        {
+          "region": "sail-door-stairs",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 32.71
+        },
+        {
+          "region": "pump-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 26.61
+        },
+        {
+          "region": "tug-door-stairs",
+          "bestShiftPixels": [
+            1,
+            -2
+          ],
+          "edgeRms": 34.221
+        },
+        {
+          "region": "bridge-west-landing",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 33.033
+        },
+        {
+          "region": "bridge-center",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 24.42
+        },
+        {
+          "region": "bridge-east-landing",
+          "bestShiftPixels": [
+            1,
+            2
+          ],
+          "edgeRms": 32.151
+        },
+        {
+          "region": "upper-stone-crossing",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 34.154
+        },
+        {
+          "region": "upper-east-stairs",
+          "bestShiftPixels": [
+            2,
+            3
+          ],
+          "edgeRms": 30.681
+        },
+        {
+          "region": "garden-arch-floor",
+          "bestShiftPixels": [
+            1,
+            3
+          ],
+          "edgeRms": 31.432
+        },
+        {
+          "region": "southern-coast",
+          "bestShiftPixels": [
+            0,
+            -2
+          ],
+          "edgeRms": 23.879
+        },
+        {
+          "region": "south-east-quay-edge",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 34.455
+        },
+        {
+          "region": "west-quay-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 33.362
+        }
+      ]
+    },
+    {
+      "districtId": "district-2",
+      "baselineArtSha256": "9d022a39075db3d77139eca3b38a9a0413ae74e3537aa5f4b7876d9ed216bac4",
+      "candidateArtSha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-e5471e63-9817-42f9-9db1-540f94b975b9.png",
+      "productionAsset": "assets/overworld-original/district-2/base.png",
+      "baselineDimensions": [
+        1254,
+        1254
+      ],
+      "candidateDimensions": [
+        1254,
+        1254
+      ],
+      "geometryFile": "src/overworld/maps/district-2.ts",
+      "baselineGeometrySha256": "f7b0d9c346fc2dfa47f6e0a92cd7f2893e960c8a9f8cd5f069a0d69fde11797c",
+      "currentGeometrySha256": "f7b0d9c346fc2dfa47f6e0a92cd7f2893e960c8a9f8cd5f069a0d69fde11797c",
+      "geometrySourceUnchanged": true,
+      "verdict": "approved-style-only",
+      "review": "Approved: doors, pond/river banks, bridge, stairs, gate and trial0–1px; vendor cart detail2px, approach clear.",
+      "regionDiagnostics": [
+        {
+          "region": "seedling-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 26.449
+        },
+        {
+          "region": "library-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 25.68
+        },
+        {
+          "region": "flower-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 23.072
+        },
+        {
+          "region": "greenhouse-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 32.672
+        },
+        {
+          "region": "acorn-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 23.643
+        },
+        {
+          "region": "bridge-west-landing",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 30.001
+        },
+        {
+          "region": "bridge-center",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 24.501
+        },
+        {
+          "region": "bridge-east-landing",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 28.993
+        },
+        {
+          "region": "pond-west-bank",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 28.488
+        },
+        {
+          "region": "pond-north-waterfall",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 26.109
+        },
+        {
+          "region": "pond-east-bank",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 36.587
+        },
+        {
+          "region": "river-narrow-bank",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 20.87
+        },
+        {
+          "region": "north-gate",
+          "bestShiftPixels": [
+            -1,
+            1
+          ],
+          "edgeRms": 24.499
+        },
+        {
+          "region": "trial-front-steps",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 15.234
+        },
+        {
+          "region": "vendor-cart",
+          "bestShiftPixels": [
+            2,
+            -2
+          ],
+          "edgeRms": 35.087
+        },
+        {
+          "region": "northeast-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 29.394
+        },
+        {
+          "region": "middle-east-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 26.705
+        },
+        {
+          "region": "southern-stairs",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 29.536
+        },
+        {
+          "region": "western-ground-edge",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 27.861
+        },
+        {
+          "region": "southern-ground-edge",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 27.425
+        }
+      ]
+    },
+    {
+      "districtId": "district-3",
+      "baselineArtSha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
+      "candidateArtSha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+      "sourceCandidate": "/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/tools/overworld/original-sources/style-pass-candidates/district-3-v2.png",
+      "productionAsset": "assets/overworld-original/district-3/base.png",
+      "baselineDimensions": [
+        1254,
+        1254
+      ],
+      "candidateDimensions": [
+        1254,
+        1254
+      ],
+      "geometryFile": "src/overworld/maps/district-3.ts",
+      "baselineGeometrySha256": "b5d666639333cc489fcef4b911e32c2d83fba62dbc066b9dfeb095f939e6d0d6",
+      "currentGeometrySha256": "b5d666639333cc489fcef4b911e32c2d83fba62dbc066b9dfeb095f939e6d0d6",
+      "geometrySourceUnchanged": true,
+      "verdict": "approved-style-only",
+      "review": "Approved: doors/stairs/pond0–2px, gate1px, trial1px, vendor2px; upper theatre shelf detail4px with no route relocation.",
+      "regionDiagnostics": [
+        {
+          "region": "carousel-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 28.631
+        },
+        {
+          "region": "kite-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 27.519
+        },
+        {
+          "region": "theatre-door-stairs",
+          "bestShiftPixels": [
+            1,
+            1
+          ],
+          "edgeRms": 26.807
+        },
+        {
+          "region": "observatory-door-stairs",
+          "bestShiftPixels": [
+            0,
+            2
+          ],
+          "edgeRms": 26.196
+        },
+        {
+          "region": "organ-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 24.313
+        },
+        {
+          "region": "western-stairs",
+          "bestShiftPixels": [
+            2,
+            1
+          ],
+          "edgeRms": 26.116
+        },
+        {
+          "region": "middle-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 25.974
+        },
+        {
+          "region": "observatory-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 27.171
+        },
+        {
+          "region": "organ-south-stairs",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 25.909
+        },
+        {
+          "region": "southern-entry",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 32.007
+        },
+        {
+          "region": "pond-west-bank",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 33.112
+        },
+        {
+          "region": "pond-east-bank",
+          "bestShiftPixels": [
+            2,
+            1
+          ],
+          "edgeRms": 35.122
+        },
+        {
+          "region": "pond-north-dock",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 33.666
+        },
+        {
+          "region": "trial-ring",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 20.832
+        },
+        {
+          "region": "vendor-cart",
+          "bestShiftPixels": [
+            2,
+            0
+          ],
+          "edgeRms": 36.426
+        },
+        {
+          "region": "balloon-gate-platform",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 39.02
+        },
+        {
+          "region": "western-ground-edge",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 31.095
+        },
+        {
+          "region": "forecourt-ground-edge",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 30.859
+        },
+        {
+          "region": "upper-theatre-shelf",
+          "bestShiftPixels": [
+            4,
+            0
+          ],
+          "edgeRms": 33.366
+        },
+        {
+          "region": "observatory-shelf",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 29.284
+        }
+      ]
+    },
+    {
+      "districtId": "district-4",
+      "baselineArtSha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
+      "candidateArtSha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+      "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-c58ff403-3ba0-4c6e-800c-5328baefe768.png",
+      "productionAsset": "assets/overworld-original/district-4/base.png",
+      "baselineDimensions": [
+        1254,
+        1254
+      ],
+      "candidateDimensions": [
+        1254,
+        1254
+      ],
+      "geometryFile": "src/overworld/maps/district-4.ts",
+      "baselineGeometrySha256": "3184b72c10095087304bfda4745995d29664673d903c8c8e4e217af45f5093e7",
+      "currentGeometrySha256": "3184b72c10095087304bfda4745995d29664673d903c8c8e4e217af45f5093e7",
+      "geometrySourceUnchanged": true,
+      "verdict": "approved-style-only",
+      "review": "Approved with explicit decorative-outline caveat: doors and both bridge spans/landings0–2px, portal/vendor/spring0–1px, trial1–2px. Diffuse cloud edges and ornamental perimeter stone/stair details have changed paint shapes; broad edge matching is unreliable there. Visual review found unchanged floor approaches and both bridge connections. Root accepted this caveat.",
+      "regionDiagnostics": [
+        {
+          "region": "teapot-door-stairs",
+          "bestShiftPixels": [
+            -1,
+            0
+          ],
+          "edgeRms": 30.148
+        },
+        {
+          "region": "rainbarrel-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 24.781
+        },
+        {
+          "region": "atelier-door-stairs",
+          "bestShiftPixels": [
+            1,
+            2
+          ],
+          "edgeRms": 30.526
+        },
+        {
+          "region": "bellhouse-door-stairs",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 24.122
+        },
+        {
+          "region": "orchard-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 27.708
+        },
+        {
+          "region": "west-bridge-upper",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 25.854
+        },
+        {
+          "region": "west-bridge-middle",
+          "bestShiftPixels": [
+            -1,
+            0
+          ],
+          "edgeRms": 21.389
+        },
+        {
+          "region": "west-bridge-lower",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 30.97
+        },
+        {
+          "region": "east-bridge-upper",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 28.836
+        },
+        {
+          "region": "east-bridge-middle",
+          "bestShiftPixels": [
+            0,
+            1
+          ],
+          "edgeRms": 19.057
+        },
+        {
+          "region": "east-bridge-lower",
+          "bestShiftPixels": [
+            0,
+            2
+          ],
+          "edgeRms": 28.379
+        },
+        {
+          "region": "upper-terrace-edge",
+          "bestShiftPixels": [
+            -2,
+            12
+          ],
+          "edgeRms": 19.959
+        },
+        {
+          "region": "lower-terrace-edge",
+          "bestShiftPixels": [
+            -12,
+            12
+          ],
+          "edgeRms": 26.183
+        },
+        {
+          "region": "trial-ring",
+          "bestShiftPixels": [
+            2,
+            1
+          ],
+          "edgeRms": 25.22
+        },
+        {
+          "region": "north-gate",
+          "bestShiftPixels": [
+            -1,
+            0
+          ],
+          "edgeRms": 37.452
+        },
+        {
+          "region": "vendor-cart",
+          "bestShiftPixels": [
+            -1,
+            0
+          ],
+          "edgeRms": 36.532
+        },
+        {
+          "region": "spring-water-bank",
+          "bestShiftPixels": [
+            0,
+            -1
+          ],
+          "edgeRms": 25.26
+        },
+        {
+          "region": "west-lower-stairs",
+          "bestShiftPixels": [
+            4,
+            -1
+          ],
+          "edgeRms": 19.672
+        },
+        {
+          "region": "east-lower-stairs",
+          "bestShiftPixels": [
+            11,
+            11
+          ],
+          "edgeRms": 24.386
+        }
+      ]
+    },
+    {
+      "districtId": "district-5",
+      "baselineArtSha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
+      "candidateArtSha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+      "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-2eb51573-f19f-4f6e-ac0c-c52bd1c964c5.png",
+      "productionAsset": "assets/overworld-original/district-5/base.png",
+      "baselineDimensions": [
+        1254,
+        1254
+      ],
+      "candidateDimensions": [
+        1254,
+        1254
+      ],
+      "geometryFile": "src/overworld/maps/district-5.ts",
+      "baselineGeometrySha256": "5bb8658273525000844b52202722fe6e6101600c7d6c61d3ec13e3cde3f23216",
+      "currentGeometrySha256": "5bb8658273525000844b52202722fe6e6101600c7d6c61d3ec13e3cde3f23216",
+      "geometrySourceUnchanged": true,
+      "verdict": "approved-style-only",
+      "review": "Final candidate5d approved: direct BEFORE comparison puts every inspected doorway, bridge/landing, stair link, trial/vendor, coastline, cave and jetty at0–1px per axis. Visual comparison with aligned5c confirms local glint/paving simplification without a new route or motif. No collision/POI edits needed.",
+      "regionDiagnostics": [
+        {
+          "region": "kiln-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 25.674
+        },
+        {
+          "region": "brass-door-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 27.43
+        },
+        {
+          "region": "cooling-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 23.519
+        },
+        {
+          "region": "foundry-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 22.306
+        },
+        {
+          "region": "forge-door-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 22.533
+        },
+        {
+          "region": "bridge-west-landing",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 25.269
+        },
+        {
+          "region": "bridge-middle",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 20.36
+        },
+        {
+          "region": "bridge-east-landing",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 23.3
+        },
+        {
+          "region": "north-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 26.318
+        },
+        {
+          "region": "upper-rim-east-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 22.624
+        },
+        {
+          "region": "upper-rim-west-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 26.063
+        },
+        {
+          "region": "lower-rim-west-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 23.226
+        },
+        {
+          "region": "lower-rim-east-stairs",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 19.082
+        },
+        {
+          "region": "trial-anvil-ring",
+          "bestShiftPixels": [
+            0,
+            -1
+          ],
+          "edgeRms": 26.801
+        },
+        {
+          "region": "vendor-cart",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 29.946
+        },
+        {
+          "region": "southern-coast",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 25.5
+        },
+        {
+          "region": "west-hidden-cave-stairs",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 23.391
+        },
+        {
+          "region": "southern-jetty",
+          "bestShiftPixels": [
+            1,
+            0
+          ],
+          "edgeRms": 19.538
+        },
+        {
+          "region": "eastern-jetty",
+          "bestShiftPixels": [
+            0,
+            0
+          ],
+          "edgeRms": 24.208
+        }
+      ],
+      "candidateHistory": [
+        {
+          "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-65eda958-8a6d-4f47-bee2-fc884ed50b93.png",
+          "candidateArtSha256": "dee8ef9cf9de1340e110741e90610613ec8a3ae383cf4374f58a5c7e10bbfe82",
+          "candidateDimensions": [
+            1254,
+            1254
+          ],
+          "verdict": "rejected-structural-drift",
+          "review": "Rejected for style-only replacement: nonuniform downward stretch. Kiln/forge doorsteps20–22px, servicebridge9–10px, lower rim stairs11px, trial8px, vendor25px, southern coast16px, jetties19–22px, cave stairs23px. Requires regeneration from BEFORE plate or a separate explicit geometry decision.",
+          "regionDiagnostics": [
+            {
+              "region": "kiln-door-stairs",
+              "bestShiftPixels": [
+                4,
+                20
+              ],
+              "edgeRms": 30.921
+            },
+            {
+              "region": "brass-door-stairs",
+              "bestShiftPixels": [
+                -30,
+                -32
+              ],
+              "edgeRms": 36.639
+            },
+            {
+              "region": "cooling-door-stairs",
+              "bestShiftPixels": [
+                3,
+                5
+              ],
+              "edgeRms": 33.162
+            },
+            {
+              "region": "foundry-door-stairs",
+              "bestShiftPixels": [
+                -1,
+                4
+              ],
+              "edgeRms": 34.395
+            },
+            {
+              "region": "forge-door-stairs",
+              "bestShiftPixels": [
+                2,
+                22
+              ],
+              "edgeRms": 28.511
+            },
+            {
+              "region": "bridge-west-landing",
+              "bestShiftPixels": [
+                4,
+                9
+              ],
+              "edgeRms": 35.044
+            },
+            {
+              "region": "bridge-middle",
+              "bestShiftPixels": [
+                2,
+                10
+              ],
+              "edgeRms": 26.796
+            },
+            {
+              "region": "bridge-east-landing",
+              "bestShiftPixels": [
+                2,
+                10
+              ],
+              "edgeRms": 28.153
+            },
+            {
+              "region": "north-stairs",
+              "bestShiftPixels": [
+                -32,
+                30
+              ],
+              "edgeRms": 37.028
+            },
+            {
+              "region": "upper-rim-east-stairs",
+              "bestShiftPixels": [
+                7,
+                -1
+              ],
+              "edgeRms": 29.822
+            },
+            {
+              "region": "upper-rim-west-stairs",
+              "bestShiftPixels": [
+                28,
+                29
+              ],
+              "edgeRms": 35.047
+            },
+            {
+              "region": "lower-rim-west-stairs",
+              "bestShiftPixels": [
+                0,
+                11
+              ],
+              "edgeRms": 32.229
+            },
+            {
+              "region": "lower-rim-east-stairs",
+              "bestShiftPixels": [
+                5,
+                11
+              ],
+              "edgeRms": 26.928
+            },
+            {
+              "region": "trial-anvil-ring",
+              "bestShiftPixels": [
+                0,
+                8
+              ],
+              "edgeRms": 31.693
+            },
+            {
+              "region": "vendor-cart",
+              "bestShiftPixels": [
+                2,
+                25
+              ],
+              "edgeRms": 41.169
+            },
+            {
+              "region": "southern-coast",
+              "bestShiftPixels": [
+                4,
+                16
+              ],
+              "edgeRms": 32.888
+            },
+            {
+              "region": "west-hidden-cave-stairs",
+              "bestShiftPixels": [
+                -2,
+                23
+              ],
+              "edgeRms": 31.996
+            },
+            {
+              "region": "southern-jetty",
+              "bestShiftPixels": [
+                2,
+                19
+              ],
+              "edgeRms": 29.193
+            },
+            {
+              "region": "eastern-jetty",
+              "bestShiftPixels": [
+                0,
+                22
+              ],
+              "edgeRms": 35.75
+            }
+          ]
+        },
+        {
+          "candidateLabel": "5b",
+          "verdict": "rejected-by-coordinator-style-review",
+          "review": "Coordinator rejected insufficient style correction and a new ground motif; geometry alignment was intentionally not reviewed."
+        },
+        {
+          "sourceCandidate": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-0881f799-9a7a-4544-96f3-46c49cf2b6ea.png",
+          "candidateArtSha256": "cb4369b0504c97a9c0bd45400cb3f888f42c3ac4a594d0e8fed6f51cbcdd7d76",
+          "candidateDimensions": [
+            1254,
+            1254
+          ],
+          "verdict": "approved-aligned-intermediate",
+          "review": "Corrected candidate5c approved: five doorway/stair regions0–1px, full servicebridge and landings0px, stair links0–1px, trial/vendor0px, coast/cave/jetties0–1px. BEFORE geometry registration restored; no collision or POI edits needed.",
+          "regionDiagnostics": [
+            {
+              "region": "kiln-door-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 22.312
+            },
+            {
+              "region": "brass-door-stairs",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 25.317
+            },
+            {
+              "region": "cooling-door-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 20.413
+            },
+            {
+              "region": "foundry-door-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 19.711
+            },
+            {
+              "region": "forge-door-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 18.923
+            },
+            {
+              "region": "bridge-west-landing",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 22.545
+            },
+            {
+              "region": "bridge-middle",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 20.729
+            },
+            {
+              "region": "bridge-east-landing",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 21.825
+            },
+            {
+              "region": "north-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 23.519
+            },
+            {
+              "region": "upper-rim-east-stairs",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 20.847
+            },
+            {
+              "region": "upper-rim-west-stairs",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 25.388
+            },
+            {
+              "region": "lower-rim-west-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 20.826
+            },
+            {
+              "region": "lower-rim-east-stairs",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 16.991
+            },
+            {
+              "region": "trial-anvil-ring",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 26.2
+            },
+            {
+              "region": "vendor-cart",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 25.398
+            },
+            {
+              "region": "southern-coast",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 24.641
+            },
+            {
+              "region": "west-hidden-cave-stairs",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 21.866
+            },
+            {
+              "region": "southern-jetty",
+              "bestShiftPixels": [
+                1,
+                0
+              ],
+              "edgeRms": 18.723
+            },
+            {
+              "region": "eastern-jetty",
+              "bestShiftPixels": [
+                0,
+                0
+              ],
+              "edgeRms": 22.32
+            }
+          ],
+          "candidateLabel": "5c"
+        }
+      ]
+    }
+  ],
+  "overallVerdict": "All five selected candidates approved for style-only replacement. Cloudtop decorative-outline caveat remains explicit. Foundry structural-drift candidate was rejected,5c restored alignment, and final5d retains alignment with local matte/glint/paving finishing edits."
+}

@@ -1,12 +1,14 @@
 {
-  "date": "2026-10-23",
-  "status": "Mixed revision in progress: selected style-pass districts 1/2 integrated; districts3\u20135 retain prior original plates. Selection/test passes do not establish user visual approval.",
+  "date": "2026-10-26",
+  "status": "Current selected style-pass plates integrated; final cooked asset validation pending; no inferred user art approval",
   "generation": {
     "tool": "OpenAI built-in image_gen",
     "mode": "Initial text generation followed by refinements/new districts referencing our generated original plate only",
     "inputPolicy": "No copied Cuphead source image inputs; original compositions inspired by the requested overworld interaction and theatrical cel art guide",
     "prompts": "tools/overworld/original-map-prompts.json",
-    "artGuide": "/Users/eduardoleale/workspace/art/poc-popeye/output/pdf/theatrical-cel-adventure-art-style-guide.pdf"
+    "artGuide": "/Users/eduardoleale/workspace/art/poc-popeye/output/pdf/theatrical-cel-adventure-art-style-guide.pdf",
+    "currentRepaintPrompts": "tools/overworld/style-pass-prompts.json",
+    "currentRepaintLineage": "Repaints of the previously generated original Brigade maps, using established courtyard art and supplied guide as direction. No copied Cuphead pixels."
   },
   "maps": [
     {
@@ -40,44 +42,44 @@
     {
       "districtId": "district-3",
       "asset": "assets/overworld-original/district-3/base.png",
-      "source": "tools/overworld/original-sources/style-pass-before/district-3.png",
-      "sha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
+      "source": "tools/overworld/original-sources/district-3.png",
+      "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
       "metadata": "assets/overworld-original/district-3/base.png.gmeta",
-      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
-      "revision": "previous original-art plate, awaiting style-pass replacement"
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
     },
     {
       "districtId": "district-4",
       "asset": "assets/overworld-original/district-4/base.png",
-      "source": "tools/overworld/original-sources/style-pass-before/district-4.png",
-      "sha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
+      "source": "tools/overworld/original-sources/district-4.png",
+      "sha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
       "metadata": "assets/overworld-original/district-4/base.png.gmeta",
-      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
-      "revision": "previous original-art plate, awaiting style-pass replacement"
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
     },
     {
       "districtId": "district-5",
       "asset": "assets/overworld-original/district-5/base.png",
-      "source": "tools/overworld/original-sources/style-pass-before/district-5.png",
-      "sha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
+      "source": "tools/overworld/original-sources/district-5.png",
+      "sha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
       "metadata": "assets/overworld-original/district-5/base.png.gmeta",
-      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
-      "revision": "previous original-art plate, awaiting style-pass replacement"
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
     }
   ],
   "completionPennant": {
