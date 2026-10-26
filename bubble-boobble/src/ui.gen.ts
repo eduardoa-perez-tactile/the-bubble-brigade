@@ -69,6 +69,26 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Cartoon boss: a view, screen (ui/docs/cartoon-boss.ui.json)
+     *
+     * Properties:
+     *   - `active`: yesno, default false
+     *   - `captured`: yesno, default false
+     *   - `victory`: yesno, default false
+     *   - `health`: number, default 70
+     *   - `maximum`: number, default 70
+     *   - `guidance`: text, default ""
+     *   - `healthLabel`: text, default ""
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-boss': {
+      props: { active: boolean; captured: boolean; victory: boolean; health: number; maximum: number; guidance: string | { loc: string } | LocText; healthLabel: string | { loc: string } | LocText };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Cartoon button: a widget, button (ui/docs/cartoon-button.ui.json)
      *
      * Properties:
@@ -290,13 +310,14 @@ declare module '@gameengine/ui' {
      *   - `cueFade`: enum zero | eighth | quarter | three-eighths | half | five-eighths | three-quarters | seven-eighths | full, default "full"
      *   - `showReadyArt`: yesno, default false
      *   - `showActionArt`: yesno, default false
+     *   - `bossActive`: yesno, default false
      * Events: none
      * Code areas: none
      * Refs: `header`, `score-card`, `wave-plaque`, `round-card`, `brand`, `footer`, `footer-architecture`, `footer-paper`, `footer-panel`, `roster-top`, `roster-bottom`, `roster-wide`, `banner`, `start-cue`, `cue-art`, `cue-action`
      * Samples (`view render doc:cartoon-hud --sample …`): `playing`, `ready`, `action`, `smear`
      */
     'cartoon-hud': {
-      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; cueStage: 'off' | 'ready-ink' | 'ready-hold' | 'ready-out' | 'action-smear' | 'action-hold' | 'action-out'; cueFade: 'zero' | 'eighth' | 'quarter' | 'three-eighths' | 'half' | 'five-eighths' | 'three-quarters' | 'seven-eighths' | 'full'; showReadyArt: boolean; showActionArt: boolean };
+      props: { name: string | { loc: string } | LocText; score: string | { loc: string } | LocText; round: string | { loc: string } | LocText; high: string | { loc: string } | LocText; highTitle: string | { loc: string } | LocText; lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; banner: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; freeze: string | { loc: string } | LocText; startCue: string | { loc: string } | LocText; startHint: string | { loc: string } | LocText; showBanner: boolean; showStartCue: boolean; party: boolean; shade: 'normal' | 'pause' | 'result'; rosterTop: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottom: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterTopPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterBottomPortraits: readonly { key: string; portrait?: string; active?: boolean }[]; classicPortrait: string; waveLabel: string | { loc: string } | LocText; rosterTopFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterBottomFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWideFrames: readonly { key: string; active?: boolean; down?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; rosterWidePortraits: readonly { key: string; portrait?: string; active?: boolean }[]; rosterWide: readonly { key: string; name?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; down?: boolean; number?: string | { loc: string } | LocText; condition?: 'ready' | 'rescue' | 'returning' | 'out' | 'open' }[]; showStatus: boolean; rosterTopBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterBottomBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; rosterWideBadges: readonly { key: string; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate' }[]; cueStage: 'off' | 'ready-ink' | 'ready-hold' | 'ready-out' | 'action-smear' | 'action-hold' | 'action-out'; cueFade: 'zero' | 'eighth' | 'quarter' | 'three-eighths' | 'half' | 'five-eighths' | 'three-quarters' | 'seven-eighths' | 'full'; showReadyArt: boolean; showActionArt: boolean; bossActive: boolean };
       areas: never;
       refs: 'header' | 'score-card' | 'wave-plaque' | 'round-card' | 'brand' | 'footer' | 'footer-architecture' | 'footer-paper' | 'footer-panel' | 'roster-top' | 'roster-bottom' | 'roster-wide' | 'banner' | 'start-cue' | 'cue-art' | 'cue-action';
     };
@@ -691,6 +712,29 @@ declare module '@gameengine/ui' {
       props: {};
       areas: 'aperture';
       refs: never;
+    };
+    /**
+     * Cartoon victory: a view, screen (ui/docs/cartoon-victory.ui.json)
+     *
+     * Properties:
+     *   - `eyebrow`: text, default ""
+     *   - `heroCaption`: text, default ""
+     *   - `outcome`: text, default ""
+     *   - `hint`: text, default ""
+     *   - `detailHeading`: text, default ""
+     *   - `details`: yesno, default false
+     *   - `ready`: yesno, default false
+     *   - `metrics`: list of victory-metric
+     *   - `ranking`: list of victory-rank
+     *   - `buttons`: list of victory-action
+     * Events: `press (<item>)`
+     * Code areas: none
+     * Refs: `results-title`, `hero`, `scoreboard`, `team-board`, `ranking-list`, `ranking-ribbon`, `actions`, `input-hint`
+     */
+    'cartoon-victory': {
+      props: { eyebrow: string | { loc: string } | LocText; heroCaption: string | { loc: string } | LocText; outcome: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; detailHeading: string | { loc: string } | LocText; details: boolean; ready: boolean; metrics: readonly { key: string; label?: string | { loc: string } | LocText; value?: string | { loc: string } | LocText }[]; ranking: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; kills?: string | { loc: string } | LocText }[]; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] };
+      areas: never;
+      refs: 'results-title' | 'hero' | 'scoreboard' | 'team-board' | 'ranking-list' | 'ranking-ribbon' | 'actions' | 'input-hint';
     };
     /**
      * Desktop account: a view, screen (ui/docs/desktop-account.ui.json)
@@ -1221,6 +1265,53 @@ declare module '@gameengine/ui' {
       props: { eyebrow: string | { loc: string } | LocText; title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; score: string | { loc: string } | LocText; champion: string | { loc: string } | LocText; stats: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; won: boolean; party: boolean; ready: boolean; showStats: boolean; ranking: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; kills?: string | { loc: string } | LocText; leader?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; image?: string }[]; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; podium: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; image?: string; place?: 'gold' | 'silver' | 'bronze'; occupied?: boolean; killLabel?: string | { loc: string } | LocText }[]; moreRanks: boolean };
       areas: 'confetti';
       refs: 'result-score' | 'result-stats';
+    };
+    /**
+     * Victory action: a widget, button (ui/docs/victory-action.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "CONTINUE"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'victory-action': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Victory metric: a widget (ui/docs/victory-metric.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `value`: text, default ""
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'victory-metric': {
+      props: { label: string | { loc: string } | LocText; value: string | { loc: string } | LocText };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Victory rank: a widget (ui/docs/victory-rank.ui.json)
+     *
+     * Properties:
+     *   - `rank`: text, default ""
+     *   - `name`: text, default ""
+     *   - `mode`: text, default ""
+     *   - `kills`: text, default ""
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'victory-rank': {
+      props: { rank: string | { loc: string } | LocText; name: string | { loc: string } | LocText; mode: string | { loc: string } | LocText; kills: string | { loc: string } | LocText };
+      areas: never;
+      refs: never;
     };
   }
 }

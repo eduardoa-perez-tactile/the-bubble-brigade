@@ -92,7 +92,7 @@ worldTest('cartoon complete content redraws elemental effects projectiles and bo
   g.Effects = [{ ...effect(300,220), Element: 'fire', Ground: true, Age: 0, Life: 60 }];
   expect(inspect(g).some(draw => draw.frame.startsWith('effect/flame-'))).toBe(true);
   g.Effects = [];
-  for (const [bottle, laser, expected] of [[false,false,'effect/boulder-'],[false,true,'effect/laser-'],[true,false,'boss/bottle-']] as const) {
+  for (const [bottle, laser, expected] of [[false,false,'effect/boulder-'],[false,true,'effect/laser-'],[true,false,'boss/fireball']] as const) {
     g.Projectiles = [{ ...body(300,220), Bottle: bottle, Laser: laser, Age: 0, Removed: false }];
     expect(inspect(g).some(draw => draw.frame.startsWith(expected))).toBe(true);
   }

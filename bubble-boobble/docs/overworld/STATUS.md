@@ -1,5 +1,7 @@
 # Original Adventure overworld status
 
+Integration update, 26 October 2026: the user explicitly authorized merging the complete feature into `main` so the combined features can be playtested there. This supersedes earlier pre-merge playtest restrictions; it does not assert final artistic approval. Current-main music, boss/results and combat/spawn changes are being reconciled and validated before the authorized merge.
+
 26 October 2026: **five-map painting pass completed and engineering checks passed; user art review and playtest pending**. PR #10 remains draft and unmerged, with auto-merge disabled. Automated tests do not certify artistic compliance.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
@@ -37,4 +39,4 @@ No fresh CPU/RSS soak or physical-phone measurements were performed for this pai
 
 ## Handoff
 
-All work is committed and pushed. Thirty-minute progress updates pause at this completed handoff. Keep PR draft and unmerged until the user has reviewed the revised art, playtested and explicitly approved merging. See `PLAYTEST.md`.
+All work is committed and pushed. Thirty-minute progress updates pause at this completed handoff. The user has now explicitly authorized merging for combined-feature testing. Merge after integration checks pass, preserve existing local generated/untracked files, and continue user art review/playtesting on main. See `PLAYTEST.md`.

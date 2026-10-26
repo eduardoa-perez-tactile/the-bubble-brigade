@@ -1,0 +1,100 @@
+{
+  "$schemaVersion": 1,
+  "guid": "3f2a15de-322e-43b9-abe3-54bb6e6e5791",
+  "name": "victory-rank",
+  "title": "Victory rank",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Victory rank",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#00000000",
+        "radius": 0,
+        "w": "100%",
+        "h": 22,
+        "gap": 8
+      },
+      "children": [
+        "vr_rank",
+        "vr_name",
+        "vr_mode",
+        "vr_kills"
+      ]
+    },
+    "vr_rank": {
+      "type": "label",
+      "name": "Label",
+      "text": "{rank}",
+      "style": {
+        "w": "9%",
+        "h": 22,
+        "fontSize": 19,
+        "fitMin": 14,
+        "textAlign": "left",
+        "color": "#ffd366"
+      }
+    },
+    "vr_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "{name}",
+      "style": {
+        "w": "43%",
+        "h": 22,
+        "fontSize": 19,
+        "fitMin": 14,
+        "textAlign": "left",
+        "color": "#fff1cb"
+      }
+    },
+    "vr_mode": {
+      "type": "label",
+      "name": "Label",
+      "text": "{mode}",
+      "style": {
+        "w": "27%",
+        "h": 22,
+        "fontSize": 19,
+        "fitMin": 14,
+        "textAlign": "left",
+        "color": "#c5d7d6"
+      }
+    },
+    "vr_kills": {
+      "type": "label",
+      "name": "Label",
+      "text": "{kills}",
+      "style": {
+        "w": "15%",
+        "h": 22,
+        "fontSize": 19,
+        "fitMin": 14,
+        "textAlign": "right",
+        "color": "#ffd366"
+      }
+    }
+  },
+  "properties": {
+    "rank": {
+      "type": "text",
+      "default": ""
+    },
+    "name": {
+      "type": "text",
+      "default": ""
+    },
+    "mode": {
+      "type": "text",
+      "default": ""
+    },
+    "kills": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

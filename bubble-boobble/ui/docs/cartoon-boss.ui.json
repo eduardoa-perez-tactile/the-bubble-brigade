@@ -1,0 +1,328 @@
+{
+  "$schemaVersion": 1,
+  "guid": "9bce77fa-d1df-438b-97be-65e1f5290676",
+  "name": "cartoon-boss",
+  "title": "Cartoon boss",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon boss",
+      "style": {
+        "w": "100%",
+        "h": 720,
+        "pad": 0,
+        "bg": "#00000000"
+      },
+      "children": [
+        "cb_header",
+        "cb_guidance",
+        "cb_celebration"
+      ]
+    },
+    "cb_header": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cb_name",
+        "cb_hp",
+        "cb_track"
+      ],
+      "style": {
+        "pad": 3,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          5
+        ],
+        "w": "72%",
+        "h": 43,
+        "bg": "#231e27",
+        "radius": 8
+      },
+      "show": "active"
+    },
+    "cb_name": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE CITADEL DRAGON",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          12,
+          1
+        ],
+        "w": "70%",
+        "h": 16,
+        "fontSize": 12,
+        "color": "#fff0c9",
+        "weight": 800
+      }
+    },
+    "cb_hp": {
+      "type": "label",
+      "name": "Label",
+      "text": "{healthLabel}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          -12,
+          1
+        ],
+        "w": "25%",
+        "h": 16,
+        "fontSize": 12,
+        "color": "#fff0c9",
+        "textAlign": "right"
+      }
+    },
+    "cb_track": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cb_fill"
+      ],
+      "style": {
+        "pad": 2,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          22
+        ],
+        "w": "96%",
+        "h": 15,
+        "bg": "#5a333b",
+        "radius": 5
+      }
+    },
+    "cb_fill": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": "100%",
+        "bg": "#f6b64e",
+        "radius": 4,
+        "fill": "horizontal",
+        "fillAmount": 1
+      }
+    },
+    "cb_guidance": {
+      "type": "label",
+      "name": "Label",
+      "text": "{guidance}",
+      "show": "active",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          54
+        ],
+        "w": "90%",
+        "h": 28,
+        "fontSize": 14,
+        "fitMin": 10,
+        "textAlign": "center",
+        "color": "#fff3cf",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#15202b"
+      }
+    },
+    "cb_celebration": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cb_victory",
+        "cb_ovation"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.43
+        ],
+        "pivot": "centre",
+        "w": "82%",
+        "h": 290
+      },
+      "show": "victory"
+    },
+    "cb_victory": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "cartoon/ui/cues/brigade-victory",
+      "style": {
+        "size": 32,
+        "w": "100%",
+        "h": 240
+      }
+    },
+    "cb_ovation": {
+      "type": "label",
+      "name": "Label",
+      "text": "THE DRAGON IS DOWN.  TAKE A BOW!",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          -4
+        ],
+        "w": "100%",
+        "h": 28,
+        "fontSize": 18,
+        "fitMin": 12,
+        "textAlign": "center",
+        "color": "#fff3cf",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#231e27"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen"
+  },
+  "properties": {
+    "active": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "no": {
+          "set": {
+            "cb_header": {
+              "opacity": 0,
+              "ty": -48
+            }
+          }
+        },
+        "yes": {
+          "set": {
+            "cb_header": {
+              "opacity": 1,
+              "ty": 0
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 650
+          }
+        }
+      }
+    },
+    "captured": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cb_fill": {
+              "bg": "#75dcca"
+            }
+          }
+        }
+      }
+    },
+    "victory": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "no": {
+          "set": {
+            "cb_celebration": {
+              "scale": 0.8,
+              "opacity": 0
+            }
+          }
+        },
+        "yes": {
+          "set": {
+            "cb_celebration": {
+              "scale": 1,
+              "opacity": 1
+            },
+            "cb_header": {
+              "opacity": 0
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 300
+          }
+        }
+      }
+    },
+    "health": {
+      "type": "number",
+      "default": 70,
+      "format": "value",
+      "drivers": [
+        {
+          "type": "range",
+          "min": 0,
+          "maxFrom": "maximum",
+          "empty": {
+            "set": {
+              "cb_fill": {
+                "fillAmount": 0
+              }
+            }
+          },
+          "full": {
+            "set": {
+              "cb_fill": {
+                "fillAmount": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "smooth",
+          "min": 100,
+          "max": 300
+        }
+      ]
+    },
+    "maximum": {
+      "type": "number",
+      "default": 70,
+      "format": "value"
+    },
+    "guidance": {
+      "type": "text",
+      "default": ""
+    },
+    "healthLabel": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

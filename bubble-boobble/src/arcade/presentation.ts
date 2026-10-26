@@ -154,6 +154,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
   };
   if (g.Party) {
     for (const spawn of g.Party.Telegraphs ?? []) {
+      if(spawn.Kind&&spawn.Ticks>60)continue;
       out.push(image('bubble-warning', spawn.Ticks, spawn.X, spawn.Y + 48, 44));
       out.push(label('!', spawn.X + 16, spawn.Y + 38, 16));
     }
@@ -412,7 +413,7 @@ export const ArcadePool = defineSystem({
   runIf: { resource: ArcadeControl, field: "active", value: true },
   run(ctx, q) {
     const plan = sceneDraws(ctx.step,undefined,ctx.get(ViewInfo)), party=!!session.get().game?.Party;
-    const needed = plan.texts.length + 1 + (party?36:0), pixelCount = orderedCapacity(plan.images,plan.clip)+(party?512:0)+(session.get().game?.Level.arena==='cartoon-courtyard'?256:0);
+    const needed = plan.texts.length + 1 + (party||session.get().game?.Level.arena==='cartoon-courtyard'?36:0), pixelCount = orderedCapacity(plan.images,plan.clip)+(party?512:0)+(session.get().game?.Level.arena==='cartoon-courtyard'?256:0);
     let count = 0, pixels = 0;
     for (const c of q.chunks()) for (let i = 0; i < c.length; i++) {
       const slot = c.col(ArcadeVisual).slot[i]!;
@@ -744,7 +745,7 @@ export const ArcadePresentation = defineSystem({
         }
         const source=plan.texts[slot-1];
         let d=source??rescueLabels[slot-1-plan.texts.length];
-        if(modern&&source?.text==='SAVED!')d=undefined;
+        if(modern&&(source?.text==='SAVED!'||source&&Object.values(powerupTags).includes(source.text)))d=undefined;
         // The preserved pixel plan has already applied its linear world layout.
         // Lower only its world text through the same projection as native art;
         // UI/footer and the independently projected identity labels stay owned

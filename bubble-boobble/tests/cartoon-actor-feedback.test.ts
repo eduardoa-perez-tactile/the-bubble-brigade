@@ -94,5 +94,7 @@ worldTest('cartoon boss anticipation and impact preserve its feet and reduced au
  const impact=cartoonBossFeedback(draw,b,feel('boss-hit'));
  near(impact.y+impact.height*120/128,draw.y+draw.height*120/128);
  expect(cartoonBossFeedback(draw,b,feel('boss-hit'),true)).toEqual(draw);expect(JSON.stringify(b)).toBe(before);
- b.Mode='captured';expect(cartoonBossFeedback(draw,b,feel('boss-hit'))).toEqual(draw);
+ b.Mode='captured';b.Timer=20;const captive=cartoonBossFeedback(draw,b,feel('boss-hit'));
+ expect(captive.width).toBe(draw.width);expect(Math.abs(captive.y-draw.y)<=5).toBe(true);
+ expect(cartoonBossFeedback(draw,b,feel('boss-hit'),true)).toEqual(draw);
 });

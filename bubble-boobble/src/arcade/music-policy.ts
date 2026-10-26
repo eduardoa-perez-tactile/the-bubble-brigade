@@ -1,12 +1,12 @@
 /** Music palette follows recorded desktop flow, never native backend availability. */
 export interface MusicFlow {cartoon?:boolean}
-export interface MusicGame {State:number;Hurry:boolean}
+export interface MusicGame {State:number;Hurry:boolean;Party?:{Boss?:{Mode:string}}}
 const originalTracks:Record<string,string>={theme:'music-bubble-1',menu:'music-bubble-2',opening:'music-bubble-2',hurry:'music-bubble-3',gameover:'music-bubble-4',win:'music-bubble-5'};
 export function usesIllustratedMusic(flow:MusicFlow):boolean{return !!flow.cartoon;}
 export function isIllustratedMusicTrack(track:string):boolean{return track.startsWith('brigade-');}
 export function selectArcadeMusic(flow:MusicFlow,game:MusicGame|null):{track:string;asset:string|null}{
  if(usesIllustratedMusic(flow)){
-  if(game&&(game.State===3||game.State===4))return {track:'brigade-silent',asset:null};
+  if(game&&(game.State===3||game.State===4||game.Party?.Boss?.Mode==='defeated'))return {track:'brigade-silent',asset:null};
   return game?{track:'brigade-gameplay',asset:'audio/brigade/gameplay'}:{track:'brigade-menu',asset:'audio/brigade/menu'};
  }
  const track=!game?'menu':game.State===4?'win':game.State===3?'gameover':game.Hurry?'hurry':'theme';

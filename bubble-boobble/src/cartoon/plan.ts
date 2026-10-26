@@ -191,6 +191,19 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const item of g.Items){
     if(item.Power!=='thunder_potion'&&item.Age>600&&item.Age%12<6)continue;
     const size=composed?CARTOON_PICKUP_SIZE:48;
+    if(item.Power){
+      const cx=px(item.X+16),cy=py(item.Y+16),u=layout.scale;
+      const pulse=reduced?1:1+.08*Math.sin(tick*.12);
+      // A ground glimmer and rising sparks read as magic without a bubble shell.
+      out.push({frame:'shadow',x:cx-38*u*pulse,y:py(item.Y+32)-5*u,width:76*u*pulse,height:12*u,color:[1,.78,.3,.85]});
+      if(!reduced)for(let i=0;i<3;i++){
+        const age=(tick+i*20)%60,x=cx+(i-1)*28*u,y=cy+(12-age*.8)*u;
+        markers.push({frame:'solid/#ffe08a',x:x-3*u,y:y-3*u,width:6*u,height:6*u,diamond:true,color:[1,1,1,1-age/60]});
+      }
+      markers.push({frame:'solid/#231e27',x:cx-18*u,y:cy-70*u,width:36*u,height:28*u,diamond:true},
+        {frame:'solid/#ffe08a',x:cx-14*u,y:cy-66*u,width:28*u,height:20*u,diamond:true});
+      centered(item.Power==='thunder_potion'?'effect/thunder-0':'effect/spark-0',item.X+16,item.Y-39,28);
+    }
     // Uniform art scaling retains source proportions and the original pickup's
     // center/floor registration. Its 32-unit collection footprint never moves.
     out.push({frame:itemFrame(item.Power,item.Food),x:px(item.X+16)-size*layout.scale/2,
@@ -202,7 +215,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     return -48+(y+48)*(1-(1-t)*(1-t));
   };
   const boss=g.Party?.Boss;
-  if(boss){
+  if(boss&&boss.Mode!=='defeated'){
     const angry=boss.HP*3<=boss.MaxHP;
     const released=g.Projectiles.some(p=>p.Bottle&&!p.Removed&&p.Age<10);
     const frame=boss.Mode==='captured'?'captured':boss.Mode==='windup'?(angry?'angry-windup':'windup'):
@@ -231,7 +244,17 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       }
     }
   }
-  for(const spawn of g.Party?.Telegraphs??[])add('bubble',spawn.X,spawn.Y,44,44,false,rgba('#f3ba78'));
+  for(const spawn of g.Party?.Telegraphs??[]){
+    if(spawn.Kind&&spawn.Ticks>60)continue;
+    const pulse=reduced?1:1+.12*Math.sin(spawn.Ticks*.2),u=layout.scale;
+    const cx=px(spawn.X+22),feet=py(spawn.Y+44);
+    out.push({frame:'shadow',x:cx-48*u*pulse,y:feet-5*u,width:96*u*pulse,height:10*u,color:[1,.85,.4,.8]});
+    const y=feet-64*u;
+    markers.push({frame:'solid/#231e27',x:cx-16*u,y:y-22*u,width:32*u,height:32*u,diamond:true},
+      {frame:'solid/#ffe08a',x:cx-12*u,y:y-18*u,width:24*u,height:24*u,diamond:true},
+      {frame:'solid/#231e27',x:cx-2*u,y:y-14*u,width:4*u,height:10*u},
+      {frame:'solid/#231e27',x:cx-2*u,y:y,width:4*u,height:4*u});
+  }
   for(let index=0;index<g.Enemies.length;index++){
     const e=g.Enemies[index]!;
     if(e.State===EnemyState.Trapped||e.State===EnemyState.Defeated&&e.DeadTicks===0)continue;
@@ -243,7 +266,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const flyer=e.Kind==='monsta'||e.Kind==='pulpul';
     const clock=g.Party?.Phase==='prepare'&&flyer?tick+index*3:e.Age;
     if(simplifiedKinds.includes(e.Kind)){
-      for(const draw of simplifiedEnemyDraws(e,clock,size,reduced)){
+      for(const draw of simplifiedEnemyDraws(e,clock,size,reduced,feel)){
         out.push({...draw,x:px(draw.x),y:py(y+44)+(draw.y-(e.Y+44))*layout.scale,
           width:draw.width*layout.scale,height:draw.height*layout.scale});
       }
@@ -253,7 +276,13 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     }
   }
   for(const p of g.Projectiles)if(!p.Bottle)add(effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
-  for(const effect of g.Effects)add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
+  for(const effect of g.Effects){
+    if(effect.Element==='thunder'){
+      // Use the same authored lightning drawing as the charged bubble. Keep
+      // its square canvas and center it on the swept collision body.
+      centered('effect/thunder-0',effect.X+20,effect.Y+16,80,effect.Dir<0);
+    }else add(effectFrame(effect.Element==='fire'&&effect.Ground?'flame':effect.Element,effect.Age),effect.X,effect.Y,40,32,effect.Dir<0);
+  }
   const bubblePaints=g.Bubbles.map(b=>{
     const color=colors[partyColors.findIndex(c=>c===skin(b.Shooter??0))]??colors[0]!;
     const t=b.EnemyID||b.Shooter===undefined?1:Math.max(0,Math.min(1,b.Age/16));
@@ -286,7 +315,11 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       }else if(part==='rim'){
         out.push({frame:'bubble',x:px(shape.x)-shape.width*layout.scale/2,y:py(shape.y)+(shape.offsetY-shape.height/2)*layout.scale,width:shape.width*layout.scale,height:shape.height*layout.scale,color:rgba(state.rim,state.rimAlpha)});
         if(b.Shooter!==undefined)centered('badge/'+skin(b.Shooter),shape.x+diameter*9/44,shape.y+diameter*9/44,10*growth,false,undefined,shape.offsetY);
-        if(b.Element)centered(effectFrame(b.Element,b.Age),shape.x,shape.y,18*growth,false,undefined,shape.offsetY);
+        if(b.Element){
+          const lightning=b.Element==='thunder';
+          centered(effectFrame(b.Element,b.Age),shape.x,shape.y,(lightning?54:18)*growth,false,undefined,shape.offsetY);
+          if(lightning)out[out.length-1]!.color=[1,.87,.25,1];
+        }
       }
     }
   };
@@ -297,17 +330,14 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const p=g.Players[index]!;
     if(!cartoonPlayerVisible(p,g.Party?.Phase,g.LevelTicks,!!g.Party))continue;
     const help=helps.get(index);
-    if(help){
-      marker('solid/#3c3630',help.x-1,help.y-1,62,26);
-      marker('solid/#fff0c9',help.x,help.y,60,24);
-      marker('solid/#fff0c9',help.x+25,help.y+24,10,5);
-    }
     // Respawn bodies have not resolved Ground during the ready countdown.
     // Show an idle pose until the first physics step, without changing that body
     // or confusing a real jump's zero-velocity apex holds with a grounded state.
     const spawning=!g.Party&&(g.State===State.Ready||g.State===State.Playing&&g.LevelTicks===0)
       &&!p.Ground&&p.VY===0&&p.JumpStep===undefined&&!p.Shoot&&!p.Dead&&!p.Downed;
-    const pose=spawning?{...p,Ground:true,VX:0}:p;
+    const celebrating=boss?.Mode==='defeated';
+    const hop=celebrating&&!reduced?Math.max(0,Math.sin((boss.Timer-index*6)*Math.PI/36))*24:0;
+    const pose=celebrating?{...p,Downed:false,Dead:0,Shoot:0,Ground:hop===0,VX:0,VY:-1,Y:p.Y-hop}:spawning?{...p,Ground:true,VX:0}:p;
     for(const draw of cartoonDragonFeedback(dragonDraws(pose,skin(index),tick,spawning?false:motion?.[index],composed?CARTOON_PLAYER_SIZE:64,reduced),pose,index,feel,reduced)){
       // Cropped layers retain their source offset from one common feet root.
       // Reanchoring each crop by its own height would separate torso and legs.
@@ -347,16 +377,24 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     // a large pop crosses one of the authored platform projection knots.
     out[out.length-1]!.y=py(d.y+d.height/2)-d.height*layout.scale/2;
   }
-  // Boss hazards cross the actors and bubbles so a crowded party cannot hide
+  // Dragon fireballs cross the actors and bubbles so a crowded party cannot hide
   // the fan. Center art on the existing 16px projectile body, with a short
-  // cream/coral wake; reduced mode retains the large, steady bottle alone.
+  // cream/coral wake; reduced mode retains the large, steady fireball alone.
   for(const p of g.Projectiles)if(p.Bottle&&!p.Removed){
     const cx=px(p.X+8),cy=py(p.Y+8),unit=layout.scale;
     if(!reduced)for(const [lag,size,color]of [[3,13,'#ed6555'],[5,8,'#fff0c9']] as const){
       const x=px(p.X+8-p.VX*lag),y=py(p.Y+8-p.VY*lag);
       markers.push({frame:'solid/'+color,x:x-size*unit/2,y:y-size*unit/2,width:size*unit,height:size*unit,diamond:true});
     }
-    out.push({frame:'boss/bottle-0',x:cx-30*unit,y:cy-30*unit,width:60*unit,height:60*unit,flip:p.VX<0});
+    out.push({frame:`boss/fireball-${reduced?0:Math.floor(p.Age/4)%4}`,x:cx-(p.VX<0?20:108)*unit,y:cy-32*unit,width:128*unit,height:64*unit,flip:p.VX<0});
+
+  }
+  if(boss?.Mode==='defeated'&&!reduced){
+    for(let i=0;i<32;i++){
+      const age=(boss.Timer+i*7)%90,angle=i*2.39996;
+      const radius=age*2.6,cx=px(boss.X+48),cy=py(boss.Y+48);
+      markers.push({frame:'solid/'+['#ffe08a','#75dcca','#ed6555'][i%3],x:cx+Math.cos(angle)*radius,y:cy+Math.sin(angle)*radius+age*age*.02,width:7*layout.scale,height:12*layout.scale,diamond:true});
+    }
   }
   // Keep all existing-white marker/plaque quads adjacent after actor images.
   out.push(...markers);

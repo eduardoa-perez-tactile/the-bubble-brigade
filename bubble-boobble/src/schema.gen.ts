@@ -104,7 +104,37 @@ export const schemaIr = {
           "name": "header",
           "kind": "array",
           "scalar": "f64",
-          "lanes": 12
+          "lanes": 13
+        },
+        {
+          "name": "enemyID",
+          "kind": "array",
+          "scalar": "i32",
+          "lanes": 32
+        },
+        {
+          "name": "enemyX",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyY",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyVY",
+          "kind": "array",
+          "scalar": "f64",
+          "lanes": 32
+        },
+        {
+          "name": "enemyGround",
+          "kind": "array",
+          "scalar": "i32",
+          "lanes": 32
         },
         {
           "name": "playerX",
@@ -661,6 +691,11 @@ export const ArcadeControl = typeToken<ArcadeControlViews, ArcadeControlValue>('
 
 export interface ArcadeFeelViews {
   header: Float64Array;
+  enemyID: Int32Array;
+  enemyX: Float64Array;
+  enemyY: Float64Array;
+  enemyVY: Float64Array;
+  enemyGround: Int32Array;
   playerX: Float64Array;
   playerY: Float64Array;
   playerVY: Float64Array;
@@ -676,6 +711,11 @@ export interface ArcadeFeelViews {
 }
 export interface ArcadeFeelValue {
   header: number[];
+  enemyID: number[];
+  enemyX: number[];
+  enemyY: number[];
+  enemyVY: number[];
+  enemyGround: number[];
   playerX: number[];
   playerY: number[];
   playerVY: number[];
@@ -690,7 +730,7 @@ export interface ArcadeFeelValue {
   cueStrength: number[];
 }
 /** ArcadeFeel (resource, presentation-only) */
-export const ArcadeFeel = typeToken<ArcadeFeelViews, ArcadeFeelValue>('ArcadeFeel', 'resource', { sig: 'header:array:12,playerX:array:10,playerY:array:10,playerVY:array:10,playerFlags:array:10,playerDir:array:10,playerLives:array:10,cueKind:array:32,cueX:array:32,cueY:array:32,cueAt:array:32,cueSlot:array:32,cueStrength:array:32', read: (v: ArcadeFeelViews, i: number, o: Record<string, unknown>) => { o.header = $r.lanes(v.header, i, 12, o.header); o.playerX = $r.lanes(v.playerX, i, 10, o.playerX); o.playerY = $r.lanes(v.playerY, i, 10, o.playerY); o.playerVY = $r.lanes(v.playerVY, i, 10, o.playerVY); o.playerFlags = $r.lanes(v.playerFlags, i, 10, o.playerFlags); o.playerDir = $r.lanes(v.playerDir, i, 10, o.playerDir); o.playerLives = $r.lanes(v.playerLives, i, 10, o.playerLives); o.cueKind = $r.lanes(v.cueKind, i, 32, o.cueKind); o.cueX = $r.lanes(v.cueX, i, 32, o.cueX); o.cueY = $r.lanes(v.cueY, i, 32, o.cueY); o.cueAt = $r.lanes(v.cueAt, i, 32, o.cueAt); o.cueSlot = $r.lanes(v.cueSlot, i, 32, o.cueSlot); o.cueStrength = $r.lanes(v.cueStrength, i, 32, o.cueStrength); return o; } });
+export const ArcadeFeel = typeToken<ArcadeFeelViews, ArcadeFeelValue>('ArcadeFeel', 'resource', { sig: 'header:array:13,enemyID:array:32,enemyX:array:32,enemyY:array:32,enemyVY:array:32,enemyGround:array:32,playerX:array:10,playerY:array:10,playerVY:array:10,playerFlags:array:10,playerDir:array:10,playerLives:array:10,cueKind:array:32,cueX:array:32,cueY:array:32,cueAt:array:32,cueSlot:array:32,cueStrength:array:32', read: (v: ArcadeFeelViews, i: number, o: Record<string, unknown>) => { o.header = $r.lanes(v.header, i, 13, o.header); o.enemyID = $r.lanes(v.enemyID, i, 32, o.enemyID); o.enemyX = $r.lanes(v.enemyX, i, 32, o.enemyX); o.enemyY = $r.lanes(v.enemyY, i, 32, o.enemyY); o.enemyVY = $r.lanes(v.enemyVY, i, 32, o.enemyVY); o.enemyGround = $r.lanes(v.enemyGround, i, 32, o.enemyGround); o.playerX = $r.lanes(v.playerX, i, 10, o.playerX); o.playerY = $r.lanes(v.playerY, i, 10, o.playerY); o.playerVY = $r.lanes(v.playerVY, i, 10, o.playerVY); o.playerFlags = $r.lanes(v.playerFlags, i, 10, o.playerFlags); o.playerDir = $r.lanes(v.playerDir, i, 10, o.playerDir); o.playerLives = $r.lanes(v.playerLives, i, 10, o.playerLives); o.cueKind = $r.lanes(v.cueKind, i, 32, o.cueKind); o.cueX = $r.lanes(v.cueX, i, 32, o.cueX); o.cueY = $r.lanes(v.cueY, i, 32, o.cueY); o.cueAt = $r.lanes(v.cueAt, i, 32, o.cueAt); o.cueSlot = $r.lanes(v.cueSlot, i, 32, o.cueSlot); o.cueStrength = $r.lanes(v.cueStrength, i, 32, o.cueStrength); return o; } });
 
 export interface ArcadeInputViews {
   player: Uint32Array;

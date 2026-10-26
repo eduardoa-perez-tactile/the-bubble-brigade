@@ -1672,6 +1672,27 @@
     "showActionArt": {
       "type": "yesno",
       "default": false
+    },
+    "bossActive": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "ch_top": {
+              "opacity": 0,
+              "ty": -48
+            },
+            "ch_freeze": {
+              "hide": true
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 450
+          }
+        }
+      }
     }
   },
   "transition": {

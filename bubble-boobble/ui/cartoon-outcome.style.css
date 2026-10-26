@@ -1,1 +1,5 @@
 .cartoon-outcome { width:100%;height:720px;pointer-events:none; }
+
+.cartoon-boss { width: 100%; height: 720px; pointer-events: none; font-family: "cartoon/fonts/BreeSerif-Regular"; }
+.cartoon-boss .ud-cartoon-boss__cb_victory { object-fit: contain; }
+.cartoon-boss .ud-cartoon-boss__cb_guidance { font-family: "cartoon/fonts/BreeSerif-Regular"; }

@@ -34,7 +34,8 @@ export const ArcadePlatformState = resource('ArcadePlatformState', { exitSequenc
 // Bounded cosmetic history is never read by simulation or included in replay hashes.
 export const ArcadeFeel = resource('ArcadeFeel', {
  // clock, step, initialized, prior tick/wave/phase/state/HP/mode, player/cue counts.
- header:array(f64(),12),
+ header:array(f64(),13),
+ enemyID:array(i32(),32),enemyX:array(f64(),32),enemyY:array(f64(),32),enemyVY:array(f64(),32),enemyGround:array(i32(),32),
  playerX:array(f64(),10),playerY:array(f64(),10),playerVY:array(f64(),10),
  playerFlags:array(i32(),10),playerDir:array(i32(),10),playerLives:array(i32(),10),
  cueKind:array(i32(),32),cueX:array(f64(),32),cueY:array(f64(),32),

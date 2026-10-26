@@ -2,7 +2,7 @@
 
 **Current build:** the five-map painting pass is complete and engineering checks pass. User visual review and playtest remain pending; tests do not certify art-direction compliance. Compare the revised paintings with the preserved BEFORE plates and `STYLE-PASS-REVIEW.md`.
 
-Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble` in Game Engine and press Play. This is the isolated `codex/walkable-overworld` project; the original checkout is preserved. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
+After the authorized merge, open `/Users/eduardoleale/workspace/tactile-game-engine/the-bubble-brigade/bubble-boobble` on `main` in Game Engine and press Play. This combines the overworld with the newer music, boss/results and combat/spawning features. Existing local generated files and untracked work are preserved. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
 
 ## Controls
 
@@ -21,7 +21,7 @@ Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade
 6. Open Options from the map and return. Leave to the main menu, Continue, then close and reopen the game: verify coins, clears, keepsakes and the saved entrance. If you close during an unfinished encounter, Continue should return to its entrance without granting a clear.
 7. Try another profile, Classic and Bubble Madness. Adventure progress must remain separate. Resize the window between small, tall and ultrawide shapes; check text, buttons, avatar visibility and combat framing.
 
-Please report the district/landmark, input device and steps for any problem, with a screenshot when useful. Keep the PR unmerged until the user has finished this playtest and approved merging.
+Please report the district/landmark, input device and steps for any problem, with a screenshot when useful. The user authorized merging before this combined-feature playtest on 26 October 2026. Visual approval and playtest feedback remain pending.
 
 ## Verification limits
 

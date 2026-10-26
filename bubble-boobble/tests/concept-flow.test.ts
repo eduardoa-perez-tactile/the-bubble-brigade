@@ -184,9 +184,9 @@ renderTest('concept checkpoint responsive actual rescue empty out roster boss vi
  render.expectScreenshot('contact_rescue',{width:2520,height:1080});
  await cheat(CartoonOverhaul,{scenario:'boss'});
  expect(session.get().game!.Party!.Phase).toBe('boss');
- expect(render.stats({width:2520,height:1080}).drawCalls).toBeLessThanOrEqual(14);
+ expect(render.stats({width:2520,height:1080}).drawCalls).toBeLessThanOrEqual(17);
  render.expectScreenshot('boss',{width:2520,height:1080});
- await cheat(CartoonOverhaul,{scenario:'victory'});await step(2);
+ await cheat(CartoonOverhaul,{scenario:'victory'});await step(362);
  expect(desktopState.get().screen).toBe('result');
  expect(desktopState.get().won).toBe(true);
  render.expectScreenshot('victory',{width:2520,height:1080});

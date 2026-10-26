@@ -55,18 +55,19 @@ export type CartoonGroundDustDraw=CartoonDraw&{groundY:number};
 
 /** A short, opaque cream crown gives takeoff and landing a readable silhouette
  * even at phone scale. Three takeoff lobes peel away; a landing adds two smaller
- * outer curls. One active event per player bounds a ten-player landing to 50
- * atlas sprites. FeelCue uses the pixel feet (+92); cartoon feet are +44. */
+ * outer curls. One active event per actor and the 32-cue history cap bound the
+ * burst to 160 atlas sprites. FeelCue uses pixel feet (+92); cartoon feet are +44. */
 export function cartoonGroundDust(feel:FeelState|undefined,reduced=false):CartoonGroundDustDraw[]{
   if(reduced||!feel)return [];
   const out:CartoonGroundDustDraw[]=[];
-  let shownSlots=0;
+  const shownSlots=new Set<string>();
   for(let index=feel.cues.length-1;index>=0;index--){
     const c=feel.cues[index]!;
-    if(c.kind!=='land'&&c.kind!=='jump'||c.slot<0||c.slot>=10)continue;
-    const landing=c.kind==='land',age=feel.clock-c.at,life=landing?22:18;
-    if(age<0||age>=life||shownSlots&(1<<c.slot))continue;
-    shownSlots|=1<<c.slot;
+    if(!['land','jump','enemy-land','enemy-jump'].includes(c.kind))continue;
+    const landing=c.kind==='land'||c.kind==='enemy-land',age=feel.clock-c.at,life=landing?22:18;
+    const key=(c.kind.startsWith('enemy-')?'enemy':'player')+c.slot;
+    if(age<0||age>=life||shownSlots.has(key))continue;
+    shownSlots.add(key);
     const t=age/life,strength=Math.max(.4,Math.min(1,c.strength??1));
     // Even a soft landing is legible; stronger falls add breadth rather than
     // multiplying transparent particles. Expansion eases out, then fades.
@@ -92,11 +93,15 @@ export function cartoonGroundDust(feel:FeelState|undefined,reduced=false):Cartoo
 /** Windup stays readable in reduced mode through the authored attack frame;
  * decorative compression and recoil are disabled. No sim hitstop or new pose. */
 export function cartoonBossFeedback(draw:CartoonDraw,boss:PartyBoss,feel?:FeelState,reduced=false):CartoonDraw{
-  if(reduced||boss.Mode==='captured')return draw;
+  if(reduced)return draw;
+  if(boss.Mode==='captured')return {...draw,y:draw.y+Math.sin(boss.Timer*.08)*5};
   const windup=boss.Mode==='windup'?Math.max(0,Math.min(1,(30-boss.Timer)/30)):0;
   const age=cueAge(feel,'boss-hit'),impact=age<8?1-age/8:0;
-  const sx=1+.035*windup-.025*impact,sy=1-.03*windup+.02*impact;
+  const breath=Math.sin(boss.Tick*.10)*.025;
+  const release=boss.Mode==='moving'&&boss.Timer>132?Math.max(0,(boss.Timer-132)/18):0;
+  const hit=Math.max(impact,boss.Invulnerable/8);
+  const sx=1+breath+.16*windup-.10*hit-.09*release,sy=1-breath-.12*windup+.10*hit+.06*release;
   const center=draw.x+draw.width/2,feet=draw.y+draw.height*120/128;
-  return {...draw,x:center-draw.width*sx/2-boss.Dir*2*impact,
+  return {...draw,x:center-draw.width*sx/2-boss.Dir*(12*hit+9*release),
     y:feet-draw.height*sy*120/128,width:draw.width*sx,height:draw.height*sy};
 }

@@ -13,7 +13,7 @@
         "dir": "row",
         "pad": 0,
         "align": "center",
-        "bg": "#f1e3bf",
+        "bg": "#00000000",
         "radius": 0,
         "w": 196,
         "h": 158
