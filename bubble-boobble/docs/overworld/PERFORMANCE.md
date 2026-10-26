@@ -1,6 +1,21 @@
 # Overworld performance review
 
-## Current map style-pass asset validation
+## Current combined-main validation
+
+Measured 26 October 2026 on merge head `5b4782d`, combining main `9341924` with Adventure. Fresh Android phone-low declared residency includes courtyard and shared sprites pinned. Main's boss/results/combat assets raise courtyard residency, but all existing gates still pass:
+
+| Content | Previous style pass | Combined main | Gate |
+|---|---:|---:|---:|
+| Map-phase peak | 37.18 MiB | 40.18 MiB | 48 MiB |
+| Courtyard | 35.21 MiB | 38.20 MiB | 40 MiB |
+| Shared sprites | 1.81 MiB | 1.81 MiB | 2 MiB |
+| Each district | 0.168 MiB | 0.168 MiB | 2 MiB |
+
+No budget, texture compression, source-pixel or group-lifecycle changes were required. `gameengine check` passes both runtime host checks, typecheck, pipelines, UI documents, desktop cook and 600-frame cooked smoke; existing validation warnings remain. Compact exact bytes, gates and check warnings are in `evidence/combined-main-check.json`. Combined renders, cooked campaign and four both-runtime scenario replays are recorded in `evidence/combined-render-qa.json`.
+
+The root's full logic suite passes 473 tests on each runtime, and the two new recorded Adventure music/B/Escape result-return tests pass on each runtime. Declared asset residency is not total RAM. No new CPU/RSS/GC/soak/device measurement was taken; existing retained-heap and physical-phone limitations remain. These engineering checks do not certify visual style.
+
+## Previous map style-pass asset validation
 
 Measured 26 October 2026 after integrating all five selected map repaints. This pass changes artwork only; source geometry, simulation and UI remain unchanged. Comparative art review and user approval are separate from the checks below.
 

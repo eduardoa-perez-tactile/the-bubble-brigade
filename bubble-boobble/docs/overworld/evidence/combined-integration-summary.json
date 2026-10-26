@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-26",
+  "authorization": "User explicitly requested merging to main before combined-feature playtest; prior pre-merge playtest restriction superseded. Artistic approval remains pending.",
+  "integratedMain": "9341924",
+  "resolutionMerge": "5b4782d",
+  "logicRuns": {
+    "full": {
+      "command": "gameengine test --tier t0 --js both --json",
+      "ok": true,
+      "counts": {
+        "v8": 473,
+        "hermes": 473
+      },
+      "mismatches": []
+    },
+    "additionalRecordedIntegration": {
+      "command": "gameengine test --tier t0 --js both --filter '*adventure merged music*' --json",
+      "ok": true,
+      "results": {
+        "v8": [
+          {
+            "name": "adventure merged music victory controller B guards result and returns to selected entrance",
+            "ok": true,
+            "steps": 492,
+            "hash": "4b1431accbd22ba9"
+          },
+          {
+            "name": "adventure merged music defeat Escape guards result and returns to selected entrance",
+            "ok": true,
+            "steps": 492,
+            "hash": "24229e326dbd9890"
+          }
+        ],
+        "hermes": [
+          {
+            "name": "adventure merged music victory controller B guards result and returns to selected entrance",
+            "ok": true,
+            "steps": 492,
+            "hash": "4b1431accbd22ba9"
+          },
+          {
+            "name": "adventure merged music defeat Escape guards result and returns to selected entrance",
+            "ok": true,
+            "steps": 492,
+            "hash": "24229e326dbd9890"
+          }
+        ]
+      },
+      "mismatches": []
+    },
+    "totalCheckedPerRuntime": 475
+  },
+  "conflictResolution": [
+    "Retained centralized desktop document registrations and Adventure-first return/retry/save flow",
+    "Retained latest main boss finale viewport fade, theatrical full-run results and horizontal navigation",
+    "Kept current-main complete_victory design; refreshed only10 stale inherited boss-finale art/label references after review"
+  ],
+  "reports": [
+    "combined-render-qa.json",
+    "combined-boss-reference-proof.json",
+    "combined-main-check.json"
+  ],
+  "localCheckoutPolicy": "Preserve all existing modified/untracked files; update existing main by fast-forward only; no reset/stash or editor control."
+}

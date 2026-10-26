@@ -1,0 +1,260 @@
+{
+  "purpose": "Combined current-main and Adventure integration QA; engineering verification does not imply user art approval.",
+  "mergedMain": "9341924d75765050a51b51d8e84515c62c059e4d",
+  "focusedT1": [
+    {
+      "runtime": "v8",
+      "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+      "ok": true,
+      "steps": 310,
+      "report": ".gameengine/overworld-combined-map-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+      "ok": true,
+      "steps": 111,
+      "report": ".gameengine/overworld-combined-map-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "adventure campaign actual menu begin play intro results and map return buttons",
+      "ok": true,
+      "steps": 681,
+      "report": ".gameengine/overworld-combined-adventure-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "adventure flow encounter document Play button starts the focused encounter",
+      "ok": true,
+      "steps": 250,
+      "report": ".gameengine/overworld-combined-adventure-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "boss finale canisters lightning capture celebration and results fit every screen",
+      "ok": true,
+      "steps": 297,
+      "report": ".gameengine/overworld-combined-boss-reviewed-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "theatrical victory hero board and full ranking stay readable and navigable across screens",
+      "ok": true,
+      "steps": 175,
+      "report": ".gameengine/overworld-combined-victory-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "spawn staging balanced openings and bounded warnings fit desktop wide tall and ultrawide",
+      "ok": true,
+      "steps": 75,
+      "report": ".gameengine/overworld-combined-spawn-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "combat feedback boss animated flames and pickup indicators across views",
+      "ok": true,
+      "steps": 10,
+      "report": ".gameengine/overworld-combined-feedback-t1.json"
+    },
+    {
+      "runtime": "v8",
+      "name": "combat feedback grounded enemy emits takeoff and landing dust during real jumps",
+      "ok": true,
+      "steps": 36,
+      "report": ".gameengine/overworld-combined-feedback-t1.json"
+    }
+  ],
+  "cookedCampaign": {
+    "command": "gameengine test --cooked --tier t0,t1 --filter 'adventure campaign*' --json",
+    "ok": true,
+    "cases": [
+      {
+        "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+        "ok": true,
+        "steps": 3158,
+        "tier": "t0"
+      },
+      {
+        "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+        "ok": true,
+        "steps": 148,
+        "tier": "t0"
+      },
+      {
+        "name": "adventure campaign actual menu begin play intro results and map return buttons",
+        "ok": true,
+        "steps": 681,
+        "tier": "t1"
+      },
+      {
+        "name": "adventure campaign branches and all five district gates are reachable",
+        "ok": true,
+        "steps": 0,
+        "tier": "t0"
+      }
+    ]
+  },
+  "replays": [
+    {
+      "file": "tests/replays/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons.greplay",
+      "beforeSha256": "1d3483cb8d3ad02c0e0093443ce86bbb210ddc6a1f0800a44d48011e38531474",
+      "currentSha256": "cbb79a858de669975d795724a5d69372dddcc39cabd056834569f1f6519a144a",
+      "previousFirstDivergence": {
+        "v8": {
+          "step": 362,
+          "expected": "8b0a36b02399df39",
+          "actual": "2a658ce9c0c8b73a"
+        },
+        "hermes": {
+          "step": 362,
+          "expected": "8b0a36b02399df39",
+          "actual": "2a658ce9c0c8b73a"
+        }
+      },
+      "verificationCommand": "gameengine replay verify tests/replays/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons.greplay --js both --json",
+      "currentVerification": {
+        "ok": true,
+        "results": {
+          "v8": {
+            "ok": true,
+            "steps": 681,
+            "firstDivergence": null
+          },
+          "hermes": {
+            "ok": true,
+            "steps": 681,
+            "firstDivergence": null
+          }
+        }
+      }
+    },
+    {
+      "file": "tests/replays/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen.greplay",
+      "beforeSha256": "ae5af832f4e99d5925ca019695151688a9ff394a353a2362e7c57beadbf86c76",
+      "currentSha256": "bc33a2d09065d1476a1001aa99ae80493131421e05d00b9ec2bf8f72ebbe9ab0",
+      "previousFirstDivergence": {
+        "v8": {
+          "step": 0,
+          "expected": "753cab0babd5e41e",
+          "actual": "3dcae558cca25d6f"
+        },
+        "hermes": {
+          "step": 0,
+          "expected": "753cab0babd5e41e",
+          "actual": "3dcae558cca25d6f"
+        }
+      },
+      "verificationCommand": "gameengine replay verify tests/replays/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen.greplay --js both --json",
+      "currentVerification": {
+        "ok": true,
+        "results": {
+          "v8": {
+            "ok": true,
+            "steps": 297,
+            "firstDivergence": null
+          },
+          "hermes": {
+            "ok": true,
+            "steps": 297,
+            "firstDivergence": null
+          }
+        }
+      }
+    },
+    {
+      "file": "tests/replays/theatrical_victory_hero_board_and_full_ranking_stay_readable_and_navigable_across_screens.greplay",
+      "beforeSha256": "5f932a5c64d2d810892425ce95b7d13555fd36822972cfd85d989a7aec84c086",
+      "currentSha256": "a03bd44040b0b640f0aa18b4e019178ba666977c3d51d44c0541c3c09271c94e",
+      "previousFirstDivergence": {
+        "v8": {
+          "step": 0,
+          "expected": "25737fb4adc7818e",
+          "actual": "48743f281a241cb6"
+        },
+        "hermes": {
+          "step": 0,
+          "expected": "25737fb4adc7818e",
+          "actual": "48743f281a241cb6"
+        }
+      },
+      "verificationCommand": "gameengine replay verify tests/replays/theatrical_victory_hero_board_and_full_ranking_stay_readable_and_navigable_across_screens.greplay --js both --json",
+      "currentVerification": {
+        "ok": true,
+        "results": {
+          "v8": {
+            "ok": true,
+            "steps": 175,
+            "firstDivergence": null
+          },
+          "hermes": {
+            "ok": true,
+            "steps": 175,
+            "firstDivergence": null
+          }
+        }
+      }
+    },
+    {
+      "file": "tests/replays/spawn_staging_recorded_engine_steps_release_warned_groups_through_the_real_party_simulation.greplay",
+      "beforeSha256": "f8f87a8f4c9f5d83ca36e8f26122775d629ba514ea806f1a0766e4ed76d3d039",
+      "currentSha256": "972ce6ecd309fdc8432212edbd795b7d02a72ff1c5585f5d22ef09895178627b",
+      "previousFirstDivergence": {
+        "v8": {
+          "step": 0,
+          "expected": "25737fb4adc7818e",
+          "actual": "48743f281a241cb6"
+        },
+        "hermes": {
+          "step": 0,
+          "expected": "25737fb4adc7818e",
+          "actual": "48743f281a241cb6"
+        }
+      },
+      "verificationCommand": "gameengine replay verify tests/replays/spawn_staging_recorded_engine_steps_release_warned_groups_through_the_real_party_simulation.greplay --js both --json",
+      "currentVerification": {
+        "ok": true,
+        "results": {
+          "v8": {
+            "ok": true,
+            "steps": 364,
+            "firstDivergence": null
+          },
+          "hermes": {
+            "ok": true,
+            "steps": 364,
+            "firstDivergence": null
+          }
+        }
+      }
+    }
+  ],
+  "replayAttribution": {
+    "reasonForReviewedRerecord": "This merge changes gameplay physics/audio authoritative state and adds Adventure state/documents. All four semantic scenario tests pass before recording. Prior recordings are retained in ignored .gameengine/combined-merge-review/replays-before. No hash exemptions or relaxed assertions were used.",
+    "limits": "Old recordings lack per-system checkpoints at the diverging step, so the exact first expected-versus-actual system/component difference cannot be recovered from these reports. Step 362 in Adventure is updated-main combat entry; the three prior main scenarios diverge at initialization step 0. Presentation-only ArcadeFeel changes are excluded from authoritative replay hashes and are not attributed as a cause."
+  },
+  "bossReferenceRefresh": {
+    "inheritedMainProof": "combined-boss-reference-proof.json",
+    "mainEqualityChecks": 27,
+    "allEqual": true,
+    "reason": "Main PR12 intentionally replaces canister instruction wording with LIGHTNING POTION, adds LIGHTNING SHOTS indicators and updates boss/potion art; its older goldens retained prior rendering. Parent reviewed representative comparisons and authorized this single-case refresh.",
+    "command": "gameengine test --tier t1 --filter 'boss finale canisters lightning capture celebration and results fit every screen' --update-goldens --json",
+    "changedCheckpoints": [
+      "canisters_768x720/mobile/metal.png",
+      "captured_1680x720/mobile/metal.png",
+      "captured_768x720/mobile/metal.png",
+      "canisters_1680x720/mobile/metal.png",
+      "lightning_2520x1080/mobile/metal.png",
+      "lightning_1680x720/mobile/metal.png",
+      "canisters_2520x1080/mobile/metal.png",
+      "captured_2520x1080/mobile/metal.png",
+      "lightning_640x960/mobile/metal.png",
+      "lightning_768x720/mobile/metal.png"
+    ],
+    "unchangedCheckpointCount": 12,
+    "visualReview": "Every changed checkpoint reviewed in before/after contact sheet; portrait lightning and compact captured views also reviewed full-size. No unrelated golden refresh.",
+    "contactSheet": "combined-boss-review.png",
+    "budgets": "Unchanged test assertion <=17 draw calls and render budget18; observed peak16. FLIP thresholds and maximum cap unchanged."
+  }
+}

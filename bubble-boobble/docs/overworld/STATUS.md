@@ -1,8 +1,8 @@
 # Original Adventure overworld status
 
-Integration update, 26 October 2026: the user explicitly authorized merging the complete feature into `main` so the combined features can be playtested there. This supersedes earlier pre-merge playtest restrictions; it does not assert final artistic approval. Current-main music, boss/results and combat/spawn changes are being reconciled and validated before the authorized merge.
+Integration update, 26 October 2026: the user explicitly authorized merging the complete feature into `main` so the combined features can be playtested there. This supersedes earlier pre-merge playtest restrictions; it does not assert final artistic approval. Current-main music, boss/results and combat/spawn changes have been reconciled and validated for the authorized merge.
 
-26 October 2026: **five-map painting pass completed and engineering checks passed; user art review and playtest pending**. PR #10 remains draft and unmerged, with auto-merge disabled. Automated tests do not certify artistic compliance.
+26 October 2026: **five-map painting pass completed and engineering checks passed; user art review and playtest pending**. The user has explicitly authorized PR #10 integration into main for combined-feature testing; user artistic approval remains separate. Automated tests do not certify artistic compliance.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
 Project: `bubble-boobble/`
@@ -40,3 +40,15 @@ No fresh CPU/RSS soak or physical-phone measurements were performed for this pai
 ## Handoff
 
 All work is committed and pushed. Thirty-minute progress updates pause at this completed handoff. The user has now explicitly authorized merging for combined-feature testing. Merge after integration checks pass, preserve existing local generated/untracked files, and continue user art review/playtesting on main. See `PLAYTEST.md`.
+
+## Combined main integration validation
+
+The branch incorporates main `9341924` (music handoff, boss/results, combat feedback and staged arrivals) through resolution merge `5b4782d`. All three desktop conflicts preserve both Adventure and the newer full-run behavior; document registration remains centralized.
+
+- Full logic: 473/473 on each of V8 and Hermes, then two additional recorded music/B/Escape regression cases pass on each runtime (475 verified cases per runtime). No production edit was required by the added tests.
+- Nine focused render cases and four cooked Adventure campaign checks pass. Ten stale boss-finale screenshots already present on main were selectively refreshed for its newer pickup labels/art after visual comparison; thresholds and budgets are unchanged.
+- Four scenario recordings were regenerated for the integrated authoritative state and verify on both runtimes: Adventure 681, boss 297, victory 175 and staged spawning 364 steps. Old divergence information is preserved; no hash allowances were added, and old recordings lack per-system checkpoints for precise first-system attribution.
+- `gameengine check` passes, including pipeline validation, typecheck, desktop cook and 600-frame cooked smoke. Existing validation warnings remain.
+- Combined declared phone-low asset peak 40.18 MiB / 48 MiB, courtyard 38.20 MiB / 40 MiB; all shared/district gates pass. No source artwork, import setting or budget changes were needed for memory. This remains an estimate, not physical-device performance.
+
+Current portable evidence: `evidence/combined-integration-summary.json`, `combined-render-qa.json`, `combined-boss-reference-proof.json` and `combined-main-check.json`. Playtest the primary main checkout described in `PLAYTEST.md`; the user authorized this merge expressly to test all features together.

@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-26",
+  "mergedMain": "9341924d75765050a51b51d8e84515c62c059e4d",
+  "validatedMergeHead": "5b4782d615a8541663cad6cbdc7551e98c779c09",
+  "scope": "Combined current-main music, boss/results, combat/spawn changes with Adventure. Root owns merge; this report records engine and declared asset budgets.",
+  "memory": {
+    "command": "gameengine memory report --device phone-low --always courtyard-gameplay,overworld-shared --cook --json",
+    "platform": "android",
+    "always": [
+      "courtyard-gameplay",
+      "overworld-shared"
+    ],
+    "priorStylePassPeakBytes": 38990364,
+    "combinedPeakBytes": 42133724,
+    "peakChangeBytes": 3143360,
+    "groups": [
+      {
+        "name": "courtyard-gameplay",
+        "priorStylePassBytes": 36915900,
+        "combinedBytes": 40059260
+      },
+      {
+        "name": "overworld-district-1",
+        "priorStylePassBytes": 176400,
+        "combinedBytes": 176400
+      },
+      {
+        "name": "overworld-district-2",
+        "priorStylePassBytes": 176400,
+        "combinedBytes": 176400
+      },
+      {
+        "name": "overworld-district-3",
+        "priorStylePassBytes": 176400,
+        "combinedBytes": 176400
+      },
+      {
+        "name": "overworld-district-4",
+        "priorStylePassBytes": 176400,
+        "combinedBytes": 176400
+      },
+      {
+        "name": "overworld-district-5",
+        "priorStylePassBytes": 176400,
+        "combinedBytes": 176400
+      },
+      {
+        "name": "overworld-shared",
+        "priorStylePassBytes": 1898064,
+        "combinedBytes": 1898064
+      }
+    ],
+    "gates": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 42133724,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 42133724,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 42133724,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 40059260,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 1898064,
+        "budget": 2097152,
+        "over": false
+      }
+    ],
+    "allGatesPass": true,
+    "optimizationApplied": false,
+    "optimizationDecision": "Measured courtyard and peak remain below unchanged 40/48 MiB gates; no metadata compression, source art or lifecycle edits were needed.",
+    "rawReport": ".gameengine/overworld-combined-phone-low-memory-before.json"
+  },
+  "check": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host"
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/hermes/release/gameengine-host"
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-cook"
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/player/release/gameengine-host"
+      },
+      {
+        "name": "typecheck",
+        "ok": true,
+        "detail": "tsc --noEmit"
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true,
+        "warning": true,
+        "detail": "assets/reference/tiles/12.png: W_ART: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = \"#646664\" in the .gmeta\nscenes/arcade.scene.json: W_CAMERA_DRIVEN: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/arcade.scene.json: W_CAMERA_DRIVEN: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0\nscenes/cartoon.scene.json: W_CAMERA_DRIVEN: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/cartoon.scene.json: W_CAMERA_DRIVEN: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0\nscenes/main.scene.json: W_CAMERA_DRIVEN: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/pixel-prototype.scene.json: W_CAMERA_DRIVEN: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: W_CAMERA_DRIVEN: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: W_CAMERA_DRIVEN: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0"
+      },
+      {
+        "name": "pipelines",
+        "ok": true,
+        "detail": "pipelines.json covers every tier and names current materials"
+      },
+      {
+        "name": "views",
+        "ok": true,
+        "detail": "every TSX view places a UI document"
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true,
+        "detail": "cooked"
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true,
+        "detail": "600 frames on cooked content"
+      },
+      {
+        "name": "ui nodes",
+        "ok": true,
+        "detail": "19 shown at most, budget 1000"
+      }
+    ]
+  },
+  "logicSuites": [
+    {
+      "report": ".gameengine/merge-main-t0.json",
+      "runtime": "v8",
+      "tests": 473,
+      "passed": 473,
+      "steps": 14389
+    },
+    {
+      "report": ".gameengine/merge-main-t0.json",
+      "runtime": "hermes",
+      "tests": 473,
+      "passed": 473,
+      "steps": 14389
+    },
+    {
+      "report": ".gameengine/merge-main-music-back.json",
+      "runtime": "v8",
+      "tests": 2,
+      "passed": 2,
+      "steps": 984
+    },
+    {
+      "report": ".gameengine/merge-main-music-back.json",
+      "runtime": "hermes",
+      "tests": 2,
+      "passed": 2,
+      "steps": 984
+    }
+  ],
+  "renderAndReplayEvidence": "docs/overworld/evidence/combined-render-qa.json",
+  "limits": [
+    "Declared cooked asset-group residency is not total application RAM.",
+    "No fresh CPU, runtime RSS, GC, transition-soak or physical-phone performance benchmark was run for this merge.",
+    "Earlier prototype transition samples exceeded 32 MiB JS guidance; bounded retained heap and device GPU/thermal/loading targets remain unverified.",
+    "Engineering verification does not imply user art approval.",
+    "Original main checkout and its uncommitted work were not edited by these validation commands."
+  ]
+}
