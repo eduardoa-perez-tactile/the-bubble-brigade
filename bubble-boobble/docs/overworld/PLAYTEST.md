@@ -1,6 +1,6 @@
 # Adventure map playtest
 
-**Current build:** five original Brigade maps and an eight-direction oblique dragon replace the copied-art prototype. Use the current branch and captures; prior source-art screenshots are superseded.
+**Artwork readiness pending:** the original maps are undergoing a new style pass against the established courtyard and guide. Prior compliance/readiness claims are superseded. Gameplay instructions below remain useful; wait for the coordinator’s updated captures and handoff before judging this art revision. Automated tests do not certify the visual style.
 
 Open `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble` in Game Engine and press Play. This is the isolated `codex/walkable-overworld` project; the original checkout is preserved. From the main menu choose **START GAME → BEGIN ADVENTURE**. Later, **CONTINUE ADVENTURE** restores the selected profile’s saved map position and progress. **ARCADE MODES** retains Classic and Bubble Madness.
 

@@ -1,6 +1,8 @@
 # Overworld performance review
 
-## Current original-art validation
+## Previous original-art validation
+
+A new map style pass is in progress as of 26 October 2026. The results below describe the previous image bytes; fresh cooked asset-memory/check results will follow integration. These metrics never certify visual style compliance.
 
 Measured 23 October 2026 after replacing all copied map/flag assets with five original district plates, the original completion pennant and 240 original oblique dragon frames. The fresh Android phone-low cook includes both `courtyard-gameplay` and `overworld-shared` pinned for the map phase.
 

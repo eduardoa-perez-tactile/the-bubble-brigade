@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-26",
+  "status": "Artwork in revision; no style-compliance approval inferred from automated tests",
+  "before": [
+    {
+      "districtId": "district-1",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-1.png",
+      "sha256": "c696e1028530378f4f8d11d55e2aceb1ec7cfe8ecdd53ab5b94fddf4f2485fb9",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-2",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-2.png",
+      "sha256": "9d022a39075db3d77139eca3b38a9a0413ae74e3537aa5f4b7876d9ed216bac4",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-3",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-3.png",
+      "sha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-4",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-4.png",
+      "sha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-5",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-5.png",
+      "sha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "districtId": "district-1",
+      "candidate": "harbor3",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-1c8dd579-489f-4a94-a66c-e8c2242045f4.png",
+      "asset": "assets/overworld-original/district-1/base.png",
+      "source": "tools/overworld/original-sources/district-1.png",
+      "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "selection": "Selected by coordinator following comparative review; actor-scale QA and geometry0\u20133px reviewed",
+      "productionIntegrated": true,
+      "visualApproval": "No user style approval inferred from selection or tests"
+    },
+    {
+      "districtId": "district-2",
+      "candidate": "garden2",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-e5471e63-9817-42f9-9db1-540f94b975b9.png",
+      "asset": "assets/overworld-original/district-2/base.png",
+      "source": "tools/overworld/original-sources/district-2.png",
+      "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "selection": "Selected after coordinator visual review and navigation-agent geometry review (0\u20132 px displacement)",
+      "productionIntegrated": true,
+      "visualApproval": "No user style approval inferred from selection or tests"
+    }
+  ],
+  "prompts": "tools/overworld/style-pass-prompts.json",
+  "references": {
+    "establishedArt": "Existing Brigade courtyard gameplay art",
+    "artGuide": "/Users/eduardoleale/workspace/art/poc-popeye/output/pdf/theatrical-cel-adventure-art-style-guide.pdf"
+  },
+  "policy": "Preserve existing geography; independently authored replacement art. No copied Cuphead pixels. Reference library and original checkout remain untouched.",
+  "validation": {
+    "gameplay": "Prior tests remain gameplay evidence for their recorded revision",
+    "style": "Visual review and user playtest pending; test passes do not establish style compliance"
+  }
+}

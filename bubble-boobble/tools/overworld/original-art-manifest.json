@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "status": "Current original Brigade artwork; scoped integration, cooked campaign, replay, check and phone-low declared asset gates pass; physical phone and retained heap unverified",
+  "status": "Mixed revision in progress: selected style-pass districts 1/2 integrated; districts3\u20135 retain prior original plates. Selection/test passes do not establish user visual approval.",
   "generation": {
     "tool": "OpenAI built-in image_gen",
     "mode": "Initial text generation followed by refinements/new districts referencing our generated original plate only",
@@ -13,61 +13,71 @@
       "districtId": "district-1",
       "asset": "assets/overworld-original/district-1/base.png",
       "source": "tools/overworld/original-sources/district-1.png",
-      "sha256": "c696e1028530378f4f8d11d55e2aceb1ec7cfe8ecdd53ab5b94fddf4f2485fb9",
+      "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
-      "metadata": "assets/overworld-original/district-1/base.png.gmeta"
+      "metadata": "assets/overworld-original/district-1/base.png.gmeta",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json",
+      "revision": "selected style pass, 2026-10-26"
     },
     {
       "districtId": "district-2",
       "asset": "assets/overworld-original/district-2/base.png",
       "source": "tools/overworld/original-sources/district-2.png",
-      "sha256": "9d022a39075db3d77139eca3b38a9a0413ae74e3537aa5f4b7876d9ed216bac4",
+      "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
-      "metadata": "assets/overworld-original/district-2/base.png.gmeta"
+      "metadata": "assets/overworld-original/district-2/base.png.gmeta",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json",
+      "revision": "selected style pass, 2026-10-26"
     },
     {
       "districtId": "district-3",
       "asset": "assets/overworld-original/district-3/base.png",
-      "source": "tools/overworld/original-sources/district-3.png",
+      "source": "tools/overworld/original-sources/style-pass-before/district-3.png",
       "sha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
-      "metadata": "assets/overworld-original/district-3/base.png.gmeta"
+      "metadata": "assets/overworld-original/district-3/base.png.gmeta",
+      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
+      "revision": "previous original-art plate, awaiting style-pass replacement"
     },
     {
       "districtId": "district-4",
       "asset": "assets/overworld-original/district-4/base.png",
-      "source": "tools/overworld/original-sources/district-4.png",
+      "source": "tools/overworld/original-sources/style-pass-before/district-4.png",
       "sha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
-      "metadata": "assets/overworld-original/district-4/base.png.gmeta"
+      "metadata": "assets/overworld-original/district-4/base.png.gmeta",
+      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
+      "revision": "previous original-art plate, awaiting style-pass replacement"
     },
     {
       "districtId": "district-5",
       "asset": "assets/overworld-original/district-5/base.png",
-      "source": "tools/overworld/original-sources/district-5.png",
+      "source": "tools/overworld/original-sources/style-pass-before/district-5.png",
       "sha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
       "dimensions": [
         1254,
         1254
       ],
       "transformation": "none; generated original plate copied byte-for-byte into production",
-      "metadata": "assets/overworld-original/district-5/base.png.gmeta"
+      "metadata": "assets/overworld-original/district-5/base.png.gmeta",
+      "assetNote": "Recorded production path for the prior revision; use preserved source bytes for this historical hash.",
+      "revision": "previous original-art plate, awaiting style-pass replacement"
     }
   ],
   "completionPennant": {
@@ -78,5 +88,7 @@
   },
   "dragonProvenance": "tools/overworld/OBLIQUE-DRAGON.md",
   "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json",
-  "validationEvidence": "docs/overworld/evidence/original-art-validation-perf.json"
+  "validationEvidence": "docs/overworld/evidence/original-art-validation-perf.json",
+  "nextRevisionManifest": "tools/overworld/style-pass-manifest.json",
+  "stylePassManifest": "tools/overworld/style-pass-manifest.json"
 }

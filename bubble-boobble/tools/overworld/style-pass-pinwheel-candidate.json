@@ -1,0 +1,27 @@
+{
+  "districtId": "district-3",
+  "candidate": "tools/overworld/original-sources/style-pass-candidates/district-3-v2.png",
+  "generatedToolPath": "/Users/eduardoleale/.codex/generated_images/01a1686d-c8ec-71b1-b43a-01d379aa726f/exec-b9b6fffb-f3a6-4a81-b57a-cf4a84867ee7.png",
+  "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+  "tool": "built-in OpenAI image_gen",
+  "date": "2026-10-26",
+  "promptFiles": [
+    "tools/overworld/style-pass-pinwheel-prompt.json",
+    "tools/overworld/style-pass-pinwheel-refinement-prompt.json"
+  ],
+  "productionCopied": false,
+  "selfReview": {
+    "improvements": [
+      "Open paving replaced by broad quiet warm washes, with only broken seams near stairs/buildings.",
+      "Most bright flower confetti and tiny pots removed; shrub groups quieter.",
+      "Coral/cream tents and lavender balloon building retain district local-color identity.",
+      "Glass/brass reduced to subdued matte painted masses; major shapes and entrance cues retained.",
+      "Northern castle/tree silhouettes recede in lower contrast."
+    ],
+    "remainingLimits": [
+      "Some roof/glass volumes still have smooth miniature-like form shading; less irregular wash articulation than original courtyard.",
+      "Water and foliage retain mottled brush texture; not an exact courtyard match."
+    ],
+    "verdict": "Meaningful corrected district-style candidate for independent coordinator/geometry review. Not final user art approval; engine actor-scale review still required."
+  }
+}

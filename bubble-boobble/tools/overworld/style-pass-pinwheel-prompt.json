@@ -1,0 +1,16 @@
+{
+  "tool": "built-in OpenAI image_gen",
+  "date": "2026-10-26",
+  "mode": "edit/style-transfer",
+  "inputRoles": [
+    "Pinwheel Fair exact geometry edit target",
+    "Harbor candidate3 style master only",
+    "Original courtyard paint/ink/value reference only"
+  ],
+  "references": [
+    "/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/assets/overworld-original/district-3/base.png",
+    "/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/assets/overworld-original/district-1/base.png",
+    "/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/assets/cartoon/courtyard.png"
+  ],
+  "prompt": "Use case: style-transfer, precise original game background repaint. Image1 is the EDIT TARGET: Pinwheel Fair overworld with its exact existing geography. Image2 is our accepted harbor paint-treatment master, STYLE ONLY. Image3 is our original courtyard painting, brush/ink/value hierarchy reference ONLY. Repaint image1 in the material language of images2/3 while preserving image1 composition pixel-registration: same square1254x1254 extent, fixed oblique camera, every building silhouette and doorway location, walkable path widths, coast/cliff footprints, bridge endpoints, stairs, central circular activity plaza and small pond footprint. This is a surface-paint/style correction, NEVER a layout redesign.\nSubstantial reduction and painterly grouping required: cover dense repeating cobblestones with broad warm stone washes and only sparse irregular broken seams. Group foliage into broad quiet blue-green and dusty olive silhouettes; remove tiny flower-confetti dots, miniature pots, toy trinkets and needless ornamental marks. Retain identifying LARGE landmark shapes, big winding key, roofs, pinwheel rotor, balloon/horn silhouettes and their exact positions. Simplify every material into two or three matte painted value masses with uneven hand-brushed edges and thin irregular ink contours. Glass and brass must be subdued opaque wash shapes, no shiny highlights, reflective globes or golden trim sparkle. Tent and carousel roofs retain dusty coral/cream muted local colors; balloon building retains subdued lavender; wood stays warm desaturated umber. DO NOT apply a global teal color filter: preserve distinct warm stone, dusty coral, lavender, blue-green water and matte wood. Broad watercolor/gouache wash texture should follow forms with selective edge loss, not a uniform decorative paper-noise overlay.\nForeground ground stays clear and open so dark-ink bright characters read above it; do not draw any characters. Pond: broad quiet muted teal pools with just a few delicate ripples, no dense sparkling texture. Far northern castle/tree silhouettes fade into atmospheric pale blue-lavender; edges and small details soften and lose contrast with distance, while entrance thresholds remain crisp enough to locate. Quiet background with a few deliberate stronger contours near the playfield, as a hand-painted theatrical cartoon stage. No new props, text, labels, icons, grid, border, game UI or changed architecture. No polished miniature/diorama/3D render treatment. Preserve target geometry exactly; borrow paint treatment only from style references."
+}

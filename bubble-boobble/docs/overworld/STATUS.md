@@ -1,6 +1,6 @@
 # Original Adventure overworld status
 
-Status: **original artwork implemented and verified for user playtest**. PR #10 remains draft and unmerged. User playtest and explicit approval are required before merging.
+Status: **artwork in revision against the established courtyard art and supplied guide**. Previous style-compliance and art-readiness claims are superseded. Automated gameplay checks remain evidence for their recorded revision, not visual approval. PR #10 remains draft and unmerged. User playtest and explicit approval are required before merging.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
 Project: `bubble-boobble/`
@@ -10,7 +10,7 @@ PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
 
 ## Current artwork
 
-Five original paintings replace the copied prototype: Bubblebrook Quay, Fernfall Gardens, Pinwheel Fair, Cloudtop Springs and Emberglass Works. The user accepted the first map layout and requested compliance with the Theatrical Cel Adventure guide. Its revision preserves the composition while simplifying texture and using broad painted shapes, restrained world colors and clear playfield contrast. Cuphead supplied visual and interaction research only; no Cuphead raster was passed to generation.
+The five original paintings are being repainted while preserving geography: Bubblebrook Quay, Fernfall Gardens, Pinwheel Fair, Cloudtop Springs and Emberglass Works. The current pass must be compared directly with the established courtyard and the Theatrical Cel Adventure guide. The previous claim of guide compliance was rejected. Composition and navigation stay stable; style and integration require fresh visual review. Cuphead supplied visual and interaction research only; no Cuphead raster was passed to generation.
 
 A new original dragon sheet provides eight angled directions, planted idle and alternating walk contacts. The 24 pose slots are normalized to one foot anchor and derive all ten existing skin palettes. Front/back second contacts mirror their symmetric first contact; six other direction pairs use separately drawn contacts. Guide and vendor use the same oblique character artwork. Idle holds still. See `tools/overworld/OBLIQUE-DRAGON.md`.
 
@@ -22,7 +22,9 @@ All 25 rounds and 55 map interactions retain stable IDs and per-profile saves. W
 
 Adventure supports selected encounter play, retry and entrance return, completion flags, district gates, one-time rewards, hidden coins, guide rewards, optional trials, keepsakes, shortcuts and journal travel. Existing save migration and profile isolation remain. Classic and Bubble Madness are available under Arcade Modes. District and shared sprites load through explicit asset groups; the presentation uses a bounded pool.
 
-## Replacement verification
+## Previous original-art gameplay verification
+
+These results predate the current style pass. They do not establish visual compliance or readiness of the repainted maps. Fresh asset/cooked checks follow replacement integration.
 
 - Full V8 logic suite: **452/452 passed**. The previous copied-reference QA tests were removed and an eight-heading movement/idle test added; compare counts in that context.
 - Original geometry and directional tests: **9/9 passed**. All55 interactions are reachable, all25 encounter return anchors are safe, and actual lighthouse approach/leave/re-approach works.
@@ -40,4 +42,4 @@ Hermes and the Web/WASM host are unavailable, so cross-runtime parity is unverif
 
 ## Handoff rule
 
-Commit and push checkpoints, keep PR draft, and never merge or enable auto-merge before the user's playtest and explicit approval. Thirty-minute screenshot updates are paused at this verified playtest handoff. Playtest instructions are in `PLAYTEST.md`.
+Commit and push checkpoints, keep PR draft, and never merge or enable auto-merge before the user's playtest and explicit approval. The coordinator owns thirty-minute screenshot updates during the active revision. This is not an art-approved playtest handoff. Playtest instructions are in `PLAYTEST.md`.
