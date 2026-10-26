@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "status": "Current selected style-pass plates integrated; final cooked asset validation pending; no inferred user art approval",
+  "status": "All five selected repaints integrated; focused/cooked/replay/check and declared phone-low asset gates pass. User art approval remains pending; tests do not certify style compliance.",
   "generation": {
     "tool": "OpenAI built-in image_gen",
     "mode": "Initial text generation followed by refinements/new districts referencing our generated original plate only",
@@ -92,5 +92,6 @@
   "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json",
   "validationEvidence": "docs/overworld/evidence/original-art-validation-perf.json",
   "nextRevisionManifest": "tools/overworld/style-pass-manifest.json",
-  "stylePassManifest": "tools/overworld/style-pass-manifest.json"
+  "stylePassManifest": "tools/overworld/style-pass-manifest.json",
+  "currentValidationEvidence": "docs/overworld/evidence/style-pass-engine-check.json"
 }

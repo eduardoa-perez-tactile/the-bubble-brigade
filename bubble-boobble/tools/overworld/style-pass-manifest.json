@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "status": "All five selected repaints integrated; final cooked asset validation pending; user art approval remains pending",
+  "status": "All five selected repaints integrated; focused/cooked/replay/check and declared phone-low asset gates pass. User art approval remains pending; tests do not certify style compliance.",
   "before": [
     {
       "districtId": "district-1",
@@ -155,5 +155,6 @@
     "gameplay": "Prior tests remain gameplay evidence for their recorded revision",
     "style": "Visual review and user playtest pending; test passes do not establish style compliance"
   },
-  "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json"
+  "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+  "currentValidationEvidence": "docs/overworld/evidence/style-pass-engine-check.json"
 }

@@ -1,45 +1,40 @@
 # Original Adventure overworld status
 
-Status: **artwork in revision against the established courtyard art and supplied guide**. Previous style-compliance and art-readiness claims are superseded. Automated gameplay checks remain evidence for their recorded revision, not visual approval. PR #10 remains draft and unmerged. User playtest and explicit approval are required before merging.
+26 October 2026: **five-map painting pass completed and engineering checks passed; user art review and playtest pending**. PR #10 remains draft and unmerged, with auto-merge disabled. Automated tests do not certify artistic compliance.
 
 Worktree: `/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade`
 Project: `bubble-boobble/`
 Branch: `codex/walkable-overworld`
-Baseline: `76d82db`
 PR: https://github.com/eduardoa-perez-tactile/the-bubble-brigade/pull/10
 
-## Current artwork
+## Current painting revision
 
-The five original paintings are being repainted while preserving geography: Bubblebrook Quay, Fernfall Gardens, Pinwheel Fair, Cloudtop Springs and Emberglass Works. The current pass must be compared directly with the established courtyard and the Theatrical Cel Adventure guide. The previous claim of guide compliance was rejected. Composition and navigation stay stable; style and integration require fresh visual review. Cuphead supplied visual and interaction research only; no Cuphead raster was passed to generation.
+The user rejected the previous compliance claim. All five original maps have received a material/detail/depth pass using the established original courtyard and Theatrical Cel Adventure guide: quieter ground washes, grouped foliage, fewer bright fittings/glass glints and more selective atmospheric edge loss. Each district retains its local colors. The accepted geography, building silhouettes, dragon sheet and all gameplay source remain unchanged.
 
-A new original dragon sheet provides eight angled directions, planted idle and alternating walk contacts. The 24 pose slots are normalized to one foot anchor and derive all ten existing skin palettes. Front/back second contacts mirror their symmetric first contact; six other direction pairs use separately drawn contacts. Guide and vendor use the same oblique character artwork. Idle holds still. See `tools/overworld/OBLIQUE-DRAGON.md`.
+The harbor received three reviewed iterations before its treatment was propagated. A foundry candidate that shifted lower structures by 10-25 pixels was rejected; its replacement restores the original registration, then receives a localized glass/paving cleanup. Independent geometry review and actual landscape/portrait captures are recorded in `STYLE-PASS-REVIEW.md` and `evidence/style-pass-alignment.json`.
 
-All 17 copied feature PNG identities are absent from the current assets tree, verified by `tools/overworld/audit-original-art.py`. The external reference library, baseline UI art and archived migration evidence remain untouched. Git history was not rewritten. Original prompts, generated source images and hashes are recorded in `tools/overworld/original-art-manifest.json` and `original-map-prompts.json`.
+The result is a completed, reviewable repaint, not a claim of exact courtyard matching or final guideline approval. Rounded architecture, some roof modeling/small highlights and mottled paint texture remain. Cloudtop's coin text has weaker contrast on pale clouds, though its existing outline remains readable. See the visual review for specifics.
 
-## Gameplay retained and aligned
+## Fresh engineering verification
 
-All 25 rounds and 55 map interactions retain stable IDs and per-profile saves. Walkable polygons, full visible building obstacles, coastlines, stairs and bridges follow each new painting. A single painted plate supplies each district; roofs are obstacles rather than separately composited occlusion layers. Native bounded camera following uses Cover fit and view size260, verified to avoid hard landscape map edges.
+- All ten final captures reviewed with the actual dragon: `.gameengine/style-pass-final/map-{1..5}-{landscape,slim}.png`. Portable contact sheets are in `evidence/style-pass-landscape-review.png` and `style-pass-slim-review.png`.
+- Four focused render tests pass: responsive map/card/guide (310 steps), journal/shop (111), real menu-to-encounter-to-return journey (681) and encounter flow (250). Seven affected map-background goldens were intentionally refreshed and reviewed; menu/intro/result goldens were preserved.
+- Cooked campaign: **4/4 passed**, including the full 25-encounter campaign and actual button journey.
+- Existing replay: **681 steps verified unchanged**; no re-recording or divergence allowances.
+- Focused campaign logic: three tests passed on both **V8 and Hermes**, with no runtime mismatches. This is not a full dual-runtime suite or Web/device parity claim.
+- `gameengine check` passes typecheck, validation with existing warnings, pipeline validation, desktop cook and 600-frame cooked smoke. The previous pipeline metadata warning is absent in the current check.
+- Phone-low declared asset residency remains **37.18 MiB / 48 MiB**; shared characters remain **1.81 MiB / 2 MiB**. All existing gates pass without budget changes. This is a cooked asset estimate, not application RAM or physical-phone performance.
 
-Adventure supports selected encounter play, retry and entrance return, completion flags, district gates, one-time rewards, hidden coins, guide rewards, optional trials, keepsakes, shortcuts and journal travel. Existing save migration and profile isolation remain. Classic and Bubble Madness are available under Arcade Modes. District and shared sprites load through explicit asset groups; the presentation uses a bounded pool.
+Current portable reports: `evidence/style-pass-final-qa.json`, `style-pass-engine-check.json` and `style-pass-campaign-runtimes.json`. The prior 452/452 V8 full-logic result is retained as history; the full suite was not rerun for this asset-only repaint. Source, UI and geometry hashes did not change. The prior broad render comparison's 17 inherited failures remain historical evidence, not a fresh whole-suite render verdict.
 
-## Previous original-art gameplay verification
+## Provenance and retained gameplay
 
-These results predate the current style pass. They do not establish visual compliance or readiness of the repainted maps. Fresh asset/cooked checks follow replacement integration.
+All 25 encounters, 55 interactions, progression IDs, saves, rewards, gates, retries and return anchors are unchanged. The original eight-direction dragon still supplies planted idle and alternating walk contacts across ten skins. Map and shared sprites continue to use explicit asset groups and the bounded presentation pool.
 
-- Full V8 logic suite: **452/452 passed**. The previous copied-reference QA tests were removed and an eight-heading movement/idle test added; compare counts in that context.
-- Original geometry and directional tests: **9/9 passed**. All55 interactions are reachable, all25 encounter return anchors are safe, and actual lighthouse approach/leave/re-approach works.
-- Focused Adventure campaign, save, resume and flow tests: **16/16 passed**.
-- Four focused render cases pass at the final camera framing: responsive map/card/guide, journal/shop, actual681-step menu-to-encounter-to-return journey and250-step encounter flow. Only intentional Adventure images were refreshed and reviewed.
-- Actual native harbor capture: `.gameengine/overworld-original-map-1.png`. Original pose preview: `tools/overworld/source/oblique-normalized/preview.png`.
-- Final cooked campaign: **4/4 passed**, including the complete 25-encounter campaign and 681-step button journey. Recorded replay: **681 steps, no divergence**.
-- `gameengine check` passes typecheck, validation with existing warnings, UI-document coverage, desktop cook and 600-frame cooked smoke.
-- Android phone-low declared asset peak: **37.18 MiB / 48 MiB**. Shared character atlas: **1.81 MiB / 2 MiB**. Every district group passes its 2 MiB gate; no budgets were raised and no character downscale was needed.
-- Portable current evidence: `evidence/original-art-final-tests.json` and `evidence/original-art-validation-perf.json`.
+No Cuphead raster was supplied to generation. All 17 copied prototype PNG identities remain absent from the current assets tree; the external library, baseline UI and archived migration evidence are untouched. Before paintings, current sources, exact hashes and prompts are recorded under `tools/overworld/`, including `style-pass-manifest.json`, `style-pass-prompts.json` and `original-art-manifest.json`.
 
-Previous copied-art render and performance approvals are historical. `RENDER-REVIEW.md` records the prior baseline comparison (17 inherited T1 failures, including the inherited Cuphead structural15/14 draw failure); it is not a fresh full-suite render verdict for these original paintings. The installed pipeline validator's Standard-material metadata warning is separately proven in `evidence/pipeline-builtin-proof.json`.
+No fresh CPU/RSS soak or physical-phone measurements were performed for this paint-only pass. Prior JS heap headroom concerns remain; GPU/thermal behavior, hardware controllers, OS focus, browser storage and Web runtime parity still require their environments. See `PERFORMANCE.md`.
 
-Hermes and the Web/WASM host are unavailable, so cross-runtime parity is unverified. No physical phone was used. Prior transition samples exceeded low-end JS heap guidance; bounded retained heap, GPU/thermal behavior, hardware controllers, OS focus and browser storage durability require corresponding environments. See `PERFORMANCE.md`. Automated playtests use Game Engine only.
+## Handoff
 
-## Handoff rule
-
-Commit and push checkpoints, keep PR draft, and never merge or enable auto-merge before the user's playtest and explicit approval. The coordinator owns thirty-minute screenshot updates during the active revision. This is not an art-approved playtest handoff. Playtest instructions are in `PLAYTEST.md`.
+All work is committed and pushed. Thirty-minute progress updates pause at this completed handoff. Keep PR draft and unmerged until the user has reviewed the revised art, playtested and explicitly approved merging. See `PLAYTEST.md`.

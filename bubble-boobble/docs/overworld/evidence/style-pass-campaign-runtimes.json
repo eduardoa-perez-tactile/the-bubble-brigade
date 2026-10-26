@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-26",
+  "scope": "Focused campaign logic on both available runtimes after asset-only repaint; not a full suite or web/device parity claim",
+  "command": "gameengine test --tier t0 --js both --filter 'adventure campaign*' --json",
+  "ok": true,
+  "mismatches": [],
+  "results": {
+    "v8": [
+      {
+        "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+        "ok": true,
+        "steps": 3158,
+        "hash": "e9acf4f168f2b882"
+      },
+      {
+        "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+        "ok": true,
+        "steps": 148,
+        "hash": "b45dd938e9ebfef6"
+      },
+      {
+        "name": "adventure campaign branches and all five district gates are reachable",
+        "ok": true,
+        "steps": 0,
+        "hash": "e4bd5f0f20267128"
+      }
+    ],
+    "hermes": [
+      {
+        "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+        "ok": true,
+        "steps": 3158,
+        "hash": "e9acf4f168f2b882"
+      },
+      {
+        "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+        "ok": true,
+        "steps": 148,
+        "hash": "b45dd938e9ebfef6"
+      },
+      {
+        "name": "adventure campaign branches and all five district gates are reachable",
+        "ok": true,
+        "steps": 0,
+        "hash": "e4bd5f0f20267128"
+      }
+    ]
+  }
+}

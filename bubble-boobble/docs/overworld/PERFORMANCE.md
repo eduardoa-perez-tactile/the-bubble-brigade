@@ -1,8 +1,25 @@
 # Overworld performance review
 
+## Current map style-pass asset validation
+
+Measured 26 October 2026 after integrating all five selected map repaints. This pass changes artwork only; source geometry, simulation and UI remain unchanged. Comparative art review and user approval are separate from the checks below.
+
+| Declared phone-low residency | Before | After | Project gate |
+|---|---:|---:|---:|
+| Map-phase peak | 37.18 MiB | 37.18 MiB | 48 MiB |
+| Courtyard | 35.21 MiB | 35.21 MiB | 40 MiB |
+| Shared sprites | 1.81 MiB | 1.81 MiB | 2 MiB |
+| Each district | 0.168 MiB | 0.168 MiB | 2 MiB |
+
+The peak is unchanged at 38,990,364 bytes. The fresh Android report includes `courtyard-gameplay,overworld-shared` in `--always` and passes every gate without budget changes. Repainting retained image dimensions and cooked residency; this does not measure total application RAM.
+
+`gameengine check` passes typecheck, validation with existing warnings, pipeline validation, UI documents, desktop cook and 600-frame cooked smoke. The prior orphan-pipeline warning is absent in this check. Four focused T1 cases, four cooked campaign cases and the existing 681-step replay also pass. No full T0 rerun was needed for the asset-only change. Current map hashes, check details, warning text and exact before/after bytes are tracked in `evidence/style-pass-engine-check.json`.
+
+No fresh CPU, runtime RSS, GC, transition-soak or physical-phone measurement was taken. Previous transition samples exceeded 32 MiB JS guidance; bounded retained heap and device GPU/thermal/loading targets remain unverified. The check now locates a Hermes host, but this pass did not run cross-runtime parity. Successful tests and memory gates do not establish style compliance or user art approval.
+
 ## Previous original-art validation
 
-A new map style pass is in progress as of 26 October 2026. The results below describe the previous image bytes; fresh cooked asset-memory/check results will follow integration. These metrics never certify visual style compliance.
+The results below describe the previous image bytes. The current style-pass cook and check are reported above; this older section remains historical. These metrics never certify visual style compliance.
 
 Measured 23 October 2026 after replacing all copied map/flag assets with five original district plates, the original completion pennant and 240 original oblique dragon frames. The fresh Android phone-low cook includes both `courtyard-gameplay` and `overworld-shared` pinned for the map phase.
 
