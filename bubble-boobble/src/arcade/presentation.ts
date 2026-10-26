@@ -153,6 +153,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
   };
   if (g.Party) {
     for (const spawn of g.Party.Telegraphs ?? []) {
+      if(spawn.Kind&&spawn.Ticks>60)continue;
       out.push(image('bubble-warning', spawn.Ticks, spawn.X, spawn.Y + 48, 44));
       out.push(label('!', spawn.X + 16, spawn.Y + 38, 16));
     }

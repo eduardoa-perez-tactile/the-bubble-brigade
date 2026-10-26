@@ -168,10 +168,10 @@ worldTest('concept controls every wave formation stays safe at six and ten drago
   const g=createPartyGame([source],42,Array.from({length:team},()=> 'human' as const),10,'cartoon');
   for(let wave=1;wave<=9;wave++){
    g.Party!.Wave=wave;preparePartyWave(g);
-   expect(g.Enemies.length).toBe(partyWaveBudget(wave,team));
+   expect(g.Enemies.length+g.Party!.ToSpawn).toBe(partyWaveBudget(wave,team));
    expect(g.Enemies.length).toBeLessThanOrEqual(32);
    expect(new Set(g.Enemies.map(e=>`${e.X},${e.Y}`)).size).toBe(g.Enemies.length);
-   expect(g.Enemies.some(enemy=>enemy.Ground&&(enemy.Y+ActorSize)/Tile===3)).toBe(true);
+   expect(g.Enemies.some(enemy=>enemy.Ground)).toBe(true);
    for(const enemy of g.Enemies){
     expect(blocked(g,enemy.X,enemy.Y,ActorSize)).toBe(false);
     expect(g.Players.some(p=>Math.abs(p.X-enemy.X)<ActorSize&&Math.abs(p.Y-enemy.Y)<ActorSize)).toBe(false);

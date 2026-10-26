@@ -162,7 +162,7 @@ export interface PartyState {
   ToSpawn:number;
   SpawnTick:number;
   Spawned:number;
-  Telegraphs:{X:number;Y:number;Ticks:number}[];
+  Telegraphs:{X:number;Y:number;Ticks:number;Kind?:string;Ground?:boolean}[];
   Boss?:PartyBoss;
 }
 export interface GameState {
