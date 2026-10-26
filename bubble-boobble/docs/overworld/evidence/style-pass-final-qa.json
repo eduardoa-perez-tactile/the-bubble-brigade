@@ -1,0 +1,366 @@
+{
+  "date": "2026-10-26",
+  "scope": "Five original map painting revisions only. Simulation, camera, UI and character art unchanged.",
+  "engineering": {
+    "scopedT1": {
+      "ok": true,
+      "commands": [
+        "gameengine test --tier t1 --filter '*overworld*' --update-goldens --json",
+        "gameengine test --tier t1 --filter 'adventure*' --update-goldens --json"
+      ],
+      "tests": [
+        {
+          "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+          "ok": true,
+          "steps": 310,
+          "hash": "6b759c7675b0449c",
+          "updatedGoldens": [
+            "slim-source-hud",
+            "slim-locked-card"
+          ]
+        },
+        {
+          "name": "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+          "ok": true,
+          "steps": 111,
+          "hash": "422c476b618e356d",
+          "updatedGoldens": [
+            "slim-full-journal",
+            "ultrawide-full-journal"
+          ]
+        },
+        {
+          "name": "adventure campaign actual menu begin play intro results and map return buttons",
+          "ok": true,
+          "steps": 681,
+          "hash": "76d7abb54ec15edd",
+          "updatedGoldens": [
+            "adventure-begin-source-map",
+            "adventure-real-entrance-card",
+            "adventure-cleared-source-map-return"
+          ]
+        },
+        {
+          "name": "adventure flow encounter document Play button starts the focused encounter",
+          "ok": true,
+          "steps": 250,
+          "hash": "36d9f860a55978ae",
+          "updatedGoldens": []
+        }
+      ],
+      "totalUpdatedGoldens": 7
+    },
+    "cookedCampaign": {
+      "ok": true,
+      "command": "gameengine test --cooked --tier t0,t1 --filter 'adventure campaign*' --json",
+      "tests": [
+        {
+          "name": "adventure campaign all 25 source-map encounters gates rewards keepsakes and optional trial",
+          "ok": true,
+          "steps": 3158,
+          "hash": "e9acf4f168f2b882"
+        },
+        {
+          "name": "adventure campaign held physical Enter released inside an encounter rearms on first return press",
+          "ok": true,
+          "steps": 148,
+          "hash": "b45dd938e9ebfef6"
+        },
+        {
+          "name": "adventure campaign actual menu begin play intro results and map return buttons",
+          "ok": true,
+          "steps": 681,
+          "hash": "76d7abb54ec15edd"
+        },
+        {
+          "name": "adventure campaign branches and all five district gates are reachable",
+          "ok": true,
+          "steps": 0,
+          "hash": "e4bd5f0f20267128"
+        }
+      ]
+    },
+    "unchangedReplay": {
+      "command": "gameengine replay verify tests/replays/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons.greplay --js v8 --json",
+      "result": {
+        "ok": true,
+        "results": {
+          "v8": {
+            "ok": true,
+            "steps": 681,
+            "firstDivergence": null
+          }
+        }
+      },
+      "rerecorded": false
+    },
+    "captureMethod": "tools/overworld/capture-style-pass.py; actual release V8 engine, mobile GPU tier, recorded viewport before stepping, renderer warms GPU assets, no loading cover and zero pending assets; own session stopped after each map."
+  },
+  "images": [
+    {
+      "districtId": "district-1",
+      "name": "Bubblebrook Quay",
+      "asset": "assets/overworld-original/district-1/base.png",
+      "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "beforeSha256": "c696e1028530378f4f8d11d55e2aceb1ec7cfe8ecdd53ab5b94fddf4f2485fb9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "captures": [
+        {
+          "file": ".gameengine/style-pass-final/map-1-landscape.png",
+          "sha256": "52811b871373e5aac6d71c9761f85419cb165b0f5dfd1934f21fcfe1e3c354b4"
+        },
+        {
+          "file": ".gameengine/style-pass-final/map-1-slim.png",
+          "sha256": "0173678a4e21b64ba1604ee4e8a7b068d3f12f01751d03149801d914e1400230"
+        }
+      ],
+      "recordedViewports": [
+        {
+          "type": "view",
+          "width": 1280,
+          "height": 720,
+          "scale": 1,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "type": "view",
+          "width": 360,
+          "height": 880,
+          "scale": 1,
+          "insets": [
+            0,
+            34,
+            0,
+            24
+          ]
+        }
+      ],
+      "assetsSettledAtCapture": true
+    },
+    {
+      "districtId": "district-2",
+      "name": "Fernfall Gardens",
+      "asset": "assets/overworld-original/district-2/base.png",
+      "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "beforeSha256": "9d022a39075db3d77139eca3b38a9a0413ae74e3537aa5f4b7876d9ed216bac4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "captures": [
+        {
+          "file": ".gameengine/style-pass-final/map-2-landscape.png",
+          "sha256": "6e5016aa74837fec9f1c9d576fefd746a63552988a17386d6d9b5cd36e60a833"
+        },
+        {
+          "file": ".gameengine/style-pass-final/map-2-slim.png",
+          "sha256": "1cc37142366538586fde60d239f8a68e698d99c2d08ae2dfaf988279f8c2779a"
+        }
+      ],
+      "recordedViewports": [
+        {
+          "type": "view",
+          "width": 1280,
+          "height": 720,
+          "scale": 1,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "type": "view",
+          "width": 360,
+          "height": 880,
+          "scale": 1,
+          "insets": [
+            0,
+            34,
+            0,
+            24
+          ]
+        }
+      ],
+      "assetsSettledAtCapture": true
+    },
+    {
+      "districtId": "district-3",
+      "name": "Pinwheel Fair",
+      "asset": "assets/overworld-original/district-3/base.png",
+      "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+      "beforeSha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "captures": [
+        {
+          "file": ".gameengine/style-pass-final/map-3-landscape.png",
+          "sha256": "ad865532a660874f92e9e31ae4759a9d1ee6236b238a6cb1c2524e10c0074484"
+        },
+        {
+          "file": ".gameengine/style-pass-final/map-3-slim.png",
+          "sha256": "eb7120f4847ac8906e34a7ed4709242d83795efb34f7607c33c00203133f7ce8"
+        }
+      ],
+      "recordedViewports": [
+        {
+          "type": "view",
+          "width": 1280,
+          "height": 720,
+          "scale": 1,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "type": "view",
+          "width": 360,
+          "height": 880,
+          "scale": 1,
+          "insets": [
+            0,
+            34,
+            0,
+            24
+          ]
+        }
+      ],
+      "assetsSettledAtCapture": true
+    },
+    {
+      "districtId": "district-4",
+      "name": "Cloudtop Springs",
+      "asset": "assets/overworld-original/district-4/base.png",
+      "sha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+      "beforeSha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "captures": [
+        {
+          "file": ".gameengine/style-pass-final/map-4-landscape.png",
+          "sha256": "7cf486a779d02028952348e6c15a8fcbc956bd6b8e2024e30b147b607db6d4d9"
+        },
+        {
+          "file": ".gameengine/style-pass-final/map-4-slim.png",
+          "sha256": "5a52858cdb040af3445ca6f398cc14c82aa9b41e87710d06026f4c63ba019453"
+        }
+      ],
+      "recordedViewports": [
+        {
+          "type": "view",
+          "width": 1280,
+          "height": 720,
+          "scale": 1,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "type": "view",
+          "width": 360,
+          "height": 880,
+          "scale": 1,
+          "insets": [
+            0,
+            34,
+            0,
+            24
+          ]
+        }
+      ],
+      "assetsSettledAtCapture": true
+    },
+    {
+      "districtId": "district-5",
+      "name": "Emberglass Works",
+      "asset": "assets/overworld-original/district-5/base.png",
+      "sha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+      "beforeSha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "captures": [
+        {
+          "file": ".gameengine/style-pass-final/map-5-landscape.png",
+          "sha256": "2cea0f7fe374a2f5c351f4ec8a8c399429b21fd0046452ef56638f49584a3b9f"
+        },
+        {
+          "file": ".gameengine/style-pass-final/map-5-slim.png",
+          "sha256": "6c322753239f87eaaa41f03f84bf283959120e53091620e98c838d6b91c3d3a5"
+        }
+      ],
+      "recordedViewports": [
+        {
+          "type": "view",
+          "width": 1280,
+          "height": 720,
+          "scale": 1,
+          "insets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "type": "view",
+          "width": 360,
+          "height": 880,
+          "scale": 1,
+          "insets": [
+            0,
+            34,
+            0,
+            24
+          ]
+        }
+      ],
+      "assetsSettledAtCapture": true
+    }
+  ],
+  "portableContactSheets": [
+    "docs/overworld/evidence/style-pass-landscape-review.png",
+    "docs/overworld/evidence/style-pass-slim-review.png"
+  ],
+  "independentArtReview": {
+    "reference": [
+      "assets/cartoon/courtyard.png",
+      "theatrical cel art guide pages05 and06"
+    ],
+    "observedCorrections": [
+      "Reduced bright decorative flower/pot clutter and repeated small paving marks.",
+      "Broader quieter playfield washes, subdued brass/glass highlights and grouped foliage.",
+      "Distinct local district colors preserved rather than applying a global teal filter.",
+      "Actor silhouette and saturated palette remain readable in all ten reviewed captures."
+    ],
+    "remainingLimits": [
+      "Warm stone playfields remain lighter than the courtyard painting.",
+      "Rounded roof/form shading remains; Cloudtop has small residual roof glints.",
+      "Some background texture remains uniformly mottled compared with the courtyard selective washes and edge variation.",
+      "Pale-cloud coin text on Cloudtop has weaker contrast than on darker maps, but its existing outline remains readable; UI was not changed.",
+      "phone-low T1 backgrounds are softer/coarser than loose full-source capture because existing import limits remain active."
+    ],
+    "verdict": "Meaningful corrective repaint, ready for user art review. These engineering passes do not certify exact guide compliance or final user art approval.",
+    "userArtApproval": "pending"
+  }
+}

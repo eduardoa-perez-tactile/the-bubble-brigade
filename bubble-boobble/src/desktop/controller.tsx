@@ -1,3 +1,10 @@
+import { OverworldHudView, OverworldEncounterView, OverworldPanelView } from '../overworld/views';
+import { overworldState } from '../overworld/state';
+import { overworldPoi } from '../overworld/navigation';
+import { adventurePanel } from '../overworld/panels';
+import { adventureForProfile, adventureCleared } from '../overworld/progression';
+import { districts, districtById, encounterById, availableEncounter } from '../overworld/content';
+import type { OverworldHudModel } from '../overworld/model';
 import {uiAudioSnapshot,uiAudioCue,classicIntroAudioStage,type UIAudioSnapshot} from './ui-audio';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { CartoonOutcomeView } from '../cartoon/outcome.view';
@@ -7,7 +14,7 @@ import { CartoonDefeatView } from '../cartoon/defeat.view';
 import { CartoonTransitionView, type CartoonTransitionModel } from '../cartoon/transition.view';
 import { openBrowserFullscreen } from './browser';
 import { developmentMenuEnabled } from './development';
-import { read, app, assets, audio, quality, Time, MaterialGlobals } from '@gameengine/runtime';
+import { read, app, assets, loading, audio, quality, Time, MaterialGlobals } from '@gameengine/runtime';
 import { setReducedMotion, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
 import { desktopState } from './state.ts';
@@ -30,7 +37,16 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  let developmentReported=false;let cartoonReported=false;
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
- const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session);
+ const state=useDoc(desktopState),save=useDoc(desktopSaveState),arcade=useDoc(session),map=useDoc(overworldState);
+ let activeMapGroup='';
+ createEffect(()=>{
+  const current=map(),next=current.active?`overworld-${current.districtId}`:'';
+  if(next===activeMapGroup)return;
+  const previous=activeMapGroup;activeMapGroup=next;
+  if(next)void loading.run({name:next,load:previous?[next]:['overworld-shared',next],unload:previous?[previous]:[],model:{label:districtById(current.districtId)?.name??'Opening the map'}});
+  else if(previous){assets.release(previous);assets.release('overworld-shared');}
+ });
+ onCleanup(()=>{if(activeMapGroup){assets.release(activeMapGroup);assets.release('overworld-shared');}});
  let previousUIAudio:UIAudioSnapshot|undefined,previousIntroAudio='off';
  createEffect(()=>{
   const s=state(),p=save(),a=platform(),next=uiAudioSnapshot(s,p),sound=uiAudioCue(previousUIAudio,next);
@@ -68,9 +84,33 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  });
  onCleanup(()=>finaleCover?.close({immediate:true}));
  let billing:ViewHandle<CartoonArrivalModel>|undefined;
- createEffect(()=>{const s=state();const elapsed=(s.transitionStartedStep??-1)<0?0:(clock()?.step??0)-s.transitionStartedStep!;const timing=cartoonFlowTiming(!!s.transitionHasTitle,s.transitionAction??'',s.partyRun);const show=!!s.transitionAction&&!!s.transitionHasTitle&&!s.transitionCommitted&&elapsed>=timing.closeAt;if(!show){billing?.close({immediate:true});billing=undefined;return;}const m={mode:s.transitionAction==='start-party'?'BUBBLE MADNESS / WAVE 01':'CLASSIC / ROUND 01'};if(billing)billing.update(m);else billing=views.push(CartoonArrivalView,m);});
+ createEffect(()=>{const s=state();const elapsed=(s.transitionStartedStep??-1)<0?0:(clock()?.step??0)-s.transitionStartedStep!;const timing=cartoonFlowTiming(!!s.transitionHasTitle,s.transitionAction??'',s.partyRun);const show=!!s.transitionAction&&!!s.transitionHasTitle&&!s.transitionCommitted&&elapsed>=timing.closeAt;if(!show){billing?.close({immediate:true});billing=undefined;return;}const m={mode:s.adventureEncounter&&(s.transitionAction==='adventure-play'||s.adventure)?`ADVENTURE / ${encounterById(s.adventureEncounter)?.name.toUpperCase()??''}`:s.transitionAction==='start-party'?'BUBBLE MADNESS / WAVE 01':'CLASSIC / ROUND 01'};if(billing)billing.update(m);else billing=views.push(CartoonArrivalView,m);});
+ let mapHud:ViewHandle<OverworldHudModel>|undefined;
+ const mapIntent=(action:string)=>{
+  const key=action==='play'?'adventure-play':action==='back'?'overworld-back':action==='menu'?'overworld-menu':action==='journal'?'overworld-journal':action;
+  if(key==='interact'){emit(DesktopIntent,{action:'overworld-interact',value:map().focusedPoi});return;}
+  const index=getDesktopButtons(state(),save()).findIndex(b=>b.key===key);
+  if(index>=0)emit(DesktopIntent,{action:'select',index});
+  emit(DesktopIntent,{action:'ui-activate',value:key});
+ };
+ createEffect(()=>{const m=map(),p=save(),d=districtById(m.districtId)??districts[0]!,progress=adventureForProfile(p.profiles[p.active]!);
+  if(!m.active){mapHud?.close({immediate:true});mapHud=undefined;return;}
+  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi?`ENTER / A · ${poi.label}`:'',help:'WASD / ARROWS · WALK     ENTER / A · INTERACT     ESC · MENU'};
+  if(mapHud)mapHud.update(model);else mapHud=views.push(OverworldHudView,model,{onIntent:mapIntent});
+ });
+ let mapPanel:ViewHandle<any>|undefined,mapPanelKind='';
+ createEffect(()=>{const s=state(),p=save(),m=map();let kind='',model:any;
+  if(s.screen==='overworld-panel'){kind='panel';model=adventurePanel(s,p);}
+  else if(s.screen==='overworld-card'){
+   const e=encounterById(s.adventureEncounter??''),progress=adventureForProfile(p.profiles[p.active]!);
+   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={title:e.name,subtitle:`${districtById(e.districtId)!.name} · ENCOUNTER ${e.level}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':'Capture the creatures in bubbles, then pop them to clear the courtyard.',status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
+  }else if(s.screen==='result'&&s.adventure){kind='result';const e=encounterById(s.adventureEncounter??'');model={title:s.won?'LANDMARK CLEARED!':'TRY AGAIN, BRIGADE',subtitle:e?.name??'ADVENTURE',body:`SCORE ${s.score}\n${s.won?'Your progress and first-clear reward are saved.':'Your cleared landmarks are safe. Retry this encounter or return to explore.'}`,status:s.resultReady?'ENTER / A TO CONFIRM':'RELEASE CONTROLS — GET READY',buttons:s.resultReady?getDesktopButtons(s,p).map((b,i)=>({...b,selected:i===s.selected})):[]};}
+  if(!kind){mapPanel?.close({immediate:true});mapPanel=undefined;mapPanelKind='';return;}
+  if(kind!==mapPanelKind){mapPanel?.close({immediate:true});mapPanel=views.push(kind==='card'?OverworldEncounterView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
+  else mapPanel?.update(model);
+ });
  let handle:ViewHandle<DesktopModel>|undefined;let screen='';let cartoonScreen=false;
- createEffect(()=>{const s=state(),p=save(),cartoon=materials()?.v1[0]===1;const name=!control()?.active?'':s.screen==='play'?'':s.screen==='result'?(cartoon&&!(s.partyRun&&s.won)&&((s.resultStartedStep??-1)<0||(clock()?.step??0)-s.resultStartedStep!<36)?'outcome':cartoon&&!s.won?'defeat':'result'):s.screen==='modes'?'modes':s.screen==='party'?'party':s.screen==='editor'?'editor':s.screen==='pause'&&cartoon?(s.pauseClosing?'':'pause'):s.screen==='title'||s.screen==='menu'?(cartoon?'cartoon-main':'main'):['profiles','scores','new-profile','settings'].includes(s.screen)?'account':'menu';const model=desktopModel(s,p,untrack(()=>clock()?.step??0),platform()?.native??false);if(name!==screen||cartoon!==cartoonScreen){cartoonScreen=cartoon;handle?.close({immediate:name==='result'||screen==='result'});handle=undefined;screen=name;if(name)handle=views.push(cartoon?(name==='outcome'?CartoonOutcomeView:name==='pause'?CartoonPauseView:name==='defeat'?CartoonDefeatView:name==='result'?CartoonResultsView:name==='modes'?CartoonModeView:name==='party'?CartoonPartyView:name==='editor'?CartoonEditorView:name==='cartoon-main'?CartoonMenuView:name==='account'?CartoonAccountView:CartoonShellView):(name==='result'?DesktopResultsView:name==='modes'?DesktopModeView:name==='party'?DesktopPartyView:name==='editor'?DesktopEditorView:name==='main'?DesktopMenuView:name==='cartoon-main'?CartoonMenuView:name==='account'?DesktopAccountView:DesktopView),model,{onIntent:(action)=>{if(/^\d+,\d+$/.test(action)){const [x,y]=action.split(',').map(Number);emit(DesktopIntent,{action:'paint',value:'',index:0,x:x!,y:y!});}else {const key=action==='space'?'char: ':action;const index=getDesktopButtons(state(),save()).findIndex(b=>b.key===key);if(index>=0)emit(DesktopIntent,{action:'select',index});emit(DesktopIntent,{action:'ui-activate',value:key,index:0,x:0,y:0});}}});}else handle?.update(model);});
+ createEffect(()=>{const s=state(),p=save(),cartoon=materials()?.v1[0]===1;const name=!control()?.active||s.screen.startsWith('overworld')||s.adventure&&s.screen==='result'?'':s.screen==='play'?'':s.screen==='result'?(cartoon&&!(s.partyRun&&s.won)&&((s.resultStartedStep??-1)<0||(clock()?.step??0)-s.resultStartedStep!<36)?'outcome':cartoon&&!s.won?'defeat':'result'):s.screen==='modes'?'modes':s.screen==='party'?'party':s.screen==='editor'?'editor':s.screen==='pause'&&cartoon?(s.pauseClosing?'':'pause'):s.screen==='title'||s.screen==='menu'?(cartoon?'cartoon-main':'main'):['profiles','scores','new-profile','settings'].includes(s.screen)?'account':'menu';const model=desktopModel(s,p,untrack(()=>clock()?.step??0),platform()?.native??false);if(name!==screen||cartoon!==cartoonScreen){cartoonScreen=cartoon;handle?.close({immediate:name==='result'||screen==='result'});handle=undefined;screen=name;if(name)handle=views.push(cartoon?(name==='outcome'?CartoonOutcomeView:name==='pause'?CartoonPauseView:name==='defeat'?CartoonDefeatView:name==='result'?CartoonResultsView:name==='modes'?CartoonModeView:name==='party'?CartoonPartyView:name==='editor'?CartoonEditorView:name==='cartoon-main'?CartoonMenuView:name==='account'?CartoonAccountView:CartoonShellView):(name==='result'?DesktopResultsView:name==='modes'?DesktopModeView:name==='party'?DesktopPartyView:name==='editor'?DesktopEditorView:name==='main'?DesktopMenuView:name==='cartoon-main'?CartoonMenuView:name==='account'?DesktopAccountView:DesktopView),model,{onIntent:(action)=>{if(/^\d+,\d+$/.test(action)){const [x,y]=action.split(',').map(Number);emit(DesktopIntent,{action:'paint',value:'',index:0,x:x!,y:y!});}else {const key=action==='space'?'char: ':action;const index=getDesktopButtons(state(),save()).findIndex(b=>b.key===key);if(index>=0)emit(DesktopIntent,{action:'select',index});emit(DesktopIntent,{action:'ui-activate',value:key,index:0,x:0,y:0});}}});}else handle?.update(model);});
  createEffect(()=>{const t=clock();if(t)void t.step;if(t&&control()?.active&&handle&&(state().cartoon?['new-profile']:['title','menu','profiles','new-profile','settings']).includes(state().screen)){const frame=t.step;handle.update(previous=>previous.frame===frame?previous:{...previous,frame});}});
  return null;
 }});

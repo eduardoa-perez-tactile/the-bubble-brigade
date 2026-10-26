@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-26",
+  "status": "All five selected repaints integrated; focused/cooked/replay/check and declared phone-low asset gates pass. User art approval remains pending; tests do not certify style compliance.",
+  "generation": {
+    "tool": "OpenAI built-in image_gen",
+    "mode": "Initial text generation followed by refinements/new districts referencing our generated original plate only",
+    "inputPolicy": "No copied Cuphead source image inputs; original compositions inspired by the requested overworld interaction and theatrical cel art guide",
+    "prompts": "tools/overworld/original-map-prompts.json",
+    "artGuide": "/Users/eduardoleale/workspace/art/poc-popeye/output/pdf/theatrical-cel-adventure-art-style-guide.pdf",
+    "currentRepaintPrompts": "tools/overworld/style-pass-prompts.json",
+    "currentRepaintLineage": "Repaints of the previously generated original Brigade maps, using established courtyard art and supplied guide as direction. No copied Cuphead pixels."
+  },
+  "maps": [
+    {
+      "districtId": "district-1",
+      "asset": "assets/overworld-original/district-1/base.png",
+      "source": "tools/overworld/original-sources/district-1.png",
+      "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transformation": "none; generated original plate copied byte-for-byte into production",
+      "metadata": "assets/overworld-original/district-1/base.png.gmeta",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json",
+      "revision": "selected style pass, 2026-10-26"
+    },
+    {
+      "districtId": "district-2",
+      "asset": "assets/overworld-original/district-2/base.png",
+      "source": "tools/overworld/original-sources/district-2.png",
+      "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transformation": "none; generated original plate copied byte-for-byte into production",
+      "metadata": "assets/overworld-original/district-2/base.png.gmeta",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json",
+      "revision": "selected style pass, 2026-10-26"
+    },
+    {
+      "districtId": "district-3",
+      "asset": "assets/overworld-original/district-3/base.png",
+      "source": "tools/overworld/original-sources/district-3.png",
+      "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transformation": "none; generated original plate copied byte-for-byte into production",
+      "metadata": "assets/overworld-original/district-3/base.png.gmeta",
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
+    },
+    {
+      "districtId": "district-4",
+      "asset": "assets/overworld-original/district-4/base.png",
+      "source": "tools/overworld/original-sources/district-4.png",
+      "sha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transformation": "none; generated original plate copied byte-for-byte into production",
+      "metadata": "assets/overworld-original/district-4/base.png.gmeta",
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
+    },
+    {
+      "districtId": "district-5",
+      "asset": "assets/overworld-original/district-5/base.png",
+      "source": "tools/overworld/original-sources/district-5.png",
+      "sha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transformation": "none; generated original plate copied byte-for-byte into production",
+      "metadata": "assets/overworld-original/district-5/base.png.gmeta",
+      "revision": "selected style pass, 2026-10-26",
+      "generationPrompts": "tools/overworld/style-pass-prompts.json"
+    }
+  ],
+  "completionPennant": {
+    "asset": "assets/overworld-shared/cleared-flag.png",
+    "sha256": "316421bf1fe31e22c9cd419004fbcb200f5e4219c61c09f44be4f903021ac052",
+    "source": "tools/overworld/build-cleared-flag.py",
+    "method": "Independently authored native geometric primitives rasterized with Pillow; no input image"
+  },
+  "dragonProvenance": "tools/overworld/OBLIQUE-DRAGON.md",
+  "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json",
+  "validationEvidence": "docs/overworld/evidence/original-art-validation-perf.json",
+  "nextRevisionManifest": "tools/overworld/style-pass-manifest.json",
+  "stylePassManifest": "tools/overworld/style-pass-manifest.json",
+  "currentValidationEvidence": "docs/overworld/evidence/style-pass-engine-check.json"
+}

@@ -1,0 +1,197 @@
+{
+  "$schemaVersion": 1,
+  "guid": "15f351fc-d600-47fe-9c2d-0c9a6152fe26",
+  "name": "overworld-hud",
+  "title": "Overworld hud",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Overworld hud",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 22,
+        "dir": "column",
+        "justify": "space-between"
+      },
+      "children": [
+        "owh_top",
+        "owh_bottom"
+      ]
+    },
+    "owh_top": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owh_coins",
+        "owh_place",
+        "owh_right"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "justify": "space-between",
+        "w": "100%"
+      }
+    },
+    "owh_place": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owh_district",
+        "owh_progress"
+      ],
+      "style": {
+        "pad": [
+          8,
+          16,
+          8,
+          16
+        ],
+        "dir": "column",
+        "bg": "#eee0bcf5",
+        "radius": 5,
+        "w": 300,
+        "h": 76,
+        "hide": true
+      }
+    },
+    "owh_district": {
+      "type": "label",
+      "name": "Label",
+      "text": "{district}",
+      "style": {
+        "fontSize": 25,
+        "fitMin": 15,
+        "w": "100%",
+        "h": 32,
+        "color": "#382d25"
+      }
+    },
+    "owh_progress": {
+      "type": "label",
+      "name": "Label",
+      "text": "{progress}",
+      "style": {
+        "fontSize": 17,
+        "fitMin": 12,
+        "w": "100%",
+        "h": 24,
+        "color": "#715c40"
+      }
+    },
+    "owh_right": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owh_menu"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "align": "end",
+        "gap": 6
+      }
+    },
+    "owh_coins": {
+      "type": "label",
+      "name": "Label",
+      "text": "{coins}",
+      "style": {
+        "fontSize": 36,
+        "w": 170,
+        "h": 34,
+        "color": "#fff0c6",
+        "textAlign": "left",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#342a20",
+        "fitMin": 20
+      },
+      "point": "coins"
+    },
+    "owh_menu": {
+      "type": "use",
+      "doc": "overworld-button",
+      "key": "menu",
+      "props": {
+        "label": "MENU · ESC"
+      }
+    },
+    "owh_bottom": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owh_prompt",
+        "owh_help"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "align": "center",
+        "gap": 6,
+        "h": 76,
+        "hide": true
+      }
+    },
+    "owh_prompt": {
+      "type": "label",
+      "name": "Label",
+      "text": "{prompt}",
+      "style": {
+        "fontSize": 23,
+        "fitMin": 15,
+        "w": "90%",
+        "h": 32,
+        "color": "#fff2cd",
+        "textAlign": "center",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#30271e"
+      }
+    },
+    "owh_help": {
+      "type": "label",
+      "name": "Label",
+      "text": "{help}",
+      "style": {
+        "fontSize": 16,
+        "fitMin": 11,
+        "w": "96%",
+        "h": 24,
+        "color": "#fff2cd",
+        "textAlign": "center",
+        "shadowX": 1,
+        "shadowY": 2,
+        "shadowColor": "#30271e"
+      }
+    }
+  },
+  "view": {
+    "behaviour": "screen"
+  },
+  "properties": {
+    "district": {
+      "type": "text",
+      "default": ""
+    },
+    "progress": {
+      "type": "text",
+      "default": ""
+    },
+    "coins": {
+      "type": "text",
+      "default": ""
+    },
+    "prompt": {
+      "type": "text",
+      "default": ""
+    },
+    "help": {
+      "type": "text",
+      "default": ""
+    }
+  }
+}

@@ -616,6 +616,27 @@
       "sim": true,
       "fields": [],
       "package": "The Bubble Brigade"
+    },
+    {
+      "name": "OverworldVisual",
+      "kind": "component",
+      "sim": true,
+      "fields": [
+        {
+          "name": "slot",
+          "kind": "u32",
+          "scalar": "u32",
+          "lanes": 1
+        }
+      ],
+      "package": "The Bubble Brigade"
+    },
+    {
+      "name": "OverworldAvatar",
+      "kind": "component",
+      "sim": true,
+      "fields": [],
+      "package": "The Bubble Brigade"
     }
   ],
   "commands": [],

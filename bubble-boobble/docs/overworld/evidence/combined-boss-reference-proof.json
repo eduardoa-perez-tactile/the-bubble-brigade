@@ -1,0 +1,167 @@
+{
+  "main": "9341924d75765050a51b51d8e84515c62c059e4d",
+  "records": [
+    {
+      "file": "src/cartoon/plan.ts",
+      "currentBlob": "35db42d3185fce2eb60d1c5ec3baed7072749042",
+      "mainBlob": "35db42d3185fce2eb60d1c5ec3baed7072749042",
+      "equal": true
+    },
+    {
+      "file": "src/cartoon/hud-model.ts",
+      "currentBlob": "833ea8e31ca4f8045848bd104e86c0b65a9a6e54",
+      "mainBlob": "833ea8e31ca4f8045848bd104e86c0b65a9a6e54",
+      "equal": true
+    },
+    {
+      "file": "src/cartoon/labels.ts",
+      "currentBlob": "e19368cef30ec09d6edf9b4a5b63e9d0f77e376f",
+      "mainBlob": "e19368cef30ec09d6edf9b4a5b63e9d0f77e376f",
+      "equal": true
+    },
+    {
+      "file": "src/cartoon/actor-feedback.ts",
+      "currentBlob": "50582ed47cf32564a49511d37185526873ae238e",
+      "mainBlob": "50582ed47cf32564a49511d37185526873ae238e",
+      "equal": true
+    },
+    {
+      "file": "assets/cartoon/frames/boss/simple-move-0.png",
+      "currentBlob": "45f3a107179fae953dd66eb7b95b96d7c1fc4021",
+      "mainBlob": "45f3a107179fae953dd66eb7b95b96d7c1fc4021",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/canisters_768x720/mobile/metal.png",
+      "currentBlob": "e55326a2b04ada23ff1e4cc6233f64d0dd540cec",
+      "mainBlob": "e55326a2b04ada23ff1e4cc6233f64d0dd540cec",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/captured_640x960/mobile/metal.png",
+      "currentBlob": "b7aca705b6daf31cc561907e8e2eec1639962e51",
+      "mainBlob": "b7aca705b6daf31cc561907e8e2eec1639962e51",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/captured_1680x720/mobile/metal.png",
+      "currentBlob": "d784113a06f4e30f2ba9c413d108769169b4f549",
+      "mainBlob": "d784113a06f4e30f2ba9c413d108769169b4f549",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/curtain_2520x1080/mobile/metal.png",
+      "currentBlob": "ad5f2cb1299f38f62395cbe60110fc5405c73ac6",
+      "mainBlob": "ad5f2cb1299f38f62395cbe60110fc5405c73ac6",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/results_1680x720/mobile/metal.png",
+      "currentBlob": "3805fc53d379a778a47041ed6fde2353749cdcb7",
+      "mainBlob": "3805fc53d379a778a47041ed6fde2353749cdcb7",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/captured_768x720/mobile/metal.png",
+      "currentBlob": "c119411fbf6ae240d07f509af2d437f7870e2305",
+      "mainBlob": "c119411fbf6ae240d07f509af2d437f7870e2305",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/canisters_640x960/mobile/metal.png",
+      "currentBlob": "631746ba3a1b4354f5da0c894e8a35a959eb945f",
+      "mainBlob": "631746ba3a1b4354f5da0c894e8a35a959eb945f",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/victory_1680x720/mobile/metal.png",
+      "currentBlob": "a53fd088be18d8bc34f2ecc5504bdbb7a1be244d",
+      "mainBlob": "a53fd088be18d8bc34f2ecc5504bdbb7a1be244d",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/canisters_1680x720/mobile/metal.png",
+      "currentBlob": "52f0b8dfa33b80c07d622a64cedb856b03eab8ee",
+      "mainBlob": "52f0b8dfa33b80c07d622a64cedb856b03eab8ee",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/results_2520x1080/mobile/metal.png",
+      "currentBlob": "63dbc7fe60c836b154499f42e7c706260fc15dd2",
+      "mainBlob": "63dbc7fe60c836b154499f42e7c706260fc15dd2",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/lightning_2520x1080/mobile/metal.png",
+      "currentBlob": "851360d7ebbf4eb2d1b4b2ca8635af324d286ded",
+      "mainBlob": "851360d7ebbf4eb2d1b4b2ca8635af324d286ded",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/lightning_1680x720/mobile/metal.png",
+      "currentBlob": "9df7f5fa935bf31bc31a2f1e1624ddb6628ff735",
+      "mainBlob": "9df7f5fa935bf31bc31a2f1e1624ddb6628ff735",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/victory_2520x1080/mobile/metal.png",
+      "currentBlob": "eac0bcd74959916d96ab29649a67783b8deb2de2",
+      "mainBlob": "eac0bcd74959916d96ab29649a67783b8deb2de2",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/victory_768x720/mobile/metal.png",
+      "currentBlob": "4f815ce3ba85436d823f0e4b8eb5bf5b62f65b73",
+      "mainBlob": "4f815ce3ba85436d823f0e4b8eb5bf5b62f65b73",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/canisters_2520x1080/mobile/metal.png",
+      "currentBlob": "b0d88d9a6a85c95bca61818b924ca7ef714769d7",
+      "mainBlob": "b0d88d9a6a85c95bca61818b924ca7ef714769d7",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/victory_640x960/mobile/metal.png",
+      "currentBlob": "0d5b6249b6e73d191ef106ec339ad54ebcb56f20",
+      "mainBlob": "0d5b6249b6e73d191ef106ec339ad54ebcb56f20",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/captured_2520x1080/mobile/metal.png",
+      "currentBlob": "96b6bdd8c95ba6d471e8c30c961f4b66cc650081",
+      "mainBlob": "96b6bdd8c95ba6d471e8c30c961f4b66cc650081",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/curtain_1680x720/mobile/metal.png",
+      "currentBlob": "0f201613a95f388f45f34ca87b1910a48f4f676d",
+      "mainBlob": "0f201613a95f388f45f34ca87b1910a48f4f676d",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/lightning_640x960/mobile/metal.png",
+      "currentBlob": "50ff17532b42fa37db60fee8878a704ee2d81b8a",
+      "mainBlob": "50ff17532b42fa37db60fee8878a704ee2d81b8a",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/curtain_640x960/mobile/metal.png",
+      "currentBlob": "8d91a1ff27ba81f5cd72fa9efbaeaa1682e4f8f1",
+      "mainBlob": "8d91a1ff27ba81f5cd72fa9efbaeaa1682e4f8f1",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/results_640x960/mobile/metal.png",
+      "currentBlob": "2a72595899882849572e88404ccb40f1f572f252",
+      "mainBlob": "2a72595899882849572e88404ccb40f1f572f252",
+      "equal": true
+    },
+    {
+      "file": "tests/goldens/boss_finale_canisters_lightning_capture_celebration_and_results_fit_every_screen/lightning_768x720/mobile/metal.png",
+      "currentBlob": "7946ca54a73913971bfb7ab3885c5419afd238e1",
+      "mainBlob": "7946ca54a73913971bfb7ab3885c5419afd238e1",
+      "equal": true
+    }
+  ]
+}

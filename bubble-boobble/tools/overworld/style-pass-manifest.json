@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-26",
+  "status": "All five selected repaints integrated; focused/cooked/replay/check and declared phone-low asset gates pass. User art approval remains pending; tests do not certify style compliance.",
+  "before": [
+    {
+      "districtId": "district-1",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-1.png",
+      "sha256": "c696e1028530378f4f8d11d55e2aceb1ec7cfe8ecdd53ab5b94fddf4f2485fb9",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-2",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-2.png",
+      "sha256": "9d022a39075db3d77139eca3b38a9a0413ae74e3537aa5f4b7876d9ed216bac4",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-3",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-3.png",
+      "sha256": "48265c1e9bbddd4f8ba226416a07abdd4b4557f5b7699fd28e73ea2279b20771",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-4",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-4.png",
+      "sha256": "1db82bbf0a2ccf151c946bf4af0c36a42bd91a996851a20201efcd56d2712e97",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "districtId": "district-5",
+      "preservedAsset": "tools/overworld/original-sources/style-pass-before/district-5.png",
+      "sha256": "20daf2b2c3f52f0ddb31345b9981c2c8f4eee31e3300e2bb7e6e5d60770df4ed",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "districtId": "district-1",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-1c8dd579-489f-4a94-a66c-e8c2242045f4.png",
+      "asset": "assets/overworld-original/district-1/base.png",
+      "source": "tools/overworld/original-sources/district-1.png",
+      "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "promptLineage": {
+        "file": "tools/overworld/style-pass-prompts.json",
+        "entry": "district1"
+      },
+      "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+      "selection": "Coordinator-selected after comparative visual and alignment review; unchanged geometry source verified",
+      "productionIntegrated": true,
+      "visualApproval": "User art approval remains pending; automated tests do not certify style compliance"
+    },
+    {
+      "districtId": "district-2",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-e5471e63-9817-42f9-9db1-540f94b975b9.png",
+      "asset": "assets/overworld-original/district-2/base.png",
+      "source": "tools/overworld/original-sources/district-2.png",
+      "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "promptLineage": {
+        "file": "tools/overworld/style-pass-prompts.json",
+        "entry": "district2"
+      },
+      "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+      "selection": "Coordinator-selected after comparative visual and alignment review; unchanged geometry source verified",
+      "productionIntegrated": true,
+      "visualApproval": "User art approval remains pending; automated tests do not certify style compliance"
+    },
+    {
+      "districtId": "district-3",
+      "generatedPath": "/Users/eduardoleale/.codex/worktrees/walkable-overworld/the-bubble-brigade/bubble-boobble/tools/overworld/original-sources/style-pass-candidates/district-3-v2.png",
+      "asset": "assets/overworld-original/district-3/base.png",
+      "source": "tools/overworld/original-sources/district-3.png",
+      "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "promptLineage": {
+        "file": "tools/overworld/style-pass-prompts.json",
+        "entry": "district3"
+      },
+      "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+      "selection": "Coordinator-selected after comparative visual and alignment review; unchanged geometry source verified",
+      "productionIntegrated": true,
+      "visualApproval": "User art approval remains pending; automated tests do not certify style compliance"
+    },
+    {
+      "districtId": "district-4",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-c58ff403-3ba0-4c6e-800c-5328baefe768.png",
+      "asset": "assets/overworld-original/district-4/base.png",
+      "source": "tools/overworld/original-sources/district-4.png",
+      "sha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "promptLineage": {
+        "file": "tools/overworld/style-pass-prompts.json",
+        "entry": "district4"
+      },
+      "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+      "selection": "Coordinator-selected after comparative visual and alignment review; unchanged geometry source verified",
+      "productionIntegrated": true,
+      "visualApproval": "User art approval remains pending; automated tests do not certify style compliance"
+    },
+    {
+      "districtId": "district-5",
+      "generatedPath": "/Users/eduardoleale/.codex/generated_images/01a167a6-e46c-7f83-b9d3-ca62c6e712d7/exec-2eb51573-f19f-4f6e-ac0c-c52bd1c964c5.png",
+      "asset": "assets/overworld-original/district-5/base.png",
+      "source": "tools/overworld/original-sources/district-5.png",
+      "sha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "promptLineage": {
+        "file": "tools/overworld/style-pass-prompts.json",
+        "entry": "district5"
+      },
+      "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+      "selection": "Coordinator-selected after comparative visual and alignment review; unchanged geometry source verified",
+      "productionIntegrated": true,
+      "visualApproval": "User art approval remains pending; automated tests do not certify style compliance"
+    }
+  ],
+  "prompts": "tools/overworld/style-pass-prompts.json",
+  "references": {
+    "establishedArt": "Existing Brigade courtyard gameplay art",
+    "artGuide": "/Users/eduardoleale/workspace/art/poc-popeye/output/pdf/theatrical-cel-adventure-art-style-guide.pdf"
+  },
+  "policy": "Preserve existing geography; independently authored replacement art. No copied Cuphead pixels. Reference library and original checkout remain untouched.",
+  "validation": {
+    "gameplay": "Prior tests remain gameplay evidence for their recorded revision",
+    "style": "Visual review and user playtest pending; test passes do not establish style compliance"
+  },
+  "alignmentEvidence": "docs/overworld/evidence/style-pass-alignment.json",
+  "currentValidationEvidence": "docs/overworld/evidence/style-pass-engine-check.json"
+}

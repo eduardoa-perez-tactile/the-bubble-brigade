@@ -11,7 +11,7 @@ export const CartoonPauseView = defineView<DesktopModel>({
  render:(model,{intent})=><Screen safeArea class="desktop-screen cartoon-pause-screen">
   <Widget id="cartoon-pause" doc="cartoon-pause" class="cartoon-pause" props={{
    title:()=>model().pauseConfirm?'ARE YOU SURE?':'PAUSED',
-   subtitle:()=>model().pauseConfirm?(model().pauseConfirm==='restart'?'RESTART FROM THE FIRST ROUND / WAVE':'THIS RUN WILL END'):'THE BUBBLE BRIGADE',
+   subtitle:()=>model().pauseConfirm?(model().adventureRun?(model().pauseConfirm==='restart'?'RETRY THIS ENCOUNTER FROM THE BEGINNING':'RETURN TO THE SAME MAP ENTRANCE'):(model().pauseConfirm==='restart'?'RESTART FROM THE FIRST ROUND / WAVE':'THIS RUN WILL END')):'THE BUBBLE BRIGADE',
    actions:()=>model().buttons,
   }} onIntent={(_,e)=>intent(e.item??e.path.at(-1)!)}/>
  </Screen>,

@@ -1,0 +1,77 @@
+{
+  "$schemaVersion": 1,
+  "guid": "268a9b4c-36e8-4dc0-bfe4-442f36ad89a7",
+  "name": "overworld-button",
+  "title": "Overworld button",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Overworld button",
+      "style": {
+        "dir": "row",
+        "pad": 0,
+        "align": "center",
+        "bg": "#ead9ad",
+        "radius": 4,
+        "w": 280,
+        "h": 46,
+        "justify": "center"
+      },
+      "children": [
+        "owb_label"
+      ]
+    },
+    "owb_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": "96%",
+        "h": 36,
+        "fontSize": 32,
+        "fitMin": 18,
+        "color": "#382d25",
+        "textAlign": "center"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "CONTINUE"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#c6984b"
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "bg": "#c6984b"
+        }
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "bg": "#b8a989",
+          "opacity": 0.6
+        }
+      }
+    }
+  }
+}

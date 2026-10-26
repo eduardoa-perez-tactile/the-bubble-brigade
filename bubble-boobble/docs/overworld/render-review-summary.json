@@ -1,0 +1,384 @@
+{
+  "baselineCommit": "76d82db",
+  "baseline": {
+    "total": 99,
+    "passed": 82,
+    "failed": 17,
+    "failures": [
+      {
+        "name": "arcade reference encoded overlays",
+        "error": "expected [13,13,28] to equal [8,12,27]"
+      },
+      {
+        "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+        "error": "expected [34,64,96] to equal [32,64,96]"
+      },
+      {
+        "name": "cartoon feedback native bubbles landing capture rescue and reduced effects stay readable and bounded",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+        "error": "screenshot 'capture_warning_escape': FLIP mean 0.0331 (limit 0.0100), max 0.480 (cap 0.900); heatmap .gameengine/t1/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/capture_warning_escape.mobile.metal.flip.png"
+      },
+      {
+        "name": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cuphead intro original brush lettering fits arena across safe wide and narrow viewports and clears on combat",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cuphead actual start button reaches billing then phase derived ready and clean combat",
+        "error": "screenshot 'defeat': FLIP mean 0.0111 (limit 0.0100), max 0.590 (cap 0.900); heatmap .gameengine/t1/cuphead_actual_start_button_reaches_billing_then_phase_derived_ready_and_clean_combat/defeat.mobile.metal.flip.png"
+      },
+      {
+        "name": "desktop account buttons match reference hit rectangles",
+        "error": "screenshot 'invalid-name': FLIP mean 0.0407 (limit 0.0100), max 0.984 (cap 0.900); heatmap .gameengine/t1/desktop_account_buttons_match_reference_hit_rectangles/invalid_name.mobile.metal.flip.png"
+      },
+      {
+        "name": "desktop title animation uses reference global phase and wraps",
+        "error": "expected [13,13,28,255] to equal [8,12,27,255]"
+      },
+      {
+        "name": "dragon palette GPU masks flips clips and source-over agree",
+        "error": "expected [0,183,0,255] to equal [6,183,0,255]"
+      },
+      {
+        "name": "dragon skins settings selection reaches red gameplay",
+        "error": "screenshot 'settings-preview': FLIP mean 0.0050 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview.mobile.metal.flip.png"
+      },
+      {
+        "name": "dragon skins settings selection reaches yellow gameplay",
+        "error": "screenshot 'settings-preview': FLIP mean 0.0069 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview.mobile.metal.flip.png"
+      },
+      {
+        "name": "party polish readable countdown falling enemies and rest practice shots",
+        "error": "expected [13,22,42] to equal [12,21,43]"
+      },
+      {
+        "name": "party actual six dragon arena and rest HUD",
+        "error": "expected [34,66,86] to equal [36,67,87]"
+      },
+      {
+        "name": "pixel renderer exact texel prototype",
+        "error": "expected 13 to be 11"
+      },
+      {
+        "name": "desktop complete presentation flows",
+        "error": "screenshot 'boundary-element-fire': FLIP mean 0.0325 (limit 0.0100), max 0.992 (cap 0.900); heatmap .gameengine/t1/desktop_complete_presentation_flows/boundary_element_fire.mobile.metal.flip.png"
+      },
+      {
+        "name": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+        "error": "screenshot 'crown_help_tablet': FLIP mean 0.0089 (limit 0.0100), max 0.917 (cap 0.900); heatmap .gameengine/t1/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/crown_help_tablet.mobile.metal.flip.png"
+      }
+    ],
+    "structural": [
+      {
+        "file": "cartoon-overhaul-menus.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cartoon-rescue.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cartoon.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cuphead-ui.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "enemy-simplification.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 15,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "presentation.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "reconstruction-reference-fit.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "refinement-device-fit.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "total": 103,
+    "passed": 86,
+    "failed": 17,
+    "failures": [
+      {
+        "name": "arcade reference encoded overlays",
+        "error": "expected [13,13,28] to equal [8,12,27]"
+      },
+      {
+        "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+        "error": "expected [34,64,96] to equal [32,64,96]"
+      },
+      {
+        "name": "cartoon feedback native bubbles landing capture rescue and reduced effects stay readable and bounded",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+        "error": "screenshot 'capture_warning_escape': FLIP mean 0.0331 (limit 0.0100), max 0.480 (cap 0.900); heatmap .gameengine/t1/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/capture_warning_escape.mobile.metal.flip.png"
+      },
+      {
+        "name": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cuphead intro original brush lettering fits arena across safe wide and narrow viewports and clears on combat",
+        "error": "expected 15 to be <= 14"
+      },
+      {
+        "name": "cuphead actual start button reaches billing then phase derived ready and clean combat",
+        "error": "screenshot 'defeat': FLIP mean 0.0111 (limit 0.0100), max 0.590 (cap 0.900); heatmap .gameengine/t1/cuphead_actual_start_button_reaches_billing_then_phase_derived_ready_and_clean_combat/defeat.mobile.metal.flip.png"
+      },
+      {
+        "name": "desktop account buttons match reference hit rectangles",
+        "error": "screenshot 'invalid-name': FLIP mean 0.0407 (limit 0.0100), max 0.984 (cap 0.900); heatmap .gameengine/t1/desktop_account_buttons_match_reference_hit_rectangles/invalid_name.mobile.metal.flip.png"
+      },
+      {
+        "name": "desktop title animation uses reference global phase and wraps",
+        "error": "expected [13,13,28,255] to equal [8,12,27,255]"
+      },
+      {
+        "name": "dragon palette GPU masks flips clips and source-over agree",
+        "error": "expected [0,183,0,255] to equal [6,183,0,255]"
+      },
+      {
+        "name": "dragon skins settings selection reaches red gameplay",
+        "error": "screenshot 'settings-preview': FLIP mean 0.0050 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview.mobile.metal.flip.png"
+      },
+      {
+        "name": "dragon skins settings selection reaches yellow gameplay",
+        "error": "screenshot 'settings-preview': FLIP mean 0.0069 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview.mobile.metal.flip.png"
+      },
+      {
+        "name": "party polish readable countdown falling enemies and rest practice shots",
+        "error": "expected [13,22,42] to equal [12,21,43]"
+      },
+      {
+        "name": "party actual six dragon arena and rest HUD",
+        "error": "expected [34,66,86] to equal [36,67,87]"
+      },
+      {
+        "name": "pixel renderer exact texel prototype",
+        "error": "expected 13 to be 11"
+      },
+      {
+        "name": "desktop complete presentation flows",
+        "error": "screenshot 'boundary-element-fire': FLIP mean 0.0325 (limit 0.0100), max 0.992 (cap 0.900); heatmap .gameengine/t1/desktop_complete_presentation_flows/boundary_element_fire.mobile.metal.flip.png"
+      },
+      {
+        "name": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+        "error": "screenshot 'crown_help_tablet': FLIP mean 0.0089 (limit 0.0100), max 0.917 (cap 0.900); heatmap .gameengine/t1/refinement_checkpoint_actual_enlarged_actors_numbers_help_and_hud_fit_narrow_notched_and_tablet_devices/crown_help_tablet.mobile.metal.flip.png"
+      }
+    ],
+    "structural": [
+      {
+        "file": "cartoon-overhaul-menus.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cartoon-rescue.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cartoon.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "cuphead-ui.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "enemy-simplification.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 15,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "overworld.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "presentation.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "reconstruction-reference-fit.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "file": "refinement-device-fit.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      }
+    ]
+  },
+  "additionalFinalFailures": [],
+  "missingInheritedFailures": [],
+  "baselineCommand": "gameengine test --tier t1 --json",
+  "finalCommand": "gameengine test --tier t1 --json > .gameengine/overworld-final-reviewed-t1.json",
+  "reviewedGoldenPngs": [
+    "tests/goldens/party_boss_moving_art_bottle_warning_and_capture_stay_readable/giant_bubble/mobile/metal.png",
+    "tests/goldens/cartoon_rewards_native_gallery_keeps_all_food_powers_and_outlined_scores_readable_across_screen_shapes/rewards_904/mobile/metal.png",
+    "tests/goldens/cartoon_rewards_native_gallery_keeps_all_food_powers_and_outlined_scores_readable_across_screen_shapes/rewards_1620/mobile/metal.png",
+    "tests/goldens/cartoon_rewards_native_gallery_keeps_all_food_powers_and_outlined_scores_readable_across_screen_shapes/rewards_1680/mobile/metal.png",
+    "tests/goldens/cartoon_rewards_native_gallery_keeps_all_food_powers_and_outlined_scores_readable_across_screen_shapes/rewards_1179/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_7_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_5_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_1_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_3_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_6_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_2_fruit/mobile/metal.png",
+    "tests/goldens/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_8_fruit/mobile/metal.png",
+    "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/madness_card/mobile/metal.png",
+    "tests/goldens/madness_release_menu_and_mode_cards_fit_and_launch_both_modes/classic_card/mobile/metal.png",
+    "tests/goldens/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/boss_capture/mobile/metal.png",
+    "tests/goldens/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_victory/mobile/metal.png",
+    "tests/goldens/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/five_second_break/mobile/metal.png"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-23",
+  "status": "Previous original-art revision measurements; map style pass in progress as of 2026-10-26. Recorded gameplay/cook checks remain evidence for those bytes, not visual approval of the current revision.",
+  "scope": "Five original district plates; 240 original oblique dragon frames; original completion pennant; courtyard plus shared pinned during map phase",
+  "phoneLowMemory": {
+    "command": "gameengine memory report --device phone-low --always courtyard-gameplay,overworld-shared --cook --json",
+    "platform": "android",
+    "always": [
+      "courtyard-gameplay",
+      "overworld-shared"
+    ],
+    "peak": {
+      "groups": [
+        "courtyard-gameplay",
+        "overworld-shared",
+        "overworld-district-1"
+      ],
+      "resident": 38990364,
+      "textures": 38990364,
+      "audio": 0
+    },
+    "peakMiB": 37.18410873413086,
+    "groups": [
+      {
+        "name": "courtyard-gameplay",
+        "residentBytes": 36915900,
+        "residentMiB": 35.205745697021484
+      },
+      {
+        "name": "overworld-district-1",
+        "residentBytes": 176400,
+        "residentMiB": 0.1682281494140625
+      },
+      {
+        "name": "overworld-district-2",
+        "residentBytes": 176400,
+        "residentMiB": 0.1682281494140625
+      },
+      {
+        "name": "overworld-district-3",
+        "residentBytes": 176400,
+        "residentMiB": 0.1682281494140625
+      },
+      {
+        "name": "overworld-district-4",
+        "residentBytes": 176400,
+        "residentMiB": 0.1682281494140625
+      },
+      {
+        "name": "overworld-district-5",
+        "residentBytes": 176400,
+        "residentMiB": 0.1682281494140625
+      },
+      {
+        "name": "overworld-shared",
+        "residentBytes": 1898064,
+        "residentMiB": 1.8101348876953125
+      }
+    ],
+    "gates": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 38990364,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 38990364,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 38990364,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 36915900,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 1898064,
+        "budget": 2097152,
+        "over": false
+      }
+    ],
+    "allGatesPass": true
+  },
+  "check": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host"
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-cook"
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true,
+        "detail": "/Applications/Tactile Game Engine.app/Contents/Resources/engine/target/player/release/gameengine-host"
+      },
+      {
+        "name": "typecheck",
+        "ok": true,
+        "detail": "tsc --noEmit"
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true,
+        "warning": true,
+        "detail": "assets/reference/tiles/12.png: the border is opaque and one colour (#646664): probably art cut out on a background; export it with transparency, or key the background out with key = \"#646664\" in the .gmeta\nscenes/arcade.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/arcade.scene.json: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0\nscenes/cartoon.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/cartoon.scene.json: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0\nscenes/main.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/pixel-prototype.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: Camera: the first orthographic camera takes orthoSize from the WorldView resource, so the camera's own value is ignored: set it in the scene's resources.WorldView (or from a system with fitWorldView) and remove it from the Camera\nscenes/round1.scene.json: Camera: the flat 2D camera is drawn at WorldView.center, so its LocalTransform.position x and y are ignored: set the scene's resources.WorldView.center (or follow with WorldViewFollow) and leave x and y at 0"
+      },
+      {
+        "name": "pipelines (warning: a release build refuses this)",
+        "ok": true,
+        "warning": true,
+        "detail": "pipelines.json names 1 material program no compiled material has (7946469ed20397e0): a material changed since it was recorded and devices drop those records; re-record with `gameengine test --tier t1 --record-pipelines`"
+      },
+      {
+        "name": "views",
+        "ok": true,
+        "detail": "every TSX view places a UI document"
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true,
+        "detail": "cooked"
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true,
+        "detail": "600 frames on cooked content"
+      },
+      {
+        "name": "ui nodes",
+        "ok": true,
+        "detail": "19 shown at most, budget 1000"
+      }
+    ]
+  },
+  "validation": [
+    {
+      "artifact": ".gameengine/overworld-original-full-t0.json",
+      "ok": true,
+      "runtime": "v8",
+      "tests": 452,
+      "passed": 452,
+      "steps": 13563
+    },
+    {
+      "artifact": ".gameengine/overworld-original-adventure-t1.json",
+      "ok": true,
+      "runtime": "v8",
+      "tests": 2,
+      "passed": 2,
+      "steps": 931
+    },
+    {
+      "artifact": ".gameengine/overworld-original-screen-fit-t1.json",
+      "ok": true,
+      "runtime": "v8",
+      "tests": 2,
+      "passed": 2,
+      "steps": 421
+    },
+    {
+      "artifact": ".gameengine/overworld-original-cooked-campaign.json",
+      "ok": true,
+      "runtime": "v8",
+      "tests": 4,
+      "passed": 4,
+      "steps": 3987
+    }
+  ],
+  "replay": {
+    "ok": true,
+    "results": {
+      "v8": {
+        "ok": true,
+        "steps": 681,
+        "firstDivergence": null
+      }
+    }
+  },
+  "provenance": "tools/overworld/original-art-manifest.json",
+  "copiedArtAudit": "docs/overworld/evidence/copied-art-removal-audit.json",
+  "limits": [
+    "Cooked declared asset-group residency is not total application RAM.",
+    "No new original-art CPU/RSS/GC or repeated-transition soak was performed; old source-art measurements are historical only.",
+    "Previous source-art soak exceeded 32 MiB JS guidance after combat; bounded retained heap remains unverified.",
+    "No physical phone; sustained GPU/thermal/RSS and cold-load targets unverified. Hermes and web hosts unavailable.",
+    "Existing installed builtin-material metadata pipeline warning 7946469ed20397e0 remains; successful check does not establish release packaging eligibility.",
+    "Runtime assets.status exposes aggregate loaded/pending, not exact group ownership refcounts."
+  ]
+}

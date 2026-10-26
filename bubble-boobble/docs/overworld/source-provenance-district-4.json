@@ -1,0 +1,84 @@
+{
+  "district": 4,
+  "libraryIndex": "/Users/eduardoleale/workspace/art/cuphead/INDEX.md",
+  "assets": [
+    {
+      "asset": "assets/overworld-district-4/land.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182369-inkwell-isle-iv/Cuphead/Inkwell Isle IV/dlc_main_land.png",
+      "sourceCollection": "182369-inkwell-isle-iv",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/182369/",
+      "width": 3837,
+      "height": 2311,
+      "sha256": "1f2226d2168e708ddd3f7972fd3ac430d2f525424b78cd27c284ea09c47bf03a",
+      "bytes": 11349457,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/foreground.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182369-inkwell-isle-iv/Cuphead/Inkwell Isle IV/Top/dlc_main_top.png",
+      "sourceCollection": "182369-inkwell-isle-iv",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/182369/",
+      "width": 3837,
+      "height": 2311,
+      "sha256": "5aafc3c85bfbb4dd3bbe7e131da3e6e4010d06d9bd9ab5577d9c7ac714b10942",
+      "bytes": 925669,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/bakery.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle IV/A Dish to Die For/dlc_world_icon_saltbaker_boil_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 352,
+      "height": 452,
+      "sha256": "69444f94d1d62fc97cf4d0c4bb3eb002c3f86408a6eb649896d889aae455f652",
+      "bytes": 99232,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/cave.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle IV/Gnome Way Out/dlc_world_icon_omm_boil_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 477,
+      "height": 445,
+      "sha256": "93e14a3b10f48c188af608b532388a03b463cc88c9fb390ffb711f3394e4fb85",
+      "bytes": 69252,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/igloo.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle IV/Snow Cult Scuffle/dlc_world_icon_snow_boil_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 484,
+      "height": 451,
+      "sha256": "3803a07fb4dea9e03ca8df77f5f4869d123d6c65c3db2ec3384c1552438e518f",
+      "bytes": 125741,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/cactus.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle IV/High-Noon Hoopla/dlc_world_icon_cowgirl_boil_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 185,
+      "height": 242,
+      "sha256": "e6cf4851a250ea910130881f38d7ed696dfaf4dceff74a7cf8bf8d6d8a36f671",
+      "bytes": 31215,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    },
+    {
+      "asset": "assets/overworld-district-4/cart.png",
+      "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle IV/Recipe for Ms. Chalice/dlc_world_icon_cart_boil_0001.png",
+      "sourceCollection": "161300-overworld-locations",
+      "sourceUrl": "https://www.spriters-resource.com/pc_computer/cupheaddontdealwiththedevil/asset/161300/",
+      "width": 214,
+      "height": 226,
+      "sha256": "9f4c452792bd4101795165344bea5b078f52147f67c4d12bd274b176e3664992",
+      "bytes": 35576,
+      "transformation": "none; exact source bytes; native source-pixel registration is in district map data"
+    }
+  ],
+  "status": "Historical copied-art prototype provenance; superseded by original Brigade artwork. Not production asset authorization."
+}

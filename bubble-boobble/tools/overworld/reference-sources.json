@@ -1,0 +1,20 @@
+[
+  {
+    "file": "mainland03.png",
+    "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182301-inkwell-isle-iii/Cuphead/Inkwell Isle III/Mainland/world3_mainland_03.png",
+    "sha256": "2d2404b2bf717846e0d566f3d37911de6cd383aaaa242c021c5c931a3d25b501",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
+  },
+  {
+    "file": "bee.png",
+    "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/161300-overworld-locations/Cuphead/Overworld Locations/Inkwell Isle III/Honeycomb Herald/world3_icon_bee_0001.png",
+    "sha256": "1d2dca0767511ab882d321277a5e062f344564b62673c4633b28361a82dbfd98",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
+  },
+  {
+    "file": "top03.png",
+    "source": "/Users/eduardoleale/workspace/art/cuphead/extracted/overworld/182301-inkwell-isle-iii/Cuphead/Inkwell Isle III/Mainland/Top/world3_mainland_top_03.png",
+    "sha256": "c009b789ebdb56c872496721c73013d579a565ce2d1ccf2bf1dc22f5b2e4f6e6",
+    "status": "Historical copied-art prototype only; assets removed/replaced. Do not import into production."
+  }
+]

@@ -1112,6 +1112,77 @@ declare module '@gameengine/ui' {
       refs: 'classic-mode' | 'madness-mode' | 'mode-back';
     };
     /**
+     * Overworld button: a widget, button (ui/docs/overworld-button.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "CONTINUE"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'overworld-button': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Overworld dialogue: a view, dialog (ui/docs/overworld-dialogue.ui.json)
+     *
+     * Properties:
+     *   - `speaker`: text, default ""
+     *   - `message`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `buttons`: list of overworld-button
+     *   - `showBack`: yesno, default true
+     * Events: `press (<item>)`, `back`
+     * Code areas: none
+     * Refs: `back`
+     */
+    'overworld-dialogue': {
+      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showBack: boolean };
+      areas: never;
+      refs: 'back';
+    };
+    /**
+     * Overworld encounter: a view, dialog (ui/docs/overworld-encounter.ui.json)
+     *
+     * Properties:
+     *   - `title`: text, default ""
+     *   - `subtitle`: text, default ""
+     *   - `description`: text, default ""
+     *   - `status`: text, default ""
+     *   - `reward`: text, default ""
+     *   - `playLabel`: text, default ""
+     *   - `locked`: yesno, default false
+     * Events: `play`, `back`
+     * Code areas: none
+     * Refs: `play`, `back`
+     */
+    'overworld-encounter': {
+      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; description: string | { loc: string } | LocText; status: string | { loc: string } | LocText; reward: string | { loc: string } | LocText; playLabel: string | { loc: string } | LocText; locked: boolean };
+      areas: never;
+      refs: 'play' | 'back';
+    };
+    /**
+     * Overworld hud: a view, screen (ui/docs/overworld-hud.ui.json)
+     *
+     * Properties:
+     *   - `district`: text, default ""
+     *   - `progress`: text, default ""
+     *   - `coins`: text, default ""
+     *   - `prompt`: text, default ""
+     *   - `help`: text, default ""
+     * Events: `menu`
+     * Code areas: none
+     * Refs: `coins`, `menu`
+     */
+    'overworld-hud': {
+      props: { district: string | { loc: string } | LocText; progress: string | { loc: string } | LocText; coins: string | { loc: string } | LocText; prompt: string | { loc: string } | LocText; help: string | { loc: string } | LocText };
+      areas: never;
+      refs: 'coins' | 'menu';
+    };
+    /**
      * Party dragon card: a widget, button (ui/docs/party-dragon-card.ui.json)
      *
      * Properties:

@@ -1,0 +1,14 @@
+{
+  "phone-low": {
+    "peak": "48MB",
+    "groups": {
+      "courtyard-gameplay": "40MB",
+      "overworld-district-1": "2MB",
+      "overworld-district-2": "2MB",
+      "overworld-district-3": "2MB",
+      "overworld-district-4": "2MB",
+      "overworld-district-5": "2MB",
+      "overworld-shared": "2MB"
+    }
+  }
+}

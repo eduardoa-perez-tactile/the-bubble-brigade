@@ -108,7 +108,9 @@
       "@gameengine/playwright": ["./.gameengine/engine/packages/playwright/src/index.ts"],
       "@gameengine/playwright/*": ["./.gameengine/engine/packages/playwright/src/*"],
       "@gameengine/analytics-legacy": ["./.gameengine/engine/packages/analytics-legacy/src/index.ts"],
-      "@gameengine/analytics-legacy/*": ["./.gameengine/engine/packages/analytics-legacy/src/*"]
+      "@gameengine/analytics-legacy/*": ["./.gameengine/engine/packages/analytics-legacy/src/*"],
+      "@gameengine/noise": ["./.gameengine/engine/packages/noise/src/index.ts"],
+      "@gameengine/noise/*": ["./.gameengine/engine/packages/noise/src/*"]
     }
   },
   "include": [
