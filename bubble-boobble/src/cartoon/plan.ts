@@ -1,4 +1,3 @@
-import {pressurePhase} from '../adventure/gameplay';
 import {adventureArrivalY} from '../adventure/spawning';
 import {simplifiedEnemyDraws} from './enemy-motion';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
@@ -197,16 +196,6 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       add('environment/platform-cap-end-left',x,y,edge,h);
       for(let at=x+edge;at<x+width-edge;at+=92)add('environment/platform-cap-repeat',at,y,Math.min(92,x+width-edge-at),h);
       add('environment/platform-cap-end-right',x+width-edge,y,edge,h);col=end;
-    }
-    for(const[lane,col]of(g.Level.episode.pressure??[]).entries()){
-      const phase=pressurePhase(g,lane),x=col*24,y=22*24;
-      add('solid/#493e43',x-12,y-7,48,14);
-      if(phase!=='idle'){
-        const active=phase==='active';
-        const top=active?14*24:y-20;
-        out.push({frame:active?'solid/#d3e7df':'solid/#f4c468',x:px(x),y:py(top),width:24*layout.scale,height:py(y)-py(top),color:[1,1,1,active?.22:.85]});
-        for(let puff=0;puff<3;puff++)if(active)centered('dust-puff',x+12+Math.sin(tick*.15+puff)*10,y-35-puff*56,48,false,[.9,.96,.95,.75]);
-      }
     }
   }
   const save=desktopSaveState.get(),avatar=save.profiles[save.active]?.avatar??'green';

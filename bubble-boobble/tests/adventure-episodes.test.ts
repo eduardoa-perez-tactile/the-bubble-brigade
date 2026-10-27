@@ -4,7 +4,8 @@ import {expect,worldTest,renderTest} from '@gameengine/test';
 import {createAdventureLevel,episodeForLevel} from '../src/adventure/episodes';
 import {createGame,stepGame,validateLevel} from '../src/arcade/game';
 import {EnemyState,State} from '../src/arcade/types';
-import {pressurePhase,stepAdventureEpisode} from '../src/adventure/gameplay';
+import {stepAdventureEpisode} from '../src/adventure/gameplay';
+import {cartoonDrawPlan} from '../src/cartoon/plan';
 import {OverworldMapPreview,OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 import {WarpOverworld} from '../src/overworld/overworld.cheats';
 import {overworldEntrancePoint} from '../src/overworld/navigation';
@@ -27,13 +28,20 @@ worldTest('Adventure episodes preserve IDs with 25 distinct authored layouts and
  }
  expect(silhouettes.size).toBe(25);expect(harbor.size).toBe(5);
 },{scene});
-worldTest('Adventure pressure warns before damage, respects pause and protects a safe lane',async()=>{
- const game=createGame([createAdventureLevel(4)],1,1);game.State=State.Playing;game.Freeze=0;
- const p=game.Players[0]!;p.X=33*24;p.Y=22*24-44;p.Invincible=0;
- game.LevelTicks=180;expect(pressurePhase(game,0)).toBe('warning');stepAdventureEpisode(game);expect(p.Lives).toBe(3);
- game.Paused=true;const tick=game.LevelTicks;for(let i=0;i<60;i++)stepGame(game,idle);expect(game.LevelTicks).toBe(tick);expect(p.Lives).toBe(3);
- game.Paused=false;game.LevelTicks=235;expect(pressurePhase(game,0)).toBe('active');stepAdventureEpisode(game);expect(p.Lives).toBe(2);
- const safe=createGame([createAdventureLevel(4)],1,1);safe.State=State.Playing;safe.LevelTicks=235;stepAdventureEpisode(safe);expect(safe.Players[0]!.Lives).toBe(3);
+worldTest('Adventure episodes use enemy combat without environmental pressure hazards',()=>{
+ for(let number=1;number<=25;number++)expect('pressure' in episodeForLevel(number)).toBe(false);
+ for(const number of [4,14,19,24]){
+  const game=createGame([createAdventureLevel(number)],1,1);game.State=State.Playing;
+  const combatPlan=JSON.stringify(cartoonDrawPlan(game,235));
+  // Old in-memory episode data must not reactivate removed environmental damage.
+  Object.assign(game.Level.episode!,{pressure:[31,32,33,34,39,40,41]});
+  expect(JSON.stringify(cartoonDrawPlan(game,235))).toBe(combatPlan);
+  const p=game.Players[0]!;
+  for(const col of [31,32,33,34,39,40,41])for(let tick=0;tick<300;tick++){
+   Object.assign(p,{X:col*24,Y:22*24-44,Invincible:0});game.LevelTicks=tick;
+   stepAdventureEpisode(game);expect(p.Lives).toBe(3);
+  }
+ }
 },{scene});
 worldTest('Adventure finale requires its second act before a clear and resets it on retry',async()=>{
  const game=createGame([createAdventureLevel(5)],1,1);game.State=State.Playing;
@@ -60,7 +68,7 @@ renderTest('Adventure revamp real harbor stage cards and five distinct playable 
   expect(session.get().game!.Level.episode!.id).toBe(`encounter-${number}`);
   ctx.render.expectScreenshot(`episode-${number}-stage`,{width:1280,height:720});
   peak=Math.max(peak,ctx.render.stats({width:1280,height:720}).drawCalls);
-  if(number>=4){await ctx.cheat(AdventureMoment,{secondAct:number===5});await adventureStep(ctx,1);ctx.render.expectScreenshot(number===4?'pressure-active':'finale-second-act',{width:1280,height:720});}
+  if(number>=4){await ctx.cheat(AdventureMoment,{secondAct:number===5});await adventureStep(ctx,1);ctx.render.expectScreenshot(number===4?'enemy-combat':'finale-second-act',{width:1280,height:720});}
   expect(peak<=50).toBe(true);
   await act('leave');await ctx.loaded();await adventureStep(ctx,10);
   expect(overworldState.get().active).toBe(true);
@@ -102,7 +110,7 @@ worldTest('Adventure lighthouse ascent is traversable with real movement and jum
   }
   expect(Math.abs(game.Players[0]!.Y+44-row*24)<1).toBe(true);
  };
- walk(20*24);jump(18);jump(14);walk(34*24);jump(10);jump(6);
+ walk(10*24);jump(18);walk(15*24);jump(14);walk(23*24);jump(10);
 },{scene});
 
 renderTest('Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide',async ctx=>{
@@ -119,4 +127,26 @@ renderTest('Adventure episode staging keeps the full board across narrow tablet 
   }
   ctx.input.emit(DesktopIntent,{action:'leave'});await adventureStep(ctx,15);await ctx.loaded();
  }
+},{scene,memory:'phone-low'});
+
+renderTest('Adventure enemy combat removed steam lanes stay clear in all four former hazard scenes',async ctx=>{
+ ctx.input.view(1280,720,1);await adventureStep(ctx,8);await ctx.loaded();
+ await ctx.cheat(OverworldJournalFixture,{});
+ let peak=0;
+ for(const number of [4,14,19,24]){
+  const district=Math.floor((number-1)/5)+1,id=`encounter-${number}`;
+  await ctx.cheat(OverworldMapPreview,{district,facing:1});await ctx.loaded();await adventureStep(ctx,10);
+  await ctx.cheat(WarpOverworld,overworldEntrancePoint(`district-${district}`,id));await adventureStep(ctx,5);
+  ctx.input.emit(DesktopIntent,{action:'overworld-interact',value:id});await adventureStep(ctx,3);await ctx.loaded();
+  ctx.input.emit(DesktopIntent,{action:'adventure-play'});await ctx.loaded();
+  for(let i=0;desktopState.get().transitionAction&&i<240;i++)await adventureStep(ctx,1);
+  for(let i=0;session.get().game!.State===State.Ready&&i<240;i++)await adventureStep(ctx,1);
+  await ctx.cheat(AdventureMoment,{secondAct:false});await adventureStep(ctx,1);
+  const game=session.get().game!;expect(game.State).toBe(State.Playing);expect(game.Level.number).toBe(number);
+  expect('pressure' in game.Level.episode!).toBe(false);
+  ctx.render.expectScreenshot(`episode-${number}-enemy-combat`,{width:1280,height:720});
+  peak=Math.max(peak,ctx.render.stats({width:1280,height:720}).drawCalls);
+  ctx.input.emit(DesktopIntent,{action:'leave'});await adventureStep(ctx,15);await ctx.loaded();
+ }
+ expect(peak<=50).toBe(true);console.log('Adventure enemy-only combat peak draw calls',peak);
 },{scene,memory:'phone-low'});

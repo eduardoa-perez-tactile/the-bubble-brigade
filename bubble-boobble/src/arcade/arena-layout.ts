@@ -2,6 +2,7 @@ import { worldFit } from '@gameengine/runtime';
 import type { WorldFitView } from '@gameengine/runtime';
 import { levelWidth,levelHeight,type Level } from './types';
 import { cartoonHudFooterHeight,cartoonHudBounds } from '../cartoon/hud-layout';
+import {compactAdventureFrame} from '../cartoon/arena-framing';
 /** Layout inside the existing pixel compositor's reference canvas. The engine
  * camera keeps owning the 768x720 canvas; menus/HUD are never zoomed with the board.
  * worldFit supplies the same Contain footprint used by that camera. */
@@ -17,6 +18,17 @@ export function arenaLayout(level:Level,view:WorldFitView={width:768,height:720,
     // Canonical world width fills the reference composition. Narrow viewports
     // uniformly contain it; the projection owns the nonlinear feet mapping.
     const bands=cartoonHudBounds(view),stageTop=bands.top,stageBottom=bands.bottom;
+    const compact=compactAdventureFrame(level);
+    if(compact){
+      // Fit the authored room, full crown jump and platform tails rather than
+      // retaining the courtyard's empty horizontal footprint. The bounds are
+      // fixed for this level/view, so jumping never changes the framing.
+      const availableHeight=Math.max(1,stageBottom-stageTop-8);
+      const scale=Math.min((right-left)/compact.width,availableHeight/(compact.aboveFloor+compact.belowFloor));
+      const extra=(availableHeight-(compact.aboveFloor+compact.belowFloor)*scale)/2;
+      return {x:(left+right-compact.width*scale)/2,y:stageTop+4+extra+compact.aboveFloor*scale,scale,headerBottom:stageTop,
+        viewportLeft:384-width/2,viewportRight:384+width/2,viewportTop:360-height/2,viewportBottom:360+height/2};
+    }
     const scale=Math.min(1,(right-left+16)/1280,(stageBottom-stageTop)/582);
     return {x:(left+right-1280*scale)/2,y:stageTop+(stageBottom-stageTop-582*scale)/2+564*scale,scale:scale*1280/1728,headerBottom:stageTop,
       viewportLeft:384-width/2,viewportRight:384+width/2,viewportTop:360-height/2,viewportBottom:360+height/2};
