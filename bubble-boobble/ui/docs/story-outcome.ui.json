@@ -1,0 +1,70 @@
+{
+  "$schemaVersion": 1,
+  "guid": "e976255c-4da1-46e6-b9ba-f1488f03cd41",
+  "name": "story-outcome",
+  "title": "Story outcome",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Story outcome",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0,
+        "dir": "column",
+        "align": "center",
+        "justify": "center",
+        "gap": 0
+      },
+      "children": [
+        "so_art"
+      ]
+    },
+    "so_art": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "w": "56%",
+        "h": 230,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "property": "art",
+      "point": "art"
+    }
+  },
+  "view": {
+    "behaviour": "none"
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "art": {
+      "type": "image",
+      "default": "cartoon/ui/cues/bravo"
+    }
+  },
+  "samples": {
+    "victory": {
+      "art": "cartoon/ui/cues/bravo"
+    },
+    "defeat": {
+      "art": "cartoon/ui/cues/brigade-down"
+    }
+  }
+}

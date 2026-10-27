@@ -3,6 +3,7 @@ import {expect,worldTest,type WorldTestContext} from '@gameengine/test';
 import {Keys} from '@gameengine/runtime';
 import {ArcadeAudio,DesktopIntent} from '../src/schema.gen';
 import {desktopState,RESULT_INPUT_DELAY} from '../src/desktop/state';
+import {STORY_OUTCOME_STEPS} from '../src/adventure/ending';
 import {desktopSaveState} from '../src/desktop/save';
 import {session} from '../src/arcade/session';
 import {overworldState} from '../src/overworld/state';
@@ -44,7 +45,7 @@ for(const won of [true,false])worldTest(`adventure merged music ${won?'victory c
  // An early Back must not skip result input protection or turn into a delayed exit.
  await back(ctx,won,true);await back(ctx,won,false);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().transitionAction??'').toBe('');
- await adventureStep(ctx,RESULT_INPUT_DELAY+3);
+ await adventureStep(ctx,(won?RESULT_INPUT_DELAY:STORY_OUTCOME_STEPS)+3);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(true);
  expect(desktopState.get().adventureAttempt).toBe(attempt);music(ctx,'brigade-silent',null);
  await back(ctx,won,true);await back(ctx,won,false);await adventureStep(ctx,100);await ctx.loaded();await adventureStep(ctx,3);

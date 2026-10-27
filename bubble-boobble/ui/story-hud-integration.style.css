@@ -1,0 +1,3 @@
+/* Story metrics have their own document. Keep the shared intro/hurry/freeze cue layer. */
+.cartoon-hud.story-cues-only .ud-cartoon-hud__ch_top,
+.cartoon-hud.story-cues-only .ud-cartoon-hud__ch_bottom {display:none;}

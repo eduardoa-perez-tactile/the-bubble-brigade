@@ -31,7 +31,7 @@ export const CartoonHudView = defineView<CartoonHudModel>({
       detail: 'ANY DRAGON CAN DO IT' },
   },
   render: model => <Screen safeArea class="desktop-screen desktop-hud-screen">
-    <Widget class="cartoon-hud" doc="cartoon-hud" id="cartoon-hud" props={{
+    <Widget class={()=>model().episode?"cartoon-hud story-cues-only":"cartoon-hud"} doc="cartoon-hud" id="cartoon-hud" props={{
       episode:()=>!!model().episode,bossActive: () => !!model().bossActive,
       showStatus: () => model().showStatus ?? (model().highTitle === 'BOSS HP' || model().highTitle === 'LAST DRAGON'),
       classicPortrait: () => model().classicPortrait ?? 'cartoon/reconstruction/ui/portraits/green',

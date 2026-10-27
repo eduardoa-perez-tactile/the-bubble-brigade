@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/story_hud_keeps_meaningful_player_metrics_and_a_clear_arena_through_intro_play_pause_and_bonus.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}
