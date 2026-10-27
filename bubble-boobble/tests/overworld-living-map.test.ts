@@ -29,7 +29,7 @@ worldTest('living map three neutral street residents stay planted while existing
   expect(actors.map(d=>({x:d.x,y:d.y,width:d.width,height:d.height}))).toEqual(later.filter(d=>d.image?.includes('/npc/')).map(d=>({x:d.x,y:d.y,width:d.width,height:d.height})));
   expect(first).toEqual(later);
   expect(actors.every(d=>d.image?.endsWith('-0'))).toBe(true);
-  expect(first.filter(d=>d.image==='cartoon/frames/shadow').length).toBe(3);
+  expect(first.filter(d=>d.image==='overworld-living/common/resident-shadow').length).toBe(3);
   const guide=actors.find(d=>d.image?.includes('/npc/guide-'))!,point=sourceToWorld(map,map.pois.find(p=>p.kind==='guide')!);
   expect(guide.x).toBe(point.x);expect(Math.abs(guide.y-guide.height/2-point.y)<.000001).toBe(true);
   const street=actors.find(d=>d.image?.includes('/npc/vendor-'))!,shopPoi=sourceToWorld(map,map.pois.find(p=>p.kind==='vendor')!);

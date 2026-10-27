@@ -217,5 +217,125 @@
     "opaqueRowsThrough": 908,
     "bottomStripRenderCheck": "At rest, the bottom two rendered rows have red-channel minimum above16; the rejected black stripe fails this check.",
     "review": "The original cloth RGB is preserved. Alpha below the gold hem reveals the menu naturally while moving. No black strip or menu peeking at rest was visible in slim/wide start-middle-end captures. The cloth is absent after reveal."
+  },
+  "menuRegressionProof": {
+    "goldens": "Only the two legacy menu-route title checkpoints were reviewed and refreshed for the deliberately closed curtain. All final proof runs used no golden updates.",
+    "cases": [
+      {
+        "scope": "handoff",
+        "passed": true,
+        "results": [
+          {
+            "name": "harbor curtain menu and map handoff retain the existing fourteen draw budget",
+            "tier": "t1",
+            "ok": true,
+            "steps": 116,
+            "hash": "8f1f3ad6a98a34a5"
+          }
+        ]
+      },
+      {
+        "scope": "hover",
+        "passed": true,
+        "results": [
+          {
+            "name": "cuphead full bleed menu hover uses recorded viewport geometry instead of legacy button positions",
+            "tier": "t1",
+            "ok": true,
+            "steps": 74,
+            "hash": "f1855c8da879765d"
+          }
+        ]
+      },
+      {
+        "scope": "cartoon-routes",
+        "passed": true,
+        "results": [
+          {
+            "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+            "tier": "t1",
+            "ok": true,
+            "steps": 46,
+            "hash": "5cf7535240a0e4a7"
+          }
+        ]
+      },
+      {
+        "scope": "concept-routes",
+        "passed": true,
+        "results": [
+          {
+            "name": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+            "tier": "t1",
+            "ok": true,
+            "steps": 46,
+            "hash": "5cf7535240a0e4a7"
+          }
+        ]
+      }
+    ],
+    "drawCalls": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "phoneLow": true,
+      "before": {
+        "title": 5,
+        "curtain": 13,
+        "menu": 10,
+        "map": 16
+      },
+      "after": {
+        "title": 5,
+        "curtain": 13,
+        "menu": 10,
+        "map": 13
+      },
+      "handoffLimit": 14,
+      "allMenuRoutePeak": 14,
+      "allMenuRouteLimit": 14,
+      "change": "Resident atlas batching of byte-identical NPC shadows and existing marker art; no UI trimming, depth changes or increased budgets."
+    },
+    "hoverReadiness": "The original recorded-viewport hover assertion waits for the curtain and menu rearm before moving the pointer; expected selected index remains2."
+  },
+  "harborBudgetReplay": {
+    "path": "tests/replays/harbor_menu_animated_light_greeting_and_atmosphere_preserve_live_controls_across_supported_screens.greplay",
+    "sha256": "740eb8d7b583430818d24712217c38ab95be9ff1067c918bb20b3b275df7b704",
+    "bytes": 13140,
+    "scene": "scenes/cartoon.scene.json",
+    "identity": {
+      "buildId": "0.1.0",
+      "bundleHash": "917b3fd12682995e",
+      "assetManifestHash": "loose:2d06800538d394c2",
+      "worldSeed": 1,
+      "sceneId": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+      "dt": 0.016666666666666666,
+      "engineVersion": "0.1.0",
+      "js": "v8",
+      "steps": 1440
+    },
+    "recordedCase": {
+      "name": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+      "ok": true,
+      "tier": "t1",
+      "steps": 1440,
+      "hash": "3b8d35a63e748306"
+    },
+    "method": "Fresh actual-input recording of the existing strict harbor-menu T1 case, without golden updates or rehash. All real UI presses and original assertions are preserved.",
+    "menuOnlyMeasuredPeakDrawCalls": 10,
+    "budget": "tests/budgets/harbor-menu.json",
+    "verification": {
+      "v8": {
+        "ok": true,
+        "steps": 1440,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 1440,
+        "firstDivergence": null
+      }
+    }
   }
 }

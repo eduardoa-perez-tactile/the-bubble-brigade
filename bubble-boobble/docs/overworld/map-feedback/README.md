@@ -22,7 +22,7 @@ Existing map paintings, geography, source transforms, spawn and camera settings 
 
 ## Evidence and reproduction
 
-`title-validation.json` records the final cloth-only/transparent-hem test and replay proof. `generated-art.json` records selected prompts, source references, import settings, and output hashes. The curtain source and cutout are in `tools/menu-feedback/`; its importer changes alpha only.
+`title-validation.json` records the final cloth-only/transparent-hem test and replay proof. `generated-art.json` records selected prompts, source references, import settings, and output hashes. The curtain source and cutout are in `tools/menu-feedback/`; its importer changes alpha only. An exact copy of the existing NPC foot shadow shares the resident atlas with the approved markers, reducing map draws from 16 to 13 while preserving artwork, opacity, anchors and depth. The original 14-draw handoff budget remains unchanged.
 
 Run from the engine project:
 
@@ -35,4 +35,4 @@ gameengine test --tier t0,t1 --filter 'title curtain*' --js both --json
 gameengine check --json
 ```
 
-All gameplay verification uses Game Engine APIs. Portable final counts, memory figures and limitations are recorded in `validation.json` beside this file. No physical handset performance claim is made. The earlier rollout's known legacy render failures are documented under `../living-map-harbor/production/`; they were not hidden by refreshing unrelated goldens.
+All gameplay verification uses Game Engine APIs. Portable final counts, memory figures and limitations are recorded in `validation.json` beside this file. Full T0 passes 515 cases on each of V8 and Hermes; the fresh curtain and full harbor recordings verify 122 and 1,440 steps on both runtimes. The original harbor replay budget now measures 13 draws against its unchanged limit of 14. No physical handset performance claim is made. The broader render run and three-tier pipeline recording completed. After focused corrections, 38 pre-existing render cases remain, with the same four legacy structural failures documented under `../living-map-harbor/production/`. Unrelated goldens and thresholds were not changed.

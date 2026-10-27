@@ -11,7 +11,7 @@ import type {AdventureProgress} from './progression';
 export const LIVING_COAST_HOLDS=[24,8,10,30] as const;
 export type LivingNpcRole='guide'|'spool'|'courier';
 const roles:readonly LivingNpcRole[]=['guide','spool','courier'];
-const assetKeys=new Set<string>();
+const assetKeys=new Set<string>(['overworld-living/common/resident-shadow']);
 for(const map of overworldMaps){
  assetKeys.add(`overworld-living/${map.districtId}/coast-clean`);
  for(let frame=0;frame<4;frame++)assetKeys.add(`overworld-living/${map.districtId}/coast-${frame}`);
@@ -64,7 +64,7 @@ export function livingResidentDraws(districtId:string,_tick:number,_player:Sourc
  const out:OverworldDraw[]=[];
  for(const actor of anchors){
   const {point,width,height,image}=actor,order=Math.round(2000-point.y);
-  out.push({image:'cartoon/frames/shadow',x:point.x,y:point.y,width:width*.65,height:7,order:order-1,color:[1,1,1,.4]});
+  out.push({image:'overworld-living/common/resident-shadow',x:point.x,y:point.y,width:width*.65,height:7,order:order-1,color:[1,1,1,.4]});
   out.push({image,x:point.x,y:point.y+height/2,width,height,order});
  }
  return out;

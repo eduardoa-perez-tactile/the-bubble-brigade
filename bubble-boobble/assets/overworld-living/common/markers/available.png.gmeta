@@ -2,7 +2,7 @@ guid = "9ff74314-f7d1-5de6-a730-8947eecac2bc"
 importer = "texture"
 [settings]
 kind = "sprite"
-atlas = "overworld-living-markers"
+atlas = "overworld-living-residents"
 filter = "linear"
 compression = "astc6x6"
 trim = false

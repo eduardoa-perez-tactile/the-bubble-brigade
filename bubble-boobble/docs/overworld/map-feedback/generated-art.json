@@ -67,6 +67,26 @@
         941
       ],
       "sha256": "b340c142a910c95fe59de902841537610455acc9698e73789b23b524564324b5"
+    },
+    {
+      "path": "assets/overworld-living/common/resident-shadow.png",
+      "source": "assets/cartoon/frames/shadow.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "cd5bf9662e7c9e48ad688b77fda64dcafdb99fe084ce4d1bef8f2bbe7e8f23b0",
+      "method": "Exact original PNG byte copy for atlas colocation; no artwork edit."
     }
-  ]
+  ],
+  "batching": {
+    "atlas": "overworld-living-residents",
+    "members": "Existing NPC drawings, approved markers, exact copied NPC shadow",
+    "unchanged": "Art bytes, anchors, opacity and painter depth",
+    "mapDrawsBefore": 16,
+    "mapDrawsAfter": 13,
+    "originalHandoffBudget": 14,
+    "atlasBytesBefore": 111840,
+    "atlasBytesAfter": 124112
+  }
 }

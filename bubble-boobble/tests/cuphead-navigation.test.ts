@@ -136,7 +136,9 @@ renderTest('cuphead full bleed menu hover uses recorded viewport geometry instea
  await step(8);
  for(const [width,height,insets] of [[1680,720,[0,0,0,0]],[360,880,[0,0,0,0]],[2316,904,[84,0,0,0]]] as const){
   input.view(width,height,1,[...insets]);
-  input.emit(DesktopIntent,{action:'menu'});await step(2);render.stats({width,height});
+  input.emit(DesktopIntent,{action:'menu'});await step(2);
+  while(desktopState.get().titleRevealActive)await step(1);await step(1);
+  expect(desktopState.get().menuInputArmed).toBe(true);render.stats({width,height});
   const settings=ui.rect('cartoon-main.settings')!;console.log(JSON.stringify({width,height,settings}));
   input.pointer('move',settings.x+settings.width/2,settings.y+settings.height/2);await step(1);
   expect(desktopState.get().selected).toBe(2);

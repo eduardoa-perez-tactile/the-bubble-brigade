@@ -83,3 +83,16 @@ worldTest('title curtain consumes a held pointer until release before the menu c
  ctx.input.emit(DesktopIntent,{action:'ui-activate',value:'settings'});await adventureStep(ctx,1);
  expect(desktopState.get().screen).toBe('settings');
 },{scene});
+
+renderTest('harbor curtain menu and map handoff retain the existing fourteen draw budget',async ctx=>{
+ ctx.input.view(1280,720,1);await ctx.loaded();await adventureStep(ctx,5);
+ const peaks:Record<string,number>={title:0,curtain:0,menu:0,map:0};
+ const sample=(phase:string)=>{peaks[phase]=Math.max(peaks[phase]!,ctx.render.stats({width:1280,height:720}).drawCalls);};
+ sample('title');ctx.input.key(38,true);await adventureStep(ctx,1);ctx.input.key(38,false);
+ for(let i=0;i<TITLE_REVEAL_STEPS+3;i++){await adventureStep(ctx,1);sample(desktopState.get().titleRevealActive?'curtain':'menu');}
+ await ctx.ui.press('cartoon-main.choose-mode');await ctx.loaded();await adventureStep(ctx,3);
+ expect(desktopState.get().screen).toBe('overworld');
+ for(let i=0;i<15;i++){sample('map');await adventureStep(ctx,1);}
+ console.log(JSON.stringify({viewport:[1280,720],peaks}));
+ expect(Math.max(...Object.values(peaks))).toBeLessThanOrEqual(14);
+},{scene,memory:'phone-low'});

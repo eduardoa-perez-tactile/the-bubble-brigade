@@ -233,5 +233,10 @@
     ],
     "gardenGuideOverride": ".gameengine/map-feedback-final-district-2-guide-v2.png",
     "note": "Engine source captures are ignored local diagnostics. Source hashes and exact feet positions identify the inspected generation; production map render goldens provide the tracked overview."
+  },
+  "postCaptureTechnicalChange": {
+    "description": "Exact shadow PNG copy and texture-atlas colocation only. Authored feet positions, artwork, opacity and painter depth remain unchanged. Current five-map T1 checks pass without golden updates.",
+    "currentPresentationSourceSha256": "d284f228d37d57c5b118cf01fbbf45492ccc8bb1546109912c9e14c4a5554147",
+    "copiedShadowSha256": "cd5bf9662e7c9e48ad688b77fda64dcafdb99fe084ce4d1bef8f2bbe7e8f23b0"
   }
 }

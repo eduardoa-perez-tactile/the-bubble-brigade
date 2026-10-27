@@ -18,6 +18,8 @@ for row in json.loads((ROOT / 'data/overworld-shop-occluders.json').read_text())
 for row in entries:
     path = ROOT / row['path']
     assert hashlib.sha256(path.read_bytes()).hexdigest() == row['sha256'], path
+    if 'source' in row:
+        assert path.read_bytes() == (ROOT / row['source']).read_bytes(), path
     image = Image.open(path).convert('RGBA')
     if 'size' in row:
         assert list(image.size) == row['size'], path
