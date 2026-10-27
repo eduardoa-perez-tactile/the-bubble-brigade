@@ -20,6 +20,7 @@
       },
       "children": [
         "cm_title_curtain",
+        "cm_curtain_label",
         "cm_composition",
         "cm_hint",
         "cm_status",
@@ -504,6 +505,36 @@
       },
       "show": "titleMode",
       "point": "cloth"
+    },
+    "cm_curtain_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "PRESS PLAY TO ENTER",
+      "show": "closedPrompt",
+      "point": "curtain-prompt",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          -150
+        ],
+        "w": "90%",
+        "h": 80,
+        "fontSize": 46,
+        "fitMin": 30,
+        "textAlign": "center",
+        "color": "#fff0c9",
+        "shadowY": 2,
+        "shadowColor": "#39190e"
+      }
     }
   },
   "view": {
@@ -793,6 +824,10 @@
           }
         }
       }
+    },
+    "closedPrompt": {
+      "type": "yesno",
+      "default": false
     }
   },
   "samples": {

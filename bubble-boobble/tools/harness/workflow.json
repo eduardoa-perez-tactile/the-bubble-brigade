@@ -1,0 +1,6 @@
+{
+  "mode": "prototype",
+  "prototype": {
+    "defaultFilter": "harness reset and tap"
+  }
+}

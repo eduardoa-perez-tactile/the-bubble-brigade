@@ -5,12 +5,15 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
 import { compareFiles } from './compare.mjs';
+import { prototypePlan, usesPrototypeLane } from './prototype.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 process.chdir(root);
 const lock = JSON.parse(readFileSync('tools/harness/reference.lock.json', 'utf8'));
 const scenarioName = process.argv[3] ?? 'reference-round1-smoke';
 const measurements = [];
+const workflowPath = 'tools/harness/workflow.json';
+const workflow = JSON.parse(readFileSync(workflowPath, 'utf8'));
 const hash = data => createHash('sha256').update(data).digest('hex');
 const read = path => readFileSync(path, 'utf8');
 function run(command, args, options = {}) {
@@ -222,7 +225,22 @@ function reset() {
 async function main() {
   const start = performance.now();
   const command = process.argv[2] ?? 'quick';
-  switch (command) {
+  const prototype = usesPrototypeLane(command, workflow.mode);
+  let plan;
+  if (prototype) {
+    plan = prototypePlan(process.argv[3], workflow);
+    console.log(`PROTOTYPE MODE: one focused V8 T0 selection: ${plan.filter}`);
+    engine(plan.args);
+    console.log(`Deferred (not claimed passing): ${plan.deferred.join(', ')}.`);
+  } else switch (command) {
+    case 'mode': {
+      const mode = process.argv[3];
+      if (mode === undefined) { console.log(`Harness workflow mode: ${workflow.mode}`); break; }
+      if (!['prototype', 'strict'].includes(mode)) throw new Error('Use harness:mode -- prototype|strict');
+      writeFileSync(workflowPath, JSON.stringify({ ...workflow, mode }, null, 2) + '\n');
+      console.log(`Harness workflow mode: ${mode}`);
+      break;
+    }
     case 'setup': await setup(); break;
     case 'fixtures': fixtures(false); break;
     case 'reference-check': fixtures(true); break;
@@ -233,12 +251,14 @@ async function main() {
       if (!process.argv[3] || !process.argv[4]) throw new Error('compare EXPECTED.json ACTUAL.json');
       process.exitCode = compareFiles(process.argv[3], process.argv[4]) ? 0 : 1; break;
     case 'quick':
+    case 'quick-strict':
       selftest();
       if (process.argv[3]) engine(['test', '--js', 'v8', '--filter', process.argv[3]]);
       // Keep confirmation and co-op regressions in the engine lane; never substitute OS playtesting.
       else for (const filter of ['*movement*', '*arcade engine input*', '*arcade Go*', 'desktop *', 'companion *', 'arcade player motion *', 'arcade scoring *']) engine(['test', '--js', 'v8', '--filter', filter]);
       break;
     case 'verify':
+    case 'verify-strict':
     case 'verify-full': {
       selftest();
       const bridgeHTTP = run(process.execPath, ['--test', 'tools/desktop/bridge-http.test.mjs']);
@@ -302,7 +322,7 @@ async function main() {
   }
   const wallMs = performance.now() - start;
   mkdirSync('artifacts', { recursive: true });
-  writeFileSync(`artifacts/${command}-timing.json`, JSON.stringify({ command, wallMs, measurements }, null, 2) + '\n');
-  console.log(`Harness ${command}: ${(wallMs / 1000).toFixed(3)} s end-to-end. Exact parity claims are limited to the recorded scenarios; see docs/harness.md.`);
+  writeFileSync(`artifacts/${command}-timing.json`, JSON.stringify({ command, workflowMode: prototype ? 'prototype' : 'strict', ...(plan ? { filter: plan.filter, deferred: plan.deferred } : {}), wallMs, measurements }, null, 2) + '\n');
+  console.log(`Harness ${command}: ${(wallMs / 1000).toFixed(3)} s end-to-end. ${prototype ? 'Focused prototype smoke only; broader coverage is deferred.' : 'Exact parity claims are limited to the recorded scenarios; see docs/harness.md.'}`);
 }
 main().catch(error => { console.error(error.message); process.exitCode = 1; });

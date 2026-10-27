@@ -19,12 +19,38 @@ even when OS automation is available. Missing engine coverage is reported as a
 limitation; it does not authorize desktop control or a request for computer access.
 The native scripts retained in the repository are outside the default testing workflow.
 
-## Fast daily loop
+## Current prototype mode
+
+By user request, `tools/harness/workflow.json` enables prototype mode until the
+user asks to restore strict testing. `PROJECT.md` makes this policy take precedence
+over broader engine handoff requirements. Both `harness:quick` and `harness:verify`
+now run one focused V8 T0 selection, or the single `harness reset and tap` smoke
+case when no filter is supplied:
+
+```sh
+npm run harness:quick -- 'title curtain consumes Enter once*'
+npm run harness:verify
+npm run harness:mode
+```
+
+For visual work, inspect only the affected engine capture at relevant screen
+extremes. Full suites, Hermes, golden/replay sweeps, cooks, cooked smoke, pipeline
+recordings and oracle/provenance sweeps are deferred, never reported as passing.
+Selected failures and empty selections still fail. No baselines are rewritten.
+The Game Engine-only testing boundary remains in force.
+
+Use `harness:quick-strict` for the previous quick lane and `harness:verify-strict`
+for the previous verify lane; `harness:verify-full` remains explicitly comprehensive.
+`harness:prototype` always selects the fast lane. When the user requests stricter
+defaults again, run `npm run harness:mode -- strict`. The sections below describe
+the retained strict lanes, not mandatory prototype gates.
+
+## Strict daily loop
 
 ```sh
 npm run harness:editor
 npm run harness:reset
-npm run harness:quick
+npm run harness:quick-strict
 ```
 
 Reset starts the arcade game in round 1, seed 42, one player, with its ready
@@ -47,7 +73,7 @@ checksum, runs nine deliberate comparator tests, then seven V8 T0 groups:
 A supplied filter replaces the three default groups:
 
 ```sh
-npm run harness:quick -- '*arcade engine input*'
+npm run harness:quick-strict -- '*arcade engine input*'
 ```
 
 An empty test selection fails. Quick uses committed oracle output, requires no
@@ -56,7 +82,7 @@ Go/network access, and performs no cook or rendering-golden check.
 ## Handoff and milestone gates
 
 ```sh
-npm run harness:verify
+npm run harness:verify-strict
 npm run harness:verify-full
 npm run harness:milestone
 ```

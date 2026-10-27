@@ -27,6 +27,28 @@ explicitly asks for that specific action.
 When engine coverage cannot establish an OS-level behavior, report that limitation
 and continue with engine tests. Do not substitute a standalone play session.
 
+## Prototype verification (user-requested, October 27, 2026)
+
+Until the user asks to restore strict testing, use the mode in
+`tools/harness/workflow.json` (currently `prototype`). This overrides the broad
+handoff/check/pipeline requirements in engine instructions and skills. Run one
+relevant focused V8 T0 selection for a behavior change; for presentation, inspect
+only the affected engine capture at relevant screen extremes. Keep iteration short.
+`npm run harness:quick -- '<filter>'` and `harness:verify` use this fast lane;
+without a filter they run one baseline smoke case.
+
+Full suites, Hermes parity, golden/replay sweeps, cooks, cooked smoke, all-tier
+pipeline recordings, oracle audits and `gameengine check` are explicit opt-in
+verification, not automatic handoff gates during prototyping. Do not escalate to
+them for unrelated historical failures. Report deferred coverage honestly; fix
+failures in the selected checks. Preserve tests and budgets, and never automatically
+rewrite expected outputs to hide failures. The Game Engine-only testing boundary
+above and the branch/PR Git workflow still apply.
+
+Restore defaults with `npm run harness:mode -- strict` when requested. Explicit
+`harness:quick-strict`, `harness:verify-strict` and `harness:verify-full` remain
+available in either mode.
+
 ## Decisions
 
 Choices already made, and why, so agents do not reopen them.

@@ -16,7 +16,7 @@ export const CartoonMenuView = defineView<DesktopModel>({
   },
   render: (model, { intent }) => <Screen safeArea class="desktop-screen cartoon-menu-screen">
     <Widget class={() => model().reducedEffects ? "cartoon-menu menu-calm" : "cartoon-menu"} doc="cartoon-menu" id="cartoon-main" props={{
-      firstUseArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE',thirdUseArt:()=>model().buttons[3]?.key!=='help',firstArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE'?'cartoon/menu/type/continue':'cartoon/menu/type/continue',thirdArt:()=>model().buttons[3]?.key==='help'?'cartoon/menu/type/quit':'cartoon/menu/type/quit',progress:()=>model().menuProgress,narrow:()=>model().menuNarrow,titleNarrow:()=>model().menuNarrow&&model().page==='title',firstLabel:()=>model().buttons[0]?.label??'BEGIN ADVENTURE',arcadeSelected:()=>model().selected===1,thirdLabel: () => model().buttons[3]?.label ?? 'QUIT',titleMode: () => model().page === 'title', promptVisible: () => model().frame % 90 < 65,
+      firstUseArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE',thirdUseArt:()=>model().buttons[3]?.key!=='help',firstArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE'?'cartoon/menu/type/continue':'cartoon/menu/type/continue',thirdArt:()=>model().buttons[3]?.key==='help'?'cartoon/menu/type/quit':'cartoon/menu/type/quit',progress:()=>model().menuProgress,narrow:()=>model().menuNarrow,titleNarrow:()=>model().menuNarrow&&model().page==='title',firstLabel:()=>model().buttons[0]?.label??'BEGIN ADVENTURE',arcadeSelected:()=>model().selected===1,thirdLabel: () => model().buttons[3]?.label ?? 'QUIT',titleMode: () => model().page === 'title', closedPrompt:()=>model().page==='title', promptVisible: () => model().frame % 90 < 65,
       status: () => model().status, showStatus: () => !!model().status,
       startSelected: () => model().selected === 0,
       settingsSelected: () => model().selected === 2,
@@ -30,5 +30,5 @@ export interface TitleCurtainModel {progress:number;narrow:boolean}
 export const CartoonTitleCurtainView=defineView<TitleCurtainModel>({
  name:'CartoonTitleCurtain',layer:'overlay',blockInput:true,
  samples:{start:{progress:0,narrow:false},middle:{progress:.5,narrow:false},end:{progress:1,narrow:false}},
- render:model=><Screen safeArea class="desktop-screen title-curtain-screen"><Widget doc="cartoon-menu" id="title-curtain" class="cartoon-menu title-curtain-sheet" style={()=>({transform:`translateY(${-104*model().progress}%)`})} props={{titleMode:true,titleNarrow:()=>model().narrow,narrow:()=>model().narrow,promptVisible:false}}/></Screen>,
+ render:model=><Screen safeArea class="desktop-screen title-curtain-screen"><Widget doc="cartoon-menu" id="title-curtain" class="cartoon-menu title-curtain-sheet" style={()=>({transform:`translateY(${-104*model().progress}%)`})} props={{titleMode:true,titleNarrow:()=>model().narrow,narrow:()=>model().narrow,promptVisible:false,closedPrompt:false}}/></Screen>,
 });
