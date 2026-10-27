@@ -218,6 +218,11 @@
         "include": [
           "assets/adventure/foundry-5.png"
         ]
+      },
+      "menu-presentation": {
+        "include": [
+          "assets/cartoon/menu/**"
+        ]
       }
     }
   },

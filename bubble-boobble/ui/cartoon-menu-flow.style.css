@@ -1,26 +1,48 @@
-/* Full-bleed theatrical surfaces; safeArea remains responsible for actionable content. */
-.cartoon-menu-screen { background-color: #f1e3bf; }
-.cartoon-mode-screen { background-color: #181718; }
-.cartoon-menu-screen .cartoon-menu, .cartoon-mode-screen .cartoon-modes { width: 100%; height: 100%; }
-.cartoon-menu .ud-cartoon-menu__cm_mascot_right { transform: scaleX(-1); }
-.cartoon-menu .ud-cartoon-button__cb_label { font-family: "cartoon/fonts/BreeSerif-Regular"; }
-.cartoon-modes .ud-cartoon-mode-card__mc_label { font-family: "cartoon/fonts/Rye-Regular"; }
-.cartoon-modes .ud-cartoon-action__root { background-color: transparent; }
-.cartoon-modes .ud-cartoon-action__db_label { color: #fff0c9; font-size: 28px; height: 40px; }
-/* On tall displays group the cast with the title, then keep the next action immediately below. */
-@media (aspect < 0.85) {
-  .cartoon-menu .ud-cartoon-menu__cm_composition { height: 900px; }
-  .cartoon-menu .ud-cartoon-menu__cm_billing,
-  .cartoon-menu .ud-cartoon-menu__cm_hint,
-  .cartoon-menu .ud-cartoon-menu__cm_tagline,
-  .cartoon-modes .ud-cartoon-modes__ms_brand,
-  .cartoon-modes .ud-cartoon-modes__ms_hint { display: none; }
-  .cartoon-menu .ud-cartoon-menu__cm_mascot_left,
-  .cartoon-menu .ud-cartoon-menu__cm_mascot_right { top: 684px; }
+/* The menu is a live theatrical composition; backdrop and light never receive input. */
+.cartoon-menu-screen {background-color:#102d39;}
+.cartoon-mode-screen {background-color:#181718;}
+.cartoon-menu-screen .cartoon-menu, .cartoon-mode-screen .cartoon-modes {width:100%;height:100%;}
+.cartoon-menu .ud-cartoon-button__cb_label {font-family:"cartoon/fonts/BreeSerif-Regular";}
+.cartoon-modes .ud-cartoon-mode-card__mc_label {font-family:"cartoon/fonts/Rye-Regular";}
+.cartoon-modes .ud-cartoon-action__root {background-color:transparent;}
+.cartoon-modes .ud-cartoon-action__db_label {color:#fff0c9;font-size:28px;height:40px;}
+.cartoon-modes .ud-cartoon-mode-card__mc_hero {object-fit:cover;}
+.menu-greeter, .menu-atmosphere {width:100%;height:100%;pointer-events:none;}
+.cartoon-menu .ud-cartoon-menu__cm_spotlight,
+.cartoon-menu .ud-cartoon-menu__cm_pool,
+.cartoon-menu .ud-cartoon-menu__cm_atmosphere,
+.cartoon-menu .ud-cartoon-menu__cm_mascot_left {pointer-events:none;}
+/* Short scenic sweep, then a long hold. Never move the controls. */
+@keyframes harbor-spotlight {
+ 0%,10% {transform:rotate(-1deg);opacity:.6;}
+ 25% {transform:rotate(2deg);opacity:.9;}
+ 40% {transform:rotate(0deg);opacity:.75;}
+ 55%,100% {transform:rotate(-1deg);opacity:.6;}
 }
-/* Mode illustrations keep their authored orientation; no mirrored portrait. */
-.cartoon-modes .ud-cartoon-mode-card__mc_hero { object-fit: cover; }
-/* Large main-menu rows retain readable labels on the narrow canvas. */
+@keyframes harbor-pool {
+ 0%,10% {transform:translateX(-14px);opacity:.72;}
+ 25% {transform:translateX(12px);opacity:1;}
+ 40% {transform:translateX(-3px);opacity:.8;}
+ 55%,100% {transform:translateX(-14px);opacity:.72;}
+}
+.cartoon-menu .ud-cartoon-menu__cm_spotlight {animation:harbor-spotlight 18s ease-in-out infinite;}
+.cartoon-menu .ud-cartoon-menu__cm_pool {animation:harbor-pool 18s ease-in-out infinite;}
+.cartoon-menu.menu-calm .ud-cartoon-menu__cm_spotlight,
+.cartoon-menu.menu-calm .ud-cartoon-menu__cm_pool {animation:none;}
+@media (prefers-reduced-motion:reduce) {
+ .cartoon-menu .ud-cartoon-menu__cm_spotlight,
+ .cartoon-menu .ud-cartoon-menu__cm_pool {animation:none;}
+ .menu-atmosphere {display:none;}
+}
 @media (aspect < 0.85) {
- .cartoon-menu .ud-cartoon-button__cb_label {font-size:40px;height:72px;}
+ .cartoon-menu .ud-cartoon-menu__cm_composition {height:1000px;}
+ .cartoon-menu .ud-cartoon-menu__cm_hint,
+ .cartoon-modes .ud-cartoon-modes__ms_brand,
+ .cartoon-modes .ud-cartoon-modes__ms_hint {display:none;}
+ .cartoon-menu .ud-cartoon-button__cb_label {font-size:72px;height:96px;}
+}
+
+/* Preserve the last action on shorter portrait windows. */
+@media (aspect >= 0.55) and (aspect < 0.85) {
+ .cartoon-menu .ud-cartoon-menu__cm_progress {display:none;}
 }

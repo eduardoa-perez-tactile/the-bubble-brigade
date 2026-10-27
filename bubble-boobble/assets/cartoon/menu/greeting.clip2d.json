@@ -1,0 +1,23 @@
+{
+  "$schemaVersion": 1,
+  "fps": 8,
+  "loop": "loop",
+  "frames": [
+    {
+      "sprite": "cartoon/menu/greeting/01",
+      "duration": 0.24
+    },
+    {
+      "sprite": "cartoon/menu/greeting/02",
+      "duration": 0.2
+    },
+    {
+      "sprite": "cartoon/menu/greeting/03",
+      "duration": 0.12
+    },
+    {
+      "sprite": "cartoon/menu/greeting/04",
+      "duration": 8.44
+    }
+  ]
+}

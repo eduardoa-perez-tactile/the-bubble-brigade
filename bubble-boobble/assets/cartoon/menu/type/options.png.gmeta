@@ -1,0 +1,10 @@
+guid = "5e590e89-8582-4d99-bdd5-1dada86f1587"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "menu-presentation"
+filter = "linear"
+compression = "astc6x6"
+trim = false
+max_size = 1024

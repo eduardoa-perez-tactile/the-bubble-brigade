@@ -1,0 +1,12 @@
+{
+  "tool": "Built-in image_gen",
+  "prompt": "Production background-only extraction for a STRICT match to the supplied APPROVED menu mockup. This is a precision cleanup, NOT a redesign. Preserve camera, composition, framing, every visible prop and ALL unoccluded original painting as closely as possible. Remove ONLY the logo, menu lettering and footer lettering, bubble selection cursor, green dragon, and painted spotlight beam/pool. Fill their small holes with QUIET DARK TEAL continuation of the existing nearby paint. Critical: do NOT invent extra bright town buildings, illuminated windows, clouds, water highlights or distant shoreline underneath the removed text. The left/middle menu field must stay very dark and quiet as in reference; the far-right original lighthouse and ships stay exactly in place. Retain original near lantern, ropes, boxes, rail, deck seams and warm/cool balance; retain original subdued water surface. Do NOT raise saturation or overall brightness, do not sharpen or add texture, do not simplify the exterior silhouette of existing objects. No text, logos, bubbles, UI or characters. The diagonal spotlight is a separate runtime layer, so remove it but preserve everything it illuminates. Return one clean widescreen 16:9 scenic background closely registered to the provided image.",
+  "source": "tools/menu/originals/exec-6bee963d-60b3-47b7-a397-3e641afe8139.png",
+  "changes": [
+    "Quiet registered harbor repaint",
+    "Corrected pointer aspect, size and text gap",
+    "Footer scale and baseline",
+    "Diagonal light extent and color"
+  ],
+  "status": "One correction pass; not certified as 99% or pixel identical."
+}
