@@ -172,14 +172,15 @@ declare module '@gameengine/ui' {
      *
      * Properties:
      *   - `mode`: text, default "BUBBLE MADNESS"
+     *   - `title`: text, default "COURTYARD CAPER"
      * Events: none
      * Code areas: none
-     * Refs: none
+     * Refs: `plaque`, `title`, `mode`
      */
     'cartoon-arrival': {
-      props: { mode: string | { loc: string } | LocText };
+      props: { mode: string | { loc: string } | LocText; title: string | { loc: string } | LocText };
       areas: never;
-      refs: never;
+      refs: 'plaque' | 'title' | 'mode';
     };
     /**
      * Cartoon boss: a view, screen (ui/docs/cartoon-boss.ui.json)
@@ -1395,6 +1396,81 @@ declare module '@gameengine/ui' {
       props: { eyebrow: string | { loc: string } | LocText; title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; score: string | { loc: string } | LocText; champion: string | { loc: string } | LocText; stats: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; won: boolean; party: boolean; ready: boolean; showStats: boolean; ranking: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; kills?: string | { loc: string } | LocText; leader?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; image?: string }[]; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; podium: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; image?: string; place?: 'gold' | 'silver' | 'bronze'; occupied?: boolean; killLabel?: string | { loc: string } | LocText }[]; moreRanks: boolean };
       areas: 'confetti';
       refs: 'result-score' | 'result-stats';
+    };
+    /**
+     * Story hud: a view (ui/docs/story-hud.ui.json)
+     *
+     * Properties:
+     *   - `lives`: text, default "3"
+     *   - `enemies`: text, default "03"
+     *   - `portrait`: image, default "cartoon/reconstruction/ui/portraits/green"
+     *   - `bonusSeconds`: text, default "2"
+     *   - `bonus`: yesno, default false
+     *   - `lowLife`: yesno, default false
+     *   - `wave`: text, default ""
+     *   - `encounterIcon`: image, default "cartoon/frames/enemy/banebou/body-0"
+     *   - `powers`: list of story-hud-power
+     *   - `showHeading`: yesno, default false
+     *   - `livesLabel`: text, default "LIVES"
+     *   - `remainingLabel`: text, default "REMAINING"
+     * Events: none
+     * Code areas: none
+     * Refs: `player-status`, `portrait`, `lives`, `lives-label`, `powers`, `encounter-status`, `wave`, `encounter-icon`, `enemies`, `bonus-status`, `remaining-label`
+     * Samples (`view render doc:story-hud --sample …`): `gameplay`, `bonus`, `lastLife`
+     */
+    'story-hud': {
+      props: { lives: string | { loc: string } | LocText; enemies: string | { loc: string } | LocText; portrait: string; bonusSeconds: string | { loc: string } | LocText; bonus: boolean; lowLife: boolean; wave: string | { loc: string } | LocText; encounterIcon: string; powers: readonly { key: string; art?: string }[]; showHeading: boolean; livesLabel: string | { loc: string } | LocText; remainingLabel: string | { loc: string } | LocText };
+      areas: never;
+      refs: 'player-status' | 'portrait' | 'lives' | 'lives-label' | 'powers' | 'encounter-status' | 'wave' | 'encounter-icon' | 'enemies' | 'bonus-status' | 'remaining-label';
+    };
+    /**
+     * Story hud power: a widget (ui/docs/story-hud-power.ui.json)
+     *
+     * Properties:
+     *   - `art`: image, default "cartoon/frames/item/pink_candy"
+     * Events: none
+     * Code areas: none
+     * Refs: `art`
+     */
+    'story-hud-power': {
+      props: { art: string };
+      areas: never;
+      refs: 'art';
+    };
+    /**
+     * Story outcome: a view (ui/docs/story-outcome.ui.json)
+     *
+     * Properties:
+     *   - `art`: image, default "cartoon/ui/cues/bravo"
+     * Events: none
+     * Code areas: none
+     * Refs: `art`
+     * Samples (`view render doc:story-outcome --sample …`): `victory`, `defeat`
+     */
+    'story-outcome': {
+      props: { art: string };
+      areas: never;
+      refs: 'art';
+    };
+    /**
+     * Story result: a view, dialog (ui/docs/story-result.ui.json)
+     *
+     * Properties:
+     *   - `episode`: text, default "LANTERN LANDING"
+     *   - `title`: text, default "EPISODE CLEAR!"
+     *   - `score`: text, default "0000000"
+     *   - `rewardLabel`: text, default "FIRST CLEAR"
+     *   - `rewardValue`: text, default "+10 COINS"
+     *   - `hint`: text, default "ENTER / A TO CONFIRM"
+     *   - `buttons`: list of overworld-button
+     * Events: `press (<item>)`
+     * Code areas: none
+     * Refs: none
+     */
+    'story-result': {
+      props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] };
+      areas: never;
+      refs: never;
     };
     /**
      * Victory action: a widget, button (ui/docs/victory-action.ui.json)

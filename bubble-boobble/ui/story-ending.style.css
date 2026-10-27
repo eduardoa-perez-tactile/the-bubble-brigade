@@ -1,0 +1,30 @@
+.story-outcome-screen, .story-results-screen {
+ width:100%;height:100%;align-items:center;justify-content:center;
+ font-family:"cartoon/fonts/BreeSerif-Regular";
+}
+.story-outcome-screen, .story-outcome {pointer-events:none;}
+.story-result {width:100%;height:100%;}
+.story-outcome {width:100%;height:100%;}
+.story-outcome .ud-story-outcome__so_art {object-fit:contain;}
+.story-result .ud-story-result__sr_title {font-family:"cartoon/fonts/Rye-Regular";}
+.story-result .ud-overworld-button__root {width:100%;height:52px;background-color:#ead7b4;border-width:2px;border-color:#8c5a35;}
+.story-result .ud-overworld-button__root.v-selected-yes {background-color:#47362a;}
+.story-result .ud-overworld-button__root.v-selected-yes .ud-overworld-button__owb_label {color:#fff1d1;}
+@media (aspect < 1.2) {
+ .story-result .ud-story-result__sr_panel {width:94%;}
+}
+@media (aspect < 0.55) {
+ .story-outcome .ud-story-outcome__so_art {height:230px;width:84%;}
+ .story-result .ud-story-result__sr_panel {padding:24px;gap:18px;}
+ .story-result .ud-story-result__sr_episode {font-size:30px;text-fit:26px 30px;height:50px;}
+ .story-result .ud-story-result__sr_title {font-size:46px;text-fit:32px 46px;height:96px;}
+ .story-result .ud-story-result__sr_score_row {height:72px;}
+ .story-result .ud-story-result__sr_score_label {font-size:32px;text-fit:28px 32px;height:56px;}
+ .story-result .ud-story-result__sr_score {font-size:42px;text-fit:34px 42px;height:56px;}
+ .story-result .ud-story-result__sr_reward_row {height:100px;}
+ .story-result .ud-story-result__sr_reward_label {font-size:28px;text-fit:24px 28px;height:84px;}
+ .story-result .ud-story-result__sr_reward_value {font-size:30px;text-fit:26px 30px;height:84px;}
+ .story-result .ud-story-result__sr_hint {font-size:26px;text-fit:24px 26px;height:56px;}
+ .story-result .ud-overworld-button__root {height:110px;}
+ .story-result .ud-overworld-button__owb_label {font-size:36px;text-fit:32px 36px;height:84px;}
+}

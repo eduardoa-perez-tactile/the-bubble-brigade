@@ -1,3 +1,4 @@
+import {STORY_OUTCOME_STEPS} from '../adventure/ending';
 import {desktopState,desktopGameRequest,type DesktopState,type DesktopScreen,type PlayMode} from './documents.ts';
 export {desktopState,desktopGameRequest,initialDesktopState} from './documents.ts';
 export type {DesktopState,DesktopScreen,DesktopGameRequest,PlayMode} from './documents.ts';
@@ -132,7 +133,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
      if(c.col(ActionState).pressed[i]&&(/^(confirm|profileConfirm|fire|fire2|jump|jump2)$/.test(name)||/^party(Fire|Jump)([1-9]|10)$/.test(name)))heldAction=true;
    }
    const neutral=held===0&&!heldAction&&!pads.pads.some(p=>p.jump||p.fire||p.start);
-   if(!s.resultReady&&ctx.step-s.resultStartedStep!>=RESULT_INPUT_DELAY&&neutral){s={...s,resultReady:true};desktopState.set(s);}
+   if(!s.resultReady&&ctx.step-s.resultStartedStep!>=(s.cartoon&&s.adventure&&!s.won?STORY_OUTCOME_STEPS:RESULT_INPUT_DELAY)&&neutral){s={...s,resultReady:true};desktopState.set(s);}
    // A press on the frame that arms the screen must not also activate it.
    if(!desktopState.get().resultReady||!menuState.resultReady)confirm=false;
  }

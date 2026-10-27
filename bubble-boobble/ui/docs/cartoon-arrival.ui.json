@@ -34,7 +34,8 @@
         "ca_title",
         "ca_mode",
         "ca_billing"
-      ]
+      ],
+      "point": "plaque"
     },
     "ca_studio": {
       "type": "label",
@@ -63,7 +64,7 @@
     "ca_title": {
       "type": "label",
       "name": "Label",
-      "text": "COURTYARD CAPER",
+      "text": "{title}",
       "style": {
         "w": 600,
         "h": 130,
@@ -71,7 +72,8 @@
         "fitMin": 40,
         "color": "#eee3c7",
         "textAlign": "center"
-      }
+      },
+      "point": "title"
     },
     "ca_mode": {
       "type": "label",
@@ -83,7 +85,8 @@
         "fontSize": 22,
         "color": "#eee3c7",
         "textAlign": "center"
-      }
+      },
+      "point": "mode"
     },
     "ca_billing": {
       "type": "label",
@@ -109,6 +112,10 @@
     "mode": {
       "type": "text",
       "default": "BUBBLE MADNESS"
+    },
+    "title": {
+      "type": "text",
+      "default": "COURTYARD CAPER"
     }
   }
 }

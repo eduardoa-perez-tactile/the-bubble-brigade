@@ -38,7 +38,7 @@ worldTest('adventure flow selected encounter retry return and Classic records st
  await ctx.cheat(OverworldResolveEncounter,{won:false});await adventureStep(ctx,2);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().won).toBe(false);
  expect(desktopSaveState.get().profiles[0]!.played).toBe(0);
- await adventureStep(ctx,50);await intent(ctx,'restart');await adventureStep(ctx,2);
+ await adventureStep(ctx,80);await intent(ctx,'restart');await adventureStep(ctx,2);
  expect(session.get().game!.Level.number).toBe(2);
  expect(desktopState.get().adventureEncounter).toBe('encounter-2');
  expect(desktopState.get().adventureAttempt===firstAttempt).toBe(false);

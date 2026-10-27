@@ -1,0 +1,47 @@
+/* Story status floats over the arena: no cards, ribbons, or empty upgrade slots. */
+.story-hud-screen {
+ width:100%;height:100%;align-items:center;justify-content:center;
+ font-family:"cartoon/fonts/BreeSerif-Regular";pointer-events:none;
+}
+.story-hud {width:100%;height:100%;pointer-events:none;}
+.story-hud .ud-story-hud__sh_powers_row {flex-wrap:wrap;}
+.story-hud .ud-story-hud__sh_encounter_icon {
+ image-tint: rgba(255, 241, 201, 1);image-tint-mode:multiply;
+ image-saturation:0;image-brightness:100;tint:#fff1c9;
+}
+.story-hud.v-bonus-yes .ud-story-hud__sh_encounter_icon {
+ image-tint:rgba(255, 255, 255, 0);image-saturation:1;image-brightness:1;tint:#ffffff;
+}
+@media (aspect < 1.6) {
+ .story-hud .ud-story-hud__sh_player,
+ .story-hud .ud-story-hud__sh_encounter {height:60px;top:-4px;}
+ .story-hud .ud-story-hud__sh_player {width:270px;left:16px;}
+ .story-hud .ud-story-hud__sh_portrait {width:46px;height:52px;}
+ .story-hud .ud-story-hud__sh_lives {left:56px;top:-1px;width:76px;height:40px;font-size:30px;text-fit:28px 30px;}
+ .story-hud .ud-story-hud__sh_lives_label {left:120px;top:12px;width:138px;height:22px;font-size:12px;text-fit:12px 12px;}
+ .story-hud .ud-story-hud__sh_powers_row {left:56px;top:40px;width:174px;height:20px;gap:3px;}
+ .story-hud .ud-story-hud-power__root {width:20px;height:20px;}
+ .story-hud .ud-story-hud__sh_encounter {width:152px;left:-16px;}
+ .story-hud .ud-story-hud__sh_wave {height:16px;font-size:11px;text-fit:11px 11px;}
+ .story-hud .ud-story-hud__sh_count_row {top:16px;height:28px;gap:7px;}
+ .story-hud .ud-story-hud__sh_encounter_icon {width:32px;height:28px;}
+ .story-hud .ud-story-hud__sh_remaining,
+ .story-hud .ud-story-hud__sh_bonus {height:28px;font-size:20px;text-fit:20px 20px;}
+ .story-hud .ud-story-hud__sh_remaining_label {height:16px;font-size:11px;text-fit:11px 11px;}
+}
+/* Portrait windows have vertical space around the centered landscape arena. */
+@media (aspect < 0.55) {
+ .story-hud .ud-story-hud__sh_player {width:432px;height:196px;left:20px;top:-20px;}
+ .story-hud .ud-story-hud__sh_portrait {width:92px;height:104px;}
+ .story-hud .ud-story-hud__sh_lives {left:102px;top:0px;width:120px;height:86px;font-size:64px;text-fit:60px 64px;}
+ .story-hud .ud-story-hud__sh_lives_label {left:224px;top:34px;width:192px;height:38px;font-size:26px;text-fit:26px 26px;}
+ .story-hud .ud-story-hud__sh_powers_row {left:102px;top:92px;width:264px;height:102px;gap:6px;}
+ .story-hud .ud-story-hud-power__root {width:48px;height:48px;}
+ .story-hud .ud-story-hud__sh_encounter {width:240px;height:160px;left:-20px;top:-20px;}
+ .story-hud .ud-story-hud__sh_wave {height:36px;font-size:26px;text-fit:26px 26px;}
+ .story-hud .ud-story-hud__sh_count_row {top:36px;height:86px;gap:14px;}
+ .story-hud .ud-story-hud__sh_encounter_icon {width:76px;height:78px;}
+ .story-hud .ud-story-hud__sh_remaining,
+ .story-hud .ud-story-hud__sh_bonus {height:86px;font-size:64px;text-fit:60px 64px;}
+ .story-hud .ud-story-hud__sh_remaining_label {height:36px;font-size:26px;text-fit:26px 26px;}
+}

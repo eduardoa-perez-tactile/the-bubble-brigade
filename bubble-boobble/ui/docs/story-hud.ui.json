@@ -1,0 +1,430 @@
+{
+  "$schemaVersion": 1,
+  "guid": "ea6d9b80-059a-46e6-91f4-bace9bdb60cf",
+  "name": "story-hud",
+  "title": "Story hud",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Story hud",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0
+      },
+      "children": [
+        "sh_player",
+        "sh_encounter"
+      ]
+    },
+    "sh_player": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "sh_portrait",
+        "sh_lives",
+        "sh_lives_label",
+        "sh_powers_row"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 306,
+        "h": 78,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "pivot": [
+          0,
+          1
+        ],
+        "offset": [
+          24,
+          -12
+        ]
+      },
+      "point": "player-status"
+    },
+    "sh_portrait": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": 62,
+        "h": 68,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "property": "portrait",
+      "point": "portrait"
+    },
+    "sh_lives": {
+      "type": "label",
+      "name": "Label",
+      "text": "×{lives}",
+      "style": {
+        "w": 86,
+        "h": 50,
+        "fontSize": 38,
+        "fitMin": 34,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          72,
+          -2
+        ],
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "point": "lives"
+    },
+    "sh_lives_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{livesLabel}",
+      "style": {
+        "w": 134,
+        "h": 26,
+        "fontSize": 14,
+        "fitMin": 13,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          148,
+          17
+        ],
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "point": "lives-label"
+    },
+    "sh_powers": {
+      "type": "repeat",
+      "doc": "story-hud-power",
+      "property": "powers"
+    },
+    "sh_encounter": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "sh_wave",
+        "sh_count_row",
+        "sh_remaining_label"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 190,
+        "h": 78,
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "pivot": [
+          1,
+          1
+        ],
+        "offset": [
+          -24,
+          -12
+        ]
+      },
+      "point": "encounter-status"
+    },
+    "sh_wave": {
+      "type": "label",
+      "name": "Label",
+      "text": "{wave}",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 13,
+        "fitMin": 13,
+        "textAlign": "right",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "show": "showHeading",
+      "point": "wave"
+    },
+    "sh_count_row": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "sh_encounter_icon",
+        "sh_remaining",
+        "sh_bonus"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 42,
+        "dir": "row",
+        "gap": 9,
+        "align": "center",
+        "justify": "end",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          18
+        ]
+      }
+    },
+    "sh_encounter_icon": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": 44,
+        "h": 40
+      },
+      "property": "encounterIcon",
+      "point": "encounter-icon"
+    },
+    "sh_remaining": {
+      "type": "label",
+      "name": "Label",
+      "text": "×{enemies}",
+      "style": {
+        "w": "auto",
+        "h": 42,
+        "fontSize": 32,
+        "fitMin": 30,
+        "textAlign": "right",
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "point": "enemies"
+    },
+    "sh_bonus": {
+      "type": "label",
+      "name": "Label",
+      "text": "{bonusSeconds}s",
+      "style": {
+        "w": "auto",
+        "h": 42,
+        "fontSize": 32,
+        "fitMin": 30,
+        "textAlign": "right",
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "show": "bonus",
+      "point": "bonus-status"
+    },
+    "sh_remaining_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{remainingLabel}",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 12,
+        "fitMin": 12,
+        "textAlign": "right",
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "pivot": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "color": "#fff1c9",
+        "outline": 0.045,
+        "outlineColor": "#271e17",
+        "shadowX": 0,
+        "shadowY": 2,
+        "shadowColor": "#271e17"
+      },
+      "point": "remaining-label"
+    },
+    "sh_powers_row": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "sh_powers"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 224,
+        "h": 28,
+        "dir": "row",
+        "gap": 4,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          72,
+          48
+        ]
+      },
+      "point": "powers"
+    }
+  },
+  "view": {
+    "behaviour": "none"
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "lives": {
+      "type": "text",
+      "default": "3"
+    },
+    "enemies": {
+      "type": "text",
+      "default": "03"
+    },
+    "portrait": {
+      "type": "image",
+      "default": "cartoon/reconstruction/ui/portraits/green"
+    },
+    "bonusSeconds": {
+      "type": "text",
+      "default": "2"
+    },
+    "bonus": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "sh_remaining": {
+              "hide": true
+            }
+          }
+        }
+      }
+    },
+    "lowLife": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "sh_lives": {
+              "color": "#ffb39a"
+            }
+          }
+        }
+      }
+    },
+    "wave": {
+      "type": "text",
+      "default": ""
+    },
+    "encounterIcon": {
+      "type": "image",
+      "default": "cartoon/frames/enemy/banebou/body-0"
+    },
+    "powers": {
+      "type": "list",
+      "of": "story-hud-power",
+      "default": []
+    },
+    "showHeading": {
+      "type": "yesno",
+      "default": false
+    },
+    "livesLabel": {
+      "type": "text",
+      "default": "LIVES"
+    },
+    "remainingLabel": {
+      "type": "text",
+      "default": "REMAINING"
+    }
+  },
+  "samples": {
+    "gameplay": {
+      "lives": "3",
+      "enemies": "3",
+      "bonus": false,
+      "showHeading": false,
+      "wave": "",
+      "livesLabel": "LIVES",
+      "remainingLabel": "REMAINING"
+    },
+    "bonus": {
+      "lives": "3",
+      "enemies": "0",
+      "bonus": true,
+      "showHeading": true,
+      "wave": "COLLECT FRUIT",
+      "bonusSeconds": "2",
+      "livesLabel": "LIVES",
+      "remainingLabel": "TIME LEFT"
+    },
+    "lastLife": {
+      "portrait": "cartoon/reconstruction/ui/portraits/red",
+      "lives": "1",
+      "enemies": "1",
+      "bonus": false,
+      "lowLife": true,
+      "livesLabel": "LAST LIFE",
+      "remainingLabel": "REMAINING",
+      "wave": "WAVE 2 / 2",
+      "showHeading": true
+    }
+  }
+}

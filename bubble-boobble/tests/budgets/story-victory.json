@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/story_endings_victory_bonus_alert_and_results_remain_safe_across_supported_screens.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/story_endings_multi_act_finale_and_defeat_show_only_the_final_outcome.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}
