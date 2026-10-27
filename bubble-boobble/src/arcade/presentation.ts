@@ -1,4 +1,5 @@
 import { overworldState } from '../overworld/state';
+import {adventureArrivalY} from '../adventure/spawning';
 import {cartoonFlowStartsRun} from '../cartoon/flow-timing';
 import {cartoonRewardLabel,cartoonRewardColor} from '../cartoon/reward-feedback';
 import { menuBubble, menuDragon } from '../desktop/animation';
@@ -193,7 +194,8 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
       state = e.Angry ? "shoot-angry" : "shoot";
     if (e.State === EnemyState.Defeated || e.State === EnemyState.Carried)
       state = "dead";
-    out.push(image(e.Kind + "/" + state, g.Party?.Phase === 'prepare' ? g.Tick + index * 3 : e.Age, e.X, entranceY(e.Y + 48, index), 48, 48, e.Dir));
+    const y=e.State===EnemyState.Spawning?adventureArrivalY(e)+48:entranceY(e.Y+48,index);
+    out.push(image(e.Kind + "/" + state, g.Party?.Phase === 'prepare' ? g.Tick + index * 3 : e.Age, e.X, y, 48, 48, e.Dir));
   }
   for (const b of g.Bubbles) {
     const bubbleSkin = skinAt(b.Shooter ?? 0);

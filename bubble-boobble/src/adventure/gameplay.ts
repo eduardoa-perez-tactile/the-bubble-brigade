@@ -1,6 +1,7 @@
 import {EnemyState,State,body,alive,type GameState} from '../arcade/types';
 import {hurtPlayer} from '../arcade/player';
 import {spawnPosition} from '../arcade/physics';
+import {stageAdventureEnemies} from './spawning';
 /** The same recorded stage clock controls warning, active steam, and recovery. */
 export function pressurePhase(g:GameState,lane:number):'idle'|'warning'|'active'{
  const tick=(g.LevelTicks+lane*110)%300;
@@ -20,6 +21,7 @@ export function stepAdventureEpisode(g:GameState):boolean {
  for(const [index,spawn]of next.entries()){
   const[x,y]=spawnPosition(g,spawn);g.Enemies.push({...body(x,y),ID:++g.NextID,Kind:spawn.kind,State:EnemyState.Active,CarriedBy:0,CarryTicks:0,Dir:index%2?1:-1,Vertical:1,Angry:false,Age:0,Cooldown:180,Shoot:0,DeadTicks:0,Phase:0});
  }
+ stageAdventureEnemies(g,g.Enemies.slice(-next.length),false);
  g.EpisodeWave=(g.EpisodeWave??0)+1;
  g.Particles.push({...body(680,250),Text:'SECOND ACT!',Life:100});g.Sounds.push('opening');
  return true;

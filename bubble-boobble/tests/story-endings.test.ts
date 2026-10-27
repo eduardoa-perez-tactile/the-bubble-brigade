@@ -6,22 +6,29 @@ import {adventureForProfile} from '../src/overworld/progression';
 import {session} from '../src/arcade/session';
 import {State} from '../src/arcade/types';
 import {storyResultModel} from '../src/adventure/ending.view';
+import {storyOutcome} from '../src/adventure/ending';
 import {AdventureClearAct} from '../src/adventure/endings.cheats';
 import {OverworldResolveEncounter,WarpOverworld} from '../src/overworld/overworld.cheats';
 import {OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 import {overworldEntrancePoint} from '../src/overworld/navigation';
 import {adventureStep} from './support/adventure-time';
 const scene='scenes/cartoon.scene.json';
+function shown(ctx:WorldTestContext,id:string){
+ const rect=ctx.ui.rect(id);return !!rect&&rect.width>0&&rect.height>0;
+}
 async function act(ctx:WorldTestContext,action:string,value=''){
  ctx.input.emit(DesktopIntent,{action,value});await adventureStep(ctx,2);
+}
+async function untilPlaying(ctx:WorldTestContext){
+ for(let ticks=0;ticks<300&&(desktopState.get().transitionAction||session.get().game?.State!==State.Playing);ticks++)await adventureStep(ctx,1);
+ expect(session.get().game!.State).toBe(State.Playing);
 }
 async function begin(ctx:WorldTestContext,id='encounter-1'){
  await adventureStep(ctx,8);await ctx.loaded();
  if(id!=='encounter-1')await ctx.cheat(OverworldJournalFixture,{});
  await act(ctx,'adventure-menu');await act(ctx,'adventure-continue');await ctx.loaded();
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1',id));await adventureStep(ctx,3);
- await act(ctx,'overworld-interact',id);await act(ctx,'adventure-play');await ctx.loaded();await adventureStep(ctx,65);
- expect(session.get().game!.State).toBe(State.Playing);
+ await act(ctx,'overworld-interact',id);await act(ctx,'adventure-play');await ctx.loaded();await untilPlaying(ctx);
 }
 worldTest('story endings defeat waits for its alert and a fresh released confirmation',async ctx=>{
  await begin(ctx);await ctx.cheat(OverworldResolveEncounter,{won:false});await adventureStep(ctx,2);
@@ -33,6 +40,15 @@ worldTest('story endings defeat waits for its alert and a fresh released confirm
  ctx.input.key(38,true);await adventureStep(ctx,2);ctx.input.key(38,false);
  expect(desktopState.get().transitionAction).toBe('restart');
 },{scene});
+worldTest('story endings victory announces once before functional reward actions',async ctx=>{
+ await begin(ctx);await ctx.cheat(AdventureClearAct,{});
+ expect(storyOutcome(desktopState.get(),session.get().game,0)).toBe('victory');
+ await adventureStep(ctx,72);expect(storyOutcome(desktopState.get(),session.get().game,0)).toBe(null);
+ await adventureStep(ctx,98);expect(desktopState.get().won).toBe(true);
+ const results=storyResultModel(desktopState.get(),desktopSaveState.get());
+ expect(results.title).toBe('');expect(results.rewardLabel).toBe('FIRST-CLEAR REWARD');
+ expect(results.buttons.map(button=>button.label)).toEqual(['RETURN TO MAP','PLAY AGAIN']);
+},{scene});
 renderTest('story endings victory bonus alert and results remain safe across supported screens',async ctx=>{
  ctx.input.view(1280,720,1);await begin(ctx);await ctx.cheat(AdventureClearAct,{});
  expect(session.get().game!.State).toBe(State.Clearing);expect(session.get().game!.Countdown).toBe(120);
@@ -42,14 +58,17 @@ renderTest('story endings victory bonus alert and results remain safe across sup
  expect(session.get().game!.Score).toBeGreaterThan(scoreBefore);
  ctx.render.stats({width:1280,height:720});
  expect(!!ctx.ui.rect('story-outcome')).toBe(true);
+ expect(ctx.ui.rect('story-results')).toBe(null);expect(shown(ctx,'cartoon-hud.banner')).toBe(false);
  console.log('story victory alert draw calls',ctx.render.stats({width:1280,height:720}).drawCalls);
  ctx.render.expectScreenshot('victory-alert',{width:1280,height:720});
  await adventureStep(ctx,60);ctx.render.stats({width:1280,height:720});
  expect(!!ctx.ui.rect('story-outcome')).toBe(false);expect(desktopState.get().screen).toBe('play');
+ expect(shown(ctx,'cartoon-hud.banner')).toBe(false);
  await adventureStep(ctx,48);expect(desktopState.get().screen).toBe('result');
  await adventureStep(ctx,50);
  for(const [width,height,safe] of [[344,882,[0,32,0,0]],[393,852,[0,59,0,34]],[810,1080,[0,20,0,0]],[1280,720,[0,0,0,0]],[2520,1080,[72,0,0,0]]] as const){
   ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,2);ctx.render.stats({width,height});
+  expect(shown(ctx,'story-results.outcome-title')).toBe(false);
   const buttons=ctx.ui.interactables().filter(b=>b.enabled&&b.hittable&&b.label&&['RETURN TO MAP','PLAY AGAIN'].includes(b.label));
   expect(buttons.length).toBe(2);
   for(const b of buttons){expect(b.rect.height).toBeGreaterThanOrEqual(44);expect(b.rect.x).toBeGreaterThanOrEqual(safe[0]);expect(b.rect.y).toBeGreaterThanOrEqual(safe[1]);expect(b.rect.x+b.rect.width).toBeLessThanOrEqual(width-safe[2]);expect(b.rect.y+b.rect.height).toBeLessThanOrEqual(height-safe[3]);}
@@ -59,21 +78,24 @@ renderTest('story endings victory bonus alert and results remain safe across sup
  }
  const progress=adventureForProfile(desktopSaveState.get().profiles[desktopSaveState.get().active]!);
  expect(progress.cleared['encounter-1']!.clears).toBe(1);
- expect(storyResultModel(desktopState.get(),desktopSaveState.get()).rewardLabel).toBe('FIRST CLEAR');
+ expect(storyResultModel(desktopState.get(),desktopSaveState.get()).rewardLabel).toBe('FIRST-CLEAR REWARD');
  const coins=progress.coins;
  const back=ctx.ui.interactables().find(b=>b.label==='RETURN TO MAP')!;
  await ctx.ui.press(back.id!);await adventureStep(ctx,100);await ctx.loaded();expect(desktopState.get().screen).toBe('overworld');
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await adventureStep(ctx,3);
- await act(ctx,'overworld-interact','encounter-1');await act(ctx,'adventure-play');await ctx.loaded();await adventureStep(ctx,65);
+ await act(ctx,'overworld-interact','encounter-1');await act(ctx,'adventure-play');await ctx.loaded();await untilPlaying(ctx);
  await ctx.cheat(AdventureClearAct,{});await adventureStep(ctx,170);
  expect(adventureForProfile(desktopSaveState.get().profiles[desktopSaveState.get().active]!).coins).toBe(coins);
  expect(storyResultModel(desktopState.get(),desktopSaveState.get()).rewardValue).toBe('REWARD CLAIMED');
+ expect(storyResultModel(desktopState.get(),desktopSaveState.get()).title).toBe('');
  ctx.render.expectScreenshot('replay-results',{width:1280,height:720});
 },{scene,memory:'phone-low'});
 renderTest('story endings multi act finale and defeat show only the final outcome',async ctx=>{
  ctx.input.view(1280,720,1);await begin(ctx,'encounter-5');await ctx.cheat(AdventureClearAct,{});
- expect(session.get().game!.EpisodeWave).toBe(1);expect(session.get().game!.State).toBe(State.Playing);
+ expect(session.get().game!.EpisodeWave).toBe(1);expect(session.get().game!.State).toBe(State.Ready);
  ctx.render.stats({width:1280,height:720});expect(!!ctx.ui.rect('story-outcome')).toBe(false);
+ for(let ticks=0;session.get().game!.State===State.Ready&&ticks<180;ticks++)await adventureStep(ctx,1);
+ expect(session.get().game!.State).toBe(State.Playing);
  await ctx.cheat(AdventureClearAct,{});await adventureStep(ctx,6);
  expect(session.get().game!.State).toBe(State.Clearing);ctx.render.stats({width:1280,height:720});
  expect(!!ctx.ui.rect('story-outcome')).toBe(true);
@@ -82,5 +104,6 @@ renderTest('story endings multi act finale and defeat show only the final outcom
  ctx.render.stats({width:1280,height:720});expect(!!ctx.ui.rect('story-outcome')).toBe(true);
  ctx.render.expectScreenshot('defeat-alert',{width:1280,height:720});
  await adventureStep(ctx,70);ctx.render.stats({width:1280,height:720});expect(desktopState.get().resultReady).toBe(true);
+ expect(shown(ctx,'story-results.outcome-title')).toBe(true);
  ctx.render.expectScreenshot('defeat-results',{width:1280,height:720});
 },{scene,memory:'phone-low'});

@@ -41,6 +41,8 @@ function readyCue(tick: number, end: number, reduced: boolean): IntroCue {
  */
 export function introCue(game: GameState, reducedEffects = false, visible = true, presentation?: IntroPresentation): IntroCue {
   if (!visible || game.Paused || presentation?.covered) return hidden;
+  // Reinforcements have their own small act label; large opening art would hide the descent.
+  if(game.Level.episode&&(game.EpisodeWave??0)>0)return hidden;
   if (presentation?.readyTick !== undefined) return readyCue(presentation.readyTick, CLASSIC_READY_LEAD_TICKS - 6, reducedEffects);
   const preparing = game.Party ? game.State === State.Playing && game.Party.Phase === 'prepare' : game.State === State.Ready;
   if (!preparing) return hidden;
