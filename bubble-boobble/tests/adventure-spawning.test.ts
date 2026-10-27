@@ -84,7 +84,7 @@ worldTest('Adventure spawning protected arrivals ignore player input contact cap
  for(const element of ['water','fire','thunder'])hitWithElement(g,{...effect(e.X,e.Y),ID:++g.NextID,Element:element,Ground:true},44,44);
  expect(p.Lives).toBe(3);expect(e.State).toBe(EnemyState.Spawning);expect(e.Cooldown).toBe(0);
  expect(g.Projectiles.length).toBe(0);expect(g.Bubbles.every(b=>b.EnemyID===0)).toBe(true);
- // The authored pressure lane is active, but preparation cannot inflict its damage.
+ // Preparation also holds the combat clock while the player is on the floor.
  Object.assign(p,{X:33*24,Y:22*24-44,Invincible:0});g.LevelTicks=235;
  stepGame(g,{Move:1,Jump:true,Fire:true});expect(p.Lives).toBe(3);expect(g.LevelTicks).toBe(235);
 },{scene});

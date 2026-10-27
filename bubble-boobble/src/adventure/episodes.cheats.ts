@@ -3,9 +3,9 @@ import {session} from '../arcade/session';
 import {copyGame} from '../arcade/game';
 import {EnemyState,State} from '../arcade/types';
 import {stepAdventureEpisode} from './gameplay';
-/** Recorded visual QA for the actual hazard and finale systems; never imported by production. */
+/** Recorded visual QA for the actual enemy combat and finale systems; never imported by production. */
 export const AdventureMoment=defineCheat({
- id:'adventure.moment',group:'Adventure',title:'Inspect episode pressure or second act',
+ id:'adventure.moment',group:'Adventure',title:'Inspect episode combat or second act',
  params:{secondAct:{type:'bool',default:false}},
  run(_ctx,{secondAct}){
   const current=session.get();if(!current.active||!current.game?.Level.episode)return;
