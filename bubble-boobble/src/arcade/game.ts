@@ -1,4 +1,5 @@
 import {stepAdventureEpisode} from '../adventure/gameplay';
+import {stageAdventureEnemies,stepAdventureSpawns} from '../adventure/spawning';
 import { recordPartyKill, recordPartyLastKill } from './party-config';
 import { arenaWidth, levelColumns, levelRows } from './types';
 import { stepParty, copyParty } from './party';
@@ -143,6 +144,7 @@ export function loadLevel(g: GameState, index: number) {
   }
   g.State = State.Ready;
   g.Countdown = TPS;
+  if(g.Level.episode)stageAdventureEnemies(g,g.Enemies,true);
 }
 export function stepGame(g: GameState, inputs: Input[] | Input) {
   const ins = Array.isArray(inputs) ? inputs.slice() : [inputs];
@@ -151,8 +153,12 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
   if (g.Party) { stepParty(g, ins); return; }
   g.Tick++;
   if (g.State === State.Ready) {
+    if(g.Level.episode){
+      if(g.Freeze>0){g.Freeze--;return;}
+      stepAdventureSpawns(g);
+    }
     g.Countdown--;
-    if (g.Countdown <= 0) g.State = State.Playing;
+    if (g.Countdown <= 0&&!g.Enemies.some(e=>e.State===EnemyState.Spawning)) g.State = State.Playing;
     return;
   }
   if (g.Companion) ins[1] = companionInput(g);

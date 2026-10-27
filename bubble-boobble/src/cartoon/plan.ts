@@ -1,4 +1,5 @@
 import {pressurePhase} from '../adventure/gameplay';
+import {adventureArrivalY} from '../adventure/spawning';
 import {simplifiedEnemyDraws} from './enemy-motion';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
@@ -270,8 +271,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       }
     }
   }
-  for(const spawn of g.Party?.Telegraphs??[]){
-    if(spawn.Kind&&spawn.Ticks>60)continue;
+  const spawnWarning=(spawn:{X:number;Y:number;Ticks:number})=>{
     const pulse=reduced?1:1+.12*Math.sin(spawn.Ticks*.2),u=layout.scale;
     const cx=px(spawn.X+22),feet=py(spawn.Y+44);
     out.push({frame:'shadow',x:cx-48*u*pulse,y:feet-5*u,width:96*u*pulse,height:10*u,color:[1,.85,.4,.8]});
@@ -280,11 +280,14 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       {frame:'solid/#ffe08a',x:cx-12*u,y:y-18*u,width:24*u,height:24*u,diamond:true},
       {frame:'solid/#231e27',x:cx-2*u,y:y-14*u,width:4*u,height:10*u},
       {frame:'solid/#231e27',x:cx-2*u,y:y,width:4*u,height:4*u});
+  };
+  for(const spawn of g.Party?.Telegraphs??[]){
+    if(!spawn.Kind||spawn.Ticks<=60)spawnWarning(spawn);
   }
   for(let index=0;index<g.Enemies.length;index++){
     const e=g.Enemies[index]!;
     if(e.State===EnemyState.Trapped||e.State===EnemyState.Defeated&&e.DeadTicks===0)continue;
-    const y=entrance(e.Y,index);
+    const y=e.State===EnemyState.Spawning?adventureArrivalY(e):entrance(e.Y,index);
     let pose=e.Angry?'angry':'walk';
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';

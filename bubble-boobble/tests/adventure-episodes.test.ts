@@ -38,8 +38,10 @@ worldTest('Adventure pressure warns before damage, respects pause and protects a
 worldTest('Adventure finale requires its second act before a clear and resets it on retry',async()=>{
  const game=createGame([createAdventureLevel(5)],1,1);game.State=State.Playing;
  for(const e of game.Enemies)e.State=EnemyState.Defeated;
- stepGame(game,idle);expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Playing);
- expect(game.Enemies.filter(e=>e.State===EnemyState.Active).length).toBe(3);
+ stepGame(game,idle);expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Ready);
+ expect(game.Enemies.filter(e=>e.State===EnemyState.Spawning).length).toBe(3);
+ for(let remaining=game.Countdown;remaining>0;remaining--)stepGame(game,idle);
+ expect(game.State).toBe(State.Playing);expect(game.Enemies.filter(e=>e.State===EnemyState.Active).length).toBe(3);
  for(const e of game.Enemies)e.State=EnemyState.Defeated;
  stepGame(game,idle);expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(120);
  for(let i=0;i<120;i++)stepGame(game,idle);expect(game.State).toBe(State.Won);

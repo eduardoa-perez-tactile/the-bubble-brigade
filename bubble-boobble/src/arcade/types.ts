@@ -19,6 +19,7 @@ export enum EnemyState {
   Trapped,
   Defeated,
   Carried,
+  Spawning,
 }
 export interface Cell {
   col: number;
@@ -80,6 +81,7 @@ export interface Player extends Body {
   Power: Powers;
 }
 export interface Enemy extends Body {
+  SpawnTicks?: number;
   CarriedBy: number;
   CarryTicks: number;
   ID: number;

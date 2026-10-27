@@ -27,7 +27,7 @@ worldTest('story HUD reads actual skin lives and unresolved enemies without muta
  game.Players[0]!.Skin='blue';game.Players[0]!.Lives=1;game.Score=12450;
  game.Enemies[0]!.State=EnemyState.Trapped;
  game.Enemies[1]!.State=EnemyState.Defeated;
- game.Enemies[2]!.State=EnemyState.Active;
+ game.Enemies[2]!.State=EnemyState.Spawning;
  const before=JSON.stringify(game),saveBefore=JSON.stringify(save);
  const model=storyHudModel(game,save);
  // Match the renderer's active-profile skin, even when a stale player Skin differs.
@@ -37,7 +37,7 @@ worldTest('story HUD reads actual skin lives and unresolved enemies without muta
  expect(model.encounterIcon).toBe('cartoon/frames/enemy/banebou/body-0');expect(model.powers.length).toBe(0);
  expect(model.bonus).toBe(false);expect(model.bonusSeconds).toBe('');
  expect(JSON.stringify(game)).toBe(before);expect(JSON.stringify(save)).toBe(saveBefore);
- // Active and carried enemies are unresolved until their actual defeat.
+ // Queued arrivals and carried enemies are unresolved until their actual defeat.
  game.Enemies[2]!.State=EnemyState.Carried;
  expect(storyHudModel(game,save).enemies).toBe('2');
  game.Enemies[2]!.State=EnemyState.Defeated;
@@ -67,6 +67,7 @@ worldTest('story HUD wave labels describe authored acts rather than queued indiv
   const game=createGame([createAdventureLevel(number)],1,1);
   const model=storyHudModel(game,initialDesktopSave);
   expect(model.wave).toBe(number%5===0?'WAVE 1 / 2':'');
+  expect(game.Enemies.some(enemy=>enemy.State===EnemyState.Spawning)).toBe(true);
  }
 },{scene});
 
@@ -80,6 +81,10 @@ worldTest('story HUD finale preserves remaining counts before the final timed co
  expect(game.EpisodeWave).toBe(1);
  expect(second.enemies).toBe('3');expect(second.bonus).toBe(false);expect(second.wave).toBe('WAVE 2 / 2');
  expect(second.powers.map(p=>p.key).join(',')).toBe('pink_candy,ruby_ring');
+ expect(game.State).toBe(State.Ready);
+ for(let remaining=game.Countdown;remaining>0;remaining--)stepGame(game,idle);
+ expect(game.State).toBe(State.Playing);
+ expect(storyHudModel(game,initialDesktopSave).powers.map(p=>p.key).join(',')).toBe('pink_candy,ruby_ring');
  for(const enemy of game.Enemies)enemy.State=EnemyState.Defeated;
  stepGame(game,idle);
  const clear=storyHudModel(game,initialDesktopSave);
@@ -128,6 +133,9 @@ renderTest('story HUD keeps meaningful player metrics and a clear arena through 
  expect(shown(ctx.ui.rect('cartoon-hud.score-card'))).toBe(false);
  await until(ctx,()=>!desktopState.get().transitionAction);
  await adventureStep(ctx,8);ctx.render.stats({width:1280,height:720});
+ expect(shown(ctx.ui.rect('cartoon-hud.cue-action'))).toBe(false);
+ await until(ctx,()=>session.get().game!.Countdown<=52);ctx.render.stats({width:1280,height:720});
+ expect(session.get().game!.Enemies.every(e=>e.SpawnTicks===0)).toBe(true);
  expect(shown(ctx.ui.rect('cartoon-hud.cue-action'))).toBe(true);
  await until(ctx,()=>session.get().game!.State===State.Playing);
  await ctx.cheat(AdventureCollectPowers,{});await adventureStep(ctx,2);
@@ -147,6 +155,8 @@ renderTest('story HUD keeps meaningful player metrics and a clear arena through 
   }
   const player=ctx.ui.rect('story-hud.player-status')!,portrait=ctx.ui.rect('story-hud.portrait')!,enemy=ctx.ui.rect('story-hud.encounter-status')!;
   expect(overlaps(player,enemy)).toBe(false);expect(portrait.height).toBeGreaterThanOrEqual(24);
+  // Portrait masters are 80×64: a matching box prevents stretching or cropping the face.
+  expect(Math.abs(portrait.width/portrait.height-1.25)).toBeLessThanOrEqual(.06);
   const icons=storyHudModel(session.get().game!,desktopSaveState.get()).powers.map(power=>{
    const icon=ctx.ui.rect(`story-hud.${power.key}.art`);expect(shown(icon)).toBe(true);
    inside(icon!,width,height,safe,power.key);expect(Math.min(icon!.width,icon!.height)).toBeGreaterThanOrEqual(18);

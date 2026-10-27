@@ -1457,20 +1457,21 @@ declare module '@gameengine/ui' {
      *
      * Properties:
      *   - `episode`: text, default "LANTERN LANDING"
-     *   - `title`: text, default "EPISODE CLEAR!"
+     *   - `title`: text, default ""
      *   - `score`: text, default "0000000"
-     *   - `rewardLabel`: text, default "FIRST CLEAR"
+     *   - `rewardLabel`: text, default "FIRST-CLEAR REWARD"
      *   - `rewardValue`: text, default "+10 COINS"
      *   - `hint`: text, default "ENTER / A TO CONFIRM"
      *   - `buttons`: list of overworld-button
+     *   - `showOutcomeTitle`: yesno, default false
      * Events: `press (<item>)`
      * Code areas: none
-     * Refs: none
+     * Refs: `summary-panel`, `outcome-title`
      */
     'story-result': {
-      props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[] };
+      props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showOutcomeTitle: boolean };
       areas: never;
-      refs: never;
+      refs: 'summary-panel' | 'outcome-title';
     };
     /**
      * Victory action: a widget, button (ui/docs/victory-action.ui.json)

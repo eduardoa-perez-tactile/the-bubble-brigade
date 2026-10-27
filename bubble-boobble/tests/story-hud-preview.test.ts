@@ -3,6 +3,7 @@ import {views} from '@gameengine/ui';
 import {StoryHudView} from '../src/adventure/hud.view';
 import {storyHudModel} from '../src/adventure/hud-model';
 import {copyGame} from '../src/arcade/game';
+import {State} from '../src/arcade/types';
 import {applyPower} from '../src/arcade/items';
 import {StoryOutcomeView} from '../src/adventure/ending.view';
 import {DesktopIntent} from '../src/schema.gen';
@@ -20,7 +21,9 @@ renderTest('story HUD combined composition previews gameplay victory and defeat'
  ctx.input.view(1280,720,1);await adventureStep(ctx,8);await ctx.loaded();
  await act(ctx,'adventure-menu');await act(ctx,'adventure-continue');await ctx.loaded();
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await adventureStep(ctx,3);
- await act(ctx,'overworld-interact','encounter-1');await act(ctx,'adventure-play');await ctx.loaded();await adventureStep(ctx,65);
+ await act(ctx,'overworld-interact','encounter-1');await act(ctx,'adventure-play');await ctx.loaded();
+ for(let tick=0;session.get().game?.State!==State.Playing&&tick<400;tick++)await adventureStep(ctx,1);
+ expect(session.get().game!.State).toBe(State.Playing);
  for(const state of ['all-powers','gameplay','victory','defeat']){
   if(state==='victory')await ctx.cheat(AdventureClearAct,{});
   if(state==='defeat')await ctx.cheat(OverworldResolveEncounter,{won:false});

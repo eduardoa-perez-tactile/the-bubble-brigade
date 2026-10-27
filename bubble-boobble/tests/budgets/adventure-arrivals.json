@@ -1,0 +1,7 @@
+{
+  "replay": "tests/replays/adventure_spawning_recorded_opening_and_finale_descents_fit_every_screen.greplay",
+  "structural": {
+    "drawCallsMax": 50,
+    "pipelinesCreatedDuringPlay": 0
+  }
+}

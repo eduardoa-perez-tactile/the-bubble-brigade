@@ -40,7 +40,8 @@
         "align": "center",
         "gap": 12,
         "bg": "#f0e4c6"
-      }
+      },
+      "point": "summary-panel"
     },
     "sr_rule": {
       "type": "element",
@@ -77,7 +78,9 @@
         "fitMin": 22,
         "textAlign": "center",
         "color": "#382d25"
-      }
+      },
+      "show": "showOutcomeTitle",
+      "point": "outcome-title"
     },
     "sr_score_row": {
       "type": "element",
@@ -200,7 +203,7 @@
     },
     "title": {
       "type": "text",
-      "default": "EPISODE CLEAR!"
+      "default": ""
     },
     "score": {
       "type": "text",
@@ -208,7 +211,7 @@
     },
     "rewardLabel": {
       "type": "text",
-      "default": "FIRST CLEAR"
+      "default": "FIRST-CLEAR REWARD"
     },
     "rewardValue": {
       "type": "text",
@@ -222,6 +225,10 @@
       "type": "list",
       "of": "overworld-button",
       "default": []
+    },
+    "showOutcomeTitle": {
+      "type": "yesno",
+      "default": false
     }
   }
 }

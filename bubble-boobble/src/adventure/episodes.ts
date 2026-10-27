@@ -49,8 +49,12 @@ export function createAdventureLevel(number:number):Level {
  const script=scripts[number-1];if(!script)throw new Error(`Unknown Adventure episode ${number}`);
  const tiles=Array.from({length:23},(_,row)=>Array.from({length:72},(_,col)=>col<2||col>=70||row===22?1:0));
  for(const[row,left,right]of script.shelves)for(let col=left;col<=right;col++)tiles[row]![col]=1;
- const cells:Cell[]=script.shelves.map(([row,left,right])=>({row,col:Math.min(right-2,left+4)}));
+ const cells:Cell[]=script.enemies.map((_,i)=>{
+  const slot=i%script.shelves.length,[row,left,right]=script.shelves[slot]!;
+  const count=Math.floor((script.enemies.length-1-slot)/script.shelves.length)+1;
+  return {row,col:left+Math.floor((right-left-2)*(Math.floor(i/script.shelves.length)+1)/(count+1))};
+ });
  return {arena:'cartoon-courtyard',number,tiles,episode:episodeForLevel(number),
-  enemies:script.enemies.map((kind,i)=>({kind,...cells[i%cells.length]!})),
+  enemies:script.enemies.map((kind,i)=>({kind,...cells[i]!})),
   player:{col:5,row:22},power_spawn:{col:34,row:22},food_spawn:{col:58,row:22},special:'',special_count:0};
 }

@@ -15,6 +15,7 @@ import { spawnFood } from "./items";
 import { goSin, goCos, goFMA } from "./trig";
 export function updateEnemies(g: GameState) {
   for (const e of g.Enemies) {
+    if(e.State===EnemyState.Spawning)continue;
     const t = target(g, e);
     e.Age++;
     if (e.State !== EnemyState.Active) continue;
