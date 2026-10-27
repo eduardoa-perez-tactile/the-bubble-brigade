@@ -110,7 +110,7 @@ worldTest('Adventure lighthouse ascent is traversable with real movement and jum
   }
   expect(Math.abs(game.Players[0]!.Y+44-row*24)<1).toBe(true);
  };
- walk(20*24);jump(18);jump(14);walk(34*24);jump(10);jump(6);
+ walk(10*24);jump(18);walk(15*24);jump(14);walk(23*24);jump(10);
 },{scene});
 
 renderTest('Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide',async ctx=>{

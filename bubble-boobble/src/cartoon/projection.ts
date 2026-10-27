@@ -1,5 +1,6 @@
 import type { GameState } from '../arcade/types';
 import { CARTOON_PLAYER_SIZE } from './actor-layout';
+import {compactAdventureFrame,cartoonVerticalMetric} from './arena-framing';
 
 /** Collision feet are projected before subtracting uniformly scaled artwork.
  * These knots reproduce the reference shelves without changing jump physics. */
@@ -14,6 +15,16 @@ export interface CartoonProjection {
 /** Fixed framing includes the full crown jump before play starts. Actors moving,
  * jumping, blinking or being defeated never rescale or reposition the board. */
 export function cartoonProjection(game:GameState,layout:{x:number;y:number;scale:number;headerBottom?:number}):CartoonProjection {
+  const compact=compactAdventureFrame(game.Level);
+  if(compact){
+    const scale=layout.scale,verticalScale=scale*cartoonVerticalMetric;
+    return {scale,zoom:1,
+      projectX:x=>layout.x+x*scale,
+      projectY:y=>layout.y+(cartoonProjectY(y)-compact.floorProjected)*verticalScale,
+      inverseX:x=>(x-layout.x)/scale,
+      inverseY:y=>cartoonInverseY(compact.floorProjected+(y-layout.y)/verticalScale),
+    };
+  }
   const baseScale=layout.scale,fit=baseScale*1728/1280,baseY=(y:number)=>layout.y+(cartoonProjectY(y)-612)*fit;
   const floor=layout.y;
   // Highest shelf feet (72), full jump rise (126), plus the standing silhouette.

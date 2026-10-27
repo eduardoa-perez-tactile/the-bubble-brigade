@@ -1,4 +1,4 @@
-import {EnemyState,State,body,alive,type GameState} from '../arcade/types';
+import {EnemyState,State,body,alive,arenaWidth,type GameState} from '../arcade/types';
 import {spawnPosition} from '../arcade/physics';
 import {stageAdventureEnemies} from './spawning';
 /** Advance enemy acts during active Adventure combat. */
@@ -11,6 +11,6 @@ export function stepAdventureEpisode(g:GameState):boolean {
  }
  stageAdventureEnemies(g,g.Enemies.slice(-next.length),false);
  g.EpisodeWave=(g.EpisodeWave??0)+1;
- g.Particles.push({...body(680,250),Text:'SECOND ACT!',Life:100});g.Sounds.push('opening');
+ g.Particles.push({...body(arenaWidth(g)/2-184,250),Text:'SECOND ACT!',Life:100});g.Sounds.push('opening');
  return true;
 }
