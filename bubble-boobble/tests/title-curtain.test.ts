@@ -34,6 +34,8 @@ for(const device of [{width:360,height:880},{width:2520,height:1080}]){
   expect(drawnRect('cartoon-main.title-card')).toBe(null);
   expect(drawnRect('cartoon-main.greeter')).toBe(null);
   expect(drawnRect('cartoon-main.menu')).toBe(null);
+  const caption=ctx.ui.rect('cartoon-main.curtain-prompt')!;expect(!!caption).toBe(true);
+  expect(caption.y>height*.5&&caption.x>=0&&caption.x+caption.width<=width).toBe(true);
   const hem=ctx.render.probe({width,height,regions:[[0,height-2,width,2]]}).regions[0]!;
   expect(hem.min[0]!).toBeGreaterThan(16);
   ctx.render.expectScreenshot('fixed-title',{width,height});
@@ -48,6 +50,8 @@ for(const device of [{width:360,height:880},{width:2520,height:1080}]){
   expect(drawnRect('title-curtain.greeter')).toBe(null);
   expect(drawnRect('title-curtain.title-card')).toBe(null);
   expect(drawnRect('title-curtain.menu')).toBe(null);
+  expect(drawnRect('title-curtain.curtain-prompt')).toBe(null);
+  expect(drawnRect('cartoon-main.curtain-prompt')).toBe(null);
   ctx.render.expectScreenshot('curtain-start',{width,height});
   await adventureStep(ctx,Math.floor(TITLE_REVEAL_STEPS/2));ctx.render.stats({width,height});
   const middle=drawnRect('title-curtain.cloth')!;
@@ -95,4 +99,21 @@ renderTest('harbor curtain menu and map handoff retain the existing fourteen dra
  for(let i=0;i<15;i++){sample('map');await adventureStep(ctx,1);}
  console.log(JSON.stringify({viewport:[1280,720],peaks}));
  expect(Math.max(...Object.values(peaks))).toBeLessThanOrEqual(14);
+},{scene,memory:'phone-low'});
+
+renderTest('prototype closed curtain caption is readable and disappears on the first tap',async ctx=>{
+ await ctx.loaded();await adventureStep(ctx,4);
+ for(const {width,height} of [{width:360,height:880},{width:2520,height:1080}]){
+  ctx.input.view(width,height,1);await adventureStep(ctx,2);ctx.render.stats({width,height});
+  await ctx.render.waitForAssets({timeoutMs:30000});
+  expect(drawnRect('cartoon-main.title-card')).toBe(null);expect(drawnRect('cartoon-main.greeter')).toBe(null);
+  const label=ctx.ui.rect('cartoon-main.curtain-prompt')!;
+  if(!(label.width>0&&label.height>0&&label.y>height*.5&&label.x>=0&&label.x+label.width<=width+1))throw new Error('Caption layout: '+JSON.stringify({width,height,label}));
+  ctx.render.expectScreenshot(`closed-caption-${width}`,{width,height});
+ }
+ ctx.input.pointer('down',1260,540);await adventureStep(ctx,1);
+ ctx.render.stats({width:2520,height:1080});
+ expect(desktopState.get().titleRevealActive).toBe(true);
+ expect(drawnRect('cartoon-main.curtain-prompt')).toBe(null);expect(drawnRect('title-curtain.curtain-prompt')).toBe(null);
+ ctx.input.pointer('up',1260,540);await adventureStep(ctx,1);
 },{scene,memory:'phone-low'});

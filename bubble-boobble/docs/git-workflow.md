@@ -29,6 +29,14 @@ Definition of workflow does not publish changes. Before a merge, obtain user aut
 
 ## Gate policy
 
+**Current user-requested override:** while `tools/harness/workflow.json` is in
+`prototype` mode, follow the prototype policy in `PROJECT.md` and
+[harness.md](harness.md#current-prototype-mode). One relevant focused V8 check and
+targeted engine captures replace the broad slice/handoff gates below. Full suites,
+cooks, Hermes, replay sweeps and pipeline recordings are opt-in until the user
+restores strict mode. Record deferred coverage in the PR; do not claim it passed.
+Branch, review, squash-merge and work-preservation rules remain unchanged.
+
 - Per save: hot reload and scenario reset; no full cook.
 - Per behavior change: focused T0 and cached reference comparison for implemented mechanics.
 - Per completed slice: full implemented parity suite, V8 T0, relevant T1 and `gameengine check`. Add V8/Hermes equivalence when the Hermes host is available; disclose its absence until then.

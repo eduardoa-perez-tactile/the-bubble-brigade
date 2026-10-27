@@ -37,7 +37,11 @@
     "web:preview-splash": "node tools/web/splash-preview.mjs",
     "web:publish": "node tools/web/publish.mjs",
     "web:verify": "node tools/web/verify.mjs",
-    "web:test-controls": "node --test tools/web/controls.test.mjs"
+    "web:test-controls": "node --test tools/web/controls.test.mjs",
+    "harness:prototype": "node tools/harness/run.mjs prototype",
+    "harness:mode": "node tools/harness/run.mjs mode",
+    "harness:quick-strict": "node tools/harness/run.mjs quick-strict",
+    "harness:verify-strict": "node tools/harness/run.mjs verify-strict"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1"
