@@ -16,12 +16,12 @@ export const CartoonMenuView = defineView<DesktopModel>({
   },
   render: (model, { intent }) => <Screen safeArea class="desktop-screen cartoon-menu-screen">
     <Widget class={() => model().reducedEffects ? "cartoon-menu menu-calm" : "cartoon-menu"} doc="cartoon-menu" id="cartoon-main" props={{
-      firstUseArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE',thirdUseArt:()=>model().buttons[3]?.key!=='help',firstArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE'?'cartoon/menu/type/continue':'cartoon/menu/type/continue',thirdArt:()=>model().buttons[3]?.key==='help'?'cartoon/menu/type/quit':'cartoon/menu/type/quit',progress:()=>model().menuProgress,narrow:()=>model().menuNarrow,titleNarrow:()=>model().menuNarrow&&model().page==='title',firstLabel:()=>model().buttons[0]?.label??'BEGIN ADVENTURE',arcadeSelected:()=>model().selected===1,thirdLabel: () => model().buttons[3]?.label ?? 'QUIT',titleMode: () => model().page === 'title', closedPrompt:()=>model().page==='title', promptVisible: () => model().frame % 90 < 65,
+      firstUseArt:()=>model().buttons.find(button=>button.key==='adventure-continue')?.label==='CONTINUE ADVENTURE',thirdUseArt:()=>!model().buttons.some(button=>button.key==='help'),firstArt:()=>model().buttons[0]?.label==='CONTINUE ADVENTURE'?'cartoon/menu/type/continue':'cartoon/menu/type/continue',thirdArt:()=>model().buttons[3]?.key==='help'?'cartoon/menu/type/quit':'cartoon/menu/type/quit',progress:()=>model().menuProgress,narrow:()=>model().menuNarrow,titleNarrow:()=>model().menuNarrow&&model().page==='title',firstLabel:()=>model().buttons.find(button=>button.key==='adventure-continue')?.label??'BEGIN ADVENTURE',arcadeSelected:()=>model().buttons[model().selected]?.key==='adventure-arcade',restartSelected:()=>model().buttons[model().selected]?.key==='adventure-new',thirdLabel: () => model().buttons.find(button=>button.key==='quit'||button.key==='help')?.label ?? 'QUIT',titleMode: () => model().page === 'title', closedPrompt:()=>model().page==='title', promptVisible: () => model().frame % 90 < 65,
       status: () => model().status, showStatus: () => !!model().status,
-      startSelected: () => model().selected === 0,
-      settingsSelected: () => model().selected === 2,
-      quitSelected: () => model().selected === 3,
-    }} codeAreas={{greeter:()=> Sprite({class:'menu-greeter',src:'cartoon/menu/greeting/04'}),atmosphere:()=> Particles({class:'menu-atmosphere',effect:'cartoon/menu/atmosphere.vfx.json',emitting:()=>model().page!=='title'&&!model().reducedEffects,unit:100,seed:29})}} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-continue':key==='quit'?(model().buttons[3]?.key??key):key); }} />
+      startSelected: () => model().buttons[model().selected]?.key==='adventure-continue',
+      settingsSelected: () => model().buttons[model().selected]?.key==='settings',
+      quitSelected: () => ['quit','help'].includes(model().buttons[model().selected]?.key??''),
+    }} codeAreas={{greeter:()=> Sprite({class:'menu-greeter',src:'cartoon/menu/greeting/04'}),atmosphere:()=> Particles({class:'menu-atmosphere',effect:'cartoon/menu/atmosphere.vfx.json',emitting:()=>model().page!=='title'&&!model().reducedEffects,unit:100,seed:29})}} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-continue':key==='quit'?(model().buttons.find(button=>button.key==='quit'||button.key==='help')?.key??key):key); }} />
   </Screen>,
 });
 

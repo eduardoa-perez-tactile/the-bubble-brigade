@@ -50,6 +50,7 @@
         "cm_illustrated_logo",
         "cm_mascot_left",
         "cm_start_slot",
+        "cm_restart_slot",
         "cm_arcade_slot",
         "cm_settings_slot",
         "cm_quit_slot",
@@ -417,7 +418,7 @@
         ],
         "offset": [
           0,
-          366
+          414
         ],
         "w": 390,
         "h": 48,
@@ -441,7 +442,7 @@
         ],
         "offset": [
           0,
-          414
+          462
         ],
         "w": 390,
         "h": 48,
@@ -465,7 +466,7 @@
         ],
         "offset": [
           0,
-          462
+          510
         ],
         "w": 390,
         "h": 48,
@@ -534,6 +535,49 @@
         "color": "#fff0c9",
         "shadowY": 2,
         "shadowColor": "#39190e"
+      }
+    },
+    "cm_restart_slot": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cm_restart"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          366
+        ],
+        "w": 390,
+        "h": 48
+      }
+    },
+    "cm_restart": {
+      "type": "use",
+      "doc": "cartoon-button",
+      "key": "adventure-new",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
+      "props": {
+        "label": "RESTART ADVENTURE",
+        "selected": {
+          "property": "restartSelected"
+        },
+        "compact": {
+          "property": "narrow"
+        }
       }
     }
   },
@@ -684,7 +728,7 @@
         "yes": {
           "set": {
             "cm_composition": {
-              "h": 1000
+              "h": 1020
             },
             "cm_illustrated_logo": {
               "anchor": [
@@ -695,8 +739,8 @@
                 0,
                 0
               ],
-              "w": 450,
-              "h": 300
+              "w": 400,
+              "h": 267
             },
             "cm_mascot_left": {
               "anchor": [
@@ -705,10 +749,10 @@
               ],
               "offset": [
                 0,
-                310
+                280
               ],
-              "w": 270,
-              "h": 270
+              "w": 230,
+              "h": 230
             },
             "cm_spotlight": {
               "anchor": [
@@ -752,7 +796,7 @@
               ],
               "offset": [
                 0,
-                600
+                540
               ],
               "w": 600,
               "h": 96
@@ -768,7 +812,7 @@
               ],
               "offset": [
                 0,
-                696
+                732
               ],
               "w": 600,
               "h": 96
@@ -784,7 +828,7 @@
               ],
               "offset": [
                 0,
-                792
+                828
               ],
               "w": 600,
               "h": 96
@@ -800,7 +844,23 @@
               ],
               "offset": [
                 0,
-                888
+                924
+              ],
+              "w": 600,
+              "h": 96
+            },
+            "cm_restart_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                636
               ],
               "w": 600,
               "h": 96
@@ -826,6 +886,10 @@
       }
     },
     "closedPrompt": {
+      "type": "yesno",
+      "default": false
+    },
+    "restartSelected": {
       "type": "yesno",
       "default": false
     }
