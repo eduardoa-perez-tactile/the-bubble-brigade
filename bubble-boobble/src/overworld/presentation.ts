@@ -3,6 +3,7 @@ import {OverworldVisual} from '../schema.gen';
 import {overworldState,type OverworldState} from './state';
 import {getOverworldMap,sourceToWorld} from './maps';
 import {overworldAmbientDraws} from './ambience';
+import {composeBoundedOverworldDraws} from './authored-layers';
 import {encounters,availableEncounter} from './content';
 import {adventureForProfile,type AdventureProgress} from './progression';
 import {desktopSaveState} from '../desktop/save';
@@ -84,9 +85,8 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   const point=sourceToWorld(map,{x:x!*1536/1254,y:y!*1536/1254});
   sprite('overworld-shared/foreground',point.x,point.y+16,58,36,Math.round(2000-point.y));
  }
- // Keep the original pool (and replay hashes); landmark states and actors take priority over scenery.
- if(!reducedEffects)out.push(...overworldAmbientDraws(s.districtId,tick).slice(0,capacity-out.length));
- return out;
+ // Preserve every authored part; a full pool is an explicit error, never missing scenery.
+ return composeBoundedOverworldDraws(capacity,out,reducedEffects?[]:overworldAmbientDraws(s.districtId,tick));
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({

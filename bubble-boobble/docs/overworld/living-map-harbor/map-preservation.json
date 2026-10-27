@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": 1,
+  "basisCommit": "ce9655fa85d6665d880373c0050c46b354d8f7fb",
+  "policy": "Accepted paintings and existing map registration are preserved. Collision polygon corrections and one explicitly recorded collectible radius correction are allowed. No automatic baseline-update command is provided.",
+  "districts": [
+    {
+      "id": "district-1",
+      "painting": {
+        "path": "assets/overworld-original/district-1/base.png",
+        "sha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+        "nativeSize": [
+          1254,
+          1254
+        ]
+      },
+      "source": "src/overworld/maps/district-1.ts",
+      "registration": {
+        "districtId": "district-1",
+        "width": 1536,
+        "height": 1536,
+        "origin": {
+          "x": 768,
+          "y": 768
+        },
+        "scale": 0.65,
+        "viewSize": 210,
+        "spawn": {
+          "x": 727.579,
+          "y": 1365.742
+        },
+        "layers": [
+          {
+            "image": "overworld-original/district-1/base",
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1536,
+            "order": -100
+          }
+        ],
+        "pois": [
+          {
+            "kind": "encounter",
+            "slot": 0,
+            "x": 727.579,
+            "y": 1253.053,
+            "label": "Bubble Lighthouse"
+          },
+          {
+            "kind": "encounter",
+            "slot": 1,
+            "x": 365.014,
+            "y": 644.287,
+            "label": "Shell Post Office"
+          },
+          {
+            "kind": "encounter",
+            "slot": 2,
+            "x": 587.943,
+            "y": 360.115,
+            "label": "Sailcloth Workshop"
+          },
+          {
+            "kind": "encounter",
+            "slot": 3,
+            "x": 979.904,
+            "y": 496.077,
+            "label": "Pearl Pump Station"
+          },
+          {
+            "kind": "encounter",
+            "slot": 4,
+            "x": 1292.249,
+            "y": 1055.847,
+            "label": "Tugboat Clubhouse"
+          },
+          {
+            "kind": "guide",
+            "x": 475.254,
+            "y": 709.206,
+            "label": "Quay Guide"
+          },
+          {
+            "kind": "vendor",
+            "x": 967.656,
+            "y": 1272.651,
+            "label": "Harbor Supply Cart"
+          },
+          {
+            "kind": "trial",
+            "x": 1298.373,
+            "y": 612.44,
+            "label": "Buoy Ring Trial"
+          },
+          {
+            "kind": "collectible",
+            "x": 263.349,
+            "y": 1055.847,
+            "label": "Tidepool Coin"
+          },
+          {
+            "kind": "shortcut",
+            "x": 771.675,
+            "y": 692.057,
+            "label": "Canal Footbridge"
+          },
+          {
+            "kind": "gate",
+            "x": 1155.062,
+            "y": 178.833,
+            "label": "Garden Arch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "district-2",
+      "painting": {
+        "path": "assets/overworld-original/district-2/base.png",
+        "sha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+        "nativeSize": [
+          1254,
+          1254
+        ]
+      },
+      "source": "src/overworld/maps/district-2.ts",
+      "registration": {
+        "districtId": "district-2",
+        "width": 1536,
+        "height": 1536,
+        "origin": {
+          "x": 768,
+          "y": 768
+        },
+        "scale": 0.65,
+        "viewSize": 210,
+        "spawn": {
+          "x": 649.187,
+          "y": 1322.871
+        },
+        "layers": [
+          {
+            "image": "overworld-original/district-2/base",
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1536,
+            "order": -100
+          }
+        ],
+        "pois": [
+          {
+            "kind": "encounter",
+            "slot": 0,
+            "x": 568.344,
+            "y": 1246.928,
+            "label": "Seedling School"
+          },
+          {
+            "kind": "encounter",
+            "slot": 1,
+            "x": 365.014,
+            "y": 748.402,
+            "label": "Root Library"
+          },
+          {
+            "kind": "encounter",
+            "slot": 2,
+            "x": 825.569,
+            "y": 428.708,
+            "label": "Flower Conservatory"
+          },
+          {
+            "kind": "encounter",
+            "slot": 3,
+            "x": 1288.574,
+            "y": 796.172,
+            "label": "Butterfly Greenhouse"
+          },
+          {
+            "kind": "encounter",
+            "slot": 4,
+            "x": 1082.794,
+            "y": 1346.144,
+            "label": "Acorn Mill"
+          },
+          {
+            "kind": "guide",
+            "x": 661.435,
+            "y": 1249.378,
+            "label": "Garden Guide"
+          },
+          {
+            "kind": "vendor",
+            "x": 275.598,
+            "y": 1250.603,
+            "label": "Seed Supply Cart"
+          },
+          {
+            "kind": "trial",
+            "x": 1273.876,
+            "y": 968.88,
+            "label": "Leaf Amphitheater Trial"
+          },
+          {
+            "kind": "collectible",
+            "x": 437.282,
+            "y": 831.694,
+            "label": "Fern Hollow Coin"
+          },
+          {
+            "kind": "shortcut",
+            "x": 726.354,
+            "y": 955.407,
+            "label": "Pond Footbridge"
+          },
+          {
+            "kind": "gate",
+            "x": 1169.761,
+            "y": 307.445,
+            "label": "Fairground Arch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "district-3",
+      "painting": {
+        "path": "assets/overworld-original/district-3/base.png",
+        "sha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+        "nativeSize": [
+          1254,
+          1254
+        ]
+      },
+      "source": "src/overworld/maps/district-3.ts",
+      "registration": {
+        "districtId": "district-3",
+        "width": 1536,
+        "height": 1536,
+        "origin": {
+          "x": 768,
+          "y": 768
+        },
+        "scale": 0.65,
+        "viewSize": 210,
+        "spawn": {
+          "x": 771.675,
+          "y": 1286.124
+        },
+        "layers": [
+          {
+            "image": "overworld-original/district-3/base",
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1536,
+            "order": -100
+          }
+        ],
+        "pois": [
+          {
+            "kind": "encounter",
+            "slot": 0,
+            "x": 771.675,
+            "y": 1142.813,
+            "label": "Bubble Carousel"
+          },
+          {
+            "kind": "encounter",
+            "slot": 1,
+            "x": 404.211,
+            "y": 710.431,
+            "label": "Kite Hangar"
+          },
+          {
+            "kind": "encounter",
+            "slot": 2,
+            "x": 617.34,
+            "y": 362.565,
+            "label": "Windup Theatre"
+          },
+          {
+            "kind": "encounter",
+            "slot": 3,
+            "x": 1053.397,
+            "y": 422.584,
+            "label": "Pinwheel Observatory"
+          },
+          {
+            "kind": "encounter",
+            "slot": 4,
+            "x": 1291.024,
+            "y": 988.478,
+            "label": "Balloon Organ"
+          },
+          {
+            "kind": "guide",
+            "x": 603.866,
+            "y": 1210.182,
+            "label": "Fairground Guide"
+          },
+          {
+            "kind": "vendor",
+            "x": 1031.349,
+            "y": 1234.679,
+            "label": "Popcorn Supply Wagon"
+          },
+          {
+            "kind": "trial",
+            "x": 881.914,
+            "y": 681.033,
+            "label": "Juggling Ring Trial"
+          },
+          {
+            "kind": "collectible",
+            "x": 251.1,
+            "y": 1050.947,
+            "label": "Duckpond Coin"
+          },
+          {
+            "kind": "shortcut",
+            "x": 649.187,
+            "y": 580.593,
+            "label": "Backstage Stairs"
+          },
+          {
+            "kind": "gate",
+            "x": 1408.612,
+            "y": 545.072,
+            "label": "Cloud Lift"
+          }
+        ]
+      }
+    },
+    {
+      "id": "district-4",
+      "painting": {
+        "path": "assets/overworld-original/district-4/base.png",
+        "sha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+        "nativeSize": [
+          1254,
+          1254
+        ]
+      },
+      "source": "src/overworld/maps/district-4.ts",
+      "registration": {
+        "districtId": "district-4",
+        "width": 1536,
+        "height": 1536,
+        "origin": {
+          "x": 768,
+          "y": 768
+        },
+        "scale": 0.65,
+        "viewSize": 210,
+        "spawn": {
+          "x": 755.751,
+          "y": 1322.871
+        },
+        "layers": [
+          {
+            "image": "overworld-original/district-4/base",
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1536,
+            "order": -100
+          }
+        ],
+        "pois": [
+          {
+            "kind": "encounter",
+            "slot": 0,
+            "x": 755.751,
+            "y": 1195.483,
+            "label": "Teapot Spa"
+          },
+          {
+            "kind": "encounter",
+            "slot": 1,
+            "x": 382.163,
+            "y": 1104.842,
+            "label": "Rainbarrel Gym"
+          },
+          {
+            "kind": "encounter",
+            "slot": 2,
+            "x": 553.646,
+            "y": 502.201,
+            "label": "Thunderhead Atelier"
+          },
+          {
+            "kind": "encounter",
+            "slot": 3,
+            "x": 966.431,
+            "y": 440.957,
+            "label": "Rainbow Bellhouse"
+          },
+          {
+            "kind": "encounter",
+            "slot": 4,
+            "x": 1264.077,
+            "y": 1169.761,
+            "label": "Cloudfruit Orchard"
+          },
+          {
+            "kind": "guide",
+            "x": 612.44,
+            "y": 1237.129,
+            "label": "Springs Guide"
+          },
+          {
+            "kind": "vendor",
+            "x": 1022.775,
+            "y": 1315.522,
+            "label": "Tea Supply Cart"
+          },
+          {
+            "kind": "trial",
+            "x": 1169.761,
+            "y": 532.823,
+            "label": "Mist Circle Trial"
+          },
+          {
+            "kind": "collectible",
+            "x": 399.311,
+            "y": 1232.23,
+            "label": "Cloudbank Coin"
+          },
+          {
+            "kind": "shortcut",
+            "x": 1059.522,
+            "y": 753.301,
+            "label": "Eastern Cloudbridge"
+          },
+          {
+            "kind": "gate",
+            "x": 1238.354,
+            "y": 355.215,
+            "label": "Amber Lift"
+          }
+        ]
+      }
+    },
+    {
+      "id": "district-5",
+      "painting": {
+        "path": "assets/overworld-original/district-5/base.png",
+        "sha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+        "nativeSize": [
+          1254,
+          1254
+        ]
+      },
+      "source": "src/overworld/maps/district-5.ts",
+      "registration": {
+        "districtId": "district-5",
+        "width": 1536,
+        "height": 1536,
+        "origin": {
+          "x": 768,
+          "y": 768
+        },
+        "scale": 0.65,
+        "viewSize": 210,
+        "spawn": {
+          "x": 733.703,
+          "y": 1286.124
+        },
+        "layers": [
+          {
+            "image": "overworld-original/district-5/base",
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 1536,
+            "order": -100
+          }
+        ],
+        "pois": [
+          {
+            "kind": "encounter",
+            "slot": 0,
+            "x": 733.703,
+            "y": 1164.861,
+            "label": "Bubbleglass Kiln"
+          },
+          {
+            "kind": "encounter",
+            "slot": 1,
+            "x": 254.775,
+            "y": 761.876,
+            "label": "Brassworks"
+          },
+          {
+            "kind": "encounter",
+            "slot": 2,
+            "x": 573.244,
+            "y": 460.555,
+            "label": "Cooling Tower"
+          },
+          {
+            "kind": "encounter",
+            "slot": 3,
+            "x": 1137.914,
+            "y": 483.828,
+            "label": "Prism Foundry"
+          },
+          {
+            "kind": "encounter",
+            "slot": 4,
+            "x": 1347.368,
+            "y": 1131.789,
+            "label": "Dragon Forge"
+          },
+          {
+            "kind": "guide",
+            "x": 583.043,
+            "y": 1224.88,
+            "label": "Works Guide"
+          },
+          {
+            "kind": "vendor",
+            "x": 1028.9,
+            "y": 1276.325,
+            "label": "Tool Supply Cart"
+          },
+          {
+            "kind": "trial",
+            "x": 1292.249,
+            "y": 663.885,
+            "label": "Anvil Ring Trial"
+          },
+          {
+            "kind": "collectible",
+            "x": 189.856,
+            "y": 1063.196,
+            "label": "Basalt Hollow Coin"
+          },
+          {
+            "kind": "shortcut",
+            "x": 771.675,
+            "y": 667.56,
+            "label": "Crater Servicebridge"
+          },
+          {
+            "kind": "gate",
+            "x": 896.612,
+            "y": 259.675,
+            "label": "Victory Beacon"
+          }
+        ]
+      }
+    }
+  ],
+  "baselineInteractionRadii": [
+    {
+      "districtId": "district-1",
+      "kind": "encounter",
+      "slot": 0,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "encounter",
+      "slot": 1,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "encounter",
+      "slot": 2,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "encounter",
+      "slot": 3,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "encounter",
+      "slot": 4,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "guide",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "vendor",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "trial",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "collectible",
+      "slot": null,
+      "radius": 26
+    },
+    {
+      "districtId": "district-1",
+      "kind": "shortcut",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-1",
+      "kind": "gate",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "encounter",
+      "slot": 0,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "encounter",
+      "slot": 1,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "encounter",
+      "slot": 2,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "encounter",
+      "slot": 3,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "encounter",
+      "slot": 4,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "guide",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "vendor",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "trial",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "collectible",
+      "slot": null,
+      "radius": 26
+    },
+    {
+      "districtId": "district-2",
+      "kind": "shortcut",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-2",
+      "kind": "gate",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "encounter",
+      "slot": 0,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "encounter",
+      "slot": 1,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "encounter",
+      "slot": 2,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "encounter",
+      "slot": 3,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "encounter",
+      "slot": 4,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "guide",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "vendor",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "trial",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "collectible",
+      "slot": null,
+      "radius": 26
+    },
+    {
+      "districtId": "district-3",
+      "kind": "shortcut",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-3",
+      "kind": "gate",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "encounter",
+      "slot": 0,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "encounter",
+      "slot": 1,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "encounter",
+      "slot": 2,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "encounter",
+      "slot": 3,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "encounter",
+      "slot": 4,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "guide",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "vendor",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "trial",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "collectible",
+      "slot": null,
+      "radius": 26
+    },
+    {
+      "districtId": "district-4",
+      "kind": "shortcut",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-4",
+      "kind": "gate",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "encounter",
+      "slot": 0,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "encounter",
+      "slot": 1,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "encounter",
+      "slot": 2,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "encounter",
+      "slot": 3,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "encounter",
+      "slot": 4,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "guide",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "vendor",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "trial",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "collectible",
+      "slot": null,
+      "radius": 26
+    },
+    {
+      "districtId": "district-5",
+      "kind": "shortcut",
+      "slot": null,
+      "radius": null
+    },
+    {
+      "districtId": "district-5",
+      "kind": "gate",
+      "slot": null,
+      "radius": null
+    }
+  ],
+  "allowedInteractionRadiusChanges": [
+    {
+      "districtId": "district-1",
+      "kind": "collectible",
+      "slot": null,
+      "from": 26,
+      "to": 68,
+      "reason": "The original coin anchor is inside a newly blocked existing planting bed; radius reaches the adjacent paving without moving the anchor."
+    }
+  ],
+  "collisionReference": {
+    "district-1": {
+      "solids": [
+        [
+          [
+            459.33,
+            183.732
+          ],
+          [
+            624.689,
+            177.608
+          ],
+          [
+            739.828,
+            237.627
+          ],
+          [
+            812.096,
+            295.196
+          ],
+          [
+            809.646,
+            323.368
+          ],
+          [
+            734.928,
+            347.866
+          ],
+          [
+            656.536,
+            339.292
+          ],
+          [
+            587.943,
+            331.943
+          ],
+          [
+            514.45,
+            345.416
+          ],
+          [
+            469.129,
+            320.919
+          ]
+        ],
+        [
+          [
+            165.359,
+            477.703
+          ],
+          [
+            275.598,
+            428.708
+          ],
+          [
+            404.211,
+            477.703
+          ],
+          [
+            449.531,
+            563.445
+          ],
+          [
+            428.708,
+            612.44
+          ],
+          [
+            340.517,
+            612.44
+          ],
+          [
+            271.923,
+            644.287
+          ],
+          [
+            183.732,
+            609.99
+          ]
+        ],
+        [
+          [
+            609.99,
+            1071.77
+          ],
+          [
+            666.335,
+            1021.55
+          ],
+          [
+            774.124,
+            1026.45
+          ],
+          [
+            808.421,
+            1113.416
+          ],
+          [
+            804.746,
+            1207.732
+          ],
+          [
+            776.574,
+            1231.005
+          ],
+          [
+            677.359,
+            1229.78
+          ],
+          [
+            617.34,
+            1197.933
+          ]
+        ],
+        [
+          [
+            890.488,
+            330.718
+          ],
+          [
+            948.057,
+            268.249
+          ],
+          [
+            1070.545,
+            275.598
+          ],
+          [
+            1144.038,
+            361.34
+          ],
+          [
+            1168.536,
+            423.809
+          ],
+          [
+            1123.215,
+            460.555
+          ],
+          [
+            1033.799,
+            467.904
+          ],
+          [
+            917.435,
+            451.981
+          ]
+        ],
+        [
+          [
+            1157.512,
+            857.416
+          ],
+          [
+            1224.88,
+            796.172
+          ],
+          [
+            1335.12,
+            832.919
+          ],
+          [
+            1420.861,
+            906.411
+          ],
+          [
+            1433.11,
+            989.703
+          ],
+          [
+            1384.115,
+            1028.9
+          ],
+          [
+            1280.0,
+            1028.9
+          ],
+          [
+            1200.383,
+            998.278
+          ],
+          [
+            1151.388,
+            943.158
+          ]
+        ],
+        [
+          [
+            908.861,
+            1182.01
+          ],
+          [
+            994.603,
+            1175.885
+          ],
+          [
+            1030.124,
+            1213.856
+          ],
+          [
+            1011.751,
+            1246.928
+          ],
+          [
+            928.459,
+            1243.254
+          ]
+        ],
+        [
+          [
+            520.574,
+            961.531
+          ],
+          [
+            585.493,
+            948.057
+          ],
+          [
+            638.163,
+            1000.727
+          ],
+          [
+            618.565,
+            1037.474
+          ],
+          [
+            553.646,
+            1033.799
+          ]
+        ],
+        [
+          [
+            1015.426,
+            589.167
+          ],
+          [
+            1059.522,
+            580.593
+          ],
+          [
+            1098.718,
+            616.115
+          ],
+          [
+            1096.268,
+            645.512
+          ],
+          [
+            1046.048,
+            661.435
+          ],
+          [
+            1014.201,
+            634.488
+          ]
+        ]
+      ],
+      "purpose": "Review overlay comparison only. This geometry is not frozen by the preservation verifier."
+    }
+  }
+}

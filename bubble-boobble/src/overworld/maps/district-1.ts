@@ -637,6 +637,9 @@ export const district1Map:SourceMap={
   ]
  ],
  "solids": [
+  // Existing southwest palm planting beds, traced at ground contact on the 1254px painting.
+  [[232.727, 1060.746], [254.775, 1039.923], [287.847, 1039.923], [316.019, 1065.646], [327.043, 1088.919], [308.67, 1110.967], [265.799, 1115.866], [232.727, 1099.943]],
+  [[372.364, 1095.043], [401.761, 1088.919], [423.809, 1103.617], [438.507, 1133.014], [431.158, 1156.287], [402.986, 1168.536], [372.364, 1161.187], [360.115, 1141.589], [361.34, 1117.091]],
   [
    [
     459.33,
@@ -949,7 +952,8 @@ export const district1Map:SourceMap={
    "x": 263.349,
    "y": 1055.847,
    "label": "Tidepool Coin",
-   "radius": 26
+   // Reach into the existing planted bed from adjacent paving; keep its original anchor.
+   "radius": 68
   },
   {
    "kind": "shortcut",

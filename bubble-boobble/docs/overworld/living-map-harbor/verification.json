@@ -1,0 +1,240 @@
+{
+  "date": "2026-10-27",
+  "scope": "Harbor collision correction, registered-animation foundation, and art approval package; no production art replacement or district rollout",
+  "baseCommit": "ce9655fa85d6665d880373c0050c46b354d8f7fb",
+  "mapPreservation": {
+    "paintingHashesVerified": 5,
+    "registrationsVerified": 5,
+    "productionAssetsChanged": false
+  },
+  "logic": {
+    "ok": true,
+    "runtimes": {
+      "v8": {
+        "passed": 502,
+        "total": 502
+      },
+      "hermes": {
+        "passed": 502,
+        "total": 502
+      }
+    },
+    "mismatches": []
+  },
+  "render": {
+    "ok": true,
+    "memoryClass": "phone-low",
+    "tests": [
+      {
+        "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+        "ok": true
+      },
+      {
+        "name": "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+        "ok": true
+      }
+    ],
+    "goldensChanged": false
+  },
+  "engineCheck": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true
+      },
+      {
+        "name": "typecheck",
+        "ok": true
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true
+      },
+      {
+        "name": "views",
+        "ok": true
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true
+      },
+      {
+        "name": "ui nodes",
+        "ok": true
+      }
+    ],
+    "existingValidationWarnings": true
+  },
+  "recordedMovement": {
+    "ok": true,
+    "results": {
+      "v8": {
+        "ok": true,
+        "steps": 255,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 255,
+        "firstDivergence": null
+      }
+    }
+  },
+  "visualCapacity": {
+    "sampledPeak": 35,
+    "capacity": 48,
+    "coverage": "Five districts, all 32 local clear combinations, 1200 presentation steps sampled every7"
+  },
+  "captureComparison": {
+    "slim": {
+      "size": [
+        360,
+        880
+      ],
+      "identicalBetweenWorktreeCheckpoints": true
+    },
+    "landscape": {
+      "size": [
+        1280,
+        720
+      ],
+      "identicalBetweenWorktreeCheckpoints": true
+    },
+    "ultrawide": {
+      "size": [
+        2520,
+        1080
+      ],
+      "identicalBetweenWorktreeCheckpoints": true
+    }
+  },
+  "localPerformance": {
+    "host": "release V8",
+    "tier": "mobile",
+    "paused": true,
+    "steps": 600,
+    "stepP95Ms": 0.10420900000000001,
+    "presentationP95Ms": 0.415042,
+    "jsHeapMiB": 28.311180114746094,
+    "slimDrawCalls": 7,
+    "slimParticleInstances": 0,
+    "physicalDeviceMeasured": false
+  },
+  "declaredMemory": {
+    "device": "phone-low",
+    "platform": "android",
+    "peakResidentBytes": 40059260,
+    "checks": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 40059260,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 40059260,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 40059260,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 40059260,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 176400,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 2023024,
+        "budget": 2097152,
+        "over": false
+      }
+    ],
+    "note": "Cooked asset estimate; not application RAM, GPU/thermal measurements, or future animation residency."
+  },
+  "review": {
+    "navigation": "Independent scoped review found no blocking issues in two beds/local coin reach. Does not certify every map boundary.",
+    "authoredLayers": "Independent scoped review found no blocking issues. Imported frame dimensions/pivots still need validation before production registration; one-shot steps must be activation-relative.",
+    "art": "Unapproved isolated studies; generated registration drift explicitly documented. No new NPC/shop/shore/lighthouse art imported."
+  },
+  "commands": [
+    "gameengine test --tier t0 --js both --json",
+    "gameengine test --tier t1 --filter \"overworld *\" --memory-class phone-low --json",
+    "gameengine replay verify tests/replays/harbor_recorded_walking_stops_at_both_existing_palm_beds_without_blocking_the_promenade.greplay --js both --json",
+    "gameengine check --json",
+    "gameengine memory report --device phone-low --json",
+    "node tools/overworld/approval/verify-map-preservation.mjs"
+  ],
+  "replayFixtureCorrection": "The initial new recording used arcade.scene while CLI replay verification uses production cartoon.scene. New test now uses production scene and was re-recorded through actual test input, then verified on both runtimes. No rehash or existing replay changes.",
+  "remaining": [
+    "User art treatment approval",
+    "Production transparent registered coast/lantern overlays",
+    "Shop powerup economy model approval and implementation",
+    "Non-dragon NPC production and integration",
+    "Remaining boundary/entrance audit",
+    "Harbor combined art review and later four-district rollout"
+  ]
+}
