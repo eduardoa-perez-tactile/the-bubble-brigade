@@ -66,27 +66,37 @@
       },
       "overworld-district-1": {
         "include": [
-          "assets/overworld-original/district-1/**"
+          "assets/overworld-original/district-1/**",
+          "assets/overworld-living/district-1/**",
+          "assets/overworld-living/common/**"
         ]
       },
       "overworld-district-2": {
         "include": [
-          "assets/overworld-original/district-2/**"
+          "assets/overworld-original/district-2/**",
+          "assets/overworld-living/district-2/**",
+          "assets/overworld-living/common/**"
         ]
       },
       "overworld-district-3": {
         "include": [
-          "assets/overworld-original/district-3/**"
+          "assets/overworld-original/district-3/**",
+          "assets/overworld-living/district-3/**",
+          "assets/overworld-living/common/**"
         ]
       },
       "overworld-district-4": {
         "include": [
-          "assets/overworld-original/district-4/**"
+          "assets/overworld-original/district-4/**",
+          "assets/overworld-living/district-4/**",
+          "assets/overworld-living/common/**"
         ]
       },
       "overworld-district-5": {
         "include": [
-          "assets/overworld-original/district-5/**"
+          "assets/overworld-original/district-5/**",
+          "assets/overworld-living/district-5/**",
+          "assets/overworld-living/common/**"
         ]
       },
       "overworld-shared": {

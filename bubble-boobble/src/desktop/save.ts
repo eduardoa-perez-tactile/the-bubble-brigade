@@ -1,5 +1,5 @@
 import { defineMeta, refuse } from '@gameengine/meta';
-import { adventureForProfile, validAdventure, beginAdventureAttempt, abandonAdventureAttempt, completeAdventure, setAdventureAnchor, discoverAdventureShortcut, purchaseAdventureItem, claimAdventureGuideReward, claimAdventureCollectible, initialAdventure, type AdventureProgress, type AdventureAnchor, type AdventureCompletion } from '../overworld/progression.ts';
+import { adventureForProfile, validAdventure, beginAdventureAttempt, abandonAdventureAttempt, completeAdventure, setAdventureAnchor, discoverAdventureShortcut, purchaseAdventureItem, equipAdventurePower, claimAdventureGuideReward, claimAdventureCollectible, initialAdventure, type AdventureProgress, type AdventureAnchor, type AdventureCompletion } from '../overworld/progression.ts';
 export { adventureForProfile } from '../overworld/progression.ts';
 import { metaInWorld } from '@gameengine/meta/world';
 import type { Level } from '../arcade/types.ts';
@@ -25,8 +25,17 @@ function updateAdventure(s:DesktopSave,index:number,action:(progress:AdventurePr
  if(after===before)return s;
  return {...s,profiles:s.profiles.map((value,i)=>i===index?{...value,adventure:after}:value)};
 }
-export const desktopSave = defineMeta({name:'bubblebobble-desktop',version:2,initial:initialDesktopSave,
-  migrate:(old:unknown,from:number)=>{if(from!==1)throw new Error('unsupported desktop save version');return old as DesktopSave;},
+export const desktopSave = defineMeta({name:'bubblebobble-desktop',version:3,initial:initialDesktopSave,
+  migrate:(old:unknown,from:number)=>{
+    if(from!==1&&from!==2)throw new Error('unsupported desktop save version');
+    const save=old as DesktopSave;
+    if(!save||!Array.isArray(save.profiles))return save;
+    return {...save,profiles:save.profiles.map(profile=>{
+      const adventure=profile.adventure as (Omit<AdventureProgress,'version'|'equippedPower'|'pending'>&{version:number;pending:{id:string;encounterId:string}|null})|undefined;
+      if(!adventure||adventure.version!==1)return profile;
+      return {...profile,adventure:{...adventure,version:2 as const,equippedPower:null,pending:adventure.pending?{...adventure.pending,startingPower:null}:null}};
+    })};
+  },
   actions:{
     adventureReset:(s:DesktopSave,p:{profileIndex:number})=>updateAdventure(s,p.profileIndex,progress=>({...initialAdventure(),nextAttempt:progress.nextAttempt})),
     adventureCollectible:(s:DesktopSave,p:{profileIndex:number;districtId:string})=>updateAdventure(s,p.profileIndex,progress=>claimAdventureCollectible(progress,p.districtId)),
@@ -36,6 +45,7 @@ export const desktopSave = defineMeta({name:'bubblebobble-desktop',version:2,ini
     adventureAnchor:(s:DesktopSave,p:AdventureAnchor&{profileIndex:number})=>updateAdventure(s,p.profileIndex,progress=>setAdventureAnchor(progress,p)),
     adventureShortcut:(s:DesktopSave,p:{profileIndex:number;id:string})=>updateAdventure(s,p.profileIndex,progress=>discoverAdventureShortcut(progress,p.id)),
     adventurePurchase:(s:DesktopSave,p:{profileIndex:number;id:string})=>updateAdventure(s,p.profileIndex,progress=>purchaseAdventureItem(progress,p.id)),
+    adventureEquip:(s:DesktopSave,p:{profileIndex:number;id:string|null})=>updateAdventure(s,p.profileIndex,progress=>equipAdventurePower(progress,p.id)),
     adventureGuideReward:(s:DesktopSave,p:{profileIndex:number})=>updateAdventure(s,p.profileIndex,claimAdventureGuideReward),
     create:(s:DesktopSave,name:string)=>{name=upperName(trimName(name));const error=validateName(name);if(error)refuse(error);if(s.profiles.length>=8)refuse('all eight profile slots are occupied');if(s.profiles.some(p=>p.name.toUpperCase()===name))refuse('that profile already exists');return {...s,profiles:[...s.profiles,profile(name)],active:s.profiles.length};},
     select:(s:DesktopSave,index:number)=>index>=0&&index<s.profiles.length?{...s,active:index}:s,

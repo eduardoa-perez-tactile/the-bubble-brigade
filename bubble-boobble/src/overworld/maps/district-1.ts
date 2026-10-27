@@ -893,41 +893,47 @@ export const district1Map:SourceMap={
    ]
   ]
  ],
+ // Door approaches follow the existing south-facing doorstep, not the building centre.
  "pois": [
   {
    "kind": "encounter",
    "slot": 0,
    "x": 727.579,
    "y": 1253.053,
-   "label": "Bubble Lighthouse"
+   "label": "Bubble Lighthouse",
+   "approach": [[693.579, 1251.053], [761.579, 1251.053], [761.579, 1289.053], [693.579, 1289.053]]
   },
   {
    "kind": "encounter",
    "slot": 1,
    "x": 365.014,
    "y": 644.287,
-   "label": "Shell Post Office"
+   "label": "Shell Post Office",
+   "approach": [[331.014, 642.287], [399.014, 642.287], [399.014, 680.287], [331.014, 680.287]]
   },
   {
    "kind": "encounter",
    "slot": 2,
    "x": 587.943,
    "y": 360.115,
-   "label": "Sailcloth Workshop"
+   "label": "Sailcloth Workshop",
+   "approach": [[553.943, 358.115], [621.943, 358.115], [621.943, 396.115], [553.943, 396.115]]
   },
   {
    "kind": "encounter",
    "slot": 3,
    "x": 979.904,
    "y": 496.077,
-   "label": "Pearl Pump Station"
+   "label": "Pearl Pump Station",
+   "approach": [[945.904, 494.077], [1013.904, 494.077], [1013.904, 532.077], [945.904, 532.077]]
   },
   {
    "kind": "encounter",
    "slot": 4,
    "x": 1292.249,
    "y": 1055.847,
-   "label": "Tugboat Clubhouse"
+   "label": "Tugboat Clubhouse",
+   "approach": [[1258.249, 1053.847], [1326.249, 1053.847], [1326.249, 1091.847], [1258.249, 1091.847]]
   },
   {
    "kind": "guide",

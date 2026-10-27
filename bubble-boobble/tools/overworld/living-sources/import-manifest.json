@@ -1,0 +1,1134 @@
+{
+  "assets": [
+    {
+      "path": "assets/overworld-living/common/npc/guide-0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "70270254eafce2e89d46b0c34879347567a6f7c25d8d802db48724a87f616293"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/guide-1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "dbfe336cbd74fba1f106a39b7d072b18c446162c1706e8f9c057e4dba7088b09"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/guide-2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "472644bd079c370ab7412782db62a47b6b378765c436efa559de533ae61a441c"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/guide-3.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "70270254eafce2e89d46b0c34879347567a6f7c25d8d802db48724a87f616293"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/vendor-0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "59e28967cc7051706d4c178770f06c1e7d61bf0b6a9a380efb51bc1418667d3f"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/vendor-1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "ffde6fec423cf29fe713f668680729774afe4c9dceda3f3fc6dcf5a05f87c352"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/vendor-2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "96673ac9e3c62f8ad3f7d37d26c1c75cb3dc69cf52a1e209713755c1542985cf"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/vendor-3.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "4a9447ccfc5e83490fedc64d7ae3ace0a86a3605606f847496fc90e4f03ae820"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/courier-0.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "101b697a1c1126c52ad831c5d8f761de9f66c7ca5d22d33f0579e75ae956600b"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/courier-1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "522254f13164274615c02c5a67d08622041cea639c8d69cfe02cd8a848623a38"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/courier-2.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "537c5dc7a9416b878a627d00b20a5696937c0a617a316d5f5b713aaea4a97e47"
+    },
+    {
+      "path": "assets/overworld-living/common/npc/courier-3.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "e49ac89337c169077e54e7d5ab8161b200d356fcf9c72b6458f1bd1dc83c2dc8"
+    },
+    {
+      "path": "assets/overworld-living/district-1/coast-clean.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "cab57b614edbb34083ec2dedf5e318d4131fa59d02114dd0af1e61653cdb89e4"
+    },
+    {
+      "path": "assets/overworld-living/district-1/coast-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "50ae1b1b9669962395913590953cfe0a69bbf48d16fe0ceab62c74612a3a916e"
+    },
+    {
+      "path": "assets/overworld-living/district-1/coast-1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "433784abd2a8568d940e4ce0d38d9404dfe45f0bd7644db27469d2ce84120be0"
+    },
+    {
+      "path": "assets/overworld-living/district-1/coast-2.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "a1212fcde3e4df9d3f10c441d5f5ef3b7e5101a703f43f89f9452c1124505a68"
+    },
+    {
+      "path": "assets/overworld-living/district-1/coast-3.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "06436fdef3e031b223657a43b3d106051b7dbbf997f71cca7eba2dd86e6b5bde"
+    },
+    {
+      "path": "assets/overworld-living/district-2/coast-clean.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "b9423d480168199d1c313aa7b95cbff369aa4ac1345dfe8aa509d6a192338934"
+    },
+    {
+      "path": "assets/overworld-living/district-2/coast-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "dce7533c584edde3109efad48970398ddf7d73b569d9383887ba40726a37ff98"
+    },
+    {
+      "path": "assets/overworld-living/district-2/coast-1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "deb44bd2dcf320b1b8a25e5d54ca2b35869ebba18f6a06a052291935cf6172bd"
+    },
+    {
+      "path": "assets/overworld-living/district-2/coast-2.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "c7120391cf60e134f71781746fdc376cead19367b823f8d33df9329c6ee3fa4e"
+    },
+    {
+      "path": "assets/overworld-living/district-2/coast-3.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "c80b3ebdc0e2127d70dfea341b992585e021baec611b2e295102c12b540b473d"
+    },
+    {
+      "path": "assets/overworld-living/district-3/coast-clean.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "91f75b28c210de480f5d1c6b1fcd50ef44a6efe8e10795bd6653ba66144faf6a"
+    },
+    {
+      "path": "assets/overworld-living/district-3/coast-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "e47fb870709b4bbcfdb6af2b1e3795ccd2a6196a11935834b9db6397070ceee0"
+    },
+    {
+      "path": "assets/overworld-living/district-3/coast-1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "c55c076183a971bf6fa15ff3e83a97f0b061e674cb0c27d76fe961b8983c03ea"
+    },
+    {
+      "path": "assets/overworld-living/district-3/coast-2.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "438b27953984040c7b98a963ff112bb9c186dd2831511278f609e4d1fb4f49c8"
+    },
+    {
+      "path": "assets/overworld-living/district-3/coast-3.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "caef589b3a2cb59c797dff18debc0da9060e8becb323b46a887a068cf6f14817"
+    },
+    {
+      "path": "assets/overworld-living/district-4/coast-clean.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "cac0aa346e5a3061eb6d74cbaeef1579e873323320bff1a5bfc493f35c65c982"
+    },
+    {
+      "path": "assets/overworld-living/district-4/coast-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "3ba2d7f64754bc0ebcba86df4c3f5c27a44ea9fefe10ea60ec1f40b1b591824f"
+    },
+    {
+      "path": "assets/overworld-living/district-4/coast-1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "b8160d83c3c3d8b3787f33d88b6ce73681bce44fc11e215a36dc9f5971ea204c"
+    },
+    {
+      "path": "assets/overworld-living/district-4/coast-2.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "dc7584881ebac8256c9fedcaffc8a72f9239e680e6f1745d8b1b9019e9d284bf"
+    },
+    {
+      "path": "assets/overworld-living/district-4/coast-3.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "aac1f54ad7dcaf82a244171ba76e57a76c3fb401fdf72a4ca4df9e4dd9e8361d"
+    },
+    {
+      "path": "assets/overworld-living/district-5/coast-clean.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "3525fb29d39ba68198d360f6f3b6d8327b7766e7212177ee2e201f477157d6d4"
+    },
+    {
+      "path": "assets/overworld-living/district-5/coast-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "c2c2efbd6084c29297563dc4369aa4ccea19d9b77217f1855600a2c798efe0cc"
+    },
+    {
+      "path": "assets/overworld-living/district-5/coast-1.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "ac130d003de6dbc8b109931f56b41366cf97f3f6de70e77b184e4058a7332ee6"
+    },
+    {
+      "path": "assets/overworld-living/district-5/coast-2.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "e9bab07430776b9ae7ad7942a6b87ce4aed70d8833d9355a6de0a35d8b9502ef"
+    },
+    {
+      "path": "assets/overworld-living/district-5/coast-3.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "58f08f2c848b73e418642e6b4d662c2d5281aa86a2f4715c4b91f678c30d5385"
+    },
+    {
+      "path": "assets/overworld-living/district-1/lantern-0.png",
+      "size": [
+        157,
+        207
+      ],
+      "sha256": "50bc780fdb761a608e615fb0b8778f6b80f869f74ef9e02e381d20c9c1629ab4"
+    },
+    {
+      "path": "assets/overworld-living/district-1/lantern-1.png",
+      "size": [
+        157,
+        207
+      ],
+      "sha256": "a145ca362914ea1da1472018310d5843058a152f504f839db89f9622ec4cdc53"
+    },
+    {
+      "path": "assets/overworld-living/district-1/lantern-2.png",
+      "size": [
+        157,
+        207
+      ],
+      "sha256": "4eea3ef38912dc5baef38992a1d78ee33c954adc422b917c86cc184bd8a400d4"
+    },
+    {
+      "path": "assets/overworld-living/district-1/lantern-3.png",
+      "size": [
+        157,
+        207
+      ],
+      "sha256": "50bc780fdb761a608e615fb0b8778f6b80f869f74ef9e02e381d20c9c1629ab4"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-0-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "731fa9eb27770bc634406a25de862bc5a2d6aad7d0863b8d08813efdc6d60560"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-0-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "9e992b8e591e85e483b460353e8de9e929e046b1cc163e386823d4fb31573c78"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-0-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "c644c3dfca48e0228bf1908f4b85eb2e2ae7076df4d647146abeae7a19548ac3"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-0-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e5034c28758083f2938fadc206f4c63a3cd50dc756cfca0952f1df70befc1f18"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-1-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "193a43bf583576f3b70d3160206d3cd0c2937ea7a174aeb7b0aa728b6919cdea"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-1-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "59b564f734b8ced7ef16f7a4e9a3a62703c3594e1e44af77801928512adea369"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-1-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "4002d6597333cccc707cb6abfb62210c4e0eda0ddf4e7f31a86ae0d8e0bd3a27"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-1-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "ed7a15a90f69f5aff72d49ffd5bee8be2a32f03bd82366ac2420012630833a86"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-2-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "37966b539e6a89590a8eda64ffae11e98e330c7a860d292dc9fd514c0108a470"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-2-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "5f036c94b2eb0b7b0cb9ec287449c33d4aca9d28af33a6faaf363c2a008923a6"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-2-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "192e137c85b89d0de4e0174d491cc568f40906162f22f3197925b74b4d7d6f68"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-2-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "270756f23a8296405f285b39780ec68a512821f7b16998f3da193dbdaaf97d89"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-3-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "d98abb28317f0b7e181e2578521bee2c293d75b5ca9963326be68a9ee03f3b1d"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-3-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "3c455d14a4a5ca6844cf61ab563f620205be5a70150b21bd424a68f5d364852a"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-3-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "3df8f94486cad352a568f4cf0055f1a524aaf57dae9f3144450ccb874d167df3"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-3-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "5b75cb31764de451669faeea80a04bd35857a11d2f2d4e253d5dd42cb7bfb7ae"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-4-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1ab884aec7597bcb7b83081900b3326466eb18ee55300fb778a0e3b8580c60f7"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-4-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "aa8cefdb109c060558a68b9fed88637cc3feae7f423ff2c2829eb923a05d3854"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-4-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "6250274da594b694e4b3a90380c04a03b8e5ba281504ad7081581eba3a4fddc5"
+    },
+    {
+      "path": "assets/overworld-living/district-1/door-4-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "9289bef272de340ca608e808117ebf50c5b56f968fcbe8eddbae9d694ea0b057"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-0-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "38610856a111abe19cb32a6fbd4d04fb26acee66804570004a5905e7a1443866"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-0-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "f67f7dfb7a2099b3a39eefd3862c9b85835310154eb6670df6e5dca40583dfe2"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-0-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "7364f1a268d7bc57981951241f34cf95e6dffa2a8be8c1c2e4ded895c665ffc8"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-0-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "175c3b7dc4a4f01b8d854e6984ada571397cf9a997df057234d5fb3d310997ab"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-1-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "15ac3336943e5a6f7466bea85fca8fb569b339d0b8927cfcb2e3e2a448a03f24"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-1-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1a5401faa3e5c82e9659c4814f9d0bb3d2516bc3c4a1ead58ee0f8f245983196"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-1-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "29be720b5ee7a9b1c206ef988f193b35b1bd6f08e81a18209abc1b6adeec8a0c"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-1-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "df4f18a1195f9064f5fa9fab4e69910f77d1dfbd7e3e77cf204149c3956ebff7"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-2-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "22e571c02bf9098a9af05c10e101cdb04c5545207cbf701b27899db3ae47a293"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-2-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e5c1194d314f4f775012e50907bec14a6acb93d8d6a740bf47b39ce5213b8268"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-2-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "2f613f8a96c95af9bf508923b461f16a14b45b518f6adb65357d0ef201d2e1ab"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-2-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "01aff87ebe8f0485cafd21439f97c2fff3f7059f9d473b68c811e6088ee99305"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-3-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "b2910885a6d33c57025e8448bb615e53b921a6bd39bd0c1ec0c9889bb4f1403f"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-3-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "18e06edfbf2681f1127d7ad392504a43ce6ccd2271cc199fb9fd21f99744f9ac"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-3-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "09e1ef9349454cd4880e6069ddc9ff13da9d4345161b57d1c4725abff0ec0cd7"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-3-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "6b526494bf39e26dbe66fc0a48419a62c3ea1376d7eb7a3d632f5e0cbdc825b8"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-4-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "8e1dca0e24c635a5a5ff03b5e18093bc33aeea495d5bde92d34fabd4d5ba07b3"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-4-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "ac298f21f35ff600d8b9593942a6a2f8e9919a7868676005fb2b64da4fec6cc2"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-4-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "3427fad7291a137b8d4a108f196c1b32b6be2f3dcaec368cd3662db2000e281f"
+    },
+    {
+      "path": "assets/overworld-living/district-2/door-4-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "23491b86a2b01b71b145d0d8ab180c29d22d45a68c1afcdc1f718f844c36835a"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-0-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "2feb820c73b42ecace48c39708751f83f5c192d6fdb955356ceaa369b9155fcf"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-0-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "09adc021222071b7f67776f8782ce8473e9c504a6cfc94c26e6645268882c1a7"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-0-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "bf029496c4ebaf8de1651cf9dddb274a96551e84905b08d6ef2da0ceec691681"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-0-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "74f83daec4da431cd84e1d9fcc8c1b24cbcc59ffffc310726a9f29ae60409d53"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-1-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e68c9252dce0a7a91f8915904d2fb4a0f2a9c647997af890083d6eacd9e6111c"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-1-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e13aca56f73d2b02ad0ac49776757b8616df1cb7a3eabd1f0f895711ec65b314"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-1-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "619a198fc64a0cdfe622a2fa42f013b78507c7b1dcab72447989bd7c27e87e13"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-1-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e5000172c1c9406ca326efb91321622d36fc065ec28b0cf2218991cab1ec6856"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-2-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "88583bf13779d55b869b8b1624580bc873be4a9d5a0d581a8abd264f080893c7"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-2-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "70f29e23d3b18571b381d42f55a6e3eaa9b23baaab402ee498e16c90fd0a6a4e"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-2-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "3d0504f25c9e4f5a49f8345ac1a0565eed67a658f24bf99688361a91285c3f1d"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-2-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "f0e81f1105638664d34f9db666bd56815bbb5fc5697d3ea732ed1e6d4d154366"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-3-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "fd5bb3dd335b818221228e646eda2fd678031b3cf4d9e59a8175f27280be5346"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-3-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1b7916bf8990dcfaed0227f72119cd976803427175a0e3a4ebb11ad66036f0e0"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-3-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "2c445e47eacee32fbfa2b7f919dffc0e71c7102bbb18e61becdaadca2381886c"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-3-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "411af1846d90993b1603b062df795b422501fc175bad313b2df512d8ad1b0326"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-4-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "a0f53656de78de4922cae92fd2245ae51eb60f5d2c8e375aad751bcdcad73709"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-4-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e073d5aedafb9a57d791c7790042b2ae22006a5005ff3d5b531d838ce0789b9d"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-4-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e52f57e4bcd4f76ccd459cf608f37603f60517075b79d8d339d6c0403568a9b7"
+    },
+    {
+      "path": "assets/overworld-living/district-3/door-4-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "bb6f56539bed9edb1080ee78d60e087899288baf7dd03f9ad374f61012961f78"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-0-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "f89e9e16567b240f49d12c02d1b1d5989237939a197210fcc027f12b78df4265"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-0-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "d85d1b0fbd1ab515715ee5ed73937466c3bf8460969596148f1a1355c986f4a5"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-0-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "7bf46f448bf51ee7bdc9bd6aeae8319131aded29b1d77ca1808890ca190c003e"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-0-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "74ae3f840c4f9d843de261b4038d1231a54ff857ece5cc39e3143e995d2621bc"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-1-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "9b630fe50ceeb8f85b4d0c31ef4f53557ec958e9a2f9f5cd44246f01d0044f91"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-1-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "e6f242dec06647a39c78bed042a8d282407ad3c9ca6bc065261a9f6d97c98c0a"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-1-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "f93c295779b4e24db67d80a0e413e5f542be93cfc5f12152cb0c93e6b00be6e3"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-1-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "dc8e36001fc7d6426bb10b68752d3c5ac785a7669897be0c3c2dc1793b0920b0"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-2-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "c84b933b26659599a03c0f95be62757383987032e41a1fec4773e9115bc5672e"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-2-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "0594b07f087a5c988253fda1df92df53d87467e07881aab9667aec6e4974602d"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-2-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "eb37a0521df7c41535ac4863924682d5728343365644e32dc475d72d0ca06737"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-2-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "d81b2aaa295a4dd0ef514fcca398a5856eef367adfb5728e357f2b5cbfd79537"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-3-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "0b28f2aaad5e3c4657640bf35380b23d729d131da971c052fd65c70680769c98"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-3-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "036b2e531df4c830355a2a8cd80888dcebbf7aa49f69c2b01a30a128fa08f707"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-3-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "6c67373c9848db7e9c6b6ada14dc2ce8263b6b4f15019303998aab0c15cbe045"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-3-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "54049a5386ad64b53c616e12274da8310135f08055302aac41777e3df2c10c81"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-4-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "b8c67a932926c6d9f70222ff7a4b4480a6572e07e3070d277b0c2367abcf5fc2"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-4-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "fe908a8a95cceb1bf2782c625691558c6e9bfe2ae694e014285f52b29ee6d0bf"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-4-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "241a14b1fb93b6938ef1040ff7cccb2b26cb8e2c1f7ecf393819afad32de4482"
+    },
+    {
+      "path": "assets/overworld-living/district-4/door-4-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "f91a64756e9d3791adea730490487693aee0ecc437c1ea95ea288408c4e545eb"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-0-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "20f9ae2e65b32ced2f78a8786d0545f2386695d523d2fde75428a1dce3c34c75"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-0-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "3a7bd083de5756577e142f1517e5a4b9d312bca9e021f13c279131cb8e2e8e8f"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-0-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "a3cc6fde9a7bedd27a8b4a3f1706a594fa0d763d1ef0758f1d996a3b97a4a1be"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-0-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "1260ab836c9cd7e04bff087d2f774806271ed6829f8defcef74fb889a3ef6576"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-1-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "ae8ae2aef913e5e750a21159d0271ac9bf7ba24b6efaf3d4690cebeeff829e12"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-1-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "328310d34759113009a22fe03ac52c0de0061dc8a0a2d5ed6c039687017338c0"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-1-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "618d7c767e1f40d3e4c70389584780f4280bdc2582da88f0b7ac84a98388c496"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-1-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "c1a654d8b15432c7f0a532f1c4992f137255ac97a00ea76e073344050c0353c1"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-2-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "7fac31f9103d0a0281b9b06247980f2162ccb0baabb91c668d5937ac8e009e14"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-2-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "7bd7d7509843cbd355a61589caa2e03c9242a34fee611388a59a08593e85a407"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-2-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "87a065773f372872c326756f954d03928960afa377c63f4d94a22d2ee823f84f"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-2-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "527b9abb7bf687f1081585ecc8a315523fba292bdfd83e489359952dd5fd2d34"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-3-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "b1e4406a26726aed49a42b3f85dc90c6113845c6af8eb9ab3a2d84da1e79cf7f"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-3-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "2ca4a5cca9cbbc9c89d6112c4abb542875102fd4a5afa6b68ae726360aed55e4"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-3-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "df7868061643687ad27e08e9efbe0a300899e9ad76d293e253df4438efe2ba83"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-3-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "b9fdf5809b2f9de27a1354be79d8692518afe4f629c258171ac0193e3b6e91c9"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-4-0.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "721996bcc968ecf0b73ca48dda41989693dd14a07647dfbc948f94bfa7e22166"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-4-1.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "c829bc966195af04a9208399ec85585ce215024e9c03d48088fa451399b1c39a"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-4-2.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "0b9d8b744e87f49dbccdf530ab3c6affc638ab3b799d4f92d098c6e8130f931b"
+    },
+    {
+      "path": "assets/overworld-living/district-5/door-4-3.png",
+      "size": [
+        64,
+        96
+      ],
+      "sha256": "89b2971116c762ea0f35f88ff9f833230f106407c2f0ff3d05a6eb76ee6bd4e0"
+    }
+  ],
+  "mapPaintingsModified": false,
+  "method": "Generated pigment import, shared sprite normalization, exact shoreline-only alpha masking"
+}

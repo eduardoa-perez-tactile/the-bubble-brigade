@@ -894,6 +894,14 @@
       "from": 26,
       "to": 68,
       "reason": "The original coin anchor is inside a newly blocked existing planting bed; radius reaches the adjacent paving without moving the anchor."
+    },
+    {
+      "districtId": "district-4",
+      "kind": "trial",
+      "slot": null,
+      "from": null,
+      "to": 76,
+      "reason": "The unchanged Mist Circle anchor lies in the painted upper water basin. Visiting uses the authored south stone-rim approach, not walking into the pool; default36 source-pixel reach cannot reach that rim."
     }
   ],
   "collisionReference": {

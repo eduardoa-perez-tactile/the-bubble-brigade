@@ -1170,41 +1170,47 @@ export const district3Map:SourceMap={
    ]
   ]
  ],
+ // Door approaches follow the existing south-facing doorstep, not the building centre.
  "pois": [
   {
    "kind": "encounter",
    "slot": 0,
    "x": 771.675,
    "y": 1142.813,
-   "label": "Bubble Carousel"
+   "label": "Bubble Carousel",
+   "approach": [[737.675, 1140.813], [805.675, 1140.813], [805.675, 1178.813], [737.675, 1178.813]]
   },
   {
    "kind": "encounter",
    "slot": 1,
    "x": 404.211,
    "y": 710.431,
-   "label": "Kite Hangar"
+   "label": "Kite Hangar",
+   "approach": [[370.211, 708.431], [438.211, 708.431], [438.211, 746.431], [370.211, 746.431]]
   },
   {
    "kind": "encounter",
    "slot": 2,
    "x": 617.34,
    "y": 362.565,
-   "label": "Windup Theatre"
+   "label": "Windup Theatre",
+   "approach": [[583.34, 360.565], [651.34, 360.565], [651.34, 398.565], [583.34, 398.565]]
   },
   {
    "kind": "encounter",
    "slot": 3,
    "x": 1053.397,
    "y": 422.584,
-   "label": "Pinwheel Observatory"
+   "label": "Pinwheel Observatory",
+   "approach": [[1019.397, 420.584], [1087.397, 420.584], [1087.397, 458.584], [1019.397, 458.584]]
   },
   {
    "kind": "encounter",
    "slot": 4,
    "x": 1291.024,
    "y": 988.478,
-   "label": "Balloon Organ"
+   "label": "Balloon Organ",
+   "approach": [[1257.024, 986.478], [1325.024, 986.478], [1325.024, 1024.478], [1257.024, 1024.478]]
   },
   {
    "kind": "guide",

@@ -1,5 +1,7 @@
 # Harbor map preservation and animation review
 
+**The five-map rollout is now implemented.** See the [production implementation and validation](production/README.md) and [actual engine capture review](production/review.html). The study/approval notes below describe the earlier checkpoint.
+
 The harbor slice improves the existing map in place. Its accepted geography, buildings, paths, coast contours, palette, camera framing, and existing destination positions remain fixed. Collision corrections align gameplay to the painting; they do not redesign the scenery.
 
 Open [the offline review](review.html) for the exact accepted harbor painting with numbered work areas and optional current collision overlays. Dashed rectangles identify candidate study regions, not final edit masks or production changes. Proposed sprite studies are labelled separately when present.

@@ -31,8 +31,11 @@ export interface AuthoredLanternSection extends AuthoredAssemblyBase {
  interior:AuthoredSpriteSequence;
  foreground:AuthoredSpriteSequence;
 }
-export type AuthoredMapAssembly=AuthoredShorelineSection|AuthoredLanternSection;
-interface CompiledSequence {
+// A registered single drawing may already contain its own source-copied occluder,
+// e.g. the small lighthouse crop, or the combined coast contact/ripple artwork.
+export interface AuthoredPaintedSection extends AuthoredAssemblyBase {kind:'painted';drawing:AuthoredSpriteSequence}
+export type AuthoredMapAssembly=AuthoredShorelineSection|AuthoredLanternSection|AuthoredPaintedSection;
+export interface CompiledSequence {
  frames:readonly AuthoredSpriteFrame[];
  ends:readonly number[];
  duration:number;
@@ -50,7 +53,7 @@ const natural=(value:number)=>Number.isSafeInteger(value)&&value>=0;
 function requireRect(rect:AuthoredSourceRect,label:string):void {
  if(![rect.x,rect.y,rect.width,rect.height].every(Number.isFinite)||rect.width<=0||rect.height<=0)throw new Error(`${label}: invalid source rectangle`);
 }
-function compileSequence(sequence:AuthoredSpriteSequence,images:ReadonlySet<string>,label:string):CompiledSequence {
+export function compileAuthoredSequence(sequence:AuthoredSpriteSequence,images:ReadonlySet<string>,label:string):CompiledSequence {
  if(sequence.frames.length===0||!natural(sequence.restFrame)||sequence.restFrame>=sequence.frames.length)throw new Error(`${label}: missing resting drawing`);
  if(sequence.playback!=='loop'&&sequence.playback!=='once')throw new Error(`${label}: invalid playback`);
  const phaseSteps=sequence.phaseSteps??0;
@@ -66,7 +69,7 @@ function compileSequence(sequence:AuthoredSpriteSequence,images:ReadonlySet<stri
  return Object.freeze({frames:Object.freeze(frames),ends:Object.freeze(ends),duration,restFrame:sequence.restFrame,playback:sequence.playback,phaseSteps});
 }
 /** Compile only after art approval/import, against the imported sprite catalog.
- * No production definitions are registered here while artwork awaits approval.
+ * Definitions are immutable content; playback is sampled without mutable animation state.
  * Reject cropping at the map edge: a section must be authored in its real bounds. */
 export function registerAuthoredAssembly(map:SourceMap,assembly:AuthoredMapAssembly,images:ReadonlySet<string>):RegisteredAuthoredAssembly {
  const {source,id}=assembly;
@@ -75,14 +78,15 @@ export function registerAuthoredAssembly(map:SourceMap,assembly:AuthoredMapAssem
  if(source.x<0||source.y<0||source.x+source.width>map.width||source.y+source.height>map.height)throw new Error(`${id}: source rectangle leaves the existing map`);
  if(!Number.isFinite(map.scale)||map.scale<=0)throw new Error(`${id}: invalid map scale`);
  const point=sourceToWorld(map,{x:source.x+source.width/2,y:source.y+source.height/2});
- const parts=assembly.kind==='shoreline'?[assembly.ripples,assembly.contact]:[assembly.interior,assembly.foreground];
+ const parts=assembly.kind==='shoreline'?[assembly.ripples,assembly.contact]:assembly.kind==='lantern'?[assembly.interior,assembly.foreground]:[assembly.drawing];
  const layers=parts.map((part,index)=>Object.freeze({
   draw:Object.freeze({x:point.x,y:point.y,width:source.width*map.scale,height:source.height*map.scale,order:assembly.order+index}),
-  sequence:compileSequence(part,images,`${id} part ${index}`),
+  sequence:compileAuthoredSequence(part,images,`${id} part ${index}`),
  }));
  return Object.freeze({id,kind:assembly.kind,source:Object.freeze({...source}),layers:Object.freeze(layers)});
 }
-function imageAt(sequence:CompiledSequence,step:number,reducedMotion:boolean):string {
+export function sampleAuthoredImage(sequence:CompiledSequence,step:number,reducedMotion=false):string {
+ if(!natural(step))throw new Error('Authored sprite step must be a nonnegative integer');
  if(reducedMotion)return sequence.frames[sequence.restFrame]!.image;
  // Modular addition avoids losing integer precision even for large recorded steps.
  const elapsed=sequence.playback==='loop'?step%sequence.duration:Math.min(step,sequence.duration);
@@ -104,7 +108,7 @@ export function sampleAuthoredAssembly(assembly:RegisteredAuthoredAssembly,step:
   requireRect(visibleSource,'Visible area');const r=assembly.source,v=visibleSource;
   if(r.x+r.width<=v.x||r.y+r.height<=v.y||r.x>=v.x+v.width||r.y>=v.y+v.height)return [];
  }
- return assembly.layers.map(layer=>({...layer.draw,image:imageAt(layer.sequence,step,reducedMotion)}));
+ return assembly.layers.map(layer=>({...layer.draw,image:sampleAuthoredImage(layer.sequence,step,reducedMotion)}));
 }
 /** Never let optional scenery silently disappear when a fixed visual pool fills.
  * Call after offscreen culling, before committing any part of the frame. */

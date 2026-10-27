@@ -1,0 +1,304 @@
+{
+  "ok": true,
+  "device": "phone-low",
+  "platform": "android",
+  "groups": [
+    {
+      "name": "overworld-district-1",
+      "members": 13,
+      "cooked": {
+        "textures": 985840,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 985840,
+      "largest": [
+        {
+          "key": "overworld-original/district-1/base",
+          "kind": "texture",
+          "bytes": 176400
+        },
+        {
+          "key": "overworld-living/district-1/coast-0",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-1/coast-1",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-1/coast-2",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-1/coast-3",
+          "kind": "texture",
+          "bytes": 118336
+        }
+      ]
+    },
+    {
+      "name": "overworld-district-2",
+      "members": 9,
+      "cooked": {
+        "textures": 926192,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 926192,
+      "largest": [
+        {
+          "key": "overworld-original/district-2/base",
+          "kind": "texture",
+          "bytes": 176400
+        },
+        {
+          "key": "overworld-living/district-2/coast-0",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-2/coast-1",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-2/coast-2",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-2/coast-3",
+          "kind": "texture",
+          "bytes": 118336
+        }
+      ]
+    },
+    {
+      "name": "overworld-district-3",
+      "members": 9,
+      "cooked": {
+        "textures": 925376,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 925376,
+      "largest": [
+        {
+          "key": "overworld-original/district-3/base",
+          "kind": "texture",
+          "bytes": 176400
+        },
+        {
+          "key": "overworld-living/district-3/coast-0",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-3/coast-1",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-3/coast-2",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-3/coast-3",
+          "kind": "texture",
+          "bytes": 118336
+        }
+      ]
+    },
+    {
+      "name": "overworld-district-4",
+      "members": 9,
+      "cooked": {
+        "textures": 925632,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 925632,
+      "largest": [
+        {
+          "key": "overworld-original/district-4/base",
+          "kind": "texture",
+          "bytes": 176400
+        },
+        {
+          "key": "overworld-living/district-4/coast-0",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-4/coast-1",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-4/coast-2",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-4/coast-3",
+          "kind": "texture",
+          "bytes": 118336
+        }
+      ]
+    },
+    {
+      "name": "overworld-district-5",
+      "members": 9,
+      "cooked": {
+        "textures": 926192,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 926192,
+      "largest": [
+        {
+          "key": "overworld-original/district-5/base",
+          "kind": "texture",
+          "bytes": 176400
+        },
+        {
+          "key": "overworld-living/district-5/coast-0",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-5/coast-1",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-5/coast-2",
+          "kind": "texture",
+          "bytes": 118336
+        },
+        {
+          "key": "overworld-living/district-5/coast-3",
+          "kind": "texture",
+          "bytes": 118336
+        }
+      ]
+    },
+    {
+      "name": "overworld-shared",
+      "members": 2,
+      "cooked": {
+        "textures": 2023024,
+        "audio": 0,
+        "other": 0
+      },
+      "audio": 0,
+      "streamed": 0,
+      "resident": 2023024,
+      "largest": [
+        {
+          "key": "atlas/overworld-shared/0",
+          "kind": "atlas-page",
+          "bytes": 1805984
+        },
+        {
+          "key": "atlas/overworld-shared/1",
+          "kind": "atlas-page",
+          "bytes": 217040
+        }
+      ]
+    }
+  ],
+  "peak": {
+    "groups": [
+      "courtyard-gameplay"
+    ],
+    "resident": 40059260,
+    "textures": 40059260,
+    "audio": 0
+  },
+  "budgets": [
+    {
+      "what": "peak textures (phone-low)",
+      "bytes": 40059260,
+      "budget": 134217728,
+      "over": false
+    },
+    {
+      "what": "peak audio (phone-low)",
+      "bytes": 0,
+      "budget": 33554432,
+      "over": false
+    },
+    {
+      "what": "peak total (phone-low)",
+      "bytes": 40059260,
+      "budget": 201326592,
+      "over": false
+    },
+    {
+      "what": "peak (memory.json)",
+      "bytes": 40059260,
+      "budget": 50331648,
+      "over": false
+    },
+    {
+      "what": "group courtyard-gameplay",
+      "bytes": 40059260,
+      "budget": 41943040,
+      "over": false
+    },
+    {
+      "what": "group overworld-district-1",
+      "bytes": 985840,
+      "budget": 2097152,
+      "over": false
+    },
+    {
+      "what": "group overworld-district-2",
+      "bytes": 926192,
+      "budget": 2097152,
+      "over": false
+    },
+    {
+      "what": "group overworld-district-3",
+      "bytes": 925376,
+      "budget": 2097152,
+      "over": false
+    },
+    {
+      "what": "group overworld-district-4",
+      "bytes": 925632,
+      "budget": 2097152,
+      "over": false
+    },
+    {
+      "what": "group overworld-district-5",
+      "bytes": 926192,
+      "budget": 2097152,
+      "over": false
+    },
+    {
+      "what": "group overworld-shared",
+      "bytes": 2023024,
+      "budget": 2097152,
+      "over": false
+    }
+  ],
+  "phoneLowStandaloneMaxSize": 768,
+  "note": "Fresh Android cook; sub-1024 override emits mip chain and selects approximately512logicaltexels instead of the1026padded base. No budgets increased. Cooked estimates, not handset measurement."
+}

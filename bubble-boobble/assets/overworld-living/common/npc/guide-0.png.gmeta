@@ -1,0 +1,9 @@
+guid = "954df924-b137-5ca6-9350-6e06ef4f9861"
+importer = "texture"
+[settings]
+kind = "sprite"
+atlas = "overworld-living-residents"
+compression = "astc6x6"
+max_size = 128
+trim = false
+filter = "linear"

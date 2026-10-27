@@ -62,7 +62,7 @@ worldTest('harbor recorded walking stops at both existing palm beds without bloc
 
 worldTest('harbor hidden coin remains reachable from paving without walking into its palm bed',async()=>{
  const map=getOverworldMap('district-1');
- const approach=sourceToWorld(map,{x:327.579,y:1065.742});
+ const approach=sourceToWorld(map,{x:329.579,y:1065.742});
  expect(isOverworldWalkable(approach.x,approach.y,'district-1')).toBe(true);
  expect(focusedOverworldPoi('district-1',approach.x,approach.y)).toBe('collectible');
  // The nearby supply cart and lighthouse keep their own focus after the local reach change.

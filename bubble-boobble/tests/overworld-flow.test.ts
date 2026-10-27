@@ -85,6 +85,11 @@ worldTest('adventure flow rejects remote and locked play intents and options ret
 },{scene});
 renderTest('adventure flow encounter document Play button starts the focused encounter',async ctx=>{
  ctx.input.view(1280,720,1);await enter(ctx);await card(ctx,'encounter-1');
+ // The newly opened card can start an art preload; press only after its real loading cover clears.
+ await ctx.loaded();
+ ctx.render.stats({width:1280,height:720});
+ await ctx.render.waitForAssets({timeoutMs:30000});
+ await ctx.loaded();await adventureStep(ctx,2);
  ctx.render.stats({width:1280,height:720});
  const button=ctx.ui.interactables().find(value=>value.label==='PLAY ENCOUNTER');
  expect(!!button?.id).toBe(true);if(!button?.id)return;

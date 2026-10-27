@@ -83,3 +83,19 @@
  .overworld-card .ud-adventure-shop-item__name {font-size:32px;height:46px;}
  .overworld-card .ud-adventure-shop-item__detail {font-size:28px;height:44px;}
 }
+
+/* Four powers and two navigation controls stay visible together in the shop. */
+.overworld-card .ud-adventure-shop__ow_panel {padding:16px;gap:8px;}
+.overworld-card .ud-adventure-shop__owd_message {height:44px;}
+.overworld-card .ud-adventure-shop-item__root {height:56px;padding:6px;gap:12px;}
+.overworld-card .ud-adventure-shop-item__portrait {width:44px;height:44px;}
+.overworld-card .ud-adventure-shop-item__copy {gap:2px;}
+.overworld-card .ud-adventure-shop-item__name {font-size:22px;height:24px;}
+.overworld-card .ud-adventure-shop-item__detail {font-size:16px;height:18px;}
+@media (aspect < 0.55) {
+ .overworld-card .ud-adventure-shop__owd_message {height:130px;}
+ .overworld-card .ud-adventure-shop-item__root {height:116px;padding:12px;}
+ .overworld-card .ud-adventure-shop-item__portrait {width:70px;height:78px;}
+ .overworld-card .ud-adventure-shop-item__name {font-size:32px;height:44px;}
+ .overworld-card .ud-adventure-shop-item__detail {font-size:28px;height:36px;}
+}

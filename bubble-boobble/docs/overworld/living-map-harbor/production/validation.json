@@ -1,0 +1,97 @@
+{
+  "t0": {
+    "ok": true,
+    "runtimes": {
+      "v8": {
+        "cases": 511,
+        "passed": 511
+      },
+      "hermes": {
+        "cases": 511,
+        "passed": 511
+      }
+    },
+    "mismatches": []
+  },
+  "check": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "typecheck",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true,
+        "warning": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "views",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "ui nodes",
+        "ok": true,
+        "warning": false
+      }
+    ]
+  },
+  "art": {
+    "sprites": 146,
+    "basePaintingHashesPreserved": 5,
+    "registrationsPreserved": 5
+  },
+  "physicalPhoneTest": false,
+  "livingMapRender": {
+    "ok": true,
+    "cases": [
+      {
+        "name": "living overworld effects advance while the player stands still on phone low",
+        "ok": true,
+        "steps": 1123,
+        "shots": 30
+      }
+    ],
+    "goldensUpdatedDuringFinalRun": false,
+    "memoryClass": "phone-low"
+  },
+  "preservationVerifier": "node tools/overworld/approval/verify-map-preservation.mjs",
+  "assetVerifier": "python3 tools/overworld/verify-living-art.py"
+}

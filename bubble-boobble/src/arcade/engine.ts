@@ -1,5 +1,5 @@
 import { encounterById, availableEncounter } from '../overworld/content';
-import { adventureForProfile } from '../overworld/progression';
+import { adventureForProfile, adventurePowerShop } from '../overworld/progression';
 import { cartoonFlowStartsRun } from '../cartoon/flow-timing';
 import { partyRanking } from './party-config';
 import { partyPads, reducePartyPadInput, readPartyAction, applyPartyAction } from './party-input';
@@ -32,7 +32,11 @@ export const ArcadeStep=defineSystem({
         if(encounter&&progress&&availableEncounter(encounter.id,progress)&&progress.pending&&progress.pending.id===request.attemptId&&progress.pending.encounterId===encounter.id){
           const level=createAdventureLevel(encounter.level);
           if(encounter.trial)level.enemies=level.enemies.slice(0,3);
-          const game=createGame([level],1,1);if(encounter.trial)game.Players[0]!.Lives=1;current={active:true,mode:'adventure-encounter',game};session.set(current);
+          const game=createGame([level],1,1);
+          // The receipt captures this loadout; granting a starting flag is not an item pickup.
+          const startingPower=adventurePowerShop.find(item=>item.id===progress.pending!.startingPower);
+          if(startingPower)game.Players[0]!.Power[startingPower.power]=true;
+          if(encounter.trial)game.Players[0]!.Lives=1;current={active:true,mode:'adventure-encounter',game};session.set(current);
         }
       }else if(request.action==='start'||request.action==='party'||request.action==='playtest'){
         const custom=request.action==='playtest'&&request.customLevel;

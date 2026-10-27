@@ -1,0 +1,9 @@
+guid = "a1c888ea-04e4-526f-9b65-1c2de861d4f1"
+importer = "texture"
+[settings]
+kind = "sprite"
+atlas = "overworld-living-details-1"
+compression = "astc6x6"
+max_size = 128
+trim = false
+filter = "linear"

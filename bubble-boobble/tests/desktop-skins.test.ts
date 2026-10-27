@@ -52,7 +52,7 @@ worldTest('desktop skins preserve v1 green and blue saves and per-profile red ye
   expect(loaded.active).toBe(0);
   expect({...loaded.profiles[0]!,avatar:'blue'}).toEqual(legacy.profiles[0]);
   expect(loaded.settings).toEqual(legacy.settings);
-  expect(desktopSave.store(loaded).v).toBe(2);
+  expect(desktopSave.store(loaded).v).toBe(3);
 }, {scene});
 
 worldTest('desktop skins reject unknown saved avatars without silently replacing profiles', () => {
