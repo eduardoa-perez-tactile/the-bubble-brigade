@@ -22,7 +22,7 @@ export function registration(map){
  };
 }
 const manifest=JSON.parse(await readFile(manifestPath,'utf8'));
-const failures=[],acceptedInteractionChanges=[];
+const failures=[],acceptedInteractionChanges=[],acceptedResidentAnchorChanges=[];
 for(const district of manifest.districts){
  const png=await readFile(path.join(project,district.painting.path));
  if(digest(png)!==district.painting.sha256)failures.push(`${district.id}: accepted painting bytes changed`);
@@ -38,8 +38,20 @@ for(const district of manifest.districts){
    if(allowed)acceptedInteractionChanges.push(allowed);else failures.push(`${district.id} ${poi.kind}: unrecorded interaction-radius change`);
   }
  }
- if(JSON.stringify(registration(map))!==JSON.stringify(district.registration))failures.push(`${district.id}: map transform, spawn, layer placement or existing destination registration changed`);
+ const current=registration(map);
+ // Only explicitly recorded guide relocations can differ from the frozen
+ // baseline. Encounter, shop and other destination coordinates remain exact.
+ for(const change of manifest.allowedResidentAnchorChanges??[]){
+  if(change.districtId!==district.id||change.kind!=='guide')continue;
+  const before=district.registration.pois.find(p=>p.kind==='guide');
+  const after=current.pois.find(p=>p.kind==='guide');
+  if(before&&after&&before.x===change.from.x&&before.y===change.from.y&&after.x===change.to.x&&after.y===change.to.y){
+   acceptedResidentAnchorChanges.push(change);
+   after.x=before.x;after.y=before.y;
+  }
+ }
+ if(JSON.stringify(current)!==JSON.stringify(district.registration))failures.push(`${district.id}: map transform, spawn, layer placement or existing destination registration changed`);
 }
-const result={ok:failures.length===0,paintingsChecked:manifest.districts.length,registrationChecked:manifest.districts.length,collisionPolygonsFrozen:false,acceptedInteractionChanges,failures};
+const result={ok:failures.length===0,paintingsChecked:manifest.districts.length,registrationChecked:manifest.districts.length,collisionPolygonsFrozen:false,acceptedInteractionChanges,acceptedResidentAnchorChanges,failures};
 console.log(JSON.stringify(result,null,2));
 if(failures.length)process.exitCode=1;

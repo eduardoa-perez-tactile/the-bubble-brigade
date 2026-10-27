@@ -1434,8 +1434,8 @@ export const district5Map:SourceMap={
   },
   {
    "kind": "guide",
-   "x": 583.043,
-   "y": 1224.88,
+   "x": 600.191,
+   "y": 1273.876,
    "label": "Works Guide"
   },
   {

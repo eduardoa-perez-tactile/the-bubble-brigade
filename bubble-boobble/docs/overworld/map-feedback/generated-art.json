@@ -1,0 +1,72 @@
+{
+  "tool": "built-in image_gen",
+  "visualAuthority": "Shipped game assets; the user explicitly superseded the older art guide.",
+  "markers": {
+    "approval": "User approved after seeing the actual in-map sample, 27 October 2026.",
+    "source": "docs/overworld/map-feedback/marker-study-shipped-style.png",
+    "prompt": "Asset: mission indicator sprite STUDY for the EXISTING Bubble Brigade game. The FOUR attached shipped-game assets are the ONLY STYLE AUTHORITY. Match their actual illustration, pen weight, softly shaded cel color, warm ivory, brass yellow, dragon green, rounded exaggerated cartoon shapes, and confident BLACK ink. Ignore all previous sample icons and old style-guide palettes. Make three small ORIGINAL GAME SPRITES, arranged horizontally in three equal square transparent slots: (1) an AVAILABLE exclamation mark drawn like a piece of the game's attached TITLE LETTERING: warm ivory face, bold black ink, short scarlet offset cel shadow, rounded lively old-cartoon punctuation, NOT a sans-serif geometric blue !; (2) a LOCKED rounded BRASS PADLOCK painted like the attached ALARM CLOCK item, the same warm golden metal, modest hand-drawn shadow shapes, bold black pen, simple big keyhole, no photoreal chrome; (3) a CLEARED green check brushstroke with rounded confident silhouette, softly shaded cel green matching the attached DRAGON, bold black contour like its hands and feet. These must look like little inked game drawings cut from the same original sprite sheet as the attached candy and clock, not interface buttons, vector pictograms, modern mobile-game icons, emoji or die-cut stickers. NO white/cream outer halo or backing plate around any icon. No circle, label, panel, ticket, frame, flags, glitter or glow. EXACTLY three symbols, clean genuine transparent alpha around them, no paper or rectangular background. All three have equal perceived height and plentiful transparent padding. Finished warm cartoon illustration with the existing game's outline and color language. They will be shown as small 24pixel symbols ABOVE existing mission doorways in a painted world; draw for that tiny scale. Do not reproduce any words from the title or the reference characters or objects themselves; reference them for visual language only.",
+    "styleReferences": [
+      "assets/cartoon/menu/logo.png",
+      "assets/cartoon/menu/greeting/04.png",
+      "assets/cartoon/frames/item/clock.png",
+      "assets/cartoon/frames/item/pink_candy.png"
+    ],
+    "normalization": {
+      "skill": "game-studio:sprite-pipeline",
+      "script": "normalize_sprite_strip.py",
+      "frames": 3,
+      "frameSize": 96,
+      "alphaThreshold": 64,
+      "sharedScale": true,
+      "anchor": "bottom-center",
+      "sourceColumnCuts": [
+        0,
+        738,
+        1363,
+        2172
+      ],
+      "equalSlotWidth": 809
+    }
+  },
+  "curtain": {
+    "prompt": "Use case: background-extraction. EDIT THIS EXACT CURTAIN IMAGE, preserve its existing red velvet cloth, all folds and colors, and the painted scalloped gold bottom hem. The user wants ONLY the black/brown background strip BELOW the lowest edge of the gold hem REMOVED to genuine TRANSPARENT ALPHA. Closely trace the scalloped lower edge of the gold fabric. Everything ABOVE that edge stays fully opaque and visually unchanged, including dark red fabric shadows. Everything BELOW that gold fabric edge must have alpha zero, including the ugly black line running along the bottom. Do not trim or crop the canvas. Keep the same full rectangular composition and original size/aspect, with cloth reaching top/left/right edges. No white outline, no new shadow, no black fringe, no glow, no replacement backdrop. Only extract the curtain from the narrow dark area underneath; no redraw, no new folds, no added objects/text.",
+    "opaqueSource": "tools/menu-feedback/curtain-opaque-source.png",
+    "cutoutSource": "tools/menu-feedback/curtain-alpha-cutout.png",
+    "importer": "tools/menu-feedback/import-curtain.py",
+    "clothRgbPreserved": true
+  },
+  "importedAssets": [
+    {
+      "path": "assets/overworld-living/common/markers/available.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "e0eaac05d62726ce35784009e7cc487e33f419abde7422aae31461b615a2454c"
+    },
+    {
+      "path": "assets/overworld-living/common/markers/locked.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "0e950ddf3182f925c10682a8fa5b733e1cd668e31a517be65b79a63c2c605eb7"
+    },
+    {
+      "path": "assets/overworld-living/common/markers/cleared.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "adaaeb7c2e489e9b3008534f25ca1a0f08ea62bbc7798bc6e90ef743151b96fc"
+    },
+    {
+      "path": "assets/cartoon/menu/curtain.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "b340c142a910c95fe59de902841537610455acc9698e73789b23b524564324b5"
+    }
+  ]
+}

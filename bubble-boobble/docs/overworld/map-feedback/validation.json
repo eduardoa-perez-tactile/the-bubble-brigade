@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-27",
+  "engineOnly": true,
+  "t0": {
+    "ok": true,
+    "runtimes": {
+      "v8": {
+        "cases": 515,
+        "passed": 515
+      },
+      "hermes": {
+        "cases": 515,
+        "passed": 515
+      }
+    },
+    "mismatches": []
+  },
+  "check": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "typecheck",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true,
+        "warning": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "views",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "ui nodes",
+        "ok": true,
+        "warning": false
+      }
+    ]
+  },
+  "assetMemory": {
+    "ok": true,
+    "platform": "android",
+    "device": "phone-low",
+    "budgets": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 40059260,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 40059260,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 40059260,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 40059260,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 1004544,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 944896,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 944080,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 944336,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 944896,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 2023024,
+        "budget": 2097152,
+        "over": false
+      }
+    ]
+  },
+  "localHarborPerformance": {
+    "steps": 600,
+    "frames": 36,
+    "stepP95Ms": 0.106,
+    "presentationP95Ms": 0.433958,
+    "jsHeapMiB": 30.31855010986328,
+    "hitchSteps": 0,
+    "gcPausesOver4ms": 0,
+    "drawCalls": 14,
+    "particles": 0,
+    "previousCheckpoint": {
+      "stepP95Ms": 0.0995,
+      "presentationP95Ms": 0.429459,
+      "drawCalls": 10
+    },
+    "limitations": "Relative paused release-host sample, not physical-phone FPS, GPU timing, application RSS or thermals."
+  },
+  "preservation": {
+    "basePaintings": 5,
+    "exactMissionAnchors": 25,
+    "guideAnchorExceptions": 4
+  },
+  "assetHashes": {
+    "verifiedSprites": 150,
+    "transparentCurtainBottom": true
+  },
+  "legacyRenderSuite": "Not re-run in full for this correction. Known prior legacy render/structural failures remain documented in the previous rollout; unrelated baselines were not refreshed."
+}

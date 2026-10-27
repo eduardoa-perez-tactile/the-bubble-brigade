@@ -6,9 +6,9 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
   input.view(360,880,1);
   await step(3);
   render.stats({width:360,height:880});
-  await ui.press('cartoon-main.menu');
-  await step(1);
+  input.pointer('down',180,440);await step(1);input.pointer('up',180,440);await step(1);
   expect(desktopState.get().screen).toBe('menu');
+  while(desktopState.get().titleRevealActive)await step(1);await step(1);
   for (const [width,height] of [[360,880],[768,1024],[1680,720]] as const) {
     input.view(width,height,1);
     input.emit(DesktopIntent,{action:'menu'});

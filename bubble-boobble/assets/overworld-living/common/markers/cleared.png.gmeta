@@ -1,0 +1,9 @@
+guid = "d38b706f-054a-5a70-aeee-ff35dd26794b"
+importer = "texture"
+[settings]
+kind = "sprite"
+atlas = "overworld-living-markers"
+filter = "linear"
+compression = "astc6x6"
+trim = false
+max_size = 128

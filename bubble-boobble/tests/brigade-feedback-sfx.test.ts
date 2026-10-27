@@ -4,6 +4,7 @@ import {createPartyGame} from '../src/arcade/party';
 import {createBoss} from '../src/arcade/boss';
 import {advanceFeel,emptyFeel,packFeel,unpackFeel,deriveFeelAudio} from '../src/arcade/juice';
 import {DesktopIntent} from '../src/schema.gen';
+import {desktopState,TITLE_REVEAL_STEPS} from '../src/desktop/state';
 
 const scene='scenes/cartoon.scene.json';
 const party=()=>createPartyGame(campaign,42,Array.from({length:6},()=> 'human' as const),10,'cartoon');
@@ -153,6 +154,9 @@ worldTest('brigade feedback classic ready countdown follows visible cover timeli
 worldTest('brigade feedback keyboard selection and zero sound settings do not produce idle or muted UI noise',async({step,input,audio})=>{
  await step(8);
  input.key(38,true);input.key(38,false);await step(1);
+ // Keyboard navigation belongs to the revealed menu, after its opening input is consumed.
+ for(let frame=0;frame<TITLE_REVEAL_STEPS+3&&desktopState.get().titleRevealActive;frame++)await step(1);
+ await step(1);expect(desktopState.get().titleRevealActive).toBe(false);expect(desktopState.get().menuInputArmed).toBe(true);
  let cursor=audio.sounds().length;
  input.key(53,true);await step(1);
  expect(audio.sounds().slice(cursor).filter(s=>s.sound==='audio/brigade/sfx/ui-navigate').length).toBe(1);

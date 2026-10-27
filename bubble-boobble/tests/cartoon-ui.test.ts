@@ -46,6 +46,9 @@ renderTest('original arcade scene retains the pixel HUD', async ({ input, step, 
 renderTest('cartoon title branding preserves menu actions', async ({ input, step, render, ui, loaded }) => {
   input.view(768, 720, 1);
   await step(5);
+  // Branding appears on the prepared menu after the cloth, never on the opening curtain.
+  input.key(38,true);await step(1);input.key(38,false);
+  while(desktopState.get().titleRevealActive)await step(1);await step(1);
   // This detects a missing font, which rect bounds cannot establish.
   const titleInk = render.probe({ width: 768, height: 720, regions: [[260,100,248,78]] }).regions[0]!;
   expect(titleInk.min[0]!).toBeLessThan(120);

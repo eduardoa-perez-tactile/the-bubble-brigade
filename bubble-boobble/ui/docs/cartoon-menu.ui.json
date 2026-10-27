@@ -12,13 +12,14 @@
         "w": "100%",
         "h": "100%",
         "pad": 0,
-        "clip": true,
+        "clip": false,
         "bg": "#102d39",
         "image": "cartoon/menu/harbor",
         "fit": "cover",
         "brightness": 0.82
       },
       "children": [
+        "cm_title_curtain",
         "cm_composition",
         "cm_hint",
         "cm_status",
@@ -476,6 +477,33 @@
       "children": [
         "cm_quit"
       ]
+    },
+    "cm_title_curtain": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "image": "cartoon/menu/curtain",
+        "w": "100%",
+        "h": "104%",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      },
+      "show": "titleMode",
+      "point": "cloth"
     }
   },
   "view": {
@@ -566,6 +594,9 @@
                 0.5,
                 0
               ]
+            },
+            "cm_composition": {
+              "hide": true
             }
           }
         }

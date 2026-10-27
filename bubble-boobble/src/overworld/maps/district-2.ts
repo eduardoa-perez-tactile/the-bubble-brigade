@@ -690,8 +690,8 @@ export const district2Map:SourceMap={
   },
   {
    "kind": "guide",
-   "x": 661.435,
-   "y": 1249.378,
+   "x": 734.928,
+   "y": 1255.502,
    "label": "Garden Guide"
   },
   {
