@@ -8,11 +8,26 @@
   "nodes": {
     "root": {
       "type": "element",
-      "name": "Cartoon menu",
       "style": {
         "w": "100%",
         "h": "100%",
         "pad": 0,
+        "clip": true,
+        "bg": "#102d39",
+        "image": "cartoon/menu/harbor",
+        "fit": "cover",
+        "brightness": 0.82
+      },
+      "children": [
+        "cm_composition",
+        "cm_hint",
+        "cm_status",
+        "cm_progress"
+      ]
+    },
+    "cm_composition": {
+      "type": "element",
+      "style": {
         "position": "anchored",
         "anchor": [
           0.5,
@@ -22,459 +37,445 @@
           0,
           0
         ],
-        "clip": true,
-        "bg": "#e8dbbb",
-        "image": "adventure/tugboat",
-        "fit": "fill"
+        "w": "100%",
+        "h": 720,
+        "pad": 0
       },
       "children": [
-        "cm_hint",
-        "cm_status",
-        "cm_composition"
+        "cm_spotlight",
+        "cm_pool",
+        "cm_atmosphere",
+        "cm_illustrated_logo",
+        "cm_mascot_left",
+        "cm_start_slot",
+        "cm_arcade_slot",
+        "cm_settings_slot",
+        "cm_quit_slot",
+        "cm_prompt"
       ]
     },
-    "cm_title_card": {
-      "type": "element",
-      "name": "Element",
-      "children": [
-        "cm_the",
-        "cm_bubble",
-        "cm_brigade"
-      ],
+    "cm_spotlight": {
+      "type": "icon",
       "style": {
-        "pad": 0,
         "position": "anchored",
         "anchor": [
-          0.5,
+          0.65,
           0
         ],
         "offset": [
           0,
-          44
+          -90
         ],
-        "w": 600,
-        "h": 228,
-        "bg": "#00000000",
-        "radius": 0,
-        "hide": true
+        "w": 540,
+        "h": 680,
+        "pad": 0,
+        "opacity": 0.9,
+        "pivot": [
+          0.5,
+          0
+        ]
       },
+      "image": "cartoon/menu/spotlight",
+      "point": "spotlight"
+    },
+    "cm_pool": {
+      "type": "icon",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.635,
+          0
+        ],
+        "offset": [
+          0,
+          560
+        ],
+        "w": 360,
+        "h": 65,
+        "pad": 0,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "image": "cartoon/menu/light-pool"
+    },
+    "cm_atmosphere": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.65,
+          0
+        ],
+        "offset": [
+          0,
+          160
+        ],
+        "w": 300,
+        "h": 420,
+        "pad": 0,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "children": [
+        "cm_dust"
+      ]
+    },
+    "cm_dust": {
+      "type": "codeArea",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
+      "key": "atmosphere"
+    },
+    "cm_illustrated_logo": {
+      "type": "icon",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.3,
+          0
+        ],
+        "offset": [
+          0,
+          68
+        ],
+        "w": 374,
+        "h": 249,
+        "pad": 0,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "image": "cartoon/menu/logo",
       "point": "title-card"
     },
-    "cm_the": {
-      "type": "label",
-      "name": "Label",
-      "text": "THE",
+    "cm_mascot_left": {
+      "type": "element",
       "style": {
         "position": "anchored",
         "anchor": [
-          0.5,
+          0.635,
           0
         ],
         "offset": [
           0,
-          20
+          294
         ],
-        "w": 540,
-        "h": 28,
-        "fontSize": 20,
-        "fitMin": 16,
-        "textAlign": "center",
-        "weight": 800,
-        "color": "#30271e"
-      }
+        "w": 300,
+        "h": 300,
+        "pad": 0,
+        "pivot": [
+          0.5,
+          0
+        ]
+      },
+      "children": [
+        "cm_cast"
+      ]
     },
-    "cm_bubble": {
-      "type": "label",
-      "name": "Label",
-      "text": "BUBBLE",
+    "cm_cast": {
+      "type": "codeArea",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          0,
-          52
-        ],
-        "w": 540,
-        "h": 78,
-        "fontSize": 72,
-        "fitMin": 44,
-        "textAlign": "center",
-        "weight": 800,
-        "color": "#30271e"
-      }
-    },
-    "cm_brigade": {
-      "type": "label",
-      "name": "Label",
-      "text": "BRIGADE",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          0,
-          130
-        ],
-        "w": 540,
-        "h": 78,
-        "fontSize": 64,
-        "fitMin": 44,
-        "textAlign": "center",
-        "weight": 800,
-        "color": "#a6472d"
-      }
+        "w": "100%",
+        "h": "100%"
+      },
+      "key": "greeter",
+      "point": "greeter"
     },
     "cm_start": {
       "type": "use",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
       "doc": "cartoon-button",
       "key": "choose-mode",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "w": 332,
-        "h": 96,
-        "offset": [
-          -135,
-          260
-        ]
-      },
       "props": {
         "label": {
           "property": "firstLabel"
         },
         "selected": {
           "property": "startSelected"
-        }
-      }
-    },
-    "cm_settings": {
-      "type": "use",
-      "doc": "cartoon-button",
-      "key": "settings",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "w": 332,
-        "h": 96,
-        "offset": [
-          -135,
-          476
-        ]
-      },
-      "props": {
-        "label": "OPTIONS",
-        "selected": {
-          "property": "settingsSelected"
-        }
-      }
-    },
-    "cm_quit": {
-      "type": "use",
-      "doc": "cartoon-button",
-      "key": "quit",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "w": 332,
-        "h": 96,
-        "offset": [
-          -135,
-          584
-        ]
-      },
-      "props": {
-        "label": {
-          "property": "thirdLabel"
         },
-        "selected": {
-          "property": "quitSelected"
+        "hasArt": {
+          "property": "firstUseArt"
+        },
+        "art": {
+          "property": "firstArt"
+        },
+        "compact": {
+          "property": "narrow"
         }
       }
-    },
-    "cm_tagline": {
-      "type": "label",
-      "name": "Label",
-      "text": "TEN DRAGONS. ONE BUBBLY ADVENTURE.",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          0,
-          416
-        ],
-        "w": 560,
-        "h": 26,
-        "fontSize": 15,
-        "fitMin": 12,
-        "textAlign": "center",
-        "weight": 800,
-        "color": "#30271e"
-      },
-      "show": "titleMode"
-    },
-    "cm_prompt": {
-      "type": "element",
-      "name": "Element",
-      "children": [
-        "cm_prompt_text",
-        "cm_title_start"
-      ],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          0,
-          486
-        ],
-        "w": 360,
-        "h": 96
-      },
-      "show": "titleMode"
-    },
-    "cm_prompt_text": {
-      "type": "label",
-      "name": "Label",
-      "text": "PRESS ENTER TO START",
-      "style": {
-        "w": 360,
-        "h": 32,
-        "fontSize": 25,
-        "fitMin": 16,
-        "textAlign": "center",
-        "weight": 800,
-        "color": "#30271e",
-        "hide": true
-      },
-      "show": "promptVisible"
-    },
-    "cm_hint": {
-      "type": "label",
-      "name": "Label",
-      "text": "ARROWS TO SELECT   ENTER TO CONFIRM",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          1
-        ],
-        "offset": [
-          -135,
-          -35
-        ],
-        "w": 430,
-        "h": 20,
-        "fontSize": 13,
-        "fitMin": 9,
-        "textAlign": "center",
-        "color": "#30271e"
-      }
-    },
-    "cm_status": {
-      "type": "label",
-      "name": "Label",
-      "text": "{status}",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          1
-        ],
-        "offset": [
-          0,
-          -4
-        ],
-        "w": 680,
-        "h": 16,
-        "fontSize": 11,
-        "fitMin": 8,
-        "textAlign": "center",
-        "color": "#30271e"
-      },
-      "show": "showStatus"
-    },
-    "cm_billing": {
-      "type": "label",
-      "name": "Label",
-      "text": "A BUBBLE-BLOWING CARTOON CAPER",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          -135,
-          230
-        ],
-        "w": 400,
-        "h": 22,
-        "fontSize": 12,
-        "textAlign": "center",
-        "color": "#746047"
-      }
-    },
-    "cm_mascot_left": {
-      "type": "icon",
-      "name": "Icon",
-      "image": "cartoon/frames/dragon/green/idle-0",
-      "style": {
-        "size": 32,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          235,
-          400
-        ],
-        "w": 220,
-        "h": 220
-      }
-    },
-    "cm_mascot_right": {
-      "type": "icon",
-      "name": "Icon",
-      "image": "cartoon/frames/dragon/blue/idle-0",
-      "style": {
-        "size": 32,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          256,
-          438
-        ],
-        "w": 168,
-        "h": 168,
-        "hide": true
-      }
-    },
-    "cm_illustrated_logo": {
-      "type": "icon",
-      "name": "The Bubble Brigade illustrated title",
-      "image": "cartoon/ui/title-logo",
-      "style": {
-        "size": 32,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0
-        ],
-        "offset": [
-          -135,
-          10
-        ],
-        "w": 340,
-        "h": 226
-      }
-    },
-    "cm_composition": {
-      "type": "element",
-      "name": "Element",
-      "children": [
-        "cm_menu_wash",
-        "cm_title_card",
-        "cm_illustrated_logo",
-        "cm_start",
-        "cm_settings",
-        "cm_quit",
-        "cm_tagline",
-        "cm_prompt",
-        "cm_billing",
-        "cm_mascot_left",
-        "cm_mascot_right",
-        "cm_arcade"
-      ],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "w": 768,
-        "h": 720
-      }
-    },
-    "cm_title_start": {
-      "type": "use",
-      "doc": "cartoon-button",
-      "key": "menu",
-      "style": {
-        "w": 360,
-        "h": 96
-      },
-      "props": {
-        "label": "PRESS ENTER OR TAP",
-        "selected": false
-      }
-    },
-    "cm_menu_wash": {
-      "type": "element",
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "offset": [
-          -135,
-          0
-        ],
-        "w": 460,
-        "h": 720,
-        "bg": "#f1e3bfe8"
-      },
-      "children": []
     },
     "cm_arcade": {
       "type": "use",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
       "doc": "cartoon-button",
       "key": "adventure-arcade",
       "props": {
         "label": "ARCADE MODES",
         "selected": {
           "property": "arcadeSelected"
+        },
+        "hasArt": true,
+        "art": "cartoon/menu/type/arcade",
+        "compact": {
+          "property": "narrow"
         }
+      }
+    },
+    "cm_settings": {
+      "type": "use",
+      "style": {
+        "w": "100%",
+        "h": "100%"
       },
+      "doc": "cartoon-button",
+      "key": "settings",
+      "props": {
+        "label": "OPTIONS",
+        "selected": {
+          "property": "settingsSelected"
+        },
+        "hasArt": true,
+        "art": "cartoon/menu/type/options",
+        "compact": {
+          "property": "narrow"
+        }
+      }
+    },
+    "cm_quit": {
+      "type": "use",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
+      "doc": "cartoon-button",
+      "key": "quit",
+      "props": {
+        "label": {
+          "property": "thirdLabel"
+        },
+        "selected": {
+          "property": "quitSelected"
+        },
+        "hasArt": {
+          "property": "thirdUseArt"
+        },
+        "art": {
+          "property": "thirdArt"
+        },
+        "compact": {
+          "property": "narrow"
+        }
+      }
+    },
+    "cm_prompt": {
+      "type": "element",
       "style": {
         "position": "anchored",
         "anchor": [
           0.5,
           0
         ],
-        "w": 332,
-        "h": 96,
         "offset": [
-          -135,
-          368
-        ]
+          0,
+          606
+        ],
+        "w": 440,
+        "h": 96,
+        "pad": 0
+      },
+      "children": [
+        "cm_title_start"
+      ],
+      "show": "titleMode"
+    },
+    "cm_title_start": {
+      "type": "use",
+      "style": {
+        "w": 440,
+        "h": 96
+      },
+      "doc": "cartoon-button",
+      "key": "menu",
+      "props": {
+        "label": "PRESS ENTER OR TAP",
+        "selected": false
       }
+    },
+    "cm_hint": {
+      "type": "label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "offset": [
+          -36,
+          -26
+        ],
+        "w": 450,
+        "h": 36,
+        "pad": 0,
+        "fontSize": 22,
+        "fitMin": 10,
+        "textAlign": "right",
+        "color": "#f3e3be"
+      },
+      "text": "ENTER CONFIRM   ESC BACK"
+    },
+    "cm_progress": {
+      "type": "label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "offset": [
+          36,
+          -26
+        ],
+        "w": 350,
+        "h": 36,
+        "pad": 0,
+        "fontSize": 22,
+        "fitMin": 10,
+        "textAlign": "left",
+        "color": "#f3e3be"
+      },
+      "text": "{progress}"
+    },
+    "cm_status": {
+      "type": "label",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          -45
+        ],
+        "w": 600,
+        "h": 24,
+        "pad": 0,
+        "fontSize": 13,
+        "fitMin": 10,
+        "textAlign": "center",
+        "color": "#f3e3be"
+      },
+      "text": "{status}",
+      "show": "showStatus"
+    },
+    "cm_start_slot": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "offset": [
+          0,
+          318
+        ],
+        "w": 390,
+        "h": 48,
+        "pad": 0,
+        "pivot": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "cm_start"
+      ]
+    },
+    "cm_arcade_slot": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "offset": [
+          0,
+          366
+        ],
+        "w": 390,
+        "h": 48,
+        "pad": 0,
+        "pivot": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "cm_arcade"
+      ]
+    },
+    "cm_settings_slot": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "offset": [
+          0,
+          414
+        ],
+        "w": 390,
+        "h": 48,
+        "pad": 0,
+        "pivot": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "cm_settings"
+      ]
+    },
+    "cm_quit_slot": {
+      "type": "element",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "offset": [
+          0,
+          462
+        ],
+        "w": 390,
+        "h": 48,
+        "pad": 0,
+        "pivot": [
+          0,
+          0
+        ]
+      },
+      "children": [
+        "cm_quit"
+      ]
     }
   },
   "view": {
@@ -505,37 +506,66 @@
             "cm_start": {
               "hide": true
             },
+            "cm_arcade": {
+              "hide": true
+            },
             "cm_settings": {
               "hide": true
             },
             "cm_quit": {
               "hide": true
             },
-            "cm_illustrated_logo": {
-              "w": 600,
-              "h": 400,
-              "offset": [
-                0,
-                0
-              ]
-            },
-            "cm_billing": {
+            "cm_progress": {
               "hide": true
-            },
-            "cm_mascot_left": {
-              "hide": false
-            },
-            "cm_mascot_right": {
-              "hide": false
             },
             "cm_hint": {
               "hide": true
             },
-            "cm_arcade": {
-              "hide": true
+            "cm_illustrated_logo": {
+              "w": 420,
+              "h": 280,
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                10
+              ]
             },
-            "cm_menu_wash": {
-              "hide": true
+            "cm_mascot_left": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                310
+              ],
+              "w": 280,
+              "h": 280
+            },
+            "cm_spotlight": {
+              "anchor": [
+                0.5,
+                0
+              ]
+            },
+            "cm_pool": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                560
+              ]
+            },
+            "cm_atmosphere": {
+              "anchor": [
+                0.5,
+                0
+              ]
             }
           }
         }
@@ -564,6 +594,174 @@
     "arcadeSelected": {
       "type": "yesno",
       "default": false
+    },
+    "progress": {
+      "type": "text",
+      "default": "HARBOR · 0 / 5 CLEARED"
+    },
+    "firstUseArt": {
+      "type": "yesno",
+      "default": true
+    },
+    "thirdUseArt": {
+      "type": "yesno",
+      "default": true
+    },
+    "firstArt": {
+      "type": "image",
+      "default": "cartoon/menu/type/continue"
+    },
+    "thirdArt": {
+      "type": "image",
+      "default": "cartoon/menu/type/quit"
+    },
+    "narrow": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cm_composition": {
+              "h": 1000
+            },
+            "cm_illustrated_logo": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                0
+              ],
+              "w": 450,
+              "h": 300
+            },
+            "cm_mascot_left": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                310
+              ],
+              "w": 270,
+              "h": 270
+            },
+            "cm_spotlight": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                0
+              ]
+            },
+            "cm_pool": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                540
+              ]
+            },
+            "cm_atmosphere": {
+              "anchor": [
+                0.5,
+                0
+              ]
+            },
+            "cm_progress": {
+              "fontSize": 26,
+              "w": 600,
+              "h": 44
+            },
+            "cm_start_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                600
+              ],
+              "w": 600,
+              "h": 96
+            },
+            "cm_arcade_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                696
+              ],
+              "w": 600,
+              "h": 96
+            },
+            "cm_settings_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                792
+              ],
+              "w": 600,
+              "h": 96
+            },
+            "cm_quit_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                888
+              ],
+              "w": 600,
+              "h": 96
+            }
+          }
+        }
+      }
+    },
+    "titleNarrow": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cm_prompt": {
+              "offset": [
+                0,
+                700
+              ]
+            }
+          }
+        }
+      }
     }
   },
   "samples": {
@@ -572,7 +770,8 @@
       "promptVisible": true
     },
     "menu": {
-      "startSelected": true
+      "startSelected": true,
+      "firstArt": "cartoon/menu/type/continue"
     }
   }
 }

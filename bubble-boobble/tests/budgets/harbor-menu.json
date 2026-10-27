@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/harbor_menu_animated_light_greeting_and_atmosphere_preserve_live_controls_across_supported_screens.greplay",
+  "structural": {
+    "drawCallsMax": 14
+  }
+}

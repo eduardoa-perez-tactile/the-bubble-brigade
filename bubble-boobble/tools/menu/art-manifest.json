@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-26",
+  "tool": "Built-in image_gen",
+  "target": "Approved dark harbor menu preview, without decorative logo bubbles",
+  "prompts": [
+    {
+      "key": "menu-backdrop",
+      "prompt": "Create the PRODUCTION BACKGROUND ONLY from this approved Bubble Brigade menu. Wide landscape 16:9. REMOVE all text, logo, UI, selection bubble, character, spotlight beam and spotlight pool. Preserve night teal harbor, warm wooden deck at bottom22%, lantern and ropes extreme left, distant sails/lighthouse at right. SIMPLIFY much further: broad matte gouache painted color masses, no fine deck scratches or individual rope fibers, no repeated tiny glints in water, no dense detailed clouds. Distant harbor cool desaturated and hazy, minimal contrast, central left75% spacious quiet deep smoky teal so cream live UI and separate bright dragon will read. Near props frame the far edges only. Selective dark ink on close props, softened lost edges in distance, no gradients that look glossy, no photorealism, no 3D. Keep a tiny warm lantern accent far left but no bright bloom. This should look like a painted theatrical stage set from an original 1930s color cartoon. No text or characters anywhere. No spotlight painted into this asset; that will be animated separately.",
+      "status": "superseded"
+    },
+    {
+      "key": "menu-logo",
+      "prompt": "Edit the supplied original game logo. Preserve the exact words THE BUBBLE BRIGADE, stacked arrangement, hand-lettered cream characters, dark ink outline and restrained red offset shadow. REMOVE ALL the iridescent decorative bubbles around the top, leaving only the lettering. Also remove diffuse glow and haze around the logo: clean crisp painted cutout edges on a genuinely TRANSPARENT background, no black matte or gradient backdrop. No new decorations, no bubbles, no changes to spelling or character shapes. Tightly framed original theatrical cel game lettering. Flat cream fill, matte ink and red shadow.",
+      "status": "selected"
+    },
+    {
+      "key": "menu-hero",
+      "prompt": "Create a production four-frame animation strip from this APPROVED original green Bubble Brigade dragon sprite. One horizontal row with exactly FOUR equal-width slots on genuinely transparent background, no scenery, no words. Preserve the source character's exact model: green rounded head and body, yellow small rounded spines, cream muzzle and belly, rosy cheek, small dark oval nose, expressive joined cartoon eyes, mitten hands and broad cream feet. Match source proportions and ink thickness; do not redesign as a taller different dinosaur. All frames face three-quarter LEFT toward a menu. Feet planted on exact same baseline, body size and position stable, equal margins in slots. Frame1: relaxed welcoming pose with near arm extended palm-up toward the left. Frame2: same pose with hand lifted slightly in greeting and tiny anticipation bend. Frame3: same pose, hand relaxed to initial angle and eyes briefly closed in friendly blink. Frame4: same pose as frame1, settled smile, no position drift. This is a restrained greet/blink animation, not walking, no floating, no movement of feet. Draw flat matte cel fills, selective clean dark warm ink, no glossy highlights or fuzzy edges. The first and last pose match for a held idle. Return the entire four-frame strip at once.",
+      "status": "superseded"
+    },
+    {
+      "key": "matched-backdrop",
+      "prompt": "Precise production layer extraction from this APPROVED menu image, whose composition must be matched exactly. Return a background-only 16:9 image at the SAME camera, same framing, same painted props in the same positions. Remove ONLY the game logo, all menu/footer lettering, the bubble cursor, the green dragon, and the diagonal spotlight beam and its ground light pool; reconstruct the obscured night harbor and deck naturally. Do not move or redesign ANY ropes, lantern, boxes, near rail, deck horizon, lighthouse, ship silhouettes, sky or palette. Keep the approved background's painterly detail; do not simplify into flat featureless blue. No UI, no text, no logos, no characters, no spotlight in this background layer. The omitted spotlight and character are separate animated layers added by the runtime. Preserve original broad painterly matte style and atmospheric distant edges.",
+      "status": "selected"
+    },
+    {
+      "key": "matched-hero",
+      "prompt": "Extract and faithfully reproduce ONLY the exact green dragon hero from the supplied approved menu, with genuinely transparent background. This character must match that specific preview 100 percent: same head, eye arrangement, short rounded muzzle, big OPEN happy smiling mouth with small visible red tongue, peach cheek, yellow rounded spines, big cream belly, cream mitten hands and feet. Same welcoming leftward extended arm with OPEN palm and clearly separated three/four rounded fingers gesturing UP toward menu, other hand on hip, same grounded wide-foot stance, same curved green tail. Do not substitute a closed-mouth idle, thumbs-up, longer snout or different proportions. Keep the expressive silhouette, flat inked cel colors and identical 3/4 LEFT facing pose. No lighting pool, shadow, background, text, logo or other object. Tight clean alpha cutout with modest transparent margin. Production matching asset.",
+      "status": "selected"
+    },
+    {
+      "key": "matched-type",
+      "prompt": "Create exact matching hand-lettered menu typography assets for this approved Bubble Brigade menu. Return one vertical sprite sheet with SIX equal-height rows separated by transparent empty space, genuinely transparent background, no scenery or panel. Left aligned words, identical scale and cream ink color in every row, matching the exact bold slightly irregular slab-serif hand-lettered original menu style in reference. Row1 CONTINUE ADVENTURE. Row2 BEGIN ADVENTURE. Row3 ARCADE MODES. Row4 OPTIONS. Row5 QUIT. Row6 HOW TO PLAY. No bullets or cursor, no other marks. All six phrases must be spelled exactly, crisp light warm cream fills, a tiny restrained darker ink edge only if in reference. Preserve character of the reference's lettering rather than substitute a generic modern font. Each row must have ample empty padding above and below so it can be sliced evenly. This is production transparent type art for six separate live menu buttons.",
+      "status": "superseded"
+    },
+    {
+      "key": "matched-focus",
+      "prompt": "Extract and faithfully reproduce ONLY the bubble focus pointer to the LEFT of CONTINUE ADVENTURE in this approved menu. Genuinely transparent background. One round iridescent painted cartoon bubble, ink outline, pale cream rim, restrained cyan pink lavender interior and one white highlight, plus the three little cream hand-drawn attention rays on its upper left. Same exact appearance as reference, no text, no logo, no other objects. Do not make the shape a thin empty circle. A clean alpha cutout production UI sprite.",
+      "status": "selected"
+    },
+    {
+      "key": "matched-type-isolated",
+      "prompt": "Remove the dark teal background from this EXACT supplied four-line menu lettering crop. This is BACKGROUND REMOVAL, NOT a typography redesign. Preserve every existing cream/gold letter shape, exact scale, spacing, serif shapes, arrangement and antialiasing. DO NOT add black outlines or logo-style thick lettering. No glow/haze, no drop shadows. Output the same four lines as in the reference with genuinely transparent background: CONTINUE ADVENTURE (gold), ARCADE MODES (cream), OPTIONS (cream), QUIT (cream). Do not change their relative positions or size; preserve the cropped composition. Remove the boat, water, bollard and all scenery behind the existing letters. Pure alpha lettering cutout.",
+      "status": "selected"
+    },
+    {
+      "key": "matched-greeting",
+      "prompt": "Use this exact supplied green dragon cutout as frame01. Generate a four-frame horizontal production sprite strip on genuinely TRANSPARENT background, exactly4 equal slots. This is a minimal idle animation of the APPROVED pose, not a character redesign. Same open happy smiling mouth and visible red tongue throughout, same round muzzle and joined cartoon eyes, same extended LEFT open palm, other hand on hip, same yellowspines, cream belly and broad feet. Frame01 identical to reference. Frame02 only left palm lifts a tiny amount and body anticipates by2percent, keepfeet stationary. Frame03 friendly blink with eyelids closed, no other anatomy changes. Frame04 identical to frame01. All feet on exactly same baseline, same shared scale and position, large transparent margins, no scenery, words, shadows orspotlight. All frames in one row at once. Flat cel artwork with exact shape and proportions of reference. Do not change smile into closed mouth or hand into thumbs-up.",
+      "status": "selected"
+    }
+  ],
+  "notes": [
+    "Live controls retain state-derived Begin/Continue and district completion.",
+    "Camera and layout referenced to 1672x941 approved preview.",
+    "Background, logo, character, lettering, focus bubble, spotlight and atmosphere are independent runtime layers."
+  ],
+  "shippingFiles": [
+    {
+      "path": "assets/cartoon/menu/atmosphere.vfx.json",
+      "sha256": "5c0fcf504d7bbfa427bfa28d7305ee753c1966ff2065987ef50f78856116e309"
+    },
+    {
+      "path": "assets/cartoon/menu/focus-bubble.png",
+      "sha256": "6f8ac333c8b48295545cdecc6f68224d3709a0ace5b412b9ed09bf25f248466f"
+    },
+    {
+      "path": "assets/cartoon/menu/greeting/01.png",
+      "sha256": "b1a96f0acf84c1a9d9327c85257406078eae9a7224100ef810008f3eaa71fac0"
+    },
+    {
+      "path": "assets/cartoon/menu/greeting/02.png",
+      "sha256": "17d9eb3d0831aab78c0b27531d697f6afd6c8f3a8a78719da13d21941f0da09c"
+    },
+    {
+      "path": "assets/cartoon/menu/greeting/03.png",
+      "sha256": "698553de5e4db457989138fe8830111ed849b8956c7d6c023ed48b73b55e9491"
+    },
+    {
+      "path": "assets/cartoon/menu/greeting/04.png",
+      "sha256": "b1a96f0acf84c1a9d9327c85257406078eae9a7224100ef810008f3eaa71fac0"
+    },
+    {
+      "path": "assets/cartoon/menu/greeting.clip2d.json",
+      "sha256": "911522e4ce8ede94409f4bab05c3bc487d75f310e890592008d17d98b579a11c"
+    },
+    {
+      "path": "assets/cartoon/menu/harbor.png",
+      "sha256": "21b082dda07e016c45b805fbd0802ab789a7eed533f300acc1e0af87a8fee7fa"
+    },
+    {
+      "path": "assets/cartoon/menu/light-pool.png",
+      "sha256": "692eea6f67e336ba8550ae0555ffac7d08556f508bb554c567dda87de2481b99"
+    },
+    {
+      "path": "assets/cartoon/menu/logo.png",
+      "sha256": "c7f12a00bd563b5fa4d4a63c1cf307a0dace5dd0227d6d89ca80962a66e645bc"
+    },
+    {
+      "path": "assets/cartoon/menu/spotlight.png",
+      "sha256": "10d061e336929fb578339d9efeb8ec1a66689ab1df800f3227bc230a7b156643"
+    },
+    {
+      "path": "assets/cartoon/menu/type/arcade.png",
+      "sha256": "3e6cb2a24858c98022b1286c6be067536c784f8a019da5b5f98064e633a71731"
+    },
+    {
+      "path": "assets/cartoon/menu/type/continue.png",
+      "sha256": "78f9d40d56de9e1efd4fb6bf94038aa116063650a172765b7ddb110dac2c4ed4"
+    },
+    {
+      "path": "assets/cartoon/menu/type/options.png",
+      "sha256": "680d86465e63d29ae95033a50301fe0bd76df1a9d09abb3eba663791b16e4440"
+    },
+    {
+      "path": "assets/cartoon/menu/type/quit.png",
+      "sha256": "ec7a2fa62312fff7f9469e9ef144741d9f9aa71dccbc1bfd6789e568c8bc636c"
+    }
+  ],
+  "comparisonIteration": "../../docs/menu-revamp-2026-10-26/comparison/iteration-art.json"
+}

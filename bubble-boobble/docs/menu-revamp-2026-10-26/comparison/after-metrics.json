@@ -1,0 +1,54 @@
+{
+  "label": "after",
+  "referenceSize": [
+    1672,
+    941
+  ],
+  "candidateOriginalSize": [
+    3344,
+    1882
+  ],
+  "comparison": "Candidate resized to reference with Lanczos; fixed initial animation phase; no image alignment or color correction.",
+  "meanAbsoluteRGBError_0_to_255": 15.52,
+  "rootMeanSquareRGBError_0_to_255": 39.7206,
+  "grayscaleBlockSSIM_0_to_1": 0.833472,
+  "regions": {
+    "logo": {
+      "referenceBox": [
+        275,
+        115,
+        725,
+        395
+      ],
+      "meanAbsoluteRGBError_0_to_255": 54.3615
+    },
+    "actions_and_pointer": {
+      "referenceBox": [
+        215,
+        390,
+        865,
+        665
+      ],
+      "meanAbsoluteRGBError_0_to_255": 15.569
+    },
+    "hero": {
+      "referenceBox": [
+        875,
+        400,
+        1245,
+        785
+      ],
+      "meanAbsoluteRGBError_0_to_255": 28.928
+    },
+    "footer": {
+      "referenceBox": [
+        30,
+        855,
+        1635,
+        918
+      ],
+      "meanAbsoluteRGBError_0_to_255": 19.9307
+    }
+  },
+  "interpretation": "These metrics measure pixel/structural differences. They do not certify a percentage of artistic similarity. Different generated brushwork, glyph contours and animation layers prevent a claim of pixel identity."
+}

@@ -21,7 +21,8 @@
       },
       "children": [
         "cb_label",
-        "cb_pointer"
+        "cb_pointer",
+        "cb_art"
       ]
     },
     "cb_label": {
@@ -29,13 +30,14 @@
       "name": "Label",
       "text": "{label}",
       "style": {
-        "fontSize": 32,
+        "fontSize": 48,
         "weight": 800,
-        "color": "#30271e",
-        "w": 266,
-        "h": 46,
-        "textAlign": "center",
-        "fitMin": 12
+        "color": "#f3e3be",
+        "w": "100%",
+        "h": 64,
+        "textAlign": "left",
+        "fitMin": 24,
+        "attach": true
       }
     },
     "cb_pointer": {
@@ -52,20 +54,47 @@
           0.5
         ],
         "offset": [
-          12,
+          -96,
           0
         ],
-        "w": 18,
-        "h": 22
+        "w": 84,
+        "h": 66,
+        "attach": true
       },
       "show": "selected"
     },
     "cb_pointer_ink": {
       "type": "icon",
-      "image": "cartoon/frames/bubble",
+      "image": "cartoon/menu/focus-bubble",
       "style": {
-        "w": 18,
-        "h": 18
+        "w": 84,
+        "h": 66,
+        "fit": "contain"
+      }
+    },
+    "cb_art": {
+      "type": "icon",
+      "property": "art",
+      "image": "cartoon/menu/focus-bubble",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.5
+        ],
+        "pivot": [
+          0,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%",
+        "fit": "contain",
+        "hide": true,
+        "tintMode": "multiply"
       }
     }
   },
@@ -89,8 +118,45 @@
               "bg": "#00000000"
             },
             "cb_label": {
-              "color": "#a6472d",
+              "color": "#f4d79a",
               "tx": 4
+            },
+            "cb_art": {
+              "tint": "#f4d79a"
+            }
+          }
+        }
+      }
+    },
+    "art": {
+      "type": "image",
+      "default": "cartoon/menu/focus-bubble"
+    },
+    "hasArt": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cb_label": {
+              "opacity": 0.001
+            },
+            "cb_art": {
+              "hide": false
+            }
+          }
+        }
+      }
+    },
+    "compact": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cb_pointer": {
+              "scale": 0.76,
+              "tx": 32
             }
           }
         }
@@ -106,6 +172,10 @@
         "cb_label": {
           "scale": 0.96,
           "color": "#a6472d"
+        },
+        "cb_art": {
+          "scale": 0.96,
+          "opacity": 0.8
         }
       }
     },

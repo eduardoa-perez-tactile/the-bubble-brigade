@@ -1,0 +1,189 @@
+{
+  "reference": "approved-preview.png",
+  "viewport": [
+    1672,
+    941
+  ],
+  "phase": "Initial frame, no alignment or color correction",
+  "iterations": 1,
+  "measuredBefore": {
+    "label": "before",
+    "referenceSize": [
+      1672,
+      941
+    ],
+    "candidateOriginalSize": [
+      3344,
+      1882
+    ],
+    "comparison": "Candidate resized to reference with Lanczos; fixed initial animation phase; no image alignment or color correction.",
+    "meanAbsoluteRGBError_0_to_255": 15.8222,
+    "rootMeanSquareRGBError_0_to_255": 40.5807,
+    "grayscaleBlockSSIM_0_to_1": 0.824194,
+    "regions": {
+      "logo": {
+        "referenceBox": [
+          275,
+          115,
+          725,
+          395
+        ],
+        "meanAbsoluteRGBError_0_to_255": 55.0705
+      },
+      "actions_and_pointer": {
+        "referenceBox": [
+          215,
+          390,
+          865,
+          665
+        ],
+        "meanAbsoluteRGBError_0_to_255": 19.2442
+      },
+      "hero": {
+        "referenceBox": [
+          875,
+          400,
+          1245,
+          785
+        ],
+        "meanAbsoluteRGBError_0_to_255": 27.8801
+      },
+      "footer": {
+        "referenceBox": [
+          30,
+          855,
+          1635,
+          918
+        ],
+        "meanAbsoluteRGBError_0_to_255": 22.1981
+      }
+    },
+    "interpretation": "These metrics measure pixel/structural differences. They do not certify a percentage of artistic similarity. Different generated brushwork, glyph contours and animation layers prevent a claim of pixel identity."
+  },
+  "measuredAfter": {
+    "label": "after",
+    "referenceSize": [
+      1672,
+      941
+    ],
+    "candidateOriginalSize": [
+      3344,
+      1882
+    ],
+    "comparison": "Candidate resized to reference with Lanczos; fixed initial animation phase; no image alignment or color correction.",
+    "meanAbsoluteRGBError_0_to_255": 15.52,
+    "rootMeanSquareRGBError_0_to_255": 39.7206,
+    "grayscaleBlockSSIM_0_to_1": 0.833472,
+    "regions": {
+      "logo": {
+        "referenceBox": [
+          275,
+          115,
+          725,
+          395
+        ],
+        "meanAbsoluteRGBError_0_to_255": 54.3615
+      },
+      "actions_and_pointer": {
+        "referenceBox": [
+          215,
+          390,
+          865,
+          665
+        ],
+        "meanAbsoluteRGBError_0_to_255": 15.569
+      },
+      "hero": {
+        "referenceBox": [
+          875,
+          400,
+          1245,
+          785
+        ],
+        "meanAbsoluteRGBError_0_to_255": 28.928
+      },
+      "footer": {
+        "referenceBox": [
+          30,
+          855,
+          1635,
+          918
+        ],
+        "meanAbsoluteRGBError_0_to_255": 19.9307
+      }
+    },
+    "interpretation": "These metrics measure pixel/structural differences. They do not certify a percentage of artistic similarity. Different generated brushwork, glyph contours and animation layers prevent a claim of pixel identity."
+  },
+  "verdict": "Not 99% or 100% visually identical. Overall composition is close, but regenerated glyph/character contours, painterly textures, and the runtime light remain different. SSIM is a structural diagnostic, not an artistic similarity percentage.",
+  "corrected": [
+    "Focus bubble proportion/scale and clearance from the text",
+    "Footer type scale and baseline",
+    "Quiet background without invented extra bright town details",
+    "Spotlight direction, extent and hue"
+  ],
+  "remaining": [
+    "Logo and character are matching redraws, not original mockup pixel cutouts",
+    "Lettering edges and spacing still differ slightly",
+    "Paint texture and light shading remain different"
+  ],
+  "art": "iteration-art.json",
+  "sideBySide": "after-comparison.jpg",
+  "validation": {
+    "engineCheck": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true
+      },
+      {
+        "name": "typecheck",
+        "ok": true
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true
+      },
+      {
+        "name": "views",
+        "ok": true
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true
+      },
+      {
+        "name": "ui nodes",
+        "ok": true
+      },
+      {
+        "name": "tests (V8 and Hermes)",
+        "ok": true
+      }
+    ],
+    "logicCounts": {
+      "v8": 480,
+      "hermes": 480
+    },
+    "runtimeMismatches": []
+  }
+}

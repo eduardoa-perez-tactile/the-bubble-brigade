@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-26",
+  "target": "Approved dark harbor menu without decorative logo bubbles",
+  "engineCheck": true,
+  "logicTests": {
+    "v8": 480,
+    "hermes": 480,
+    "mismatches": 0
+  },
+  "renderTests": {
+    "brigade-menu-title-approved": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "harbor title presents one grounded dragon with readable prompt and visible greeting frames",
+          "ok": true,
+          "logs": [
+            "{\"width\":360,\"height\":880,\"logo\":{\"x\":74.5,\"y\":205.5,\"width\":211,\"height\":141},\"hero\":{\"x\":116.5,\"y\":350.8125,\"width\":127,\"height\":127},\"prompt\":{\"x\":77,\"y\":533.625,\"width\":206,\"height\":45}}",
+            "{\"width\":2520,\"height\":1080,\"logo\":{\"x\":945,\"y\":15,\"width\":630,\"height\":420},\"hero\":{\"x\":1050,\"y\":465,\"width\":420,\"height\":420},\"prompt\":{\"x\":930,\"y\":909,\"width\":660,\"height\":144}}"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-animation-approved": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+          "ok": true,
+          "logs": [
+            "harbor menu peak draws 9"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-navigation-final": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon theatrical menus preserve touch navigation across screen shapes",
+          "ok": true,
+          "logs": [
+            "{\"width\":360,\"height\":880,\"modeCardDrawCalls\":8}",
+            "{\"width\":768,\"height\":1024,\"modeCardDrawCalls\":7}",
+            "{\"width\":1680,\"height\":720,\"modeCardDrawCalls\":7}"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-hover-final": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cuphead full bleed menu hover uses recorded viewport geometry instead of legacy button positions",
+          "ok": true,
+          "logs": [
+            "{\"width\":1680,\"height\":720,\"settings\":{\"x\":352.79998779296875,\"y\":414,\"width\":390,\"height\":48}}",
+            "{\"width\":360,\"height\":880,\"settings\":{\"x\":39.5,\"y\":576.75,\"width\":281,\"height\":45}}",
+            "{\"width\":2316,\"height\":904,\"settings\":{\"x\":528.3599853515625,\"y\":519.7999877929688,\"width\":490,\"height\":60}}"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-route-goldens-final": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+          "ok": true,
+          "logs": [
+            "cartoon complete menu route peak draws 14"
+          ]
+        },
+        {
+          "name": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+          "ok": true,
+          "logs": [
+            "cartoon complete menu route peak draws 14"
+          ]
+        }
+      ]
+    },
+    "brigade-menu-title-brand-final": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "cartoon title branding preserves menu actions",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    },
+    "brigade-menu-journey-final": {
+      "ok": true,
+      "tests": [
+        {
+          "name": "adventure campaign actual menu begin play intro results and map return buttons",
+          "ok": true,
+          "logs": []
+        }
+      ]
+    }
+  },
+  "replay": {
+    "ok": true,
+    "results": {
+      "v8": {
+        "ok": true,
+        "steps": 1382,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 1382,
+        "firstDivergence": null
+      }
+    }
+  },
+  "phoneLowMemory": {
+    "ok": true,
+    "peakBytes": 43589932,
+    "projectBudgetBytes": 50331648,
+    "alwaysGroups": [
+      "courtyard-gameplay",
+      "menu-presentation",
+      "overworld-shared",
+      "overworld-district-1",
+      "adventure-lighthouse"
+    ]
+  },
+  "drawCalls": {
+    "menuPeak": 9,
+    "existingMenuRoutePeak": 14
+  },
+  "captures": {
+    "animation": "live-menu-animation.gif",
+    "fullResolution": "live-menu-full.png",
+    "approvedReference": "approved-preview.png"
+  },
+  "captureState": "The comparison view sample uses two completed harbor episodes, matching the approved preview. The production menu reads real save progress and displays Begin Adventure on a fresh save.",
+  "artManifest": "../../tools/menu/art-manifest.json",
+  "limitations": [
+    "Visual matching reviewed by direct comparison; no claim of pixel-identical generated artwork.",
+    "Physical low-end GPU and thermal behavior not measured."
+  ],
+  "comparisonReview": {
+    "report": "comparison/report.json",
+    "verdict": "Not 99% or 100% visually identical. Overall composition is close, but regenerated glyph/character contours, painterly textures, and the runtime light remain different. SSIM is a structural diagnostic, not an artistic similarity percentage."
+  },
+  "latestChecks": [
+    {
+      "name": "gameengine-host (V8)",
+      "ok": true
+    },
+    {
+      "name": "gameengine-host (Hermes lane)",
+      "ok": true
+    },
+    {
+      "name": "gameengine-cook",
+      "ok": true
+    },
+    {
+      "name": "desktop player (release)",
+      "ok": true
+    },
+    {
+      "name": "typecheck",
+      "ok": true
+    },
+    {
+      "name": "validate (warnings)",
+      "ok": true
+    },
+    {
+      "name": "pipelines",
+      "ok": true
+    },
+    {
+      "name": "views",
+      "ok": true
+    },
+    {
+      "name": "cook (desktop)",
+      "ok": true
+    },
+    {
+      "name": "smoke (cooked)",
+      "ok": true
+    },
+    {
+      "name": "ui nodes",
+      "ok": true
+    },
+    {
+      "name": "tests (V8 and Hermes)",
+      "ok": true
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {adventureStep} from './support/adventure-time';
 import { expect, worldTest } from '@gameengine/test';
 import { WorldView, WorldViewFollow } from '@gameengine/runtime';
 import { DesktopIntent } from '../src/schema.gen.ts';
@@ -73,7 +74,8 @@ worldTest('overworld source POIs keep stable encounter IDs and source-scaled pro
   }
 },{scene});
 
-worldTest('overworld recorded production movement approaches leaves and reapproaches a real map doorway',async({input,step,world,loaded})=>{
+worldTest('overworld recorded production movement approaches leaves and reapproaches a real map doorway',async ctx=>{
+  const {input,world,loaded}=ctx;const step=(n:number)=>adventureStep(ctx,n);
   await step(8);input.emit(DesktopIntent,{action:'adventure-menu'});await step(1);
   input.emit(DesktopIntent,{action:'adventure-continue'});await loaded();await step(3);
   expect(overworldState.get().active).toBe(true);expect(overworldState.get().reference).toBe(false);
@@ -111,7 +113,8 @@ worldTest('overworld recorded production movement approaches leaves and reapproa
   expect(world.resource(WorldView).orthoSize).toBe(map.viewSize);
 },{scene});
 
-worldTest('overworld recorded eight-way walking retains each oblique heading when idle',async({input,step,loaded})=>{
+worldTest('overworld recorded eight-way walking retains each oblique heading when idle',async ctx=>{
+ const {input,loaded}=ctx;const step=(n:number)=>adventureStep(ctx,n);
  await step(8);input.emit(DesktopIntent,{action:'adventure-menu'});await step(1);
  input.emit(DesktopIntent,{action:'adventure-continue'});await loaded();await step(3);
  for(const [facing,x,y] of [
