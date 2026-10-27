@@ -1466,12 +1466,12 @@ declare module '@gameengine/ui' {
      *   - `showOutcomeTitle`: yesno, default false
      * Events: `press (<item>)`
      * Code areas: none
-     * Refs: `outcome-title`
+     * Refs: `summary-panel`, `outcome-title`
      */
     'story-result': {
       props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showOutcomeTitle: boolean };
       areas: never;
-      refs: 'outcome-title';
+      refs: 'summary-panel' | 'outcome-title';
     };
     /**
      * Victory action: a widget, button (ui/docs/victory-action.ui.json)

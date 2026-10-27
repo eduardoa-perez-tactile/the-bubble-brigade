@@ -1,4 +1,5 @@
-import {expect,worldTest,renderTest,type WorldTestContext} from '@gameengine/test';
+import {expect,worldTest,renderTest,type WorldTestContext,type UIRect} from '@gameengine/test';
+import {views,finishAnimations} from '@gameengine/ui';
 import {DesktopIntent} from '../src/schema.gen';
 import {desktopState} from '../src/desktop/state';
 import {desktopSaveState} from '../src/desktop/save';
@@ -39,6 +40,22 @@ worldTest('story endings defeat waits for its alert and a fresh released confirm
  expect(desktopState.get().screen).toBe('result');
  ctx.input.key(38,true);await adventureStep(ctx,2);ctx.input.key(38,false);
  expect(desktopState.get().transitionAction).toBe('restart');
+},{scene});
+worldTest('story endings guarded and ready summary preserve the same actions and hint',async ctx=>{
+ await begin(ctx);await ctx.cheat(AdventureClearAct,{});
+ for(let tick=0;desktopState.get().screen!=='result'&&tick<180;tick++)await adventureStep(ctx,1);
+ expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(false);
+ const guarded=storyResultModel(desktopState.get(),desktopSaveState.get());
+ expect(guarded.buttons.map(button=>button.key)).toEqual(['leave','restart']);
+ expect(guarded.buttons.map(button=>button.label)).toEqual(['RETURN TO MAP','PLAY AGAIN']);
+ expect(guarded.buttons.map(button=>button.selected)).toEqual([true,false]);
+ expect(guarded.hint).toBe('ENTER / A TO CONFIRM');
+ expect(guarded.ready).toBe(false);
+ for(let tick=0;!desktopState.get().resultReady&&tick<60;tick++)await adventureStep(ctx,1);
+ expect(desktopState.get().resultReady).toBe(true);
+ const ready=storyResultModel(desktopState.get(),desktopSaveState.get());
+ expect(ready.buttons).toEqual(guarded.buttons);expect(ready.hint).toBe(guarded.hint);
+ expect(ready.ready).toBe(true);
 },{scene});
 worldTest('story endings victory announces once before functional reward actions',async ctx=>{
  await begin(ctx);await ctx.cheat(AdventureClearAct,{});
@@ -89,6 +106,88 @@ renderTest('story endings victory bonus alert and results remain safe across sup
  expect(storyResultModel(desktopState.get(),desktopSaveState.get()).rewardValue).toBe('REWARD CLAIMED');
  expect(storyResultModel(desktopState.get(),desktopSaveState.get()).title).toBe('');
  ctx.render.expectScreenshot('replay-results',{width:1280,height:720});
+},{scene,memory:'phone-low'});
+renderTest('story endings one stable summary keeps guarded actions visible until fresh input is safe',async ctx=>{
+ ctx.input.view(1280,720,1);await begin(ctx);
+ // A shot held through the victory must never become confirmation on the summary.
+ ctx.input.key('Space',true);await ctx.cheat(AdventureClearAct,{});
+ for(let tick=0;desktopState.get().screen!=='result'&&tick<180;tick++)await adventureStep(ctx,1);
+ expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(false);
+ const summaryViews=()=>views.stack().filter(view=>view.view==='StoryResults');
+ expect(summaryViews().length).toBe(1);const handle=summaryViews()[0]!.id;
+ const initialModel=storyResultModel(desktopState.get(),desktopSaveState.get());
+ const labels=['RETURN TO MAP','PLAY AGAIN'];
+ let peak=0;
+ const saved=new Map<number,{panel:UIRect;buttons:{id:string;label:string;rect:UIRect;node?:number}[]}>();
+ const screens=[{width:344,height:882,safe:[0,32,0,0]},{width:810,height:1080,safe:[0,20,0,0]},{width:1280,height:720,safe:[0,0,0,0]}];
+ const actionButtons=()=>ctx.ui.interactables().filter(button=>labels.includes(button.label));
+ for(const {width,height,safe}of screens){
+  ctx.input.view(width,height,1,safe as [number,number,number,number]);await adventureStep(ctx,1);
+  finishAnimations();peak=Math.max(peak,ctx.render.stats({width,height}).drawCalls);
+  expect(desktopState.get().resultReady).toBe(false);
+  const panel=ctx.ui.rect('story-results.summary-panel');expect(!!panel).toBe(true);
+  const nativeButtons=actionButtons();
+  // Native pointer-events:none omits these buttons from interactables, while their
+  // retained widget IDs and layout boxes still establish that both actions exist.
+  const buttons=initialModel.buttons.map(button=>{
+   const id=`story-results.${button.key}`,rect=ctx.ui.rect(id);expect(!!rect).toBe(true);
+   const native=nativeButtons.find(item=>item.id===id);
+   if(native)expect(native.enabled&&native.hittable).toBe(false);
+   return {id,label:button.label,rect:rect!,node:native?.node};
+  });
+  expect(buttons.length).toBe(2);
+  console.log(JSON.stringify({summaryGuardWidth:width,panel,visibleButtonIds:buttons.map(button=>button.id),nativeButtons:nativeButtons.map(({id,node,enabled,hittable})=>({id,node,enabled,hittable}))}));
+  expect(nativeButtons.some(button=>button.enabled&&button.hittable)).toBe(false);
+  for(const button of buttons){
+   expect(button.rect.width>0&&button.rect.height>0).toBe(true);
+   expect(button.rect.height).toBeGreaterThanOrEqual(44);
+   expect(button.rect.x).toBeGreaterThanOrEqual(safe[0]!);expect(button.rect.y).toBeGreaterThanOrEqual(safe[1]!);
+   expect(button.rect.x+button.rect.width).toBeLessThanOrEqual(width-safe[2]!);
+   expect(button.rect.y+button.rect.height).toBeLessThanOrEqual(height-safe[3]!);
+  }
+  saved.set(width,{panel:panel!,buttons});
+  expect(summaryViews()).toEqual([{id:handle,view:'StoryResults'}]);
+  expect(views.leaving().includes('StoryResults')).toBe(false);
+  ctx.render.expectScreenshot(`stable-summary-guarded-${width}`,{width,height});
+ }
+ // Hit testing and the separate intent guard both reject an early activation.
+ // A blocked native press may be rejected or ignored; neither can leave the summary.
+ try{await ctx.ui.press('story-results.leave');}catch{/* Rejection is an allowed blocked-input outcome. */}
+ expect(desktopState.get().screen).toBe('result');expect(!!desktopState.get().transitionAction).toBe(false);
+ const early=saved.get(1280)!.buttons[0]!.rect,cx=early.x+early.width/2,cy=early.y+early.height/2;
+ ctx.input.pointer('down',cx,cy);await adventureStep(ctx,1);
+ ctx.input.pointer('up',cx,cy);await adventureStep(ctx,1);
+ await act(ctx,'ui-activate','leave');
+ ctx.input.key('Enter',true);await adventureStep(ctx,2);ctx.input.key('Enter',false);await adventureStep(ctx,2);
+ expect(desktopState.get().screen).toBe('result');expect(!!desktopState.get().transitionAction).toBe(false);
+ await adventureStep(ctx,45);
+ expect(desktopState.get().resultReady).toBe(false);expect(summaryViews()[0]!.id).toBe(handle);
+ ctx.input.key('Space',false);await adventureStep(ctx,2);
+ expect(desktopState.get().resultReady).toBe(true);expect(desktopState.get().screen).toBe('result');
+ const readyModel=storyResultModel(desktopState.get(),desktopSaveState.get());
+ expect(readyModel.buttons).toEqual(initialModel.buttons);expect(readyModel.hint).toBe(initialModel.hint);
+ for(const {width,height,safe}of screens){
+  ctx.input.view(width,height,1,safe as [number,number,number,number]);await adventureStep(ctx,1);
+  finishAnimations();peak=Math.max(peak,ctx.render.stats({width,height}).drawCalls);
+  const before=saved.get(width)!,buttons=actionButtons();expect(buttons.length).toBe(2);
+  expect(ctx.ui.rect('story-results.summary-panel')).toEqual(before.panel);
+  for(const button of buttons){
+   const guarded=before.buttons.find(previous=>previous.label===button.label)!;
+   expect(button.id).toBe(guarded.id);
+   if(guarded.node!==undefined)expect(button.node).toBe(guarded.node);
+   expect(button.rect).toEqual(guarded.rect);
+   expect(button.enabled).toBe(true);expect(button.hittable).toBe(true);
+  }
+  expect(summaryViews()).toEqual([{id:handle,view:'StoryResults'}]);
+  expect(views.leaving().includes('StoryResults')).toBe(false);
+  console.log(JSON.stringify({summaryReadyWidth:width,buttons:buttons.map(({id,node,enabled,hittable})=>({id,node,enabled,hittable}))}));
+  ctx.render.expectDrawCalls('<=',50,{width,height});
+  ctx.render.expectScreenshot(`stable-summary-ready-${width}`,{width,height});
+ }
+ console.log(JSON.stringify({stableSummaryViewHandle:handle,peakDrawCalls:peak,viewCount:summaryViews().length}));
+ const back=actionButtons().find(button=>button.label==='RETURN TO MAP')!;
+ await ctx.ui.press(back.id!);await adventureStep(ctx,2);
+ expect(desktopState.get().transitionAction).toBe('leave');
 },{scene,memory:'phone-low'});
 renderTest('story endings multi act finale and defeat show only the final outcome',async ctx=>{
  ctx.input.view(1280,720,1);await begin(ctx,'encounter-5');await ctx.cheat(AdventureClearAct,{});

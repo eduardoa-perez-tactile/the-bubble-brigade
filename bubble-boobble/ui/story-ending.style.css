@@ -4,6 +4,8 @@
 }
 .story-outcome-screen, .story-outcome {pointer-events:none;}
 .story-result {width:100%;height:100%;}
+.story-result.is-guarded {pointer-events:none;}
+.story-result.is-guarded .ud-overworld-button__root {opacity:0.6;pointer-events:none;}
 .story-outcome {width:100%;height:100%;}
 .story-outcome .ud-story-outcome__so_art {object-fit:contain;}
 .story-result .ud-story-result__sr_title {font-family:"cartoon/fonts/Rye-Regular";}

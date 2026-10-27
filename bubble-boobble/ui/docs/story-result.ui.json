@@ -40,7 +40,8 @@
         "align": "center",
         "gap": 12,
         "bg": "#f0e4c6"
-      }
+      },
+      "point": "summary-panel"
     },
     "sr_rule": {
       "type": "element",
