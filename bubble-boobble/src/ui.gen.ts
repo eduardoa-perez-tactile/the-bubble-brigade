@@ -490,15 +490,16 @@ declare module '@gameengine/ui' {
      *   - `narrow`: yesno, default false
      *   - `titleNarrow`: yesno, default false
      *   - `closedPrompt`: yesno, default false
-     * Events: `choose-mode`, `adventure-arcade`, `settings`, `quit`, `menu`
+     *   - `restartSelected`: yesno, default false
+     * Events: `choose-mode`, `adventure-new`, `adventure-arcade`, `settings`, `quit`, `menu`
      * Code areas: `atmosphere`, `greeter`
-     * Refs: `cloth`, `curtain-prompt`, `spotlight`, `title-card`, `greeter`, `choose-mode`, `adventure-arcade`, `settings`, `quit`, `menu`
+     * Refs: `cloth`, `curtain-prompt`, `spotlight`, `title-card`, `greeter`, `choose-mode`, `adventure-new`, `adventure-arcade`, `settings`, `quit`, `menu`
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
-      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean };
+      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean; restartSelected: boolean };
       areas: 'atmosphere' | 'greeter';
-      refs: 'cloth' | 'curtain-prompt' | 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
+      refs: 'cloth' | 'curtain-prompt' | 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-new' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
     };
     /**
      * Cartoon Mode Card: a widget, button (ui/docs/cartoon-mode-card.ui.json)

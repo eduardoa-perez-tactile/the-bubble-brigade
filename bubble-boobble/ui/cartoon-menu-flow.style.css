@@ -35,7 +35,7 @@
  .menu-atmosphere {display:none;}
 }
 @media (aspect < 0.85) {
- .cartoon-menu .ud-cartoon-menu__cm_composition {height:1000px;}
+ .cartoon-menu .ud-cartoon-menu__cm_composition {height:1020px;}
  .cartoon-menu .ud-cartoon-menu__cm_hint,
  .cartoon-modes .ud-cartoon-modes__ms_brand,
  .cartoon-modes .ud-cartoon-modes__ms_hint {display:none;}
