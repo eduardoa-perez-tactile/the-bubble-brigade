@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "scenario": "Settled Bubblebrook Quay at the normal map spawn; no input during capture",
+    "simulationSteps": 600,
+    "presentationFrames": 35,
+    "runtime": "V8 release host",
+    "gpuTier": "mobile",
+    "execution": "Paused Game Engine headless session on desktop",
+    "warmup": "Map assets loaded and the visible map confirmed before the retained capture; loading capture discarded",
+    "coverage": "Harbor only; no timing or draw-call claim for the other four districts"
+  },
+  "measured": {
+    "stepTimeMs": {
+      "p50": 0.07966699999999999,
+      "p95": 0.0995,
+      "p99": 0.121625,
+      "max": 0.24345899999999998,
+      "mean": 0.08316630499999998
+    },
+    "presentationTimeMs": {
+      "p50": 0.313166,
+      "p95": 0.42945900000000004,
+      "p99": 0.5965419999999995,
+      "max": 0.5965419999999995,
+      "mean": 0.3291666
+    },
+    "hitchSteps": 0,
+    "gcMaxMs": 0.07866699999947713,
+    "gcPausesOver4ms": 0,
+    "jsHeapMiB": 28.312644958496094,
+    "jsAllocatedMiBDuringCapture": 26.81505584716797,
+    "desktopResidentMiB": 376.109375,
+    "render": {
+      "drawCalls": 10,
+      "instances": 85,
+      "triangles": 171,
+      "pipelinesCreatedThisFrame": 0,
+      "particleInstances": 0,
+      "atlasPages": 14,
+      "culled2d": 26,
+      "worldOccluded": false,
+      "idleFrames": {
+        "enabled": false,
+        "presented": 0,
+        "skipped": 0
+      },
+      "sceneSize": [
+        540,
+        960
+      ],
+      "validationErrors": []
+    }
+  },
+  "precheckpoint": {
+    "stepTimeP95Ms": 0.104209,
+    "presentationTimeP95Ms": 0.415042,
+    "drawCalls": 7
+  },
+  "comparison": {
+    "stepTimeP95Percent": -4.51880355823393,
+    "presentationTimeP95Percent": 3.4736243560892666,
+    "drawCallsDelta": 3,
+    "interpretation": "Step P95 decreased by about 4.5%; presentation P95 increased by about 3.5%. These small desktop changes do not establish a phone regression."
+  },
+  "budgets": {
+    "harborDrawCalls": {
+      "measured": 10,
+      "maximum": 50,
+      "pass": true,
+      "source": "tests/budgets/overworld.json"
+    },
+    "gcPausesOver4ms": {
+      "measured": 0,
+      "maximum": 0,
+      "pass": true,
+      "source": ".agents/skills/mobile-performance-review/budgets.md"
+    },
+    "phoneLowTargetsNotDeviceVerified": {
+      "frameMs": 33.3,
+      "singleSimulationStepP95Ms": 8,
+      "jsHeapMiB": 32,
+      "rssMiB": 350
+    }
+  },
+  "phoneLowMipCorrection": {
+    "problem": "A 512 cap selected the 256-pixel coast mip because the next cooked level is padded to 513. Raising the override to 1024, equal to the normal cap, omitted smaller levels and exceeded every district 2 MiB budget.",
+    "correction": "Use a 768 phone-low cap, below the normal 1024 cap but above the padded 513 level, so the cooker emits and selects the approximately 512 logical pixel alternative.",
+    "basePaintingsChanged": false,
+    "budgetIncreases": false,
+    "budgetVerification": "Passed after fresh Android cook; see memory.json. Districts 0.88\u20130.94 MiB / 2 MiB, shared 1.929 MiB / 2 MiB, scenario peak 38.203 MiB / 48 MiB."
+  },
+  "limitations": [
+    "No physical phone, real mobile GPU timing, thermal soak, battery, or phone RSS measurement.",
+    "Desktop resident memory includes desktop texture variants and is not a phone-low RSS verdict.",
+    "Paused frame intervals do not measure real-time frame rate.",
+    "Idle-frame skipping is disabled in this session; held-pose skip efficiency was not established.",
+    "Full-map alpha overlays and repeated draw-plan allocations remain profiling follow-ups if device measurements warrant changes."
+  ],
+  "cleanup": {
+    "ownHeadlessSessionStopped": true
+  }
+}

@@ -1,7 +1,7 @@
 /** Recorded-intent adapter between the desktop shell, map simulation and encounter runner. */
 import { desktopState, desktopGameRequest, type DesktopState } from '../desktop/documents.ts';
 import { desktopSaveState } from '../desktop/save';
-import { adventureForProfile, adventureCleared, adventureShop } from './progression';
+import { adventureForProfile, adventureCleared, adventureShop, adventurePowerShop } from './progression';
 import { districts, districtById, encounterById, trialForDistrict, availableDistrict, availableEncounter } from './content';
 import { overworldState, enterOverworld, suspendOverworld, setOverworldModal, returnToEntrance } from './state';
 import {overworldEntrancePoint as importShortcutPoint} from './navigation';
@@ -76,9 +76,15 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
   desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:adventureCleared(progress)>=3?'Three clears! Your 15-coin reward is saved.':'Clear any three encounters, then come back for a reward.'});return true;
  }
  if(action.startsWith('overworld-buy:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
-  const id=action.slice(14),item=adventureShop.find(i=>i.id===id);
+  const id=action.slice(14),item=[...adventureShop,...adventurePowerShop].find(i=>i.id===id);
   desktopSaveState.dispatch('adventurePurchase',{profileIndex,id},now);
-  patch({panelMessage:item?(progress.purchases[id]?'Already in your journal.':progress.coins<item.price?'You need more coins.':'Keepsake added to your Adventure journal.'):'Unknown keepsake.'});return true;
+  patch({panelMessage:item?(progress.purchases[id]?'Already owned.':progress.coins<item.price?'You need more coins.':adventurePowerShop.some(power=>power.id===id)?'Power unlocked and equipped for your next encounter.':'Keepsake added to your Adventure journal.'):'Unknown item.'});return true;
+ }
+ if(action.startsWith('overworld-equip:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
+  const id=action.slice(16),power=adventurePowerShop.find(item=>item.id===id);
+  if(id!=='none'&&(!power||!progress.purchases[id])){patch({panelMessage:'Buy this power before equipping it.'});return true;}
+  desktopSaveState.dispatch('adventureEquip',{profileIndex,id:id==='none'?null:id},now);
+  patch({panelMessage:id==='none'?'No starting power equipped.':`${power!.name} equipped for each new encounter and retry.`});return true;
  }
  if(action.startsWith('overworld-travel:')&&map.active&&s.screen==='overworld-panel'&&['gate','journal'].includes(s.overworldPanel??'')){
   const id=action.slice(17);if(!availableDistrict(id,progress))return true;

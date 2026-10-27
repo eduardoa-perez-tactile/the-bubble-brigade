@@ -553,6 +553,9 @@ export const district4Map:SourceMap={
   ]
  ],
  "solids": [
+  // Inner blue water only, traced on the original 1254px painting; retain paved/stone rims.
+  [[1071.77, 526.699], [1080.344, 510.775], [1103.617, 496.077], [1135.464, 489.952], [1174.66, 491.177], [1211.407, 496.077], [1243.254, 509.55], [1264.077, 527.923], [1261.627, 543.847], [1242.029, 557.321], [1205.282, 570.794], [1166.086, 574.469], [1124.44, 568.344], [1091.368, 552.421]],
+  [[227.828, 1185.684], [237.627, 1168.536], [262.124, 1156.287], [297.646, 1151.388], [330.718, 1158.737], [358.89, 1170.986], [372.364, 1189.359], [357.665, 1206.507], [327.043, 1219.981], [295.196, 1226.105], [267.024, 1217.531], [242.526, 1206.507]],
   [
    [
     638.163,
@@ -820,41 +823,47 @@ export const district4Map:SourceMap={
    ]
   ]
  ],
+ // Door approaches follow the existing south-facing doorstep, not the building centre.
  "pois": [
   {
    "kind": "encounter",
    "slot": 0,
    "x": 755.751,
    "y": 1195.483,
-   "label": "Teapot Spa"
+   "label": "Teapot Spa",
+   "approach": [[721.751, 1193.483], [789.751, 1193.483], [789.751, 1231.483], [721.751, 1231.483]]
   },
   {
    "kind": "encounter",
    "slot": 1,
    "x": 382.163,
    "y": 1104.842,
-   "label": "Rainbarrel Gym"
+   "label": "Rainbarrel Gym",
+   "approach": [[348.163, 1102.842], [416.163, 1102.842], [416.163, 1140.842], [348.163, 1140.842]]
   },
   {
    "kind": "encounter",
    "slot": 2,
    "x": 553.646,
    "y": 502.201,
-   "label": "Thunderhead Atelier"
+   "label": "Thunderhead Atelier",
+   "approach": [[519.646, 500.201], [587.646, 500.201], [587.646, 538.201], [519.646, 538.201]]
   },
   {
    "kind": "encounter",
    "slot": 3,
    "x": 966.431,
    "y": 440.957,
-   "label": "Rainbow Bellhouse"
+   "label": "Rainbow Bellhouse",
+   "approach": [[932.431, 438.957], [1000.431, 438.957], [1000.431, 476.957], [932.431, 476.957]]
   },
   {
    "kind": "encounter",
    "slot": 4,
    "x": 1264.077,
    "y": 1169.761,
-   "label": "Cloudfruit Orchard"
+   "label": "Cloudfruit Orchard",
+   "approach": [[1230.077, 1167.761], [1298.077, 1167.761], [1298.077, 1205.761], [1230.077, 1205.761]]
   },
   {
    "kind": "guide",
@@ -872,7 +881,10 @@ export const district4Map:SourceMap={
    "kind": "trial",
    "x": 1169.761,
    "y": 532.823,
-   "label": "Mist Circle Trial"
+   "label": "Mist Circle Trial",
+   "radius": 76,
+   "approach": [[1102.392, 585.493], [1237.129, 585.493], [1237.129, 630.813], [1102.392, 630.813]],
+   "approachTarget": {"x": 1169.761, "y": 600.191}
   },
   {
    "kind": "collectible",

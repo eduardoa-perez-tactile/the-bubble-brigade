@@ -7,7 +7,7 @@ import {overworldDrawPlan} from '../src/overworld/presentation';
 import {desktopSaveState} from '../src/desktop/save';
 import {adventureForProfile} from '../src/overworld/progression';
 import {getOverworldMap,sourceToWorld} from '../src/overworld/maps';
-import {overworldEntrancePoint} from '../src/overworld/navigation';
+import {overworldEntrancePoint,isOverworldWalkable} from '../src/overworld/navigation';
 import {WarpOverworld} from '../src/overworld/overworld.cheats';
 import {OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 
@@ -69,15 +69,17 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
   if(width===360)ctx.render.expectScreenshot('slim-source-hud',{width,height});
   if(width===360){
    const start=overworldState.get();
-   for(const source of [{x:727.579,y:1253.053},{x:551.196,y:1265.071},{x:404.211,y:1175.885}]){
-    const target=sourceToWorld(getOverworldMap('district-1'),source);let arrived=false;
+   for(const source of [{x:727.579,y:1253.053},{x:551.196,y:1265.071},{x:420,y:1190}]){
+    const target=sourceToWorld(getOverworldMap('district-1'),source);
+    // Camera traversal follows paving; the old last waypoint clipped the exact foot boundary.
+    expect(isOverworldWalkable(target.x,target.y,'district-1')).toBe(true);let arrived=false;
     for(let frame=0;frame<180;frame++){
      const state=overworldState.get(),dx=target.x-state.x,dy=target.y-state.y,length=Math.hypot(dx,dy);
      if(length<3){arrived=true;break;}
      ctx.input.action('mapX',dx/length);ctx.input.action('mapY',dy/length);await adventureStep(ctx,1);
      assertAvatar(ctx,width,height,safe);
     }
-    expect(arrived).toBe(true);
+    if(!arrived)throw new Error('Camera traversal waypoint unreachable: '+JSON.stringify({source,target,at:{x:overworldState.get().x,y:overworldState.get().y}}));
    }
    expect(start.x-overworldState.get().x>100).toBe(true);
   }

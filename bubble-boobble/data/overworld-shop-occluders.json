@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "sourceCanvas": [
+    1254,
+    1254
+  ],
+  "registrationCanvas": [
+    1536,
+    1536
+  ],
+  "districts": {
+    "district-1": {
+      "image": "overworld-living/district-1/shop-front",
+      "source": "assets/overworld-original/district-1/base.png",
+      "sourceSha256": "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+      "nativeRect": {
+        "x": 744,
+        "y": 976,
+        "width": 98,
+        "height": 41
+      },
+      "polygons": [
+        [
+          [
+            744,
+            976
+          ],
+          [
+            802,
+            1001
+          ],
+          [
+            802,
+            1016
+          ],
+          [
+            744,
+            990
+          ]
+        ],
+        [
+          [
+            802,
+            1001
+          ],
+          [
+            841,
+            981
+          ],
+          [
+            841,
+            997
+          ],
+          [
+            802,
+            1016
+          ]
+        ]
+      ],
+      "output": "assets/overworld-living/district-1/shop-front.png",
+      "outputSha256": "1881e6be443314e8b84dfc275889585fc964217c031d9ca2cc47f9c13571ee56"
+    },
+    "district-2": {
+      "image": "overworld-living/district-2/shop-front",
+      "source": "assets/overworld-original/district-2/base.png",
+      "sourceSha256": "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+      "nativeRect": {
+        "x": 166,
+        "y": 958,
+        "width": 109,
+        "height": 52
+      },
+      "polygons": [
+        [
+          [
+            166,
+            971
+          ],
+          [
+            199,
+            988
+          ],
+          [
+            199,
+            1009
+          ],
+          [
+            166,
+            992
+          ]
+        ],
+        [
+          [
+            199,
+            988
+          ],
+          [
+            274,
+            958
+          ],
+          [
+            274,
+            979
+          ],
+          [
+            199,
+            1009
+          ]
+        ]
+      ],
+      "output": "assets/overworld-living/district-2/shop-front.png",
+      "outputSha256": "c7eba7a7fe9a97a7903be68bb223ca57638790435e20a19f3315ad5a6d080ba1"
+    },
+    "district-3": {
+      "image": "overworld-living/district-3/shop-front",
+      "source": "assets/overworld-original/district-3/base.png",
+      "sourceSha256": "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+      "nativeRect": {
+        "x": 805,
+        "y": 935,
+        "width": 88,
+        "height": 45
+      },
+      "polygons": [
+        [
+          [
+            805,
+            942
+          ],
+          [
+            830,
+            952
+          ],
+          [
+            831,
+            979
+          ],
+          [
+            807,
+            968
+          ]
+        ],
+        [
+          [
+            830,
+            952
+          ],
+          [
+            891,
+            935
+          ],
+          [
+            892,
+            959
+          ],
+          [
+            831,
+            979
+          ]
+        ]
+      ],
+      "output": "assets/overworld-living/district-3/shop-front.png",
+      "outputSha256": "f6a5d7594cb84babe853d0075052982cb7e6276c6cd3a12273d4b861501d3300"
+    },
+    "district-4": {
+      "image": "overworld-living/district-4/shop-front",
+      "source": "assets/overworld-original/district-4/base.png",
+      "sourceSha256": "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+      "nativeRect": {
+        "x": 790,
+        "y": 1012,
+        "width": 98,
+        "height": 44
+      },
+      "polygons": [
+        [
+          [
+            791,
+            1012
+          ],
+          [
+            850,
+            1035
+          ],
+          [
+            850,
+            1055
+          ],
+          [
+            790,
+            1030
+          ]
+        ],
+        [
+          [
+            850,
+            1035
+          ],
+          [
+            887,
+            1020
+          ],
+          [
+            887,
+            1041
+          ],
+          [
+            850,
+            1055
+          ]
+        ]
+      ],
+      "output": "assets/overworld-living/district-4/shop-front.png",
+      "outputSha256": "39b3453f61c47e04341cb2388f6444377e157c4f2e15e2d248fc19591fef4a99"
+    },
+    "district-5": {
+      "image": "overworld-living/district-5/shop-front",
+      "source": "assets/overworld-original/district-5/base.png",
+      "sourceSha256": "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b",
+      "nativeRect": {
+        "x": 791,
+        "y": 963,
+        "width": 110,
+        "height": 50
+      },
+      "polygons": [
+        [
+          [
+            791,
+            963
+          ],
+          [
+            858,
+            988
+          ],
+          [
+            858,
+            1012
+          ],
+          [
+            791,
+            989
+          ]
+        ],
+        [
+          [
+            858,
+            988
+          ],
+          [
+            900,
+            965
+          ],
+          [
+            900,
+            991
+          ],
+          [
+            858,
+            1012
+          ]
+        ]
+      ],
+      "output": "assets/overworld-living/district-5/shop-front.png",
+      "outputSha256": "960eaf09b73bb27d4b30bbb8295ddfd2ade7dfa11bece73f9fd8460a33a7c832"
+    }
+  }
+}

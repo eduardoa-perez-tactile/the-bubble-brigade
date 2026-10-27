@@ -2,7 +2,13 @@
 export interface SourcePoint { x:number; y:number }
 export type SourcePolygon=readonly (readonly [number,number])[];
 export type SourcePoiKind='encounter'|'guide'|'vendor'|'trial'|'collectible'|'shortcut'|'gate';
-export interface SourcePoi extends SourcePoint {kind:SourcePoiKind;slot?:number;label?:string;radius?:number}
+export interface SourcePoi extends SourcePoint {
+ kind:SourcePoiKind;slot?:number;label?:string;radius?:number;
+ /** Source-pixel foot approach, independent of the painted destination anchor. */
+ approach?:SourcePolygon;
+ /** Clear ground target for an activity whose painted anchor is inside a non-walkable basin. */
+ approachTarget?:SourcePoint;
+}
 export interface SourceLayer {image:string;x:number;y:number;width:number;height:number;order:number}
 export interface SourceMap {
  districtId:string;width:number;height:number;origin:SourcePoint;scale:number;viewSize:number;

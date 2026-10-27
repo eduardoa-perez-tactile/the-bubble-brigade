@@ -1390,41 +1390,47 @@ export const district5Map:SourceMap={
    ]
   ]
  ],
+ // Door approaches follow the existing south-facing doorstep, not the building centre.
  "pois": [
   {
    "kind": "encounter",
    "slot": 0,
    "x": 733.703,
    "y": 1164.861,
-   "label": "Bubbleglass Kiln"
+   "label": "Bubbleglass Kiln",
+   "approach": [[699.703, 1162.861], [767.703, 1162.861], [767.703, 1200.861], [699.703, 1200.861]]
   },
   {
    "kind": "encounter",
    "slot": 1,
    "x": 254.775,
    "y": 761.876,
-   "label": "Brassworks"
+   "label": "Brassworks",
+   "approach": [[220.775, 759.876], [288.775, 759.876], [288.775, 797.876], [220.775, 797.876]]
   },
   {
    "kind": "encounter",
    "slot": 2,
    "x": 573.244,
    "y": 460.555,
-   "label": "Cooling Tower"
+   "label": "Cooling Tower",
+   "approach": [[539.244, 458.555], [607.244, 458.555], [607.244, 496.555], [539.244, 496.555]]
   },
   {
    "kind": "encounter",
    "slot": 3,
    "x": 1137.914,
    "y": 483.828,
-   "label": "Prism Foundry"
+   "label": "Prism Foundry",
+   "approach": [[1103.914, 481.828], [1171.914, 481.828], [1171.914, 519.828], [1103.914, 519.828]]
   },
   {
    "kind": "encounter",
    "slot": 4,
    "x": 1347.368,
    "y": 1131.789,
-   "label": "Dragon Forge"
+   "label": "Dragon Forge",
+   "approach": [[1313.368, 1129.789], [1381.368, 1129.789], [1381.368, 1167.789], [1313.368, 1167.789]]
   },
   {
    "kind": "guide",

@@ -4,7 +4,7 @@ import { availableDistrict, availableEncounter, districtById, districts, encount
 export interface AdventureAnchor { districtId:string; x:number; y:number }
 export interface AdventureClear { bestScore:number; clears:number }
 export interface AdventureProgress {
-  version:1;
+  version:2;
   cleared:Record<string,AdventureClear>;
   attemptReceipts:Record<string,true>;
   anchor:AdventureAnchor;
@@ -12,28 +12,30 @@ export interface AdventureProgress {
   rewardClaims:Record<string,true>;
   coins:number;
   nextAttempt:number;
-  pending:{id:string;encounterId:string}|null;
+  pending:{id:string;encounterId:string;startingPower:AdventurePowerId|null}|null;
   purchases:Record<string,true>;
+  equippedPower:AdventurePowerId|null;
 }
 export interface AdventureCompletion { encounterId:string; attemptId:string; score:number }
 export const initialAdventure = ():AdventureProgress => ({
-  version:1, cleared:{}, attemptReceipts:{},
+  version:2, cleared:{}, attemptReceipts:{},
   anchor:{districtId:districts[0]!.id,...districts[0]!.spawn},
-  discoveredShortcuts:{}, rewardClaims:{}, coins:0, nextAttempt:1, pending:null, purchases:{},
+  discoveredShortcuts:{}, rewardClaims:{}, coins:0, nextAttempt:1, pending:null, purchases:{}, equippedPower:null,
 });
 export const adventureForProfile = (profile:{adventure?:AdventureProgress}):AdventureProgress => profile.adventure ?? initialAdventure();
 const integer=(value:number)=>Number.isSafeInteger(value)&&value>=0;
 const knownKeys=(record:object,known:(key:string)=>boolean)=>Object.keys(record).every(known);
 const record=(value:unknown):value is Record<string,unknown>=>!!value&&typeof value==='object'&&!Array.isArray(value);
 export function validAdventure(progress:AdventureProgress):boolean {
-  if(!record(progress) || progress.version!==1 || !record(progress.cleared) || !record(progress.attemptReceipts) || !record(progress.anchor) || !record(progress.discoveredShortcuts) || !record(progress.rewardClaims)||!record(progress.purchases))return false;
+  if(!record(progress) || progress.version!==2 || !record(progress.cleared) || !record(progress.attemptReceipts) || !record(progress.anchor) || !record(progress.discoveredShortcuts) || !record(progress.rewardClaims)||!record(progress.purchases))return false;
   const district=districtById(progress.anchor.districtId);
   return !!district && availableDistrict(district.id,progress)
     && Number.isFinite(progress.anchor.x)&&Number.isFinite(progress.anchor.y)
     && Math.abs(progress.anchor.x)<=4096&&Math.abs(progress.anchor.y)<=4096
     && integer(progress.coins) && Number.isSafeInteger(progress.nextAttempt)&&progress.nextAttempt>0
-    && (progress.pending===null || (record(progress.pending)&&!!encounterById(progress.pending.encounterId)&&progress.pending.id===`attempt-${progress.nextAttempt-1}`))
-    && !!progress.purchases && Object.entries(progress.purchases).every(([key,value])=>adventureShop.some(item=>item.id===key)&&value===true)
+    && (progress.pending===null || (record(progress.pending)&&!!encounterById(progress.pending.encounterId)&&progress.pending.id===`attempt-${progress.nextAttempt-1}`&&(progress.pending.startingPower===null||adventurePowerShop.some(item=>item.id===progress.pending!.startingPower)&&!!progress.purchases[progress.pending.startingPower])))
+    && !!progress.purchases && Object.entries(progress.purchases).every(([key,value])=>([...adventureShop,...adventurePowerShop]).some(item=>item.id===key)&&value===true)
+    && (progress.equippedPower===null||adventurePowerShop.some(item=>item.id===progress.equippedPower)&&!!progress.purchases[progress.equippedPower])
     && knownKeys(progress.cleared,key=>!!encounterById(key))
     && Object.values(progress.cleared).every(clear=>!!clear&&integer(clear.bestScore)&&Number.isSafeInteger(clear.clears)&&clear.clears>0)
     && Object.entries(progress.attemptReceipts).every(([key,value])=>key.length>0&&value===true)
@@ -69,17 +71,30 @@ export const adventureCleared = (progress:AdventureProgress):number => encounter
 
 export function beginAdventureAttempt(progress:AdventureProgress,encounterId:string):AdventureProgress {
   if(!availableEncounter(encounterId,progress)||progress.nextAttempt>=Number.MAX_SAFE_INTEGER)return progress;
-  return {...progress,nextAttempt:progress.nextAttempt+1,pending:{id:`attempt-${progress.nextAttempt}`,encounterId}};
+  return {...progress,nextAttempt:progress.nextAttempt+1,pending:{id:`attempt-${progress.nextAttempt}`,encounterId,startingPower:progress.equippedPower}};
 }
 export const abandonAdventureAttempt = (progress:AdventureProgress):AdventureProgress => progress.pending?{...progress,pending:null}:progress;
 export const adventureShop = [
   {id:'brigade-ribbon',name:'Brigade Ribbon',price:20,description:'A keepsake for your Adventure journal.'},
   {id:'skybell-badge',name:'Skybell Badge',price:40,description:'A keepsake for your Adventure journal.'},
 ];
+export const adventurePowerShop = [
+  {id:'pink_candy',name:'Pink Candy',price:10,power:'Pink',description:'Longer bubble range.'},
+  {id:'blue_candy',name:'Blue Candy',price:15,power:'Blue',description:'Faster bubbles.'},
+  {id:'yellow_candy',name:'Yellow Candy',price:20,power:'Yellow',description:'Faster bubble firing.'},
+  {id:'shoes',name:'Shoes',price:25,power:'Shoes',description:'Faster movement.'},
+] as const;
+export type AdventurePowerId = typeof adventurePowerShop[number]['id'];
+/** Change the next attempt only; a pending attempt owns its captured starting power. */
+export function equipAdventurePower(progress:AdventureProgress,id:string|null):AdventureProgress {
+  if(id!==null&&(!adventurePowerShop.some(item=>item.id===id)||!progress.purchases[id]))return progress;
+  if(progress.equippedPower===id)return progress;
+  return {...progress,equippedPower:id as AdventurePowerId|null};
+}
 export function purchaseAdventureItem(progress:AdventureProgress,id:string):AdventureProgress {
-  const item=adventureShop.find(value=>value.id===id);
+  const item=[...adventureShop,...adventurePowerShop].find(value=>value.id===id);
   if(!item||progress.purchases[id]||progress.coins<item.price)return progress;
-  return {...progress,coins:progress.coins-item.price,purchases:{...progress.purchases,[id]:true}};
+  return {...progress,coins:progress.coins-item.price,purchases:{...progress.purchases,[id]:true},equippedPower:adventurePowerShop.some(power=>power.id===id)?id as AdventurePowerId:progress.equippedPower};
 }
 export function claimAdventureGuideReward(progress:AdventureProgress):AdventureProgress {
   if(adventureCleared(progress)<3||progress.rewardClaims['guide-three-clears'])return progress;

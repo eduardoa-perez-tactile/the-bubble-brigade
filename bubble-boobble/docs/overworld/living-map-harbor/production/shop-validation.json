@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "Permanent powerup shop, HUD camera traversal and real encounter Play button",
+  "verification": "Game Engine tests and replay verification; no golden updates during these final runs.",
+  "counts": {
+    "t0": {
+      "v8": {
+        "passed": 2,
+        "total": 2
+      },
+      "hermes": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "t1": {
+      "v8": {
+        "passed": 3,
+        "total": 3
+      }
+    },
+    "replay": {
+      "v8": {
+        "verifiedSteps": 992
+      },
+      "hermes": {
+        "verifiedSteps": 992
+      }
+    }
+  },
+  "renderingNote": "The engine executes T1 rendering on V8; --js both compares the T0 simulation cases on V8 and Hermes.",
+  "runs": [
+    {
+      "scope": "shop",
+      "passed": true,
+      "runtimes": {
+        "v8": [
+          {
+            "name": "powerup shop first clear buys a permanent upgrade with receipt isolation and legacy migration",
+            "tier": "t0",
+            "ok": true,
+            "steps": 0,
+            "hash": "0120d4f1e138ddc4"
+          },
+          {
+            "name": "powerup shop purchases equip one actual starting power and retry reapplies without pickup rewards",
+            "tier": "t0",
+            "ok": true,
+            "steps": 992,
+            "hash": "1e0befef6e526963"
+          },
+          {
+            "name": "powerup shop six real product and navigation controls fit supported screen extremes",
+            "tier": "t1",
+            "ok": true,
+            "steps": 80,
+            "hash": "9f177d381118ecbf"
+          }
+        ],
+        "hermes": [
+          {
+            "name": "powerup shop first clear buys a permanent upgrade with receipt isolation and legacy migration",
+            "tier": "t0",
+            "ok": true,
+            "steps": 0,
+            "hash": "0120d4f1e138ddc4"
+          },
+          {
+            "name": "powerup shop purchases equip one actual starting power and retry reapplies without pickup rewards",
+            "tier": "t0",
+            "ok": true,
+            "steps": 992,
+            "hash": "1e0befef6e526963"
+          }
+        ]
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "hud",
+      "passed": true,
+      "runtimes": {
+        "v8": [
+          {
+            "name": "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide",
+            "tier": "t1",
+            "ok": true,
+            "steps": 525,
+            "hash": "da75ca5c2bb5a40c"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "play-button",
+      "passed": true,
+      "runtimes": {
+        "v8": [
+          {
+            "name": "adventure flow encounter document Play button starts the focused encounter",
+            "tier": "t1",
+            "ok": true,
+            "steps": 283,
+            "hash": "8e20c9fd59269127"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    }
+  ],
+  "replay": {
+    "path": "tests/replays/powerup_shop_purchases_equip_one_actual_starting_power_and_retry_reapplies_without_pickup_rewards.greplay",
+    "sha256": "ac2c146f283cb822e504471c5fa09f94ae314a15a1cce6477d687c8f11325fcd",
+    "bytes": 13712,
+    "scene": "scenes/cartoon.scene.json",
+    "identity": {
+      "buildId": "0.1.0",
+      "bundleHash": "ae21ec2e1109ed29",
+      "assetManifestHash": "loose:2d06800538d394c2",
+      "worldSeed": 1,
+      "sceneId": "powerup shop purchases equip one actual starting power and retry reapplies without pickup rewards",
+      "dt": 0.016666666666666666,
+      "engineVersion": "0.1.0",
+      "js": "v8",
+      "steps": 992
+    },
+    "fixture": "Recorded MetaLoaded supplies 100 coins and a second untouched profile. Recorded encounter-result cheats exercise retry and return. The separate economy test proves first-clear affordability and legacy migration.",
+    "verification": {
+      "v8": {
+        "ok": true,
+        "steps": 992,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 992,
+        "firstDivergence": null
+      }
+    }
+  }
+}

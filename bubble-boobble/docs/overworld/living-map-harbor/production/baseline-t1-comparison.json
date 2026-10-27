@@ -1,0 +1,833 @@
+{
+  "baseline": {
+    "revision": "de52a8d",
+    "sourceCleanBeforeRun": true,
+    "command": "gameengine test --tier t1 --json",
+    "reportSha256": "08ee3283cbd8d911a60e03ef833da66bb2553b61f8106629f864968c85727119",
+    "caseCount": 122,
+    "passing": 82,
+    "failing": 40,
+    "hosts": {
+      "v8": {
+        "binary": "gameengine-host",
+        "profile": "release"
+      }
+    },
+    "report": "baseline worktree .gameengine/baseline-t1.json"
+  },
+  "feature": {
+    "report": ".gameengine/living-production-all-t1.json",
+    "reportSha256": "378c24067f82ab850cb0a340ae419b7a71a5e3731aa372043f711515d64f4f5e",
+    "caseCount": 123,
+    "passing": 80,
+    "failing": 43,
+    "hosts": {
+      "v8": {
+        "binary": "gameengine-host",
+        "profile": "release"
+      }
+    }
+  },
+  "featureOnlyFailures": [
+    "living overworld effects advance while the player stands still on phone low",
+    "overworld full six-action journal and shop remain readable reachable and bounded on supported extremes",
+    "overworld source HUD locked card and guide keep safe touch targets across narrow tablet desktop and ultrawide"
+  ],
+  "baselineOnlyFailures": [],
+  "sharedFailures": [
+    "Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide",
+    "Adventure remaining twenty episodes load distinct scenery and return safely",
+    "Adventure revamp real harbor stage cards and five distinct playable episodes",
+    "adventure campaign actual menu begin play intro results and map return buttons",
+    "adventure flow encounter document Play button starts the focused encounter",
+    "arcade reference encoded overlays",
+    "cartoon feedback native bubbles landing capture rescue and reduced effects stay readable and bounded",
+    "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+    "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+    "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+    "cartoon rewards native gallery keeps all food powers and outlined scores readable across screen shapes",
+    "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+    "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+    "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+    "cuphead actual start button reaches billing then phase derived ready and clean combat",
+    "cuphead intro original brush lettering fits arena across safe wide and narrow viewports and clears on combat",
+    "cuphead victory preserves existing result actions and safe team results",
+    "desktop account buttons match reference hit rectangles",
+    "desktop complete presentation flows",
+    "desktop title animation uses reference global phase and wraps",
+    "dragon continuity native ten moving shots air legs apex holds and recovery fit all aspects",
+    "dragon palette GPU masks flips clips and source-over agree",
+    "dragon skins settings selection reaches red gameplay",
+    "dragon skins settings selection reaches yellow gameplay",
+    "expanded enemy animation full walking and wing cycles render in combat across desktop aspects",
+    "feel six player capture chain rescue boss and results fit every aspect",
+    "gameplay refinements colored shots knocked dragon and walking frames fit every viewport",
+    "native cartoon iris covers corners and clears the complete viewport",
+    "native cartoon iris opens every corner across aspect ratios and reduced effects",
+    "party actual six dragon arena and rest HUD",
+    "party boss moving art bottle warning and capture stay readable",
+    "party feedback ready GO and last kill fit every window",
+    "party pacing five second countdown preparation shooting and red last enemy",
+    "party polish readable countdown falling enemies and rest practice shots",
+    "pixel renderer exact texel prototype",
+    "reconstruction checkpoint controlled reference poses preserve measured caps and full native actors across four aspects",
+    "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+    "shot framing real crown jump and mouth aligned fire stay fixed across viewports",
+    "simplified real shooter attacks and live mixed wave stay readable on phone low",
+    "wave fruit real final pops show a different reward each wave"
+  ],
+  "sharedFailuresWithIdenticalFirstErrorCount": 39,
+  "sharedFailuresWithDifferentFirstError": [
+    {
+      "name": "adventure campaign actual menu begin play intro results and map return buttons",
+      "baselineError": "screenshot 'adventure-encounter-intro': FLIP mean 0.0272 (limit 0.0100), max 0.989 (cap 0.900); heatmap .gameengine/t1/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons/adventure_encounter_intro.mobile.metal.flip.png",
+      "featureError": "screenshot 'adventure-begin-source-map': FLIP mean 0.0192 (limit 0.0100), max 0.984 (cap 0.900); heatmap .gameengine/t1/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons/adventure_begin_source_map.mobile.metal.flip.png"
+    }
+  ],
+  "featureOnlyCases": [
+    "powerup shop six real product and navigation controls fit supported screen extremes"
+  ],
+  "baselineOnlyCases": [],
+  "structural": [
+    {
+      "file": "adventure-arrivals.json",
+      "baseline": {
+        "file": "adventure-arrivals.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 11,
+            "limit": 50,
+            "ok": true
+          },
+          {
+            "metric": "pipelinesCreatedDuringPlay",
+            "value": 0,
+            "limit": 0,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "adventure-arrivals.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 17,
+            "limit": 50,
+            "ok": true
+          },
+          {
+            "metric": "pipelinesCreatedDuringPlay",
+            "value": 0,
+            "limit": 0,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "adventure-districts.json",
+      "baseline": {
+        "file": "adventure-districts.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 17,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "adventure-districts.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 20,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "adventure-episodes.json",
+      "baseline": {
+        "file": "adventure-episodes.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "adventure-episodes.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 19,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "boss-finale.json",
+      "baseline": {
+        "file": "boss-finale.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 18,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "boss-finale.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 18,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "cartoon-overhaul-menus.json",
+      "baseline": {
+        "file": "cartoon-overhaul-menus.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "cartoon-overhaul-menus.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "cartoon-rescue.json",
+      "baseline": {
+        "file": "cartoon-rescue.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "feature": {
+        "file": "cartoon-rescue.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "cartoon.json",
+      "baseline": {
+        "file": "cartoon.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "cartoon.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "cuphead-ui.json",
+      "baseline": {
+        "file": "cuphead-ui.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 32,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "feature": {
+        "file": "cuphead-ui.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 32,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "enemy-simplification.json",
+      "baseline": {
+        "file": "enemy-simplification.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 15,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "enemy-simplification.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 15,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "harbor-menu.json",
+      "baseline": {
+        "file": "harbor-menu.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 10,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "harbor-menu.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "overworld.json",
+      "baseline": {
+        "file": "overworld.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 14,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "overworld.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 17,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "presentation.json",
+      "baseline": {
+        "file": "presentation.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "presentation.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 13,
+            "limit": 14,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "reconstruction-reference-fit.json",
+      "baseline": {
+        "file": "reconstruction-reference-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "feature": {
+        "file": "reconstruction-reference-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "refinement-device-fit.json",
+      "baseline": {
+        "file": "refinement-device-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "feature": {
+        "file": "refinement-device-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      "identical": true
+    },
+    {
+      "file": "story-defeat.json",
+      "baseline": {
+        "file": "story-defeat.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 12,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "story-defeat.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 17,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "story-hud.json",
+      "baseline": {
+        "file": "story-hud.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "story-hud.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "story-victory.json",
+      "baseline": {
+        "file": "story-victory.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "story-victory.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 18,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      },
+      "identical": false
+    },
+    {
+      "file": "victory-results.json",
+      "baseline": {
+        "file": "victory-results.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 11,
+            "limit": 18,
+            "ok": true
+          }
+        ]
+      },
+      "feature": {
+        "file": "victory-results.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 11,
+            "limit": 18,
+            "ok": true
+          }
+        ]
+      },
+      "identical": true
+    }
+  ],
+  "campaignGoldenReview": {
+    "refreshOnly": [
+      "adventure-begin-source-map",
+      "adventure-cleared-source-map-return"
+    ],
+    "preserve": [
+      "adventure-main-menu-before-start",
+      "adventure-real-entrance-card",
+      "adventure-encounter-intro",
+      "adventure-single-encounter-result"
+    ],
+    "baselineFirstFailure": "screenshot 'adventure-encounter-intro': FLIP mean 0.0272 (limit 0.0100), max 0.989 (cap 0.900); heatmap .gameengine/t1/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons/adventure_encounter_intro.mobile.metal.flip.png",
+    "limitation": "The unchanged clean-baseline campaign stops on its intro screenshot mismatch; later single-encounter-result golden was not reached and is not independently attributed by this baseline run."
+  },
+  "qualification": [
+    "Primary ce9655f comparison was stopped and discarded because it contained four existing user source edits.",
+    "This comparison uses clean isolated prior-PR revision de52a8d; only engine skills bootstrap and dependency installation preceded the run.",
+    "No golden updates, replay changes, source changes or threshold changes were applied in the clean baseline.",
+    "Feature-only failures are the three intentionally changed overworld visual families, subject to coordinator visual approval.",
+    "All four failing structural draw budgets are inherited with identical measured values and limits.",
+    "The clean baseline worktree was archived after the command exited. Its ignored raw JSON was not retained. The immutable report SHA256 and observed summary remain; all40 baseline first errors are retained here, with39 reconstructed from previously verified identical feature first-error lines and the campaign error directly recorded before archival."
+  ],
+  "baselineFailureFirstErrors": [
+    {
+      "name": "Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide",
+      "error": "screenshot 'episode-1-360': FLIP mean 0.0602 (limit 0.0100), max 0.989 (cap 0.900); heatmap .gameengine/t1/adventure_episode_staging_keeps_the_full_board_across_narrow_tablet_desktop_and_ultrawide/episode_1_360.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "Adventure remaining twenty episodes load distinct scenery and return safely",
+      "error": "screenshot 'episode-6': FLIP mean 0.1516 (limit 0.0100), max 0.993 (cap 0.900); heatmap .gameengine/t1/adventure_remaining_twenty_episodes_load_distinct_scenery_and_return_safely/episode_6.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "Adventure revamp real harbor stage cards and five distinct playable episodes",
+      "error": "screenshot 'episode-1-stage': FLIP mean 0.1386 (limit 0.0100), max 0.993 (cap 0.900); heatmap .gameengine/t1/adventure_revamp_real_harbor_stage_cards_and_five_distinct_playable_episodes/episode_1_stage.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "adventure campaign actual menu begin play intro results and map return buttons",
+      "error": "screenshot 'adventure-encounter-intro': FLIP mean 0.0272 (limit 0.0100), max 0.989 (cap 0.900); heatmap .gameengine/t1/adventure_campaign_actual_menu_begin_play_intro_results_and_map_return_buttons/adventure_encounter_intro.mobile.metal.flip.png",
+      "provenance": "Direct clean-baseline result observed before archival."
+    },
+    {
+      "name": "adventure flow encounter document Play button starts the focused encounter",
+      "error": "press on 'play' at (640, 548) lands on 'loading' (Screen \"Lantern Landing\") drawn over it",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "arcade reference encoded overlays",
+      "error": "expected [13,13,28] to equal [8,12,27]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon feedback native bubbles landing capture rescue and reduced effects stay readable and bounded",
+      "error": "screenshot 'boss_windup': FLIP mean 0.0818 (limit 0.0100), max 0.989 (cap 0.900); heatmap .gameengine/t1/cartoon_feedback_native_bubbles_landing_capture_rescue_and_reduced_effects_stay_readable_and_bounded/boss_windup.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+      "error": "expected [34,64,96] to equal [32,64,96]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+      "error": "screenshot 'complete_items': FLIP mean 0.0299 (limit 0.0100), max 0.988 (cap 0.900); heatmap .gameengine/t1/cartoon_overhaul_complete_enemy_item_elemental_boss_rescue_and_victory_flows_render_in_the_new_arena/complete_items.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+      "error": "screenshot 'new_arena_768x720': FLIP mean 0.0286 (limit 0.0100), max 0.980 (cap 0.900); heatmap .gameengine/t1/cartoon_overhaul_recorded_ten_human_start_uses_new_whole_board_and_responsive_controls_at_every_aspect/new_arena_768x720.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon rewards native gallery keeps all food powers and outlined scores readable across screen shapes",
+      "error": "screenshot 'rewards_768': FLIP mean 0.0323 (limit 0.0100), max 0.988 (cap 0.900); heatmap .gameengine/t1/cartoon_rewards_native_gallery_keeps_all_food_powers_and_outlined_scores_readable_across_screen_shapes/rewards_768.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+      "error": "screenshot 'capture_warning_escape': FLIP mean 0.0331 (limit 0.0100), max 0.480 (cap 0.900); heatmap .gameengine/t1/cartoon_slice_captured_warning_escape_downed_and_actual_contact_rescue_remain_readable/capture_warning_escape.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+      "error": "screenshot 'next_wave': FLIP mean 0.0289 (limit 0.0100), max 0.985 (cap 0.900); heatmap .gameengine/t1/concept_checkpoint_real_player_climbs_five_tiers_then_captures_pops_and_clears_a_wave/next_wave.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+      "error": "expected false to be true",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cuphead actual start button reaches billing then phase derived ready and clean combat",
+      "error": "screenshot 'ready': FLIP mean 0.0255 (limit 0.0100), max 0.983 (cap 0.900); heatmap .gameengine/t1/cuphead_actual_start_button_reaches_billing_then_phase_derived_ready_and_clean_combat/ready.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cuphead intro original brush lettering fits arena across safe wide and narrow viewports and clears on combat",
+      "error": "screenshot 'ready_hold': FLIP mean 0.0259 (limit 0.0100), max 0.981 (cap 0.900); heatmap .gameengine/t1/cuphead_intro_original_brush_lettering_fits_arena_across_safe_wide_and_narrow_viewports_and_clears_on_combat/ready_hold.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "cuphead victory preserves existing result actions and safe team results",
+      "error": "expected \"play\" to be \"result\"",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "desktop account buttons match reference hit rectangles",
+      "error": "screenshot 'invalid-name': FLIP mean 0.0373 (limit 0.0100), max 0.984 (cap 0.900); heatmap .gameengine/t1/desktop_account_buttons_match_reference_hit_rectangles/invalid_name.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "desktop complete presentation flows",
+      "error": "screenshot 'boundary-element-fire': FLIP mean 0.0325 (limit 0.0100), max 0.992 (cap 0.900); heatmap .gameengine/t1/desktop_complete_presentation_flows/boundary_element_fire.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "desktop title animation uses reference global phase and wraps",
+      "error": "expected [13,13,28,255] to equal [8,12,27,255]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "dragon continuity native ten moving shots air legs apex holds and recovery fit all aspects",
+      "error": "screenshot 'recovered_2520x1080': FLIP mean 0.0113 (limit 0.0100), max 0.968 (cap 0.900); heatmap .gameengine/t1/dragon_continuity_native_ten_moving_shots_air_legs_apex_holds_and_recovery_fit_all_aspects/recovered_2520x1080.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "dragon palette GPU masks flips clips and source-over agree",
+      "error": "expected [0,183,0,255] to equal [6,183,0,255]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "dragon skins settings selection reaches red gameplay",
+      "error": "screenshot 'settings-preview': FLIP mean 0.0050 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_red_gameplay/settings_preview.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "dragon skins settings selection reaches yellow gameplay",
+      "error": "screenshot 'settings-preview': FLIP mean 0.0069 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/dragon_skins_settings_selection_reaches_yellow_gameplay/settings_preview.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "expanded enemy animation full walking and wing cycles render in combat across desktop aspects",
+      "error": "screenshot 'cycle_5': FLIP mean 0.0112 (limit 0.0100), max 0.977 (cap 0.900); heatmap .gameengine/t1/expanded_enemy_animation_full_walking_and_wing_cycles_render_in_combat_across_desktop_aspects/cycle_5.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "feel six player capture chain rescue boss and results fit every aspect",
+      "error": "screenshot 'boss_capture': FLIP mean 0.0132 (limit 0.0100), max 0.968 (cap 0.900); heatmap .gameengine/t1/feel_six_player_capture_chain_rescue_boss_and_results_fit_every_aspect/boss_capture.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "gameplay refinements colored shots knocked dragon and walking frames fit every viewport",
+      "error": "screenshot 'feedback_768x720': FLIP mean 0.0180 (limit 0.0100), max 0.982 (cap 0.900); heatmap .gameengine/t1/gameplay_refinements_colored_shots_knocked_dragon_and_walking_frames_fit_every_viewport/feedback_768x720.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "native cartoon iris covers corners and clears the complete viewport",
+      "error": "screenshot 'native-iris-partial': FLIP mean 0.3448 (limit 0.0100), max 0.993 (cap 0.900); heatmap .gameengine/t1/native_cartoon_iris_covers_corners_and_clears_the_complete_viewport/native_iris_partial.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "native cartoon iris opens every corner across aspect ratios and reduced effects",
+      "error": "expected [106,163,79,255] to equal [92,165,69,255]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "party actual six dragon arena and rest HUD",
+      "error": "expected [34,66,86] to equal [36,67,87]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "party boss moving art bottle warning and capture stay readable",
+      "error": "screenshot 'giant_bubble': FLIP mean 0.0118 (limit 0.0100), max 0.966 (cap 0.900); heatmap .gameengine/t1/party_boss_moving_art_bottle_warning_and_capture_stay_readable/giant_bubble.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "party feedback ready GO and last kill fit every window",
+      "error": "screenshot 'flint_last_kill_1680x720': FLIP mean 0.0029 (limit 0.0100), max 0.929 (cap 0.900); heatmap .gameengine/t1/party_feedback_ready_go_and_last_kill_fit_every_window/flint_last_kill_1680x720.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "party pacing five second countdown preparation shooting and red last enemy",
+      "error": "screenshot 'five_second_break': FLIP mean 0.0036 (limit 0.0100), max 0.932 (cap 0.900); heatmap .gameengine/t1/party_pacing_five_second_countdown_preparation_shooting_and_red_last_enemy/five_second_break.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "party polish readable countdown falling enemies and rest practice shots",
+      "error": "expected [13,22,42] to equal [12,21,43]",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "pixel renderer exact texel prototype",
+      "error": "expected 13 to be 11",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "reconstruction checkpoint controlled reference poses preserve measured caps and full native actors across four aspects",
+      "error": "screenshot 'fixed_reference_canonical': FLIP mean 0.0240 (limit 0.0100), max 0.988 (cap 0.900); heatmap .gameengine/t1/reconstruction_checkpoint_controlled_reference_poses_preserve_measured_caps_and_full_native_actors_across_four_aspects/fixed_reference_canonical.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+      "error": "expected 15 to be <= 14",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "shot framing real crown jump and mouth aligned fire stay fixed across viewports",
+      "error": "screenshot 'title_without_dragons': FLIP mean 0.9192 (limit 0.0100), max 0.993 (cap 0.900); heatmap .gameengine/t1/shot_framing_real_crown_jump_and_mouth_aligned_fire_stay_fixed_across_viewports/title_without_dragons.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "simplified real shooter attacks and live mixed wave stay readable on phone low",
+      "error": "screenshot 'live_mixed_wave': FLIP mean 0.0491 (limit 0.0100), max 0.984 (cap 0.900); heatmap .gameengine/t1/simplified_real_shooter_attacks_and_live_mixed_wave_stay_readable_on_phone_low/live_mixed_wave.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    },
+    {
+      "name": "wave fruit real final pops show a different reward each wave",
+      "error": "screenshot 'wave_1_fruit': FLIP mean 0.0041 (limit 0.0100), max 0.932 (cap 0.900); heatmap .gameengine/t1/wave_fruit_real_final_pops_show_a_different_reward_each_wave/wave_1_fruit.mobile.metal.flip.png",
+      "provenance": "Reconstructed from feature first-error text after exact string equality with the clean-baseline first error was verified before archival."
+    }
+  ]
+}

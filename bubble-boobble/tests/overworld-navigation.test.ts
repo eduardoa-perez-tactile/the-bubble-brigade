@@ -31,23 +31,25 @@ worldTest('overworld source polygons stop long movement at solid scenery and coa
 
 worldTest('overworld all source-map landmarks connect to their scenic district spawn',async()=>{
   const failures:string[]=[];
-  // Flood-fill the real foot-disk collision at 20-source-pixel intervals. This catches
+  // Flood-fill the real foot-disk collision at 10-source-pixel intervals. This catches
   // disconnected plazas, scenery blocking a door, and missing stair/bridge connections.
   for(const district of districts){
     const map=getOverworldMap(district.id),start=map.spawn,queue=[start],seen=new Set([`${start.x},${start.y}`]);
     for(let index=0;index<queue.length;index++){
       const point=queue[index]!;
-      for(const [dx,dy] of [[20,0],[-20,0],[0,20],[0,-20]]){
+      for(const [dx,dy] of [[10,0],[-10,0],[0,10],[0,-10]]){
         const x=point.x+dx!,y=point.y+dy!,key=`${x},${y}`;
         if(x<0||y<0||x>map.width||y>map.height||seen.has(key))continue;
         const world=sourceToWorld(map,{x,y});
         if(!isOverworldWalkable(world.x,world.y,district.id))continue;
+        const previous=sourceToWorld(map,point),moved=moveOverworld(previous,dx!/10,-dy!/10,10*map.scale/OVERWORLD_SPEED,district.id);
+        if(Math.abs(moved.x-world.x)>.001||Math.abs(moved.y-world.y)>.001)continue;
         seen.add(key);queue.push({x,y});
       }
     }
     const worldPoints=queue.map(point=>sourceToWorld(map,point));
     for(const poi of overworldPois(district.id)){
-      if(!worldPoints.some(point=>(point.x-poi.x)**2+(point.y-poi.y)**2<=poi.radius**2))failures.push(`${district.id} ${poi.id}: unreachable within trigger`);
+      if(!worldPoints.some(point=>(point.x-poi.x)**2+(point.y-poi.y)**2<=poi.radius**2&&focusedOverworldPoi(district.id,point.x,point.y)===poi.id))failures.push(`${district.id} ${poi.id}: unreachable within trigger`);
       if(poi.kind==='trial'){
         const approach=overworldEntrancePoint(district.id,`trial-${district.index+1}`);
         if(focusedOverworldPoi(district.id,approach.x,approach.y)!=='trial')failures.push(`${district.id} trial return: wrong focus`);
@@ -67,7 +69,8 @@ worldTest('overworld source POIs keep stable encounter IDs and source-scaled pro
     const pois=overworldPois(district.id);
     expect(pois.filter(poi=>poi.kind==='encounter').map(poi=>poi.id)).toEqual(district.encounterIds);
     for(const poi of pois){
-      expect(focusedOverworldPoi(district.id,poi.x,poi.y)).toBe(poi.id);
+      const approach=overworldEntrancePoint(district.id,poi.id);
+      expect(focusedOverworldPoi(district.id,approach.x,approach.y)).toBe(poi.id);
       expect(poi.radius).toBeGreaterThan(0);
     }
     expect(focusedOverworldPoi(district.id,-10000,-10000)).toBe('');

@@ -646,41 +646,47 @@ export const district2Map:SourceMap={
    ]
   ]
  ],
+ // Door approaches follow the existing south-facing doorstep, not the building centre.
  "pois": [
   {
    "kind": "encounter",
    "slot": 0,
    "x": 568.344,
    "y": 1246.928,
-   "label": "Seedling School"
+   "label": "Seedling School",
+   "approach": [[534.344, 1244.928], [602.344, 1244.928], [602.344, 1282.928], [534.344, 1282.928]]
   },
   {
    "kind": "encounter",
    "slot": 1,
    "x": 365.014,
    "y": 748.402,
-   "label": "Root Library"
+   "label": "Root Library",
+   "approach": [[331.014, 746.402], [399.014, 746.402], [399.014, 784.402], [331.014, 784.402]]
   },
   {
    "kind": "encounter",
    "slot": 2,
    "x": 825.569,
    "y": 428.708,
-   "label": "Flower Conservatory"
+   "label": "Flower Conservatory",
+   "approach": [[791.569, 426.708], [859.569, 426.708], [859.569, 464.708], [791.569, 464.708]]
   },
   {
    "kind": "encounter",
    "slot": 3,
    "x": 1288.574,
    "y": 796.172,
-   "label": "Butterfly Greenhouse"
+   "label": "Butterfly Greenhouse",
+   "approach": [[1254.574, 794.172], [1322.574, 794.172], [1322.574, 832.172], [1254.574, 832.172]]
   },
   {
    "kind": "encounter",
    "slot": 4,
    "x": 1082.794,
    "y": 1346.144,
-   "label": "Acorn Mill"
+   "label": "Acorn Mill",
+   "approach": [[1048.794, 1344.144], [1116.794, 1344.144], [1116.794, 1382.144], [1048.794, 1382.144]]
   },
   {
    "kind": "guide",
