@@ -24,7 +24,7 @@ import { developmentMenuEnabled } from './development';
 import { read, app, assets, loading, audio, quality, Time, MaterialGlobals, ViewInfo } from '@gameengine/runtime';
 import { setReducedMotion, createMemo, createEffect, untrack, onCleanup, defineUI, emit, useDoc, useResource, views, type ViewHandle } from '@gameengine/ui';
 import { DesktopIntent, ArcadeControl, ArcadeAudio } from '../schema.gen.ts';
-import { desktopState } from './state.ts';
+import { desktopState,TITLE_REVEAL_STEPS } from './state.ts';
 import { desktopSaveState } from './save.ts';
 import { desktopModel, getDesktopButtons, type DesktopModel } from './model.ts';
 import { DesktopResultsView, DesktopView, DesktopEditorView, DesktopMenuView, DesktopAccountView, DesktopPartyView, DesktopModeView } from './desktop.view.tsx';
@@ -32,7 +32,7 @@ import { session } from '../arcade/session.ts';
 import { DesktopHudView, hudModel, type HudModel } from './hud.view.tsx';
 import { CartoonHudView } from '../cartoon/hud.view.tsx';
 import { cartoonHudModel } from '../cartoon/hud-model';
-import { CartoonMenuView } from '../cartoon/menu.view.tsx';
+import { CartoonMenuView,CartoonTitleCurtainView,type TitleCurtainModel } from '../cartoon/menu.view.tsx';
 import { CartoonShellView, CartoonAccountView, CartoonPartyView, CartoonModeView, CartoonResultsView, CartoonEditorView } from '../cartoon/screens.view.tsx';
 const desktopUI=defineUI({name:'DesktopUI',root(){
  const viewport=useResource(ViewInfo),control=useResource(ArcadeControl),clock=useResource(Time),platform=useResource(ArcadeAudio),materials=useResource(MaterialGlobals);
@@ -112,6 +112,15 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   if(storyCue)storyCue.update(m);else storyCue=views.push(StoryOutcomeView,m);
  });
  onCleanup(()=>storyCue?.close({immediate:true}));
+ let titleCurtain:ViewHandle<TitleCurtainModel>|undefined;
+ createEffect(()=>{
+  const s=state();
+  if(!s.titleRevealActive){titleCurtain?.close({immediate:true});titleCurtain=undefined;return;}
+  const elapsed=(s.titleRevealStartedStep??-1)<0?0:Math.max(0,(clock()?.step??0)-s.titleRevealStartedStep!);
+  const t=Math.min(1,elapsed/TITLE_REVEAL_STEPS),progress=t*t*(3-2*t);
+  const model={progress,narrow:(viewport()?.width??1280)/(viewport()?.height??720)<.85};
+  if(titleCurtain)titleCurtain.update(model);else titleCurtain=views.push(CartoonTitleCurtainView,model);
+ });
  let cover:ViewHandle<CartoonTransitionModel>|undefined;
  createEffect(()=>{const s=state();if(!s.transitionAction){cover?.close({immediate:true});cover=undefined;return;}const elapsed=(s.transitionStartedStep??-1)<0?0:Math.max(0,(clock()?.step??0)-s.transitionStartedStep!);const timing=cartoonFlowTiming(!!s.transitionHasTitle,s.transitionAction,s.partyRun);if(elapsed>=timing.revealEndAt){cover?.close({immediate:true});cover=undefined;return;}const t=s.transitionCommitted?Math.min(1,Math.max(0,(elapsed-timing.commitAt)/timing.revealSteps)):Math.min(1,elapsed/timing.closeAt);const aperture=s.transitionCommitted?1-(1-t)*(1-t):1-t*t;const m={aperture,reducedEffects:!!save().settings.reducedEffects,opacity:s.transitionCommitted?1-t:t};if(cover)cover.update(m);else cover=views.push(CartoonTransitionView,m);});
  // Reuse the viewport-sized transition layer so the finale fade also covers safe insets and tall screens.

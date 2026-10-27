@@ -18,7 +18,7 @@ worldTest('overworld ambience animates still maps with bounded effects and hones
   }
   expect(overworldAmbientDraws(s.districtId,0)).not.toEqual(overworldAmbientDraws(s.districtId,35));
   const still=overworldDrawPlan(s,progress,'green',0),later=overworldDrawPlan(s,progress,'green',125);
-  expect(still.filter(d=>d.image?.includes('/npc/guide-'))).not.toEqual(later.filter(d=>d.image?.includes('/npc/guide-')));
+  expect(still.filter(d=>d.image?.includes('/npc/'))).toEqual(later.filter(d=>d.image?.includes('/npc/')));
   expect(still.filter(d=>d.image?.includes('/npc/')).length).toBe(3);
   expect(still.some(d=>d.text==='SHOP')).toBe(true);
   expect(still.some(d=>d.image?.includes('cleared-flag')||d.image?.includes('lantern-beam')||d.image?.includes('dust-puff')||d.image?.includes('cloth/pennant'))).toBe(false);
@@ -29,7 +29,7 @@ worldTest('overworld ambience animates still maps with bounded effects and hones
  expect(fresh.filter(d=>d.image?.endsWith('rope-barrier')).length).toBe(3);
  progress.cleared['encounter-1']={bestScore:10,clears:1};
  const cleared=overworldDrawPlan(initialOverworldState,progress);
- expect(cleared.some(d=>d.image?.includes('overworld-living/district-1/lantern-'))).toBe(true);
+ expect(cleared.some(d=>d.image?.includes('overworld-living/district-1/lantern-'))).toBe(false);
  expect(cleared.filter(d=>d.image?.endsWith('cleared-flag')).length).toBe(0);
  expect(cleared.filter(d=>d.image?.endsWith('rope-barrier')).length).toBe(2);
 },{scene});

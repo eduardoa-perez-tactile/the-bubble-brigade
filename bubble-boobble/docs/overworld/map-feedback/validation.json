@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-27",
+  "engineOnly": true,
+  "t0": {
+    "ok": true,
+    "runtimes": {
+      "v8": {
+        "cases": 515,
+        "passed": 515
+      },
+      "hermes": {
+        "cases": 515,
+        "passed": 515
+      }
+    },
+    "mismatches": []
+  },
+  "check": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "gameengine-host (V8)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-host (Hermes lane)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "gameengine-cook",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "desktop player (release)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "typecheck",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "validate (warnings)",
+        "ok": true,
+        "warning": true
+      },
+      {
+        "name": "pipelines",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "views",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "cook (desktop)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "smoke (cooked)",
+        "ok": true,
+        "warning": false
+      },
+      {
+        "name": "ui nodes",
+        "ok": true,
+        "warning": false
+      }
+    ]
+  },
+  "assetMemory": {
+    "ok": true,
+    "device": "phone-low",
+    "platform": "android",
+    "budgets": [
+      {
+        "what": "peak textures (phone-low)",
+        "bytes": 40059260,
+        "budget": 134217728,
+        "over": false
+      },
+      {
+        "what": "peak audio (phone-low)",
+        "bytes": 0,
+        "budget": 33554432,
+        "over": false
+      },
+      {
+        "what": "peak total (phone-low)",
+        "bytes": 40059260,
+        "budget": 201326592,
+        "over": false
+      },
+      {
+        "what": "peak (memory.json)",
+        "bytes": 40059260,
+        "budget": 50331648,
+        "over": false
+      },
+      {
+        "what": "group courtyard-gameplay",
+        "bytes": 40059260,
+        "budget": 41943040,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-1",
+        "bytes": 1016816,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-2",
+        "bytes": 957168,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-3",
+        "bytes": 956352,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-4",
+        "bytes": 956608,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-district-5",
+        "bytes": 957168,
+        "budget": 2097152,
+        "over": false
+      },
+      {
+        "what": "group overworld-shared",
+        "bytes": 2023024,
+        "budget": 2097152,
+        "over": false
+      }
+    ]
+  },
+  "localHarborPerformance": {
+    "steps": 600,
+    "frames": 36,
+    "stepP95Ms": 0.106,
+    "presentationP95Ms": 0.433958,
+    "jsHeapMiB": 30.31855010986328,
+    "hitchSteps": 0,
+    "gcPausesOver4ms": 0,
+    "drawCalls": 14,
+    "particles": 0,
+    "previousCheckpoint": {
+      "stepP95Ms": 0.0995,
+      "presentationP95Ms": 0.429459,
+      "drawCalls": 10
+    },
+    "limitations": "Relative paused release-host sample, not physical-phone FPS, GPU timing, application RSS or thermals.",
+    "note": "CPU sample precedes atlas-only colocation. Current draw-count improvement is independently measured by the fixed-budget handoff regression; CPU timing is not reinterpreted as a post-batching measurement."
+  },
+  "preservation": {
+    "basePaintings": 5,
+    "exactMissionAnchors": 25,
+    "guideAnchorExceptions": 4
+  },
+  "assetHashes": {
+    "verifiedSprites": 151,
+    "transparentCurtainBottom": true
+  },
+  "legacyRenderSuite": "The full suite was run: 38 pre-existing cases remain after focused corrections. No unrelated goldens or thresholds were changed.",
+  "campaignCheckpoints": {
+    "changedAndReviewed": [
+      "adventure-main-menu-before-start",
+      "adventure-begin-source-map",
+      "adventure-real-entrance-card",
+      "adventure-cleared-source-map-return"
+    ],
+    "unchangedLegacyIntro": "Final no-update rerun reaches the unchanged intro golden and reproduces the known baseline FLIP mean0.0272/max0.989 mismatch. The intro and result goldens are not refreshed."
+  },
+  "t1": {
+    "mapCases": 3,
+    "mapCasesPassedWithoutUpdates": true,
+    "mapScreenshots": 30,
+    "curtainCases": 2,
+    "curtainCasesPassedWithoutUpdates": true,
+    "curtainMemoryClass": "phone-low",
+    "renderRuntime": "v8"
+  },
+  "batching": {
+    "atlas": "overworld-living-residents",
+    "members": "Existing NPC drawings, approved markers, exact copied NPC shadow",
+    "unchanged": "Art bytes, anchors, opacity and painter depth",
+    "mapDrawsBefore": 16,
+    "mapDrawsAfter": 13,
+    "originalHandoffBudget": 14,
+    "atlasBytesBefore": 111840,
+    "atlasBytesAfter": 124112
+  },
+  "broaderRender": {
+    "command": "gameengine test --tier t1 --record-pipelines --json",
+    "cases": 125,
+    "initialFailingCases": 41,
+    "correctedByReviewedFollowups": [
+      "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+      "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+      "cuphead full bleed menu hover uses recorded viewport geometry instead of legacy button positions"
+    ],
+    "remainingPreexistingCases": [
+      "Adventure episode staging keeps the full board across narrow tablet desktop and ultrawide",
+      "Adventure remaining twenty episodes load distinct scenery and return safely",
+      "Adventure revamp real harbor stage cards and five distinct playable episodes",
+      "adventure campaign actual menu begin play intro results and map return buttons",
+      "arcade reference encoded overlays",
+      "cartoon feedback native bubbles landing capture rescue and reduced effects stay readable and bounded",
+      "cartoon native GPU alpha keeps bubble centers clear and stencil clips rims",
+      "cartoon overhaul complete enemy item elemental boss rescue and victory flows render in the new arena",
+      "cartoon overhaul recorded ten human start uses new whole board and responsive controls at every aspect",
+      "cartoon rewards native gallery keeps all food powers and outlined scores readable across screen shapes",
+      "cartoon slice captured warning escape downed and actual contact rescue remain readable",
+      "concept checkpoint real player climbs five tiers then captures pops and clears a wave",
+      "concept checkpoint responsive actual rescue empty out roster boss victory and restart remain playable",
+      "cuphead actual start button reaches billing then phase derived ready and clean combat",
+      "cuphead intro original brush lettering fits arena across safe wide and narrow viewports and clears on combat",
+      "cuphead victory preserves existing result actions and safe team results",
+      "desktop account buttons match reference hit rectangles",
+      "desktop complete presentation flows",
+      "desktop title animation uses reference global phase and wraps",
+      "dragon continuity native ten moving shots air legs apex holds and recovery fit all aspects",
+      "dragon palette GPU masks flips clips and source-over agree",
+      "dragon skins settings selection reaches red gameplay",
+      "dragon skins settings selection reaches yellow gameplay",
+      "expanded enemy animation full walking and wing cycles render in combat across desktop aspects",
+      "feel six player capture chain rescue boss and results fit every aspect",
+      "gameplay refinements colored shots knocked dragon and walking frames fit every viewport",
+      "native cartoon iris covers corners and clears the complete viewport",
+      "party actual six dragon arena and rest HUD",
+      "party boss moving art bottle warning and capture stay readable",
+      "party feedback ready GO and last kill fit every window",
+      "party pacing five second countdown preparation shooting and red last enemy",
+      "party polish readable countdown falling enemies and rest practice shots",
+      "pixel renderer exact texel prototype",
+      "reconstruction checkpoint controlled reference poses preserve measured caps and full native actors across four aspects",
+      "refinement checkpoint actual enlarged actors numbers help and HUD fit narrow notched and tablet devices",
+      "shot framing real crown jump and mouth aligned fire stay fixed across viewports",
+      "simplified real shooter attacks and live mixed wave stay readable on phone low",
+      "wave fruit real final pops show a different reward each wave"
+    ],
+    "remainingPreexistingCount": 38,
+    "baselineEvidence": "../living-map-harbor/production/baseline-t1-comparison.json",
+    "recordedGpuTiers": [
+      "mobile",
+      "desktop",
+      "compat"
+    ],
+    "pipelineManifestChanged": false,
+    "newCurtainBudget": [
+      {
+        "file": "title-curtain.json",
+        "ok": true,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 50,
+            "ok": true
+          }
+        ]
+      }
+    ],
+    "initialStructuralFailures": [
+      {
+        "file": "cartoon-rescue.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "cuphead-ui.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 32,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "harbor-menu.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "reconstruction-reference-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 15,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      },
+      {
+        "file": "refinement-device-fit.json",
+        "ok": false,
+        "checks": [
+          {
+            "metric": "drawCallsMax",
+            "value": 16,
+            "limit": 14,
+            "ok": false
+          }
+        ]
+      }
+    ],
+    "qualification": "The three new title/readiness failures pass targeted no-update reruns after intentional curtain-only golden updates or readiness corrections. Campaign changed menu/map/card checkpoints pass before reproducing the unchanged legacy intro mismatch. The new harbor-map draw regression is corrected by atlas batching under the original14 limit; see final replay budget evidence.",
+    "finalStructuralQualification": "Harbor-menu.json is corrected under its original14 cap and validated using its fresh1,440-step actual-input recording in the same continuously rendering Game Engine offscreen session path as the structural runner. Exactly the four previously known legacy budget failures remain; no thresholds changed."
+  },
+  "finalHarborBudget": {
+    "ok": true,
+    "method": "Same Game Engine offscreen SDK/session path as structural budget runner",
+    "replay": "tests/replays/harbor_menu_animated_light_greeting_and_atmosphere_preserve_live_controls_across_supported_screens.greplay",
+    "steps": 1440,
+    "drawCallsMax": 13,
+    "limit": 14,
+    "divergence": null,
+    "offscreen": [
+      540,
+      960
+    ],
+    "tier": "mobile",
+    "freshReplaySha256": "740eb8d7b583430818d24712217c38ab95be9ff1067c918bb20b3b275df7b704"
+  }
+}

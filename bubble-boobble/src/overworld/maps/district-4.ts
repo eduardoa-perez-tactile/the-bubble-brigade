@@ -867,8 +867,8 @@ export const district4Map:SourceMap={
   },
   {
    "kind": "guide",
-   "x": 612.44,
-   "y": 1237.129,
+   "x": 581.818,
+   "y": 1224.88,
    "label": "Springs Guide"
   },
   {

@@ -1,4 +1,4 @@
-import { defineView, Screen, Widget, Flipbook, Particles } from '@gameengine/ui';
+import { defineView, Screen, Widget, Sprite, Particles } from '@gameengine/ui';
 import { desktopModel, type DesktopModel } from '../desktop/model';
 import { initialDesktopState } from '../desktop/state';
 import { initialAdventure } from '../overworld/progression';
@@ -21,6 +21,14 @@ export const CartoonMenuView = defineView<DesktopModel>({
       startSelected: () => model().selected === 0,
       settingsSelected: () => model().selected === 2,
       quitSelected: () => model().selected === 3,
-    }} codeAreas={{greeter:()=> Flipbook({class:'menu-greeter',clip:'cartoon/menu/greeting.clip2d.json',playing:()=>!model().reducedEffects}),atmosphere:()=> Particles({class:'menu-atmosphere',effect:'cartoon/menu/atmosphere.vfx.json',emitting:()=>!model().reducedEffects,unit:100,seed:29})}} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-continue':key==='quit'?(model().buttons[3]?.key??key):key); }} />
+    }} codeAreas={{greeter:()=> Sprite({class:'menu-greeter',src:'cartoon/menu/greeting/04'}),atmosphere:()=> Particles({class:'menu-atmosphere',effect:'cartoon/menu/atmosphere.vfx.json',emitting:()=>model().page!=='title'&&!model().reducedEffects,unit:100,seed:29})}} onIntent={(_, event) => { const key=event.path.at(-1)!; intent(key==='choose-mode'?'adventure-continue':key==='quit'?(model().buttons[3]?.key??key):key); }} />
   </Screen>,
+});
+
+/** Only the closed cloth lifts; branding and the planted actor belong to the menu behind it. */
+export interface TitleCurtainModel {progress:number;narrow:boolean}
+export const CartoonTitleCurtainView=defineView<TitleCurtainModel>({
+ name:'CartoonTitleCurtain',layer:'overlay',blockInput:true,
+ samples:{start:{progress:0,narrow:false},middle:{progress:.5,narrow:false},end:{progress:1,narrow:false}},
+ render:model=><Screen safeArea class="desktop-screen title-curtain-screen"><Widget doc="cartoon-menu" id="title-curtain" class="cartoon-menu title-curtain-sheet" style={()=>({transform:`translateY(${-104*model().progress}%)`})} props={{titleMode:true,titleNarrow:()=>model().narrow,narrow:()=>model().narrow,promptVisible:false}}/></Screen>,
 });

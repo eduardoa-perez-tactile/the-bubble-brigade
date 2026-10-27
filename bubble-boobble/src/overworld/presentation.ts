@@ -4,7 +4,7 @@ import {overworldState,type OverworldState} from './state';
 import {getOverworldMap,sourceToWorld} from './maps';
 import {overworldAmbientDraws} from './ambience';
 import {composeBoundedOverworldDraws} from './authored-layers';
-import {livingLanternDraws,livingResidentDraws,livingShopDraws,livingDoorDraws} from './living-map-visuals';
+import {livingResidentDraws,livingShopDraws,livingMissionMarkerDraws} from './living-map-visuals';
 import {encounters,availableEncounter} from './content';
 import {adventureForProfile,type AdventureProgress} from './progression';
 import {desktopSaveState} from '../desktop/save';
@@ -29,7 +29,6 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   const point=sourceToWorld(map,poi);
   if(poi.kind==='encounter'){
    const encounter=local[poi.slot??0]!,cleared=!!p.cleared[encounter.id],open=availableEncounter(encounter.id,p);
-   out.push(...livingDoorDraws(s.districtId,poi.slot??0,open,cleared));
    if(!open&&!cleared)sprite('overworld-shared/ambient/rope-barrier',point.x,point.y+11,32,23,Math.round(2010-point.y));
    if(s.focusedPoi===encounter.id)text(cleared?'REVISIT':open?'ENTER':'LOCKED',point.x,point.y-13,11,3500);
   }
@@ -46,7 +45,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   sprite('overworld-shared/foreground',point.x,point.y+16,58,36,Math.round(2000-point.y));
  }
  // Preserve every authored part; a full pool is an explicit error, never missing scenery.
- return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingLanternDraws(s.districtId,tick,!!p.cleared['encounter-1'],reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId));
+ return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId),livingMissionMarkerDraws(s.districtId,p));
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({

@@ -1,0 +1,242 @@
+{
+  "sourceSha256": {
+    "src/overworld/living-map-visuals.ts": "c670f18afb895d124a01ef8c69137842d81f282dfba6613d1a07999429c6238f",
+    "src/overworld/presentation.ts": "2e947934580c7f6173f92b2bfc1c88f0361c3fe019af23278dbc69079b8c077a",
+    "src/overworld/maps/district-1.ts": "6c31c4cf627d6c4f5602543644b6cdfa27b4e5f623d97ba79cc05e2f8702344c",
+    "src/overworld/maps/district-2.ts": "640a3eb2fb2f852ddc932e9625eb205b687f6d85363b7352d4c172c51559e671",
+    "src/overworld/maps/district-3.ts": "28b6bc1e23ba24e0c0c73f0071b7b75b8117f5fa92fcfffa897159003e41d27c",
+    "src/overworld/maps/district-4.ts": "8bbe95e85ace1d46b4c8c0ec08397f313410c0afea130e3647f5beb6c4abaebb",
+    "src/overworld/maps/district-5.ts": "97233335116c49abc56671b689985e5f59cc31891a3e69e1cbae43cbd8efa42c"
+  },
+  "captures": [
+    {
+      "district": 1,
+      "role": "guide",
+      "feet": {
+        "x": -190.2849,
+        "y": 38.21609999999999
+      },
+      "review": {
+        "x": -190.2849,
+        "y": 90.21609999999998
+      },
+      "file": ".gameengine/map-feedback-final-district-1-guide.png",
+      "captureSha256": "34a0c47ac02db7d1425b6317061c463613a5c12da83c98b693fe6924785bb092"
+    },
+    {
+      "district": 1,
+      "role": "spool",
+      "feet": {
+        "x": 50.15885167464117,
+        "y": -352.7043062200957
+      },
+      "review": {
+        "x": 50.15885167464117,
+        "y": -300.7043062200957
+      },
+      "file": ".gameengine/map-feedback-final-district-1-spool.png",
+      "captureSha256": "1835df6a197c5748faa084c0b9abba3674bbe2e30ef5496271a049f764a9ad4e"
+    },
+    {
+      "district": 1,
+      "role": "courier",
+      "feet": {
+        "x": -61.30526315789471,
+        "y": -360.66602870813404
+      },
+      "review": {
+        "x": -61.30526315789471,
+        "y": -318.66602870813404
+      },
+      "file": ".gameengine/map-feedback-final-district-1-courier.png",
+      "captureSha256": "b93cb7a43b159d5f08542c78834b2a504548ef8f3afdc6e10a045a0ac0259961"
+    },
+    {
+      "district": 2,
+      "role": "guide",
+      "feet": {
+        "x": -21.4968,
+        "y": -316.8763
+      },
+      "review": {
+        "x": -21.4968,
+        "y": -264.8763
+      },
+      "file": ".gameengine/map-feedback-final-district-2-guide-v2.png",
+      "captureSha256": "17d273a5b6b2014b398f85445746c6b47c70a16adc4f3858a6d33ff3a3e5ea3b"
+    },
+    {
+      "district": 2,
+      "role": "spool",
+      "feet": {
+        "x": -21.49665071770337,
+        "y": -416.3980861244019
+      },
+      "review": {
+        "x": -21.49665071770337,
+        "y": -364.3980861244019
+      },
+      "file": ".gameengine/map-feedback-final-district-2-spool.png",
+      "captureSha256": "ce4719d15d6a000436478dace82c258bfdeddb4a806c774cb58474a0c9216cf8"
+    },
+    {
+      "district": 2,
+      "role": "courier",
+      "feet": {
+        "x": -200.63540669856462,
+        "y": -89.96746411483251
+      },
+      "review": {
+        "x": -200.63540669856462,
+        "y": -47.96746411483251
+      },
+      "file": ".gameengine/map-feedback-final-district-2-courier.png",
+      "captureSha256": "d31430036c92b945f47c1eb6068e8313b0460edab018099d1e7f8e69cb889b92"
+    },
+    {
+      "district": 3,
+      "role": "guide",
+      "feet": {
+        "x": -61.30540000000002,
+        "y": -296.9720000000001
+      },
+      "review": {
+        "x": -61.30540000000002,
+        "y": -244.9720000000001
+      },
+      "file": ".gameengine/map-feedback-final-district-3-guide.png",
+      "captureSha256": "4ec39ede981ebf0df4faf8a1f9a0bf9380c5edbd15037bb7b7b8d6268a4b0105"
+    },
+    {
+      "district": 3,
+      "role": "spool",
+      "feet": {
+        "x": 58.12057416267945,
+        "y": -296.97224880382777
+      },
+      "review": {
+        "x": 58.12057416267945,
+        "y": -244.97224880382777
+      },
+      "file": ".gameengine/map-feedback-final-district-3-spool.png",
+      "captureSha256": "01df234142d2c1c347503dfa090da8718b71a0fafb8f54eef918624eaca12ae6"
+    },
+    {
+      "district": 3,
+      "role": "courier",
+      "feet": {
+        "x": -5.573205741626805,
+        "y": -396.4937799043063
+      },
+      "review": {
+        "x": -5.573205741626805,
+        "y": -354.4937799043063
+      },
+      "file": ".gameengine/map-feedback-final-district-3-courier.png",
+      "captureSha256": "ade8682ff347fe7a42546dfa2dc7a2feb925783301195a82121907cd413fb736"
+    },
+    {
+      "district": 4,
+      "role": "guide",
+      "feet": {
+        "x": -121.01830000000001,
+        "y": -296.9720000000001
+      },
+      "review": {
+        "x": -121.01830000000001,
+        "y": -244.9720000000001
+      },
+      "file": ".gameengine/map-feedback-final-district-4-guide.png",
+      "captureSha256": "d6a896dfdda5e5e4bf7df61f147acebf7187866d4396a59dd5c126d4b3b48c79"
+    },
+    {
+      "district": 4,
+      "role": "spool",
+      "feet": {
+        "x": 58.12057416267945,
+        "y": -316.87655502392346
+      },
+      "review": {
+        "x": 58.12057416267945,
+        "y": -264.87655502392346
+      },
+      "file": ".gameengine/map-feedback-final-district-4-spool.png",
+      "captureSha256": "2db13609d6e8ed9e98caf27a92377825c5f9f803ae277e6cc0a68da6cc625e33"
+    },
+    {
+      "district": 4,
+      "role": "courier",
+      "feet": {
+        "x": -180.7311004784689,
+        "y": -265.12535885167466
+      },
+      "review": {
+        "x": -180.7311004784689,
+        "y": -223.12535885167466
+      },
+      "file": ".gameengine/map-feedback-final-district-4-courier.png",
+      "captureSha256": "151f9ed9ff33a961a11bcb0b0d84305ecfa314c8a1ab22c939627e9e3113edbd"
+    },
+    {
+      "district": 5,
+      "role": "guide",
+      "feet": {
+        "x": -109.07584999999999,
+        "y": -328.8194
+      },
+      "review": {
+        "x": -109.07584999999999,
+        "y": -276.8194
+      },
+      "file": ".gameengine/map-feedback-final-district-5-guide.png",
+      "captureSha256": "1cbd41bd64e0659fbdec17622b690facdc3ac3fac66539cd8e9753676226d022"
+    },
+    {
+      "district": 5,
+      "role": "spool",
+      "feet": {
+        "x": 58.12057416267945,
+        "y": -296.97224880382777
+      },
+      "review": {
+        "x": 58.12057416267945,
+        "y": -244.97224880382777
+      },
+      "file": ".gameengine/map-feedback-final-district-5-spool.png",
+      "captureSha256": "d7bc51ac555f486372f223768224ade5443140c7ab1f87df0e06b9bea010b371"
+    },
+    {
+      "district": 5,
+      "role": "courier",
+      "feet": {
+        "x": -81.20956937799045,
+        "y": -296.97224880382777
+      },
+      "review": {
+        "x": -81.20956937799045,
+        "y": -254.97224880382777
+      },
+      "file": ".gameengine/map-feedback-final-district-5-courier.png",
+      "captureSha256": "16287397a295fdfb462c35bc2cc450715ce63f5b1837530b7ddd1db6c2a7befb"
+    }
+  ],
+  "runtime": "Game Engine release V8 headless, mobile tier,1280x720,unchanged gameplay camera",
+  "stoppedOwnSession": 307,
+  "review": {
+    "residentsPassed": 15,
+    "independentVisualReview": true,
+    "feetClearOf": [
+      "plants",
+      "posts",
+      "rails",
+      "counters"
+    ],
+    "gardenGuideOverride": ".gameengine/map-feedback-final-district-2-guide-v2.png",
+    "note": "Engine source captures are ignored local diagnostics. Source hashes and exact feet positions identify the inspected generation; production map render goldens provide the tracked overview."
+  },
+  "postCaptureTechnicalChange": {
+    "description": "Exact shadow PNG copy and texture-atlas colocation only. Authored feet positions, artwork, opacity and painter depth remain unchanged. Current five-map T1 checks pass without golden updates.",
+    "currentPresentationSourceSha256": "d284f228d37d57c5b118cf01fbbf45492ccc8bb1546109912c9e14c4a5554147",
+    "copiedShadowSha256": "cd5bf9662e7c9e48ad688b77fda64dcafdb99fe084ce4d1bef8f2bbe7e8f23b0"
+  }
+}

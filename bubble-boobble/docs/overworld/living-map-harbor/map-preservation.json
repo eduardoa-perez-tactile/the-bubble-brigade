@@ -1162,5 +1162,59 @@
       ],
       "purpose": "Review overlay comparison only. This geometry is not frozen by the preservation verifier."
     }
-  }
+  },
+  "allowedResidentAnchorChanges": [
+    {
+      "districtId": "district-2",
+      "kind": "guide",
+      "from": {
+        "x": 661.435,
+        "y": 1249.378
+      },
+      "to": {
+        "x": 734.928,
+        "y": 1255.502
+      },
+      "reason": "27 October user feedback: place the accepted resident on clear walkable paving, with its interaction at the resident feet. Original painting and all mission/shop coordinates remain fixed."
+    },
+    {
+      "districtId": "district-3",
+      "kind": "guide",
+      "from": {
+        "x": 603.866,
+        "y": 1210.182
+      },
+      "to": {
+        "x": 673.684,
+        "y": 1224.88
+      },
+      "reason": "27 October user feedback: place the accepted resident on clear walkable paving, with its interaction at the resident feet. Original painting and all mission/shop coordinates remain fixed."
+    },
+    {
+      "districtId": "district-4",
+      "kind": "guide",
+      "from": {
+        "x": 612.44,
+        "y": 1237.129
+      },
+      "to": {
+        "x": 581.818,
+        "y": 1224.88
+      },
+      "reason": "27 October user feedback: place the accepted resident on clear walkable paving, with its interaction at the resident feet. Original painting and all mission/shop coordinates remain fixed."
+    },
+    {
+      "districtId": "district-5",
+      "kind": "guide",
+      "from": {
+        "x": 583.043,
+        "y": 1224.88
+      },
+      "to": {
+        "x": 600.191,
+        "y": 1273.876
+      },
+      "reason": "27 October user feedback: place the accepted resident on clear walkable paving, with its interaction at the resident feet. Original painting and all mission/shop coordinates remain fixed."
+    }
+  ]
 }

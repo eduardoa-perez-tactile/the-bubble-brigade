@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "Closed-cloth opening, upward reveal and fixed-pose harbor menu",
+  "requirements": {
+    "opening": "Only the opaque closed curtain is visible: no game title, dragon or prompt.",
+    "reveal": "Enter or a tap raises only the cloth. The prepared harbor main menu is behind it.",
+    "input": "The opening input is consumed. Menu actions and hit targets are blocked through the reveal and until held confirmation/pointer input is released.",
+    "actor": "The menu uses the existing planted greeting/04 sprite, with no body-frame animation.",
+    "visualReference": "Actual shipped Brigade menu and character art. The outdated PDF guide is not an acceptance criterion.",
+    "transition": "Separate deterministic 54-step cloth reveal, with no gameplay iris or particle transition."
+  },
+  "counts": {
+    "t0": {
+      "v8": {
+        "passed": 2,
+        "total": 2
+      },
+      "hermes": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "phoneLowT1": {
+      "v8": {
+        "passed": 2,
+        "total": 2,
+        "stepsPerCase": 93
+      }
+    },
+    "existingMenuT1": {
+      "passed": 4,
+      "total": 4
+    }
+  },
+  "renderingNote": "T1 rendering is the V8 lane; --js both compares T0 simulation on V8 and Hermes. These checks are not physical-phone performance measurements.",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 880
+    },
+    {
+      "width": 2520,
+      "height": 1080
+    }
+  ],
+  "review": "Closed, beginning, middle and fully revealed frames were inspected at both viewports. Front branding/actor/prompt paint is asserted absent; the cloth bottom edge retreats; an underlying Start press is rejected; Options works after the reveal.",
+  "runs": [
+    {
+      "scope": "curtain",
+      "passed": true,
+      "results": {
+        "v8": [
+          {
+            "name": "title curtain consumes Enter once and blocks menu actions until reveal and release",
+            "ok": true,
+            "tier": "t0",
+            "steps": 122,
+            "hash": "12c4b6d4f966ddb1"
+          },
+          {
+            "name": "title curtain lifts registered splash onto prepared menu at 360",
+            "ok": true,
+            "tier": "t1",
+            "steps": 93,
+            "hash": "e0df976330f3b1f1"
+          },
+          {
+            "name": "title curtain lifts registered splash onto prepared menu at 2520",
+            "ok": true,
+            "tier": "t1",
+            "steps": 93,
+            "hash": "b83a5d5c8b549e4e"
+          },
+          {
+            "name": "title curtain consumes a held pointer until release before the menu can activate",
+            "ok": true,
+            "tier": "t0",
+            "steps": 71,
+            "hash": "3bc0dc89bc855619"
+          }
+        ],
+        "hermes": [
+          {
+            "name": "title curtain consumes Enter once and blocks menu actions until reveal and release",
+            "ok": true,
+            "tier": "t0",
+            "steps": 122,
+            "hash": "12c4b6d4f966ddb1"
+          },
+          {
+            "name": "title curtain consumes a held pointer until release before the menu can activate",
+            "ok": true,
+            "tier": "t0",
+            "steps": 71,
+            "hash": "3bc0dc89bc855619"
+          }
+        ]
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "touch-menu",
+      "passed": true,
+      "results": {
+        "v8": [
+          {
+            "name": "cartoon theatrical menus preserve touch navigation across screen shapes",
+            "ok": true,
+            "tier": "t1",
+            "steps": 198,
+            "hash": "8db2548b40974aff"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "branding",
+      "passed": true,
+      "results": {
+        "v8": [
+          {
+            "name": "cartoon title branding preserves menu actions",
+            "ok": true,
+            "tier": "t1",
+            "steps": 107,
+            "hash": "596ec09ab945df9b"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "title-hold",
+      "passed": true,
+      "results": {
+        "v8": [
+          {
+            "name": "harbor title presents one grounded dragon with readable prompt and visible greeting frames",
+            "ok": true,
+            "tier": "t1",
+            "steps": 141,
+            "hash": "0238461c291b350a"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    },
+    {
+      "scope": "alpha-hem-menu-regression",
+      "passed": true,
+      "results": {
+        "v8": [
+          {
+            "name": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+            "ok": true,
+            "tier": "t1",
+            "steps": 1440,
+            "hash": "3b8d35a63e748306"
+          }
+        ],
+        "hermes": []
+      },
+      "runtimeMismatches": 0
+    }
+  ],
+  "art": {
+    "curtain": {
+      "path": "assets/cartoon/menu/curtain.png",
+      "sha256": "b340c142a910c95fe59de902841537610455acc9698e73789b23b524564324b5"
+    },
+    "menuActor": "cartoon/menu/greeting/04"
+  },
+  "replay": {
+    "path": "tests/replays/title_curtain_consumes_enter_once_and_blocks_menu_actions_until_reveal_and_release.greplay",
+    "sha256": "c97c846265a7ca3afc95019d1f5ff39f9b8bcdc4a9c6ee7d8f76a76e444cc073",
+    "bytes": 2961,
+    "scene": "scenes/cartoon.scene.json",
+    "identity": {
+      "buildId": "0.1.0",
+      "bundleHash": "8aef32c8f856efe9",
+      "assetManifestHash": "loose:2d06800538d394c2",
+      "worldSeed": 1,
+      "sceneId": "title curtain consumes Enter once and blocks menu actions until reveal and release",
+      "dt": 0.016666666666666666,
+      "engineVersion": "0.1.0",
+      "js": "v8",
+      "steps": 122
+    },
+    "method": "Fresh recording of the actual-input Enter/held-confirmation test, then independent verification; no rehash.",
+    "verification": {
+      "v8": {
+        "ok": true,
+        "steps": 122,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 122,
+        "firstDivergence": null
+      }
+    }
+  },
+  "hemCoverage": {
+    "clothHeightPercent": 104,
+    "upwardTravelPercent": 104,
+    "sourceDimensions": [
+      1672,
+      941
+    ],
+    "firstPartialAlphaRow": 909,
+    "restingViewportBottomSourceRow": 904.8076923076923,
+    "opaqueRowsThrough": 908,
+    "bottomStripRenderCheck": "At rest, the bottom two rendered rows have red-channel minimum above16; the rejected black stripe fails this check.",
+    "review": "The original cloth RGB is preserved. Alpha below the gold hem reveals the menu naturally while moving. No black strip or menu peeking at rest was visible in slim/wide start-middle-end captures. The cloth is absent after reveal."
+  },
+  "menuRegressionProof": {
+    "goldens": "Only the two legacy menu-route title checkpoints were reviewed and refreshed for the deliberately closed curtain. All final proof runs used no golden updates.",
+    "cases": [
+      {
+        "scope": "handoff",
+        "passed": true,
+        "results": [
+          {
+            "name": "harbor curtain menu and map handoff retain the existing fourteen draw budget",
+            "tier": "t1",
+            "ok": true,
+            "steps": 116,
+            "hash": "8f1f3ad6a98a34a5"
+          }
+        ]
+      },
+      {
+        "scope": "hover",
+        "passed": true,
+        "results": [
+          {
+            "name": "cuphead full bleed menu hover uses recorded viewport geometry instead of legacy button positions",
+            "tier": "t1",
+            "ok": true,
+            "steps": 74,
+            "hash": "f1855c8da879765d"
+          }
+        ]
+      },
+      {
+        "scope": "cartoon-routes",
+        "passed": true,
+        "results": [
+          {
+            "name": "cartoon overhaul all menu routes remain functional and fit native wide tall and ultrawide screens",
+            "tier": "t1",
+            "ok": true,
+            "steps": 46,
+            "hash": "5cf7535240a0e4a7"
+          }
+        ]
+      },
+      {
+        "scope": "concept-routes",
+        "passed": true,
+        "results": [
+          {
+            "name": "concept checkpoint all menu routes remain functional and fit native wide tall and ultrawide screens",
+            "tier": "t1",
+            "ok": true,
+            "steps": 46,
+            "hash": "5cf7535240a0e4a7"
+          }
+        ]
+      }
+    ],
+    "drawCalls": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "phoneLow": true,
+      "before": {
+        "title": 5,
+        "curtain": 13,
+        "menu": 10,
+        "map": 16
+      },
+      "after": {
+        "title": 5,
+        "curtain": 13,
+        "menu": 10,
+        "map": 13
+      },
+      "handoffLimit": 14,
+      "allMenuRoutePeak": 14,
+      "allMenuRouteLimit": 14,
+      "change": "Resident atlas batching of byte-identical NPC shadows and existing marker art; no UI trimming, depth changes or increased budgets."
+    },
+    "hoverReadiness": "The original recorded-viewport hover assertion waits for the curtain and menu rearm before moving the pointer; expected selected index remains2."
+  },
+  "harborBudgetReplay": {
+    "path": "tests/replays/harbor_menu_animated_light_greeting_and_atmosphere_preserve_live_controls_across_supported_screens.greplay",
+    "sha256": "740eb8d7b583430818d24712217c38ab95be9ff1067c918bb20b3b275df7b704",
+    "bytes": 13140,
+    "scene": "scenes/cartoon.scene.json",
+    "identity": {
+      "buildId": "0.1.0",
+      "bundleHash": "917b3fd12682995e",
+      "assetManifestHash": "loose:2d06800538d394c2",
+      "worldSeed": 1,
+      "sceneId": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+      "dt": 0.016666666666666666,
+      "engineVersion": "0.1.0",
+      "js": "v8",
+      "steps": 1440
+    },
+    "recordedCase": {
+      "name": "harbor menu animated light greeting and atmosphere preserve live controls across supported screens",
+      "ok": true,
+      "tier": "t1",
+      "steps": 1440,
+      "hash": "3b8d35a63e748306"
+    },
+    "method": "Fresh actual-input recording of the existing strict harbor-menu T1 case, without golden updates or rehash. All real UI presses and original assertions are preserved.",
+    "menuOnlyMeasuredPeakDrawCalls": 10,
+    "budget": "tests/budgets/harbor-menu.json",
+    "verification": {
+      "v8": {
+        "ok": true,
+        "steps": 1440,
+        "firstDivergence": null
+      },
+      "hermes": {
+        "ok": true,
+        "steps": 1440,
+        "firstDivergence": null
+      }
+    }
+  }
+}

@@ -1214,8 +1214,8 @@ export const district3Map:SourceMap={
   },
   {
    "kind": "guide",
-   "x": 603.866,
-   "y": 1210.182,
+   "x": 673.684,
+   "y": 1224.88,
    "label": "Fairground Guide"
   },
   {

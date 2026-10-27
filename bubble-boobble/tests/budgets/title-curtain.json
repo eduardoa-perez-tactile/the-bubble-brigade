@@ -1,0 +1,6 @@
+{
+  "replay": "tests/replays/title_curtain_consumes_enter_once_and_blocks_menu_actions_until_reveal_and_release.greplay",
+  "structural": {
+    "drawCallsMax": 50
+  }
+}

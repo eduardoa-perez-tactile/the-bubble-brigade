@@ -491,13 +491,13 @@ declare module '@gameengine/ui' {
      *   - `titleNarrow`: yesno, default false
      * Events: `choose-mode`, `adventure-arcade`, `settings`, `quit`, `menu`
      * Code areas: `atmosphere`, `greeter`
-     * Refs: `spotlight`, `title-card`, `greeter`, `choose-mode`, `adventure-arcade`, `settings`, `quit`, `menu`
+     * Refs: `cloth`, `spotlight`, `title-card`, `greeter`, `choose-mode`, `adventure-arcade`, `settings`, `quit`, `menu`
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
       props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean };
       areas: 'atmosphere' | 'greeter';
-      refs: 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
+      refs: 'cloth' | 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
     };
     /**
      * Cartoon Mode Card: a widget, button (ui/docs/cartoon-mode-card.ui.json)
