@@ -1,0 +1,44 @@
+{
+  "assets" : [
+    {
+      "bytes" : 373540,
+      "crop" : [
+        196,
+        16,
+        576,
+        1966
+      ],
+      "name" : "column-stone-v3",
+      "sha256" : "eb84dea53856948e467cc6224dde5375502c0add0d6e448c01782cb20b50b506",
+      "size" : [
+        187,
+        960
+      ],
+      "source" : "column-extraction.png"
+    },
+    {
+      "bytes" : 96817,
+      "crop" : [
+        196,
+        500,
+        576,
+        1020
+      ],
+      "name" : "shaft-stone-v3",
+      "sha256" : "f1ffe706b4c73fe102a5e0f4996548b57f293fcc04126e9f3b4652201746091b",
+      "size" : [
+        187,
+        256
+      ],
+      "source" : "column-extraction.png"
+    }
+  ],
+  "generator" : "built-in image_gen",
+  "import" : "CoreGraphics rectangular crop and high-quality downsample only; preserve alpha, no redraw or keying",
+  "sources" : [
+    {
+      "file" : "column-extraction.png",
+      "sha256" : "491fcc2a49ebfaeedaed72103d5ccc607d582e0844dccfb180fc62630b0d9fbb"
+    }
+  ]
+}

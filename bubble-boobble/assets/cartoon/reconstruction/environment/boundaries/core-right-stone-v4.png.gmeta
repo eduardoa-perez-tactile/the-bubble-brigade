@@ -1,0 +1,9 @@
+guid = "e07cea4c-97d1-529f-a191-7b1c4179c911"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "cartoon-reconstruction"
+filter = "linear"
+compression = "none"
+trim = false

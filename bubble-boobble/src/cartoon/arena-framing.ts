@@ -6,11 +6,20 @@ import {cartoonProjectY} from './coordinates';
  * envelopes in simulation. Keep it independent of the stage's actual width. */
 export const cartoonVerticalMetric=1728/1280;
 
-/** Visible walls occupy the existing two solid tile columns, plus one extra
- * two-column band outside the room. These are art extents, not new collision. */
-export const STORY_ROOM_WALL_WIDTH=96;
+/** The inner wall face remains the collision edge. Broad exterior architecture
+ * may bleed on narrow screens; its inner 96-unit band stays in the fitted room.
+ * Fitting the complete decorative silhouette would unnecessarily shrink play. */
+export const STORY_ROOM_WALL_WIDTH=192;
 export const STORY_ROOM_OUTER_MARGIN=48;
-export const STORY_ROOM_FOUNDATION_HEIGHT=48;
+export const STORY_ROOM_FOUNDATION_HEIGHT=80;
+export const STORY_ROOM_CONTACT_SHADOW_DEPTH=16;
+
+/** The lighthouse preview follows the approved illustration's low floor. Its
+ * decorative fascia may bleed behind the footer; the collision floor and full
+ * crown jump remain inside the playable band. Other rooms retain their fit. */
+export function storyRoomFoundationHeight(level:Level){
+  return level.episode?.theme==='lighthouse'?48:STORY_ROOM_FOUNDATION_HEIGHT;
+}
 
 /** Static presentation bounds for differently sized Adventure rooms. The
  * canonical non-story courtyard retains its established composition, including Party. */
@@ -35,8 +44,10 @@ export function compactAdventureFrame(level:Level){
       +CARTOON_ENEMY_SIZE*120/128;
     aboveFloor=Math.max(aboveFloor,flightTop);
   }
-  // The full foundation sits below the unchanged collision feet and cap.
-  const belowFloor=20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT;
+  // Ordinary rooms reserve the foundation and shadow below the unchanged feet.
+  // The lighthouse preview follows the concept's intentional decorative bleed.
+  const belowFloor=level.episode.theme==='lighthouse'?36
+    :20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT+STORY_ROOM_CONTACT_SHADOW_DEPTH;
   const framingWidth=width+2*STORY_ROOM_OUTER_MARGIN;
   return {width,framingWidth,floorFeet,floorProjected,aboveFloor,belowFloor};
 }

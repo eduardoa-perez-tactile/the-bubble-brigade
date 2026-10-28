@@ -1,0 +1,279 @@
+{
+  "anchors" : {
+    "commonLeftInnerFace" : 380,
+    "commonRightInnerFace" : 1295,
+    "designLeftInnerFace" : 387,
+    "designRightInnerFace" : 1285,
+    "floorFeet" : 777
+  },
+  "assets" : [
+    {
+      "bytes" : 197082,
+      "crop" : [
+        184,
+        112,
+        380,
+        695
+      ],
+      "name" : "core-left-stone-v4",
+      "sha256" : "33df7225b248d46bc8a6fdbd9ccd565b9fef83284248ef5547626030cc18bc12",
+      "size" : [
+        196,
+        583
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 38743,
+      "crop" : [
+        205,
+        0,
+        380,
+        112
+      ],
+      "name" : "head-left-stone-v4",
+      "sha256" : "483e61ac18d2511610d1118f984147284fd80028e06afccea67a5aa7604f0bab",
+      "size" : [
+        175,
+        112
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 26968,
+      "crop" : [
+        184,
+        44,
+        380,
+        112
+      ],
+      "name" : "cornice-left-stone-v4",
+      "sha256" : "c1823a8448e69f43f690e98e01dcbc90809ef7e39a6ec66a790edcdfd1ca3bac",
+      "size" : [
+        196,
+        68
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 51435,
+      "crop" : [
+        210,
+        695,
+        380,
+        855
+      ],
+      "name" : "junction-left-stone-v4",
+      "sha256" : "c8c1807458e4f965f082ecb1d2412c4d8297afbfd7e601b878ca34cd17d71673",
+      "size" : [
+        170,
+        160
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 4564,
+      "crop" : [
+        184,
+        684,
+        380,
+        695
+      ],
+      "name" : "plinth-left-upper-stone-v4",
+      "sha256" : "040482717c2fe4538f189a2869eca2cc1729b2b13f6319b74db26ac5c8deff49",
+      "size" : [
+        196,
+        11
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 12038,
+      "crop" : [
+        210,
+        700,
+        380,
+        736
+      ],
+      "name" : "plinth-left-lower-stone-v4",
+      "sha256" : "bdf0c75e6c6e1008f36a854f597c1bd6d76e3db7f4b9a50c1e8e98579f6ff103",
+      "size" : [
+        170,
+        36
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 15599,
+      "crop" : [
+        210,
+        736,
+        283,
+        854
+      ],
+      "name" : "foot-left-stone-v4",
+      "sha256" : "e1e3873ddd7dd50006bb07f32dc49f52b5cc6b2737d7fd657b0e9f60f178c123",
+      "size" : [
+        73,
+        118
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 244154,
+      "crop" : [
+        1295,
+        112,
+        1486,
+        855
+      ],
+      "name" : "core-right-stone-v4",
+      "sha256" : "00f677a1be38ae563b05531e70333e9784c9fe9148db9fed9583aa901e2b9cca",
+      "size" : [
+        191,
+        743
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 40521,
+      "crop" : [
+        1295,
+        0,
+        1486,
+        112
+      ],
+      "name" : "head-right-stone-v4",
+      "sha256" : "025a2f4fe4b9372348a11b8ee107bd7f7e93d4e44348ab2a6afcfa54a11cd5a3",
+      "size" : [
+        191,
+        112
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 25111,
+      "crop" : [
+        1295,
+        44,
+        1486,
+        112
+      ],
+      "name" : "cornice-right-stone-v4",
+      "sha256" : "8910cd5dcd93a535ddafe397f86760f03b86b2ca99ef1d0623f4f9b4f7989bff",
+      "size" : [
+        191,
+        68
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 19593,
+      "crop" : [
+        1295,
+        684,
+        1490,
+        736
+      ],
+      "name" : "plinth-right-stone-v4",
+      "sha256" : "131fca50f559c8afc50497139dbe711802b2c125082a366028b536f0865f8596",
+      "size" : [
+        195,
+        52
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 19729,
+      "crop" : [
+        1396,
+        736,
+        1490,
+        854
+      ],
+      "name" : "foot-right-stone-v4",
+      "sha256" : "468f654d825a3495582a26b76f0968bf402fcf10f4fc61179e8f9e1ebbb73bd0",
+      "size" : [
+        94,
+        118
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 79800,
+      "crop" : [
+        205,
+        240,
+        380,
+        504
+      ],
+      "name" : "shaft-left-stone-v4",
+      "sha256" : "d00c70554349a48178f8eba5ad46a39d21ee5986c3636aed7df2a6cede528775",
+      "size" : [
+        175,
+        264
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 85646,
+      "crop" : [
+        1295,
+        240,
+        1486,
+        504
+      ],
+      "name" : "shaft-right-stone-v4",
+      "sha256" : "f6331c1a39dd30b09f35cc60d0ab048ad805b21db823bcf0a882f6ab0dfdbe28",
+      "size" : [
+        191,
+        264
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 129761,
+      "crop" : [
+        387,
+        777,
+        1285,
+        854
+      ],
+      "name" : "floor-stone-v4",
+      "sha256" : "7e919cedaa9d14c7337b1723a7a322d31ed794342bf9c11234f5175bf2a9bc2a",
+      "size" : [
+        898,
+        77
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    },
+    {
+      "bytes" : 83076,
+      "crop" : [
+        387,
+        803,
+        1285,
+        854
+      ],
+      "name" : "fascia-stone-v4",
+      "sha256" : "cc8995cb3f68ffa200b02db74cde3da525a96a73f94a517229c322f8fa182081",
+      "size" : [
+        898,
+        51
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    }
+  ],
+  "generator" : "Original approved mockup; deterministic slicing only",
+  "import" : "Exact rectangular CGImage crop only; no resampling, painting, alpha mask, keying or redraw",
+  "sourceCanvas" : [
+    1672,
+    941
+  ],
+  "sources" : [
+    {
+      "file" : "approved-lighthouse-mockup.png",
+      "sha256" : "83ce17d2dfa9936bb25bea25d6521a73a44340001f5b81373068ff1a5a279362"
+    }
+  ]
+}
