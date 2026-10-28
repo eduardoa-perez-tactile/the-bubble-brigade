@@ -1,0 +1,81 @@
+{
+  "$schemaVersion": 1,
+  "guid": "9a952c89-fb73-4228-9197-373cdd918277",
+  "name": "shop-action",
+  "title": "Shop action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "label"
+      ],
+      "style": {
+        "pad": 8,
+        "w": "100%",
+        "h": 52,
+        "bg": "#285b59",
+        "radius": 6,
+        "align": "center",
+        "justify": "center"
+      }
+    },
+    "label": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "h": 36,
+        "fontSize": 23,
+        "fitMin": 16,
+        "color": "#fff0ca",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#a95931"
+            },
+            "label": {
+              "color": "#fff6d9"
+            }
+          }
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 100
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.97,
+          "bg": "#a95931"
+        }
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.5
+        }
+      }
+    }
+  }
+}

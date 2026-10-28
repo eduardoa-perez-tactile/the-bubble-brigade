@@ -5,6 +5,8 @@ import {storyHudModel,type StoryHudModel} from '../adventure/hud-model';
 import {storyOutcome} from '../adventure/ending';
 import {StoryOutcomeView,StoryResultsView,storyResultModel,type StoryOutcomeModel,type StoryResultModel} from '../adventure/ending.view';
 import {episodeForLevel} from '../adventure/episodes';
+import {AdventureShopView} from '../overworld/shop.view';
+import {adventureShopModel} from '../overworld/shop-model';
 import { OverworldHudView, OverworldEncounterView, OverworldPanelView } from '../overworld/views';
 import { overworldState } from '../overworld/state';
 import { overworldPoi } from '../overworld/navigation';
@@ -75,6 +77,13 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
    emit(DesktopIntent,{action:'transition-load-failed',index:origin});
   });
  });
+ let shopAssetsLoaded=false;
+ createEffect(()=>{
+  const s=state(),show=s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'');
+  if(show===shopAssetsLoaded)return;shopAssetsLoaded=show;
+  if(show)assets.load('shop-presentation');else assets.release('shop-presentation');
+ });
+ onCleanup(()=>{if(shopAssetsLoaded)assets.release('shop-presentation');});
  let activeMapGroup='';
  createEffect(()=>{
   const current=map(),next=current.active?`overworld-${current.districtId}`:'';
@@ -177,13 +186,13 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  });
  let mapPanel:ViewHandle<any>|undefined,mapPanelKind='';
  createEffect(()=>{const s=state(),p=save(),m=map();let kind='',model:any;
-  if(s.screen==='overworld-panel'){kind=`panel:${s.overworldPanel??''}`;model=adventurePanel(s,p);}
+  if(s.screen==='overworld-panel'){kind=`panel:${s.overworldPanel??''}`;model=['shop','vendor'].includes(s.overworldPanel??'')?adventureShopModel(s,p,viewport()??undefined):adventurePanel(s,p);}
   else if(s.screen==='overworld-card'){
    const e=encounterById(s.adventureEncounter??''),progress=adventureForProfile(p.profiles[p.active]!);
    if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={selected:s.selected,illustration:`adventure/${episodeForLevel(e.level).theme}`,title:episodeForLevel(e.level).title,subtitle:`${e.name.toUpperCase()} · ${episodeForLevel(e.level).subtitle}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':episodeForLevel(e.level).description,status:s.status==='MISSION COULD NOT LOAD. PLEASE TRY AGAIN.'?s.status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
   }
   if(!kind){mapPanel?.close({immediate:s.screen==='play'||!!s.transitionCommitted});mapPanel=undefined;mapPanelKind='';return;}
-  if(kind!==mapPanelKind){mapPanel?.close();mapPanel=views.push(kind==='card'?OverworldEncounterView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
+  if(kind!==mapPanelKind){mapPanel?.close();mapPanel=views.push(kind==='card'?OverworldEncounterView:['panel:shop','panel:vendor'].includes(kind)?AdventureShopView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
   else mapPanel?.update(model);
  });
  let storyResults:ViewHandle<StoryResultModel>|undefined;

@@ -1,0 +1,69 @@
+{
+  "$schemaVersion": 1,
+  "guid": "26caa89e-ced2-4a2b-b8d3-adacbf5d2375",
+  "name": "shop-ink-button",
+  "title": "Shop ink action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "label"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 48,
+        "justify": "center",
+        "align": "center"
+      }
+    },
+    "label": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "fontSize": 28,
+        "fitMin": 18,
+        "h": 44,
+        "color": "#f7e4b9",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "label": {
+              "color": "#ffd66f",
+              "scale": 1.04
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.96
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 100
+  }
+}

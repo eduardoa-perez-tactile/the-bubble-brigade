@@ -2,136 +2,640 @@
   "$schemaVersion": 1,
   "guid": "d36801d3-2372-489d-9a1a-575c0c283a13",
   "name": "adventure-shop",
-  "title": "Adventure Shop",
+  "title": "Layered cartoon shop",
   "kind": "view",
   "root": "root",
   "nodes": {
     "root": {
       "type": "element",
-      "name": "Overworld dialogue",
-      "style": {
-        "w": "100%",
-        "h": "100%",
-        "pad": 24,
-        "align": "center",
-        "justify": "center"
-      },
       "children": [
-        "ow_panel"
-      ]
-    },
-    "ow_panel": {
-      "type": "element",
-      "name": "Element",
-      "children": [
-        "ow_rule",
-        "owd_speaker",
-        "owd_message",
-        "owd_detail",
-        "owd_buttons",
-        "owd_back"
+        "scene"
       ],
-      "style": {
-        "pad": 26,
-        "dir": "column",
-        "align": "center",
-        "gap": 10,
-        "w": 650,
-        "h": "auto",
-        "bg": "#f5e9cd",
-        "radius": 18
-      }
-    },
-    "ow_rule": {
-      "type": "element",
-      "name": "Element",
-      "children": [],
       "style": {
         "pad": 0,
         "w": "100%",
-        "h": 3,
-        "bg": "#b88a40"
+        "h": "100%",
+        "clip": true,
+        "align": "center",
+        "justify": "center",
+        "bg": "#201815"
       }
     },
-    "owd_speaker": {
-      "type": "label",
-      "name": "Label",
-      "text": "{speaker}",
+    "scene": {
+      "type": "element",
+      "children": [
+        "background",
+        "counterSurface",
+        "merchantLayer",
+        "counterFront",
+        "shelf",
+        "header",
+        "information",
+        "helpPanel",
+        "feedback"
+      ],
       "style": {
-        "fontSize": 34,
-        "fitMin": 20,
+        "pad": 0,
         "w": "100%",
-        "h": 46,
-        "color": "#382d25",
-        "textAlign": "center"
+        "h": "100%",
+        "clip": true
       }
     },
-    "owd_message": {
-      "type": "label",
-      "name": "Label",
-      "text": "{message}",
+    "background": {
+      "type": "element",
+      "children": [],
       "style": {
-        "fontSize": 21,
-        "fitMin": 16,
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
         "w": "100%",
-        "h": 48,
-        "color": "#5a4936",
-        "textAlign": "center"
+        "h": "100%",
+        "image": "cartoon/shop/scene-wall",
+        "fit": "fill",
+        "attach": true
       }
     },
-    "owd_detail": {
-      "type": "label",
-      "name": "Label",
-      "text": "{detail}",
+    "counterSurface": {
+      "type": "element",
+      "children": [],
       "style": {
-        "fontSize": 18,
-        "fitMin": 14,
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
         "w": "100%",
-        "h": 46,
-        "color": "#88603b",
-        "textAlign": "center"
+        "h": "100%",
+        "image": "cartoon/shop/scene-counter",
+        "fit": "fill",
+        "attach": true
       }
     },
-    "owd_buttons": {
+    "merchantLayer": {
+      "type": "element",
+      "children": [
+        "ownerBody",
+        "eyeWindow"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.035,
+          0.055
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "46%",
+        "h": "58%",
+        "attach": true
+      }
+    },
+    "merchant": {
+      "type": "codeArea",
+      "key": "merchant",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "pivot": [
+          0.34,
+          0.36
+        ],
+        "w": "454.54545%",
+        "h": "555.55555%",
+        "attach": true
+      }
+    },
+    "counterFront": {
+      "type": "element",
+      "children": [
+        "frontArt"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.7
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "30%",
+        "clip": true,
+        "attach": true
+      }
+    },
+    "frontArt": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "pivot": [
+          0,
+          1
+        ],
+        "w": "100%",
+        "h": "333.333%",
+        "image": "cartoon/shop/scene-counter",
+        "fit": "fill",
+        "attach": true
+      }
+    },
+    "shelf": {
+      "type": "element",
+      "children": [
+        "products"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.37,
+          0.365
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "61%",
+        "h": "34%",
+        "dir": "row",
+        "gap": 4
+      }
+    },
+    "products": {
       "type": "repeat",
-      "doc": "adventure-shop-item",
-      "property": "buttons",
+      "doc": "shop-product",
+      "property": "products",
+      "grow": true
+    },
+    "header": {
+      "type": "element",
+      "children": [
+        "backSlot",
+        "title",
+        "wallet"
+      ],
       "style": {
-        "gap": 8,
-        "w": "100%"
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.025,
+          0.015
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "95%",
+        "h": "8%",
+        "dir": "row",
+        "align": "center",
+        "justify": "space-between"
       }
     },
-    "owd_back": {
+    "backSlot": {
+      "type": "element",
+      "children": [
+        "back"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 130,
+        "h": 52
+      }
+    },
+    "back": {
       "type": "use",
-      "doc": "overworld-button",
+      "doc": "shop-ink-button",
       "key": "back",
       "props": {
-        "label": "BACK"
+        "label": "← BACK",
+        "selected": {
+          "property": "backFocused"
+        }
       },
+      "style": {}
+    },
+    "title": {
+      "type": "label",
+      "text": "~  SHOP  ~",
       "style": {
+        "fontSize": 42,
+        "fitMin": 32,
+        "h": 58,
+        "color": "#f7e4b9",
+        "w": 0,
+        "grow": 1,
+        "textAlign": "center"
+      }
+    },
+    "wallet": {
+      "type": "element",
+      "children": [
+        "walletCoin",
+        "coins"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": 140,
+        "h": 56,
+        "gap": 10,
+        "align": "center",
+        "justify": "end"
+      }
+    },
+    "walletCoin": {
+      "type": "icon",
+      "image": "cartoon/shop/gold-coin",
+      "style": {
+        "w": 38,
+        "h": 48
+      }
+    },
+    "coins": {
+      "type": "label",
+      "text": "{coins}",
+      "style": {
+        "fontSize": 40,
+        "fitMin": 24,
+        "h": 56,
+        "color": "#f7e4b9"
+      }
+    },
+    "information": {
+      "type": "element",
+      "children": [
+        "copy",
+        "divider",
+        "transaction"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.045,
+          0.72
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "92%",
+        "h": "25%",
+        "dir": "row",
+        "gap": 26
+      }
+    },
+    "copy": {
+      "type": "element",
+      "children": [
+        "name",
+        "rule",
+        "description",
+        "consequence",
+        "equipment"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "gap": 1,
+        "dir": "column"
+      }
+    },
+    "name": {
+      "type": "label",
+      "text": "{name}",
+      "style": {
+        "fontSize": 48,
+        "fitMin": 32,
+        "h": 58,
+        "color": "#f7e4b9",
         "w": "100%"
+      }
+    },
+    "rule": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "90%",
+        "h": 2,
+        "bg": "#d5b482"
+      }
+    },
+    "description": {
+      "type": "label",
+      "text": "{description}",
+      "style": {
+        "fontSize": 28,
+        "fitMin": 20,
+        "h": 32,
+        "color": "#f7e4b9",
+        "w": "100%"
+      }
+    },
+    "consequence": {
+      "type": "label",
+      "text": "{consequence}",
+      "style": {
+        "fontSize": 22,
+        "fitMin": 16,
+        "h": 28,
+        "color": "#d0bfa0",
+        "w": "100%"
+      }
+    },
+    "equipment": {
+      "type": "element",
+      "children": [
+        "equippedArt",
+        "equippedLabel"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 42,
+        "dir": "row",
+        "gap": 10,
+        "align": "center"
+      }
+    },
+    "equippedArt": {
+      "type": "icon",
+      "image": "cartoon/frames/item/yellow_candy",
+      "style": {
+        "w": 40,
+        "h": 40
       },
-      "show": "showBack"
+      "property": "equippedArt",
+      "show": "hasEquipped"
+    },
+    "equippedLabel": {
+      "type": "label",
+      "text": "{equippedLabel}",
+      "style": {
+        "fontSize": 24,
+        "fitMin": 16,
+        "h": 36,
+        "color": "#edc16e",
+        "w": 0,
+        "grow": 1
+      }
+    },
+    "divider": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 1,
+        "h": "90%",
+        "bg": "#b79b6b88"
+      }
+    },
+    "transaction": {
+      "type": "element",
+      "children": [
+        "action",
+        "unavailable",
+        "utilities"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "43%",
+        "h": "100%",
+        "justify": "center",
+        "gap": 2
+      }
+    },
+    "action": {
+      "type": "codeArea",
+      "key": "action",
+      "show": "actionEnabled",
+      "style": {
+        "w": "100%",
+        "h": 120
+      }
+    },
+    "unavailable": {
+      "type": "element",
+      "children": [
+        "unavailableLabel"
+      ],
+      "style": {
+        "pad": 12,
+        "w": "100%",
+        "h": 120,
+        "image": "cartoon/shop/action-paper",
+        "fit": "fill",
+        "opacity": 0.65,
+        "align": "center",
+        "justify": "center"
+      },
+      "show": "actionUnavailable"
+    },
+    "unavailableLabel": {
+      "type": "label",
+      "text": "{actionLabel}",
+      "style": {
+        "fontSize": 30,
+        "fitMin": 20,
+        "h": 64,
+        "color": "#21190e",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "utilities": {
+      "type": "element",
+      "children": [
+        "removeSlot",
+        "helpSlot"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 48,
+        "dir": "row",
+        "justify": "end",
+        "gap": 18
+      }
+    },
+    "removeSlot": {
+      "type": "element",
+      "children": [
+        "remove"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 100,
+        "h": 48
+      },
+      "show": "hasEquipped"
+    },
+    "remove": {
+      "type": "use",
+      "doc": "shop-ink-button",
+      "key": "remove",
+      "props": {
+        "label": "UNEQUIP",
+        "selected": {
+          "property": "removeFocused"
+        }
+      },
+      "style": {}
+    },
+    "helpSlot": {
+      "type": "element",
+      "children": [
+        "help"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 70,
+        "h": 48
+      }
+    },
+    "help": {
+      "type": "use",
+      "doc": "shop-ink-button",
+      "key": "help",
+      "props": {
+        "label": "? HELP",
+        "selected": {
+          "property": "helpFocused"
+        }
+      },
+      "style": {}
+    },
+    "helpPanel": {
+      "type": "element",
+      "children": [
+        "helpText"
+      ],
+      "style": {
+        "pad": 18,
+        "position": "anchored",
+        "anchor": [
+          0.26,
+          0.13
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "69%",
+        "h": "16%",
+        "bg": "#221b17f2",
+        "radius": 3
+      },
+      "show": "helpOpen"
+    },
+    "helpText": {
+      "type": "label",
+      "text": "Buy once. Equip one starting power. Start each encounter and retry with it. Losing a life removes its effect until the next attempt.",
+      "style": {
+        "fontSize": 22,
+        "fitMin": 18,
+        "h": "100%",
+        "color": "#f7e4b9",
+        "w": "100%"
+      }
+    },
+    "feedback": {
+      "type": "label",
+      "text": "{status}",
+      "style": {
+        "fontSize": 23,
+        "fitMin": 18,
+        "h": 38,
+        "color": "#f1ca80",
+        "position": "anchored",
+        "anchor": [
+          0.45,
+          0.1
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "51%",
+        "textAlign": "center"
+      },
+      "show": "showStatus"
+    },
+    "ownerBody": {
+      "type": "icon",
+      "image": "cartoon/shop/owner-open",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      }
+    },
+    "eyeWindow": {
+      "type": "element",
+      "children": [
+        "merchant"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.34,
+          0.36
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "22%",
+        "h": "18%",
+        "clip": true,
+        "attach": true
+      }
     }
   },
   "view": {
-    "behaviour": "dialog",
-    "dims": true,
+    "behaviour": "screen",
+    "safe": true,
     "enter": {
       "set": {
-        "ow_panel": {
-          "opacity": 0,
-          "ty": 20,
-          "scale": 0.97
+        "scene": {
+          "opacity": 0
         }
       }
     },
     "exit": {
       "set": {
-        "ow_panel": {
-          "opacity": 0,
-          "ty": 10,
-          "scale": 0.985
+        "scene": {
+          "opacity": 0
         }
       },
       "transition": {
@@ -141,34 +645,211 @@
     }
   },
   "properties": {
-    "speaker": {
+    "coins": {
       "type": "text",
       "default": ""
     },
-    "message": {
+    "name": {
       "type": "text",
       "default": ""
     },
-    "detail": {
+    "description": {
       "type": "text",
       "default": ""
     },
-    "buttons": {
+    "consequence": {
+      "type": "text",
+      "default": ""
+    },
+    "actionLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "equippedLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "status": {
+      "type": "text",
+      "default": ""
+    },
+    "actionEnabled": {
+      "type": "yesno",
+      "default": false
+    },
+    "actionUnavailable": {
+      "type": "yesno",
+      "default": false
+    },
+    "hasEquipped": {
+      "type": "yesno",
+      "default": false
+    },
+    "backFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "removeFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "helpFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "helpOpen": {
+      "type": "yesno",
+      "default": false
+    },
+    "showStatus": {
+      "type": "yesno",
+      "default": false
+    },
+    "equippedArt": {
+      "type": "image",
+      "default": "cartoon/frames/item/yellow_candy"
+    },
+    "products": {
       "type": "list",
-      "of": "adventure-shop-item",
+      "of": "shop-product",
       "default": []
     },
-    "showBack": {
-      "type": "yesno",
-      "default": true
+    "merchantNod": {
+      "type": "trigger"
     },
-    "portrait": {
-      "type": "image",
-      "default": "overworld-shared/dragon-oblique/blue/down-right-idle"
+    "layout": {
+      "type": "enum",
+      "values": [
+        "landscape",
+        "tablet",
+        "portrait"
+      ],
+      "default": "landscape",
+      "poses": {
+        "tablet": {
+          "set": {
+            "merchantLayer": {
+              "anchor": [
+                0,
+                0.1
+              ],
+              "w": "72%",
+              "h": "48%"
+            },
+            "shelf": {
+              "anchor": [
+                0.04,
+                0.43
+              ],
+              "w": "92%",
+              "h": "24%"
+            },
+            "information": {
+              "anchor": [
+                0.05,
+                0.72
+              ],
+              "w": "90%",
+              "h": "26%"
+            },
+            "helpPanel": {
+              "anchor": [
+                0.05,
+                0.1
+              ],
+              "w": "90%",
+              "h": "24%"
+            }
+          }
+        },
+        "portrait": {
+          "set": {
+            "merchantLayer": {
+              "anchor": [
+                0.01,
+                0.13
+              ],
+              "w": "95%",
+              "h": "42%"
+            },
+            "shelf": {
+              "anchor": [
+                0.03,
+                0.46
+              ],
+              "w": "94%",
+              "h": "21%"
+            },
+            "information": {
+              "anchor": [
+                0.05,
+                0.72
+              ],
+              "w": "90%",
+              "h": "27%"
+            },
+            "helpPanel": {
+              "anchor": [
+                0.05,
+                0.13
+              ],
+              "w": "90%",
+              "h": "24%"
+            },
+            "feedback": {
+              "anchor": [
+                0.08,
+                0.08
+              ],
+              "w": "84%",
+              "h": 62
+            }
+          }
+        }
+      }
+    },
+    "ownerHidden": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "merchantLayer": {
+              "anchor": [
+                0.035,
+                0.72
+              ]
+            }
+          }
+        }
+      }
     }
   },
   "transition": {
     "type": "easeOut",
-    "ms": 220
+    "ms": 180
+  },
+  "reactions": {
+    "merchantNod": {
+      "on": {
+        "property": "merchantNod",
+        "change": "trigger"
+      },
+      "set": {
+        "merchantLayer": {
+          "ty": 4,
+          "rotate": 1
+        }
+      },
+      "in": {
+        "type": "easeOut",
+        "ms": 90
+      },
+      "hold": 50,
+      "back": {
+        "type": "easeOut",
+        "ms": 160
+      }
+    }
   }
 }

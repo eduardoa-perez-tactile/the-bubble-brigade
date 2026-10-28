@@ -134,3 +134,62 @@
  .overworld-card .ud-overworld-encounter__owe_play,
  .overworld-card .ud-overworld-encounter__owe_back {height:100px;}
 }
+
+/* Approved close counter composition. Layer order is authored in adventure-shop. */
+.shop-screen {font-family:"cartoon/fonts/BreeSerif-Regular";}
+.shop-owner-flipbook {width:100%;height:100%;}
+.shop-screen .ud-adventure-shop__helpText {white-space:pre-wrap;}
+.shop-screen .ud-adventure-shop__name {font-size:48px;}
+.shop-screen .ud-adventure-shop__title {font-size:42px;}
+.shop-screen .ud-shop-paper-button__label {font-size:34px;}
+.shop-screen .ud-adventure-shop__description,
+.shop-screen .ud-adventure-shop__consequence {white-space:pre-wrap;}
+.shop-screen .ud-adventure-shop__utilities .ud-shop-ink-button__label {font-size:17px;}
+@media (aspect < 1.2) {
+ .shop-screen .ud-adventure-shop__merchantLayer {width:72%;height:48%;}
+ .shop-screen .ud-adventure-shop__shelf {width:92%;height:24%;}
+ .shop-screen .ud-adventure-shop__information {width:90%;height:26%;gap:12px;}
+ .shop-screen .ud-adventure-shop__name {font-size:40px;height:52px;}
+ .shop-screen .ud-adventure-shop__description {font-size:25px;height:40px;}
+ .shop-screen .ud-adventure-shop__consequence {font-size:22px;height:44px;}
+ .shop-screen .ud-adventure-shop__equippedLabel {font-size:20px;}
+ .shop-screen .ud-adventure-shop__helpPanel {width:90%;height:24%;}
+}
+@media (aspect < 0.7) {
+ .shop-screen .ud-adventure-shop__header {height:100px;}
+ .shop-screen .ud-adventure-shop__backSlot {width:180px;height:100px;}
+ .shop-screen .ud-adventure-shop__wallet {width:145px;height:100px;}
+ .shop-screen .ud-shop-ink-button__root {height:100px;}
+ .shop-screen .ud-shop-ink-button__label {height:80px;font-size:34px;text-fit:26px 34px;}
+ .shop-screen .ud-adventure-shop__title {font-size:40px;}
+ .shop-screen .ud-adventure-shop__coins {font-size:42px;height:70px;}
+ .shop-screen .ud-adventure-shop__merchantLayer {width:95%;height:42%;}
+ .shop-screen .ud-adventure-shop__shelf {width:94%;height:21%;}
+ .shop-screen .ud-shop-product__price {font-size:30px;height:44px;text-fit:20px 30px;}
+ .shop-screen .ud-shop-product__coin {width:24px;height:32px;}
+ .shop-screen .ud-shop-product__badge {font-size:22px;height:30px;text-fit:18px 22px;}
+ .shop-screen .ud-adventure-shop__information {flex-direction:column;width:90%;height:27%;gap:4px;}
+ .shop-screen .ud-adventure-shop__copy {width:100%;height:190px;flex-grow:0;gap:4px;}
+ .shop-screen .ud-adventure-shop__name {height:52px;font-size:44px;}
+ .shop-screen .ud-adventure-shop__description {height:42px;font-size:30px;text-fit:26px 30px;}
+ .shop-screen .ud-adventure-shop__consequence {height:36px;font-size:26px;text-fit:22px 26px;}
+ .shop-screen .ud-adventure-shop__equipment {height:42px;}
+ .shop-screen .ud-adventure-shop__equippedLabel {height:40px;font-size:26px;text-fit:22px 26px;}
+ .shop-screen .ud-adventure-shop__divider {display:none;}
+ .shop-screen .ud-adventure-shop__transaction {width:100%;height:200px;gap:0px;justify-content:start;}
+ .shop-screen .ud-adventure-shop__action,
+ .shop-screen .ud-adventure-shop__unavailable {height:110px;}
+ .shop-screen .ud-shop-paper-button__label {font-size:34px;height:80px;text-fit:26px 34px;}
+ .shop-screen .ud-adventure-shop__utilities {height:90px;gap:16px;}
+ .shop-screen .ud-adventure-shop__removeSlot {width:170px;height:90px;}
+ .shop-screen .ud-adventure-shop__helpSlot {width:140px;height:90px;}
+ .shop-screen .ud-adventure-shop__utilities .ud-shop-ink-button__label {font-size:26px;}
+ .shop-screen .ud-adventure-shop__feedback {width:84%;height:62px;font-size:28px;text-fit:22px 28px;}
+ .shop-screen .ud-adventure-shop__helpText {font-size:28px;text-fit:24px 28px;}
+}
+@media (aspect < 0.7) {
+ .shop-screen .ud-adventure-shop__utilities {height:100px;}
+ .shop-screen .ud-adventure-shop__removeSlot,
+ .shop-screen .ud-adventure-shop__helpSlot {height:100px;}
+ .shop-screen .ud-adventure-shop__transaction {height:210px;}
+}

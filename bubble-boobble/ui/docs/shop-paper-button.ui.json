@@ -1,0 +1,86 @@
+{
+  "$schemaVersion": 1,
+  "guid": "5ae16e0f-3950-473f-93bc-29a08e99ecf0",
+  "name": "shop-paper-button",
+  "title": "Shop paper purchase",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "label"
+      ],
+      "style": {
+        "pad": [
+          14,
+          24,
+          14,
+          24
+        ],
+        "w": "100%",
+        "h": "100%",
+        "image": "cartoon/shop/action-paper",
+        "fit": "fill",
+        "justify": "center",
+        "align": "center"
+      }
+    },
+    "label": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "fontSize": 36,
+        "fitMin": 22,
+        "h": 64,
+        "color": "#21190e",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "brightness": 1.08
+            },
+            "label": {
+              "color": "#8c3e1d"
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.97
+        }
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "saturation": 0,
+          "opacity": 0.65
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 100
+  }
+}

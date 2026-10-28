@@ -1,0 +1,244 @@
+{
+  "$schemaVersion": 1,
+  "guid": "f0e54737-9adf-4411-b67b-17918a2f7330",
+  "name": "shop-product",
+  "title": "Counter merchandise",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "shadow",
+        "art",
+        "pointer",
+        "tag",
+        "badge"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": "100%"
+      }
+    },
+    "shadow": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.69
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "w": "74%",
+        "h": 12,
+        "radius": 99,
+        "bg": "#25170c66",
+        "attach": true
+      }
+    },
+    "art": {
+      "type": "icon",
+      "image": "cartoon/frames/item/pink_candy",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.04,
+          0.04
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "92%",
+        "h": "72%",
+        "attach": true
+      },
+      "property": "illustration"
+    },
+    "pointer": {
+      "type": "icon",
+      "image": "cartoon/shop/pointing-hand",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.3
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "45%",
+        "h": "28%",
+        "offset": [
+          -32,
+          0
+        ],
+        "opacity": 0,
+        "attach": true
+      }
+    },
+    "tag": {
+      "type": "element",
+      "children": [
+        "coin",
+        "price"
+      ],
+      "style": {
+        "pad": [
+          4,
+          12,
+          4,
+          14
+        ],
+        "position": "anchored",
+        "anchor": [
+          0.12,
+          0.75
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "76%",
+        "h": "23%",
+        "image": "cartoon/shop/price-tag",
+        "fit": "fill",
+        "dir": "row",
+        "gap": 6,
+        "align": "center",
+        "justify": "center"
+      }
+    },
+    "coin": {
+      "type": "icon",
+      "image": "cartoon/shop/gold-coin",
+      "style": {
+        "w": 20,
+        "h": 28
+      },
+      "show": "showCoin"
+    },
+    "price": {
+      "type": "label",
+      "text": "{price}",
+      "style": {
+        "fontSize": 29,
+        "fitMin": 12,
+        "h": 36,
+        "color": "#21190e",
+        "w": 0,
+        "grow": 1,
+        "textAlign": "center"
+      }
+    },
+    "badge": {
+      "type": "label",
+      "text": "EQUIPPED",
+      "style": {
+        "fontSize": 14,
+        "fitMin": 12,
+        "h": 20,
+        "color": "#f7e4b9",
+        "position": "anchored",
+        "anchor": [
+          0.12,
+          0.98
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "76%",
+        "textAlign": "center",
+        "attach": true,
+        "opacity": 0
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "illustration": {
+      "type": "image",
+      "default": "cartoon/frames/item/pink_candy"
+    },
+    "price": {
+      "type": "text",
+      "default": ""
+    },
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "pointer": {
+              "opacity": 1
+            },
+            "art": {
+              "scale": 1.06
+            }
+          }
+        }
+      }
+    },
+    "focused": {
+      "type": "yesno",
+      "default": false
+    },
+    "equipped": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "badge": {
+              "opacity": 1
+            }
+          }
+        }
+      }
+    },
+    "large": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "art": {
+              "scale": 1.25,
+              "ty": 0
+            }
+          }
+        }
+      }
+    },
+    "showCoin": {
+      "type": "yesno",
+      "default": true
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "art": {
+          "scale": 0.98
+        }
+      }
+    }
+  }
+}

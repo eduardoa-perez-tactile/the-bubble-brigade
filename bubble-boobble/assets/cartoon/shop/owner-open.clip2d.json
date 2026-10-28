@@ -1,0 +1,11 @@
+{
+  "$schemaVersion": 1,
+  "fps": 12,
+  "loop": "loop",
+  "frames": [
+    {
+      "sprite": "cartoon/shop/owner-open",
+      "duration": 1
+    }
+  ]
+}
