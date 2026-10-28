@@ -1,0 +1,1140 @@
+{
+  "status": "imported",
+  "layout": "Four frames per transparent square 2x2 sheet, row-major. Generated frame zero is registration evidence only.",
+  "staticFrameZeroSha256": {
+    "available": "3bdc4debafd87e193656f6fbecc6c22a7bc2bb4793c21eba956e3ec3d74a2ff1",
+    "locked": "87aba5818f55e94ec868fbd44c91e38b1f63d79036300af8644aac420340ef8e",
+    "cleared": "f206121d0dbbef7144d55d14714f074fceb48797dc893d10801c3f0d720e5bbb",
+    "shop": "d6fa88514da152f548d10c382210908252a111b73e6a92d80da5d58a1fa9b5a9"
+  },
+  "assets": [
+    {
+      "path": "assets/overworld-living/common/markers/animated/available-1.png",
+      "sha256": "98be96be87b9ce5482b8efd0d72e450418f83ca25a300edca78fc4b60ef4b1a6",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          22,
+          32,
+          148,
+          134
+        ],
+        "tip": [
+          83,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/available-2.png",
+      "sha256": "4f31e173228fe819ae6f2f1d73ae6c44aa33f4a21009d4eb4128ee0b755fc8ad",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          13,
+          31,
+          154,
+          134
+        ],
+        "tip": [
+          83,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/available-3.png",
+      "sha256": "3bacb86de095cf22c1f6f59cde8ba1f795032403970287c219dc5b65e61f3bda",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          22,
+          32,
+          147,
+          134
+        ],
+        "tip": [
+          83,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/locked-1.png",
+      "sha256": "d89d1ee6db5b2834ff21736ce9c9fec99261f662401c4588bd2e51a088e1976b",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          20,
+          28,
+          141,
+          134
+        ],
+        "tip": [
+          80,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/locked-2.png",
+      "sha256": "cda2847ba061afb7583c2bbe9beb27393411af672a19366e7af8dbcf9885a722",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          20,
+          28,
+          141,
+          134
+        ],
+        "tip": [
+          79.5,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/locked-3.png",
+      "sha256": "47db693f06672c130e20b9b83537334c3766dd16f42860c8e1708dc740dbfaf9",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          20,
+          28,
+          141,
+          134
+        ],
+        "tip": [
+          80,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/cleared-1.png",
+      "sha256": "92443d8e7609bd3a6ca7096365312b9993b9c0bc125be2d415ca28c2f1ec4ae6",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          15,
+          26,
+          138,
+          134
+        ],
+        "tip": [
+          76,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/cleared-2.png",
+      "sha256": "a5097bef97dea59b61c8c5c3c318f8e81921f357a4216690ff7b2fd472eafac1",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          15,
+          27,
+          138,
+          134
+        ],
+        "tip": [
+          76,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/cleared-3.png",
+      "sha256": "5acd7fcfb0235c16d30562f387ab7e2a3d61770a0ca469e773c3b286dfc844ab",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          15,
+          27,
+          138,
+          134
+        ],
+        "tip": [
+          75.5,
+          134
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/shop-1.png",
+      "sha256": "d34cac4583bffc67990af81c544102c61ab1b41e61553739ca062123740207af",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          19,
+          30,
+          140,
+          132
+        ],
+        "tip": [
+          79,
+          132
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/shop-2.png",
+      "sha256": "cfd2bb9560f5b7d5830664cd706beb70eee78ec167dc473eb18ec39a3208bb30",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          19,
+          30,
+          140,
+          133
+        ],
+        "tip": [
+          79,
+          133
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    },
+    {
+      "path": "assets/overworld-living/common/markers/animated/shop-3.png",
+      "sha256": "be4d4ca4d74f95a1707880f2d72a964aea19f69f6f14b56b42024fad9d4cf058",
+      "size": [
+        160,
+        160
+      ],
+      "measured": {
+        "bounds": [
+          20,
+          30,
+          140,
+          132
+        ],
+        "tip": [
+          79,
+          132
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      }
+    }
+  ],
+  "preparation": "Read-only alpha analysis; native Swift CoreGraphics crop/scale/translation onto transparent160canvas. Per-frame lowest-shield-tip registration; one XYscale per kind. Approved128staticrest untouched.",
+  "plans": [
+    {
+      "kind": "available",
+      "source": "tools/overworld/crest-animation-sources/available.png",
+      "sourceSha256": "28c710b0e7bd59b712b632798a238aade088bc741631044731748f22c14b052e",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "staticFrameZero": {
+        "path": "assets/overworld-living/common/markers/available.png",
+        "sha256": "3bdc4debafd87e193656f6fbecc6c22a7bc2bb4793c21eba956e3ec3d74a2ff1",
+        "bounds": [
+          6,
+          11,
+          128,
+          118
+        ],
+        "tip": [
+          67,
+          118
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      },
+      "scale": [
+        0.25051334702258726,
+        0.2622549019607843
+      ],
+      "outputSize": [
+        160,
+        160
+      ],
+      "transparentPadding": 16,
+      "quadScale": 1.25,
+      "generatedZeroBoundsDelta": [
+        0.6262833675564679,
+        0,
+        0.6262833675564821,
+        0
+      ],
+      "frames": [
+        {
+          "bounds": [
+            103,
+            123,
+            590,
+            531
+          ],
+          "tip": [
+            344,
+            531
+          ],
+          "origin": [
+            0,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 0,
+          "sourceRect": [
+            102,
+            122,
+            489,
+            410
+          ],
+          "destinationRect": [
+            22.37577002053388,
+            26.737745098039216,
+            122.50102669404518,
+            107.52450980392157
+          ],
+          "registeredBounds": [
+            22.626283367556468,
+            27,
+            144.62628336755648,
+            134
+          ],
+          "registeredTip": [
+            83,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            49,
+            153,
+            549,
+            539
+          ],
+          "tip": [
+            292,
+            539
+          ],
+          "origin": [
+            627,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 1,
+          "sourceRect": [
+            675,
+            152,
+            502,
+            388
+          ],
+          "destinationRect": [
+            21.87474332648871,
+            32.507352941176464,
+            125.75770020533881,
+            101.75490196078432
+          ],
+          "registeredBounds": [
+            22.125256673511295,
+            32.76960784313725,
+            147.38193018480493,
+            134
+          ],
+          "registeredTip": [
+            83,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            67,
+            80,
+            627,
+            473
+          ],
+          "tip": [
+            345,
+            473
+          ],
+          "origin": [
+            0,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 2,
+          "sourceRect": [
+            66,
+            706,
+            562,
+            395
+          ],
+          "destinationRect": [
+            13.106776180698152,
+            30.67156862745097,
+            140.78850102669404,
+            103.59068627450982
+          ],
+          "registeredBounds": [
+            13.357289527720738,
+            30.933823529411754,
+            153.6447638603696,
+            134
+          ],
+          "registeredTip": [
+            83,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            50,
+            93,
+            546,
+            482
+          ],
+          "tip": [
+            292,
+            482
+          ],
+          "origin": [
+            627,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 3,
+          "sourceRect": [
+            676,
+            719,
+            498,
+            391
+          ],
+          "destinationRect": [
+            22.1252566735113,
+            31.72058823529412,
+            124.75564681724846,
+            102.54166666666667
+          ],
+          "registeredBounds": [
+            22.375770020533885,
+            31.982843137254903,
+            146.63039014373717,
+            134
+          ],
+          "registeredTip": [
+            83,
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "locked",
+      "source": "tools/overworld/crest-animation-sources/locked.png",
+      "sourceSha256": "0bf152aa7064106fd337baa5fbf1cd29a5f65fe5cb84c41058ef01ec2f749541",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "staticFrameZero": {
+        "path": "assets/overworld-living/common/markers/locked.png",
+        "sha256": "87aba5818f55e94ec868fbd44c91e38b1f63d79036300af8644aac420340ef8e",
+        "bounds": [
+          4,
+          12,
+          124,
+          118
+        ],
+        "tip": [
+          64,
+          118
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      },
+      "scale": [
+        0.22813688212927757,
+        0.22894168466522677
+      ],
+      "outputSize": [
+        160,
+        160
+      ],
+      "transparentPadding": 16,
+      "quadScale": 1.25,
+      "generatedZeroBoundsDelta": [
+        0.4562737642585546,
+        0,
+        0.4562737642585546,
+        0
+      ],
+      "frames": [
+        {
+          "bounds": [
+            62,
+            89,
+            588,
+            552
+          ],
+          "tip": [
+            323,
+            552
+          ],
+          "origin": [
+            0,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 0,
+          "sourceRect": [
+            61,
+            88,
+            528,
+            465
+          ],
+          "destinationRect": [
+            20.228136882129277,
+            27.771058315334773,
+            120.45627376425855,
+            106.45788336933046
+          ],
+          "registeredBounds": [
+            20.456273764258555,
+            28,
+            140.45627376425855,
+            134
+          ],
+          "registeredTip": [
+            80,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            37,
+            90,
+            563,
+            552
+          ],
+          "tip": [
+            296.5,
+            552
+          ],
+          "origin": [
+            627,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 1,
+          "sourceRect": [
+            663,
+            89,
+            528,
+            464
+          ],
+          "destinationRect": [
+            20.570342205323193,
+            28.000000000000004,
+            120.45627376425855,
+            106.22894168466523
+          ],
+          "registeredBounds": [
+            20.79847908745247,
+            28.22894168466523,
+            140.79847908745248,
+            134
+          ],
+          "registeredTip": [
+            80,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            62,
+            62,
+            588,
+            525
+          ],
+          "tip": [
+            323,
+            525
+          ],
+          "origin": [
+            0,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 2,
+          "sourceRect": [
+            61,
+            688,
+            528,
+            465
+          ],
+          "destinationRect": [
+            20.228136882129277,
+            27.771058315334773,
+            120.45627376425855,
+            106.45788336933046
+          ],
+          "registeredBounds": [
+            20.456273764258555,
+            28,
+            140.45627376425855,
+            134
+          ],
+          "registeredTip": [
+            80,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            37,
+            62,
+            563,
+            525
+          ],
+          "tip": [
+            296,
+            525
+          ],
+          "origin": [
+            627,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 3,
+          "sourceRect": [
+            663,
+            688,
+            528,
+            465
+          ],
+          "destinationRect": [
+            20.684410646387832,
+            27.771058315334773,
+            120.45627376425855,
+            106.45788336933046
+          ],
+          "registeredBounds": [
+            20.91254752851711,
+            28,
+            140.9125475285171,
+            134
+          ],
+          "registeredTip": [
+            80,
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "cleared",
+      "source": "tools/overworld/crest-animation-sources/cleared.png",
+      "sourceSha256": "d448fd011e14efe6d768a963e579cbe75011cef5bf2fd09d6a954f92df21d129",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "staticFrameZero": {
+        "path": "assets/overworld-living/common/markers/cleared.png",
+        "sha256": "f206121d0dbbef7144d55d14714f074fceb48797dc893d10801c3f0d720e5bbb",
+        "bounds": [
+          0,
+          11,
+          122,
+          118
+        ],
+        "tip": [
+          60,
+          118
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      },
+      "scale": [
+        0.2364341085271318,
+        0.23937360178970918
+      ],
+      "outputSize": [
+        160,
+        160
+      ],
+      "transparentPadding": 16,
+      "quadScale": 1.25,
+      "generatedZeroBoundsDelta": [
+        -0.5271317829457374,
+        0,
+        -0.5271317829457303,
+        0
+      ],
+      "frames": [
+        {
+          "bounds": [
+            67,
+            90,
+            583,
+            537
+          ],
+          "tip": [
+            323,
+            537
+          ],
+          "origin": [
+            0,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 0,
+          "sourceRect": [
+            66,
+            89,
+            518,
+            449
+          ],
+          "destinationRect": [
+            15.236434108527131,
+            26.76062639821029,
+            122.47286821705427,
+            107.47874720357942
+          ],
+          "registeredBounds": [
+            15.472868217054263,
+            27,
+            137.47286821705427,
+            134
+          ],
+          "registeredTip": [
+            76,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            43,
+            89,
+            559,
+            537
+          ],
+          "tip": [
+            298,
+            537
+          ],
+          "origin": [
+            627,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 1,
+          "sourceRect": [
+            669,
+            88,
+            518,
+            450
+          ],
+          "destinationRect": [
+            15.472868217054266,
+            26.521252796420583,
+            122.47286821705427,
+            107.71812080536913
+          ],
+          "registeredBounds": [
+            15.709302325581397,
+            26.76062639821029,
+            137.7093023255814,
+            134
+          ],
+          "registeredTip": [
+            76,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            67,
+            87,
+            583,
+            533
+          ],
+          "tip": [
+            324,
+            533
+          ],
+          "origin": [
+            0,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 2,
+          "sourceRect": [
+            66,
+            713,
+            518,
+            448
+          ],
+          "destinationRect": [
+            14.999999999999996,
+            27,
+            122.47286821705427,
+            107.23937360178971
+          ],
+          "registeredBounds": [
+            15.236434108527128,
+            27.23937360178971,
+            137.23643410852713,
+            134
+          ],
+          "registeredTip": [
+            76,
+            134
+          ]
+        },
+        {
+          "bounds": [
+            41,
+            87,
+            559,
+            533
+          ],
+          "tip": [
+            298,
+            533
+          ],
+          "origin": [
+            627,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 3,
+          "sourceRect": [
+            667,
+            713,
+            520,
+            448
+          ],
+          "destinationRect": [
+            14.999999999999996,
+            27,
+            122.94573643410854,
+            107.23937360178971
+          ],
+          "registeredBounds": [
+            15.236434108527128,
+            27.23937360178971,
+            137.7093023255814,
+            134
+          ],
+          "registeredTip": [
+            76,
+            134
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "shop",
+      "source": "tools/overworld/crest-animation-sources/shop.png",
+      "sourceSha256": "77b022474ca9e1b5abec11aca03f67d17bcdc3662621369355d28851b6904253",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "staticFrameZero": {
+        "path": "assets/overworld-living/common/markers/shop.png",
+        "sha256": "d6fa88514da152f548d10c382210908252a111b73e6a92d80da5d58a1fa9b5a9",
+        "bounds": [
+          4,
+          14,
+          124,
+          116
+        ],
+        "tip": [
+          63.5,
+          116
+        ],
+        "origin": [
+          0,
+          0
+        ],
+        "overscanRight": 0
+      },
+      "scale": [
+        0.23300970873786409,
+        0.23234624145785876
+      ],
+      "outputSize": [
+        160,
+        160
+      ],
+      "transparentPadding": 16,
+      "quadScale": 1.25,
+      "generatedZeroBoundsDelta": [
+        -0.38349514563107334,
+        0,
+        -0.38349514563105913,
+        0
+      ],
+      "frames": [
+        {
+          "bounds": [
+            73,
+            91,
+            588,
+            530
+          ],
+          "tip": [
+            330,
+            530
+          ],
+          "origin": [
+            0,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 0,
+          "sourceRect": [
+            72,
+            90,
+            517,
+            441
+          ],
+          "destinationRect": [
+            19.383495145631063,
+            29.767653758542142,
+            120.46601941747574,
+            102.46469248291572
+          ],
+          "registeredBounds": [
+            19.616504854368927,
+            30,
+            139.61650485436894,
+            132
+          ],
+          "registeredTip": [
+            79.5,
+            132
+          ]
+        },
+        {
+          "bounds": [
+            38,
+            91,
+            553,
+            530
+          ],
+          "tip": [
+            294.5,
+            530
+          ],
+          "origin": [
+            627,
+            0
+          ],
+          "overscanRight": 0,
+          "frame": 1,
+          "sourceRect": [
+            664,
+            90,
+            517,
+            441
+          ],
+          "destinationRect": [
+            19.499999999999996,
+            29.767653758542142,
+            120.46601941747574,
+            102.46469248291572
+          ],
+          "registeredBounds": [
+            19.73300970873786,
+            30,
+            139.73300970873785,
+            132
+          ],
+          "registeredTip": [
+            79.5,
+            132
+          ]
+        },
+        {
+          "bounds": [
+            73,
+            77,
+            588,
+            514
+          ],
+          "tip": [
+            330,
+            514
+          ],
+          "origin": [
+            0,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 2,
+          "sourceRect": [
+            72,
+            703,
+            517,
+            439
+          ],
+          "destinationRect": [
+            19.383495145631063,
+            30.232346241457865,
+            120.46601941747574,
+            102
+          ],
+          "registeredBounds": [
+            19.616504854368927,
+            30.464692482915723,
+            139.61650485436894,
+            132
+          ],
+          "registeredTip": [
+            79.5,
+            132
+          ]
+        },
+        {
+          "bounds": [
+            38,
+            76,
+            553,
+            514
+          ],
+          "tip": [
+            293,
+            514
+          ],
+          "origin": [
+            627,
+            627
+          ],
+          "overscanRight": 0,
+          "frame": 3,
+          "sourceRect": [
+            664,
+            702,
+            517,
+            440
+          ],
+          "destinationRect": [
+            19.849514563106798,
+            30.000000000000004,
+            120.46601941747574,
+            102.23234624145786
+          ],
+          "registeredBounds": [
+            20.08252427184466,
+            30.23234624145786,
+            140.08252427184465,
+            132
+          ],
+          "registeredTip": [
+            79.5,
+            132
+          ]
+        }
+      ]
+    }
+  ],
+  "registrationMethod": "Per-frame median X of lowest five alpha>16 rows, lowest alpha>16 row baseline. One generated-frame-zero to approved-static XY scale per kind; 16px transparent outset on a160pxcanvas. Alpha threshold is measurement only; native source crops retain the painted pixels."
+}

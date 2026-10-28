@@ -1,16 +1,19 @@
-import { ActionState, KeyEvent, LocalTransform, ViewInfo, WorldView, WorldViewFollow, NO_ENTITY, defineSystem, query, read, write } from '@gameengine/runtime';
+import { ActionState, KeyEvent, LoadingResumed, LocalTransform, ViewInfo, WorldView, WorldViewFollow, NO_ENTITY, defineSystem, query, read, write } from '@gameengine/runtime';
 import { DesktopIntent, OverworldAvatar } from '../schema.gen.ts';
 import { partyPads } from '../arcade/party-input.ts';
 import { focusedOverworldPoi, moveOverworld } from './navigation.ts';
 import { overworldState, type OverworldFacing } from './state.ts';
+import {advanceMarkerMotion,resumeMarkerCelebration} from './marker-animation';
 import {advanceOverworldFootsteps} from './footsteps';
 import { getOverworldMap, mapBounds } from './maps.ts';
 
 /** Recorded keyboard actions and controller state drive the authoritative walkable avatar. */
 export const OverworldSystem=defineSystem({
-  name:'OverworldSystem',after:['DesktopSystem'],query:query(read(ActionState)),events:[DesktopIntent,KeyEvent],
+  name:'OverworldSystem',after:['DesktopSystem'],query:query(read(ActionState)),events:[DesktopIntent,KeyEvent,LoadingResumed],
   run(ctx,q){
     const s=overworldState.get();if(!s.active)return;
+    let markerContext=s.markerMotion;
+    for(const event of ctx.events.read(LoadingResumed))markerContext=resumeMarkerCelebration(markerContext,event.name,s.districtId);
     let x=0,y=0,confirm=false,pressed=false,pause=false,confirmKeys=s.confirmKeys;
     for(const c of q.chunks())for(let i=0;i<c.length;i++){
       const a=c.col(ActionState);
@@ -42,12 +45,12 @@ export const OverworldSystem=defineSystem({
     confirm ||= confirmKeys!==0;
     const neutral=!confirm&&!pressed&&!x&&!y;
     if(s.modal){
-      if(s.moving||s.inputArmed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys)overworldState.set({...s,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys});
+      if(markerContext!==s.markerMotion||s.moving||s.inputArmed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys)overworldState.set({...s,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys,markerMotion:markerContext});
       return;
     }
     const armed=s.inputArmed||neutral;
     if(pause&&armed){
-      overworldState.set({...s,modal:true,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys});
+      overworldState.set({...s,modal:true,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys,markerMotion:markerContext});
       ctx.events.emit(DesktopIntent,{action:'overworld-menu',value:'',index:0,x:0,y:0});return;
     }
     const point=moveOverworld(s,x,y,ctx.dt,s.districtId),moving=point.x!==s.x||point.y!==s.y;
@@ -58,9 +61,10 @@ export const OverworldSystem=defineSystem({
     const interact=armed&&s.inputArmed&&focusedPoi&&(pressed||confirm&&!s.confirmHeld);
     const walkTick=moving?s.walkTick+1:s.walkTick;
     const footsteps=advanceOverworldFootsteps(s.footsteps??[],s,point,walkTick,facing,!!interact);
-    // Count walk frames only while walking, letting idle map scenes settle completely.
-    if(s.footsteps?.length||footsteps.length||moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
-      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick,footsteps,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
+    const markerMotion=advanceMarkerMotion(markerContext,focusedPoi,!!interact);
+    // Walk poses require displacement; marker clips use their own bounded clock.
+    if(markerMotion!==s.markerMotion||s.footsteps?.length||footsteps.length||moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
+      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick,footsteps,markerMotion,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
     if(interact)ctx.events.emit(DesktopIntent,{action:'overworld-interact',value:focusedPoi,index:0,x:0,y:0});
   },
 });

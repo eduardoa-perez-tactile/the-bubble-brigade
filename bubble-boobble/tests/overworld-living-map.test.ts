@@ -3,6 +3,7 @@ import {getOverworldMap,sourceToWorld} from '../src/overworld/maps';
 import {overworldDrawPlan} from '../src/overworld/presentation';
 import {initialOverworldState} from '../src/overworld/state';
 import {initialAdventure} from '../src/overworld/progression';
+import {initialMarkerMotion} from '../src/overworld/marker-animation';
 import {livingCoastDraws,livingResidentDraws,livingShopDraws,livingMapImageKeys,livingMissionMarkerDraws} from '../src/overworld/living-map-visuals';
 const scene='scenes/cartoon.scene.json';
 worldTest('living map original paintings retain their transform beneath registered coast drawings',async()=>{
@@ -19,10 +20,11 @@ worldTest('living map original paintings retain their transform beneath register
  }
 
 },{scene});
-worldTest('living map approved crests replace all residents and shop lettering while preserving every entrance',async()=>{
+worldTest('living map enlarged authored crests animate without moving entrances or restoring map lettering',async()=>{
  const shopNative=[[793,948],[218,928],[843,897],[841,956],[834,987]];
  expect(livingMapImageKeys.some(key=>key.includes('/npc/')||key.includes('resident-shadow'))).toBe(false);
  for(let frame=0;frame<4;frame++)expect(livingMapImageKeys.includes(`overworld-living/common/footsteps/puff-${frame}`)).toBe(true);
+ for(const state of ['available','locked','cleared','shop'])for(let frame=1;frame<=3;frame++)expect(livingMapImageKeys.includes(`overworld-living/common/markers/animated/${state}-${frame}`)).toBe(true);
  for(let district=1;district<=5;district++){
   const id=`district-${district}`,map=getOverworldMap(id),progress=initialAdventure();
   for(const tick of [0,125,600]){
@@ -33,16 +35,45 @@ worldTest('living map approved crests replace all residents and shop lettering w
    expect(draws.some(d=>!!d.text)).toBe(false);
   }
   const native=shopNative[district-1]!,point=sourceToWorld(map,{x:native[0]!*1536/1254,y:native[1]!*1536/1254});
-  expect(livingShopDraws(id)).toEqual([{image:'overworld-living/common/markers/shop',...point,width:36,height:36,order:3500}]);
+  expect(livingShopDraws(id)).toEqual([{image:'overworld-living/common/markers/shop',...point,width:58,height:58,order:3500}]);
   expect(livingMapImageKeys.includes('overworld-living/common/markers/shop')).toBe(true);
   const markers=livingMissionMarkerDraws(id,progress),pois=map.pois.filter(p=>p.kind==='encounter');
   expect(markers.length).toBe(5);
   for(let slot=0;slot<5;slot++){
    const poi=pois[slot]!,anchor=sourceToWorld(map,{x:poi.x,y:poi.y-112*1536/1254}),draw=markers[slot]!;
-   expect({x:draw.x,y:draw.y,width:draw.width,height:draw.height}).toEqual({...anchor,width:36,height:36});
+   expect({x:draw.x,y:draw.y,width:draw.width,height:draw.height}).toEqual({...anchor,width:58,height:58});
    expect(livingMapImageKeys.includes(draw.image!)).toBe(true);
    const doorway=sourceToWorld(map,poi);
    expect(draw.y-draw.height/2>doorway.y).toBe(true);
+  }
+  const geometry=(draws:ReturnType<typeof livingShopDraws>)=>draws.map(({image,width,height,...fixed})=>fixed);
+  for(const age of [0,6,14,22,32]){
+   const motion={...initialMarkerMotion(),clock:age,focusId:'vendor',focusAge:age};
+   const shop=livingShopDraws(id,motion),missions=livingMissionMarkerDraws(id,progress,motion);
+   expect(geometry(shop)).toEqual(geometry(livingShopDraws(id)));
+   expect(geometry(missions)).toEqual(geometry(markers));
+   expect([...shop,...missions].every(draw=>livingMapImageKeys.includes(draw.image!))).toBe(true);
+   for(const draw of [...shop,...missions]){
+    const canvas=draw.image!.includes('/animated/')?72.5:58;
+    expect({width:draw.width,height:draw.height}).toEqual({width:canvas,height:canvas});
+    // 128px body inside the 160px motion canvas stays exactly 58 world units.
+    expect(draw.width*(draw.image!.includes('/animated/')?128/160:1)).toBe(58);
+   }
+   expect(livingShopDraws(id,motion,true)).toEqual(livingShopDraws(id));
+   expect(livingMissionMarkerDraws(id,progress,motion,true)).toEqual(markers);
+   const production=overworldDrawPlan({...initialOverworldState,districtId:id,markerMotion:motion},progress).filter(draw=>draw.image?.includes('/markers/'));
+   expect(production).toEqual([...shop,...missions]);
+   expect(shop[0]!.image).toBe(age===0||age===32?'overworld-living/common/markers/shop':`overworld-living/common/markers/animated/shop-${age===6?1:age===14?2:3}`);
+  }
+  for(let slot=0;slot<5;slot++){
+   const sampleProgress=initialAdventure(),encounterId=`encounter-${(district-1)*5+slot+1}`,motion={...initialMarkerMotion(),focusId:encounterId,focusAge:6};
+   const focused=livingMissionMarkerDraws(id,sampleProgress,motion)[slot]!;
+   expect(focused.image).toBe(`overworld-living/common/markers/animated/${markers[slot]!.image!.split('/').at(-1)}-1`);
+   sampleProgress.cleared[encounterId]={bestScore:10,clears:1};
+   const celebration={...initialMarkerMotion(),celebrationId:encounterId,celebrationAge:6};
+   const cleared=livingMissionMarkerDraws(id,sampleProgress,celebration)[slot]!;
+   expect(cleared.image).toBe('overworld-living/common/markers/animated/cleared-1');
+   expect(livingMissionMarkerDraws(id,sampleProgress,celebration,true)[slot]!.image).toBe('overworld-living/common/markers/cleared');
   }
   for(let slot=0;slot<5;slot++)progress.cleared[`encounter-${(district-1)*5+slot+1}`]={bestScore:10,clears:1};
   expect(livingMissionMarkerDraws(id,progress).every(d=>d.image!.endsWith('/cleared'))).toBe(true);
@@ -88,7 +119,7 @@ worldTest('living map approved mission symbols cover every original entrance and
   expect(locked.length).toBe(5);
   for(let slot=0;slot<5;slot++){
    const draw=locked[slot]!,poi=pois[slot]!,anchor=sourceToWorld(map,{x:poi.x,y:poi.y-112*1536/1254});
-   expect({x:draw.x,y:draw.y,width:draw.width,height:draw.height}).toEqual({...anchor,width:36,height:36});
+   expect({x:draw.x,y:draw.y,width:draw.width,height:draw.height}).toEqual({...anchor,width:58,height:58});
    expect(livingMapImageKeys.includes(draw.image!)).toBe(true);count++;
   }
   if(district===1){expect(locked[0]!.image!.endsWith('/available')).toBe(true);expect(locked[4]!.image!.endsWith('/locked')).toBe(true);}

@@ -40,16 +40,18 @@
       .concept { min-height: 0; }
       .study { height: 150px; }
     }
-  </style>
+
+.motion-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:22px 0}.motion-card{background:#f2e7cd;border:1px solid #cdbd9a;border-radius:10px;padding:16px;text-align:center}.motion-preview{position:relative;width:160px;height:160px;margin:auto}.motion-preview img{position:absolute;inset:0;width:160px;height:160px;opacity:0;animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:steps(1,end)}.motion-preview img.rest{inset:16px;width:128px;height:128px;animation-name:crest-rest}.motion-preview img.one{animation-name:crest-one}.motion-preview img.two{animation-name:crest-two}.motion-preview img.three{animation-name:crest-three}@keyframes crest-rest{0%{opacity:1}2.5%{opacity:0}13.3334%,100%{opacity:1}}@keyframes crest-one{0%{opacity:0}2.5%{opacity:1}5.8334%,100%{opacity:0}}@keyframes crest-two{0%{opacity:0}5.8334%{opacity:1}9.1667%,100%{opacity:0}}@keyframes crest-three{0%{opacity:0}9.1667%{opacity:1}13.3334%,100%{opacity:0}}@media(max-width:900px){.motion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(prefers-reduced-motion:reduce){.motion-preview img{animation:none}.motion-preview img.rest{opacity:1}}
+</style>
 </head>
 <body>
   <main>
     <header>
       <p class="eyebrow">The Bubble Brigade · mission crest study</p>
-      <h1>One mission crest, three clear states</h1>
-      <p>Review the ready, locked and three-star completed states. Each preview uses the same existing doorway and player, with a compact winged crest above the entrance.</p>
-    </header>
-    <section class="cards" aria-label="Ready, locked and completed mission states">
+      <h1>Larger animated mission crests</h1>
+      <p>Approved cartoon artwork, enlarged for quick recognition, with authored sprite animations and long resting holds.</p>
+    </header><section><h2>Larger, authored animations</h2><p>Mission and shop artwork is now about 61% larger. These frame studies repeat for inspection; in game, Ready and Shop have staggered bursts, Locked reacts once on approach, and Completed celebrates a won return once.</p><div class="motion-grid"><article class="motion-card"><h2>Ready</h2><div class="motion-preview"><img class="rest" alt="Ready resting crest" src="../../../assets/overworld-living/common/markers/available.png"><img class="one" alt="" src="../../../assets/overworld-living/common/markers/animated/available-1.png"><img class="two" alt="" src="../../../assets/overworld-living/common/markers/animated/available-2.png"><img class="three" alt="" src="../../../assets/overworld-living/common/markers/animated/available-3.png"></div><p>Wing flap, then rest.</p></article><article class="motion-card"><h2>Locked</h2><div class="motion-preview"><img class="rest" alt="Locked resting crest" src="../../../assets/overworld-living/common/markers/locked.png"><img class="one" alt="" src="../../../assets/overworld-living/common/markers/animated/locked-1.png"><img class="two" alt="" src="../../../assets/overworld-living/common/markers/animated/locked-2.png"><img class="three" alt="" src="../../../assets/overworld-living/common/markers/animated/locked-3.png"></div><p>Closed-lock rattle on approach.</p></article><article class="motion-card"><h2>Completed</h2><div class="motion-preview"><img class="rest" alt="Completed resting crest" src="../../../assets/overworld-living/common/markers/cleared.png"><img class="one" alt="" src="../../../assets/overworld-living/common/markers/animated/cleared-1.png"><img class="two" alt="" src="../../../assets/overworld-living/common/markers/animated/cleared-2.png"><img class="three" alt="" src="../../../assets/overworld-living/common/markers/animated/cleared-3.png"></div><p>Three stars bounce after a win.</p></article><article class="motion-card"><h2>Shop</h2><div class="motion-preview"><img class="rest" alt="Shop resting crest" src="../../../assets/overworld-living/common/markers/shop.png"><img class="one" alt="" src="../../../assets/overworld-living/common/markers/animated/shop-1.png"><img class="two" alt="" src="../../../assets/overworld-living/common/markers/animated/shop-2.png"><img class="three" alt="" src="../../../assets/overworld-living/common/markers/animated/shop-3.png"></div><p>Bag rocks and the coin tips forward.</p></article></div><img style="width:100%;height:auto" alt="Larger mission and shop icons in the actual Game Engine" src="../../../tests/goldens/large_animated_map_crests_preserve_readable_destinations_and_authored_short_bursts_on_phone_low/large_harbor/mobile/metal.png"><p>Focused V8 logic and actual Game Engine preview pass; peak 13/14 draws. Original map paintings and resting icon artwork are preserved.</p></section>
+    <details style="margin-top:24px"><summary>Earlier approved design study</summary><section class="cards" aria-label="Ready, locked and completed mission states">
       <article aria-labelledby="state-ready">
         <h2 id="state-ready">Ready</h2>
         <p class="concept">A mission you can enter now.</p>
@@ -90,8 +92,8 @@
         </figure>
       </article>
     </section>
-    <footer>Approval mockups only. The map painting and player art are unchanged; no NPCs, labels or gameplay changes have been added to these previews.</footer>
-  
+</details>    <footer>Approval mockups only. The map painting and player art are unchanged; no NPCs, labels or gameplay changes have been added to these previews.</footer>
+
 <section style="margin-top:28px"><h2>Integrated Game Engine captures</h2><p>Approved art in the unchanged harbor. No world NPCs or map lettering. Footstep drawings follow actual contact frames and face along the ground plane.</p><img alt="Approved crests and icon-only shop in the real engine" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/ready_harbor/mobile/metal.png"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px"><img alt="Expanded left footstep puff" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/foot_puff_expanded_left/mobile/metal.png"><img alt="Upward footstep puff projected on the ground" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/foot_contact_up/mobile/metal.png"></div><img alt="Three-star completed mission crest" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/completed_harbor/mobile/metal.png"></section>
 </main>
 </body>
