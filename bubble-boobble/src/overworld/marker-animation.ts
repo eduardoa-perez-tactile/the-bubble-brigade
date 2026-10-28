@@ -10,10 +10,10 @@ export const MARKER_RETURN_REVEAL_STEPS=15;
 export function initialMarkerMotion():MarkerMotion {
  return {clock:0,focusId:'',focusAge:MARKER_BURST_STEPS,celebrationId:'',celebrationAge:MARKER_BURST_STEPS};
 }
-/** Only mission thresholds and the existing shop can trigger an approach drawing. */
+/** Mission thresholds, optional trials and the shop trigger an approach drawing. */
 export function advanceMarkerMotion(motion:MarkerMotion|undefined,focusedPoi:string,paused=false):MarkerMotion {
  const before=motion??initialMarkerMotion();if(paused)return before;
- const focusId=focusedPoi==='vendor'||/^encounter-\d+$/.test(focusedPoi)?focusedPoi:'';
+ const focusId=focusedPoi==='vendor'||focusedPoi==='trial'||/^encounter-\d+$/.test(focusedPoi)?focusedPoi:'';
  const celebrationAge=before.celebrationPending?before.celebrationAge:Math.min(MARKER_BURST_STEPS,before.celebrationAge+1);
  return {
   clock:(before.clock+1)%MARKER_IDLE_PERIOD,

@@ -124,6 +124,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
    if(pads.menuXEdge&&menuState.cartoon&&menuState.screen==='result'&&menuState.won)desktopAction('select','',(menuState.selected+pads.menuXEdge+buttons.length)%buttons.length);
    if(pads.menuXEdge&&menuState.screen==='modes')desktopAction('select','',modeGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='party')desktopAction('select','',partyGridSelection(desktopState.get().selected,pads.menuXEdge,0));
+   if(pads.menuXEdge&&menuState.screen==='overworld-panel'&&menuState.overworldPanel==='journal'&&buttons.length)desktopAction('select','',(menuState.selected+pads.menuXEdge+buttons.length)%buttons.length);
    if(pads.menuXEdge&&menuState.screen==='overworld-panel'&&['vendor','shop'].includes(menuState.overworldPanel??''))desktopAction('select','',shopFocusIndex(menuState,buttons.length,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='settings'){const b=buttons[desktopState.get().selected];if(b)desktopAction(b.key,'',pads.menuXEdge);}
    if(pads.menuBack)desktopAction(menuState.screen.startsWith('overworld')?'overworld-back':menuState.screen==='pause'?'resume':menuState.cartoon&&menuState.screen==='result'?(menuState.resultDetails?'result-details':'result-exit'):menuState.screen==='new-profile'?'profiles':'menu');
@@ -167,6 +168,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
   if(c.is(ActionState,i,'name','menuX')&&s.cartoon&&s.screen==='result'&&s.won)desktopAction('select','',(s.selected+(a.value[i]!<0?-1:1)+buttons.length)%buttons.length);
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='modes')desktopAction('select','',modeGridSelection(s.selected,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='party')desktopAction('select','',partyGridSelection(s.selected,a.value[i]!<0?-1:1,0));
+  if(c.is(ActionState,i,'name','menuX')&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'&&buttons.length)desktopAction('select','',(s.selected+(a.value[i]!<0?-1:1)+buttons.length)%buttons.length);
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??''))desktopAction('select','',shopFocusIndex(s,buttons.length,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='settings'){const b=buttons[s.selected];if(b)desktopAction(b.key,'',a.value[i]!<0?-1:1);}
   if(c.is(ActionState,i,'name','confirm')&&s.screen!=='result')confirm=true;

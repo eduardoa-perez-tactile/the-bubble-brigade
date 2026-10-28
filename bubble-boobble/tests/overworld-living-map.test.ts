@@ -4,7 +4,7 @@ import {overworldDrawPlan} from '../src/overworld/presentation';
 import {initialOverworldState} from '../src/overworld/state';
 import {initialAdventure} from '../src/overworld/progression';
 import {initialMarkerMotion} from '../src/overworld/marker-animation';
-import {livingCoastDraws,livingResidentDraws,livingShopDraws,livingMapImageKeys,livingMissionMarkerDraws} from '../src/overworld/living-map-visuals';
+import {livingCoastDraws,livingResidentDraws,livingShopDraws,livingMapImageKeys,livingMissionMarkerDraws,livingTrialMarkerDraws} from '../src/overworld/living-map-visuals';
 const scene='scenes/cartoon.scene.json';
 worldTest('living map original paintings retain their transform beneath registered coast drawings',async()=>{
  for(let district=1;district<=5;district++){
@@ -62,7 +62,7 @@ worldTest('living map enlarged authored crests animate without moving entrances 
    expect(livingShopDraws(id,motion,true)).toEqual(livingShopDraws(id));
    expect(livingMissionMarkerDraws(id,progress,motion,true)).toEqual(markers);
    const production=overworldDrawPlan({...initialOverworldState,districtId:id,markerMotion:motion},progress).filter(draw=>draw.image?.includes('/markers/'));
-   expect(production).toEqual([...shop,...missions]);
+   expect(production).toEqual([...shop,...missions,...livingTrialMarkerDraws(id,progress,motion)]);
    expect(shop[0]!.image).toBe(age===0||age===32?'overworld-living/common/markers/shop':`overworld-living/common/markers/animated/shop-${age===6?1:age===14?2:3}`);
   }
   for(let slot=0;slot<5;slot++){

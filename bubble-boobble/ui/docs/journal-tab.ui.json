@@ -1,0 +1,107 @@
+{
+  "$schemaVersion": 1,
+  "guid": "2e08d03b-2cb0-44a7-bdc0-ac61bf2b89b2",
+  "name": "journal-tab",
+  "title": "Journal Tab",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "label",
+        "lock"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "w": 164,
+        "h": 46,
+        "align": "center",
+        "justify": "center",
+        "radius": 5,
+        "bg": "#e7d9b8"
+      }
+    },
+    "label": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 22,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    },
+    "lock": {
+      "type": "label",
+      "text": "UNDISCOVERED",
+      "show": "locked",
+      "style": {
+        "w": "100%",
+        "h": 13,
+        "fontSize": 10,
+        "color": "#756a55",
+        "textAlign": "center"
+      }
+    }
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "active": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#285b59"
+            },
+            "label": {
+              "color": "#f5e9cd"
+            }
+          }
+        }
+      }
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#b88a40"
+            },
+            "label": {
+              "color": "#28291e"
+            }
+          }
+        }
+      }
+    },
+    "locked": {
+      "type": "yesno",
+      "default": false
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 100
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.98
+        }
+      }
+    }
+  }
+}

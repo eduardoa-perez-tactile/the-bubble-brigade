@@ -89,7 +89,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
   expect(locked.some(b=>b.label==='PLAY ENCOUNTER')).toBe(false);
   if(width===360)ctx.render.expectScreenshot('slim-locked-card',{width,height});
   await intent(ctx,'overworld-back');
-  await intent(ctx,'overworld-journal');expect(desktopState.get().overworldPanel).toBe('journal');
+  await intent(ctx,'overworld-journal');await adventureStep(ctx,16);expect(desktopState.get().overworldPanel).toBe('journal');
   ctx.render.stats({width,height});assertButtons(ctx,width,height,safe,2);
   if(width===360)ctx.render.expectScreenshot('slim-guide',{width,height});
   await intent(ctx,'overworld-back');
@@ -100,9 +100,9 @@ renderTest('overworld full six-action journal and shop remain readable reachable
  await enter(ctx);await ctx.cheat(OverworldJournalFixture);await adventureStep(ctx,3);
  for(const {width,height,safe}of sizes){
   ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,3);
-  await intent(ctx,'overworld-journal');expect(desktopState.get().overworldPanel).toBe('journal');
+  await intent(ctx,'overworld-journal');await adventureStep(ctx,16);expect(desktopState.get().overworldPanel).toBe('journal');
   ctx.render.stats({width,height});const rows=assertButtons(ctx,width,height,safe,6);
-  expect(rows.filter(b=>b.id?.includes('overworld-travel')).length).toBe(4);
+  expect(rows.some(b=>b.label.includes('EXPLORE FERNFALL'))).toBe(true);
   if(width===360)ctx.render.expectScreenshot('slim-full-journal',{width,height});
   if(width===2520)ctx.render.expectScreenshot('ultrawide-full-journal',{width,height});
   await intent(ctx,'overworld-back');

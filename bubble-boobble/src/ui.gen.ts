@@ -135,6 +135,41 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Adventure Stamp Book: a view, dialog (ui/docs/adventure-stamp-book.ui.json)
+     *
+     * Properties:
+     *   - `coins`: text, default ""
+     *   - `district`: text, default ""
+     *   - `chapter`: text, default ""
+     *   - `localProgress`: text, default ""
+     *   - `totalProgress`: text, default ""
+     *   - `trialName`: text, default ""
+     *   - `trialStatus`: text, default ""
+     *   - `keepsakeHint`: text, default ""
+     *   - `detailTitle`: text, default ""
+     *   - `detail`: text, default ""
+     *   - `nextLabel`: text, default ""
+     *   - `primaryLabel`: text, default ""
+     *   - `trialSelected`: yesno, default false
+     *   - `primarySelected`: yesno, default false
+     *   - `backSelected`: yesno, default false
+     *   - `claimSelected`: yesno, default false
+     *   - `claimable`: yesno, default false
+     *   - `showBack`: yesno, default false
+     *   - `trialArt`: image, default "overworld-living/common/markers/available"
+     *   - `pages`: list of journal-tab
+     *   - `missions`: list of journal-stamp
+     *   - `keepsakes`: list of journal-keepsake
+     * Events: `press (<item>)`, `trial`, `primary`, `overworld-guide-claim`, `overworld-back`
+     * Code areas: none
+     * Refs: `trial`, `primary`, `overworld-guide-claim`, `overworld-back`
+     */
+    'adventure-stamp-book': {
+      props: { coins: string | { loc: string } | LocText; district: string | { loc: string } | LocText; chapter: string | { loc: string } | LocText; localProgress: string | { loc: string } | LocText; totalProgress: string | { loc: string } | LocText; trialName: string | { loc: string } | LocText; trialStatus: string | { loc: string } | LocText; keepsakeHint: string | { loc: string } | LocText; detailTitle: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; nextLabel: string | { loc: string } | LocText; primaryLabel: string | { loc: string } | LocText; trialSelected: boolean; primarySelected: boolean; backSelected: boolean; claimSelected: boolean; claimable: boolean; showBack: boolean; trialArt: string; pages: readonly { key: string; label?: string | { loc: string } | LocText; active?: boolean; selected?: boolean; locked?: boolean }[]; missions: readonly { key: string; label?: string | { loc: string } | LocText; art?: string; crest?: string; status?: string | { loc: string } | LocText; active?: boolean; locked?: boolean; selected?: boolean }[]; keepsakes: readonly { key: string; label?: string | { loc: string } | LocText; art?: string; owned?: boolean }[] };
+      areas: never;
+      refs: 'trial' | 'primary' | 'overworld-guide-claim' | 'overworld-back';
+    };
+    /**
      * Cartoon Account: a view, screen (ui/docs/cartoon-account.ui.json)
      *
      * Properties:
@@ -1234,6 +1269,74 @@ declare module '@gameengine/ui' {
      */
     'game-mode-card': {
       props: { label: string | { loc: string } | LocText; description: string | { loc: string } | LocText; players: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Journal Action: a widget, button (ui/docs/journal-action.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'journal-action': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Journal Keepsake: a widget (ui/docs/journal-keepsake.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `art`: image, default "cartoon/frames/badge/green"
+     *   - `owned`: yesno, default false
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'journal-keepsake': {
+      props: { label: string | { loc: string } | LocText; art: string; owned: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Journal Stamp: a widget, button (ui/docs/journal-stamp.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `art`: image, default "adventure/lighthouse"
+     *   - `crest`: image, default "overworld-living/common/markers/available"
+     *   - `status`: text, default ""
+     *   - `active`: yesno, default false
+     *   - `locked`: yesno, default false
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'journal-stamp': {
+      props: { label: string | { loc: string } | LocText; art: string; crest: string; status: string | { loc: string } | LocText; active: boolean; locked: boolean; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Journal Tab: a widget, button (ui/docs/journal-tab.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `active`: yesno, default false
+     *   - `selected`: yesno, default false
+     *   - `locked`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'journal-tab': {
+      props: { label: string | { loc: string } | LocText; active: boolean; selected: boolean; locked: boolean };
       areas: never;
       refs: never;
     };

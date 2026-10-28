@@ -3,7 +3,7 @@ import type {SourcePoint} from './maps.types';
 import {registerAuthoredAssembly,sampleAuthoredAssembly} from './authored-layers';
 import type {AuthoredPaintedSection,AuthoredSpriteSequence,RegisteredAuthoredAssembly} from './authored-layers';
 import type {OverworldDraw} from './presentation';
-import {encounters,availableEncounter} from './content';
+import {encounters,availableEncounter,trialForDistrict} from './content';
 import type {AdventureProgress} from './progression';
 import {sampleMarkerImage,type MarkerMotion} from './marker-animation';
 import {portalLightImageKeys} from './portal-light';
@@ -71,4 +71,13 @@ export function livingMissionMarkerDraws(districtId:string,progress:AdventurePro
   const image=sampleMarkerImage(state,encounter.id,motion,overworldMaps.indexOf(map)*5+(poi.slot??0),reducedEffects),size=crestCanvasSize(image);
   return {image,x:point.x,y:point.y,width:size,height:size,order:3400};
  });
+}
+
+/** Optional one-life trial: the same authored crest language at its arena. */
+export function livingTrialMarkerDraws(districtId:string,progress:AdventureProgress,motion?:MarkerMotion,reducedEffects=false):OverworldDraw[]{
+ const map=getOverworldMap(districtId),trial=trialForDistrict(districtId)!,poi=map.pois.find(p=>p.kind==='trial')!;
+ const state=progress.cleared[trial.id]?'cleared':availableEncounter(trial.id,progress)?'available':'locked';
+ const point=sourceToWorld(map,{x:poi.x,y:poi.y-112*1536/1254});
+ const image=sampleMarkerImage(state,'trial',motion,30+overworldMaps.indexOf(map),reducedEffects),size=crestCanvasSize(image);
+ return [{image,...point,width:size,height:size,order:3400}];
 }

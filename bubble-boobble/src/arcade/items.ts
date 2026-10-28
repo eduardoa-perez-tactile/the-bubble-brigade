@@ -53,10 +53,15 @@ function partyPowerLocation(g: GameState): [number, number] | undefined {
   // Consume the recorded game's RNG only when a drop can actually appear.
   return locations.length ? locations[intN(g, locations.length)] : undefined;
 }
+const shopPower=(power:string)=>power==='pink_candy'||power==='blue_candy'||power==='yellow_candy'||power==='shoes';
 export function checkPowerSpawns(g: GameState) {
   // The boss supplies thunder pickups. Ordinary thunder rewards would repeatedly
   // spawn clocks and leave the moving fight frozen under six-player fire.
   if(g.Party?.Boss)return;
+  // Story upgrades come from the shop. Also discard queued rewards carried by
+  // older saves/hot reloads, without blocking unrelated pickups behind them.
+  const story=!!g.Level.episode;
+  if(story)for(let i=g.Pending.length-1;i>=0;i--)if(shopPower(g.Pending[i]!))g.Pending.splice(i,1);
   const c = g.Counters;
   const rules: [keyof typeof c, number, string][] = [
     ["Blown", 35, "pink_candy"],
@@ -71,12 +76,12 @@ export function checkPowerSpawns(g: GameState) {
   for (const [key, threshold, power] of rules)
     while (c[key] >= threshold) {
       c[key] -= threshold;
-      g.Pending.push(power);
+      if(!story||!shopPower(power))g.Pending.push(power);
     }
   const shoesTravelThreshold = g.PlayerBalance?.ShoesTravelThreshold ?? productionPlayerBalance.ShoesTravelThreshold;
   if (c.Walked >= shoesTravelThreshold) {
     c.Walked -= shoesTravelThreshold;
-    g.Pending.push("shoes");
+    if(!story)g.Pending.push("shoes");
   }
   if (c.Water >= 15 && g.WaterStage === 0) {
     g.Pending.push("orange_parasol");

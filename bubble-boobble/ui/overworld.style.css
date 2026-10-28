@@ -203,3 +203,99 @@
  .shop-screen .ud-shop-power-token__active {width:20px;height:20px;}
  .shop-screen .ud-adventure-shop__ownedAction {height:110px;}
 }
+.journal-screen {font-family:"cartoon/fonts/BreeSerif-Regular";}
+.journal-screen .ud-adventure-stamp-book__book {max-width:94%;border-width:3px;border-color:#285b59;}
+.journal-screen .ud-adventure-stamp-book__heading {font-family:"cartoon/fonts/Rye-Regular";}
+.journal-screen .ud-adventure-stamp-book__tabs {width:100%;flex-direction:row;gap:8px;}
+.journal-screen .ud-adventure-stamp-book__missionGrid {width:100%;flex-direction:row;flex-wrap:wrap;gap:10px;}
+.journal-screen .ud-adventure-stamp-book__shelf {width:100%;flex-direction:row;gap:12px;}
+.journal-screen .ud-journal-stamp__root {border-width:1px;border-color:#bd9f6a;}
+.journal-screen .ud-journal-stamp__picture {overflow:hidden;border-radius:4px;}
+.journal-screen .ud-adventure-stamp-book__detailText {white-space:pre-wrap;}
+@media (aspect < 1.2) {
+ .journal-screen .ud-adventure-stamp-book__book {width:94%;}
+}
+@media (aspect < 0.55) {
+ .journal-screen .ud-adventure-stamp-book__book {height:auto;padding:19px;gap:12px;}
+ .journal-screen .ud-adventure-stamp-book__header {height:64px;}
+ .journal-screen .ud-adventure-stamp-book__heading {font-size:39px;height:55px;text-fit:29px 39px;}
+ .journal-screen .ud-adventure-stamp-book__coins {width:147px;font-size:24px;height:40px;}
+ .journal-screen .ud-adventure-stamp-book__tabs {flex-wrap:wrap;gap:8px;}
+ .journal-screen .ud-journal-tab__root {width:31%;height:87px;}
+ .journal-screen .ud-journal-tab__label {font-size:24px;height:46px;text-fit:20px 24px;}
+ .journal-screen .ud-journal-tab__lock {font-size:16px;height:21px;}
+ .journal-screen .ud-adventure-stamp-book__spread {flex-direction:column;height:auto;gap:13px;}
+ .journal-screen .ud-adventure-stamp-book__missionsPage {width:100%;gap:7px;}
+ .journal-screen .ud-adventure-stamp-book__chapterRow {height:28px;}
+ .journal-screen .ud-adventure-stamp-book__chapter {font-size:20px;height:28px;}
+ .journal-screen .ud-adventure-stamp-book__localProgress {width:208px;font-size:20px;height:28px;}
+ .journal-screen .ud-adventure-stamp-book__district {font-size:34px;height:48px;text-fit:27px 34px;}
+ .journal-screen .ud-adventure-stamp-book__missionGrid {gap:11px;}
+ .journal-screen .ud-journal-stamp__root {width:31%;height:181px;gap:3px;}
+ .journal-screen .ud-journal-stamp__picture {height:100px;}
+ .journal-screen .ud-journal-stamp__crest {width:44px;height:44px;}
+ .journal-screen .ud-journal-stamp__name {font-size:24px;height:42px;text-fit:21px 24px;}
+ .journal-screen .ud-journal-stamp__status {font-size:19px;height:27px;}
+ .journal-screen .ud-adventure-stamp-book__fold {width:100%;height:1px;}
+ .journal-screen .ud-adventure-stamp-book__collectionPage {width:100%;gap:5px;}
+ .journal-screen .ud-adventure-stamp-book__trialHeading {font-size:20px;height:28px;}
+ .journal-screen .ud-adventure-stamp-book__trialRow {height:94px;gap:16px;}
+ .journal-screen .ud-adventure-stamp-book__trialArt {width:74px;height:74px;}
+ .journal-screen .ud-adventure-stamp-book__trialStatus {font-size:20px;height:29px;}
+ .journal-screen .ud-adventure-stamp-book__shelfHeading {font-size:23px;height:34px;}
+ .journal-screen .ud-adventure-stamp-book__shelf {justify-content:center;gap:24px;}
+ .journal-screen .ud-journal-keepsake__root {width:201px;height:120px;gap:4px;}
+ .journal-screen .ud-journal-keepsake__art {width:56px;height:56px;}
+ .journal-screen .ud-journal-keepsake__name {font-size:20px;height:28px;}
+ .journal-screen .ud-journal-keepsake__status,
+ .journal-screen .ud-journal-keepsake__owned {font-size:16px;height:21px;}
+ .journal-screen .ud-adventure-stamp-book__keepsakeHint {font-size:20px;height:29px;}
+ .journal-screen .ud-adventure-stamp-book__detail {height:100px;padding:8px 12px;gap:5px;}
+ .journal-screen .ud-adventure-stamp-book__detailTitle {font-size:23px;height:31px;}
+ .journal-screen .ud-adventure-stamp-book__detailText {font-size:20px;height:48px;text-fit:17px 20px;}
+ .journal-screen .ud-adventure-stamp-book__footer {flex-direction:column;height:auto;gap:8px;}
+ .journal-screen .ud-adventure-stamp-book__next {width:100%;gap:3px;}
+ .journal-screen .ud-adventure-stamp-book__nextHeading {font-size:19px;height:27px;}
+ .journal-screen .ud-adventure-stamp-book__nextLabel {font-size:23px;height:35px;}
+ .journal-screen .ud-adventure-stamp-book__primarySlot {width:100%;height:107px;flex-grow:0;}
+ .journal-screen .ud-journal-action__root {height:94px;}
+ .journal-screen .ud-journal-action__label {font-size:25px;height:67px;text-fit:20px 25px;}
+ .journal-screen .ud-adventure-stamp-book__utilities {height:auto;flex-wrap:wrap;gap:11px;}
+ .journal-screen .ud-adventure-stamp-book__totalProgress {width:100%;height:29px;font-size:20px;flex-grow:0;}
+ .journal-screen .ud-adventure-stamp-book__claim,
+ .journal-screen .ud-adventure-stamp-book__back {width:48%;height:107px;}
+}
+
+@media (aspect < 0.55) {
+ .journal-screen .ud-journal-tab__root {height:100px;}
+ .journal-screen .ud-journal-tab__label {height:66px;}
+ .journal-screen .ud-journal-stamp__root {height:210px;}
+ .journal-screen .ud-journal-stamp__name {height:68px;}
+}
+@media (aspect >= 0.55) and (aspect < 1.2) {
+ .journal-screen .ud-adventure-stamp-book__book {height:820px;padding:18px;}
+ .journal-screen .ud-adventure-stamp-book__tabs {gap:6px;}
+ .journal-screen .ud-journal-tab__root {width:19%;height:68px;}
+ .journal-screen .ud-journal-tab__label {height:40px;font-size:16px;text-fit:14px 16px;}
+ .journal-screen .ud-journal-tab__lock {font-size:10px;height:16px;}
+ .journal-screen .ud-adventure-stamp-book__spread {height:390px;gap:12px;}
+ .journal-screen .ud-adventure-stamp-book__missionsPage {width:64%;}
+ .journal-screen .ud-adventure-stamp-book__collectionPage {width:31%;}
+ .journal-screen .ud-adventure-stamp-book__district {font-size:22px;}
+ .journal-screen .ud-journal-stamp__root {width:30%;height:144px;}
+ .journal-screen .ud-journal-stamp__picture {height:76px;}
+ .journal-screen .ud-journal-stamp__name {height:44px;font-size:17px;text-fit:15px 17px;}
+ .journal-screen .ud-journal-keepsake__root {width:46%;}
+ .journal-screen .ud-journal-action__root {height:62px;}
+ .journal-screen .ud-adventure-stamp-book__detail {height:70px;}
+ .journal-screen .ud-adventure-stamp-book__detailText {height:44px;}
+ .journal-screen .ud-adventure-stamp-book__footer {height:70px;}
+ .journal-screen .ud-adventure-stamp-book__next {width:50%;}
+ .journal-screen .ud-adventure-stamp-book__nextLabel {height:48px;}
+ .journal-screen .ud-adventure-stamp-book__utilities {height:62px;}
+ .journal-screen .ud-adventure-stamp-book__claim {width:180px;}
+ .journal-screen .ud-adventure-stamp-book__back {width:140px;}
+}
+@media (aspect < 0.55) {
+ .journal-screen .ud-journal-action__root {height:100px;}
+}
