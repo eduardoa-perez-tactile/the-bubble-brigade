@@ -1,6 +1,6 @@
 ---
 name: ship-web
-version: 1.7.0
+version: 1.8.0
 tier: optional
 description: WebGPU browser builds — export a static game with gameengine build web, configure the Emscripten toolchain and hosting, and verify rendering, input, audio, saves and tab lifecycle. Use for web exports, browser deployment or browser-specific failures; playable ads use a separate build path.
 ---
@@ -78,7 +78,10 @@ Build outputs and reports are separate from the game source.
 The loading screen prepares the engine before enabling Start game. The click unlocks WebAudio.
 Mouse, touch, pointer capture, keyboard codes, typed characters and normalized wheel deltas
 reach the existing input system. Coordinates are logical canvas pixels, independent of pixel
-density. Losing focus cancels held controls. Input queues are bounded and reset after overflow.
+density. `services.system.setMouseCapture({ enabled })` uses the browser pointer lock (mouse-look):
+the lock is taken on the next click, Escape releases it and reaches the game as an Escape key, and
+the next click locks again while the game still wants it. It answers `captured: false` only where
+the browser refuses the lock (a sandboxed frame), so keep a drag fallback. Losing focus cancels held controls. Input queues are bounded and reset after overflow.
 
 Hidden tabs stop simulation and rendering. Returning starts a new frame clock, so time away is
 not simulated. Saves use IndexedDB through IDBFS and are isolated by game identity and origin.

@@ -78,3 +78,4 @@ export { DesktopPlatformBridge } from './desktop-platform/index.ts';
 export { OverworldSystem, OverworldTargetSystem } from './overworld/systems';
 export { OverworldVisualPool, OverworldPresentation } from './overworld/presentation';
 export { StoryHudView } from './adventure/hud.view';
+export { CartoonFilmUI } from './cartoon/film';

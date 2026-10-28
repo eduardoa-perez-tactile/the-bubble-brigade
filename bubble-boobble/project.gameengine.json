@@ -55,6 +55,9 @@
   },
   "assets": {
     "groups": {
+      "film-presentation": {
+        "include": ["assets/cartoon/film/**"]
+      },
       "courtyard-gameplay": {
         "include": [
           "assets/cartoon/frames/**",

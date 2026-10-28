@@ -14,7 +14,7 @@
         "pad": 0,
         "clip": false,
         "bg": "#102d39",
-        "image": "cartoon/menu/harbor",
+        "image": "cartoon/menu/stage",
         "fit": "cover",
         "brightness": 0.82
       },
@@ -486,7 +486,7 @@
       "children": [],
       "style": {
         "pad": 0,
-        "image": "cartoon/menu/curtain",
+        "image": "cartoon/menu/curtain-tactile",
         "w": "100%",
         "h": "104%",
         "position": "anchored",
@@ -864,6 +864,9 @@
               ],
               "w": 600,
               "h": 96
+            },
+            "cm_title_curtain": {
+              "image": "cartoon/menu/curtain-tactile-portrait"
             }
           }
         }

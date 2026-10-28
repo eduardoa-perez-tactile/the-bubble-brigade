@@ -1,6 +1,6 @@
 ---
 name: screen-fit
-version: 1.1.0
+version: 1.2.0
 tier: required
 description: Screen fit on every phone and tablet shape (9:22 to 3:4, folds, portrait and landscape) — the board whole and clear of HUD and safe area, views that never clip, WorldView fit, @media (aspect), `view render --devices`. Use when building a board, camera, HUD or view, or when something is cut off on a device.
 ---
@@ -18,18 +18,19 @@ every view must work across that whole range. Design for the extremes, not for 9
 
 Aspect is width / height in the game's orientation (portrait: < 1).
 
-| Device | Preset id | Pixels (w×h) | Scale | Safe area (l,t,r,b px) | Portrait aspect |
+| Device | Preset id | Points (w×h) | Scale | Safe area (l,t,r,b pt) | Portrait aspect |
 |---|---|---|---|---|---|
-| Fold cover screen (narrowest) | `galaxy-z-fold5-cover` | 904×2316 | 2.625 | 0,84,0,0 | 0.39 |
-| 21:9 phone | `xperia-1-v` | 1644×3840 | 4 | 0,96,0,0 | 0.43 |
-| iPhone 15 Pro | `iphone-15-pro` | 1179×2556 | 3 | 0,177,0,102 | 0.46 |
-| iPhone SE (9:16, no notch) | `iphone-se` | 750×1334 | 2 | 0,40,0,0 | 0.56 |
-| iPad 10 (3:4) | `ipad-10` | 1620×2160 | 2 | 0,40,0,0 | 0.75 |
-| Fold inner screen (widest) | `galaxy-z-fold5-inner` | 1812×2176 | 2.625 | 0,74,0,42 | 0.83 |
+| Fold cover screen (narrowest) | `galaxy-z-fold5-cover` | 344×882 | 2.625 | 0,32,0,0 | 0.39 |
+| 21:9 phone | `xperia-1-v` | 411×960 | 4 | 0,24,0,0 | 0.43 |
+| iPhone 15 Pro | `iphone-15-pro` | 393×852 | 3 | 0,59,0,34 | 0.46 |
+| iPhone SE (9:16, no notch) | `iphone-se` | 375×667 | 2 | 0,20,0,0 | 0.56 |
+| iPad 10 (3:4) | `ipad-10` | 810×1080 | 2 | 0,20,0,0 | 0.75 |
+| Fold inner screen (widest) | `galaxy-z-fold5-inner` | 690×829 | 2.625 | 0,28,0,16 | 0.83 |
 
-These are the pixels and insets `ViewInfo` and `input.view` take. The preset ids work in
-`gameengine view render --devices`, the editor's Game view device menu and
-`gameengine editor device --preset`, which size them in points (pixels ÷ scale).
+These are the points (1/160 inch; scale is device pixels per point) and insets `ViewInfo` and
+`input.view` take, as on the device: gestures measure millimetres in points. The preset ids give
+the same sizes in `gameengine view render --devices`, the editor's Game view device menu and
+`gameengine editor device --preset`.
 
 For a landscape game swap width and height and rotate the insets (a notch then sits left or right).
 Every feature is checked at least at **0.39, 0.46 and 0.75** (narrowest, a notched phone,
@@ -90,7 +91,7 @@ export const FitBoard = defineSystem({
   stylesheet share, so give the HUD bars **fixed heights** in reference px (no content-sized bars).
   If a band changes per level, put it in level data, not in the view.
 - A board whose cells must stay tappable has a floor: at the narrowest screen a cell must be at
-  least ~44 pt: `CELL * ViewInfo.height / (2 * WorldView.orthoSize) / ViewInfo.scale ≥ 44`. Assert
+  least ~44 pt: `CELL * ViewInfo.height / (2 * WorldView.orthoSize) ≥ 44`. Assert
   it in the device test; below that, change the board, not the fit.
 - Taps already arrive in world coordinates (`Tap`, `PointerState`); never convert screen
   coordinates yourself, or input breaks the moment the fit changes.
@@ -155,12 +156,12 @@ Do not hand back a board, camera, level or view change without these:
    import { renderTest, expect } from '@gameengine/test';
 
    const DEVICES = [
-     { name: 'fold cover', width: 904, height: 2316, scale: 2.625, insets: [0, 84, 0, 0] },
-     { name: '21:9', width: 1644, height: 3840, scale: 4, insets: [0, 96, 0, 0] },
-     { name: 'iphone 15 pro', width: 1179, height: 2556, scale: 3, insets: [0, 177, 0, 102] },
-     { name: 'iphone se', width: 750, height: 1334, scale: 2, insets: [0, 40, 0, 0] },
-     { name: 'ipad', width: 1620, height: 2160, scale: 2, insets: [0, 40, 0, 0] },
-     { name: 'fold inner', width: 1812, height: 2176, scale: 2.625, insets: [0, 74, 0, 42] },
+     { name: 'fold cover', width: 344, height: 882, scale: 2.625, insets: [0, 32, 0, 0] },
+     { name: '21:9', width: 411, height: 960, scale: 4, insets: [0, 24, 0, 0] },
+     { name: 'iphone 15 pro', width: 393, height: 852, scale: 3, insets: [0, 59, 0, 34] },
+     { name: 'iphone se', width: 375, height: 667, scale: 2, insets: [0, 20, 0, 0] },
+     { name: 'ipad', width: 810, height: 1080, scale: 2, insets: [0, 20, 0, 0] },
+     { name: 'fold inner', width: 690, height: 829, scale: 2.625, insets: [0, 28, 0, 16] },
    ] as const;
 
    // The rect FitBoard keeps visible: a 7×9 board of 1-unit cells plus a 1-unit margin.
@@ -180,7 +181,7 @@ Do not hand back a board, camera, level or view change without these:
        expect(x1).toBeLessThanOrEqual(d.width - d.insets[2] + EPS);
        expect(y0).toBeGreaterThanOrEqual(top.y + top.height - EPS);
        expect(y1).toBeLessThanOrEqual(bottom.y + EPS);
-       render.expectScreenshot('board', { width: Math.round(d.width / 4), height: Math.round(d.height / 4) });
+       render.expectScreenshot('board', { width: Math.round(d.width / 2), height: Math.round(d.height / 2) });
      });
    }
    ```

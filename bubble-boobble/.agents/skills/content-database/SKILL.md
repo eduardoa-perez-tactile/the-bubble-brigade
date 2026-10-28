@@ -1,6 +1,6 @@
 ---
 name: content-database
-version: 1.15.0
+version: 1.16.0
 tier: optional
 description: Typed content data and downloadable packs — dataAsset/loadData for levels, items, waves and rewards, and collections (*.collection.json) delivered in-app or on demand. Use when adding levels or content tables, making content designer-editable, or shipping a content pack separately.
 ---
@@ -156,7 +156,7 @@ Where the bytes come from (`project.gameengine.json` `delivery`, ADR 0109):
   `gameengine release pack --version 8 --key content-key.json --content-of <the shipped release>` (a
   release directory, or the `shipped/` folder a store build keeps beside its report), then upload
   its `files/` as it is, `content-manifest-<platform>-<abi>.json` last. The app finds the manifest through
-  `releases.manifest.url` (a template with `{id}`, `{buildType}`, `{platform}`, `{abi}`; the engine then
+  `releases.manifest.url` (a template with `{id}`, `{channel}`, `{platform}`, `{abi}`; the engine then
   downloads and applies it by itself) or the game fetches it from
   your live-ops backend and passes it to `check({ manifest })`, and accepts it because
   `releases.trusted` lists the content key's public half as `contentKey`:

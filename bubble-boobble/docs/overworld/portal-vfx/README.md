@@ -1,0 +1,13 @@
+# Existing portal VFX — 28 October 2026
+
+Transparent painted wisps, bubbles and sparkles overlay the existing four travel destinations and the final Victory Beacon. No portal structure, lock, sockets, floor, map painting, POI, collision or progression was changed. The initial replacement-portal experiment was removed after user clarification.
+
+Locked destinations hold a faint still drawing. Five local first clears brighten the effect and enable six-frame animation: one second every four seconds, continuously while the gate is focused, with a short flourish on a completed encounter return. Reduced effects holds the first drawing at the appropriate brightness. The final beacon celebrates completion without adding a sixth district or changing its interaction.
+
+The [in-engine animation](in-engine.gif) is a crop of six consecutive harbor engine captures spaced ten simulation steps apart, played at six frames per second. It shows actual scenery and the shipped player. All five destinations were inspected in landscape captures; harbor captures also covered 360×880 and 1680×720. Diagnostics remain in ignored `.gameengine/portal-vfx-*` files.
+
+Source artwork and checksums are in `tools/overworld/portal-vfx-sources/manifest.json`. Reproduce the crop/downsample import with `swift tools/overworld/import-portal-vfx.swift`. Six 128×128 sprites use the existing resident atlas and district common-asset includes; source sheets remain outside shipping assets. The effect adds one bounded visual slot per map, no particle emitters, and no new system or mutable animation state.
+
+Validation: `npm run harness:quick -- 'portal VFX'` passes one focused V8 T0 test covering local clear thresholds, trials/repeated clears, all six frames, reduced effects, fixed registration, original painting presence and visual pool limits. `node tools/overworld/approval/verify-map-preservation.mjs` passes all five painting hashes and map registrations. Actual harbor and final-beacon frames render 13 draw calls, zero particles and zero validation errors, below the existing 50-draw budget.
+
+Local paused release-host samples, 240 steps each: before integration, presentation p95 0.508 ms / step p95 0.190 ms / JS heap 28.42 MiB; final harbor sample, presentation p95 1.569 ms / step p95 0.155 ms / JS heap 28.94 MiB. These are short whole-project diagnostics with different progress/animation states, not isolated VFX cost or physical-phone performance. New sprite source texels total 0.375 MiB RGBA before compression/atlas overhead. Cooked residency, phone GPU/thermals, full suites, Hermes, golden/replay sweeps and pipeline recordings were deferred under prototype policy.

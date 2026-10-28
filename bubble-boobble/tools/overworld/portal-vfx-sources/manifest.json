@@ -1,0 +1,23 @@
+{
+  "generated": "2026-10-28",
+  "provider": "built-in image_gen",
+  "purpose": "Transparent VFX overlay for existing map portals; no replacement portal art.",
+  "sourceLayout": {
+    "columns": 3,
+    "rows": 2,
+    "cellPixels": 512
+  },
+  "outputPixels": 128,
+  "frames": 6,
+  "importCommand": "swift tools/overworld/import-portal-vfx.swift",
+  "operations": "Crop cells and uniformly downsample preserving alpha; no map edits.",
+  "sha256": {
+    "tools/overworld/portal-vfx-sources/wisps-sheet.png": "65cbab009eb1dafb8b2b9daf3af0484a579831c1275886d4faed88e18778cf35",
+    "assets/overworld-living/common/portal-vfx/wisp-0.png": "ff8e414dce3a442576341b0bf872475ad33bd66dbd6a3f10cebb2ac938aa6805",
+    "assets/overworld-living/common/portal-vfx/wisp-1.png": "4b57b7fe18bbd4281e0de1d991ad49e4e3b8ba12e266119a346ea2f4a7e3bbad",
+    "assets/overworld-living/common/portal-vfx/wisp-2.png": "2ed90ef774d496d9129dddd2adf8986c2b4ae92aa8825744e6ed3ed41cd55a83",
+    "assets/overworld-living/common/portal-vfx/wisp-3.png": "ccbe95537193826a122c695b41c4428ac73a52200aa8153a5ab276c73cb2e669",
+    "assets/overworld-living/common/portal-vfx/wisp-4.png": "23f815971410a8963f1f1cf9a2d57614d3be49d98f863f04a391ccef43fef1fa",
+    "assets/overworld-living/common/portal-vfx/wisp-5.png": "a5a44464597a012a84848c1ba856768b5653d3f25eec6194b2154616524740fc"
+  }
+}

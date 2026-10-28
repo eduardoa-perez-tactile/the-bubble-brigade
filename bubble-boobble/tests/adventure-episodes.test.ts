@@ -3,6 +3,7 @@ import {adventureStep} from './support/adventure-time';
 import {expect,worldTest,renderTest} from '@gameengine/test';
 import {createAdventureLevel,episodeForLevel} from '../src/adventure/episodes';
 import {createGame,stepGame,validateLevel} from '../src/arcade/game';
+import {item} from '../src/arcade/items';
 import {EnemyState,State} from '../src/arcade/types';
 import {stepAdventureEpisode} from '../src/adventure/gameplay';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
@@ -51,9 +52,25 @@ worldTest('Adventure finale requires its second act before a clear and resets it
  for(let remaining=game.Countdown;remaining>0;remaining--)stepGame(game,idle);
  expect(game.State).toBe(State.Playing);expect(game.Enemies.filter(e=>e.State===EnemyState.Active).length).toBe(3);
  for(const e of game.Enemies)e.State=EnemyState.Defeated;
- stepGame(game,idle);expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(120);
- for(let i=0;i<120;i++)stepGame(game,idle);expect(game.State).toBe(State.Won);
+ stepGame(game,idle);expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(300);
+ for(let i=0;i<299;i++)stepGame(game,idle);expect(game.State).toBe(State.Clearing);
+ stepGame(game,idle);expect(game.State).toBe(State.Won);
  expect(createGame([createAdventureLevel(5)],1,1).EpisodeWave).toBe(0);
+},{scene});
+worldTest('Adventure clearing gives five seconds of movement and fruit collection before advancing',()=>{
+ const game=createGame([createAdventureLevel(1)],1,1);game.State=State.Playing;
+ for(const e of game.Enemies)e.State=EnemyState.Defeated;
+ stepGame(game,idle);expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(300);
+ for(let tick=0;tick<180;tick++)stepGame(game,idle);
+ expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(120);
+ const player=game.Players[0]!,beforeX=player.X,score=game.Score;
+ game.Items=[{...item(player.X+5,player.Y),Stationary:true,Food:1}];
+ stepGame(game,{Move:1,Jump:false,Fire:false});
+ expect(player.X).toBeGreaterThan(beforeX);expect(game.Score).toBeGreaterThan(score);expect(game.Items.length).toBe(0);
+ game.Paused=true;stepGame(game,idle);expect(game.Countdown).toBe(119);game.Paused=false;
+ for(let tick=0;tick<118;tick++)stepGame(game,idle);
+ expect(game.State).toBe(State.Clearing);expect(game.Countdown).toBe(1);
+ stepGame(game,idle);expect(game.State).toBe(State.Won);
 },{scene});
 renderTest('Adventure revamp real harbor stage cards and five distinct playable episodes',async ctx=>{
  ctx.input.view(1280,720,1);await adventureStep(ctx,8);await ctx.loaded();

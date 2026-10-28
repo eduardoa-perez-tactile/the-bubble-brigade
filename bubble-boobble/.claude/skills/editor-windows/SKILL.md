@@ -1,6 +1,6 @@
 ---
 name: editor-windows
-version: 1.0.1
+version: 1.1.0
 tier: optional
 description: Project editor windows (editor/windows/*.tsx, defineEditorWindow) — floating tool windows in the game's menu that read the scene and edit through the command bus. Use when designers need a pop-up tool (balance table, content audit, batch edit) rather than a whole editor mode.
 ---
@@ -41,6 +41,23 @@ export default defineEditorWindow(({ React, ui }) => {
   right); new data files through `asset.setText`. Never write project files yourself.
 - Use `ui.*` widgets so the window looks like the editor. A throwing window shows its error and a
   Retry button; the editor keeps running.
+- Curves (a jump arc, a difficulty ramp, a falloff): use `ui.CurveField`, never a hand-drawn SVG.
+  It is a full graph editor: drag keys (a press near one grabs it; Shift one axis, Ctrl/Cmd
+  snaps), double-click adds, right-click or Delete removes, wheel zooms, drag empty space pans,
+  X/Y min/max fields work at any scale, Fit (or F) frames the whole curve, Expand opens a big view.
+  With `tangents` the selected key shows weighted handles and a Linear / Smooth / Broken choice.
+
+  ```tsx
+  <ui.CurveField label="Jump curve" keys={keys} limits={{ x: [0, 1], y: [0, null] }} tangents
+    onChange={setDraft} onCommit={save} />
+  ```
+
+  Keys are `[x, y]` or `[x, y, { mode, in?, out? }]`, sorted by x; store them as JSON in the
+  game's data and read them in game code with `evaluateCurve(keys, x)` from `@gameengine/runtime`
+  (the maths the graph draws; deterministic and allocation-free, so sim may call it per entity).
+  These are not tween eases: `ease: "curve:name"` takes `defineCurve`'s Hermite keys. `limits` keeps keys inside a
+  range (open ends are `null`); `onChange` fires during a drag, `onCommit` once per edit;
+  `lockX` / `fixedCount` for keys whose time or count is fixed.
 - A window needs no scene-view tools; when it does (picking, overlays), build a mode instead.
 - Packages ship windows in `windows/` of their `gameengine.editor` directory (skill `packages`).
 

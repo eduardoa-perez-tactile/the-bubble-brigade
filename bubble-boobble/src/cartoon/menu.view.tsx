@@ -9,6 +9,7 @@ export const CartoonMenuView = defineView<DesktopModel>({
   name: 'CartoonMenu',
   samples: {
     title: desktopModel(initialDesktopState, initialDesktopSave),
+    titleNarrow: desktopModel(initialDesktopState, initialDesktopSave, 0, false, true),
     main: desktopModel({ ...initialDesktopState, screen: 'menu',cartoon:true }, initialDesktopSave),
     approved: desktopModel({...initialDesktopState,screen:'menu',cartoon:true},{...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure:{...initialAdventure(),cleared:{'encounter-1':{bestScore:100,clears:1},'encounter-2':{bestScore:100,clears:1}}}}]}),
     mainNarrow: desktopModel({ ...initialDesktopState, screen:'menu',cartoon:true },initialDesktopSave,0,false,true),
@@ -25,7 +26,7 @@ export const CartoonMenuView = defineView<DesktopModel>({
   </Screen>,
 });
 
-/** Only the closed cloth lifts; branding and the planted actor belong to the menu behind it. */
+/** The cloth and company credit lift together; game branding and the actor stay on the stage. */
 export interface TitleCurtainModel {progress:number;narrow:boolean}
 export const CartoonTitleCurtainView=defineView<TitleCurtainModel>({
  name:'CartoonTitleCurtain',layer:'overlay',blockInput:true,

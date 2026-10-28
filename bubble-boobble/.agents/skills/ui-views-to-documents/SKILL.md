@@ -1,6 +1,6 @@
 ---
 name: ui-views-to-documents
-version: 1.2.0
+version: 1.2.1
 tier: required
 description: Porting TSX views (src/views/*.view.tsx) into UI documents so they edit in the UI documents mode — inventory, mapping, keeping ids, thin <Widget doc> views, before and after renders. Use when an older project's views are missing from the UI documents Library, or when asked to port, convert or migrate views.
 ---
@@ -93,6 +93,7 @@ Mapping CSS to document fields (`ui doc show` prints the same names):
 | `font-size`, `font-weight`, `color`, `text-align` | `fontSize`, `weight`, `color`, `textAlign` |
 | `text-fit: min max` | `fontSize` = max, `fitMin` = min |
 | `text-stroke`, `text-shadow` | `outline` + `outlineColor`, `shadowX/Y` + `shadowColor` + `shadowSoft` |
+| `background: linear-gradient(…)` + `background-clip: text` | `gradient="linear-gradient(…)"` |
 | `overflow: hidden` | `clip=true` |
 | `transform: translate / scale / rotate` | `tx`, `ty`, `scale`, `rotate` (animate these in poses, not `w` / `h`) |
 | `:active` / pressed looks | `ui doc settings <doc> behaviour=button`, then `--state pressed` |

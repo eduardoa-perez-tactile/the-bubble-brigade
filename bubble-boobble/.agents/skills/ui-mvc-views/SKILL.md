@@ -1,13 +1,13 @@
 ---
 name: ui-mvc-views
-version: 1.28.0
+version: 1.30.0
 tier: required
 description: Game UI views and controllers — defineView placing a UI document, a controller filling its model from the world, intents, the view stack, UI animation, sprites, pooled scrolling lists, text, models and rigs in views, the Unity UI mapping. Use for the code side of any HUD, menu or popup (its looks are ui-documents).
 ---
 
 # UI: views, controllers, intents
 
-**Covers:** Game UI as MVC views — defineView with a model and samples placing a UI document, a controller that fills it from the world, intents back, the view stack, stylesheets, UI animation (fx-* effects, @keyframes, view enter/exit, ui.animate, reward icons flying to a counter with ui.animateTo and drawnRect) and sprite drawing (9-slice borders, fills, tiling, mirroring, object-fit, blend modes, overflow clipping), view layers (screen/overlay, loading covers on top; dialogs are screens), dimming dialogs (dims, ui.scrim), lists and pooled lists (For, Pooled, ScrollView drag/fling/wheel scrolling, scroll-snap and overscroll bounce, what UI costs per frame, node budgets), pointer drags (onPress/onDrag), per-field useResource, particles, 3D models (skinned characters playing clips, framed portraits), 2D skeletons and flipbook clips inside views, text (rich markup, auto size, outlines), and the Unity Image/TextMeshPro/CanvasScaler mapping. Use for the views and controllers of any HUD, menu or popup (skill ui-documents for its looks), and when porting Unity UI.
+**Covers:** Game UI as MVC views — defineView with a model and samples placing a UI document, a controller that fills it from the world, intents back, the view stack, stylesheets, UI animation (fx-* effects, @keyframes, view enter/exit, ui.animate, reward icons flying to a counter with ui.animateTo and drawnRect) and sprite drawing (9-slice borders, fills, tiling, mirroring, object-fit, blend modes, overflow clipping), view layers (screen/overlay, loading covers on top; dialogs are screens), dimming dialogs (dims, ui.scrim), lists and pooled lists (For, Pooled, ScrollView drag/fling/wheel scrolling, scroll-snap and overscroll bounce, what UI costs per frame, node budgets), pointer drags (onPress/onDrag), per-field useResource, particles, 3D models (skinned characters playing clips, framed portraits), 2D skeletons and flipbook clips inside views, text (rich markup, auto size, outlines, gradients), and the Unity Image/TextMeshPro/CanvasScaler mapping. Use for the views and controllers of any HUD, menu or popup (skill ui-documents for its looks), and when porting Unity UI.
 
 **View** (`src/views/<name>.view.tsx`): shows only its model, raises intents, has samples. Its looks are a UI
 document (skill `ui-documents`): the view places it, fills its properties from the model and maps its events.
@@ -217,7 +217,8 @@ and are clipped by an `overflow: hidden` parent, like a Sprite. Size and place t
   to fit into the box; default the setup pose's, so pass it when an animation reaches past the setup pose). It plays on
   **UI time** in the host, never in the sim: no `Skeleton2DEvent`s, no hash, no entity; a seek or contact sheet shows the
   pose at that time. Rendered into the same page as `Model`s: a playing skeleton renders every frame, a paused or
-  finished one once (`render.stats().uiModelsRendered`). Game logic that reacts to a character's animation events stays a
+  finished one once (`render.stats().uiModelsRendered`); all of a frame's playing skeletons share one offscreen pass
+  (`uiCellPasses`), and one faded to opacity 0, off screen or outside its clip is not rendered. Game logic that reacts to a character's animation events stays a
   world `Skeleton2D`.
 - `Flipbook` (a `*.clip2d.json`, see the `flipbook-2d` skill): `clip`, `playing` (false holds the frame), `loop`
   (`'asset' | 'once' | 'loop' | 'pingpong'`), `speed`, `restart` (a counter: replays from the start), `color`, `flip`,
@@ -305,6 +306,7 @@ before gmeta `max_size`), never screen px.
 | Image Preserve Aspect | `fit="contain"` / `object-fit: contain` (`cover` fills the box and cuts the rest) |
 | a material with additive / multiply blending on an Image | `blend="additive"` / `mix-blend-mode: plus-lighter`; `multiply`, `screen` |
 | TMP outline | `text-stroke: 4px #000` (up to 0.2 em; past ~1/18 em it draws as rings of copies, so keep very wide outlines to short labels) |
+| TMP Color Gradient (vertical, or any angle) | the web's gradient text: `background: linear-gradient(#ffe066, #ff9a00); background-clip: text;` (top to bottom by default; `to right`, `45deg`, up to 5 stops; the gradient spans the element's box, not each letter). A gradient on a box is not drawn: use an image |
 | TMP underlay (offset, dilate, softness) | `text-shadow: 0 6px <blur> <spread> #000`: blur and spread top out around 1/16 em |
 | TMP rich text (`<b>`, `<i>`, `<color=#hex>`, `<size=…>`) | `<Text rich>` with the same tags (`<size=1.5>` is an em multiplier, not points) |
 | TMP Auto Size (min / max) | `text-fit: 24px 72px` on a sized box: the largest size that fits |

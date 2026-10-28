@@ -1,6 +1,6 @@
 ---
 name: ui-documents
-version: 1.0.4
+version: 1.0.5
 tier: required
 description: UI documents (ui/**/*.ui.json) for every HUD, menu, popup, button and widget, built and changed with `gameengine ui doc` (MCP ui_doc_*), never hand-written JSON — layers, layout, states, poses, drivers, lists, transitions, placing one from a thin view. Use whenever a ui/**/*.ui.json is made or changed.
 ---
@@ -99,7 +99,8 @@ counter or bar), `imageSwap=cut|fade` for images swapped by poses; colour in ord
 colorize | multiply, `tintAmount`), `saturation`, `brightness`, `imageAlpha` (Grey out: `saturation=0` on the same
 texture). **Fill:** `fill=horizontal|vertical|radial`, `fillAmount` 0–1, `fillOrigin`: a clip reveal for bars
 and rings. **Text:** `fontSize` (max) with `fitMin` (shrinks to fit), `weight`, `color`, `textAlign`, `outline` +
-`outlineColor` (outside the letters, at most 0.2 em), `shadowX/Y` + `shadowColor` + `shadowSoft`.
+`outlineColor` (outside the letters, at most 0.2 em), `shadowX/Y` + `shadowColor` + `shadowSoft`, `gradient` (a CSS
+`linear-gradient(#ffe066, #ff9a00)` filling the letters in place of `color`: top to bottom, any angle, up to 5 stops).
 
 **Text artifacts:** an outline of about 0.06 em or more on text drawn small on screen (a scaled-down game
 view, a slim phone) can show a faint box in the outline colour around each letter (engine shader bug).

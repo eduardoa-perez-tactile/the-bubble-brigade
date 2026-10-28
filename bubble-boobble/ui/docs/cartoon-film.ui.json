@@ -1,0 +1,135 @@
+{
+  "$schemaVersion": 1,
+  "guid": "c980713d-c391-44ff-a249-2bcb603f558a",
+  "name": "cartoon-film",
+  "title": "Cartoon film",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Cartoon film",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0
+      },
+      "children": [
+        "cf_print",
+        "cf_left_scratch",
+        "cf_right_scratch"
+      ]
+    },
+    "cf_print": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": "100%",
+        "h": "100%"
+      },
+      "property": "image"
+    },
+    "cf_left_scratch": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.08,
+          0.18
+        ],
+        "w": 3,
+        "h": "24%",
+        "bg": "#f3e3bb",
+        "opacity": 0.17,
+        "hide": true
+      }
+    },
+    "cf_right_scratch": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.92,
+          0.55
+        ],
+        "w": 3,
+        "h": "18%",
+        "bg": "#f3e3bb",
+        "opacity": 0.17,
+        "hide": true
+      }
+    }
+  },
+  "view": {
+    "behaviour": "none",
+    "safe": false
+  },
+  "transition": {
+    "type": "instant"
+  },
+  "properties": {
+    "image": {
+      "type": "image",
+      "default": "cartoon/film/print-0"
+    },
+    "strength": {
+      "type": "number",
+      "default": 0.7,
+      "format": "value",
+      "drivers": [
+        {
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "empty": {
+            "set": {
+              "root": {
+                "opacity": 0
+              }
+            }
+          },
+          "full": {
+            "set": {
+              "root": {
+                "opacity": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scratch": {
+      "type": "enum",
+      "values": [
+        "clear",
+        "left",
+        "right"
+      ],
+      "default": "clear",
+      "poses": {
+        "left": {
+          "set": {
+            "cf_left_scratch": {
+              "hide": false
+            }
+          }
+        },
+        "right": {
+          "set": {
+            "cf_right_scratch": {
+              "hide": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

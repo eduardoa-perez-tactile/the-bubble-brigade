@@ -1,6 +1,6 @@
 ---
 name: meta-economy
-version: 1.4.0
+version: 1.5.0
 tier: optional
 description: Meta game state with @gameengine/meta (defineMeta) and world documents (defineDoc) — progression, currencies, inventory, upgrades, quests, daily rewards, the recorded WallClock, persisted meta and migrations. Use for anything a player keeps between levels or sessions.
 ---
@@ -77,6 +77,17 @@ is refused at its first load or write.
   `if (!state.loaded()) return;` so nothing is granted on a state the save is about to replace.
 - **Save:** written when the state changes, at most once per `throttleMs` (default 1000), and at
   once when the app goes to the background (the engine flushes storage after).
+- **Wait until it is saved:** `await state.flush()` writes the current state now and resolves once
+  storage has it, with the barrier's receipt: `{ durability: 'native' }` on a device, `'strict'`
+  in a browser, `'memory'` in tests, where saves never reach a disk. Use it from presentation code before something that cannot be undone if
+  the save is lost, such as finishing an in-app purchase after its goods were granted: finish
+  first and a crash before the throttled write loses a paid purchase for good. It saves the state
+  **as it is when called**: a grant sent as recorded input lands a step later, so call `flush()`
+  only once `get()` shows it (from a `LateUpdate` system, a signal the action emits, or `useDoc`),
+  never straight after `emit`. It rejects when the write fails, before the save has loaded, when
+  this session does not save the meta (an unreadable save, replay playback, a playable-ad slice),
+  for a meta without `persist`, and from a sim system; on a rejection, do not go ahead. Never call
+  it every frame: each call bypasses the write throttle and asks storage for a barrier.
 - **A save that does not load** (written by a newer build, damaged, breaks an invariant) is logged
   and left alone: the meta starts from its initial state and is not written this session. React
   to `MetaLoaded` (its `error` is set) if the player should be told.
