@@ -80,7 +80,13 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   const current=map(),next=current.active?`overworld-${current.districtId}`:'';
   if(next===activeMapGroup)return;
   const previous=activeMapGroup;activeMapGroup=next;
-  if(next)void loading.run({name:next,load:previous?[next]:['overworld-shared',next],unload:previous?[previous]:[],model:{label:districtById(current.districtId)?.name??'Opening the map'}});
+  if(next){
+   const shell=state(),coveredReturn=shell.cartoon&&shell.transitionAction==='leave'&&shell.transitionCommitted;
+   // Return commits under the closed iris. Hold that same black cover for IO,
+   // then let the iris reveal the warmed map without a second fade or bar.
+   void loading.run({name:next,load:previous?[next]:['overworld-shared',next],unload:previous?[previous]:[],
+    ...(coveredReturn?{enter:null,exit:null,model:{background:'#000000',bar:false}}:{model:{label:districtById(current.districtId)?.name??'Opening the map'}})});
+  }
   else if(previous){assets.release(previous);assets.release('overworld-shared');}
  });
  onCleanup(()=>{if(activeMapGroup){assets.release(activeMapGroup);assets.release('overworld-shared');}});
