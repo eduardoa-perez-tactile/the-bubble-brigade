@@ -78,6 +78,20 @@ worldTest('portal warm light keeps original paintings and registered quads withi
    expect(plan.filter(d=>d.image&&portalLightImageKeys.includes(d.image)).length).toBe(2);
    expect(plan.filter(d=>d.blend==='Additive').length).toBe(2);
   }
+  // Concurrent weather uses the global presentation tick, independently of
+  // the portal's bounded marker clock. Include complete cloud/mist/wind
+  // populations and both footstep contacts when checking the shared pool.
+  let weatherPeak=0,planPeak=0;
+  for(let tick=0;tick<=18000;tick+=73){
+   const s={...initialOverworldState,districtId:district.id,...district.spawn,markerMotion:{...motion,clock:tick%240},moving:true,footsteps};
+   const plan=overworldDrawPlan(s,p,'green',tick);
+   weatherPeak=Math.max(weatherPeak,plan.filter(d=>d.image?.includes('/weather/')).length);
+   planPeak=Math.max(planPeak,plan.length);
+   expect(plan.length<=OVERWORLD_VISUAL_CAPACITY).toBe(true);
+   expect(plan.filter(d=>d.image&&portalLightImageKeys.includes(d.image)).length).toBe(2);
+  }
+  expect(weatherPeak).toBe(9);
+  console.log(`Portal warm light with full weather ${district.id}: ${planPeak}/${OVERWORLD_VISUAL_CAPACITY} slots, ${weatherPeak} weather quads`);
   expect(JSON.stringify(map)).toBe(before);
  }
 },{scene});
