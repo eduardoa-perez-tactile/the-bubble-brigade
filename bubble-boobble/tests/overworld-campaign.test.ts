@@ -60,7 +60,7 @@ worldTest('adventure campaign all 25 source-map encounters gates rewards keepsak
  await begin(ctx);
  // A travel action from the roaming map cannot bypass a physical destination or panel.
  await intent(ctx,'overworld-travel:district-2');expect(overworldState.get().districtId).toBe('district-1');
- await inspect(ctx,'guide');await intent(ctx,'overworld-guide-claim');expect(progress().coins).toBe(0);await close(ctx);
+ await intent(ctx,'overworld-journal');await intent(ctx,'overworld-guide-claim');expect(progress().coins).toBe(0);await close(ctx);
  for(const district of districts){
   expect(overworldState.get().districtId).toBe(district.id);
   const map=getOverworldMap(district.id),images=overworldDrawPlan(overworldState.get(),progress()).map(draw=>draw.image);
@@ -70,7 +70,7 @@ worldTest('adventure campaign all 25 source-map encounters gates rewards keepsak
    await finish(ctx,id);expect(progress().cleared[id]!.clears).toBe(1);
    if(district.index===0&&slot===2){
     expect(progress().coins).toBe(30);
-    await inspect(ctx,'guide');await intent(ctx,'overworld-guide-claim');expect(progress().coins).toBe(45);
+    await intent(ctx,'overworld-journal');await intent(ctx,'overworld-guide-claim');expect(progress().coins).toBe(45);
     await intent(ctx,'overworld-guide-claim');expect(progress().coins).toBe(45);await close(ctx);
     await inspect(ctx,'collectible');expect(progress().coins).toBe(50);await close(ctx);
     await inspect(ctx,'collectible');expect(progress().coins).toBe(50);await close(ctx);

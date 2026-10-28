@@ -89,6 +89,8 @@ export function focusedOverworldPoi(districtId:string,x:number,y:number):string 
   const map=getOverworldMap(districtId),point=worldToSource(map,{x,y}),districtIndex=Math.max(0,Number(districtId.split('-')[1])-1);
   let nearest='',distance=Infinity;
   for(const poi of map.pois){
+    // Guide anchors remain source provenance, not invisible people to interact with.
+    if(poi.kind==='guide')continue;
     const dx=poi.x-point.x,dy=poi.y-point.y,next=dx*dx+dy*dy,radius=poi.radius??OVERWORLD_INTERACTION_RADIUS;
     if(next>radius*radius||next>=distance)continue;
     if(poi.approach&&!sourcePointInPolygon(point,poi.approach))continue;

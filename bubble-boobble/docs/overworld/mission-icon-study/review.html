@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mission crest · state study</title>
+  <style>
+    :root { color-scheme: light; --paper: #f2e7cd; --ink: #302820; --muted: #716452; --line: #d8c9a9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #e6dcc4; color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+    main { max-width: 1240px; margin: 0 auto; padding: 38px 24px 32px; }
+    header { max-width: 780px; margin-bottom: 28px; }
+    .eyebrow { margin: 0 0 8px; font: 700 12px/1.4 system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; color: #8a4938; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 42px); line-height: 1.08; }
+    header p { margin: 0; font-size: 17px; line-height: 1.55; color: #5f5343; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    article { min-width: 0; padding: 18px; background: var(--paper); border: 1px solid #cdbd9a; border-radius: 12px; box-shadow: 0 4px 14px #3d2b1710; }
+    h2 { display: flex; align-items: center; gap: 11px; margin: 0 0 10px; font-size: 23px; }
+    .concept { min-height: 46px; margin: 0 0 15px; font-size: 15px; line-height: 1.45; color: var(--muted); }
+    .study { display: grid; place-items: center; height: 164px; margin-bottom: 18px; border: 1px solid #cad1c7; border-radius: 8px; background: #d3dfd7; }
+    /* The state sheet is three equal square cells. Only CSS cropping is used. */
+    .icon { background-image: url("mission-crest-v2-vintage.png"); background-size: 300% 100%; background-repeat: no-repeat; aspect-ratio: 1; }
+    .ready { background-position: 0% 50%; }
+    .locked { background-position: 50% 50%; }
+    .completed { background-position: 100% 50%; }
+    .study .icon { width: 160px; }
+    figure { margin: 0; }
+    .map-frame { position: relative; isolation: isolate; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #a89777; border-radius: 8px; background: #447078; }
+    /* Native map:1254². Identical untouched crop in every card: x160,y360,w480,h360. */
+    .map-plate { position: absolute; z-index: 0; width: 261.25%; max-width: none; height: auto; left: -33.333333%; top: -100%; user-select: none; }
+    /* Door is x298,y480 in the original painting. A60px cell gives an approximately45–50px visible crest. */
+    .marker { position: absolute; z-index: 2; width: 60px; height: 60px; left: 28.75%; top: calc(33.333333% - 44px); transform: translate(-50%, -50%); pointer-events: none; }
+    /* The original128px sprite's foot anchor is64,120. Feet sit at native x330,y535 on paving. */
+    .dragon { position: absolute; z-index: 3; width: 42px; height: 42px; left: 35.416667%; top: 48.611111%; transform: translate(-50%, -93.75%); pointer-events: none; }
+    figcaption { margin-top: 9px; color: var(--muted); font: 12px/1.5 system-ui, sans-serif; }
+    footer { margin-top: 23px; color: #685b48; font: 13px/1.5 system-ui, sans-serif; }
+    @media (max-width: 900px) {
+      main { max-width: 620px; padding: 26px 18px; }
+      .cards { grid-template-columns: 1fr; gap: 20px; }
+      .concept { min-height: 0; }
+      .study { height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">The Bubble Brigade · mission crest study</p>
+      <h1>One mission crest, three clear states</h1>
+      <p>Review the ready, locked and three-star completed states. Each preview uses the same existing doorway and player, with a compact winged crest above the entrance.</p>
+    </header>
+    <section class="cards" aria-label="Ready, locked and completed mission states">
+      <article aria-labelledby="state-ready">
+        <h2 id="state-ready">Ready</h2>
+        <p class="concept">A mission you can enter now.</p>
+        <div class="study"><div class="icon ready" role="img" aria-label="Enlarged ready mission crest"></div></div>
+        <figure>
+          <div class="map-frame">
+            <img class="map-plate" src="../../../assets/overworld-original/district-1/base.png" alt="Original harbor painting, cropped around the Shell Post Office entrance" draggable="false">
+            <div class="icon marker ready" role="img" aria-label="Ready mission crest above the doorway"></div>
+            <img class="dragon" src="../../../assets/overworld-shared/dragon-oblique/green/down-right-idle.png" alt="Existing green player standing on the paving" draggable="false">
+          </div>
+          <figcaption>In-map size · original map crop</figcaption>
+        </figure>
+      </article>
+      <article aria-labelledby="state-locked">
+        <h2 id="state-locked">Locked</h2>
+        <p class="concept">An unavailable mission, clearly blocked.</p>
+        <div class="study"><div class="icon locked" role="img" aria-label="Enlarged locked mission crest"></div></div>
+        <figure>
+          <div class="map-frame">
+            <img class="map-plate" src="../../../assets/overworld-original/district-1/base.png" alt="Same original harbor crop around the Shell Post Office entrance" draggable="false">
+            <div class="icon marker locked" role="img" aria-label="Locked mission crest above the doorway"></div>
+            <img class="dragon" src="../../../assets/overworld-shared/dragon-oblique/green/down-right-idle.png" alt="Same green player standing on the paving" draggable="false">
+          </div>
+          <figcaption>In-map size · original map crop</figcaption>
+        </figure>
+      </article>
+      <article aria-labelledby="state-completed">
+        <h2 id="state-completed">Completed · 3 stars</h2>
+        <p class="concept">A cleared mission displaying all three earned stars.</p>
+        <div class="study"><div class="icon completed" role="img" aria-label="Enlarged completed mission crest with three stars"></div></div>
+        <figure>
+          <div class="map-frame">
+            <img class="map-plate" src="../../../assets/overworld-original/district-1/base.png" alt="Same original harbor crop around the Shell Post Office entrance" draggable="false">
+            <div class="icon marker completed" role="img" aria-label="Completed mission crest with three stars above the doorway"></div>
+            <img class="dragon" src="../../../assets/overworld-shared/dragon-oblique/green/down-right-idle.png" alt="Same green player standing on the paving" draggable="false">
+          </div>
+          <figcaption>In-map size · original map crop</figcaption>
+        </figure>
+      </article>
+    </section>
+    <footer>Approval mockups only. The map painting and player art are unchanged; no NPCs, labels or gameplay changes have been added to these previews.</footer>
+  
+<section style="margin-top:28px"><h2>Integrated Game Engine captures</h2><p>Approved art in the unchanged harbor. No world NPCs or map lettering. Footstep drawings follow actual contact frames and face along the ground plane.</p><img alt="Approved crests and icon-only shop in the real engine" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/ready_harbor/mobile/metal.png"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px"><img alt="Expanded left footstep puff" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/foot_puff_expanded_left/mobile/metal.png"><img alt="Upward footstep puff projected on the ground" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/foot_contact_up/mobile/metal.png"></div><img alt="Three-star completed mission crest" style="width:100%;height:auto" src="../../../tests/goldens/approved_mission_crests_icon_shops_and_directional_footfall_drawings_stay_readable_without_map_residents/completed_harbor/mobile/metal.png"></section>
+</main>
+</body>
+</html>

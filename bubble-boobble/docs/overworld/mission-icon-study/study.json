@@ -1,0 +1,48 @@
+{
+  "status": "approved-and-integrated",
+  "scope": "Mission-entry art samples only; no runtime changes.",
+  "asset": "mission-crest-v2-vintage.png",
+  "sha256": "dd96eba14e623a9acff9fbc3035b20ccd01c6788a0fb2a9eb432185d6e570bb8",
+  "layout": {
+    "columns": 3,
+    "width": 2172,
+    "height": 724,
+    "transparent": true
+  },
+  "options": [
+    {
+      "id": "ready",
+      "name": "Ready",
+      "symbol": "large green play triangle"
+    },
+    {
+      "id": "locked",
+      "name": "Locked",
+      "symbol": "large gold padlock on muted scroll"
+    },
+    {
+      "id": "completed",
+      "name": "Completed",
+      "symbol": "three large gold stars"
+    }
+  ],
+  "references": [
+    "assets/overworld-shared/dragon-oblique/green/down-right-idle.png",
+    "CartoonMenu shipped artwork",
+    "assets/overworld-original/district-1/base.png"
+  ],
+  "direction": "Preserve approved winged crest and dominant state symbols. User-requested 1930s\u20131940s cel cartoon refinement: variable ink contours, rounded forms, flat shadows, warm painted fills. Three completed stars.",
+  "next_after_approval": [],
+  "implementation": {
+    "worldNpcs": 0,
+    "worldLabels": 0,
+    "missionStates": [
+      "available",
+      "locked",
+      "cleared-three-stars"
+    ],
+    "shopIcon": "bag-and-candy-crest",
+    "footsteps": "four authored frames, two alternating foot contacts per32movingsteps, eight direction ground rotation",
+    "verification": "6 focused V8 logic cases and one affected V8 render case;12/14draw peak; broad strict gates deferred under prototype policy"
+  }
+}

@@ -144,7 +144,7 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  };
  createEffect(()=>{const m=map(),p=save(),d=districtById(m.districtId)??districts[0]!,progress=adventureForProfile(p.profiles[p.active]!);
   if(!m.active){mapHud?.close({immediate:true});mapHud=undefined;return;}
-  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi?`ENTER / A · ${poi.label}`:'',help:adventureCleared(progress)===0&&m.walkTick<120?'WASD / ARROWS · WALK     ENTER / A · VISIT':''};
+  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi&&poi.kind!=='guide'?'ENTER / A':'',help:adventureCleared(progress)===0&&m.walkTick<120?'WASD / ARROWS · WALK     ENTER / A · VISIT':''};
   if(mapHud)mapHud.update(model);else mapHud=views.push(OverworldHudView,model,{onIntent:mapIntent});
  });
  let mapPanel:ViewHandle<any>|undefined,mapPanelKind='';

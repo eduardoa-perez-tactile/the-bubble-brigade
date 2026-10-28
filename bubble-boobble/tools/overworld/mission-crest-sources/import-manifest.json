@@ -1,0 +1,73 @@
+{
+  "approval": "User approved vintage mission crest family on 28 October 2026",
+  "preparation": "Native sips crop/registration and one shared resample scale; transparent alpha retained; no creative edits",
+  "sources": [
+    {
+      "path": "tools/overworld/mission-crest-sources/mission-crest-vintage.png",
+      "sha256": "dd96eba14e623a9acff9fbc3035b20ccd01c6788a0fb2a9eb432185d6e570bb8"
+    },
+    {
+      "path": "tools/overworld/mission-crest-sources/shop-crest.png",
+      "sha256": "0a3efa6c00bd020685431f411b27e9918af893b1300979259c54b0499ea1be05"
+    },
+    {
+      "path": "tools/overworld/mission-crest-sources/puff-strip.png",
+      "sha256": "c2ea81b0526775560460a01b417a06cb530349934190f4176d39a7fb07186472"
+    }
+  ],
+  "puffContactPixels": [
+    108,
+    72.5
+  ],
+  "assets": [
+    {
+      "path": "assets/overworld-living/common/markers/available.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "3bdc4debafd87e193656f6fbecc6c22a7bc2bb4793c21eba956e3ec3d74a2ff1"
+    },
+    {
+      "path": "assets/overworld-living/common/markers/locked.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "87aba5818f55e94ec868fbd44c91e38b1f63d79036300af8644aac420340ef8e"
+    },
+    {
+      "path": "assets/overworld-living/common/markers/cleared.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "f206121d0dbbef7144d55d14714f074fceb48797dc893d10801c3f0d720e5bbb"
+    },
+    {
+      "path": "assets/overworld-living/common/markers/shop.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "d6fa88514da152f548d10c382210908252a111b73e6a92d80da5d58a1fa9b5a9"
+    },
+    {
+      "path": "assets/overworld-living/common/footsteps/puff-0.png",
+      "width": 112,
+      "height": 80,
+      "sha256": "9b893d73d2ccf50dd14fcf2bcaecd74e87192f4b877ce988b69b36a54b7cea66"
+    },
+    {
+      "path": "assets/overworld-living/common/footsteps/puff-1.png",
+      "width": 112,
+      "height": 80,
+      "sha256": "7bd4f9a6a626a035404aaf65ac049fc31ec24f1ca85bfa5ed16b68b996a071e1"
+    },
+    {
+      "path": "assets/overworld-living/common/footsteps/puff-2.png",
+      "width": 112,
+      "height": 80,
+      "sha256": "741873b00ff8712817068428fd5f5f3d62558ac197c9a25c2ab7090cd4dcaea8"
+    },
+    {
+      "path": "assets/overworld-living/common/footsteps/puff-3.png",
+      "width": 112,
+      "height": 80,
+      "sha256": "56fc2d186c52bfe48752dec8895962363cf9520690288db9f91dd009858f474c"
+    }
+  ],
+  "mapPaintingsModified": false
+}

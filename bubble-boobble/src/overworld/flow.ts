@@ -39,7 +39,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='adventure-arcade'){suspendOverworld();patch({screen:'modes',adventure:false,selected:0});return true;}
  if(action==='overworld-interact'){
   if(!map.active||s.screen!=='overworld'||map.focusedPoi!==value)return true;
-  const poi=overworldPoi(map.districtId,value);if(!poi||(poi.x-map.x)**2+(poi.y-map.y)**2>(poi.radius??68)**2)return true;
+  const poi=overworldPoi(map.districtId,value);if(!poi||poi.kind==='guide'||(poi.x-map.x)**2+(poi.y-map.y)**2>(poi.radius??68)**2)return true;
   anchor();
   if(poi.kind==='encounter'||poi.kind==='trial'){setOverworldModal(true);patch({screen:'overworld-card',adventureEncounter:poi.kind==='trial'?trialForDistrict(map.districtId)!.id:poi.id,selected:0});return true;}
   if(poi.kind==='collectible'){
@@ -76,8 +76,8 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='overworld-shortcut'&&map.active&&map.focusedPoi==='shortcut'){desktopSaveState.dispatch('adventureShortcut',{profileIndex,id:`${map.districtId}:shortcut`},now);return true;}
  if(action==='overworld-menu'&&map.active){anchor();panel('pause');return true;}
  if(action==='overworld-journal'&&map.active){panel('journal');return true;}
- if(action==='overworld-guide-claim'&&s.screen==='overworld-panel'&&s.overworldPanel==='guide'){
-  desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:adventureCleared(progress)>=3?'Three clears! Your 15-coin reward is saved.':'Clear any three encounters, then come back for a reward.'});return true;
+ if(action==='overworld-guide-claim'&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
+  desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:progress.rewardClaims['guide-three-clears']?'Three-clear reward already collected.':adventureCleared(progress)>=3?'Three-clear reward: 15 coins saved.':'Clear any three encounters to claim 15 coins in the journal.'});return true;
  }
  if(action.startsWith('overworld-buy:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
   const id=action.slice(14),item=[...adventureShop,...adventurePowerShop].find(i=>i.id===id);
