@@ -18,12 +18,15 @@ export function groundMistDraws(districtId:string,tick:number,reducedEffects=fal
  const map=getOverworldMap(districtId),points=anchors[map.districtId]!,out:OverworldDraw[]=[];
  const district=Number(map.districtId.slice(-1)),t=Number.isFinite(tick)?Math.max(0,tick):0;
  for(let i=0;i<points.length;i++){
-  const period=1380+i*179,phase=((t+district*97+i*409)%period)/period;
+  const period=900+i*137;
+  // Enter the map during a visible part of each wisp, rather than waiting for
+  // the first slow fade-in. Unequal periods keep the three wisps independent.
+  const phase=((t+Math.round(period*.30)+district*29+i*191)%period)/period;
   const fade=Math.sin(Math.PI*phase)**2;
   if(fade<.001)continue;
-  const anchor=points[i]!,p=sourceToWorld(map,{x:anchor[0]+(phase-.5)*94,y:anchor[1]+Math.sin(phase*Math.PI*2+i)*6});
+  const anchor=points[i]!,p=sourceToWorld(map,{x:anchor[0]+(phase-.5)*136,y:anchor[1]+Math.sin(phase*Math.PI*2+i)*9});
   out.push({image:groundMistImageKeys[0],x:p.x,y:p.y,width:(290+i*23)*map.scale,
-   height:(46+i*3)*map.scale,order:-60,color:[.81,.88,.87,.31*fade],flip:i===1});
+   height:(62+i*4)*map.scale,order:-60,color:[.90,.95,.93,.56*fade],flip:i===1});
  }
  return out;
 }
