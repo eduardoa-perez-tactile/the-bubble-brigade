@@ -31,3 +31,27 @@ Prompt set:
 Visual verification uses Game Engine view captures at 360×880, 1280×720 and
 2520×1080, plus the curtain's fully lifted pose. Full suites are deferred under the
 project's presentation-only prototype verification policy.
+
+## Transparency repair
+
+Run `node tools/menu-branding/restore-curtain-alpha.cjs` with Sharp on `NODE_PATH`
+to restore and verify alpha after importing artwork. It preserves every RGB byte,
+uses the original curtain's exact alpha for the landscape, and uses the preserved
+`curtain-portrait-alpha-cutout.png` mask for portrait. Generated mask alpha values
+0–8 become transparent, 238–255 become opaque, and intermediate edges are remapped.
+Both exports have fully transparent bottom rows and fully opaque cloth above the hem.
+
+The portrait mask was made with built-in imagegen using this prompt:
+
+> Edit this exact 1024x1536 portrait curtain image ONLY to remove the brown
+> floor/matte below the bottom scalloped gold hem, replacing ALL background below
+> the hem with genuine alpha transparency. Keep the curtain fabric and gold hem
+> fully opaque. Follow the precise gold hem silhouette including scallops and
+> antialiased edges. The bottom row must be fully transparent. Do not crop, resize,
+> move, repaint or alter any red fabric, gold trim, Tactile wordmark or presents…
+> lettering. Preserve every existing cloth detail and the exact canvas size and
+> framing. Output PNG with alpha; no checkerboard drawn into image, no floor, no
+> cast shadow below the hem, no colored matte.
+
+Only the mask's alpha is used; its generated RGB is discarded. Engine half-lift
+captures were inspected at 360×880 and 2520×1080 after the repair.
