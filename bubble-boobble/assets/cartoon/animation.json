@@ -2558,10 +2558,43 @@
         64,
         120
       ],
-      "sourceCell": [
-        2,
-        1
+      "canvasSize": [
+        128,
+        128
       ],
+      "visualBounds": [
+        48,
+        44,
+        116,
+        108
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ],
+      "sourceSheet": "docs/cartoon-overhaul/sources/enemies.png",
+      "sourceSha256": "c7cff7ab68abd4b370c3af40a228715ff69080c29282c297dbf104588b8c92f7",
+      "sourceRect": [
+        640,
+        208,
+        930,
+        416
+      ],
+      "sourceScale": 0.3592945757145044,
+      "referenceLandmarkArea": 246.0,
+      "bodyLandmarkArea": 244,
+      "scaleReference": "enemy/monsta/walk-0..7",
+      "scaleReferenceSha256": [
+        "dad88dafee0ec8f08053a2c8c2b2dbdd166fc72cbffb6fed646a77eb083d5a40",
+        "206102aab6a6f267b63b6ce437e0dcbfeb26e001e3d1d6b4ddc85d37eebfc38b",
+        "0bd0de261eb272d961df0fe3e24d4b3005df0105d30c1749f89d042259f5473d",
+        "681ca168e2619e618f6c36acd849674429ce0827ab54497e7cd2f2fdf06c3130",
+        "65f407df5b4dac502d9e056a7eb43b5f84ed5e54a1490916b4da6cc0b7b25fe0",
+        "4fab99251a9c30b28756c55e1a2a9e594ce06ac39a06ebef247a9069473b9519",
+        "bbce6758681c5800977d1e574c0693c2b4310888dfe6ac65bb37b74c09ff174e",
+        "d76cfe77acfb727428809e16535e25be3b364ec713e2bf0d3151e4f3396453ac"
+      ],
+      "rotationDegrees": 0,
       "derivative": false
     },
     "enemy/monsta/warning-0": {
@@ -2591,10 +2624,43 @@
         64,
         120
       ],
-      "sourceCell": [
-        2,
-        1
+      "canvasSize": [
+        128,
+        128
       ],
+      "visualBounds": [
+        50,
+        46,
+        122,
+        114
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ],
+      "sourceSheet": "docs/cartoon-overhaul/sources/enemies.png",
+      "sourceSha256": "c7cff7ab68abd4b370c3af40a228715ff69080c29282c297dbf104588b8c92f7",
+      "sourceRect": [
+        640,
+        208,
+        930,
+        416
+      ],
+      "sourceScale": 0.3592945757145044,
+      "referenceLandmarkArea": 246.0,
+      "bodyLandmarkArea": 242,
+      "scaleReference": "enemy/monsta/walk-0..7",
+      "scaleReferenceSha256": [
+        "dad88dafee0ec8f08053a2c8c2b2dbdd166fc72cbffb6fed646a77eb083d5a40",
+        "206102aab6a6f267b63b6ce437e0dcbfeb26e001e3d1d6b4ddc85d37eebfc38b",
+        "0bd0de261eb272d961df0fe3e24d4b3005df0105d30c1749f89d042259f5473d",
+        "681ca168e2619e618f6c36acd849674429ce0827ab54497e7cd2f2fdf06c3130",
+        "65f407df5b4dac502d9e056a7eb43b5f84ed5e54a1490916b4da6cc0b7b25fe0",
+        "4fab99251a9c30b28756c55e1a2a9e594ce06ac39a06ebef247a9069473b9519",
+        "bbce6758681c5800977d1e574c0693c2b4310888dfe6ac65bb37b74c09ff174e",
+        "d76cfe77acfb727428809e16535e25be3b364ec713e2bf0d3151e4f3396453ac"
+      ],
+      "rotationDegrees": 28,
       "derivative": true
     },
     "enemy/monsta/shoot-0": {
@@ -2674,10 +2740,43 @@
         64,
         120
       ],
-      "sourceCell": [
-        2,
-        2
+      "canvasSize": [
+        128,
+        128
       ],
+      "visualBounds": [
+        42,
+        50,
+        108,
+        102
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ],
+      "sourceSheet": "docs/cartoon-overhaul/sources/enemies.png",
+      "sourceSha256": "c7cff7ab68abd4b370c3af40a228715ff69080c29282c297dbf104588b8c92f7",
+      "sourceRect": [
+        640,
+        416,
+        930,
+        624
+      ],
+      "sourceScale": 0.36325465063792634,
+      "referenceLandmarkArea": 128.5,
+      "bodyLandmarkArea": 128,
+      "scaleReference": "enemy/pulpul/walk-0..7",
+      "scaleReferenceSha256": [
+        "8f58482bf72b66e1dee94f5780030d5b4568c890c08e77bf8c73ade06d5ebb6f",
+        "c4d013048d123d7277dc2889d6e15b9021f50325b364ec6e79497e0eba4153c2",
+        "414eba85ed3c9301df5c6236d9727396b7690187e97f866713394616338febf6",
+        "8576bb8e212a7464d0df18ecbf45a1677d7158b4219ff6b0bf38c6766088c1f0",
+        "4da93639a1bcc98f9c0707f37679f04121d901289e34b1855b0c21eafa3d6f6a",
+        "17a97ac5a97226d866f6e2e0930a4a2139e4406710f2702055e2385f8b4c267b",
+        "da0ad064b843824c4377013c5091c465f90124bc1f7fc14ed39a18abe6744784",
+        "6e3559d8ae4c96687010c337b10c56112d57b7c4a17d3d55e3eff01b6af8db4e"
+      ],
+      "rotationDegrees": 0,
       "derivative": false
     },
     "enemy/pulpul/warning-0": {
@@ -2707,10 +2806,43 @@
         64,
         120
       ],
-      "sourceCell": [
-        2,
-        2
+      "canvasSize": [
+        128,
+        128
       ],
+      "visualBounds": [
+        48,
+        43,
+        117,
+        109
+      ],
+      "bodyAnchor": [
+        82,
+        76
+      ],
+      "sourceSheet": "docs/cartoon-overhaul/sources/enemies.png",
+      "sourceSha256": "c7cff7ab68abd4b370c3af40a228715ff69080c29282c297dbf104588b8c92f7",
+      "sourceRect": [
+        640,
+        416,
+        930,
+        624
+      ],
+      "sourceScale": 0.36325465063792634,
+      "referenceLandmarkArea": 128.5,
+      "bodyLandmarkArea": 123,
+      "scaleReference": "enemy/pulpul/walk-0..7",
+      "scaleReferenceSha256": [
+        "8f58482bf72b66e1dee94f5780030d5b4568c890c08e77bf8c73ade06d5ebb6f",
+        "c4d013048d123d7277dc2889d6e15b9021f50325b364ec6e79497e0eba4153c2",
+        "414eba85ed3c9301df5c6236d9727396b7690187e97f866713394616338febf6",
+        "8576bb8e212a7464d0df18ecbf45a1677d7158b4219ff6b0bf38c6766088c1f0",
+        "4da93639a1bcc98f9c0707f37679f04121d901289e34b1855b0c21eafa3d6f6a",
+        "17a97ac5a97226d866f6e2e0930a4a2139e4406710f2702055e2385f8b4c267b",
+        "da0ad064b843824c4377013c5091c465f90124bc1f7fc14ed39a18abe6744784",
+        "6e3559d8ae4c96687010c337b10c56112d57b7c4a17d3d55e3eff01b6af8db4e"
+      ],
+      "rotationDegrees": 28,
       "derivative": true
     },
     "enemy/pulpul/shoot-0": {

@@ -1,5 +1,6 @@
 import {adventureArrivalY} from '../adventure/spawning';
 import {simplifiedEnemyDraws} from './enemy-motion';
+import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
 import {cartoonHudBounds} from './hud-layout';
@@ -283,7 +284,14 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const size=composed?CARTOON_ENEMY_SIZE:56;
     const flyer=e.Kind==='monsta'||e.Kind==='pulpul';
     const clock=g.Party?.Phase==='prepare'&&flyer?tick+index*3:e.Age;
-    if(simplifiedKinds.includes(e.Kind)){
+    if(composed&&e.State===EnemyState.Defeated){
+      const rootX=e.X+22,rootY=y+22;
+      for(const draw of cartoonDefeatedEnemyDraws(e,cartoonEnemyFrame(e.Kind,'bubble',clock),cartoonEnemyFrame(e.Kind,'dead',clock),CARTOON_CAPTURED_ENEMY_SIZE,reduced)){
+        out.push({...draw,x:px(rootX)+(draw.x-(e.X+22))*layout.scale,
+          y:py(rootY)+(draw.y-(e.Y+22))*layout.scale,
+          width:draw.width*layout.scale,height:draw.height*layout.scale});
+      }
+    }else if(simplifiedKinds.includes(e.Kind)){
       for(const draw of simplifiedEnemyDraws(e,clock,size,reduced,feel)){
         out.push({...draw,x:px(draw.x),y:py(y+44)+(draw.y-(e.Y+44))*layout.scale,
           width:draw.width*layout.scale,height:draw.height*layout.scale});
@@ -323,8 +331,16 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
         if(e){
           // The warning/escape assets are angry running poses, not captive poses.
           // Keep the folded silhouette; danger belongs to the surrounding ink.
-          if(composed)centered(cartoonEnemyFrame(e.Kind,'bubble',b.Age),shape.x+state.captiveOffset,shape.y,CARTOON_CAPTURED_ENEMY_SIZE,false,undefined,shape.offsetY);
-          else add(cartoonEnemyFrame(e.Kind,'bubble',b.Age),b.X+4+state.captiveOffset,b.Y+3,36,36);
+          if(composed){
+            const rootX=shape.x+state.captiveOffset,rootY=shape.y;
+            const draw=cartoonCaptiveEnemyDraw(cartoonEnemyFrame(e.Kind,'bubble',b.Age),rootX,rootY,CARTOON_CAPTURED_ENEMY_SIZE);
+            // The painted center stays on the bubble's logical root while its
+            // shell squashes around the fixed top. Source padding cannot push
+            // captives through the shell or make them jump on release.
+            out.push({...draw,x:px(rootX)+(draw.x-rootX)*layout.scale,
+              y:py(rootY)+(draw.y-rootY)*layout.scale,
+              width:draw.width*layout.scale,height:draw.height*layout.scale});
+          }else add(cartoonEnemyFrame(e.Kind,'bubble',b.Age),b.X+4+state.captiveOffset,b.Y+3,36,36);
         }
       }else if(part==='shine'){
         // Neutral white reflections sit above the colored meniscus. Keeping

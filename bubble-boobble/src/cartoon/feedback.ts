@@ -20,7 +20,8 @@ export function cartoonBubbleShape(b:Bubble,diameter:number,reduced=false,bounce
  }
  const height=diameter/stretch*squash;
  // Keep the shell's top contact point fixed in authored art units. Drawing
- // applies this offset after projection; captives translate but never resize.
+ // applies this shell offset after projection; captives keep their painted
+ // center on the logical bubble root and never resize during compression.
  return {x:b.X+22+float,y:b.Y+22,width:diameter*stretch/squash,height,offsetY:(height-diameter/stretch)/2};
 }
 export interface CartoonFeedback {sprites:CartoonDraw[];accents:CartoonDraw[]}

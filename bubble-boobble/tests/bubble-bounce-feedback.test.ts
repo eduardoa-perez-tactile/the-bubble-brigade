@@ -1,5 +1,6 @@
 import {expect,worldTest,renderTest} from '@gameengine/test';
 import campaign from '../data/levels.json';
+import animation from '../assets/cartoon/animation.json';
 import {createGame} from '../src/arcade/game';
 import {createCartoonArena} from '../src/cartoon/arena';
 import {bubble,updateBubbles} from '../src/arcade/bubbles';
@@ -32,6 +33,13 @@ worldTest('bubble bounce feedback compresses rebounds settles and preserves top 
   expect(Math.abs(shell.y-resting.y)<.00001).toBe(true);
   const regular=cartoonDrawPlan(g,0).find(d=>(d.frame.endsWith('/captured-0')||d.frame.endsWith('/simple-captured')))!;
   expect(captive.width).toBe(regular.width);expect(captive.height).toBe(regular.height);
+  // The shell squashes around its fixed top, but the character remains at its
+  // bubble root so popping during compression cannot shift it vertically.
+  expect(Math.abs(captive.y-regular.y)<.00001).toBe(true);
+  const metadata=(animation.frames as Record<string,{visualBounds?:number[];canvasSize?:number[]}>)[captive.frame]!;
+  const bounds=metadata.visualBounds??[0,0,128,128],canvasHeight=metadata.canvasSize?.[1]??128;
+  const centerY=captive.y+(bounds[1]!+bounds[3]!)/2/canvasHeight*captive.height;
+  expect(centerY>shell.y&&centerY<shell.y+shell.height).toBe(true);
   if(age===0){expect(shell.width>resting.width).toBe(true);expect(shell.height<resting.height).toBe(true);height=shell.height;}
   if(age===8)expect(shell.height>resting.height).toBe(true);
   if(age===18)expect(shell.height).toBe(resting.height);
