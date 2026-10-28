@@ -1,0 +1,160 @@
+{
+  "assets" : [
+    {
+      "bytes" : 105387,
+      "crop" : [
+        35,
+        369,
+        345,
+        703
+      ],
+      "name" : "base-stone-v2",
+      "sha256" : "ec6bf137d826d4e957290b0104362aeafbeba94e88ddf1b3dea9fe79f855547b",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 94566,
+      "crop" : [
+        430,
+        444,
+        718,
+        703
+      ],
+      "name" : "base-timber-v2",
+      "sha256" : "923bfaff5f660880c5244293dbde263af8e3bd91a711b44fb9792bba95f5e158",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 104589,
+      "crop" : [
+        796,
+        280,
+        1105,
+        703
+      ],
+      "name" : "base-pipe-v2",
+      "sha256" : "f49beb1b72369cc9c21062c599c2b4f14ec54b21711fc84181f5c8182604045b",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 111940,
+      "crop" : [
+        1171,
+        369,
+        1480,
+        703
+      ],
+      "name" : "base-vegetation-v2",
+      "sha256" : "16f4a83eacf9dad38393c9ab8b865a7f4ea81c88fad4b653e46e1a82bd347add",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 30444,
+      "crop" : [
+        35,
+        790,
+        345,
+        903
+      ],
+      "name" : "collar-stone-v2",
+      "sha256" : "a94f01770bf35e841de61d001631487e6d1223241da9e827e5ba769290758949",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 28486,
+      "crop" : [
+        430,
+        790,
+        718,
+        903
+      ],
+      "name" : "collar-timber-v2",
+      "sha256" : "91847d924697c948aced307237346b44da58015e71a9fc57a4ebc24d9fe27ccc",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 30157,
+      "crop" : [
+        796,
+        794,
+        1105,
+        903
+      ],
+      "name" : "collar-pipe-v2",
+      "sha256" : "05a71ed79de56b03b9d0677125cf800f1ed7c5d9b84e36aa3dcae863ccfdde90",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 34182,
+      "crop" : [
+        1171,
+        790,
+        1480,
+        903
+      ],
+      "name" : "collar-vegetation-v2",
+      "sha256" : "0ed8096fc691dbf95c79aeadbb5908f21c237008000b408f11d69bbdbd017d1d",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 67579,
+      "crop" : [
+        130,
+        0,
+        446,
+        2172
+      ],
+      "name" : "bubble-sheen-v2",
+      "sha256" : "885eb17b264766d44cc9047e65fd63dac42544cd522af77d627f378d7225f911",
+      "size" : [
+        96,
+        512
+      ],
+      "source" : "bubble-source.png"
+    }
+  ],
+  "generator" : "built-in image_gen",
+  "import" : "CoreGraphics rectangular crop and high-quality downsample only; preserve alpha, no redraw or keying",
+  "sources" : [
+    {
+      "file" : "architecture-sheet.png",
+      "sha256" : "8d952e23a3907254e7c8016d26e583c312127b9d25e8e423ae399e3254b5e07b"
+    },
+    {
+      "file" : "bubble-source.png",
+      "sha256" : "c2727857d39e69874b4b4d82a628fecfa53cec742bac2522ee620324644cc740"
+    }
+  ]
+}
