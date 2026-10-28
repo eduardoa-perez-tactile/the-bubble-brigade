@@ -1,10 +1,10 @@
-import {views,finishAnimations} from '@gameengine/ui';
+import {views,finishAnimations,drawnRect} from '@gameengine/ui';
 import {AdventureShopView} from '../src/overworld/shop.view';
 import {expect,worldTest,renderTest,type WorldTestContext} from '@gameengine/test';
 import {DesktopIntent} from '../src/schema.gen';
 import {desktopSave,desktopSaveState,initialDesktopSave} from '../src/desktop/save';
 import {desktopState,RESULT_INPUT_DELAY} from '../src/desktop/state';
-import {adventurePowerShop,adventureShop,initialAdventure,beginAdventureAttempt,completeAdventure,purchaseAdventureItem,equipAdventurePower,validAdventure,adventureForProfile} from '../src/overworld/progression';
+import {adventurePowerShop,adventureShop,initialAdventure,beginAdventureAttempt,completeAdventure,purchaseAdventureItem,equipAdventurePower,adventureStartingPowers,attemptStartingPowers,validAdventure,adventureForProfile} from '../src/overworld/progression';
 import {adventureShopModel} from '../src/overworld/shop-model';
 import {adventurePanel} from '../src/overworld/panels';
 import {overworldState} from '../src/overworld/state';
@@ -31,12 +31,13 @@ worldTest('powerup shop first clear buys a permanent upgrade with receipt isolat
  p=beginAdventureAttempt(p,'encounter-1');
  p=completeAdventure(p,{encounterId:'encounter-1',attemptId:p.pending!.id,score:0});
  p=purchaseAdventureItem(p,'pink_candy');
- expect(p.coins).toBe(0);expect(p.equippedPower).toBe('pink_candy');
+ expect(p.coins).toBe(0);expect(adventureStartingPowers(p)).toEqual(['pink_candy']);
  expect(purchaseAdventureItem(p,'pink_candy')).toEqual(p);
  p=beginAdventureAttempt(p,'encounter-2');
  const receipt=p.pending!;
  p=equipAdventurePower(p,null);
- expect(p.pending).toEqual(receipt);expect(receipt.startingPower).toBe('pink_candy');
+ expect(p.pending).toEqual(receipt);expect(receipt.startingPowers).toEqual(['pink_candy']);
+ expect(attemptStartingPowers({id:'legacy',encounterId:'encounter-1',startingPower:'pink_candy'})).toEqual(['pink_candy']);
  expect(validAdventure(p)).toBe(true);
  const {equippedPower:_equipped,...old}=initialAdventure();
  const legacy={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,high_score:500,adventure:{...old,version:1,coins:90,purchases:{'brigade-ribbon':true},nextAttempt:3,pending:{id:'attempt-2',encounterId:'encounter-1'}}}]};
@@ -51,7 +52,7 @@ worldTest('powerup shop first clear buys a permanent upgrade with receipt isolat
  for(const map of overworldMaps)expect(map.pois.filter(poi=>poi.kind==='vendor').length).toBe(1);
 },{scene});
 
-worldTest('powerup shop purchases equip one actual starting power and retry reapplies without pickup rewards',async ctx=>{
+worldTest('powerup shop purchases stack every owned starting power and retries restore the complete set',async ctx=>{
  const fixture={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure:{...initialAdventure(),coins:100}},{...initialDesktopSave.profiles[0]!,name:'OTHER'}]};
  ctx.services.mock('storage.read',{result:{found:true,version:1,savedAt:1,data:desktopSave.store(fixture),recovered:false}});
  await adventureStep(ctx,8);await ctx.loaded();expect(desktopSaveState.loaded()).toBe(true);
@@ -62,24 +63,25 @@ worldTest('powerup shop purchases equip one actual starting power and retry reap
  for(const item of adventurePowerShop){
   await visit(ctx,'vendor');
   const panel=adventurePanel(desktopState.get(),desktopSaveState.get());
-  expect(panel.title).toBe('BRIGADE SHOP');expect(panel.buttons.length).toBe(progress().equippedPower?8:7);
+  expect(panel.title).toBe('BRIGADE SHOP');expect(panel.buttons.length).toBe(7);
   expect(panel.buttons.some(button=>button.key===`overworld-browse:${item.id}`)).toBe(true);
   await intent(ctx,`overworld-browse:${item.id}`);
   expect(progress().coins).toBe(balance);
   expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).actionKey).toBe(`overworld-buy:${item.id}`);
   await intent(ctx,`overworld-buy:${item.id}`);balance-=item.price;
-  expect(progress().coins).toBe(balance);expect(progress().equippedPower).toBe(item.id);
+  expect(progress().coins).toBe(balance);expect(adventureStartingPowers(progress()).includes(item.id)).toBe(true);
   await intent(ctx,`overworld-buy:${item.id}`);expect(progress().coins).toBe(balance);
-  await intent(ctx,'overworld-equip:unknown');expect(progress().equippedPower).toBe(item.id);
+  await intent(ctx,'overworld-equip:unknown');expect(adventureStartingPowers(progress()).includes(item.id)).toBe(true);
   await intent(ctx,'overworld-back');await visit(ctx,'encounter-1');await intent(ctx,'adventure-play');await ctx.loaded();
   for(let retry=0;retry<2;retry++){
    const game=session.get().game!;
    expect(game.Players[0]!.Power[item.power]).toBe(true);
-   expect(adventurePowerShop.filter(power=>game.Players[0]!.Power[power.power]).length).toBe(1);
+   expect(adventurePowerShop.filter(power=>game.Players[0]!.Power[power.power]).length).toBe(adventureStartingPowers(progress()).length);
+   for(const id of adventureStartingPowers(progress()))expect(game.Players[0]!.Power[adventurePowerShop.find(p=>p.id===id)!.power]).toBe(true);
    expect(game.Score).toBe(0);
    expect(game.Counters.Pink).toBe(0);expect(game.Counters.Blue).toBe(0);expect(game.Counters.Yellow).toBe(0);
    expect(game.Sounds.includes('item')).toBe(false);
-   expect(progress().pending!.startingPower).toBe(item.id);
+   expect(progress().pending!.startingPowers).toEqual(adventureStartingPowers(progress()));
    await ctx.cheat(OverworldResolveEncounter,{won:false});await adventureStep(ctx,3);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
    expect(desktopState.get().screen).toBe('result');
    for(let wait=0;wait<600&&!desktopState.get().resultReady;wait++)await adventureStep(ctx,1);
@@ -90,7 +92,7 @@ worldTest('powerup shop purchases equip one actual starting power and retry reap
  }
  expect(desktopSaveState.get().profiles[1]!.adventure).toBe(undefined);
  await visit(ctx,'vendor');await intent(ctx,'overworld-equip:none');expect(progress().equippedPower).toBe(null);
- await intent(ctx,'overworld-equip:blue_candy');expect(progress().equippedPower).toBe('blue_candy');
+ await intent(ctx,'overworld-equip:blue_candy');expect(adventureStartingPowers(progress()).length).toBe(4);
  expect(progress().coins).toBe(balance);
  ctx.app.background();await adventureStep(ctx,2);
  const writes=ctx.services.calls('storage.write').filter(call=>call.params.name==='meta-bubblebobble-desktop');
@@ -135,7 +137,7 @@ renderTest('powerup shop counter browses before spending and keeps ownership equ
  expect(progress().coins).toBe(35);expect(progress().equippedPower).toBe('yellow_candy');
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).name).toBe('BLUE CANDY');
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('shop-purchase');await adventureStep(ctx,3);
- expect(progress().coins).toBe(20);expect(progress().equippedPower).toBe('blue_candy');
+ expect(progress().coins).toBe(20);expect(adventureStartingPowers(progress())).toEqual(['blue_candy','yellow_candy']);
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).merchantNod).toBe(1);
  ctx.render.stats({width:1280,height:720});
  expect(ctx.ui.interactables().some(b=>b.id==='shop-purchase'&&b.enabled&&b.hittable)).toBe(false);
@@ -144,13 +146,16 @@ renderTest('powerup shop counter browses before spending and keeps ownership equ
  ctx.render.stats({width:1280,height:720});
  expect(ctx.ui.interactables().some(b=>b.id==='shop-purchase'&&b.enabled&&b.hittable)).toBe(false);
  await ctx.ui.press('overworld-browse:yellow_candy');await adventureStep(ctx,3);
+ expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).actionLabel).toBe('OWNED');
+ expect(adventureStartingPowers(progress())).toEqual(['blue_candy','yellow_candy']);
+ ctx.render.stats({width:1280,height:720});
+ expect(ctx.ui.interactables().some(b=>b.id==='remove'&&b.enabled&&b.hittable)).toBe(false);
+ await ctx.ui.press('overworld-browse:pink_candy');await adventureStep(ctx,3);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('shop-purchase');await adventureStep(ctx,3);
- expect(progress().coins).toBe(20);expect(progress().equippedPower).toBe('yellow_candy');
- ctx.render.stats({width:1280,height:720});await ctx.ui.press('remove');await adventureStep(ctx,3);
- expect(progress().equippedPower).toBe(null);expect(progress().purchases.yellow_candy).toBe(true);
+ expect(progress().coins).toBe(10);expect(adventureStartingPowers(progress())).toEqual(['pink_candy','blue_candy','yellow_candy']);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('help');await adventureStep(ctx,3);
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).helpOpen).toBe(true);
- expect(progress().coins).toBe(20);
+ expect(progress().coins).toBe(10);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('help');await adventureStep(ctx,3);
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).helpOpen).toBe(false);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('back');await adventureStep(ctx,3);
@@ -181,4 +186,35 @@ renderTest('powerup shop layered owner blinks without moving his body and ducks 
  if(!ctx.ui.interactables().some(b=>b.id==='shop-purchase'&&b.enabled&&b.hittable))throw new Error('Purchase hidden under desk: '+JSON.stringify(ctx.ui.interactables()));
  expect(JSON.stringify(save)).toBe(before);
  handle.close({immediate:true});
+},{scene,memory:'phone-low'});
+
+worldTest('powerup shop stacked purchases snapshot every owned power without replacing earlier upgrades',async()=>{
+ let p={...initialAdventure(),coins:100};
+ p=purchaseAdventureItem(p,'pink_candy');p=purchaseAdventureItem(p,'shoes');
+ p=beginAdventureAttempt(p,'encounter-1');
+ expect(p.pending!.startingPowers).toEqual(['pink_candy','shoes']);
+ const receipt=JSON.stringify(p.pending);
+ p=purchaseAdventureItem(p,'blue_candy');
+ expect(JSON.stringify(p.pending)).toBe(receipt);
+ expect(p.coins).toBe(50);expect(validAdventure(p)).toBe(true);
+ const saved=desktopSave.load(desktopSave.store({...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure:p}]}));
+ expect(saved.profiles[0]!.adventure).toEqual(p);
+ const duplicate={...p,pending:{...p.pending!,startingPowers:['pink_candy' as const,'pink_candy' as const]}};
+ expect(validAdventure(duplicate)).toBe(false);
+},{scene});
+
+renderTest('powerup shop shoe selection zoom composes with its larger artwork',async ctx=>{
+ await adventureStep(ctx,8);await ctx.loaded();await intent(ctx,'cartoon-mode');await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');await ctx.loaded();
+ await visit(ctx,'vendor');await adventureStep(ctx,20);ctx.input.view(1280,720,1);await adventureStep(ctx,4);
+ ctx.render.stats({width:1280,height:720});
+ const base=drawnRect('overworld-browse:shoes.selection');
+ if(!base)throw new Error('Shoe selection point not registered');
+ await ctx.ui.press('overworld-browse:shoes');await adventureStep(ctx,15);finishAnimations();
+ ctx.render.stats({width:1280,height:720});
+ const selected=drawnRect('overworld-browse:shoes.selection')!;
+ if(!(selected.width>base.width*1.07))throw new Error('Shoe failed to grow: '+JSON.stringify({base,selected,state:desktopState.get().shopItem}));
+ await ctx.ui.press('overworld-browse:pink_candy');await adventureStep(ctx,15);finishAnimations();
+ ctx.render.stats({width:1280,height:720});
+ const restored=drawnRect('overworld-browse:shoes.selection')!;
+ if(!(Math.abs(restored.width-base.width)<1))throw new Error('Shoe failed to settle: '+JSON.stringify({base,selected,restored}));
 },{scene,memory:'phone-low'});

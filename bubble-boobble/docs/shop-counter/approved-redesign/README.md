@@ -1,5 +1,7 @@
 # Approved close-counter shop
 
+Current behavior: bought powers now stack automatically; see [stacking feedback](../stacking-feedback.md). The single-slot/equip references below describe the earlier iteration.
+
 The user approved `reference.png` and explicitly requested this composition, blinking, and separate layers so the shopkeeper can hide behind the desk. This replaces the previous centered merchant / parchment-panel implementation.
 
 ## Runtime layers, back to front

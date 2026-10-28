@@ -93,29 +93,28 @@ declare module '@gameengine/ui' {
      *   - `description`: text, default ""
      *   - `consequence`: text, default ""
      *   - `actionLabel`: text, default ""
-     *   - `equippedLabel`: text, default ""
      *   - `status`: text, default ""
      *   - `actionEnabled`: yesno, default false
      *   - `actionUnavailable`: yesno, default false
-     *   - `hasEquipped`: yesno, default false
      *   - `backFocused`: yesno, default false
-     *   - `removeFocused`: yesno, default false
      *   - `helpFocused`: yesno, default false
      *   - `helpOpen`: yesno, default false
      *   - `showStatus`: yesno, default false
-     *   - `equippedArt`: image, default "cartoon/frames/item/yellow_candy"
      *   - `products`: list of shop-product
      *   - `merchantNod`: trigger (a counter: each change fires it)
      *   - `layout`: enum landscape | tablet | portrait, default "landscape"
      *   - `ownerHidden`: yesno, default false
-     * Events: `press (<item>)`, `back`, `remove`, `help`
+     *   - `stackLabel`: text, default "STARTING POWERS"
+     *   - `activePowers`: list of shop-power-token
+     *   - `showOwned`: yesno, default false
+     * Events: `press (<item>)`, `back`, `help`
      * Code areas: `merchant`, `action`
-     * Refs: `back`, `remove`, `help`
+     * Refs: `back`, `help`
      */
     'adventure-shop': {
-      props: { coins: string | { loc: string } | LocText; name: string | { loc: string } | LocText; description: string | { loc: string } | LocText; consequence: string | { loc: string } | LocText; actionLabel: string | { loc: string } | LocText; equippedLabel: string | { loc: string } | LocText; status: string | { loc: string } | LocText; actionEnabled: boolean; actionUnavailable: boolean; hasEquipped: boolean; backFocused: boolean; removeFocused: boolean; helpFocused: boolean; helpOpen: boolean; showStatus: boolean; equippedArt: string; products: readonly { key: string; illustration?: string; price?: string | { loc: string } | LocText; label?: string | { loc: string } | LocText; selected?: boolean; focused?: boolean; equipped?: boolean; large?: boolean; showCoin?: boolean }[]; merchantNod: number; layout: 'landscape' | 'tablet' | 'portrait'; ownerHidden: boolean };
+      props: { coins: string | { loc: string } | LocText; name: string | { loc: string } | LocText; description: string | { loc: string } | LocText; consequence: string | { loc: string } | LocText; actionLabel: string | { loc: string } | LocText; status: string | { loc: string } | LocText; actionEnabled: boolean; actionUnavailable: boolean; backFocused: boolean; helpFocused: boolean; helpOpen: boolean; showStatus: boolean; products: readonly { key: string; illustration?: string; price?: string | { loc: string } | LocText; label?: string | { loc: string } | LocText; selected?: boolean; focused?: boolean; large?: boolean; showCoin?: boolean; owned?: boolean }[]; merchantNod: number; layout: 'landscape' | 'tablet' | 'portrait'; ownerHidden: boolean; stackLabel: string | { loc: string } | LocText; activePowers: readonly { key: string; illustration?: string }[]; showOwned: boolean };
       areas: 'merchant' | 'action';
-      refs: 'back' | 'remove' | 'help';
+      refs: 'back' | 'help';
     };
     /**
      * Adventure shop item: a widget, button (ui/docs/adventure-shop-item.ui.json)
@@ -1459,6 +1458,20 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Starting power token: a widget (ui/docs/shop-power-token.ui.json)
+     *
+     * Properties:
+     *   - `illustration`: image, default "cartoon/frames/item/pink_candy"
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'shop-power-token': {
+      props: { illustration: string };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Counter merchandise: a widget, button (ui/docs/shop-product.ui.json)
      *
      * Properties:
@@ -1467,17 +1480,17 @@ declare module '@gameengine/ui' {
      *   - `label`: text, default ""
      *   - `selected`: yesno, default false
      *   - `focused`: yesno, default false
-     *   - `equipped`: yesno, default false
      *   - `large`: yesno, default false
      *   - `showCoin`: yesno, default true
+     *   - `owned`: yesno, default false
      * Events: `<id>`
      * Code areas: none
-     * Refs: none
+     * Refs: `selection`, `art`
      */
     'shop-product': {
-      props: { illustration: string; price: string | { loc: string } | LocText; label: string | { loc: string } | LocText; selected: boolean; focused: boolean; equipped: boolean; large: boolean; showCoin: boolean };
+      props: { illustration: string; price: string | { loc: string } | LocText; label: string | { loc: string } | LocText; selected: boolean; focused: boolean; large: boolean; showCoin: boolean; owned: boolean };
       areas: never;
-      refs: never;
+      refs: 'selection' | 'art';
     };
     /**
      * Story hud: a view (ui/docs/story-hud.ui.json)

@@ -1,0 +1,56 @@
+{
+  "$schemaVersion": 1,
+  "guid": "b628ee81-4174-4ee2-a499-3f479c524dcc",
+  "name": "shop-power-token",
+  "title": "Starting power token",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "art",
+        "active"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 46,
+        "h": 42
+      }
+    },
+    "art": {
+      "type": "icon",
+      "image": "cartoon/frames/item/pink_candy",
+      "property": "illustration",
+      "style": {
+        "w": 38,
+        "h": 38
+      }
+    },
+    "active": {
+      "type": "icon",
+      "image": "cartoon/shop/active-marker",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "pivot": [
+          1,
+          1
+        ],
+        "w": 17,
+        "h": 17,
+        "attach": true
+      }
+    }
+  },
+  "behaviour": "none",
+  "properties": {
+    "illustration": {
+      "type": "image",
+      "default": "cartoon/frames/item/pink_candy"
+    }
+  }
+}

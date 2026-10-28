@@ -87,14 +87,10 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action.startsWith('overworld-buy:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
   const id=action.slice(14),item=[...adventureShop,...adventurePowerShop].find(i=>i.id===id);
   desktopSaveState.dispatch('adventurePurchase',{profileIndex,id},now);
-  patch({shopReaction:item&&!progress.purchases[id]&&progress.coins>=item.price?(s.shopReaction??0)+1:s.shopReaction??0,panelMessage:item?(progress.purchases[id]?'Already owned.':progress.coins<item.price?'You need more coins.':adventurePowerShop.some(power=>power.id===id)?`${item.name} unlocked and equipped.`:'Keepsake added to your Adventure journal.'):'Unknown item.'});return true;
+  patch({shopReaction:item&&!progress.purchases[id]&&progress.coins>=item.price?(s.shopReaction??0)+1:s.shopReaction??0,panelMessage:item?(progress.purchases[id]?'Already owned.':progress.coins<item.price?'You need more coins.':adventurePowerShop.some(power=>power.id===id)?`${item.name} bought. All your powers work together.`:'Keepsake added to your Adventure journal.'):'Unknown item.'});return true;
  }
- if(action.startsWith('overworld-equip:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
-  const id=action.slice(16),power=adventurePowerShop.find(item=>item.id===id);
-  if(id!=='none'&&(!power||!progress.purchases[id])){patch({panelMessage:'Buy this power before equipping it.'});return true;}
-  desktopSaveState.dispatch('adventureEquip',{profileIndex,id:id==='none'?null:id},now);
-  patch({shopReaction:(s.shopReaction??0)+1,panelMessage:id==='none'?'Starting power removed.':`${power!.name} equipped for each new encounter and retry.`,...(id==='none'?{selected:4}:{})});return true;
- }
+ // Ignore obsolete equip/unequip intents: all purchased powers now stack automatically.
+ if(action.startsWith('overworld-equip:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??''))return true;
  if(action.startsWith('overworld-travel:')&&map.active&&s.screen==='overworld-panel'&&['gate','journal'].includes(s.overworldPanel??'')){
   const id=action.slice(17);if(!availableDistrict(id,progress))return true;
   enterOverworld(id);const at=overworldState.get();desktopSaveState.dispatch('adventureAnchor',{profileIndex,districtId:id,x:at.x,y:at.y},now);

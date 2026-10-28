@@ -12,8 +12,9 @@ export interface AdventureProgress {
   rewardClaims:Record<string,true>;
   coins:number;
   nextAttempt:number;
-  pending:{id:string;encounterId:string;startingPower:AdventurePowerId|null}|null;
+  pending:{id:string;encounterId:string;startingPower:AdventurePowerId|null;startingPowers?:AdventurePowerId[]}|null;
   purchases:Record<string,true>;
+  /** Legacy save field. New encounters use the complete purchased-power set. */
   equippedPower:AdventurePowerId|null;
 }
 export interface AdventureCompletion { encounterId:string; attemptId:string; score:number }
@@ -26,6 +27,15 @@ export const adventureForProfile = (profile:{adventure?:AdventureProgress}):Adve
 const integer=(value:number)=>Number.isSafeInteger(value)&&value>=0;
 const knownKeys=(record:object,known:(key:string)=>boolean)=>Object.keys(record).every(known);
 const record=(value:unknown):value is Record<string,unknown>=>!!value&&typeof value==='object'&&!Array.isArray(value);
+function validPendingAdventure(progress:AdventureProgress):boolean {
+ const pending=progress.pending;
+ if(pending===null)return true;
+ if(!record(pending)||!encounterById(pending.encounterId)||pending.id!==`attempt-${progress.nextAttempt-1}`)return false;
+ const old=pending.startingPower;
+ if(old!==null&&(!adventurePowerShop.some(item=>item.id===old)||!progress.purchases[old]))return false;
+ const powers=pending.startingPowers;
+ return powers===undefined||Array.isArray(powers)&&powers.length<=adventurePowerShop.length&&new Set(powers).size===powers.length&&powers.every(id=>adventurePowerShop.some(item=>item.id===id)&&!!progress.purchases[id]);
+}
 export function validAdventure(progress:AdventureProgress):boolean {
   if(!record(progress) || progress.version!==2 || !record(progress.cleared) || !record(progress.attemptReceipts) || !record(progress.anchor) || !record(progress.discoveredShortcuts) || !record(progress.rewardClaims)||!record(progress.purchases))return false;
   const district=districtById(progress.anchor.districtId);
@@ -33,7 +43,7 @@ export function validAdventure(progress:AdventureProgress):boolean {
     && Number.isFinite(progress.anchor.x)&&Number.isFinite(progress.anchor.y)
     && Math.abs(progress.anchor.x)<=4096&&Math.abs(progress.anchor.y)<=4096
     && integer(progress.coins) && Number.isSafeInteger(progress.nextAttempt)&&progress.nextAttempt>0
-    && (progress.pending===null || (record(progress.pending)&&!!encounterById(progress.pending.encounterId)&&progress.pending.id===`attempt-${progress.nextAttempt-1}`&&(progress.pending.startingPower===null||adventurePowerShop.some(item=>item.id===progress.pending!.startingPower)&&!!progress.purchases[progress.pending.startingPower])))
+    && validPendingAdventure(progress)
     && !!progress.purchases && Object.entries(progress.purchases).every(([key,value])=>([...adventureShop,...adventurePowerShop]).some(item=>item.id===key)&&value===true)
     && (progress.equippedPower===null||adventurePowerShop.some(item=>item.id===progress.equippedPower)&&!!progress.purchases[progress.equippedPower])
     && knownKeys(progress.cleared,key=>!!encounterById(key))
@@ -71,7 +81,7 @@ export const adventureCleared = (progress:AdventureProgress):number => encounter
 
 export function beginAdventureAttempt(progress:AdventureProgress,encounterId:string):AdventureProgress {
   if(!availableEncounter(encounterId,progress)||progress.nextAttempt>=Number.MAX_SAFE_INTEGER)return progress;
-  return {...progress,nextAttempt:progress.nextAttempt+1,pending:{id:`attempt-${progress.nextAttempt}`,encounterId,startingPower:progress.equippedPower}};
+  return {...progress,nextAttempt:progress.nextAttempt+1,pending:{id:`attempt-${progress.nextAttempt}`,encounterId,startingPower:null,startingPowers:adventureStartingPowers(progress)}};
 }
 export const abandonAdventureAttempt = (progress:AdventureProgress):AdventureProgress => progress.pending?{...progress,pending:null}:progress;
 export const adventureShop = [
@@ -85,16 +95,20 @@ export const adventurePowerShop = [
   {id:'shoes',name:'Shoes',price:25,power:'Shoes',description:'Faster movement.'},
 ] as const;
 export type AdventurePowerId = typeof adventurePowerShop[number]['id'];
-/** Change the next attempt only; a pending attempt owns its captured starting power. */
-export function equipAdventurePower(progress:AdventureProgress,id:string|null):AdventureProgress {
-  if(id!==null&&(!adventurePowerShop.some(item=>item.id===id)||!progress.purchases[id]))return progress;
-  if(progress.equippedPower===id)return progress;
-  return {...progress,equippedPower:id as AdventurePowerId|null};
+/** Every purchased upgrade is automatically active; catalog order keeps receipts stable. */
+export function adventureStartingPowers(progress:AdventureProgress):AdventurePowerId[] {
+ return adventurePowerShop.filter(item=>progress.purchases[item.id]).map(item=>item.id);
 }
+/** Older pending attempts retain their original single-power receipt. */
+export function attemptStartingPowers(pending:NonNullable<AdventureProgress['pending']>):AdventurePowerId[] {
+ return pending.startingPowers??(pending.startingPower?[pending.startingPower]:[]);
+}
+/** Retained for old recorded intents/save actions; powers are no longer individually equipped. */
+export function equipAdventurePower(progress:AdventureProgress,_id:string|null):AdventureProgress { return progress; }
 export function purchaseAdventureItem(progress:AdventureProgress,id:string):AdventureProgress {
   const item=[...adventureShop,...adventurePowerShop].find(value=>value.id===id);
   if(!item||progress.purchases[id]||progress.coins<item.price)return progress;
-  return {...progress,coins:progress.coins-item.price,purchases:{...progress.purchases,[id]:true},equippedPower:adventurePowerShop.some(power=>power.id===id)?id as AdventurePowerId:progress.equippedPower};
+  return {...progress,coins:progress.coins-item.price,purchases:{...progress.purchases,[id]:true}};
 }
 export function claimAdventureGuideReward(progress:AdventureProgress):AdventureProgress {
   if(adventureCleared(progress)<3||progress.rewardClaims['guide-three-clears'])return progress;
