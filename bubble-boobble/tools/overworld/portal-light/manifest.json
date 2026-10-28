@@ -1,0 +1,155 @@
+{
+  "coordinateSpace" : "1254px original paintings",
+  "generator" : "swift tools\/overworld\/build-portal-light.swift",
+  "masksSha256" : "423e6d035dad7d1a7848fa2697641a8267b65c6830c742b69c877fd29186aa23",
+  "method" : "Source-registered procedural VFX illumination masks, no source image editing",
+  "outputs" : [
+    {
+      "path" : "assets\/overworld-living\/district-1\/portal-light-interior.png",
+      "sha256" : "fff60c58fae2049d53219b553ccbb5291a553c063803159ad345a79b77b1c2c6",
+      "size" : [
+        126,
+        138
+      ],
+      "sourceRect" : [
+        904,
+        72,
+        63,
+        69
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-1\/portal-light-spill.png",
+      "sha256" : "fc3dc61cba408dd2c9fd3b0673f6ab3db3ec07f696533bc06bbd966c77601685",
+      "size" : [
+        212,
+        190
+      ],
+      "sourceRect" : [
+        906,
+        129,
+        106,
+        95
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-2\/portal-light-interior.png",
+      "sha256" : "212b1aa2a54d5ebd2edadea92f7754b4cbdbb8c6d743ecf8cc5e5e337e91790e",
+      "size" : [
+        114,
+        120
+      ],
+      "sourceRect" : [
+        936,
+        162,
+        57,
+        60
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-2\/portal-light-spill.png",
+      "sha256" : "95a4e80f22cd2287f49512d502b2402489e98e933d388998d0c05eb0cba23d12",
+      "size" : [
+        180,
+        130
+      ],
+      "sourceRect" : [
+        926,
+        208,
+        90,
+        65
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-3\/portal-light-interior.png",
+      "sha256" : "a24dec5ffd976060cad18dec5fb2caa341db7d064e1ebb5a05bdaf6c3a470716",
+      "size" : [
+        132,
+        114
+      ],
+      "sourceRect" : [
+        1107,
+        369,
+        66,
+        57
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-3\/portal-light-spill.png",
+      "sha256" : "0e43a19fa809669872ab2c672d33b0cd3ebf09f5eb98ece4a7f7220b04dbbb3e",
+      "size" : [
+        208,
+        110
+      ],
+      "sourceRect" : [
+        1098,
+        414,
+        104,
+        55
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-4\/portal-light-interior.png",
+      "sha256" : "9fdeadc7d72d1dcf64852ce44ad08228613059b8972e430319b9dfc28d90faf4",
+      "size" : [
+        140,
+        166
+      ],
+      "sourceRect" : [
+        984,
+        120,
+        70,
+        83
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-4\/portal-light-spill.png",
+      "sha256" : "dc9f760023b4b9cfafe80c2cfcd616bc2c1fda3548f388910dc5c4ce60210bdf",
+      "size" : [
+        230,
+        126
+      ],
+      "sourceRect" : [
+        955,
+        219,
+        115,
+        63
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-5\/portal-light-interior.png",
+      "sha256" : "7154f201c537aabd8b8b490b92b05730d6c983ea2e73a6965c6e51f9768ddec9",
+      "size" : [
+        142,
+        132
+      ],
+      "sourceRect" : [
+        687,
+        33,
+        71,
+        66
+      ]
+    },
+    {
+      "path" : "assets\/overworld-living\/district-5\/portal-light-spill.png",
+      "sha256" : "14c19a86781db8e400f493c7284a2cfcf7f7f158124fd962475c8387a07db6e5",
+      "size" : [
+        192,
+        94
+      ],
+      "sourceRect" : [
+        682,
+        161,
+        96,
+        47
+      ]
+    }
+  ],
+  "paintingsSha256" : {
+    "assets\/overworld-original\/district-1\/base.png" : "abead204ffd9af7838b62e0e866076525b7fd6145b4c720f8ccb2c97f8daed21",
+    "assets\/overworld-original\/district-2\/base.png" : "c7860eb06a36551a44f7c58ec9d73eb272efa6dfaab99e6b3cc37ce2bae4a7cc",
+    "assets\/overworld-original\/district-3\/base.png" : "e5d6e2774cf8020ab0ce6b040c7532406d6a5c75961fbea25c524c38b9a33745",
+    "assets\/overworld-original\/district-4\/base.png" : "e51d48628e9d334e7d4ed184041ca89deef703f6c735e833be4e260671a4e1f7",
+    "assets\/overworld-original\/district-5\/base.png" : "e46bd2249c2e0f6263e2083ea45e7d2937eca538f404d612f36cc41a4e2c1e0b"
+  }
+}
