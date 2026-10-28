@@ -6,14 +6,20 @@ import { overworldState, type OverworldFacing } from './state.ts';
 import {advanceMarkerMotion,resumeMarkerCelebration} from './marker-animation';
 import {advanceOverworldFootsteps} from './footsteps';
 import { getOverworldMap, mapBounds } from './maps.ts';
+import {desktopState} from '../desktop/documents';
+import {cartoonFlowTiming} from '../cartoon/flow-timing';
 
 /** Recorded keyboard actions and controller state drive the authoritative walkable avatar. */
 export const OverworldSystem=defineSystem({
   name:'OverworldSystem',after:['DesktopSystem'],query:query(read(ActionState)),events:[DesktopIntent,KeyEvent,LoadingResumed],
   run(ctx,q){
     const s=overworldState.get();if(!s.active)return;
+    const shell=desktopState.get(),returning=!!shell.cartoon&&shell.transitionAction==='leave'&&!!shell.transitionCommitted;
+    // Account for the marker advance on the resume step itself: age zero must
+    // land exactly on the fully revealed frame, rather than one step before it.
+    const revealSteps=returning?Math.max(0,cartoonFlowTiming(!!shell.transitionHasTitle,'leave',shell.partyRun).revealEndAt-(ctx.step-shell.transitionStartedStep!))+1:undefined;
     let markerContext=s.markerMotion;
-    for(const event of ctx.events.read(LoadingResumed))markerContext=resumeMarkerCelebration(markerContext,event.name,s.districtId);
+    for(const event of ctx.events.read(LoadingResumed))markerContext=resumeMarkerCelebration(markerContext,event.name,s.districtId,revealSteps);
     let x=0,y=0,confirm=false,pressed=false,pause=false,confirmKeys=s.confirmKeys;
     for(const c of q.chunks())for(let i=0;i<c.length;i++){
       const a=c.col(ActionState);
@@ -44,7 +50,10 @@ export const OverworldSystem=defineSystem({
     }
     confirm ||= confirmKeys!==0;
     const neutral=!confirm&&!pressed&&!x&&!y;
-    if(s.modal){
+    if(s.modal||returning){
+      // Return input cannot open an invisible modal while DesktopSystem is
+      // rejecting transition intents. Marker time still follows the reveal.
+      if(returning)markerContext=advanceMarkerMotion(markerContext,s.focusedPoi);
       if(markerContext!==s.markerMotion||s.moving||s.inputArmed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys)overworldState.set({...s,moving:false,inputArmed:false,confirmHeld:confirm,confirmKeys,markerMotion:markerContext});
       return;
     }

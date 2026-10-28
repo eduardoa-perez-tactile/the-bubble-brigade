@@ -26,11 +26,11 @@ export function queueMarkerCelebration(motion:MarkerMotion|undefined,encounterId
  const before=motion??initialMarkerMotion();
  return won&&/^encounter-\d+$/.test(encounterId)?{...before,celebrationId:encounterId,celebrationAge:0,celebrationPending:true}:before;
 }
-/** Loading is IO-owned, but its resume is recorded sim input. Keep the queued
- * win intact through the enter fade/IO and leave time for the cover to fade out. */
-export function resumeMarkerCelebration(motion:MarkerMotion|undefined,loadingName:string,districtId:string):MarkerMotion|undefined {
+/** Resume is recorded sim input. Reserve the caller's remaining iris reveal,
+ * or the default loading fade, so the queued win celebrates on the visible map. */
+export function resumeMarkerCelebration(motion:MarkerMotion|undefined,loadingName:string,districtId:string,revealSteps=MARKER_RETURN_REVEAL_STEPS):MarkerMotion|undefined {
  if(!motion?.celebrationPending||loadingName!==`overworld-${districtId}`)return motion;
- return {...motion,celebrationPending:false,celebrationAge:-MARKER_RETURN_REVEAL_STEPS};
+ return {...motion,celebrationPending:false,celebrationAge:-revealSteps};
 }
 function burstFrame(age:number):number {
  let frame=0,until=MARKER_FRAME_HOLDS[0] as number;
