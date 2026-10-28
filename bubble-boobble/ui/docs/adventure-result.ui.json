@@ -33,14 +33,14 @@
         "owd_back"
       ],
       "style": {
-        "pad": 24,
+        "pad": 26,
         "dir": "column",
         "align": "center",
         "gap": 10,
         "w": 570,
         "h": "auto",
-        "bg": "#f0e4c6",
-        "radius": 0
+        "bg": "#f5e9cd",
+        "radius": 18
       }
     },
     "ow_rule": {
@@ -51,7 +51,7 @@
         "pad": 0,
         "w": "100%",
         "h": 3,
-        "bg": "#8c5a35"
+        "bg": "#b88a40"
       }
     },
     "owd_speaker": {
@@ -126,7 +126,29 @@
   },
   "view": {
     "behaviour": "dialog",
-    "dims": true
+    "dims": true,
+    "enter": {
+      "set": {
+        "ow_panel": {
+          "opacity": 0,
+          "ty": 20,
+          "scale": 0.97
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "ow_panel": {
+          "opacity": 0,
+          "ty": 10,
+          "scale": 0.985
+        }
+      },
+      "transition": {
+        "type": "easeOut",
+        "ms": 140
+      }
+    }
   },
   "properties": {
     "speaker": {
@@ -157,6 +179,6 @@
   },
   "transition": {
     "type": "easeOut",
-    "ms": 160
+    "ms": 220
   }
 }

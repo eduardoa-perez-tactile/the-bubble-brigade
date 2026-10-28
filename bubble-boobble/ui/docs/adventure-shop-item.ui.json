@@ -15,7 +15,8 @@
         "pad": 12,
         "gap": 16,
         "align": "center",
-        "bg": "#e6d5ad"
+        "bg": "#e8d5ad",
+        "radius": 8
       },
       "children": [
         "portrait",
@@ -81,10 +82,13 @@
         "yes": {
           "set": {
             "root": {
-              "bg": "#dac18c"
+              "bg": "#245c5b"
             },
             "name": {
-              "color": "#a6472d"
+              "color": "#fff0ca"
+            },
+            "detail": {
+              "color": "#ead7ad"
             }
           }
         }
@@ -101,6 +105,31 @@
     "showArt": {
       "type": "yesno",
       "default": false
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 160
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "bg": "#b9863d",
+          "scale": 0.98
+        }
+      },
+      "transition": {
+        "type": "easeOut",
+        "ms": 90
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.55
+        }
+      }
     }
   }
 }
