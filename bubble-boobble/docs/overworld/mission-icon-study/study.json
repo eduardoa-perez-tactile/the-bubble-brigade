@@ -43,6 +43,11 @@
     ],
     "shopIcon": "bag-and-candy-crest",
     "footsteps": "four authored frames, two alternating foot contacts per32movingsteps, eight direction ground rotation",
-    "verification": "6 focused V8 logic cases and one affected V8 render case;12/14draw peak; broad strict gates deferred under prototype policy"
+    "verification": "7 focused V8 logic cases and one affected V8 render case,581steps,13/14draw peak. Strict broad gates remain opt-in.",
+    "iconVisibleWorldSize": 58,
+    "previousIconWorldSize": 36,
+    "motionCanvasSize": 160,
+    "staticCanvasSize": 128,
+    "animation": "Four authored states,32-step bursts and240-step ambient period; approach once; star celebration waits for map LoadingResumed and cover exit."
   }
 }

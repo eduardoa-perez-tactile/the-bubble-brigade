@@ -64,7 +64,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
   patch({screen:'play',adventure:true,adventureProfile:profileIndex,adventureAttempt:pending.id,adventureEncounter:encounter.id,partyRun:false,custom:false,recorded:false,score:0,round:encounter.level,selected:0,gameplayInputArmed:false,pauseConfirm:''});return true;
  }
  if(action==='leave'&&s.adventure){
-  desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},now);quit();returnToEntrance(s.adventureEncounter!);
+  desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},now);quit();returnToEntrance(s.adventureEncounter!,s.screen==='result'&&s.won);
   patch({screen:'overworld',adventure:false,recorded:true,pauseConfirm:'',selected:0});return true;
  }
  if(action==='overworld-shortcut-travel'&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='shortcut'&&progress.discoveredShortcuts[`${map.districtId}:shortcut`]){

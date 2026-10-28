@@ -5,16 +5,25 @@ import type {AuthoredPaintedSection,AuthoredSpriteSequence,RegisteredAuthoredAss
 import type {OverworldDraw} from './presentation';
 import {encounters,availableEncounter} from './content';
 import type {AdventureProgress} from './progression';
+import {sampleMarkerImage,type MarkerMotion} from './marker-animation';
 
 /** Original scenery stays fixed. Authored coast drawings and approved crests
  * stay registered to the existing painting. */
 export const LIVING_COAST_HOLDS=[24,8,10,30] as const;
+export const CREST_VISIBLE_SIZE=58;
+export const MOTION_CANVAS_SCALE=1.25;
+/** Motion drawings add a 16px transparent outset around the original 128px body.
+ * The larger canvas preserves body scale and center; only authored art moves. */
+const crestCanvasSize=(image:string)=>CREST_VISIBLE_SIZE*(image.includes('/animated/')?MOTION_CANVAS_SCALE:1);
 const assetKeys=new Set<string>();
 for(const map of overworldMaps){
  assetKeys.add(`overworld-living/${map.districtId}/coast-clean`);
  for(let frame=0;frame<4;frame++)assetKeys.add(`overworld-living/${map.districtId}/coast-${frame}`);
 }
-for(const state of ['available','locked','cleared','shop'])assetKeys.add(`overworld-living/common/markers/${state}`);
+for(const state of ['available','locked','cleared','shop']){
+ assetKeys.add(`overworld-living/common/markers/${state}`);
+ for(let frame=1;frame<=3;frame++)assetKeys.add(`overworld-living/common/markers/animated/${state}-${frame}`);
+}
 for(let frame=0;frame<4;frame++)assetKeys.add(`overworld-living/common/footsteps/puff-${frame}`);
 const sequence=(prefix:string,holds:readonly number[]):AuthoredSpriteSequence=>({
  frames:holds.map((steps,index)=>({image:`${prefix}-${index}`,steps})),restFrame:0,playback:'loop',
@@ -44,18 +53,20 @@ const shopAnchors:Readonly<Record<string,readonly[number,number]>>={
  'district-1':[793,948], 'district-2':[218,928], 'district-3':[843,897],
  'district-4':[841,956], 'district-5':[834,987],
 };
-export function livingShopDraws(districtId:string):OverworldDraw[]{
+export function livingShopDraws(districtId:string,motion?:MarkerMotion,reducedEffects=false):OverworldDraw[]{
  const map=getOverworldMap(districtId),source=shopAnchors[districtId]!;
  const point=sourceToWorld(map,{x:source[0]*1536/1254,y:source[1]*1536/1254});
- return [{image:'overworld-living/common/markers/shop',x:point.x,y:point.y,width:36,height:36,order:3500}];
+ const image=sampleMarkerImage('shop','vendor',motion,25+overworldMaps.indexOf(map),reducedEffects),size=crestCanvasSize(image);
+ return [{image,x:point.x,y:point.y,width:size,height:size,order:3500}];
 }
 
 /** Approved ink symbols stay registered above the original painted entrance. */
-export function livingMissionMarkerDraws(districtId:string,progress:AdventureProgress):OverworldDraw[]{
+export function livingMissionMarkerDraws(districtId:string,progress:AdventureProgress,motion?:MarkerMotion,reducedEffects=false):OverworldDraw[]{
  const map=getOverworldMap(districtId),local=encounters.filter(e=>e.districtId===districtId&&!e.trial);
  return map.pois.filter(p=>p.kind==='encounter').map(poi=>{
   const encounter=local[poi.slot??0]!,state=progress.cleared[encounter.id]?'cleared':availableEncounter(encounter.id,progress)?'available':'locked';
   const point=sourceToWorld(map,{x:poi.x,y:poi.y-112*1536/1254});
-  return {image:`overworld-living/common/markers/${state}`,x:point.x,y:point.y,width:36,height:36,order:3400};
+  const image=sampleMarkerImage(state,encounter.id,motion,overworldMaps.indexOf(map)*5+(poi.slot??0),reducedEffects),size=crestCanvasSize(image);
+  return {image,x:point.x,y:point.y,width:size,height:size,order:3400};
  });
 }

@@ -44,7 +44,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   sprite('overworld-shared/foreground',point.x,point.y+16,58,36,Math.round(2000-point.y));
  }
  // Preserve every authored part; a full pool is an explicit error, never missing scenery.
- return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId),livingMissionMarkerDraws(s.districtId,p),overworldFootstepDraws(s.footsteps??[],reducedEffects));
+ return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({

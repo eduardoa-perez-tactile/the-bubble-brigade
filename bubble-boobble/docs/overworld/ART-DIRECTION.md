@@ -2,7 +2,10 @@
 
 Current approved direction, 28 October 2026: use the vintage cartoon winged mission
 crests (Ready play symbol, Locked padlock, Completed with three gold stars). Keep
-state symbols prominent at map size. Shops use the matching bag/candy crest. Remove
+state symbols prominent at map size. Mission and shop bodies are 58 world units
+(about 61% larger than the previous 36), with hand-drawn wing/lock/star/bag poses,
+short staggered Ready/shop bursts and single approach/return reactions. Preserve
+rest drawings; transparent motion outsets keep wing tips whole and body scale fixed. Shops use the matching bag/candy crest. Remove
 world NPC actors, resident shadows and floating map labels. Keep original map
 paintings, geography and existing coastline drawings intact. Guide information and
 its saved three-clear reward live in the journal, with no invisible NPC interaction.
