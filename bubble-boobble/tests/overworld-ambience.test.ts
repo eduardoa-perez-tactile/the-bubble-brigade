@@ -19,8 +19,9 @@ worldTest('overworld ambience animates still maps with bounded effects and hones
   expect(overworldAmbientDraws(s.districtId,0)).not.toEqual(overworldAmbientDraws(s.districtId,35));
   const still=overworldDrawPlan(s,progress,'green',0),later=overworldDrawPlan(s,progress,'green',125);
   expect(still.filter(d=>d.image?.includes('/npc/'))).toEqual(later.filter(d=>d.image?.includes('/npc/')));
-  expect(still.filter(d=>d.image?.includes('/npc/')).length).toBe(3);
-  expect(still.some(d=>d.text==='SHOP')).toBe(true);
+  expect(still.filter(d=>d.image?.includes('/npc/')).length).toBe(0);
+  expect(still.some(d=>d.image==='overworld-living/common/markers/shop')).toBe(true);
+  expect(still.some(d=>!!d.text)).toBe(false);
   expect(still.some(d=>d.image?.includes('cleared-flag')||d.image?.includes('lantern-beam')||d.image?.includes('dust-puff')||d.image?.includes('cloth/pennant'))).toBe(false);
   expect(still.find(d=>d.image?.includes('dragon-oblique/green/'))!.width).toBe(48);
   expect(overworldDrawPlan(s,progress,'green',0,true)).toEqual(overworldDrawPlan(s,progress,'green',200,true));

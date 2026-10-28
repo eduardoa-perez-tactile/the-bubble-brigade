@@ -1,8 +1,18 @@
 # Original Brigade overworld direction
 
+Current approved direction, 28 October 2026: use the vintage cartoon winged mission
+crests (Ready play symbol, Locked padlock, Completed with three gold stars). Keep
+state symbols prominent at map size. Shops use the matching bag/candy crest. Remove
+world NPC actors, resident shadows and floating map labels. Keep original map
+paintings, geography and existing coastline drawings intact. Guide information and
+its saved three-clear reward live in the journal, with no invisible NPC interaction.
+Walking puffs use authored cream/ochre sprite frames at actual foot contacts, oriented
+on the isometric ground plane for the captured travel direction; no continuous emitter.
+
+
 Current user correction, 27 October 2026: **the shipped game artwork is the visual reference; the linked art guide is out of date.** Match the existing dragon, residents, illustrated items, title lettering and painted district scenery directly. Review new art beside the real player on an unchanged map. Do not treat compliance with the older PDF palette or example glyphs as artistic approval.
 
-Rejected mission-marker studies used generic polished UI symbols and sticker borders. They are not production art. New mission indicators require fresh in-context samples and explicit user approval. Existing paintings and geography stay fixed. Residents use their accepted existing idle drawings on clear paving; the added lighthouse and door-leaf overlays are removed. The opening is a closed curtain alone, with title and dragon visible only in the main menu revealed behind it.
+Rejected mission-marker studies used generic polished UI symbols and sticker borders. They are not production art. New mission indicators require fresh in-context samples and explicit user approval. Existing paintings and geography stay fixed. The earlier resident idle drawings are superseded by the approved NPC removal; the added lighthouse and door-leaf overlays are removed. The opening is a closed curtain alone, with title and dragon visible only in the main menu revealed behind it.
 
 ## Earlier integration direction
 

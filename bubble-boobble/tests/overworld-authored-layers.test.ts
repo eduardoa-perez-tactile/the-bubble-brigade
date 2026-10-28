@@ -62,12 +62,12 @@ worldTest('authored overworld pool retains every ambient part across all five di
   const progress=initialAdventure();
   for(let slot=0;slot<5;slot++)if(cleared&(1<<slot))progress.cleared[`encounter-${(district-1)*5+slot+1}`]={bestScore:10,clears:1};
   const state={...initialOverworldState,active:true,districtId:`district-${district}`,moving:true};
-  // Sample every coast, lantern and resident hold across all district clear states.
+  // Sample every coast hold and crest state across all district clear states.
   for(let tick=0;tick<1200;tick+=7){
    const draws=overworldDrawPlan({...state,walkTick:tick},progress,'green',tick);peak=Math.max(peak,draws.length);
    expect(draws.length<=OVERWORLD_VISUAL_CAPACITY).toBe(true);
    expect(draws.filter(draw=>draw.image?.startsWith(`overworld-living/district-${district}/coast`)).length).toBe(2);
-   expect(draws.filter(draw=>draw.image?.includes('/npc/')).length).toBe(3);
+   expect(draws.filter(draw=>draw.image?.includes('/npc/')).length).toBe(0);
    expect(draws.filter(draw=>draw.image==='overworld-shared/ambient/wave'||draw.image==='overworld-shared/ambient/steam').length).toBe(0);
   }
  }

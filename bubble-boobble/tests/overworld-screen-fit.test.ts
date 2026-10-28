@@ -89,7 +89,7 @@ renderTest('overworld source HUD locked card and guide keep safe touch targets a
   expect(locked.some(b=>b.label==='PLAY ENCOUNTER')).toBe(false);
   if(width===360)ctx.render.expectScreenshot('slim-locked-card',{width,height});
   await intent(ctx,'overworld-back');
-  await inspect(ctx,'guide');expect(desktopState.get().overworldPanel).toBe('guide');
+  await intent(ctx,'overworld-journal');expect(desktopState.get().overworldPanel).toBe('journal');
   ctx.render.stats({width,height});assertButtons(ctx,width,height,safe,2);
   if(width===360)ctx.render.expectScreenshot('slim-guide',{width,height});
   await intent(ctx,'overworld-back');

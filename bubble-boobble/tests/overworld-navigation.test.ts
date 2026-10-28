@@ -49,6 +49,7 @@ worldTest('overworld all source-map landmarks connect to their scenic district s
     }
     const worldPoints=queue.map(point=>sourceToWorld(map,point));
     for(const poi of overworldPois(district.id)){
+      if(poi.kind==='guide')continue; // Retained source metadata has no map interaction.
       if(!worldPoints.some(point=>(point.x-poi.x)**2+(point.y-poi.y)**2<=poi.radius**2&&focusedOverworldPoi(district.id,point.x,point.y)===poi.id))failures.push(`${district.id} ${poi.id}: unreachable within trigger`);
       if(poi.kind==='trial'){
         const approach=overworldEntrancePoint(district.id,`trial-${district.index+1}`);
@@ -69,6 +70,7 @@ worldTest('overworld source POIs keep stable encounter IDs and source-scaled pro
     const pois=overworldPois(district.id);
     expect(pois.filter(poi=>poi.kind==='encounter').map(poi=>poi.id)).toEqual(district.encounterIds);
     for(const poi of pois){
+      if(poi.kind==='guide')continue;
       const approach=overworldEntrancePoint(district.id,poi.id);
       expect(focusedOverworldPoi(district.id,approach.x,approach.y)).toBe(poi.id);
       expect(poi.radius).toBeGreaterThan(0);

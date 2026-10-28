@@ -3,6 +3,7 @@ import { DesktopIntent, OverworldAvatar } from '../schema.gen.ts';
 import { partyPads } from '../arcade/party-input.ts';
 import { focusedOverworldPoi, moveOverworld } from './navigation.ts';
 import { overworldState, type OverworldFacing } from './state.ts';
+import {advanceOverworldFootsteps} from './footsteps';
 import { getOverworldMap, mapBounds } from './maps.ts';
 
 /** Recorded keyboard actions and controller state drive the authoritative walkable avatar. */
@@ -55,9 +56,11 @@ export const OverworldSystem=defineSystem({
     const shortcutLatched=focusedPoi==='shortcut';
     if(shortcutLatched&&!s.shortcutLatched)ctx.events.emit(DesktopIntent,{action:'overworld-shortcut',value:'shortcut',index:0,x:0,y:0});
     const interact=armed&&s.inputArmed&&focusedPoi&&(pressed||confirm&&!s.confirmHeld);
+    const walkTick=moving?s.walkTick+1:s.walkTick;
+    const footsteps=advanceOverworldFootsteps(s.footsteps??[],s,point,walkTick,facing,!!interact);
     // Count walk frames only while walking, letting idle map scenes settle completely.
-    if(moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
-      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick:moving?s.walkTick+1:s.walkTick,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
+    if(s.footsteps?.length||footsteps.length||moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
+      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick,footsteps,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
     if(interact)ctx.events.emit(DesktopIntent,{action:'overworld-interact',value:focusedPoi,index:0,x:0,y:0});
   },
 });
