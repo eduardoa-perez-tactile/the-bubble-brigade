@@ -10,8 +10,9 @@ import {livingResidentDraws,livingShopDraws,livingMissionMarkerDraws} from './li
 import {encounters,availableEncounter} from './content';
 import {adventureForProfile,type AdventureProgress} from './progression';
 import {desktopSaveState} from '../desktop/save';
+import {portalLightDraws} from './portal-light';
 
-export interface OverworldDraw {image?:string;text?:string;x:number;y:number;width:number;height:number;order:number;color?:readonly[number,number,number,number];flip?:boolean;fontSize?:number;rotation?:readonly[number,number,number,number]}
+export interface OverworldDraw {image?:string;text?:string;x:number;y:number;width:number;height:number;order:number;color?:readonly[number,number,number,number];blend?:'Alpha'|'Additive';flip?:boolean;fontSize?:number;rotation?:readonly[number,number,number,number]}
 export const OVERWORLD_VISUAL_CAPACITY=48;
 const capacity=OVERWORLD_VISUAL_CAPACITY;
 const ink:[number,number,number,number]=[.16,.12,.08,1];
@@ -51,7 +52,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   }
  }
  // Preserve every authored part; a full pool is an explicit error, never missing scenery.
- return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));
+ return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),portalLightDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({
@@ -72,7 +73,7 @@ export const OverworldPresentation=defineSystem({
    const d=draws[c.col(OverworldVisual).slot[i]!];
    if(!d){if(c.col(Sprite).visible[i])c.setField(Sprite,i,'visible',false);if(c.col(Text2D).visible[i])c.setField(Text2D,i,'visible',false);continue;}
    c.set(VisualOffset,i,{position:[d.x,d.y,0],rotation:d.rotation?[...d.rotation]:[0,0,0,1],scale:[1,1,1]});
-   c.set(Sprite,i,{image:d.image??'',visible:!!d.image,size:[d.width,d.height],anchor:[.5,.5],order:d.order,color:d.color?[...d.color]:[1,1,1,1],flipX:!!d.flip,unlit:true,blend:'Alpha',maskInteraction:'None'});
+   c.set(Sprite,i,{image:d.image??'',visible:!!d.image,size:[d.width,d.height],anchor:[.5,.5],order:d.order,color:d.color?[...d.color]:[1,1,1,1],flipX:!!d.flip,unlit:true,blend:d.blend??'Alpha',maskInteraction:'None'});
    c.set(Text2D,i,{visible:!!d.text,text:d.text??'',font:'cartoon/fonts/BreeSerif-Regular',size:d.fontSize??16,align:'Center',color:d.color?[...d.color]:ink,order:d.order});
   }
  },

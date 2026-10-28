@@ -6,6 +6,7 @@ import type {OverworldDraw} from './presentation';
 import {encounters,availableEncounter} from './content';
 import type {AdventureProgress} from './progression';
 import {sampleMarkerImage,type MarkerMotion} from './marker-animation';
+import {portalLightImageKeys} from './portal-light';
 
 /** Original scenery stays fixed. Authored coast drawings and approved crests
  * stay registered to the existing painting. */
@@ -16,6 +17,7 @@ export const MOTION_CANVAS_SCALE=1.25;
  * The larger canvas preserves body scale and center; only authored art moves. */
 const crestCanvasSize=(image:string)=>CREST_VISIBLE_SIZE*(image.includes('/animated/')?MOTION_CANVAS_SCALE:1);
 const assetKeys=new Set<string>();
+for(const image of portalLightImageKeys)assetKeys.add(image);
 for(const map of overworldMaps){
  assetKeys.add(`overworld-living/${map.districtId}/coast-clean`);
  for(let frame=0;frame<4;frame++)assetKeys.add(`overworld-living/${map.districtId}/coast-${frame}`);
@@ -36,7 +38,7 @@ const coastSections:Readonly<Record<string,readonly RegisteredAuthoredAssembly[]
  ];
  return [map.districtId,layers.map(layer=>registerAuthoredAssembly(map,layer,assetKeys))];
 }));
-/** Only accepted coast, crest and authored footstep drawings are prefetched. */
+/** Registered coast, crest, footstep and per-district light drawings. */
 export const livingMapImageKeys:readonly string[]=[...assetKeys];
 export function livingCoastDraws(districtId:string,tick:number,reducedMotion=false):OverworldDraw[]{
  const layers=coastSections[districtId];
