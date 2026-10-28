@@ -3,6 +3,7 @@ import {OverworldVisual} from '../schema.gen';
 import {overworldState,type OverworldState} from './state';
 import {getOverworldMap,sourceToWorld} from './maps';
 import {overworldAmbientDraws} from './ambience';
+import {mapWindStrength} from './map-wind';
 import {overworldFootstepDraws} from './footsteps';
 import {composeBoundedOverworldDraws} from './authored-layers';
 import {livingResidentDraws,livingShopDraws,livingMissionMarkerDraws} from './living-map-visuals';
@@ -40,9 +41,15 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
  sprite(`overworld-shared/dragon-oblique/${avatar}/${s.facing}-${pose}`,s.x,s.y+27,48,61,order);
  // Foreground scenery has its own foot depth; actors can pass behind it.
  const foliage=s.districtId==='district-1'?[[320,947],[817,546],[446,624],[804,206]]:s.districtId==='district-2'?[[380,970],[880,1040],[460,425]]:s.districtId==='district-3'?[[300,870],[845,1030]]:s.districtId==='district-4'?[[350,830],[765,1030]]:[[340,890]];
+ const gust=mapWindStrength(s.districtId,tick,reducedEffects);
  for(const[x,y]of foliage){
   const point=sourceToWorld(map,{x:x!*1536/1254,y:y!*1536/1254});
   sprite('overworld-shared/foreground',point.x,point.y+16,58,36,Math.round(2000-point.y));
+  // A small cosmetic lean follows the gust; foot depth and map geometry stay fixed.
+  if(gust>0){
+   const angle=gust*(.034+.014*Math.sin(tick*.045+x!*.01));
+   out[out.length-1]!.rotation=[0,0,Math.sin(angle/2),Math.cos(angle/2)];
+  }
  }
  // Preserve every authored part; a full pool is an explicit error, never missing scenery.
  return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),portalLightDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));

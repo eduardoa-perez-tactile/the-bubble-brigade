@@ -1,0 +1,164 @@
+{
+  "assets" : [
+    {
+      "bytes" : 113684,
+      "crop" : [
+        85,
+        0,
+        237,
+        1536
+      ],
+      "name" : "wall-stone",
+      "sha256" : "811097a0c94eb96ac260a104939158a62438ba3a23ef745d1a5c4135a693606b",
+      "size" : [
+        96,
+        512
+      ],
+      "source" : "wall-sheet.png"
+    },
+    {
+      "bytes" : 114388,
+      "crop" : [
+        330,
+        0,
+        480,
+        1536
+      ],
+      "name" : "wall-timber",
+      "sha256" : "b7db67a2543f6dc1ea8c8350471854e694dd2a6544f9a2d2b7e8e5645347924f",
+      "size" : [
+        96,
+        512
+      ],
+      "source" : "wall-sheet.png"
+    },
+    {
+      "bytes" : 124186,
+      "crop" : [
+        575,
+        0,
+        715,
+        1536
+      ],
+      "name" : "wall-pipe",
+      "sha256" : "0fc7076e6ed523368f05cd0a4413de0e29a88fdc93f7f5de8527af30806e3a54",
+      "size" : [
+        96,
+        512
+      ],
+      "source" : "wall-sheet.png"
+    },
+    {
+      "bytes" : 132845,
+      "crop" : [
+        815,
+        0,
+        952,
+        1536
+      ],
+      "name" : "wall-vegetation",
+      "sha256" : "c1a9f3496be876e3096a39acb7c495be5ba28694c70aa686c9bc6020b11f27da",
+      "size" : [
+        96,
+        512
+      ],
+      "source" : "wall-sheet.png"
+    },
+    {
+      "bytes" : 31284,
+      "crop" : [
+        500,
+        180,
+        1000,
+        269
+      ],
+      "name" : "foundation-stone",
+      "sha256" : "1d7d854c0d35cf2ca4aaf45d841fceecf113fcd95055be201ab404da50e4f5da",
+      "size" : [
+        256,
+        48
+      ],
+      "source" : "foundation-sheet.png"
+    },
+    {
+      "bytes" : 29329,
+      "crop" : [
+        400,
+        355,
+        1040,
+        489
+      ],
+      "name" : "foundation-timber",
+      "sha256" : "651fd97b820997f8ed5bba41b7fc8f9b3d857c08c2e0a98b350c45c5f75afadc",
+      "size" : [
+        256,
+        48
+      ],
+      "source" : "foundation-sheet.png"
+    },
+    {
+      "bytes" : 32590,
+      "crop" : [
+        320,
+        573,
+        1120,
+        738
+      ],
+      "name" : "foundation-pipe",
+      "sha256" : "9e11c478e939b63248836dec6fc331236682e3fe06c30662801d776cf0e117d8",
+      "size" : [
+        256,
+        48
+      ],
+      "source" : "foundation-sheet.png"
+    },
+    {
+      "bytes" : 33282,
+      "crop" : [
+        400,
+        822,
+        1040,
+        967
+      ],
+      "name" : "foundation-vegetation",
+      "sha256" : "fcbecae48e475b3d629da85288b7a592465d53ae921941add50c5f7fe0e1d62f",
+      "size" : [
+        256,
+        48
+      ],
+      "source" : "foundation-sheet.png"
+    },
+    {
+      "bytes" : 13426,
+      "crop" : [
+        245,
+        382,
+        775,
+        1177
+      ],
+      "name" : "emitter-bubble",
+      "sha256" : "71d10e3048d4417c8455791709c009a01de1351c7b64c78834d6b1368856768e",
+      "size" : [
+        64,
+        96
+      ],
+      "source" : "emitter-source.png"
+    }
+  ],
+  "generator" : "built-in image_gen",
+  "import" : "CoreGraphics rectangular crop and high-quality downsample only; preserve alpha, no redraw or keying",
+  "sources" : [
+    {
+      "file" : "wall-sheet.png",
+      "sha256" : "b4747731231407a12d02ee3a046a4f1c1760be0a3a7ae1c726b666d3b3805fe9"
+    },
+    {
+      "file" : "foundation-sheet.png",
+      "sha256" : "e9794a8f6d43b7e4dea7f00df757af9fe029291e1b582942aab7b6c781d0b59e"
+    },
+    {
+      "file" : "emitter-source.png",
+      "sha256" : "6c930c52e5a28121e5cf496da18a8add06a046539dbe2de4061a8288114606ea"
+    }
+  ]
+}
