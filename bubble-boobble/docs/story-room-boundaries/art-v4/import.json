@@ -1,0 +1,39 @@
+{
+  "anchors" : {
+    "commonLeftInnerFace" : 380,
+    "commonRightInnerFace" : 1295,
+    "designLeftInnerFace" : 387,
+    "designRightInnerFace" : 1285,
+    "floorFeet" : 777
+  },
+  "assets" : [
+    {
+      "bytes" : 129761,
+      "crop" : [
+        387,
+        777,
+        1285,
+        854
+      ],
+      "name" : "floor-stone-v4",
+      "sha256" : "7e919cedaa9d14c7337b1723a7a322d31ed794342bf9c11234f5175bf2a9bc2a",
+      "size" : [
+        898,
+        77
+      ],
+      "source" : "approved-lighthouse-mockup.png"
+    }
+  ],
+  "generator" : "Original approved mockup; deterministic slicing only",
+  "import" : "Exact rectangular CGImage crop only; no resampling, painting, alpha mask, keying or redraw",
+  "sourceCanvas" : [
+    1672,
+    941
+  ],
+  "sources" : [
+    {
+      "file" : "approved-lighthouse-mockup.png",
+      "sha256" : "83ce17d2dfa9936bb25bea25d6521a73a44340001f5b81373068ff1a5a279362"
+    }
+  ]
+}

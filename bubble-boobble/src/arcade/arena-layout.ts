@@ -20,11 +20,13 @@ export function arenaLayout(level:Level,view:WorldFitView={width:768,height:720,
     const bands=cartoonHudBounds(view),stageTop=bands.top,stageBottom=bands.bottom;
     const compact=compactAdventureFrame(level);
     if(compact){
-      // Fit the authored room, full crown jump, exterior walls and foundation
-      // rather than retaining the courtyard's empty footprint. The bounds are
+      // Fit the full crown jump plus complete exterior silhouettes in landscape.
+      // Portrait retains the inner-band footprint to preserve actor size while
+      // nonessential outer shoulders can bleed. The bounds are
       // fixed for this level/view, so jumping never changes the framing.
       const availableHeight=Math.max(1,stageBottom-stageTop-8);
-      const scale=Math.min((right-left)/compact.framingWidth,availableHeight/(compact.aboveFloor+compact.belowFloor));
+      const framingWidth=view.width>=view.height?compact.fullFramingWidth:compact.framingWidth;
+      const scale=Math.min((right-left)/framingWidth,availableHeight/(compact.aboveFloor+compact.belowFloor));
       const extra=(availableHeight-(compact.aboveFloor+compact.belowFloor)*scale)/2;
       return {x:(left+right-compact.width*scale)/2,y:stageTop+4+extra+compact.aboveFloor*scale,scale,headerBottom:stageTop,
         viewportLeft:384-width/2,viewportRight:384+width/2,viewportTop:360-height/2,viewportBottom:360+height/2};

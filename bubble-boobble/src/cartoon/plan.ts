@@ -3,7 +3,8 @@ import {simplifiedEnemyDraws} from './enemy-motion';
 import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
-import {storyRoomBoundaryDraws} from './room-boundaries';
+import {storyRoomBoundaryDraws,storyRoomHasReferenceFloor} from './room-boundaries';
+import {storyRoomBackgroundGround} from './room-boundary-config';
 import {cartoonHudBounds} from './hud-layout';
 import {cartoonBubbleState} from './bubble-state';
 import {cartoonBubbleShape,cartoonFeedback} from './feedback';
@@ -142,9 +143,22 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     out.push({frame,x:px(x),y:py(feet)-size*layout.scale*120/128,width:size*layout.scale,height:size*layout.scale,flip});
   };
   const viewportWidth=layout.viewportRight-layout.viewportLeft,viewportHeight=layout.viewportBottom-layout.viewportTop;
-  const plateWidth=g.Level.episode?Math.max(viewportWidth,viewportHeight*16/9):viewportWidth;
-  const plateHeight=g.Level.episode?Math.max(viewportHeight,viewportWidth*9/16):viewportHeight;
-  out.push({frame:g.Level.episode?`episode/${g.Level.episode.theme}`:composed?'environment/courtyard-plate':'courtyard',x:layout.viewportLeft+(viewportWidth-plateWidth)/2,y:layout.viewportTop+(viewportHeight-plateHeight)/2,width:plateWidth,height:plateHeight,
+  let plateWidth=g.Level.episode?Math.max(viewportWidth,viewportHeight*16/9):viewportWidth;
+  let plateHeight=g.Level.episode?Math.max(viewportHeight,viewportWidth*9/16):viewportHeight;
+  let plateY=layout.viewportTop+(viewportHeight-plateHeight)/2;
+  const groundRegistration=composed?storyRoomBackgroundGround(g.Level):undefined;
+  if(groundRegistration){
+    // Each painting registers its own foreground ground/deck edge. Cover both
+    // sides of that anchor without moving the collision floor or actors.
+    const floorFeet=(levelRows(g.Level)-1)*24;
+    const ground=py(floorFeet)+groundRegistration.offsetWorld*layout.scale;
+    const ratio=groundRegistration.sourceRatio;
+    plateHeight=Math.max(viewportHeight,viewportWidth*9/16,
+      (ground-layout.viewportTop)/ratio,(layout.viewportBottom-ground)/(1-ratio));
+    plateWidth=plateHeight*16/9;
+    plateY=ground-ratio*plateHeight;
+  }
+  out.push({frame:g.Level.episode?`episode/${g.Level.episode.theme}`:composed?'environment/courtyard-plate':'courtyard',x:layout.viewportLeft+(viewportWidth-plateWidth)/2,y:plateY,width:plateWidth,height:plateHeight,
     ...(composed&&!g.Level.episode?{backgroundTick:reduced?0:Math.max(0,tick),backgroundMotion:!reduced}:{})});
   if(composed&&!g.Level.episode)out.push(...cartoonBackgroundDraws(tick,{x:layout.viewportLeft,y:layout.viewportTop,
     width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop},reduced));
@@ -193,14 +207,18 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   }
   if(g.Level.episode){
     // Platform faces derive from the very same authored tiles used for collision.
-    for(let row=1;row<g.Level.tiles.length;row++)for(let col=2;col<columns-2;){
-      if(!g.Level.tiles[row]![col]||g.Level.tiles[row-1]![col]){col++;continue;}
-      let end=col+1;while(end<columns-2&&g.Level.tiles[row]![end]&&!g.Level.tiles[row-1]![end])end++;
-      const x=col*24,y=row*24,width=(end-col)*24,h=20/(1280/1728),edge=Math.min(32,width/3);
-      add('environment/platform-underside',x,y,width,14);const under=out[out.length-1]!;under.y=py(y)+h*layout.scale;
-      add('environment/platform-cap-end-left',x,y,edge,h);
-      for(let at=x+edge;at<x+width-edge;at+=92)add('environment/platform-cap-repeat',at,y,Math.min(92,x+width-edge-at),h);
-      add('environment/platform-cap-end-right',x+width-edge,y,edge,h);col=end;
+    const referenceFloor=storyRoomHasReferenceFloor(g.Level);
+    for(let row=1;row<g.Level.tiles.length;row++){
+      if(referenceFloor&&row===g.Level.tiles.length-1)continue;
+      for(let col=2;col<columns-2;){
+        if(!g.Level.tiles[row]![col]||g.Level.tiles[row-1]![col]){col++;continue;}
+        let end=col+1;while(end<columns-2&&g.Level.tiles[row]![end]&&!g.Level.tiles[row-1]![end])end++;
+        const x=col*24,y=row*24,width=(end-col)*24,h=20/(1280/1728),edge=Math.min(32,width/3);
+        add('environment/platform-underside',x,y,width,14);const under=out[out.length-1]!;under.y=py(y)+h*layout.scale;
+        add('environment/platform-cap-end-left',x,y,edge,h);
+        for(let at=x+edge;at<x+width-edge;at+=92)add('environment/platform-cap-repeat',at,y,Math.min(92,x+width-edge-at),h);
+        add('environment/platform-cap-end-right',x+width-edge,y,edge,h);col=end;
+      }
     }
   }
   const save=desktopSaveState.get(),avatar=save.profiles[save.active]?.avatar??'green';

@@ -1,0 +1,695 @@
+{
+  "alphaCoverageComparison" : ">=",
+  "alphaCoverageThreshold" : 128,
+  "anchors" : {
+    "bodyLeftInnerFace" : 435,
+    "bodyRightInnerFace" : 1237,
+    "designLeftInnerFace" : 344,
+    "designRightInnerFace" : 1327,
+    "floorFeet" : 777
+  },
+  "assets" : [
+    {
+      "alphaBounds128" : [
+        14,
+        0,
+        298,
+        898
+      ],
+      "alphaClearance128" : [
+        14,
+        0,
+        22,
+        0
+      ],
+      "bytes" : 579747,
+      "changedRGBPixelCount" : 49868,
+      "colorInpaintRegistration" : "clean-registration.json",
+      "crop" : [
+        155,
+        0,
+        475,
+        898
+      ],
+      "destinationSourceRect" : [
+        155,
+        0,
+        475,
+        898
+      ],
+      "name" : "profile-left-pump-reference",
+      "operation" : "registered generated alpha over original RGB; small classified foreground\/HUD occlusions repaired with registered generated foreground RGB",
+      "originalRGBFraction" : 0.79274537617683627,
+      "originalRGBSolidPixelCount" : 144745,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 231986,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 231986,
+      "rgbRepairPolicy" : "source\/generated difference>120 and max(sourceRGB)<160 in foreground base; actor\/HUD color seeds; radius2 dilation, two radius3 box blurs; seeded core retained; RGB only",
+      "rgbRepairWeightMask" : "left-rgb-repair-weights.png",
+      "rgbRepairWeightMaskSourceFrame" : [
+        155,
+        0,
+        475,
+        900
+      ],
+      "role" : "profile",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 251,
+          "rightExclusive" : 428,
+          "y" : 0
+        },
+        {
+          "left" : 250,
+          "rightExclusive" : 428,
+          "y" : 48
+        },
+        {
+          "left" : 250,
+          "rightExclusive" : 428,
+          "y" : 150
+        },
+        {
+          "left" : 250,
+          "rightExclusive" : 428,
+          "y" : 200
+        },
+        {
+          "left" : 236,
+          "rightExclusive" : 438,
+          "y" : 400
+        },
+        {
+          "left" : 229,
+          "rightExclusive" : 439,
+          "y" : 550
+        },
+        {
+          "left" : 230,
+          "rightExclusive" : 432,
+          "y" : 600
+        },
+        {
+          "left" : 213,
+          "rightExclusive" : 440,
+          "y" : 650
+        },
+        {
+          "left" : 202,
+          "rightExclusive" : 443,
+          "y" : 700
+        },
+        {
+          "left" : 201,
+          "rightExclusive" : 437,
+          "y" : 731
+        },
+        {
+          "left" : 199,
+          "rightExclusive" : 449,
+          "y" : 777
+        },
+        {
+          "left" : 177,
+          "rightExclusive" : 446,
+          "y" : 825
+        },
+        {
+          "left" : 175,
+          "rightExclusive" : 436,
+          "y" : 850
+        },
+        {
+          "left" : 361,
+          "rightExclusive" : 438,
+          "y" : 894
+        }
+      ],
+      "sha256" : "5332e180f58a34ee1201087eb804fc8196fcc5c7bf9dc0c77134adbd7d25b185",
+      "side" : "left",
+      "sidePlatformInpaintSourceRect" : [
+        368,
+        635,
+        460,
+        712
+      ],
+      "size" : [
+        320,
+        898
+      ],
+      "solidPixelCount" : 182587,
+      "translucentVisibleFraction" : 0.012221035655130328
+    },
+    {
+      "alphaBounds128" : [
+        11,
+        0,
+        306,
+        898
+      ],
+      "alphaClearance128" : [
+        11,
+        0,
+        14,
+        0
+      ],
+      "bytes" : 577581,
+      "changedRGBPixelCount" : 22326,
+      "colorInpaintRegistration" : "clean-registration.json",
+      "crop" : [
+        1195,
+        0,
+        1515,
+        898
+      ],
+      "destinationSourceRect" : [
+        1195,
+        0,
+        1515,
+        898
+      ],
+      "name" : "profile-right-pump-reference",
+      "operation" : "registered generated alpha over original RGB; small classified foreground\/HUD occlusions repaired with registered generated foreground RGB",
+      "originalRGBFraction" : 0.91347415586493841,
+      "originalRGBSolidPixelCount" : 171249,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 261033,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 261033,
+      "rgbRepairPolicy" : "source\/generated difference>120 and max(sourceRGB)<160 in foreground base; actor\/HUD color seeds; radius2 dilation, two radius3 box blurs; seeded core retained; RGB only",
+      "rgbRepairWeightMask" : "right-rgb-repair-weights.png",
+      "rgbRepairWeightMaskSourceFrame" : [
+        1195,
+        0,
+        1515,
+        900
+      ],
+      "role" : "profile",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 0
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1458,
+          "y" : 48
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 150
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 200
+        },
+        {
+          "left" : 1241,
+          "rightExclusive" : 1437,
+          "y" : 400
+        },
+        {
+          "left" : 1238,
+          "rightExclusive" : 1444,
+          "y" : 550
+        },
+        {
+          "left" : 1245,
+          "rightExclusive" : 1444,
+          "y" : 600
+        },
+        {
+          "left" : 1243,
+          "rightExclusive" : 1461,
+          "y" : 650
+        },
+        {
+          "left" : 1243,
+          "rightExclusive" : 1472,
+          "y" : 700
+        },
+        {
+          "left" : 1227,
+          "rightExclusive" : 1473,
+          "y" : 731
+        },
+        {
+          "left" : 1212,
+          "rightExclusive" : 1475,
+          "y" : 777
+        },
+        {
+          "left" : 1236,
+          "rightExclusive" : 1500,
+          "y" : 825
+        },
+        {
+          "left" : 1243,
+          "rightExclusive" : 1501,
+          "y" : 850
+        },
+        {
+          "left" : 1240,
+          "rightExclusive" : 1419,
+          "y" : 894
+        }
+      ],
+      "sha256" : "1c0df163b180221cf9f26243396088b55e3e58fc44ed7ee0058611f5906fc31c",
+      "side" : "right",
+      "sidePlatformInpaintSourceRect" : [
+        1215,
+        635,
+        1305,
+        712
+      ],
+      "size" : [
+        320,
+        898
+      ],
+      "solidPixelCount" : 187470,
+      "translucentVisibleFraction" : 0.015951277638024626
+    },
+    {
+      "alphaBounds128" : [
+        95,
+        0,
+        275,
+        384
+      ],
+      "alphaClearance128" : [
+        95,
+        0,
+        45,
+        0
+      ],
+      "bytes" : 225109,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        155,
+        0,
+        475,
+        384
+      ],
+      "destinationSourceRect" : [
+        155,
+        -384,
+        475,
+        0
+      ],
+      "name" : "shaft-left-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 68312,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 122880,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 122880,
+      "repeatY" : 8,
+      "role" : "shaft",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 251,
+          "rightExclusive" : 428,
+          "y" : 0
+        },
+        {
+          "left" : 251,
+          "rightExclusive" : 428,
+          "y" : 48
+        },
+        {
+          "left" : 251,
+          "rightExclusive" : 428,
+          "y" : 150
+        },
+        {
+          "left" : 251,
+          "rightExclusive" : 428,
+          "y" : 200
+        }
+      ],
+      "sha256" : "28cb43c3f5e819382a9af3107adc4c3f38ec2fa73235c1d3c5f5cf88f3b1fa62",
+      "side" : "left",
+      "size" : [
+        320,
+        384
+      ],
+      "solidPixelCount" : 68312,
+      "sourceBandRect" : [
+        155,
+        0,
+        475,
+        48
+      ],
+      "translucentVisibleFraction" : 0.010507880910683012
+    },
+    {
+      "alphaBounds128" : [
+        57,
+        0,
+        263,
+        384
+      ],
+      "alphaClearance128" : [
+        57,
+        0,
+        57,
+        0
+      ],
+      "bytes" : 237762,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        1195,
+        0,
+        1515,
+        384
+      ],
+      "destinationSourceRect" : [
+        1195,
+        -384,
+        1515,
+        0
+      ],
+      "name" : "shaft-right-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 75056,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 122880,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 122880,
+      "repeatY" : 8,
+      "role" : "shaft",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 0
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 48
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 150
+        },
+        {
+          "left" : 1253,
+          "rightExclusive" : 1453,
+          "y" : 200
+        }
+      ],
+      "sha256" : "0ab00952f0bc0e936bf2edeaa4f42a0755cc5cd57bc63fa0e474b31ac393e76f",
+      "side" : "right",
+      "size" : [
+        320,
+        384
+      ],
+      "solidPixelCount" : 75056,
+      "sourceBandRect" : [
+        1195,
+        0,
+        1515,
+        48
+      ],
+      "translucentVisibleFraction" : 0.023919915700737617
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        983,
+        118
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 239573,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        344,
+        777,
+        1327,
+        895
+      ],
+      "destinationSourceRect" : [
+        344,
+        777,
+        1327,
+        895
+      ],
+      "name" : "floor-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 115994,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 115994,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 115994,
+      "role" : "floor",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 344,
+          "rightExclusive" : 1327,
+          "y" : 777
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 1327,
+          "y" : 825
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 1327,
+          "y" : 850
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 1327,
+          "y" : 894
+        }
+      ],
+      "sha256" : "90b0b392a9d0709d2bf4e73be4fcc8dd5d6a25089faebdf0ba04f49c45c85f6b",
+      "side" : "center",
+      "size" : [
+        983,
+        118
+      ],
+      "solidPixelCount" : 115994,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        218,
+        118
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 54991,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        344,
+        777,
+        562,
+        895
+      ],
+      "destinationSourceRect" : [
+        344,
+        777,
+        562,
+        895
+      ],
+      "name" : "floor-left-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 25724,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 25724,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 25724,
+      "role" : "floor-left",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 344,
+          "rightExclusive" : 562,
+          "y" : 777
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 562,
+          "y" : 825
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 562,
+          "y" : 850
+        },
+        {
+          "left" : 344,
+          "rightExclusive" : 562,
+          "y" : 894
+        }
+      ],
+      "sha256" : "7d991c03adf9ae704a26f38ee8701a842e66b00a8814bcfae7d847a1b7fb95ac",
+      "side" : "center",
+      "size" : [
+        218,
+        118
+      ],
+      "solidPixelCount" : 25724,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        220,
+        118
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 54066,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        566,
+        777,
+        786,
+        895
+      ],
+      "destinationSourceRect" : [
+        566,
+        777,
+        786,
+        895
+      ],
+      "name" : "floor-center-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 25960,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 25960,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 25960,
+      "role" : "floor-center",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 566,
+          "rightExclusive" : 786,
+          "y" : 777
+        },
+        {
+          "left" : 566,
+          "rightExclusive" : 786,
+          "y" : 825
+        },
+        {
+          "left" : 566,
+          "rightExclusive" : 786,
+          "y" : 850
+        },
+        {
+          "left" : 566,
+          "rightExclusive" : 786,
+          "y" : 894
+        }
+      ],
+      "sha256" : "df13a2bd04f19eba976727013b144eb312ae0bf4fe429fe5f31806d1e889134c",
+      "side" : "center",
+      "size" : [
+        220,
+        118
+      ],
+      "solidPixelCount" : 25960,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        216,
+        118
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 54425,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        1111,
+        777,
+        1327,
+        895
+      ],
+      "destinationSourceRect" : [
+        1111,
+        777,
+        1327,
+        895
+      ],
+      "name" : "floor-right-pump-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 25488,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 25488,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 25488,
+      "role" : "floor-right",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1111,
+          "rightExclusive" : 1327,
+          "y" : 777
+        },
+        {
+          "left" : 1111,
+          "rightExclusive" : 1327,
+          "y" : 825
+        },
+        {
+          "left" : 1111,
+          "rightExclusive" : 1327,
+          "y" : 850
+        },
+        {
+          "left" : 1111,
+          "rightExclusive" : 1327,
+          "y" : 894
+        }
+      ],
+      "sha256" : "9cd4d666906768dcc9bb0fa861aebf5605ebcff4ad542ec478d75e94c23c2deb",
+      "side" : "center",
+      "size" : [
+        216,
+        118
+      ],
+      "solidPixelCount" : 25488,
+      "translucentVisibleFraction" : 0
+    }
+  ],
+  "family" : "pump",
+  "originalRGBSolidFraction" : 0.85390629011206387,
+  "prototypeWorldInnerWidth" : 960,
+  "registration" : "registration.json",
+  "source" : "approved-reference.png",
+  "sourceCanvas" : [
+    1672,
+    941
+  ],
+  "sourceSHA256" : "2fe5cc732f6c27f9cbdab2b43500fe46aa6fb219a1d903a00fd87f6191b0164e"
+}

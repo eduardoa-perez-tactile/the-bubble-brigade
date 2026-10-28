@@ -1,0 +1,9 @@
+guid = "e1a78bd4-a7e5-5f40-b352-e23ffaed2e49"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "story-boundaries-bubble"
+filter = "linear"
+compression = "none"
+trim = false

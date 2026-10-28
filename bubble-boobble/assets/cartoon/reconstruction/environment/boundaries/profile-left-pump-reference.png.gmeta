@@ -1,0 +1,9 @@
+guid = "f26f66d4-831e-5359-8882-f2a091b818f4"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "story-boundaries-pipe"
+filter = "linear"
+compression = "none"
+trim = false

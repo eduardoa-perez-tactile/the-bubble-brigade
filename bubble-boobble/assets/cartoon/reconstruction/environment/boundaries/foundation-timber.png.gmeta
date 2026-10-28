@@ -3,7 +3,7 @@ importer = "texture"
 
 [settings]
 kind = "sprite"
-atlas = "cartoon-reconstruction"
+atlas = "story-boundaries-timber"
 filter = "linear"
 compression = "none"
 trim = false

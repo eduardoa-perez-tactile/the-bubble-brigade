@@ -1,0 +1,713 @@
+{
+  "alphaCoverageComparison" : ">=",
+  "alphaCoverageThreshold" : 128,
+  "alphaGeneration" : "built-in image_gen background extraction; generated RGB discarded",
+  "anchors" : {
+    "designLeftInnerFace" : 387,
+    "designRightInnerFace" : 1285,
+    "floorFeet" : 777
+  },
+  "assets" : [
+    {
+      "alphaBounds128" : [
+        31,
+        0,
+        269,
+        678
+      ],
+      "alphaClearance128" : [
+        31,
+        0,
+        51,
+        0
+      ],
+      "bytes" : 435467,
+      "crop" : [
+        130,
+        0,
+        450,
+        678
+      ],
+      "destinationSourceRect" : [
+        130,
+        0,
+        450,
+        678
+      ],
+      "maskSide" : "left",
+      "name" : "column-left-upper-stone-v5",
+      "operation" : "exact original RGB; imagegen alpha only, feature registered",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : 0
+        },
+        {
+          "left" : 185,
+          "rightExclusive" : 397,
+          "y" : 42
+        },
+        {
+          "left" : 182,
+          "rightExclusive" : 397,
+          "y" : 70
+        },
+        {
+          "left" : 181,
+          "rightExclusive" : 397,
+          "y" : 104
+        },
+        {
+          "left" : 182,
+          "rightExclusive" : 399,
+          "y" : 150
+        },
+        {
+          "left" : 180,
+          "rightExclusive" : 389,
+          "y" : 200
+        },
+        {
+          "left" : 172,
+          "rightExclusive" : 387,
+          "y" : 400
+        },
+        {
+          "left" : 166,
+          "rightExclusive" : 383,
+          "y" : 600
+        },
+        {
+          "left" : 161,
+          "rightExclusive" : 382,
+          "y" : 677
+        }
+      ],
+      "sha256" : "60ec9a26bfe67a40e0fa8180f76175e773f07104c238c835eb7f8f7fd2233a43",
+      "size" : [
+        320,
+        678
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        179,
+        176
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        61,
+        1
+      ],
+      "bytes" : 94299,
+      "crop" : [
+        210,
+        678,
+        450,
+        855
+      ],
+      "destinationSourceRect" : [
+        210,
+        678,
+        450,
+        855
+      ],
+      "maskSide" : "left",
+      "name" : "column-left-lower-stone-v5",
+      "operation" : "exact original RGB; imagegen alpha only, feature registered",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 210,
+          "rightExclusive" : 382,
+          "y" : 678
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 382,
+          "y" : 684
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 382,
+          "y" : 692
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 382,
+          "y" : 700
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 384,
+          "y" : 727
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 387,
+          "y" : 735
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 388,
+          "y" : 736
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 387,
+          "y" : 800
+        },
+        {
+          "left" : 210,
+          "rightExclusive" : 386,
+          "y" : 850
+        }
+      ],
+      "sha256" : "cf71bca42fa745b503c3771f1334f537be6b2eed1da1284cae2f1ee57b59380e",
+      "size" : [
+        240,
+        177
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        37,
+        0,
+        282,
+        855
+      ],
+      "alphaClearance128" : [
+        37,
+        0,
+        38,
+        0
+      ],
+      "bytes" : 550441,
+      "crop" : [
+        1240,
+        0,
+        1560,
+        855
+      ],
+      "destinationSourceRect" : [
+        1240,
+        0,
+        1560,
+        855
+      ],
+      "maskSide" : "right",
+      "name" : "column-right-stone-v5",
+      "operation" : "exact original RGB; imagegen alpha only, feature registered",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : 0
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1501,
+          "y" : 42
+        },
+        {
+          "left" : 1284,
+          "rightExclusive" : 1507,
+          "y" : 70
+        },
+        {
+          "left" : 1284,
+          "rightExclusive" : 1500,
+          "y" : 104
+        },
+        {
+          "left" : 1277,
+          "rightExclusive" : 1495,
+          "y" : 150
+        },
+        {
+          "left" : 1285,
+          "rightExclusive" : 1496,
+          "y" : 200
+        },
+        {
+          "left" : 1287,
+          "rightExclusive" : 1502,
+          "y" : 400
+        },
+        {
+          "left" : 1289,
+          "rightExclusive" : 1507,
+          "y" : 600
+        },
+        {
+          "left" : 1290,
+          "rightExclusive" : 1512,
+          "y" : 677
+        },
+        {
+          "left" : 1290,
+          "rightExclusive" : 1513,
+          "y" : 678
+        },
+        {
+          "left" : 1290,
+          "rightExclusive" : 1515,
+          "y" : 684
+        },
+        {
+          "left" : 1290,
+          "rightExclusive" : 1521,
+          "y" : 692
+        },
+        {
+          "left" : 1290,
+          "rightExclusive" : 1522,
+          "y" : 700
+        },
+        {
+          "left" : 1287,
+          "rightExclusive" : 1518,
+          "y" : 727
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1517,
+          "y" : 735
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1516,
+          "y" : 736
+        },
+        {
+          "left" : 1286,
+          "rightExclusive" : 1515,
+          "y" : 800
+        },
+        {
+          "left" : 1286,
+          "rightExclusive" : 1516,
+          "y" : 850
+        },
+        {
+          "left" : 1287,
+          "rightExclusive" : 1516,
+          "y" : 854
+        }
+      ],
+      "sha256" : "41caac7bcc371bd688cfba9615ea4a8993622d16769f3d764950f9b37d41b6c3",
+      "size" : [
+        320,
+        855
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        2,
+        0,
+        76,
+        58
+      ],
+      "alphaClearance128" : [
+        2,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 11167,
+      "crop" : [
+        210,
+        678,
+        286,
+        736
+      ],
+      "destinationSourceRect" : [
+        144,
+        678,
+        220,
+        736
+      ],
+      "maskSide" : "left",
+      "name" : "moulding-repair-left-stone-v5",
+      "operation" : "original visible source RGB translated uniformly; registered imagegen alpha sampled at destination source coordinates",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 159,
+          "rightExclusive" : 220,
+          "y" : 678
+        },
+        {
+          "left" : 155,
+          "rightExclusive" : 220,
+          "y" : 684
+        },
+        {
+          "left" : 147,
+          "rightExclusive" : 220,
+          "y" : 692
+        },
+        {
+          "left" : 147,
+          "rightExclusive" : 220,
+          "y" : 700
+        },
+        {
+          "left" : 146,
+          "rightExclusive" : 220,
+          "y" : 727
+        },
+        {
+          "left" : 146,
+          "rightExclusive" : 220,
+          "y" : 735
+        }
+      ],
+      "sha256" : "e4f36e38d2f847296d243c13c22a91070cc2ede81e311e015d9d3409f944050e",
+      "size" : [
+        76,
+        58
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        3,
+        0,
+        76,
+        119
+      ],
+      "alphaClearance128" : [
+        3,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 20055,
+      "crop" : [
+        210,
+        736,
+        286,
+        855
+      ],
+      "destinationSourceRect" : [
+        144,
+        736,
+        220,
+        855
+      ],
+      "maskSide" : "left",
+      "name" : "foot-repair-left-stone-v5",
+      "operation" : "original visible source RGB translated uniformly; registered imagegen alpha sampled at destination source coordinates",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 147,
+          "rightExclusive" : 220,
+          "y" : 736
+        },
+        {
+          "left" : 150,
+          "rightExclusive" : 220,
+          "y" : 800
+        },
+        {
+          "left" : 147,
+          "rightExclusive" : 220,
+          "y" : 850
+        },
+        {
+          "left" : 160,
+          "rightExclusive" : 170,
+          "y" : 854
+        }
+      ],
+      "sha256" : "10dcaa3c5655bde8e00160af01a74552ff0d1be7bbda0769935cda898e0108c4",
+      "size" : [
+        76,
+        119
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        57,
+        0,
+        268,
+        336
+      ],
+      "alphaClearance128" : [
+        57,
+        0,
+        52,
+        0
+      ],
+      "bytes" : 214739,
+      "crop" : [
+        130,
+        0,
+        450,
+        336
+      ],
+      "destinationSourceRect" : [
+        130,
+        -336,
+        450,
+        0
+      ],
+      "maskSide" : "left",
+      "name" : "shaft-left-stone-v5",
+      "operation" : "8 identical source-band RGB and registered-alpha copies; no resampling; virtual crop height records tiled extent",
+      "repeatY" : 8,
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -336
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -294
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -252
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -210
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -168
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -126
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -84
+        },
+        {
+          "left" : 190,
+          "rightExclusive" : 398,
+          "y" : -42
+        },
+        {
+          "left" : 187,
+          "rightExclusive" : 397,
+          "y" : -1
+        }
+      ],
+      "sha256" : "236ac60d3f953eb22686865950fa0eb023cfca5624be59d7842960d41a3fb95f",
+      "size" : [
+        320,
+        336
+      ],
+      "sourceBandRect" : [
+        130,
+        0,
+        450,
+        42
+      ]
+    },
+    {
+      "alphaBounds128" : [
+        43,
+        0,
+        257,
+        336
+      ],
+      "alphaClearance128" : [
+        43,
+        0,
+        63,
+        0
+      ],
+      "bytes" : 218970,
+      "crop" : [
+        1240,
+        0,
+        1560,
+        336
+      ],
+      "destinationSourceRect" : [
+        1240,
+        -336,
+        1560,
+        0
+      ],
+      "maskSide" : "right",
+      "name" : "shaft-right-stone-v5",
+      "operation" : "8 identical source-band RGB and registered-alpha copies; no resampling; virtual crop height records tiled extent",
+      "repeatY" : 8,
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -336
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -294
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -252
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -210
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -168
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -126
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -84
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1495,
+          "y" : -42
+        },
+        {
+          "left" : 1283,
+          "rightExclusive" : 1497,
+          "y" : -1
+        }
+      ],
+      "sha256" : "73339e53e6d8781a58466c9c2a941a0a3d6b9dc51d6f9e7ae4031a9160bb6841",
+      "size" : [
+        320,
+        336
+      ],
+      "sourceBandRect" : [
+        1240,
+        0,
+        1560,
+        42
+      ]
+    }
+  ],
+  "continuousBodyCueAlpha" : [
+    {
+      "allAtLeast128" : true,
+      "lowestAtY" : 0,
+      "minimumAlpha" : 252,
+      "side" : "left",
+      "x" : 375,
+      "yEndExclusive" : 778,
+      "yStart" : 0
+    },
+    {
+      "allAtLeast128" : true,
+      "lowestAtY" : 0,
+      "minimumAlpha" : 252,
+      "side" : "right",
+      "x" : 1297,
+      "yEndExclusive" : 778,
+      "yStart" : 0
+    }
+  ],
+  "continuousShaftCueAlpha" : [
+    {
+      "allAtLeast128" : true,
+      "lowestAtY" : -336,
+      "minimumAlpha" : 252,
+      "side" : "left",
+      "x" : 375,
+      "yEndExclusive" : 0,
+      "yStart" : -336
+    },
+    {
+      "allAtLeast128" : true,
+      "lowestAtY" : -336,
+      "minimumAlpha" : 252,
+      "side" : "right",
+      "x" : 1297,
+      "yEndExclusive" : 0,
+      "yStart" : -336
+    }
+  ],
+  "destinationSourceAlphaSamples" : [
+    {
+      "compositedAlpha" : 252,
+      "name" : "left-body-plane",
+      "x" : 380,
+      "y" : 400
+    },
+    {
+      "compositedAlpha" : 253,
+      "name" : "right-body-plane",
+      "x" : 1295,
+      "y" : 400
+    },
+    {
+      "compositedAlpha" : 191,
+      "name" : "left-upper-inner-return",
+      "x" : 398,
+      "y" : 150
+    },
+    {
+      "compositedAlpha" : 247,
+      "name" : "right-upper-inner-return",
+      "x" : 1278,
+      "y" : 150
+    },
+    {
+      "compositedAlpha" : 249,
+      "name" : "left-outer-shoulder",
+      "x" : 148,
+      "y" : 692
+    },
+    {
+      "compositedAlpha" : 139,
+      "name" : "left-lower-shoulder-tip",
+      "x" : 146,
+      "y" : 727
+    },
+    {
+      "compositedAlpha" : 0,
+      "name" : "left-base-outside",
+      "x" : 147,
+      "y" : 800
+    },
+    {
+      "compositedAlpha" : 253,
+      "name" : "left-base-visible-front",
+      "x" : 160,
+      "y" : 800
+    },
+    {
+      "compositedAlpha" : 252,
+      "name" : "right-outer-shoulder",
+      "x" : 1515,
+      "y" : 692
+    }
+  ],
+  "registration" : "registration.json",
+  "source" : "..\/art-v4\/approved-lighthouse-mockup.png",
+  "sourceCanvas" : [
+    1672,
+    941
+  ],
+  "sourceSHA256" : "83ce17d2dfa9936bb25bea25d6521a73a44340001f5b81373068ff1a5a279362"
+}
