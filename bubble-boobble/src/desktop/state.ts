@@ -26,16 +26,17 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  let s=desktopState.get();
  if((s.titleRevealActive||s.screen==='menu'&&s.menuInputArmed===false)&&!['cartoon-mode','development-menu'].includes(action))return;
  if(s.screen==='result'&&!s.resultReady&&['restart','leave','result-details','ui-activate','menu','result-exit'].includes(action))return;
- if(s.transitionAction&&action!=='transition-commit'&&action!=='transition-finish')return;
+ if(s.transitionAction&&action!=='transition-commit'&&action!=='transition-finish'&&action!=='transition-load-failed')return;
  if(s.pauseClosing&&!(action==='resume'&&value==='ready'))return;
  const patch=(p:Partial<DesktopState>)=>{s={...s,...p,...(p.status!==undefined?{statusStartedStep:-1}:{})};desktopState.set(s);};
+ if(action==='transition-load-failed'){if(s.transitionAction==='adventure-play'&&!s.transitionCommitted&&s.transitionStartedStep===index)patch({transitionAction:'',transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:false,status:'MISSION COULD NOT LOAD. PLEASE TRY AGAIN.'});return;}
  if(handleAdventureAction(action,value,now))return;
  const navigate=(screen:DesktopScreen)=>patch({screen,selected:0,status:''});
  const remember=()=>patch({history:[...s.history,cloneLevel(s.level)].slice(-50)});
  if(action==='transition-finish'){patch({transitionAction:'',transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:false});return;}
  if(action==='transition-commit'){const next=s.transitionAction;if(!next||s.transitionCommitted)return;patch({transitionAction:'',transitionCommitted:true});desktopAction(next,'',0,0,0,now);const after=desktopState.get();desktopState.set({...after,transitionAction:next,transitionStartedStep:s.transitionStartedStep,transitionCommitted:true,transitionHasTitle:!!s.transitionHasTitle,gameplayInputArmed:['start','start-party','restart','test-level','adventure-play'].includes(next)?false:after.gameplayInputArmed});return;}
  if(action==='menu'&&s.cartoon&&s.screen==='title'){patch({screen:'menu',selected:0,status:'',titleRevealActive:true,titleRevealStartedStep:-1,menuInputArmed:false});return;}
- if(action==='ui-activate'){const key=value;if(s.cartoon&&s.screen==='pause'&&!s.pauseConfirm&&['restart','leave'].includes(key)){patch({pauseConfirm:key as 'restart'|'leave',selected:0});return;}const next=key==='classic-mode'?'start':key;const covered=s.cartoon&&(['start','restart','leave','test-level','adventure-play'].includes(next)||next==='start-party'&&!s.partyEditing);if(covered){if(next==='start-party'&&!s.partySlots.includes('human')){patch({status:'SELECT AT LEAST ONE HUMAN'});return;}patch({transitionAction:next,transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:next==='start'||next==='start-party'||next==='adventure-play'});return;}desktopAction(next,'',index,x,y,now);return;}
+ if(action==='ui-activate'){const key=value;if(s.cartoon&&s.screen==='pause'&&!s.pauseConfirm&&['restart','leave'].includes(key)){patch({pauseConfirm:key as 'restart'|'leave',selected:0});return;}const next=key==='classic-mode'?'start':key;const covered=s.cartoon&&(['start','restart','leave','test-level','adventure-play'].includes(next)||next==='start-party'&&!s.partyEditing);if(covered){if(next==='start-party'&&!s.partySlots.includes('human')){patch({status:'SELECT AT LEAST ONE HUMAN'});return;}patch({transitionAction:next,transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:next==='start'||next==='start-party'||next==='adventure-play',status:''});return;}desktopAction(next,'',index,x,y,now);return;}
  if(action==='result-exit'&&s.cartoon&&s.screen==='result'){desktopAction('ui-activate','leave');return;}
  if(action==='result-details'&&s.screen==='result'){patch({resultDetails:!s.resultDetails,selected:2});return;}
  if(action==='cancel-run-action'){patch({pauseConfirm:'',selected:0});return;}

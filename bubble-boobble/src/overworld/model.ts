@@ -1,4 +1,13 @@
 /** Read-only presentation contracts. Controllers own state and all decisions. */
+import type {OverworldPoi} from './navigation';
+
+/** Tell the player what confirming will open, as well as which control to use. */
+export function overworldActionPrompt(poi:OverworldPoi|undefined):string {
+ if(!poi||poi.kind==='guide')return '';
+ const verb=poi.kind==='encounter'||poi.kind==='trial'?'Visit':poi.kind==='vendor'?'Shop at':poi.kind==='collectible'?'Collect':poi.kind==='shortcut'?'Explore':'Travel through';
+ return `[ENTER / A]  ${verb} ${poi.label}`;
+}
+
 export interface OverworldHudModel {
  district:string; progress:string; coins:string; prompt:string; help:string;
 }

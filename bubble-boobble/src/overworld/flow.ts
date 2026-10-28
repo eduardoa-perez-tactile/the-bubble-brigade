@@ -41,7 +41,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
   if(!map.active||s.screen!=='overworld'||map.focusedPoi!==value)return true;
   const poi=overworldPoi(map.districtId,value);if(!poi||poi.kind==='guide'||(poi.x-map.x)**2+(poi.y-map.y)**2>(poi.radius??68)**2)return true;
   anchor();
-  if(poi.kind==='encounter'||poi.kind==='trial'){setOverworldModal(true);patch({screen:'overworld-card',adventureEncounter:poi.kind==='trial'?trialForDistrict(map.districtId)!.id:poi.id,selected:0});return true;}
+  if(poi.kind==='encounter'||poi.kind==='trial'){setOverworldModal(true);patch({screen:'overworld-card',adventureEncounter:poi.kind==='trial'?trialForDistrict(map.districtId)!.id:poi.id,status:'',selected:0});return true;}
   if(poi.kind==='collectible'){
    const claimed=!!progress.rewardClaims[`${map.districtId}:coin`];
    desktopSaveState.dispatch('adventureCollectible',{profileIndex,districtId:map.districtId},now);
