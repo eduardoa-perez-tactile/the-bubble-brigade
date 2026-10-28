@@ -1,5 +1,7 @@
 # Shared shop counter
 
+Current behavior: bought powers now stack automatically; see [stacking feedback](stacking-feedback.md). The single-slot/equip references below describe the earlier iteration.
+
 The same shop screen serves the vendor in all five Adventure districts. The user approved the shelf/detail/purchase/equipment composition, then requested a generic reusable shop with simpler 1930s cartoon art and a matching shopkeeper. No map exteriors or destination positions change.
 
 ## Flow

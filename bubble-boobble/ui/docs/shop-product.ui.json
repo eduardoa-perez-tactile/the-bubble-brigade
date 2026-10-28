@@ -10,10 +10,11 @@
       "type": "element",
       "children": [
         "shadow",
-        "art",
+        "artFrame",
         "pointer",
         "tag",
-        "badge"
+        "ownedStamp",
+        "activeBadge"
       ],
       "style": {
         "pad": 0,
@@ -46,20 +47,12 @@
       "type": "icon",
       "image": "cartoon/frames/item/pink_candy",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0.04,
-          0.04
-        ],
-        "pivot": [
-          0,
-          0
-        ],
-        "w": "92%",
-        "h": "72%",
+        "w": "100%",
+        "h": "100%",
         "attach": true
       },
-      "property": "illustration"
+      "property": "illustration",
+      "point": "art"
     },
     "pointer": {
       "type": "icon",
@@ -114,7 +107,8 @@
         "gap": 6,
         "align": "center",
         "justify": "center"
-      }
+      },
+      "show": "showCoin"
     },
     "coin": {
       "type": "icon",
@@ -138,27 +132,66 @@
         "textAlign": "center"
       }
     },
-    "badge": {
-      "type": "label",
-      "text": "EQUIPPED",
+    "artFrame": {
+      "type": "element",
+      "children": [
+        "art"
+      ],
+      "point": "selection",
       "style": {
-        "fontSize": 14,
-        "fitMin": 12,
-        "h": 20,
-        "color": "#f7e4b9",
+        "pad": 0,
         "position": "anchored",
         "anchor": [
-          0.12,
-          0.98
+          0.04,
+          0.04
         ],
         "pivot": [
           0,
           0
         ],
-        "w": "76%",
-        "textAlign": "center",
-        "attach": true,
-        "opacity": 0
+        "w": "92%",
+        "h": "72%",
+        "attach": true
+      }
+    },
+    "ownedStamp": {
+      "type": "icon",
+      "image": "cartoon/shop/owned-marker",
+      "show": "owned",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.08,
+          0.75
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "84%",
+        "h": "25%",
+        "fit": "contain",
+        "rotate": -4,
+        "attach": true
+      }
+    },
+    "activeBadge": {
+      "type": "icon",
+      "image": "cartoon/shop/active-marker",
+      "show": "owned",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.74,
+          0.08
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "24%",
+        "h": "18%",
+        "attach": true
       }
     }
   },
@@ -185,8 +218,8 @@
             "pointer": {
               "opacity": 1
             },
-            "art": {
-              "scale": 1.06
+            "artFrame": {
+              "scale": 1.1
             }
           }
         }
@@ -195,19 +228,6 @@
     "focused": {
       "type": "yesno",
       "default": false
-    },
-    "equipped": {
-      "type": "yesno",
-      "default": false,
-      "poses": {
-        "yes": {
-          "set": {
-            "badge": {
-              "opacity": 1
-            }
-          }
-        }
-      }
     },
     "large": {
       "type": "yesno",
@@ -226,6 +246,10 @@
     "showCoin": {
       "type": "yesno",
       "default": true
+    },
+    "owned": {
+      "type": "yesno",
+      "default": false
     }
   },
   "transition": {
@@ -235,7 +259,7 @@
   "states": {
     "pressed": {
       "set": {
-        "art": {
+        "artFrame": {
           "scale": 0.98
         }
       }

@@ -193,3 +193,13 @@
  .shop-screen .ud-adventure-shop__helpSlot {height:100px;}
  .shop-screen .ud-adventure-shop__transaction {height:210px;}
 }
+
+/* Bought upgrades are always active together. Ownership/active state use artwork. */
+.shop-screen .ud-adventure-shop__stackLabel {font-size:16px;}
+@media (aspect < 0.7) {
+ .shop-screen .ud-adventure-shop__stackLabel {font-size:23px;height:40px;text-fit:19px 23px;}
+ .shop-screen .ud-shop-power-token__root {width:58px;height:44px;}
+ .shop-screen .ud-shop-power-token__art {width:42px;height:42px;}
+ .shop-screen .ud-shop-power-token__active {width:20px;height:20px;}
+ .shop-screen .ud-adventure-shop__ownedAction {height:110px;}
+}

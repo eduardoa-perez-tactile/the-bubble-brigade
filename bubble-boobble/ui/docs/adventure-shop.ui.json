@@ -376,38 +376,16 @@
     "equipment": {
       "type": "element",
       "children": [
-        "equippedArt",
-        "equippedLabel"
+        "stackLabel",
+        "startingPowers"
       ],
       "style": {
         "pad": 0,
         "w": "100%",
         "h": 42,
         "dir": "row",
-        "gap": 10,
+        "gap": 8,
         "align": "center"
-      }
-    },
-    "equippedArt": {
-      "type": "icon",
-      "image": "cartoon/frames/item/yellow_candy",
-      "style": {
-        "w": 40,
-        "h": 40
-      },
-      "property": "equippedArt",
-      "show": "hasEquipped"
-    },
-    "equippedLabel": {
-      "type": "label",
-      "text": "{equippedLabel}",
-      "style": {
-        "fontSize": 24,
-        "fitMin": 16,
-        "h": 36,
-        "color": "#edc16e",
-        "w": 0,
-        "grow": 1
       }
     },
     "divider": {
@@ -425,6 +403,7 @@
       "children": [
         "action",
         "unavailable",
+        "ownedAction",
         "utilities"
       ],
       "style": {
@@ -476,7 +455,6 @@
     "utilities": {
       "type": "element",
       "children": [
-        "removeSlot",
         "helpSlot"
       ],
       "style": {
@@ -487,30 +465,6 @@
         "justify": "end",
         "gap": 18
       }
-    },
-    "removeSlot": {
-      "type": "element",
-      "children": [
-        "remove"
-      ],
-      "style": {
-        "pad": 0,
-        "w": 100,
-        "h": 48
-      },
-      "show": "hasEquipped"
-    },
-    "remove": {
-      "type": "use",
-      "doc": "shop-ink-button",
-      "key": "remove",
-      "props": {
-        "label": "UNEQUIP",
-        "selected": {
-          "property": "removeFocused"
-        }
-      },
-      "style": {}
     },
     "helpSlot": {
       "type": "element",
@@ -560,7 +514,7 @@
     },
     "helpText": {
       "type": "label",
-      "text": "Buy once. Equip one starting power. Start each encounter and retry with it. Losing a life removes its effect until the next attempt.",
+      "text": "Buy once. All bought powers stack automatically at the start of every encounter and retry. Losing a life removes their effects until the next attempt.",
       "style": {
         "fontSize": 22,
         "fitMin": 18,
@@ -620,6 +574,31 @@
         "clip": true,
         "attach": true
       }
+    },
+    "stackLabel": {
+      "type": "label",
+      "text": "{stackLabel}",
+      "style": {
+        "fontSize": 16,
+        "fitMin": 13,
+        "h": 32,
+        "color": "#edc16e"
+      }
+    },
+    "startingPowers": {
+      "type": "repeat",
+      "doc": "shop-power-token",
+      "property": "activePowers"
+    },
+    "ownedAction": {
+      "type": "icon",
+      "image": "cartoon/shop/owned-marker",
+      "show": "showOwned",
+      "style": {
+        "w": "100%",
+        "h": 120,
+        "fit": "contain"
+      }
     }
   },
   "view": {
@@ -665,10 +644,6 @@
       "type": "text",
       "default": ""
     },
-    "equippedLabel": {
-      "type": "text",
-      "default": ""
-    },
     "status": {
       "type": "text",
       "default": ""
@@ -681,15 +656,7 @@
       "type": "yesno",
       "default": false
     },
-    "hasEquipped": {
-      "type": "yesno",
-      "default": false
-    },
     "backFocused": {
-      "type": "yesno",
-      "default": false
-    },
-    "removeFocused": {
       "type": "yesno",
       "default": false
     },
@@ -704,10 +671,6 @@
     "showStatus": {
       "type": "yesno",
       "default": false
-    },
-    "equippedArt": {
-      "type": "image",
-      "default": "cartoon/frames/item/yellow_candy"
     },
     "products": {
       "type": "list",
@@ -823,6 +786,19 @@
           }
         }
       }
+    },
+    "stackLabel": {
+      "type": "text",
+      "default": "STARTING POWERS"
+    },
+    "activePowers": {
+      "type": "list",
+      "of": "shop-power-token",
+      "default": []
+    },
+    "showOwned": {
+      "type": "yesno",
+      "default": false
     }
   },
   "transition": {
