@@ -21,7 +21,7 @@
 /* Portrait phone windows scale the landscape reference canvas by width. Keep
    interactive rows at least 44 view px and readable without shrinking the map UI. */
 @media (aspect < 0.55) {
- .overworld-card .ud-overworld-button__root {width:100%;height:96px;}
+ .overworld-card .ud-overworld-button__root {width:100%;height:100px;}
  .overworld-card .ud-overworld-button__owb_label {font-size:36px;height:76px;}
  .overworld-card .ud-overworld-dialogue__owd_speaker {font-size:42px;height:64px;}
  .overworld-card .ud-overworld-dialogue__owd_message {font-size:32px;height:320px;}
@@ -33,8 +33,8 @@
  .overworld-card .ud-overworld-encounter__owe_status {font-size:30px;height:104px;}
  .overworld-hud .ud-overworld-hud__owh_top {height:110px;}
  .overworld-hud .ud-overworld-hud__owh_right {width:240px;height:110px;}
- .overworld-hud .ud-overworld-hud__owh_menu {width:240px;height:96px;}
- .overworld-hud .ud-overworld-button__root {width:240px;height:96px;}
+ .overworld-hud .ud-overworld-hud__owh_menu {width:240px;height:100px;}
+ .overworld-hud .ud-overworld-button__root {width:240px;height:100px;}
  .overworld-hud .ud-overworld-button__owb_label {font-size:30px;height:76px;}
  .overworld-hud .ud-overworld-hud__owh_coins {font-size:36px;height:60px;}
 }
@@ -62,7 +62,7 @@
 }
 @media (aspect < 0.55) {
  .overworld-card .ud-overworld-encounter__owe_play,
- .overworld-card .ud-overworld-encounter__owe_back {height:96px;}
+ .overworld-card .ud-overworld-encounter__owe_back {height:100px;}
 }
 @media (aspect < 0.55) {
  .overworld-card .ud-adventure-pause__owd_speaker,
@@ -98,4 +98,39 @@
  .overworld-card .ud-adventure-shop-item__portrait {width:70px;height:78px;}
  .overworld-card .ud-adventure-shop-item__name {font-size:32px;height:44px;}
  .overworld-card .ud-adventure-shop-item__detail {font-size:28px;height:36px;}
+}
+
+/* Adventure paper panels share a sea-green frame and brass details with the map. */
+.overworld-card .ud-overworld-encounter__ow_panel,
+.overworld-card .ud-overworld-dialogue__ow_panel,
+.overworld-card .ud-adventure-dialogue__ow_panel,
+.overworld-card .ud-adventure-journal__ow_panel,
+.overworld-card .ud-adventure-pause__ow_panel,
+.overworld-card .ud-adventure-shop__ow_panel,
+.overworld-card .ud-adventure-result__ow_panel {
+ border-width:4px;
+ border-color:#285b59;
+ max-width:94%;
+}
+.overworld-card .ud-overworld-dialogue__owd_speaker,
+.overworld-card .ud-adventure-dialogue__owd_speaker,
+.overworld-card .ud-adventure-journal__owd_speaker,
+.overworld-card .ud-adventure-pause__owd_speaker,
+.overworld-card .ud-adventure-shop__owd_speaker,
+.overworld-card .ud-adventure-result__owd_speaker { color:#214e4c; }
+.overworld-card .ud-overworld-encounter__owe_illustration { border-width:2px;border-color:#b88a40;border-radius:8px; }
+.overworld-card .ud-overworld-button__root { border-width:1px;border-color:#b88a40; }
+.overworld-hud .ud-overworld-button__root { border-width:2px;border-color:#b88a40; }
+.overworld-hud .ud-overworld-hud__owh_prompt { border-width:2px;border-color:#d6b467;max-width:92%;padding:0 16px; }
+.overworld-card .ud-adventure-shop-item__root { border-width:1px;border-color:#c3ab7d;border-radius:8px; }
+@media (aspect < 0.55) {
+ .overworld-hud .ud-overworld-hud__owh_bottom {height:126px;gap:10px;}
+ .overworld-hud .ud-overworld-hud__owh_prompt {width:680px;height:76px;font-size:30px;text-fit:24px 30px;}
+}
+
+/* Small portrait canvases keep buttons at least 44 physical points. */
+@media (aspect >= 0.55) and (aspect < 0.7) {
+ .overworld-card .ud-overworld-button__root {width:100%;height:100px;}
+ .overworld-card .ud-overworld-encounter__owe_play,
+ .overworld-card .ud-overworld-encounter__owe_back {height:100px;}
 }

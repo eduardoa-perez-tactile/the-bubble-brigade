@@ -141,18 +141,20 @@
       "name": "Label",
       "text": "{prompt}",
       "style": {
-        "fontSize": 23,
-        "fitMin": 15,
-        "w": 440,
-        "h": 48,
-        "color": "#30271e",
+        "fontSize": 22,
+        "fitMin": 17,
+        "w": 400,
+        "h": 52,
+        "color": "#fff1cf",
         "textAlign": "center",
         "shadowX": 0,
         "shadowY": 0,
         "shadowColor": "#30271e",
-        "bg": "#f0e4c6ee"
-      },
-      "show": "showPrompt"
+        "bg": "#214e4cf2",
+        "radius": 13,
+        "opacity": 0,
+        "ty": 12
+      }
     },
     "owh_help": {
       "type": "label",
@@ -198,7 +200,33 @@
     },
     "showPrompt": {
       "type": "yesno",
-      "default": false
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "owh_prompt": {
+              "opacity": 1,
+              "ty": 0
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 180
+          }
+        },
+        "no": {
+          "set": {
+            "owh_prompt": {
+              "opacity": 0,
+              "ty": 12
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 140
+          }
+        }
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ import { overworldPoi } from '../overworld/navigation';
 import { adventurePanel } from '../overworld/panels';
 import { adventureForProfile, adventureCleared } from '../overworld/progression';
 import { districts, districtById, encounterById, availableEncounter } from '../overworld/content';
-import type { OverworldHudModel } from '../overworld/model';
+import { overworldActionPrompt, type OverworldHudModel } from '../overworld/model';
 import {uiAudioSnapshot,uiAudioCue,classicIntroAudioStage,type UIAudioSnapshot} from './ui-audio';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { CartoonOutcomeView } from '../cartoon/outcome.view';
@@ -49,10 +49,32 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{const current=state(),selected=(current.screen==='overworld-card'||current.adventure)?encounterById(current.adventureEncounter??''):undefined;
   const episode=selected?episodeForLevel(selected.level):undefined,next=episode?`adventure-${episode.theme}`:'';
   if(next===activeEpisodeGroup)return;const previous=activeEpisodeGroup;activeEpisodeGroup=next;
-  if(next)void loading.run({name:next,load:[next],unload:previous?[previous]:[],model:{label:episode?.title??'Opening the episode'}});
-  else if(previous)assets.release(previous);
+  // The episode group is its one illustration. Pin/preload it quietly for the
+  // description; inspecting a landmark must not open a second loading screen.
+  if(previous)assets.release(previous);
+  if(next)assets.load(next);
  });
  onCleanup(()=>{if(activeEpisodeGroup)assets.release(activeEpisodeGroup);});
+ let episodeLoadTransition=-1;
+ createEffect(()=>{
+  const current=state(),action=current.transitionAction;
+  if(!action){episodeLoadTransition=-1;return;}
+  if(action!=='adventure-play'||current.transitionCommitted)return;
+  const origin=current.transitionStartedStep??-1;
+  if(origin<0||origin===episodeLoadTransition)return;
+  const elapsed=(clock()?.step??0)-origin;
+  const timing=cartoonFlowTiming(!!current.transitionHasTitle,action,current.partyRun);
+  // Hold IO/warm-up only after the existing iris is completely opaque. The
+  // instantaneous black cover matches it exactly: no extra fade or loading bar.
+  if(elapsed<timing.closeAt||elapsed>=timing.commitAt||loading.active())return;
+  if(!activeEpisodeGroup)return;
+  episodeLoadTransition=origin;
+  void loading.run({name:activeEpisodeGroup,load:[activeEpisodeGroup],enter:null,exit:null,model:{background:'#000000',bar:false}}).catch(()=>{
+   // loading.run logs the underlying error and lifts its cover. Cancel through
+   // recorded input so a failed load returns to the selected card, never play.
+   emit(DesktopIntent,{action:'transition-load-failed',index:origin});
+  });
+ });
  let activeMapGroup='';
  createEffect(()=>{
   const current=map(),next=current.active?`overworld-${current.districtId}`:'';
@@ -144,18 +166,18 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  };
  createEffect(()=>{const m=map(),p=save(),d=districtById(m.districtId)??districts[0]!,progress=adventureForProfile(p.profiles[p.active]!);
   if(!m.active){mapHud?.close({immediate:true});mapHud=undefined;return;}
-  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal&&poi&&poi.kind!=='guide'?'ENTER / A':'',help:adventureCleared(progress)===0&&m.walkTick<120?'WASD / ARROWS · WALK     ENTER / A · VISIT':''};
+  const poi=overworldPoi(m.districtId,m.focusedPoi),model={district:d.name.toUpperCase(),progress:`${d.encounterIds.filter(id=>!!progress.cleared[id]).length} / 5 CLEARED`,coins:`COINS  ${progress.coins}`,prompt:!m.modal?overworldActionPrompt(poi):'',help:adventureCleared(progress)===0&&m.walkTick<120?'WASD / ARROWS · WALK     ENTER / A · VISIT':''};
   if(mapHud)mapHud.update(model);else mapHud=views.push(OverworldHudView,model,{onIntent:mapIntent});
  });
  let mapPanel:ViewHandle<any>|undefined,mapPanelKind='';
  createEffect(()=>{const s=state(),p=save(),m=map();let kind='',model:any;
-  if(s.screen==='overworld-panel'){kind='panel';model=adventurePanel(s,p);}
+  if(s.screen==='overworld-panel'){kind=`panel:${s.overworldPanel??''}`;model=adventurePanel(s,p);}
   else if(s.screen==='overworld-card'){
    const e=encounterById(s.adventureEncounter??''),progress=adventureForProfile(p.profiles[p.active]!);
-   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={selected:s.selected,illustration:`adventure/${episodeForLevel(e.level).theme}`,title:episodeForLevel(e.level).title,subtitle:`${e.name.toUpperCase()} · ${episodeForLevel(e.level).subtitle}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':episodeForLevel(e.level).description,status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
+   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={selected:s.selected,illustration:`adventure/${episodeForLevel(e.level).theme}`,title:episodeForLevel(e.level).title,subtitle:`${e.name.toUpperCase()} · ${episodeForLevel(e.level).subtitle}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':episodeForLevel(e.level).description,status:s.status==='MISSION COULD NOT LOAD. PLEASE TRY AGAIN.'?s.status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
   }
-  if(!kind){mapPanel?.close({immediate:true});mapPanel=undefined;mapPanelKind='';return;}
-  if(kind!==mapPanelKind){mapPanel?.close({immediate:true});mapPanel=views.push(kind==='card'?OverworldEncounterView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
+  if(!kind){mapPanel?.close({immediate:s.screen==='play'||!!s.transitionCommitted});mapPanel=undefined;mapPanelKind='';return;}
+  if(kind!==mapPanelKind){mapPanel?.close();mapPanel=views.push(kind==='card'?OverworldEncounterView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
   else mapPanel?.update(model);
  });
  let storyResults:ViewHandle<StoryResultModel>|undefined;
