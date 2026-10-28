@@ -2,6 +2,8 @@ import {STORY_OUTCOME_STEPS} from '../adventure/ending';
 import {desktopState,desktopGameRequest,type DesktopState,type DesktopScreen,type PlayMode} from './documents.ts';
 export {desktopState,desktopGameRequest,initialDesktopState} from './documents.ts';
 export type {DesktopState,DesktopScreen,DesktopGameRequest,PlayMode} from './documents.ts';
+import {shopFocusIndex} from '../overworld/shop-model';
+import {adventurePowerShop} from '../overworld/progression';
 import { handleAdventureAction } from '../overworld/flow';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
 import { updatePartyPads } from '../arcade/party-input';
@@ -52,7 +54,7 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  if(action==='madness-mode'){desktopAction('party');return;}
  if(action==='mode-back'){navigate('menu');return;}
  if(action==='navigate'){navigate(value as DesktopScreen);return;}
- if(action==='select'){patch({selected:index});return;}
+ if(action==='select'){const shop=s.screen==='overworld-panel'&&['shop','vendor'].includes(s.overworldPanel??'');patch({selected:index,...(shop&&index>=0&&index<4?{shopItem:adventurePowerShop[index]!.id,panelMessage:''}:{})});return;}
  if(action==='play-mode'){const modes:PlayMode[]=['solo','ai','human'];patch({playMode:modes[(modes.indexOf(s.playMode??'solo')+(index===-1?2:1))%3]!});return;}
  if(action==='party'){patch({screen:'party',partyEditing:s.screen==='pause'&&s.partyRun,selected:0,status:''});return;}
  if(action==='menu'&&s.screen==='party'&&s.partyEditing){patch({screen:'pause',partyEditing:false,selected:0,status:''});return;}
@@ -118,10 +120,11 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
  const menuState=desktopState.get();
  if(menuState.screen!=='play'){
    const buttons=getDesktopButtons(menuState,desktopSaveState.get());
-   if(pads.menuYEdge&&buttons.length)desktopAction('select','',menuState.screen==='modes'?modeGridSelection(menuState.selected,0,pads.menuYEdge):menuState.screen==='party'?partyGridSelection(menuState.selected,0,pads.menuYEdge):(menuState.selected+pads.menuYEdge+buttons.length)%buttons.length);
+   if(pads.menuYEdge&&buttons.length)desktopAction('select','',menuState.screen==='overworld-panel'&&['vendor','shop'].includes(menuState.overworldPanel??'')?shopFocusIndex(menuState,buttons.length,0,pads.menuYEdge):menuState.screen==='modes'?modeGridSelection(menuState.selected,0,pads.menuYEdge):menuState.screen==='party'?partyGridSelection(menuState.selected,0,pads.menuYEdge):(menuState.selected+pads.menuYEdge+buttons.length)%buttons.length);
    if(pads.menuXEdge&&menuState.cartoon&&menuState.screen==='result'&&menuState.won)desktopAction('select','',(menuState.selected+pads.menuXEdge+buttons.length)%buttons.length);
    if(pads.menuXEdge&&menuState.screen==='modes')desktopAction('select','',modeGridSelection(desktopState.get().selected,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='party')desktopAction('select','',partyGridSelection(desktopState.get().selected,pads.menuXEdge,0));
+   if(pads.menuXEdge&&menuState.screen==='overworld-panel'&&['vendor','shop'].includes(menuState.overworldPanel??''))desktopAction('select','',shopFocusIndex(menuState,buttons.length,pads.menuXEdge,0));
    if(pads.menuXEdge&&menuState.screen==='settings'){const b=buttons[desktopState.get().selected];if(b)desktopAction(b.key,'',pads.menuXEdge);}
    if(pads.menuBack)desktopAction(menuState.screen.startsWith('overworld')?'overworld-back':menuState.screen==='pause'?'resume':menuState.cartoon&&menuState.screen==='result'?(menuState.resultDetails?'result-details':'result-exit'):menuState.screen==='new-profile'?'profiles':'menu');
  }
@@ -160,10 +163,11 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
   const a=c.col(ActionState);s=desktopState.get();
   if(s.screen==='new-profile'&&c.is(ActionState,i,'name','delete')){if(a.pressed[i]){const started=s.deleteHeldAt<0?ctx.step:s.deleteHeldAt;if(s.deleteHeldAt<0)desktopState.set({...s,deleteHeldAt:started});const held=ctx.step-started;if(held===0||held>30&&held%3===0)desktopAction('delete-char');}else if(s.deleteHeldAt>=0)desktopState.set({...s,deleteHeldAt:-1});}
   if(!a.justPressed[i])continue;const buttons=getDesktopButtons(s,desktopSaveState.get());
-  if(c.is(ActionState,i,'name','menuY')){const delta=a.value[i]!<0?-1:1;const selected=s.screen==='modes'?modeGridSelection(s.selected,0,delta):s.screen==='party'?partyGridSelection(s.selected,0,delta):(s.selected+delta+buttons.length)%buttons.length;desktopAction('select','',selected);}
+  if(c.is(ActionState,i,'name','menuY')){const delta=a.value[i]!<0?-1:1;const selected=s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')?shopFocusIndex(s,buttons.length,0,delta):s.screen==='modes'?modeGridSelection(s.selected,0,delta):s.screen==='party'?partyGridSelection(s.selected,0,delta):(s.selected+delta+buttons.length)%buttons.length;desktopAction('select','',selected);}
   if(c.is(ActionState,i,'name','menuX')&&s.cartoon&&s.screen==='result'&&s.won)desktopAction('select','',(s.selected+(a.value[i]!<0?-1:1)+buttons.length)%buttons.length);
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='modes')desktopAction('select','',modeGridSelection(s.selected,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='party')desktopAction('select','',partyGridSelection(s.selected,a.value[i]!<0?-1:1,0));
+  if(c.is(ActionState,i,'name','menuX')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??''))desktopAction('select','',shopFocusIndex(s,buttons.length,a.value[i]!<0?-1:1,0));
   if(c.is(ActionState,i,'name','menuX')&&s.screen==='settings'){const b=buttons[s.selected];if(b)desktopAction(b.key,'',a.value[i]!<0?-1:1);}
   if(c.is(ActionState,i,'name','confirm')&&s.screen!=='result')confirm=true;
   if(c.is(ActionState,i,'name','profileConfirm'))profileConfirm=true;

@@ -85,23 +85,34 @@ declare module '@gameengine/ui' {
       refs: 'back';
     };
     /**
-     * Adventure Shop: a view, dialog (ui/docs/adventure-shop.ui.json)
+     * Brigade shared shop: a view, screen (ui/docs/adventure-shop.ui.json)
      *
      * Properties:
-     *   - `speaker`: text, default ""
-     *   - `message`: text, default ""
-     *   - `detail`: text, default ""
-     *   - `buttons`: list of adventure-shop-item
-     *   - `showBack`: yesno, default true
-     *   - `portrait`: image, default "overworld-shared/dragon-oblique/blue/down-right-idle"
-     * Events: `press (<item>)`, `back`
-     * Code areas: none
-     * Refs: `back`
+     *   - `coins`: text, default ""
+     *   - `name`: text, default ""
+     *   - `description`: text, default ""
+     *   - `benefit`: text, default ""
+     *   - `consequence`: text, default ""
+     *   - `actionLabel`: text, default ""
+     *   - `balance`: text, default ""
+     *   - `equippedLabel`: text, default ""
+     *   - `status`: text, default ""
+     *   - `actionEnabled`: yesno, default false
+     *   - `actionUnavailable`: yesno, default false
+     *   - `hasEquipped`: yesno, default false
+     *   - `backFocused`: yesno, default false
+     *   - `removeFocused`: yesno, default false
+     *   - `illustration`: image, default "cartoon/frames/item/pink_candy"
+     *   - `equippedArt`: image, default "cartoon/frames/item/pink_candy"
+     *   - `products`: list of shop-product
+     * Events: `back`, `press (<item>)`, `remove`
+     * Code areas: `action`
+     * Refs: `back`, `remove`
      */
     'adventure-shop': {
-      props: { speaker: string | { loc: string } | LocText; message: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean; illustration?: string; detail?: string | { loc: string } | LocText; showArt?: boolean }[]; showBack: boolean; portrait: string };
-      areas: never;
-      refs: 'back';
+      props: { coins: string | { loc: string } | LocText; name: string | { loc: string } | LocText; description: string | { loc: string } | LocText; benefit: string | { loc: string } | LocText; consequence: string | { loc: string } | LocText; actionLabel: string | { loc: string } | LocText; balance: string | { loc: string } | LocText; equippedLabel: string | { loc: string } | LocText; status: string | { loc: string } | LocText; actionEnabled: boolean; actionUnavailable: boolean; hasEquipped: boolean; backFocused: boolean; removeFocused: boolean; illustration: string; equippedArt: string; products: readonly { key: string; label?: string | { loc: string } | LocText; price?: string | { loc: string } | LocText; illustration?: string; selected?: boolean; focused?: boolean; equipped?: boolean }[] };
+      areas: 'action';
+      refs: 'back' | 'remove';
     };
     /**
      * Adventure shop item: a widget, button (ui/docs/adventure-shop-item.ui.json)
@@ -1398,6 +1409,40 @@ declare module '@gameengine/ui' {
       props: { eyebrow: string | { loc: string } | LocText; title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; score: string | { loc: string } | LocText; champion: string | { loc: string } | LocText; stats: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; won: boolean; party: boolean; ready: boolean; showStats: boolean; ranking: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; kills?: string | { loc: string } | LocText; leader?: boolean; color?: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; image?: string }[]; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; podium: readonly { key: string; rank?: string | { loc: string } | LocText; name?: string | { loc: string } | LocText; mode?: string | { loc: string } | LocText; image?: string; place?: 'gold' | 'silver' | 'bronze'; occupied?: boolean; killLabel?: string | { loc: string } | LocText }[]; moreRanks: boolean };
       areas: 'confetti';
       refs: 'result-score' | 'result-stats';
+    };
+    /**
+     * Shop action: a widget, button (ui/docs/shop-action.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'shop-action': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Shop shelf product: a widget, button (ui/docs/shop-product.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default ""
+     *   - `price`: text, default ""
+     *   - `illustration`: image, default "cartoon/frames/item/pink_candy"
+     *   - `selected`: yesno, default false
+     *   - `focused`: yesno, default false
+     *   - `equipped`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'shop-product': {
+      props: { label: string | { loc: string } | LocText; price: string | { loc: string } | LocText; illustration: string; selected: boolean; focused: boolean; equipped: boolean };
+      areas: never;
+      refs: never;
     };
     /**
      * Story hud: a view (ui/docs/story-hud.ui.json)

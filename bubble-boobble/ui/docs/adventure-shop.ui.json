@@ -2,173 +2,562 @@
   "$schemaVersion": 1,
   "guid": "d36801d3-2372-489d-9a1a-575c0c283a13",
   "name": "adventure-shop",
-  "title": "Adventure Shop",
+  "title": "Brigade shared shop",
   "kind": "view",
   "root": "root",
   "nodes": {
     "root": {
       "type": "element",
-      "name": "Overworld dialogue",
-      "style": {
-        "w": "100%",
-        "h": "100%",
-        "pad": 24,
-        "align": "center",
-        "justify": "center"
-      },
       "children": [
-        "ow_panel"
-      ]
-    },
-    "ow_panel": {
-      "type": "element",
-      "name": "Element",
-      "children": [
-        "ow_rule",
-        "owd_speaker",
-        "owd_message",
-        "owd_detail",
-        "owd_buttons",
-        "owd_back"
+        "background",
+        "content"
       ],
       "style": {
-        "pad": 26,
-        "dir": "column",
+        "pad": 12,
+        "w": "100%",
+        "h": "100%",
         "align": "center",
-        "gap": 10,
-        "w": 650,
-        "h": "auto",
-        "bg": "#f5e9cd",
-        "radius": 18
+        "justify": "center"
       }
     },
-    "ow_rule": {
+    "background": {
       "type": "element",
-      "name": "Element",
       "children": [],
       "style": {
         "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
         "w": "100%",
-        "h": 3,
-        "bg": "#b88a40"
+        "h": "100%",
+        "image": "cartoon/shop/interior",
+        "fit": "cover",
+        "attach": true
       }
     },
-    "owd_speaker": {
-      "type": "label",
-      "name": "Label",
-      "text": "{speaker}",
+    "content": {
+      "type": "element",
+      "children": [
+        "header",
+        "stage",
+        "shelf",
+        "details",
+        "equipment",
+        "status",
+        "rules"
+      ],
       "style": {
-        "fontSize": 34,
-        "fitMin": 20,
+        "pad": 0,
         "w": "100%",
-        "h": 46,
-        "color": "#382d25",
-        "textAlign": "center"
+        "h": "100%",
+        "dir": "column",
+        "gap": 6
       }
     },
-    "owd_message": {
-      "type": "label",
-      "name": "Label",
-      "text": "{message}",
+    "header": {
+      "type": "element",
+      "children": [
+        "backSlot",
+        "title",
+        "wallet"
+      ],
       "style": {
-        "fontSize": 21,
-        "fitMin": 16,
+        "pad": 0,
+        "dir": "row",
         "w": "100%",
-        "h": 48,
-        "color": "#5a4936",
-        "textAlign": "center"
+        "h": 54,
+        "gap": 12,
+        "align": "center"
       }
     },
-    "owd_detail": {
-      "type": "label",
-      "name": "Label",
-      "text": "{detail}",
+    "backSlot": {
+      "type": "element",
+      "children": [
+        "back"
+      ],
       "style": {
-        "fontSize": 18,
-        "fitMin": 14,
-        "w": "100%",
-        "h": 46,
-        "color": "#88603b",
-        "textAlign": "center"
+        "pad": 0,
+        "w": 164,
+        "h": 52
       }
     },
-    "owd_buttons": {
-      "type": "repeat",
-      "doc": "adventure-shop-item",
-      "property": "buttons",
-      "style": {
-        "gap": 8,
-        "w": "100%"
-      }
-    },
-    "owd_back": {
+    "back": {
       "type": "use",
-      "doc": "overworld-button",
+      "doc": "shop-action",
       "key": "back",
       "props": {
-        "label": "BACK"
+        "label": "BACK TO MAP",
+        "selected": {
+          "property": "backFocused"
+        }
       },
+      "style": {}
+    },
+    "title": {
+      "type": "label",
+      "text": "BRIGADE SHOP",
       "style": {
-        "w": "100%"
+        "h": 58,
+        "fontSize": 40,
+        "fitMin": 26,
+        "color": "#30251c",
+        "w": 0,
+        "grow": 1,
+        "textAlign": "center"
+      }
+    },
+    "wallet": {
+      "type": "element",
+      "children": [
+        "coin",
+        "coins"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": 110,
+        "h": 52,
+        "bg": "#eddbb2",
+        "radius": 6,
+        "align": "center",
+        "justify": "center",
+        "gap": 8
+      }
+    },
+    "coin": {
+      "type": "label",
+      "text": "¢",
+      "style": {
+        "h": 38,
+        "fontSize": 34,
+        "fitMin": 16,
+        "color": "#976219",
+        "w": 30,
+        "textAlign": "center"
+      }
+    },
+    "coins": {
+      "type": "label",
+      "text": "{coins}",
+      "style": {
+        "h": 38,
+        "fontSize": 32,
+        "fitMin": 16,
+        "color": "#30251c"
+      }
+    },
+    "stage": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "h": 0,
+        "grow": 1,
+        "align": "center",
+        "justify": "end",
+        "clip": true
+      }
+    },
+    "merchant": {
+      "type": "icon",
+      "image": "cartoon/shop/merchant",
+      "style": {
+        "w": 200,
+        "h": 200,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "pivot": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          130
+        ],
+        "attach": true
+      }
+    },
+    "shelf": {
+      "type": "element",
+      "children": [
+        "merchant",
+        "products"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 172,
+        "dir": "row",
+        "gap": 16
+      }
+    },
+    "products": {
+      "type": "repeat",
+      "doc": "shop-product",
+      "property": "products",
+      "grow": true
+    },
+    "details": {
+      "type": "element",
+      "children": [
+        "detailArt",
+        "copy",
+        "transaction"
+      ],
+      "style": {
+        "pad": 12,
+        "w": "100%",
+        "h": 160,
+        "gap": 16,
+        "dir": "row",
+        "align": "center",
+        "bg": "#f3e4c4",
+        "radius": 8
+      }
+    },
+    "detailArt": {
+      "type": "icon",
+      "image": "cartoon/frames/item/pink_candy",
+      "style": {
+        "w": 100,
+        "h": 110
       },
-      "show": "showBack"
+      "property": "illustration"
+    },
+    "copy": {
+      "type": "element",
+      "children": [
+        "name",
+        "description",
+        "benefit",
+        "consequence"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "dir": "column",
+        "gap": 4
+      }
+    },
+    "name": {
+      "type": "label",
+      "text": "{name}",
+      "style": {
+        "h": 36,
+        "fontSize": 30,
+        "fitMin": 24,
+        "color": "#30251c",
+        "w": "100%"
+      }
+    },
+    "description": {
+      "type": "label",
+      "text": "{description}",
+      "style": {
+        "h": 26,
+        "fontSize": 23,
+        "fitMin": 18,
+        "color": "#30251c",
+        "w": "100%"
+      }
+    },
+    "benefit": {
+      "type": "label",
+      "text": "{benefit}",
+      "style": {
+        "h": 26,
+        "fontSize": 21,
+        "fitMin": 16,
+        "color": "#30251c",
+        "w": "100%"
+      }
+    },
+    "consequence": {
+      "type": "label",
+      "text": "{consequence}",
+      "style": {
+        "h": 40,
+        "fontSize": 17,
+        "fitMin": 14,
+        "color": "#65482c",
+        "w": "100%"
+      }
+    },
+    "transaction": {
+      "type": "element",
+      "children": [
+        "limit",
+        "action",
+        "unavailable",
+        "balance"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 275,
+        "dir": "column",
+        "gap": 8,
+        "align": "center"
+      }
+    },
+    "limit": {
+      "type": "label",
+      "text": "Buy once. Equip one power at a time.",
+      "style": {
+        "h": 20,
+        "fontSize": 16,
+        "fitMin": 14,
+        "color": "#30251c",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "action": {
+      "type": "codeArea",
+      "key": "action",
+      "style": {
+        "w": "100%",
+        "h": 56
+      },
+      "show": "actionEnabled"
+    },
+    "unavailable": {
+      "type": "element",
+      "children": [
+        "unavailableLabel"
+      ],
+      "style": {
+        "pad": 8,
+        "w": "100%",
+        "h": 56,
+        "bg": "#a99c82",
+        "radius": 6,
+        "align": "center",
+        "justify": "center"
+      },
+      "show": "actionUnavailable"
+    },
+    "unavailableLabel": {
+      "type": "label",
+      "text": "{actionLabel}",
+      "style": {
+        "h": 36,
+        "fontSize": 22,
+        "fitMin": 16,
+        "color": "#30251c",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "balance": {
+      "type": "label",
+      "text": "{balance}",
+      "style": {
+        "h": 44,
+        "fontSize": 17,
+        "fitMin": 14,
+        "color": "#30251c",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "equipment": {
+      "type": "element",
+      "children": [
+        "equippedArt",
+        "equippedLabel",
+        "removeSlot"
+      ],
+      "style": {
+        "pad": 4,
+        "w": "100%",
+        "h": 58,
+        "gap": 12,
+        "dir": "row",
+        "align": "center",
+        "bg": "#30251c",
+        "radius": 6
+      }
+    },
+    "equippedArt": {
+      "type": "icon",
+      "image": "cartoon/frames/item/yellow_candy",
+      "style": {
+        "w": 48,
+        "h": 48
+      },
+      "property": "equippedArt",
+      "show": "hasEquipped"
+    },
+    "equippedLabel": {
+      "type": "label",
+      "text": "{equippedLabel}",
+      "style": {
+        "h": 42,
+        "fontSize": 22,
+        "fitMin": 16,
+        "color": "#fff0ca",
+        "w": 0,
+        "grow": 1
+      }
+    },
+    "removeSlot": {
+      "type": "element",
+      "children": [
+        "remove"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 112,
+        "h": 52
+      },
+      "show": "hasEquipped"
+    },
+    "remove": {
+      "type": "use",
+      "doc": "shop-action",
+      "key": "remove",
+      "props": {
+        "label": "REMOVE",
+        "selected": {
+          "property": "removeFocused"
+        }
+      },
+      "style": {}
+    },
+    "status": {
+      "type": "label",
+      "text": "{status}",
+      "style": {
+        "h": 26,
+        "fontSize": 18,
+        "fitMin": 16,
+        "color": "#fff0ca",
+        "w": "100%",
+        "textAlign": "center",
+        "bg": "#30251ccc",
+        "radius": 4
+      }
+    },
+    "rules": {
+      "type": "label",
+      "text": "Start each encounter and retry with your equipped power. Losing a life removes its effect until the next attempt.",
+      "style": {
+        "h": 30,
+        "fontSize": 16,
+        "fitMin": 14,
+        "color": "#f3e4c4",
+        "w": "100%",
+        "textAlign": "center",
+        "bg": "#30251ccc"
+      }
     }
   },
   "view": {
-    "behaviour": "dialog",
-    "dims": true,
+    "behaviour": "screen",
+    "safe": true,
     "enter": {
       "set": {
-        "ow_panel": {
+        "content": {
           "opacity": 0,
-          "ty": 20,
-          "scale": 0.97
+          "ty": 10
         }
       }
     },
     "exit": {
       "set": {
-        "ow_panel": {
-          "opacity": 0,
-          "ty": 10,
-          "scale": 0.985
+        "content": {
+          "opacity": 0
         }
       },
       "transition": {
         "type": "easeOut",
-        "ms": 140
+        "ms": 100
       }
     }
   },
   "properties": {
-    "speaker": {
+    "coins": {
       "type": "text",
       "default": ""
     },
-    "message": {
+    "name": {
       "type": "text",
       "default": ""
     },
-    "detail": {
+    "description": {
       "type": "text",
       "default": ""
     },
-    "buttons": {
-      "type": "list",
-      "of": "adventure-shop-item",
-      "default": []
+    "benefit": {
+      "type": "text",
+      "default": ""
     },
-    "showBack": {
+    "consequence": {
+      "type": "text",
+      "default": ""
+    },
+    "actionLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "balance": {
+      "type": "text",
+      "default": ""
+    },
+    "equippedLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "status": {
+      "type": "text",
+      "default": ""
+    },
+    "actionEnabled": {
       "type": "yesno",
-      "default": true
+      "default": false
     },
-    "portrait": {
+    "actionUnavailable": {
+      "type": "yesno",
+      "default": false
+    },
+    "hasEquipped": {
+      "type": "yesno",
+      "default": false
+    },
+    "backFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "removeFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "illustration": {
       "type": "image",
-      "default": "overworld-shared/dragon-oblique/blue/down-right-idle"
+      "default": "cartoon/frames/item/pink_candy"
+    },
+    "equippedArt": {
+      "type": "image",
+      "default": "cartoon/frames/item/pink_candy"
+    },
+    "products": {
+      "type": "list",
+      "of": "shop-product",
+      "default": []
     }
   },
   "transition": {
     "type": "easeOut",
-    "ms": 220
+    "ms": 180
   }
 }

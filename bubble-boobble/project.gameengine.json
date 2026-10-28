@@ -104,6 +104,9 @@
           "assets/overworld-shared/**"
         ]
       },
+      "shop-presentation": {
+        "include": ["assets/cartoon/shop/**"]
+      },
       "adventure-lighthouse": {
         "include": [
           "assets/adventure/lighthouse.png"

@@ -1,0 +1,171 @@
+{
+  "$schemaVersion": 1,
+  "guid": "f0e54737-9adf-4411-b67b-17918a2f7330",
+  "name": "shop-product",
+  "title": "Shop shelf product",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "pointer",
+        "art",
+        "plaque",
+        "badge"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "align": "center",
+        "w": "100%",
+        "h": 172,
+        "gap": 2
+      }
+    },
+    "pointer": {
+      "type": "label",
+      "text": "SELECTED",
+      "style": {
+        "h": 22,
+        "fontSize": 14,
+        "fitMin": 16,
+        "color": "#fce3a1",
+        "w": "100%",
+        "textAlign": "center",
+        "opacity": 0
+      }
+    },
+    "art": {
+      "type": "icon",
+      "image": "cartoon/frames/item/pink_candy",
+      "style": {
+        "w": 86,
+        "h": 72
+      },
+      "property": "illustration"
+    },
+    "plaque": {
+      "type": "element",
+      "children": [
+        "name",
+        "price"
+      ],
+      "style": {
+        "pad": 3,
+        "w": "100%",
+        "h": 48,
+        "bg": "#eddbb2",
+        "radius": 4,
+        "align": "center"
+      }
+    },
+    "name": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "h": 22,
+        "fontSize": 20,
+        "fitMin": 14,
+        "color": "#30251c",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "price": {
+      "type": "label",
+      "text": "{price}",
+      "style": {
+        "h": 20,
+        "fontSize": 17,
+        "fitMin": 14,
+        "color": "#30251c",
+        "w": "100%",
+        "textAlign": "center"
+      }
+    },
+    "badge": {
+      "type": "label",
+      "text": "EQUIPPED",
+      "style": {
+        "h": 24,
+        "fontSize": 16,
+        "fitMin": 16,
+        "color": "#fff0ca",
+        "w": "100%",
+        "textAlign": "center",
+        "bg": "#285b59"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "price": {
+      "type": "text",
+      "default": ""
+    },
+    "illustration": {
+      "type": "image",
+      "default": "cartoon/frames/item/pink_candy"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "pointer": {
+              "opacity": 1
+            },
+            "plaque": {
+              "bg": "#ffe8a4"
+            }
+          }
+        }
+      }
+    },
+    "focused": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "name": {
+              "color": "#954526"
+            }
+          }
+        }
+      }
+    },
+    "equipped": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "no": {
+          "set": {
+            "badge": {
+              "opacity": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "art": {
+          "scale": 0.94
+        }
+      }
+    }
+  }
+}
