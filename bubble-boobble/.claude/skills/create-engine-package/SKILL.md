@@ -1,6 +1,6 @@
 ---
 name: create-engine-package
-version: 1.1.0
+version: 1.2.0
 tier: optional
 description: Create and maintain Game Engine package repositories from the GitHub template using an installed engine. Use when extracting reusable code, adding schemas, mobile SDK plugins, Rust or build steps, testing a packed package, or changing its minimum engine version, CI and automatic release.
 ---

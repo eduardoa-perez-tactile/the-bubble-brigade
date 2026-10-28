@@ -1,6 +1,6 @@
 ---
 name: determinism
-version: 1.7.1
+version: 1.7.2
 tier: required
 description: The determinism rules every sim system follows so tests, replays and device parity hold — ctx.rng not Math.random, ctx.step/WallClock not Date.now, math.* trig, no module state, ordered iteration, no DEV branches, and proving a change hash-identical. Use when writing or reviewing any system code, or a hash mismatches.
 ---
@@ -25,6 +25,7 @@ replay. A mismatch is a P0 bug.
 - Anything that comes from outside the step (the device clock, a save read from storage, a data file edited in dev) reaches the sim only as recorded input: `WallClock` (`wallClock.feed()`), `metaInWorld(meta, { persist })` (`MetaLoaded`), `defineTunables` (`TunablesChanged`). Replays carry those inputs and never read the clock, storage or files.
 - The frame rate (`quality.setTargetFps`, device caps) never changes the sim: it keeps its fixed step and runs more steps per frame at a lower frame rate.
 - **Scratch buffers:** a module-level typed array (`const tmp = new Float32Array(16)`) used as scratch is allowed when every use writes it fully before reading it: it carries no state from one call or step to the next, so hot reload, replays and rollback are unaffected. Reading a value left there by an earlier call is module state and breaks all three; `Map`/`Set`/array caches at module level are never allowed (lint `no-module-mutable-state`).
+- **Curves:** `evaluateCurve(keys, x)` from `@gameengine/runtime` (the keys `ui.CurveField` edits) is safe in sim: plain arithmetic, no allocation, O(log n) per call. Keys must be sorted by x. It is not a tween ease (`ease: "curve:name"` takes `defineCurve`'s Hermite keys).
 - Each system has its own RNG stream, keyed by its name: renaming a system changes its randomness.
 - **Skipping is part of determinism.** `runIf`, `runOn` and `skipUnchanged` decide whether a system
   runs, from sim state only, so every device skips the same steps. `skipUnchanged` is a promise

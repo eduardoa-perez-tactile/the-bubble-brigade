@@ -1,3 +1,4 @@
+import {ADVENTURE_CLEAR_STEPS} from '../adventure/timing';
 import {stepAdventureEpisode} from '../adventure/gameplay';
 import {stageAdventureEnemies,stepAdventureSpawns} from '../adventure/spawning';
 import { recordPartyKill, recordPartyLastKill } from './party-config';
@@ -201,7 +202,7 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
     stepAdventureEpisode(g);
     if (remainingEnemies(g) === 0 && g.Players.some(alive)) {
       g.State = State.Clearing;
-      g.Countdown = (g.Level.episode?2:7) * TPS;
+      g.Countdown = g.Level.episode ? ADVENTURE_CLEAR_STEPS : 7 * TPS;
       g.Projectiles = [];
     }
   } else if (g.State === State.Clearing) {

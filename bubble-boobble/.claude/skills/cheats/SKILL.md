@@ -1,6 +1,6 @@
 ---
 name: cheats
-version: 1.7.0
+version: 1.8.0
 tier: optional
 description: Cheats and debug commands — defineCheat in src/**/*.cheats.ts, the in-game console, `gameengine cheat list|run`, MCP cheat_*, the Cheats panel, cheat() in tests, the engine.perf widget, release stripping. Use for any debug or QA shortcut, or to put the game in a state for a test or an agent.
 ---
@@ -157,8 +157,9 @@ The clipboard needs the `system` plugin; without it the widget says so and the r
 the log. For budgets and CI use `perf.stats` and T1/T2 budgets (skill `mobile-performance-review`):
 the widget is for a person holding the phone.
 
-`engine.crash` (**Native crash**, `kind=segfault|abort`) crashes the engine in Rust: SIGSEGV in
-`gameengine_core::forced_crash::segfault`, or SIGABRT. Use it on a device build to check that native
+`engine.crash` (**Native crash**, `kind=segfault|abort|panic`) crashes the engine in Rust: SIGSEGV in
+`gameengine_core::forced_crash::segfault`, SIGABRT, or a panicking host op, which aborts with the
+panic as the abort message on Android. Use it on a device build to check that native
 engine crashes reach the game's crash reporter plugin (the engine captures none itself).
 Another cheat in a `*.cheats.ts` file can run it with `runCheat('engine.crash', { kind: 'segfault' })`.
 Builds without cheats have neither the cheat nor a working host op; a release build with cheats

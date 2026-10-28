@@ -1,6 +1,6 @@
 ---
 name: physics
-version: 1.0.4
+version: 1.1.0
 tier: optional
 description: Rigid-body physics (Box2D, Jolt) — RigidBody2D/3D, Collider2D/3D, kinematic bodies, contact and sensor events, impulses, joints, batch raycasts and overlaps. Use for anything that falls, stacks, bounces or pushes, and when porting Unity Rigidbody/Collider code (physics-free triggers are overlap-queries).
 ---
@@ -32,7 +32,8 @@ ctx.commands.spawn({
   (Unity setting a kinematic body's transform).
 - `Impulse2D/3D` events push bodies; `Joint2D/3D` connect them; `CharacterController3D` walks.
 - Events: `CollisionStarted*`, `CollisionEnded*`, `SensorEntered*`, `SensorExited*`
-  (a `sensor: true` collider reports overlaps without colliding).
+  (a `sensor: true` collider reports overlaps without colliding), and `CollisionDetails3D` when
+  `Physics3DSolver.contactDetails` is on (§ Tuning the 3D solver).
 
 ## Compound bodies (Unity's child colliders)
 
@@ -86,6 +87,38 @@ re-read, a sleeping body is not read back, and a pose already in the ECS is not 
   a write of new values wakes the sync for that body.
 - Start props that should not simulate yet as `Kinematic` (or asleep: `awake: false`) and switch
   them to `Dynamic` when touched.
+
+## Tuning the 3D solver (Unity / PhysX ports)
+
+Jolt runs its own defaults until a game opts in. Both types below are opt-in: without them (or at
+their defaults) nothing changes and nothing extra is hashed.
+
+```ts
+ctx.set(Physics3DSolver, {
+  velocitySteps: 16, positionSteps: 32,   // Jolt: 10 / 2; Unity's PhysX defaults are lower, games raise them
+  frictionCombine: 'Average',             // PhysX's default; Jolt's is 'Geometric' √(a·b)
+  boxConvexRadius: 0.01,                  // Box corner rounding (Jolt 0.05); 0 = PhysX's sharp boxes
+  contactDetails: true,                   // CollisionDetails3D { a, b, relativeVelocity } after each CollisionStarted3D
+});
+// Per body (Rigidbody.solverIterations, and a stand-in for maxDepenetrationVelocity):
+ctx.commands.spawn({ /* … */ RigidBody3DSolver: { velocitySteps: 30, maxBounceSpeed: 2.5 } });
+```
+
+- **Stacks that don't fall like Unity's:** sharp boxes first. Jolt's rounded corners let a hit box
+  slide off the one below instead of shoving it; `boxConvexRadius` 0–0.02 plus more iterations made
+  a ported tower-toppling game's ice stacks fall as in Unity, iterations alone did almost nothing. Changing it
+  rebuilds every box once.
+- **Friction:** with `'Average'`, use Unity's material values as they are (ice 0.05 on 0.5 = 0.275).
+- **Pieces that stop dead on landing:** PhysX pushes sunk bodies out with speed (up to
+  `maxDepenetrationVelocity`); Jolt stops them before they sink, so nothing hops. Give the piece some
+  `restitution` (0.1 bounces a 22 m/s landing at ~2 m/s), or restitution 1 with
+  `RigidBody3DSolver.maxBounceSpeed` for a bounce of min(approach speed, cap).
+- `relativeVelocity` is a's velocity minus b's at the contact point; check the sign against the
+  Unity code you port. Jolt reports no impulse at contact start.
+- The sim steps at 30, 60 or 120 Hz only: Unity's 0.016 s fixed step is not available; expect a
+  frame of timing difference here and there.
+- Cost: more iterations and sharp boxes cost solver time (about +10–45 % on a stack-heavy level on
+  desktop). Measure on `phone-low` before shipping them.
 
 ## Stacking and carried bodies
 

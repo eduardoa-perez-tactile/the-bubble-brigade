@@ -1,6 +1,6 @@
 ---
 name: mobile-performance-review
-version: 1.15.0
+version: 1.16.0
 tier: required
 description: Mobile performance review of a file, feature or game — measure first (perf.stats, render.stats, profile.markers, `gameengine device perf`), then check CPU, GPU, memory, load-time and download budgets per device class. Use before shipping a feature, when a budget test fails, for 'will this run on low-end phones', or a drop to 30 fps.
 ---
@@ -81,15 +81,16 @@ verdict: a flagship hides what the weakest supported phone cannot do.
 
 1. **Build a probe**, not a dev build: `gameengine build android --config probe` (release-optimised,
    debug protocol on). A dev build is a debuggable APK with Dawn validation, debug logging and a
-   world hash every step: its frame times are not a player's. `device perf` names the build it
-   measured and warns on a dev build, and on a probe build that still hashes every step: set
-   `sim.hashInDev` to false to see what release costs.
+   world hash every step: its frame times are not a player's. A probe does not hash every step
+   (its cook turns `sim.hashInDev` off) unless the project sets `sim.hashInDev: true`; `device
+   perf` names the build it measured and warns on a dev build or on such a probe.
 2. `gameengine device install` / `device run`, play to the scene, then
    `gameengine device perf --seconds 20` (Android; `--json` for data): the engine's 20 s
    performance report (frame intervals, slow frames, CPU/script/GPU per frame, render load, GC,
    thermal, memory, worst frames), CPU per thread of the app from `/proc` over the same window
    (game, render, audio, V8 workers, Dawn), and `dumpsys meminfo` (Java, native, graphics,
-   code). Its `setup:` line names what the device runs: profile and source, quality level, tier,
+   code). Its `setup:` line names what the device runs: profile and source (`project` when the
+   project's `device-profiles.json` matched, `database` for the engine's), quality level, tier,
    render scale, msaa, hdr format, memory class; the report also prints its frame-rate target.
 3. For a timeline, record a Perfetto system trace with app tracing on for the game (Android
    Studio's System Trace, or a Perfetto config whose `ftrace_config.atrace_apps` names the app id
@@ -166,7 +167,16 @@ UI screen over gameplay, 10+ minutes of play for heap growth and thermals. Recor
   shows every system each step is paying ~15–40 µs per call on a low-end phone. Gate level systems
   with `runIf` on the game phase, event-driven systems with `runOn`/`{ event }`, systems that react
   to state with `{ changed: T }`, and pure derived-state systems with `skipUnchanged: true` (skill
-  `ecs-systems`). Prove no hash moved with `--hash-trace-baseline`.
+  `ecs-systems`). A `skipUnchanged` system wakes on writes to any document unless it lists the
+  ones it reads in `docs: [...]`. Prove no hash moved with `--hash-trace-baseline`. Count the
+  calls: a headless `profile.start` / `profile.stop` lists each frame's `script.system:*` jobs.
+- **Garbage every frame stutters.** No `JSON.stringify` cache keys, spreads, `map`/`filter`
+  copies or fresh arrays and objects in per-frame views and controllers: compare the primitive
+  inputs (and object identity) first and return the cached value. GC pauses show in `device
+  perf` (GC per frame) and as `gc` sections in a trace.
+- **Hidden entities still cost.** Hundreds of entities kept with `layers: 0` or `visible: false`
+  still pay transform propagation and extraction every step. Spawn what shows (or pool it), and
+  give the hidden ones no `MeshRenderer` or `Parent`.
 - Work that grows with entity count every step: a whole board, list or model rebuilt or rewritten
   each step when one cell moved. Update what changed and keep a dirty flag.
 - Meta documents: large state replaced instead of patched (skill `meta-economy`, cost at scale).
@@ -319,10 +329,11 @@ and the `n/m` count the steps in effect. The cause names the fix (ADR 0297):
   frame rate last). Fix fill and bandwidth (above).
 - `load, cpu-bound`: most slow frames were main-thread work (script, GC, sim steps,
   presentation), and a quarter of the last second's frames ran over budget by more than 10 %.
-  It took only a frame-rate step: render steps do not lower CPU time, so render quality stays.
-  Fix the CPU cost (`perf-to-rust`, `ecs-systems`, allocation per step that feeds GC). It
-  returns to 60 after four calm seconds (longer after a failed try, up to 64 s) once the frame,
-  counted with one sim step instead of two, fits 85 % of 16.6 ms in three frames of four.
+  It took only a frame-rate step, and only after about two seconds of it (a shorter burst, such
+  as a drag, keeps the rate): render steps do not lower CPU time, so render quality stays. Fix
+  the CPU cost (`perf-to-rust`, `ecs-systems`, allocation per step that feeds GC). It returns to
+  60 after four calm seconds (longer after a failed try, up to 16 s) once the frame, counted with
+  one sim step instead of two, fits 85 % of 16.6 ms in three frames of four.
 - `thermal <state>`: the device's thermal state set a floor (fair the first step, serious half,
   critical all). Fix sustained load and idle screens (Thermal / battery, above).
 - `headroom`: a step undone because frames fit again.

@@ -1,0 +1,11 @@
+guid = "6461f51a-bb9e-5eea-9fea-38df49661231"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "none"
+filter = "linear"
+compression = "none"
+
+[settings.overrides.phone-low]
+max_size = 256

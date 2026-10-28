@@ -1,6 +1,6 @@
 ---
 name: device-tiers
-version: 1.13.0
+version: 1.14.0
 tier: required
 description: Cheaper content per device — phone-low first, quality levels low/medium/high per platform (quality.select, quality.levels, --level), opt-in visual features per level (quality features, quality show, W_FEATURE_OFF), overrides in materials, VFX, textures, meshes, post, audio. Use when a game runs badly on phones or an effect is missing on a device.
 ---
@@ -212,6 +212,12 @@ run stays off:
   phone shows frames fit 16.6 ms with headroom (skill `mobile-performance-review`).
 - **The quality governor stacks on top.** Under load and heat it scales VFX further (`vfx`) and
   biases LODs (`lodBias`): the phone-low version should already fit without it.
+- **Tell the governor when the game is loading.** It already ignores frames while assets and
+  pipelines load and for 0.5 s after a start or launch. Work the engine cannot see, such as
+  building a level's meshes or spawning its contents over a few frames, would read as load and
+  lower the render scale or frame rate for the rest of the level: call `quality.settle(seconds)`
+  (presentation, at most 3 s) from the `LateUpdate` or UI code that starts it, once per load:
+  asks that run into each other hold for their first 3 s only. Thermal steps still apply.
 
 ## Check it
 

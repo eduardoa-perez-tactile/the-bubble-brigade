@@ -406,6 +406,22 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Cartoon film: a view (ui/docs/cartoon-film.ui.json)
+     *
+     * Properties:
+     *   - `image`: image, default "cartoon/film/print-0"
+     *   - `strength`: number, default 0.7
+     *   - `scratch`: enum clear | left | right, default "clear"
+     * Events: none
+     * Code areas: none
+     * Refs: none
+     */
+    'cartoon-film': {
+      props: { image: string; strength: number; scratch: 'clear' | 'left' | 'right' };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Cartoon Grid Row: a widget (ui/docs/cartoon-grid-row.ui.json)
      *
      * Properties:

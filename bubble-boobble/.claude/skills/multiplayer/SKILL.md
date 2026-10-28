@@ -1,8 +1,8 @@
 ---
 name: multiplayer
-version: 1.11.0
+version: 1.16.0
 tier: optional
-description: Online multiplayer — fixed matches and always-open worlds, authoritative or relay server exports, web/native clients, rollback, turn and snapshot sync, matchmaking and LAN. Use for online play, persistent shared worlds, joining or deploying servers, or late-join and reconnect behavior.
+description: Online multiplayer — fixed matches, open rooms (join while it runs), always-open worlds, authoritative or relay servers, web/native clients, rollback, turn and snapshot sync, matchmaking and LAN. Use for online play, persistent worlds, deploying servers, late join or reconnect.
 ---
 
 # Multiplayer
@@ -56,7 +56,19 @@ Add the block to `project.gameengine.json` (every field is optional; the scalars
   packed input, with the same bindings as `input.json` (`key`, `negative`/`positive` keys, gamepad
   `button` and `axis`). Touch controls add to it
   with `multiplayer.setInput(buttons, [x, y])`, OR-ed with the mapped keys.
-- `window`: how many frames a real-time client may run ahead of what the server confirmed.
+- `window`: how many frames a real-time client may run ahead of what the server confirmed (a rollback
+  keeps this many sim snapshots). A client needs about `rtt + margin` frames of it: past roughly
+  130 ms round trip the default 12 stalls the sim (`status().windowStalls`).
+- `pacing` (real-time; client scheduling only, the confirmed inputs and hashes do not change):
+  `adaptive` (default true) takes the margin the client keeps between its inputs and the server's
+  clock from measured jitter, between `minMarginMs` (33) and `maxMarginMs` (150);
+  `maxWindow` (default 0) lets the window follow the round trip up to that many frames, so a slow link
+  does not stall while a fast one keeps rollbacks shallow (costs `maxWindow + 2` snapshots, set it
+  to 30–40 for a game played on mobile data, 0 for a LAN game); `inputDelay` (0–4, default the
+  server's 1) is the frames between a local input and the frame it applies to: 0 applies it to the
+  frame being simulated and the client then runs that much further ahead. `adaptive: false` is the
+  old fixed margin and window. `status()` shows `marginMs`, `jitterMs`, `window`, `inputDelay`,
+  `stalls` split in `windowStalls` and `pacingWaits`.
 
 ## 2. Join from presentation, read the match in sim
 
@@ -79,8 +91,34 @@ match seed on every device, so all peers and the server start from the same stat
 match the sim sees the project's reference resolution as `ViewInfo` (not the device's screen),
 and device events (taps, keys, UI events) never reach the sim: only `PlayerInputs` (real-time)
 or the turn events do. Layout and touch targets read the real screen in presentation as usual.
+A mouse-look game reads the mouse with `multiplayer.pointer()` (`x`, `y`, `dx`/`dy` since the last
+call, `buttons` bit 0 left, 1 middle, 2 right) in a LateUpdate system and sends the look through
+`setInput`. `leave()` from a started match rebuilds the world on the next frame, so the game is
+back in a fresh offline world, not the match's last state.
 
-`join`, `leave`, `status`, `events`, `setInput` and `submitTurn` throw inside a sim system.
+`join`, `leave`, `status`, `events`, `setInput`, `pointer`, `onSample`, `onPredict` and `submitTurn` throw
+inside a sim system.
+
+### Input latency and prediction (real-time)
+
+- **Sample at the latest moment.** `setInput` from a LateUpdate system reaches the sim one step late
+  (it runs after the frame's steps), plus `pacing.inputDelay`. `multiplayer.onSample(() => { … })`
+  (module level, one function) is called by the engine before every match step, outside the sim: read
+  `pointer()`, call `setInput`, and the mouse of this frame is in the frame about to be simulated.
+  With `inputDelay: 0` that is zero frames from mouse to sim (two with LateUpdate and the default).
+  The function has no `ctx`; keep what it needs (the look angles) in presentation state and show
+  the same state in LateUpdate.
+- **Show your own look at once.** The sim learns a rollback correction of your seat later; show the
+  camera from presentation state instead: write a `VisualOffset` rotation on the entity a
+  `VirtualCamera` sits on (relative to its sim pose), which the camera now follows.
+- **Predict other players.** A missing remote input repeats that seat's last one, wrong at every
+  change. `multiplayer.onPredict(({ seat, frame, history }) => ({ buttons, stick }))` returns a better
+  guess from the seat's last eight confirmed inputs (`history`, oldest first, each with its frame);
+  null repeats the last. It must be **pure** (no `Math.random`, clock or state of its own), cheap (a few
+  calls a frame per remote seat, re-simulated frames too), and only decides speculative frames:
+  the server's input replaces it and the frames that differ are re-simulated, so it cannot desync.
+  Extrapolate by `frame − history.at(-1).frame`, not by one step: the history lags by the round trip.
+
 
 ### Browser builds
 
@@ -100,6 +138,31 @@ and snapshot matches; see `ship-web` for toolchain and runner setup.
 
 ## 3. Real-time games
 
+### Open rooms: join a match that is running
+
+A fixed match starts when every seat is taken. For an arena people drop in and out of, make the room **open** (ADR 0439): it starts at its first seat, a quick match joins the fullest running room that has a seat free (else makes one), and a seat is retaken as players leave. Real-time, input sync, `authority: "server"` only:
+
+```json
+"multiplayer": { "mode": "realtime", "authority": "server", "players": 4, "lateJoin": true }
+```
+
+`lateJoin` is `true` or `{ "event": "SeatChanged", "graceSeconds": 15 }`; `join()` is open by default then (`join({ open: false })` for a fixed match). Declare the event in the schema with `seat: u32()` and `present: bool()` (the server refuses to start without them; `fresh: bool()` is optional and sent only when declared): the server raises `{ seat, present, fresh }` at the **same frame on every device and the server**, so the sim, not presentation, decides who exists:
+
+```ts
+// schema/game.schema.ts
+export const SeatChanged = event('SeatChanged', { seat: u32(), present: bool(), fresh: bool() }, { sim: true });
+// a sim system with events: [SeatChanged]
+for (const e of ctx.events.read(SeatChanged)) { /* set the seat entity's `active` to e.present; reset it when e.fresh */ }
+```
+
+- **Seats exist always** (one entity each, an `active` flag the event sets): a seat without a player plays the neutral input, never its last one. Leave and disconnect both raise `present: false` at once; `fresh` is true when a new player takes the seat and false when the one it was held for returns, so reset a seat's score on `fresh` only.
+- A clean leave (`multiplayer.leave()`) frees the seat; a lost connection holds it for `graceSeconds` (the player returns with `join({ seat })`, which the game does after a reconnect). A room with every seat free ends; it has no length limit.
+- A player who joins a running room is sent the server's world (at most 1 MiB; a bigger world refuses the join with `E_LIMIT`) and continues from it: do not keep sim state outside the world (the same rule as for rollback), or the joiner differs from the others. The first `status().frame` is the room's frame, not 0.
+- `MatchEvent` `joined` / `left` (presentation) arrive once each for toasts ("Ana joined"): `left` when the player leaves or drops, `joined` when a seat is taken or its held player returns. A hold running out sends nothing more, and a joiner is not told about the players already there (read the sim's seats). Use the sim event for anything that changes the game.
+- **A lobby list:** `multiplayer.rooms({ server })` lists the open rooms running on one match server: `null` until it answers, then `{ server, rooms: [{ room, seats, taken, free }], ageMs }`, at most 64 rooms with a free seat first, then the fullest. Call it every frame the lobby shows (it asks once a second and stops 10 s after the last call or on `join`), and join a row with `join({ server: listing.server, room: row.room })`; a full room answers `E_FULL`. Its error is thrown, and thrown again for 5 s before it reconnects. The list is **per match server**: a balancer refuses it (`E_BALANCER`), so a lobby across servers asks each one. It shows room names and seat counts only, never players or seat tokens.
+- Test: `gameengine mp test --authority server --players 4 --initial 1 --frames 2400 --churn join@300,join@600,drop:1@1200,back:1@1500,leave:2@1800` (hash agreement for every peer that joined, empty-seat input, `--grace-secs`, `--replay-join` to measure the replay it avoids). A server from before this release answers an open hello `E_VERSION`: ship the server and the clients from one engine release.
+
+
 ### Always-open worlds instead of fixed matches
 
 For a continuously available world, use `multiplayer.world` (ADR 0311). This runs the cooked game in the real authoritative server export, without a separate Node simulation:
@@ -115,9 +178,21 @@ Declare `WorldInput` as an empty `sim: true` event and `SharedState` with `defin
 
 In presentation, `await multiplayer.world.connect({server: 'wss://host/game/socket', name})` returns a connection. `send(data)` sends intent. `subscribe(handler)` delivers `{kind:'welcome',player,version}`, `{kind:'snapshot',tick,document}`, `{kind:'error',error}`, and `{kind:'closed',reason}`. Validate the document and feed it to a local sim consumer using `emitInputData` on a separate empty marker. `poll()` is an alternative to subscription. Close the connection on view/session disposal. Implement reconnect and alias UI in the game; the connection supplies heartbeat replies. Rejoining obtains an available identity, so reset connection-local input and presentation state.
 
-Build web and `build server --target linux-x64 --authority server` from matching source/engine/config. The engine enforces game/build identity. Use the public WSS URL; no game-owned wire protocol or Node gameplay server is needed. The Linux export must be built on Linux and include its cooked `game/` and shared libraries. `--dry-run` is not runnable.
+Build web and `build server --target linux-x64 --authority server` from matching source/engine/config. The engine enforces game/build identity. Use the public WSS URL; no game-owned wire protocol or Node gameplay server is needed. The Linux export includes its cooked `game/` and the WebGPU wrapper; from macOS or Windows it packages the release's published Linux server. `--dry-run` is not runnable.
 
 A world starts immediately, accepts late joins, reuses disconnected identities and waits while empty without resetting. It ignores fixed-match `players`; actual capacity remains bounded by resources and operator connection guards. A process restart resets it. One changed full document is sent at most every `sendEvery` fixed steps, with fresh state for new joins and pacing for slow sockets. Input is limited to 4 KiB and full state to 256 KiB. Oversize state or sim failure stops the server explicitly for supervisor restart. This mode has no interest filtering, client prediction, accounts, database or multiple-world sharding. Fixed matches continue to use `multiplayer.join` and `PlayerInputs` below.
+
+In a browser, a hidden page runs no frames; the web player keeps a world connection alive by itself meanwhile (it answers pings and keeps only the newest snapshot, which `subscribe` delivers on resume), so switching windows is not a departure. A frozen or discarded page still disconnects; treat that as a leave.
+
+An authoritative server accepts only clients of its exact build (`<version>-<script hash>`); a browser build and a server build of one commit can still differ (a build step's define, one machine transpiling and the other not). Build the server from the browser build's script and check the pair before shipping:
+
+```bash
+gameengine build web --config release --out build/web
+gameengine build server --target linux-x64 --script-from build/web
+gameengine mp identity build/web .gameengine/build/server/linux-x64   # ok, or what differs and why
+```
+
+A refused hello says `E_MISMATCH: this server runs <game> build <id> (client: <game> build <id>)`.
 
 Run `GAMEENGINE_E2E_DIR=<isolated scratch> GAMEENGINE_WORLD_HOST=<native host> pnpm test:world:server` for the explicit real-server E2E. Test two actual compiled clients against the published cooked server as well; a healthy socket alone does not prove gameplay.
 
@@ -355,11 +430,13 @@ entities and 4 seats holds about 82 KB of replication state.
 
 ```bash
 gameengine mp test --players 2                         # relay, bots, simulated 4-frame latency + jitter
+gameengine mp test --authority server --latency 3 --jitter 3 --adaptive off   # the fixed pacing; compare stalls, late inputs and depth
 gameengine mp test --players 4 --authority server      # the server steps the game; hashes compared to it
 gameengine mp test --latency 10 --jitter 6 --frames 1200 --js hermes
 gameengine mp test --authority server --frames 1500 --event '{"$event":"ShrinkArena","radius":5}'
 gameengine mp test --players 4 --authority server --sync snapshot   # snapshot sync: truth and leak checks
 gameengine mp test --players 32 --authority server     # up to 32 in input sync, 256 with --sync snapshot
+gameengine mp test --authority server --players 4 --open on --initial 1 --churn join@300,drop:0@900,back:0@1100 --frames 1800   # open room: joins from the world
 ```
 
 `mp test` runs at the game's rate and reports it (`rate`), with ms per tick for everything, the
@@ -378,6 +455,12 @@ repeats with the same seed.
 `--event` raises a server event a third of the way in; an authoritative run also runs the game's
 server tasks (`server.taskCommands` in `--json`). Test a server event's handler like any event:
 `input.emit(ShrinkArena, { radius: 5 })` in a game test.
+
+`--latency` and `--jitter` are one way, in frames; the pacing flags (`--adaptive on|off`, `--max-window N`,
+`--input-delay N`) override `multiplayer.pacing` for the run. It prints per player the margin and
+jitter it measured, the window in force and the stalls (at the window / waiting on purpose), and
+`lateInputs`: inputs that reached the server after their frame, which it repeated the previous one for
+(the player's own input is then corrected on their device).
 
 `ok: false`, a `divergence` or a `desyncs` entry means state lives outside the world or depends
 on the device: fix it, never loosen the test. It also prints payload and on-wire bytes and packets per
@@ -404,7 +487,8 @@ with `server: 'ws://<this machine>:7600'`.
 ```bash
 gameengine build server                                # this machine's OS, authority from the project
 gameengine build server --target linux-x64 --authority server --port 7600
-gameengine build server --target windows-x64 --dry-run # the folder without the binary (finish it on Windows or CI)
+gameengine build server --target windows-x64 --authority relay
+gameengine build server --target macos-arm64 --dry-run # the folder without the binary (finish it on a Mac or CI)
 ```
 
 Or **Build → Build Multiplayer Server…** in the editor. The folder (default
@@ -415,8 +499,10 @@ host, which runs the cooked game), `run.sh` / `run.cmd`,
 cooked game in `game/`, plus `run-balancer.sh` / `.cmd`. Copy it to the machine and run the script
 (`PORT`, `STORE`, `TLS_CERT`/`TLS_KEY`, `BALANCER`/`PUBLIC_URL`, `GAMEENGINE_MP_KEY` from the
 environment), or `docker build -t my-game-server . && docker run -p 7600:7600 my-game-server`. A
-binary is built for the OS it is built on (`E_CROSS` otherwise): build Linux servers on Linux or
-in CI. `--out` must be empty or an earlier server build.
+Linux x64 server (relay or authoritative) or a Windows x64 relay builds on any OS: from another
+OS, or in an installed editor, the build downloads the release's published binary once and packages
+it. A checkout between releases names that release with `--player X.Y.Z` (the game cooked by a newer
+engine may not run on it). Other targets build on their own OS (`E_CROSS` otherwise). `--out` must be empty or an earlier server build.
 
 Rebuild and redeploy an authoritative server with every game release: it accepts only its own
 build.
@@ -566,7 +652,7 @@ if (h) multiplayer.joinHost(h);                               // or multiplayer.
 - 1–32 players per match in input sync and turns, 1–256 in snapshot sync; a snapshot room
   replicates at most 4,096 entities and a seat holds at most 1,024–4,096 of them (fewer the more
   seats).
-- Protocol 7: clients and servers of an older engine refuse each other (`E_VERSION`).
+- Protocol 8: clients and servers of an older engine refuse each other (`E_VERSION`).
 - A balancer holds `--max-conns` (10,000) connections at once, waiting players too, on its
   reactor threads. Tickets live in its memory, so a restart drops them (players rejoin).
 - Phone builds link the match client when the project has a `multiplayer` block, but no match has

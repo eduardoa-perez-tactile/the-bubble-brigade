@@ -1,6 +1,6 @@
 ---
 name: editor-modes
-version: 1.8.0
+version: 1.8.1
 tier: optional
 description: Project editor modes (editor/modes/*.tsx, defineEditorMode) — custom panels docked beside the built-in ones, viewport tools, inspectors and palette actions through @gameengine/editor-api and the undoable command bus. Use when designers need a level, wave, dialogue or content tool next to the game view.
 ---
@@ -78,7 +78,7 @@ panels: [
 |---|---|
 | `play` | The game view with Play/Stop above it; "Press Play" until a game runs; never the edit world |
 | `scene` | The scene view: your viewport tools, overlays, asset drops, camera widgets |
-| `hierarchy`, `inspector`, `project`, `console`, `profiler`, `tests`, `replays`, `cheats`, `build`, `devices`, `content`, `materials`, `grading`, `tilemap`, `animation`, `uiPreview`, `skills`, `packages` | The Scene mode's panels |
+| `hierarchy`, `inspector`, `project`, `console`, `profiler`, `tests`, `replays`, `cheats`, `build`, `devices`, `content`, `materials`, `grading`, `tilemap`, `animation`, `uiPreview`, `skills`, `packages`, `packageBrowser` | The Scene mode's panels |
 | `materialList`, `materialPreview`, `materialValues` | The Materials mode's panels: shaders, materials and models with their sub-materials; the live preview; the values, textures and shader of what is picked. They share one pick, and `materialValues` alone edits the selected entity's model (a character creator can place it beside its own sliders) |
 
 - Each builtin at most once per mode; panels in one region are tabs, in your order.

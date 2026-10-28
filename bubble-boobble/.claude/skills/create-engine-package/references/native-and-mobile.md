@@ -20,7 +20,10 @@ a separately declared serde_json dependency has its own types in an SDK build.
   writes `native/src/schema.gen.rs`; commit it. Keep each system's TypeScript twin, with the same
   name, and prove them equal with `gameengine test <project> --native both --js both`. Ship the
   crate as source (npm installs it, Cargo compiles it into each game); don't publish it to
-  crates.io, and don't depend on another package's crate. A built-in package's crate exports
+  crates.io, and don't depend on another package's crate. Pin every other dependency exactly
+  (`= "=1.2.3"`, a git dependency with `rev`): a hub app lends a package's Rust to the games it
+  launches only for the same package build, and that build hash reads `Cargo.toml`, not a
+  `Cargo.lock`. `gameengine package check` fails on a looser one. A built-in package's crate exports
   `pub static PACKAGE: gameengine_game::Package` instead.
 - **Rust services (built-in packages only):** declare the service with `rust: true` in
   `services/*.schema.ts`, and give `PACKAGE` a `services` factory returning a

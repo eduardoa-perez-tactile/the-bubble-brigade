@@ -1,6 +1,6 @@
 ---
 name: ecs-systems
-version: 1.9.0
+version: 1.11.0
 tier: required
 description: How to write gameplay as ECS systems in Game Engine — schema components and resources (gameengine gen), defineSystem, queries and chunks, commands, events, stages and ordering, run conditions (runIf, runOn, skipUnchanged) and work that scales with change. Use when adding or changing game logic, components or a system.
 ---
@@ -50,8 +50,12 @@ export const Rise = defineSystem({
   phone), and an idle screen should call (almost) none.
 - **`skipUnchanged: true`:** for a system whose result depends only on what it declares (its
   queries, resources and events), e.g. a label that shows the score or a system that derives
-  positions from cells. The engine skips steps in which none of that changed (and no entity was
-  spawned or despawned, no document changed, no input arrived), so an idle screen calls nothing.
+  positions from cells. The engine skips steps in which none of that changed (no row of its
+  queries was written, and none moved into or out of their tables; no document changed; no input
+  arrived), so an idle screen calls nothing. Spawns and despawns of entities its queries do not
+  match do not wake it. Any document write does, unless it lists every document it reads in
+  `docs: [progress]` (the handles `defineDoc` returns). A system that follows entity ids stored in
+  components to entities its queries do not match must not opt in: their despawn does not wake it.
   ```ts
   export const ScoreLabel = defineSystem({
     name: 'ScoreLabel',
@@ -74,6 +78,7 @@ export const Rise = defineSystem({
   Size it for the shipped game: 10× the sample's entities should cost the same on a still step.
 - **`runOn: [Tap, Swipe]`:** the system runs only in steps with one of those events to read (added to `events` for you); other steps skip it natively, like `runIf`. Use it for systems that only react to events.
 - **Resources:** `ctx.resource(T)` returns field views (`ctx.resource(Game).score[0]`), no copy; `ctx.setField(Game, 'score', 5)` writes one field in place. `ctx.get(T, into)` refills `into`; `ctx.get(T)` without it and `ctx.set(T, {...})` allocate (see What a run costs).
+- **Keyboard and gamepad:** bind named actions in `input.json` at the project root (`{ "actions": { "moveX": [{ "negative": "ArrowLeft", "positive": "ArrowRight" }], "jump": [{ "key": "Space" }, { "button": 0 }] } }`; keys are `KeyboardEvent.code` names: `KeyA`, `Digit1`, `ArrowUp`, `Space`) and read the `ActionState` entities (compare `name` with `stringId('moveX')` resolved before the loop, `value` -1..1, `pressed`, `justPressed`, `justReleased`) in a sim system; the same input works in the editor's Play view, `gameengine run` and gamepads. A name the engine does not know logs `input.json: unknown key` and never fires. Raw keys come as `KeyEvent { code, down, mods }`, where `code` is `Keys.<name>` from `@gameengine/runtime` (`keyName(code)` goes back), never a browser `keyCode`. Tests press keys by name: `input.key('ArrowRight', true)`. Example: `samples/tile-maze` (`KeysToTarget`).
 - **Events:** `ctx.events.read(T)` returns decoded copies (declare `T` in `events` or `runOn`); `ctx.events.forEach(T, (e) => …)` hands one refilled object per event (copy what must outlive the call); `ctx.events.count(T)` counts without decoding; `ctx.events.emit(T, v)` / `ctx.signal` need no declaration, so list only events you read.
 - **Comparing strings and assets:** `stringId('red')` / `assetId('texture', 'gems/red.png')` resolve a value inside `run`, before the loop (never interning it; never keep an id at module level: a rollback or a new world replaces the tables); compare the numbers in the loop, or use `c.is(Gem, i, 'kind', 'red')` / `ctx.is(T, field, value)`. `stringOf(id)` and `assetKey(id)` go the other way. Never import `@gameengine/runtime/internal`; lint `no-module-level-ids` flags ids resolved at module level.
 - **Small fixed arrays:** `array(f32(), 8)` in the schema (number kinds, up to 64) is one column of 8 lanes: `c.col(T).samples[i * 8 + k]`, decoded as `number[]`.

@@ -1,6 +1,6 @@
 ---
 name: save-slots
-version: 1.0.0
+version: 1.1.1
 tier: optional
 description: Save progress with typed slots, immediate write receipts, awaited persistence barriers, backups, migrations and settings. Use when a game needs to save or load local progress, batch saves, confirm browser persistence, handle storage failures or distinguish memory updates from durable native writes.
 ---
@@ -43,9 +43,24 @@ If journal-overflow recovery returns `E_BUSY`, pause mutations while retrying th
 Slots use checksums and retain the previous write as a backup. `load()` reports `fresh`,
 `recovered` and the stored version. Migrations run from each earlier version to the current
 one; a newer build's save is refused. `delete(slot)` removes both versions, and `slots()`
-lists names. Writes are limited to 8 MiB encoded; batch snapshots and queued native work
-are limited to 32 MiB. Browser settings files are limited to 8 MiB; other user-data files
-are limited to 32 MiB each. Await earlier native work after `E_BUSY`.
+lists names. Defaults are 8 MiB per encoded save and 32 MiB for batch snapshots and queued
+native work. Configure all save types in the game's `project.gameengine.json`:
+
+```json
+"storage": { "maxSaveBytes": 33554432, "maxQueuedBytes": 134217728 }
+```
+
+Omitting `maxQueuedBytes` chooses the greater of 32 MiB and four times `maxSaveBytes`.
+Use positive integer bytes, queue at least 65536 bytes and twice the file limit, and
+queue at most 2147483647 bytes. Native queue accounting estimates snapshot memory; web batches count
+encoded files including backups. Keep headroom for the save envelope and formatting.
+An existing file above a lowered limit returns `E_LIMIT` on reads and replacement writes.
+Raise the limit before transforming it; never treat this error as a fresh slot.
+Dense arrays and objects may require a queue well above twice their encoded size.
+The shared queue also covers settings snapshots. A file below its individual cap can
+still exceed a small queue budget. Nesting has a separate native limit of 128. Browser
+settings files remain limited to 8 MiB; other user-data files use the queue byte limit. Await earlier native work
+after `E_BUSY`. Measure actual saves and device memory before raising budgets.
 
 These APIs are presentation-only. Bring loaded progress into sim as recorded input or a
 persisted meta's `MetaLoaded`, so replays agree. Test `writeImmediate`, `flush`, failures and

@@ -1,13 +1,13 @@
 ---
 name: animation-3d-agent
-version: 1.3.3
+version: 1.4.1
 tier: optional
-description: 3D character animation as keyed clips (*.anim3d.json) on a rig profile with `gameengine anim3d` / MCP anim3d_* — poses, cycles, mirroring, root motion, clip events, contact-sheet previews, the Animation 3D mode, Blender MCP. Use when making or changing 3D animation, a pose or a cycle on a skinned model.
+description: 3D character animation as keyed clips (*.anim3d.json) on a rig profile with `gameengine anim3d` / MCP anim3d_*: a reference humanoid with base clips (idle, walk, run, jump), poses, cycles, mirroring, root motion, events, contact-sheet previews, Blender MCP. Use when making or changing 3D animation, a pose or a cycle on a skinned model.
 ---
 
 # Keyed 3D animation
 
-**Covers:** Authoring 3D character animation in Game Engine as keyed clips (*.anim3d.json) on a rig profile (*.rig3d.json) — as an agent with `gameengine anim3d` / MCP `anim3d_*` (rig infer, import a model's clip as keys, new, pose, reach, key, apply, scale/offset/smooth, retime, mirror, mirror-copy, loop-seam, planted), gameplay data (clip events and footstep markers the sim reads, root motion that moves a RootMotion entity, foot lock, IK swivel, quaternion keys), checking motion by numbers (`sample`), `lint` and engine-rendered contact sheets (`preview`), playing clips through an Animator as `file#clip`, and the editor's Animation 3D mode (off by default; switch it on in the Mode library). Also when to bring in Blender with the free Blender MCP server, and asking the user before setting it up. Use when making or changing 3D animation, a pose or a cycle on a skinned model.
+**Covers:** Authoring 3D character animation in Game Engine as keyed clips (*.anim3d.json) on a rig profile (*.rig3d.json) — as an agent with `gameengine anim3d` / MCP `anim3d_*` (rig infer, import a model's clip as keys, new, pose, reach, key, apply, scale/offset/smooth, retime, mirror, mirror-copy, loop-seam, planted), gameplay data (clip events and footstep markers the sim reads, root motion that moves a RootMotion entity, foot lock, IK swivel, quaternion keys), checking motion by numbers (`sample`), `lint` and engine-rendered contact sheets (`preview`), playing clips through an Animator as `file#clip`, and the editor's Animation 3D mode (off by default; switch it on in the Mode library). Starts humanoids from the reference humanoid's rig and base clips (`references/humanoid.md`). Also when to bring in Blender with the free Blender MCP server, and asking the user before setting it up. Use when making or changing 3D animation, a pose or a cycle on a skinned model.
 
 A keyed clip animates a few channels of a few joints **relative to the rest pose**, on named axes
 from a rig profile: "bend `lowerLeg.L` to 45° at frame 10, ease out". The importer bakes it into
@@ -20,6 +20,15 @@ canonical form after the engine has loaded the result, so a refused edit (an unk
 key on the mirrored side, a frame outside the clip) leaves the file unchanged and says why. Do not
 hand-edit the JSON unless an op cannot express the change; run `anim3d info` afterwards if you do.
 
+## Start from the reference humanoid
+
+For a humanoid, do not start from an empty clip. `references/humanoid.md` (beside this file) has
+the canonical skeleton (`builtin:humanoid`: bone layout, alias names, rest and reference pose,
+what each channel's sign means) and eight base clips in `references/humanoid/` (idle, walk, run,
+jump, fall, land, punch, hit) with their key poses, timing and curves, planted feet included.
+Copy the clip closest to what you need, point its `rig` at your profile, scale its metres to
+your character and change it from there; the page says how, and why the clips read well.
+
 ## The loop
 
 ```
@@ -30,16 +39,20 @@ rig infer (once per model)  →  new clip  →  block key poses  →  check numb
 ### 1. A rig profile, once per model
 
 ```sh
-gameengine anim3d rig infer assets/models/hero/hero.glb --out assets/anim3d/hero.rig3d.json   # or builtin:mannequin
+gameengine anim3d rig infer assets/models/hero/hero.glb --out assets/anim3d/hero.rig3d.json   # or builtin:humanoid, builtin:mannequin
 ```
 
 Read the report: `unmapped` joints and `notes` (a missing foot chain, a role it could not find)
-need a hand fix in the profile (one line per joint). It prints the **up axis of the hips' parent
+need a hand fix in the profile (one line per joint). A model that rests in a T-pose or A-pose
+gets a `base` on its upper arms, so clips key from arms hanging down on every rig (the
+reference pose); keep it. Re-inferring a profile whose clips were keyed without a `base` changes
+what their arm keys mean: keep the old profile for them, or re-key. A based arm is in every bake,
+so an override layer that keys only the head or a tail needs a mask. It prints the **up axis of the hips' parent
 frame**: on a Blender (Z-up) export under a root bone it is often `z`, so `hips.z` raises the body
 and `hips.y` moves it backwards. Use `hips.my` (model up) and you need not care. Files are a path
 or an asset key (`models/hero/hero.glb`), from anywhere in the project. Conventions it writes, the same on both sides:
-`pitch` swings a bone forward (+Z), `roll` swings a limb out to its side, `yaw` turns about up,
-knees and elbows have one `bend` axis with limits. Feet and hands get IK controls `foot.L.ik`,
+`pitch` swings a bone forward (+Z; on a foot it lifts the toes), `roll` swings a limb out to its
+side, `yaw` turns about up, knees and elbows have one `bend` axis with limits. Feet and hands get IK controls `foot.L.ik`,
 `hand.R.ik` when the chain is a parent chain.
 
 Creatures and props are keyable too: a joint with a side in its name (`Wing_L`, `LeftEar`)
@@ -83,7 +96,10 @@ elbow has only `bend`: twist or splay it with its `rx/ry/rz` next to it. Key fra
 channel you key later, or it holds its first key from frame 0 (`lint` code `hold`). Rotations
 interpolate as angles per channel: keys 270° apart sweep the long way (`lint` code `jump`). An ease
 shapes the segment **out of** that key: `linear`, `step`, Penner names (`outQuad`, `inOutSine`,
-`outBack`, …) or `anim3d key ease $F --channel c --frame f --bezier ox,oy,ix,iy`.
+`outBack`, …) or `anim3d key ease $F --channel c --frame f --bezier ox,oy,ix,iy`. Setting a new
+value on an existing key without `--ease` keeps that key's ease. `anim3d retime $F --length n`
+stretches every key to the new length; add `--keep` to leave keys on their frames (refused when one
+would fall past the end).
 
 Plant a foot or reach a point with IK instead of angles:
 
@@ -187,10 +203,10 @@ gameengine anim3d foot-lock $F --on                     # planted IK feet stay w
 
 The **Animation 3D** mode is built in and **off by default**. Switch it on in the Mode picker's
 **Library** (or `"editorModes": { "editor.animation3d": true }` in `project.gameengine.json`).
-It shows a stick figure scrubbed from the engine's evaluator, the engine's render at the playhead,
-the selected joint's channels (type a value to key it) and a dopesheet (select a key to change its
-ease or delete it). Every edit there is one of the commands above, so you and a person can work on
-the same clip.
+It shows the engine's render with the skeleton drawn over it (click a bone, drag move/rotate/scale
+handles), a joint Hierarchy, the selection's channels (type or drag a value to key it), a dopesheet
+(jump, drag keys, change a key's ease or delete it) and a graph editor. Every edit there is one of
+the commands above, so you and a person can work on the same clip.
 
 ## Generated clips
 
@@ -207,7 +223,11 @@ props work first time:
 - **Root and hips:** one root bone at the origin pointing up (+Z in Blender), not deforming; the
   hips are its child. Everything else descends from the hips.
 - **Names:** humanoid names with `.L`/`.R` (or `Left…`/`Right…`) on both sides, so `rig infer`
-  pairs them and `mirror` works. Knees and elbows bend on one local axis.
+  pairs them and `mirror` works. Knees and elbows bend on one local axis. The reference
+  humanoid's layout (`references/humanoid.md`: neck, shoulders, hands, feet and toes) is the
+  set the base clips key; copy it when you build a skeleton.
+- **Rest pose:** a T-pose or an A-pose, facing forward (+Z in glTF); `rig infer` gives the
+  arms a `base` down to the reference pose.
 - **Sockets:** a non-deforming bone per prop slot (hand, back), with +Y along the held item, for
   `BoneAttach` (skill `models-3d`).
 - **Weights:** at most 4 per vertex, normalised; nothing weighted to the root or a socket.
@@ -238,6 +258,7 @@ same server version and restart its server in Blender before relying on more tha
 
 ## Limits (v1)
 
-No float curves, additive authoring or retargeting yet. Clips: 36 000 frames, 32 768
+No float curves or additive authoring yet. A clip moves to another humanoid by its aliases and
+the reference pose: angles carry over, metres need scaling (`references/humanoid.md`). Clips: 36 000 frames, 32 768
 keys, 512 tracks, 32 controls, 256 events and contact markers; an import reads at most 1 000 000 frames × joints; a clip past a
 limit is refused with an error naming it. Animators: 4 layers.

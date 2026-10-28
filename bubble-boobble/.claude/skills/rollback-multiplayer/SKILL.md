@@ -1,6 +1,6 @@
 ---
 name: rollback-multiplayer
-version: 1.2.1
+version: 1.3.0
 tier: optional
 description: Real-time multiplayer with rollback netcode in Game Engine — PlayerInputs, defineButtons/playerInput, what sim state rollback allows, and `gameengine net test` (latency, jitter, SyncTest). Use for any versus or co-op game where players act at the same time, or for a desync or rollback bug.
 ---
@@ -49,6 +49,10 @@ by the netcode for the local player; sim systems never read
   2 ms. `gameengine net test` prints ms per peer frame.
 - Effects (sound, particles, screen shake) belong in `LateUpdate`/presentation, which never
   re-runs on rollback.
+- **Feel online** (skill `multiplayer`, "Input latency and prediction"): a missing remote input repeats
+  that seat's last one, so every change of theirs is a rollback; `multiplayer.onPredict` guesses better
+  (pure, speculative frames only), `multiplayer.onSample` puts the mouse of this frame into this
+  frame's step, and `multiplayer.pacing` sizes the client's lead and window from the link.
 
 ## Test it — every change
 

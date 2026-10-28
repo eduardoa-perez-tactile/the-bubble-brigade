@@ -1,6 +1,6 @@
 ---
 name: mcp-tools
-version: 1.22.0
+version: 1.23.0
 tier: optional
 description: Driving a Game Engine project through MCP instead of a shell — `gameengine mcp`, registering it in a client, which tool to call for what, and the session/verify loop. Use when your client exposes gameengine_* MCP tools, or to wire the engine into a shell-less agent.
 ---
@@ -36,6 +36,13 @@ Resources: `gameengine://project` (this project's PROJECT.md: its own notes, rea
 `gameengine://agents` (this project's AGENTS.md) and `gameengine://skills/<name>`. Read the
 project notes, the agents guide and the skill for the task before calling tools — the rules (determinism, MVC
 views, testing) are the same with or without a shell.
+
+## Interactive widgets
+
+`widget_show` puts an MCP App in the chat for hosts that render them: live UI document editors,
+inspectors and previews that call these same tools. Read `gameengine://widget-guide` for the API
+and limits and skill `mcp-widgets` for the workflow, approvals and quality checks. Hosts without
+MCP Apps still get every tool below.
 
 ## The loop
 
