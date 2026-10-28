@@ -27,7 +27,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
   patch({screen:'overworld',adventure:false,adventureEncounter:'',adventureAttempt:'',adventureProfile:profileIndex,partyRun:false,custom:false,selected:0,status:''});return true;
  }
  if(action==='adventure-new'){
-  if(!['menu','overworld-panel'].includes(s.screen))return true;
+  if(!['menu','overworld-panel','settings'].includes(s.screen))return true;
   if(!desktopSaveState.loaded()){patch({status:'SAVE IS LOADING'});return true;}
   panel('reset');return true;
  }
@@ -75,7 +75,14 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  }
  if(action==='overworld-shortcut'&&map.active&&map.focusedPoi==='shortcut'){desktopSaveState.dispatch('adventureShortcut',{profileIndex,id:`${map.districtId}:shortcut`},now);return true;}
  if(action==='overworld-menu'&&map.active){anchor();panel('pause');return true;}
- if(action==='overworld-journal'&&map.active){panel('journal');return true;}
+ if(action==='overworld-journal'&&map.active){panel('journal');patch({journalDistrict:map.districtId,journalEntry:''});return true;}
+ if(action.startsWith('overworld-journal-page:')&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
+  const id=action.slice('overworld-journal-page:'.length);if(districtById(id))patch({journalDistrict:id,journalEntry:'',panelMessage:'',selected:districtById(id)!.index});return true;
+ }
+ if(action.startsWith('overworld-journal-entry:')&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
+  const id=action.slice('overworld-journal-entry:'.length),entry=encounterById(id);
+  if(entry?.districtId===(s.journalDistrict??map.districtId))patch({journalEntry:id,panelMessage:''});return true;
+ }
  if(action==='overworld-guide-claim'&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
   desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:progress.rewardClaims['guide-three-clears']?'Three-clear reward already collected.':adventureCleared(progress)>=3?'Three-clear reward: 15 coins saved.':'Clear any three encounters to claim 15 coins in the journal.'});return true;
  }

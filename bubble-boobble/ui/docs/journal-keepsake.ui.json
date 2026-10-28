@@ -1,0 +1,115 @@
+{
+  "$schemaVersion": 1,
+  "guid": "89238c45-5f62-4d37-9af3-1db24ba37de4",
+  "name": "journal-keepsake",
+  "title": "Journal Keepsake",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "art",
+        "name",
+        "status",
+        "owned"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "align": "center",
+        "w": 102,
+        "h": 112,
+        "gap": 4
+      }
+    },
+    "art": {
+      "type": "icon",
+      "property": "art",
+      "image": "cartoon/frames/badge/green",
+      "style": {
+        "w": 50,
+        "h": 54,
+        "opacity": 0.25,
+        "saturation": 0
+      }
+    },
+    "name": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 22,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    },
+    "status": {
+      "type": "label",
+      "text": "NOT FOUND",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 11,
+        "fitMin": 9,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    },
+    "owned": {
+      "type": "label",
+      "text": "COLLECTED",
+      "show": "owned",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 11,
+        "color": "#285b59",
+        "textAlign": "center",
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pivot": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "art": {
+      "type": "image",
+      "default": "cartoon/frames/badge/green"
+    },
+    "owned": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "art": {
+              "opacity": 1,
+              "saturation": 1
+            },
+            "status": {
+              "opacity": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "behaviour": "none"
+}

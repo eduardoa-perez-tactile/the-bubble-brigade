@@ -1,0 +1,71 @@
+{
+  "$schemaVersion": 1,
+  "guid": "b9b63e05-729b-4b44-bfb9-bd866935b5a0",
+  "name": "journal-action",
+  "title": "Journal Action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "label"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 44,
+        "align": "center",
+        "justify": "center",
+        "bg": "#285b59",
+        "radius": 5
+      }
+    },
+    "label": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "w": "94%",
+        "h": 32,
+        "fontSize": 18,
+        "fitMin": 14,
+        "color": "#f5e9cd",
+        "textAlign": "center"
+      }
+    }
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#a8742f"
+            }
+          }
+        }
+      }
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 100
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.98
+        }
+      }
+    }
+  }
+}

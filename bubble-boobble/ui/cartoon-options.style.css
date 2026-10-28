@@ -23,3 +23,12 @@
  .cartoon-account-settings .ud-cartoon-account__da_stats_name { left: 32px; top: 866px; width: 480px; height: 28px; font-size: 18px; text-fit: 13px 18px; }
  .cartoon-account-settings .ud-cartoon-account__da_stats { left: 32px; top: 908px; width: 550px; height: 24px; font-size: 15px; text-fit: 11px 15px; }
 }
+
+/* The guarded Adventure reset action adds one row to the options list. */
+@media (aspect < 0.7) {
+ .cartoon-account.cartoon-account-settings {height:1140px;}
+ .cartoon-account-settings .ud-cartoon-account__da_settings {height:1100px;}
+ .cartoon-account-settings .ud-cartoon-account__da_settings_avatar {top:962px;}
+ .cartoon-account-settings .ud-cartoon-account__da_stats_name {top:966px;}
+ .cartoon-account-settings .ud-cartoon-account__da_stats {top:1008px;}
+}

@@ -1,0 +1,619 @@
+{
+  "$schemaVersion": 1,
+  "guid": "42e23af0-5397-462d-9268-4826287b18e5",
+  "name": "adventure-stamp-book",
+  "title": "Adventure Stamp Book",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "book"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": "100%",
+        "align": "center",
+        "justify": "center"
+      }
+    },
+    "book": {
+      "type": "element",
+      "children": [
+        "header",
+        "tabs",
+        "spread",
+        "detail",
+        "footer",
+        "utilities"
+      ],
+      "style": {
+        "pad": 18,
+        "dir": "column",
+        "w": 940,
+        "h": 668,
+        "gap": 8,
+        "bg": "#f5e9cd",
+        "radius": 16
+      }
+    },
+    "header": {
+      "type": "element",
+      "children": [
+        "heading",
+        "coins"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 44,
+        "align": "center",
+        "justify": "space-between"
+      }
+    },
+    "heading": {
+      "type": "label",
+      "text": "ADVENTURE JOURNAL",
+      "style": {
+        "w": 0,
+        "h": 44,
+        "fontSize": 30,
+        "fitMin": 28,
+        "color": "#285b59",
+        "grow": 1
+      }
+    },
+    "coins": {
+      "type": "label",
+      "text": "{coins}",
+      "style": {
+        "w": 155,
+        "h": 30,
+        "fontSize": 18,
+        "fitMin": 16,
+        "color": "#285b59",
+        "textAlign": "right"
+      }
+    },
+    "tabs": {
+      "type": "element",
+      "children": [
+        "tabsItems"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "dir": "row",
+        "gap": 8
+      }
+    },
+    "spread": {
+      "type": "element",
+      "children": [
+        "missionsPage",
+        "fold",
+        "collectionPage"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 286,
+        "gap": 24
+      }
+    },
+    "missionsPage": {
+      "type": "element",
+      "children": [
+        "chapterRow",
+        "district",
+        "missionGrid"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "w": 530,
+        "gap": 5
+      }
+    },
+    "chapterRow": {
+      "type": "element",
+      "children": [
+        "chapter",
+        "localProgress"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 23
+      }
+    },
+    "chapter": {
+      "type": "label",
+      "text": "{chapter}",
+      "style": {
+        "w": 0,
+        "h": 22,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59",
+        "grow": 1
+      }
+    },
+    "localProgress": {
+      "type": "label",
+      "text": "{localProgress}",
+      "style": {
+        "w": 140,
+        "h": 22,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59",
+        "textAlign": "right"
+      }
+    },
+    "district": {
+      "type": "label",
+      "text": "{district}",
+      "style": {
+        "w": "100%",
+        "h": 34,
+        "fontSize": 24,
+        "fitMin": 22,
+        "color": "#285b59"
+      }
+    },
+    "missionGrid": {
+      "type": "element",
+      "children": [
+        "missionGridItems"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "dir": "row",
+        "gap": 10
+      }
+    },
+    "fold": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 1,
+        "h": "100%",
+        "bg": "#c2aa7e"
+      }
+    },
+    "collectionPage": {
+      "type": "element",
+      "children": [
+        "trialHeading",
+        "trialRow",
+        "trialStatus",
+        "shelfHeading",
+        "shelf",
+        "keepsakeHint"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "w": 260,
+        "gap": 5
+      }
+    },
+    "trialHeading": {
+      "type": "label",
+      "text": "OPTIONAL MASTERY TRIAL",
+      "style": {
+        "w": "100%",
+        "h": 22,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59"
+      }
+    },
+    "trialRow": {
+      "type": "element",
+      "children": [
+        "trialArt",
+        "trialButton"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 48,
+        "gap": 8,
+        "align": "center"
+      }
+    },
+    "trialArt": {
+      "type": "icon",
+      "property": "trialArt",
+      "image": "overworld-living/common/markers/available",
+      "style": {
+        "w": 44,
+        "h": 44
+      }
+    },
+    "trialButton": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "trial",
+      "props": {
+        "label": {
+          "property": "trialName"
+        },
+        "selected": {
+          "property": "trialSelected"
+        }
+      },
+      "style": {
+        "w": 0,
+        "grow": 1
+      }
+    },
+    "trialStatus": {
+      "type": "label",
+      "text": "{trialStatus}",
+      "style": {
+        "w": "100%",
+        "h": 24,
+        "fontSize": 12,
+        "fitMin": 10,
+        "color": "#285b59"
+      }
+    },
+    "shelfHeading": {
+      "type": "label",
+      "text": "KEEPSAKE SHELF",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 16,
+        "fitMin": 14,
+        "color": "#285b59"
+      }
+    },
+    "shelf": {
+      "type": "element",
+      "children": [
+        "shelfItems"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "dir": "row",
+        "gap": 12
+      }
+    },
+    "keepsakeHint": {
+      "type": "label",
+      "text": "{keepsakeHint}",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59"
+      }
+    },
+    "detail": {
+      "type": "element",
+      "children": [
+        "detailTitle",
+        "detailText"
+      ],
+      "style": {
+        "pad": [
+          3,
+          12,
+          3,
+          12
+        ],
+        "dir": "column",
+        "w": "100%",
+        "h": 46,
+        "gap": 0,
+        "bg": "#eaddbf",
+        "radius": 5
+      }
+    },
+    "detailTitle": {
+      "type": "label",
+      "text": "{detailTitle}",
+      "style": {
+        "w": "100%",
+        "h": 23,
+        "fontSize": 15,
+        "fitMin": 13,
+        "color": "#285b59"
+      }
+    },
+    "detailText": {
+      "type": "label",
+      "text": "{detail}",
+      "style": {
+        "w": "100%",
+        "h": 23,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#285b59"
+      }
+    },
+    "footer": {
+      "type": "element",
+      "children": [
+        "next",
+        "primarySlot"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 44,
+        "gap": 20,
+        "align": "center"
+      }
+    },
+    "next": {
+      "type": "element",
+      "children": [
+        "nextHeading",
+        "nextLabel"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "w": 400,
+        "gap": 3
+      }
+    },
+    "nextHeading": {
+      "type": "label",
+      "text": "UP NEXT",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 12,
+        "fitMin": 10,
+        "color": "#285b59"
+      }
+    },
+    "nextLabel": {
+      "type": "label",
+      "text": "{nextLabel}",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 17,
+        "fitMin": 15,
+        "color": "#285b59"
+      }
+    },
+    "primary": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "primary",
+      "props": {
+        "label": {
+          "property": "primaryLabel"
+        },
+        "selected": {
+          "property": "primarySelected"
+        }
+      },
+      "style": {
+        "w": "100%"
+      }
+    },
+    "utilities": {
+      "type": "element",
+      "children": [
+        "totalProgress",
+        "claim",
+        "back"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 44,
+        "gap": 14,
+        "align": "center"
+      }
+    },
+    "totalProgress": {
+      "type": "label",
+      "text": "{totalProgress}",
+      "style": {
+        "w": 0,
+        "h": 26,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#285b59",
+        "grow": 1
+      }
+    },
+    "claim": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "overworld-guide-claim",
+      "props": {
+        "label": "CLAIM 15 COINS",
+        "selected": {
+          "property": "claimSelected"
+        }
+      },
+      "show": "claimable",
+      "style": {
+        "w": 220
+      }
+    },
+    "back": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "overworld-back",
+      "props": {
+        "label": "BACK TO MAP",
+        "selected": {
+          "property": "backSelected"
+        }
+      },
+      "show": "showBack",
+      "style": {
+        "w": 180
+      }
+    },
+    "tabsItems": {
+      "type": "repeat",
+      "doc": "journal-tab",
+      "property": "pages"
+    },
+    "missionGridItems": {
+      "type": "repeat",
+      "doc": "journal-stamp",
+      "property": "missions"
+    },
+    "shelfItems": {
+      "type": "repeat",
+      "doc": "journal-keepsake",
+      "property": "keepsakes"
+    },
+    "primarySlot": {
+      "type": "element",
+      "children": [
+        "primary"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1
+      }
+    }
+  },
+  "view": {
+    "behaviour": "dialog",
+    "dims": true,
+    "safe": true,
+    "enter": {
+      "set": {
+        "book": {
+          "opacity": 0,
+          "ty": 12,
+          "scale": 0.98
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "book": {
+          "opacity": 0,
+          "ty": 8
+        }
+      }
+    }
+  },
+  "properties": {
+    "coins": {
+      "type": "text",
+      "default": ""
+    },
+    "district": {
+      "type": "text",
+      "default": ""
+    },
+    "chapter": {
+      "type": "text",
+      "default": ""
+    },
+    "localProgress": {
+      "type": "text",
+      "default": ""
+    },
+    "totalProgress": {
+      "type": "text",
+      "default": ""
+    },
+    "trialName": {
+      "type": "text",
+      "default": ""
+    },
+    "trialStatus": {
+      "type": "text",
+      "default": ""
+    },
+    "keepsakeHint": {
+      "type": "text",
+      "default": ""
+    },
+    "detailTitle": {
+      "type": "text",
+      "default": ""
+    },
+    "detail": {
+      "type": "text",
+      "default": ""
+    },
+    "nextLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "primaryLabel": {
+      "type": "text",
+      "default": ""
+    },
+    "trialSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "primarySelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "backSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "claimSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "claimable": {
+      "type": "yesno",
+      "default": false
+    },
+    "showBack": {
+      "type": "yesno",
+      "default": false
+    },
+    "trialArt": {
+      "type": "image",
+      "default": "overworld-living/common/markers/available"
+    },
+    "pages": {
+      "type": "list",
+      "default": [],
+      "of": "journal-tab"
+    },
+    "missions": {
+      "type": "list",
+      "default": [],
+      "of": "journal-stamp"
+    },
+    "keepsakes": {
+      "type": "list",
+      "default": [],
+      "of": "journal-keepsake"
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 180
+  }
+}

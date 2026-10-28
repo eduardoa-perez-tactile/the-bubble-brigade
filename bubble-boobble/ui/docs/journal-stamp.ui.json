@@ -1,0 +1,175 @@
+{
+  "$schemaVersion": 1,
+  "guid": "3280d17f-2808-4bc3-afa9-2f1f465adb47",
+  "name": "journal-stamp",
+  "title": "Journal Stamp",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "children": [
+        "picture",
+        "name",
+        "status"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "align": "center",
+        "w": 158,
+        "h": 100,
+        "gap": 2,
+        "bg": "#fbf2de",
+        "radius": 5
+      }
+    },
+    "picture": {
+      "type": "element",
+      "children": [
+        "art",
+        "crest"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 54
+      }
+    },
+    "art": {
+      "type": "icon",
+      "property": "art",
+      "image": "adventure/lighthouse",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "fit": "cover"
+      }
+    },
+    "crest": {
+      "type": "icon",
+      "property": "crest",
+      "image": "overworld-living/common/markers/available",
+      "style": {
+        "w": 34,
+        "h": 34,
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "pivot": [
+          1,
+          1
+        ],
+        "offset": [
+          -4,
+          4
+        ],
+        "attach": true
+      }
+    },
+    "name": {
+      "type": "label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 24,
+        "fontSize": 16,
+        "fitMin": 14,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    },
+    "status": {
+      "type": "label",
+      "text": "{status}",
+      "style": {
+        "w": "100%",
+        "h": 16,
+        "fontSize": 12,
+        "fitMin": 10,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    }
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": ""
+    },
+    "art": {
+      "type": "image",
+      "default": "adventure/lighthouse"
+    },
+    "crest": {
+      "type": "image",
+      "default": "overworld-living/common/markers/available"
+    },
+    "status": {
+      "type": "text",
+      "default": ""
+    },
+    "active": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#dfd4b3"
+            }
+          }
+        }
+      }
+    },
+    "locked": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "art": {
+              "saturation": 0,
+              "imageAlpha": 0.4
+            },
+            "status": {
+              "color": "#847359"
+            }
+          }
+        }
+      }
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#dfc790"
+            },
+            "name": {
+              "color": "#193e3c"
+            }
+          }
+        }
+      }
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.97
+        }
+      }
+    }
+  }
+}
