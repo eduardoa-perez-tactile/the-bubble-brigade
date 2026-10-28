@@ -3,7 +3,7 @@ import campaign from '../data/levels.json';
 import {EnemyShowcase} from '../src/cartoon/enemy-showcase.cheats';
 import {session} from '../src/arcade/session';
 import {createPartyGame} from '../src/arcade/party';
-import {updateEnemies} from '../src/arcade/enemies';
+import {updateEnemies,updateDefeated} from '../src/arcade/enemies';
 import {bubble,effect,updateBubbles,hitWithElement,carryOnWater} from '../src/arcade/bubbles';
 import {EnemyState,State} from '../src/arcade/types';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
@@ -43,6 +43,9 @@ worldTest('simplified enemy real movement jump escape water and defeat retain th
   water.X+=20;carryOnWater(g,water);expect(e.X).toBe(water.X);expect(e.CarryTicks).toBe(1);
   water.Life=0;carryOnWater(g,water);expect(e.State).toBe(EnemyState.Defeated);
   expect(e.DeadTicks>0).toBe(true);
+  // Defeat begins on the compact captive pose, then reaches the authored dead
+  // drawing while the existing50-tick trajectory continues normally.
+  for(let age=0;age<4;age++)updateDefeated(g);
   const plan=cartoonDrawPlan(g,g.Tick);
   expect(plan.some(d=>d.frame===`enemy/${kind}/simple-dead`)).toBe(true);
  }

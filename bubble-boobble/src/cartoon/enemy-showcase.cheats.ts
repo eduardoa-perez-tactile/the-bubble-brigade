@@ -3,7 +3,8 @@ import {write} from '@gameengine/runtime';
 import {ArcadeControl} from '../schema.gen';
 import campaign from '../../data/levels.json';
 import {createPartyGame,preparePartyWave} from '../arcade/party';
-import {bubble,effect} from '../arcade/bubbles';
+import {bubble,effect,popBubble} from '../arcade/bubbles';
+import {updateDefeated} from '../arcade/enemies';
 import {body,EnemyState,State,type Enemy} from '../arcade/types';
 import {desktopAction,desktopGameRequest} from '../desktop/state';
 import {session} from '../arcade/session';
@@ -14,9 +15,9 @@ const columns=[120,440,640,1080,1320,1560];
 /** Recorded QA setup only. All subsequent steps use the normal party simulation. */
 export const EnemyShowcase=defineCheat({
  id:'cartoon.enemy-showcase',group:'Concept verification',title:'Inspect simplified enemy roster and real attacks',
- params:{scenario:{type:'enum',values:['roster','capture','states','shooters','mixed'],default:'roster'},
-  frozen:{type:'bool',default:true}},resources:[write(ArcadeControl)],
- run(ctx,{scenario,frozen}){
+ params:{scenario:{type:'enum',values:['roster','capture','states','shooters','mixed','size-transitions'],default:'roster'},
+  frozen:{type:'bool',default:true},defeatAge:{type:'int',min:0,max:49,default:0}},resources:[write(ArcadeControl)],
+ run(ctx,{scenario,frozen,defeatAge}){
   const g=createPartyGame(campaign,42,Array.from({length:10},()=> 'human' as const),10,'cartoon');
   g.Party!.Wave=9;preparePartyWave(g);
   g.Party!.Phase='combat';g.Party!.Timer=0;g.Party!.ToSpawn=0;g.Party!.Telegraphs=[];
@@ -47,6 +48,27 @@ export const EnemyShowcase=defineCheat({
     const water={...effect(e.X,e.Y+12),ID:++g.NextID,Element:'water',Life:300,Dir:1,Spread:false};
     e.CarriedBy=water.ID;g.Effects.push(water);
    }
+  }
+  if(scenario==='size-transitions'){
+   // Rows are normal, captive, defeated. The defeated row uses the real pop and
+   // lifetime update; rebase its traveled position for a same-root pose comparison.
+   g.Enemies=[];
+   for(const [i,kind] of families.entries())for(const [row,y] of [170,310,450].entries()){
+    const e={...make(kind,i,13),X:160+i*270,Y:y,Angry:false,Age:0,Dir:1,
+     State:row===0?EnemyState.Active:EnemyState.Trapped};
+    g.Enemies.push(e);
+    if(row>0){
+     g.Bubbles.push({...bubble(e.X,e.Y),ID:++g.NextID,EnemyID:e.ID,Age:60,CapturedAge:100,Floating:true});
+     if(row===2){popBubble(g,g.Bubbles.length-1,0);g.Bubbles=g.Bubbles.filter(b=>!b.Removed);}
+    }
+   }
+   for(let age=0;age<defeatAge;age++)updateDefeated(g);
+   for(const [i,kind] of families.entries()){
+    const dead=g.Enemies.find(e=>e.Kind===kind&&e.State===EnemyState.Defeated)!;
+    dead.X=160+i*270;dead.Y=450;
+   }
+   for(const p of g.Players)p.X=-200;
+   g.Items=[];g.Particles=[];
   }
   if(scenario==='shooters'){
    g.Enemies=[{...make('mighta',1,22),X:600,Cooldown:0,Angry:false},
