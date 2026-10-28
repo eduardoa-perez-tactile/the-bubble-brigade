@@ -12,7 +12,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  const patch=(p:Partial<DesktopState>)=>desktopState.set({...desktopState.get(),...p});
  const save=desktopSaveState.get(),profileIndex=save.active,profile=save.profiles[profileIndex]!;
  const progress=adventureForProfile(profile);
- const panel=(kind:string,message='')=>{setOverworldModal(true);patch({screen:'overworld-panel',overworldPanel:kind,panelMessage:message,shopItem:'pink_candy',selected:0});};
+ const panel=(kind:string,message='')=>{setOverworldModal(true);patch({screen:'overworld-panel',overworldPanel:kind,panelMessage:message,shopItem:'pink_candy',shopHelp:false,shopReaction:0,selected:0});};
  const quit=()=>desktopGameRequest.set({...desktopGameRequest.get(),sequence:desktopGameRequest.get().sequence+1,action:'quit'});
  const anchor=()=>desktopSaveState.dispatch('adventureAnchor',{profileIndex,districtId:map.districtId,x:map.x,y:map.y},now);
  const close=()=>{if(!map.active){patch({screen:'menu',overworldPanel:'',selected:0});return;}setOverworldModal(false);patch({screen:'overworld',overworldPanel:'',panelMessage:'',selected:0});};
@@ -79,6 +79,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='overworld-guide-claim'&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
   desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:progress.rewardClaims['guide-three-clears']?'Three-clear reward already collected.':adventureCleared(progress)>=3?'Three-clear reward: 15 coins saved.':'Clear any three encounters to claim 15 coins in the journal.'});return true;
  }
+ if(action==='overworld-shop-help'&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){patch({shopHelp:!s.shopHelp});return true;}
  if(action.startsWith('overworld-browse:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
   const id=action.slice(17),index=adventurePowerShop.findIndex(item=>item.id===id);
   if(index>=0)patch({shopItem:id,selected:index,panelMessage:''});return true;
@@ -86,13 +87,13 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action.startsWith('overworld-buy:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
   const id=action.slice(14),item=[...adventureShop,...adventurePowerShop].find(i=>i.id===id);
   desktopSaveState.dispatch('adventurePurchase',{profileIndex,id},now);
-  patch({panelMessage:item?(progress.purchases[id]?'Already owned.':progress.coins<item.price?'You need more coins.':adventurePowerShop.some(power=>power.id===id)?`${item.name} unlocked and equipped.`:'Keepsake added to your Adventure journal.'):'Unknown item.'});return true;
+  patch({shopReaction:item&&!progress.purchases[id]&&progress.coins>=item.price?(s.shopReaction??0)+1:s.shopReaction??0,panelMessage:item?(progress.purchases[id]?'Already owned.':progress.coins<item.price?'You need more coins.':adventurePowerShop.some(power=>power.id===id)?`${item.name} unlocked and equipped.`:'Keepsake added to your Adventure journal.'):'Unknown item.'});return true;
  }
  if(action.startsWith('overworld-equip:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??'')){
   const id=action.slice(16),power=adventurePowerShop.find(item=>item.id===id);
   if(id!=='none'&&(!power||!progress.purchases[id])){patch({panelMessage:'Buy this power before equipping it.'});return true;}
   desktopSaveState.dispatch('adventureEquip',{profileIndex,id:id==='none'?null:id},now);
-  patch({panelMessage:id==='none'?'Starting power removed.':`${power!.name} equipped for each new encounter and retry.`,...(id==='none'?{selected:4}:{})});return true;
+  patch({shopReaction:(s.shopReaction??0)+1,panelMessage:id==='none'?'Starting power removed.':`${power!.name} equipped for each new encounter and retry.`,...(id==='none'?{selected:4}:{})});return true;
  }
  if(action.startsWith('overworld-travel:')&&map.active&&s.screen==='overworld-panel'&&['gate','journal'].includes(s.overworldPanel??'')){
   const id=action.slice(17);if(!availableDistrict(id,progress))return true;

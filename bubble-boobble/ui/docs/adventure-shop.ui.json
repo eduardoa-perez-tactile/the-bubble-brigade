@@ -168,8 +168,8 @@
       "type": "icon",
       "image": "cartoon/shop/merchant",
       "style": {
-        "w": 200,
-        "h": 200,
+        "w": 320,
+        "h": 300,
         "position": "anchored",
         "anchor": [
           0.5,
@@ -181,7 +181,7 @@
         ],
         "offset": [
           0,
-          130
+          112
         ],
         "attach": true
       }
@@ -195,7 +195,7 @@
       "style": {
         "pad": 0,
         "w": "100%",
-        "h": 172,
+        "h": 208,
         "dir": "row",
         "gap": 16
       }
@@ -209,36 +209,25 @@
     "details": {
       "type": "element",
       "children": [
-        "detailArt",
         "copy",
         "transaction"
       ],
       "style": {
         "pad": 12,
         "w": "100%",
-        "h": 160,
+        "h": 136,
         "gap": 16,
         "dir": "row",
         "align": "center",
         "bg": "#f3e4c4",
-        "radius": 8
+        "radius": 3
       }
-    },
-    "detailArt": {
-      "type": "icon",
-      "image": "cartoon/frames/item/pink_candy",
-      "style": {
-        "w": 100,
-        "h": 110
-      },
-      "property": "illustration"
     },
     "copy": {
       "type": "element",
       "children": [
         "name",
         "description",
-        "benefit",
         "consequence"
       ],
       "style": {
@@ -264,20 +253,9 @@
       "type": "label",
       "text": "{description}",
       "style": {
-        "h": 26,
+        "h": 28,
         "fontSize": 23,
         "fitMin": 18,
-        "color": "#30251c",
-        "w": "100%"
-      }
-    },
-    "benefit": {
-      "type": "label",
-      "text": "{benefit}",
-      "style": {
-        "h": 26,
-        "fontSize": 21,
-        "fitMin": 16,
         "color": "#30251c",
         "w": "100%"
       }
@@ -286,7 +264,7 @@
       "type": "label",
       "text": "{consequence}",
       "style": {
-        "h": 40,
+        "h": 42,
         "fontSize": 17,
         "fitMin": 14,
         "color": "#65482c",
@@ -296,7 +274,6 @@
     "transaction": {
       "type": "element",
       "children": [
-        "limit",
         "action",
         "unavailable",
         "balance"
@@ -307,18 +284,6 @@
         "dir": "column",
         "gap": 8,
         "align": "center"
-      }
-    },
-    "limit": {
-      "type": "label",
-      "text": "Buy once. Equip one power at a time.",
-      "style": {
-        "h": 20,
-        "fontSize": 16,
-        "fitMin": 14,
-        "color": "#30251c",
-        "w": "100%",
-        "textAlign": "center"
       }
     },
     "action": {
@@ -375,7 +340,8 @@
       "children": [
         "equippedArt",
         "equippedLabel",
-        "removeSlot"
+        "removeSlot",
+        "helpSlot"
       ],
       "style": {
         "pad": 4,
@@ -446,20 +412,45 @@
         "textAlign": "center",
         "bg": "#30251ccc",
         "radius": 4
-      }
+      },
+      "show": "showStatus"
     },
     "rules": {
       "type": "label",
       "text": "Start each encounter and retry with your equipped power. Losing a life removes its effect until the next attempt.",
       "style": {
-        "h": 30,
-        "fontSize": 16,
+        "h": 72,
+        "fontSize": 18,
         "fitMin": 14,
-        "color": "#f3e4c4",
+        "color": "#30251c",
         "w": "100%",
         "textAlign": "center",
-        "bg": "#30251ccc"
+        "bg": "#f3e4c4"
+      },
+      "show": "helpOpen"
+    },
+    "helpSlot": {
+      "type": "element",
+      "children": [
+        "help"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 84,
+        "h": 52
       }
+    },
+    "help": {
+      "type": "use",
+      "doc": "shop-action",
+      "key": "help",
+      "props": {
+        "label": "? HELP",
+        "selected": {
+          "property": "helpFocused"
+        }
+      },
+      "style": {}
     }
   },
   "view": {
@@ -470,6 +461,11 @@
         "content": {
           "opacity": 0,
           "ty": 10
+        },
+        "merchant": {
+          "rotate": -5,
+          "ty": 24,
+          "scale": 0.94
         }
       }
     },
@@ -477,11 +473,16 @@
       "set": {
         "content": {
           "opacity": 0
+        },
+        "merchant": {
+          "rotate": -6,
+          "ty": 16,
+          "scale": 0.96
         }
       },
       "transition": {
         "type": "easeOut",
-        "ms": 100
+        "ms": 180
       }
     }
   },
@@ -554,10 +555,49 @@
       "type": "list",
       "of": "shop-product",
       "default": []
+    },
+    "helpOpen": {
+      "type": "yesno",
+      "default": false
+    },
+    "showStatus": {
+      "type": "yesno",
+      "default": false
+    },
+    "helpFocused": {
+      "type": "yesno",
+      "default": false
+    },
+    "merchantNod": {
+      "type": "trigger"
     }
   },
   "transition": {
     "type": "easeOut",
-    "ms": 180
+    "ms": 240
+  },
+  "reactions": {
+    "merchantNod": {
+      "on": {
+        "property": "merchantNod",
+        "change": "trigger"
+      },
+      "set": {
+        "merchant": {
+          "rotate": 4,
+          "ty": 7,
+          "scale": 1.02
+        }
+      },
+      "in": {
+        "type": "easeOut",
+        "ms": 100
+      },
+      "hold": 70,
+      "back": {
+        "type": "easeOut",
+        "ms": 190
+      }
+    }
   }
 }

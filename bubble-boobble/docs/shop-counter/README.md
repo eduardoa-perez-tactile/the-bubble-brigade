@@ -32,3 +32,11 @@ Both new images were generated with the built-in ImageGen tool. They are backgro
 Affected settled view captures were inspected at 1280×720, 360×880 with top/bottom safe insets, and 2520×1080 with a left safe inset; no layout warnings. Desktop, portrait and ultrawide are engine captures, not standalone browser playtests.
 
 Typechecking reports two pre-existing tuple errors in `tests/adventure-compact.test.ts` at lines 200 and 208; no errors in the changed shop code/tests. Broad suites, Hermes, cook/pipeline recording and device performance were deferred under PROJECT.md's prototype policy.
+
+## Composition refinement
+
+The Cuphead comparison pass enlarged the existing merchant sprite to occupy the central scene, added contact shadows and small wooden product stands, and replaced the faint selection label with inked brackets. Plaque artwork tilts independently of its upright text. The detail panel now contains just the selected name, benefit, replacement consequence and transaction; the repeated large illustration and benefit sentence were removed.
+
+Help toggles the encounter/retry rules on demand. Greeting text no longer occupies a permanent strip; that area appears only for transaction feedback. A short welcome lean and departure gesture use the document's Enter/Exit poses; successful purchases/equipment changes trigger a finite native nod (100 ms in, 70 ms hold, 190 ms return). The merchant remains still afterward. The existing static sprite supplies these poses; no new character frames or location-specific art were introduced.
+
+Focused V8 shop tests cover Help toggling without spending and the purchase reaction trigger as well as the existing transaction flow. Narrow portrait layouts group the scene vertically instead of stretching the empty wall. Broad verification remains deferred under the prototype policy.

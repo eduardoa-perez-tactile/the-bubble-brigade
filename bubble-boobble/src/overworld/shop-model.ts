@@ -12,7 +12,7 @@ export function adventureShopModel(s:DesktopState,save:DesktopSave) {
  const actionKey=owned?`overworld-equip:${item.id}`:`overworld-buy:${item.id}`;
  const actionEnabled=!active&&(owned||affordable);
  const actionLabel=active?'EQUIPPED':owned?'EQUIP':affordable?`BUY & EQUIP · ${item.price} COINS`:`NEED ${item.price-p.coins} MORE COINS`;
- const buttons:OverworldChoice[]=[...adventurePowerShop.map(i=>({key:`overworld-browse:${i.id}`,label:i.name})),{key:actionKey,label:actionLabel},...(equipped?[{key:'overworld-equip:none',label:'REMOVE'}]:[]),{key:'overworld-back',label:'BACK TO MAP'}];
+ const buttons:OverworldChoice[]=[...adventurePowerShop.map(i=>({key:`overworld-browse:${i.id}`,label:i.name})),{key:actionKey,label:actionLabel},...(equipped?[{key:'overworld-equip:none',label:'REMOVE'}]:[]),{key:'overworld-shop-help',label:'HELP'},{key:'overworld-back',label:'BACK TO MAP'}];
  const benefits={pink_candy:'Reach enemies from farther away.',blue_candy:'Send bubbles toward enemies faster.',yellow_candy:'Send the next bubble sooner.',shoes:'Move around the arena faster.'};
  return {
   coins:`${p.coins}`,name:item.name.toUpperCase(),description:item.description,benefit:benefits[item.id],
@@ -22,7 +22,7 @@ export function adventureShopModel(s:DesktopState,save:DesktopSave) {
   balance:owned?'Owned permanently · free to equip':affordable?`${p.coins-item.price} coins after purchase`:'Earn coins from first clears, hidden finds and journal rewards.',
   equippedLabel:`STARTING POWER: ${equipped?.name.toUpperCase()??'NONE'}`,
   equippedArt:`cartoon/frames/item/${equipped?.id??'pink_candy'}`,hasEquipped:!!equipped,
-  status:s.panelMessage||'Welcome! Pick something for your next adventure.',
+  status:s.panelMessage??'',showStatus:!!s.panelMessage,helpOpen:!!s.shopHelp,helpFocused:s.selected===buttons.length-2,merchantNod:s.shopReaction??0,
   products:adventurePowerShop.map((i,index)=>({key:`overworld-browse:${i.id}`,label:i.name.toUpperCase(),illustration:`cartoon/frames/item/${i.id}`,price:p.purchases[i.id]?'OWNED':`${i.price} COINS`,equipped:p.equippedPower===i.id,selected:i.id===item.id,focused:s.selected===index})),
   buttons:buttons.map((b,index)=>({...b,selected:index===s.selected})),
  };

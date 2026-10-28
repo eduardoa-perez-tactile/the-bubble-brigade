@@ -9,13 +9,13 @@ const sample=(coins:number,purchases:Record<string,true>={},equippedPower:Advent
 
 export const AdventureShopView=defineView<AdventureShopModel>({
  name:'AdventureShop',blockInput:true,
- samples:{browse:sample(35,{yellow_candy:true},'yellow_candy'),poor:sample(6),owned:sample(25,{pink_candy:true}),equipped:sample(25,{pink_candy:true},'pink_candy')},
+ samples:{browse:sample(35,{yellow_candy:true},'yellow_candy'),poor:sample(6),owned:sample(25,{pink_candy:true}),equipped:sample(25,{pink_candy:true},'pink_candy'),help:{...sample(35,{yellow_candy:true},'yellow_candy'),helpOpen:true},purchased:{...sample(25,{pink_candy:true},'pink_candy'),status:'Pink Candy unlocked and equipped.',showStatus:true,merchantNod:1}},
  render:(model,{intent})=><Widget doc="adventure-shop" class="overworld-screen shop-screen" props={{
   coins:()=>model().coins,name:()=>model().name,description:()=>model().description,benefit:()=>model().benefit,
   consequence:()=>model().consequence,illustration:()=>model().illustration,actionLabel:()=>model().actionLabel,
   actionEnabled:()=>model().actionEnabled,actionUnavailable:()=>model().actionUnavailable,balance:()=>model().balance,
   equippedLabel:()=>model().equippedLabel,equippedArt:()=>model().equippedArt,hasEquipped:()=>model().hasEquipped,
-  status:()=>model().status,products:()=>model().products,backFocused:()=>model().backFocused,removeFocused:()=>model().removeFocused,
+  status:()=>model().status,showStatus:()=>model().showStatus,helpOpen:()=>model().helpOpen,helpFocused:()=>model().helpFocused,merchantNod:()=>model().merchantNod,products:()=>model().products,backFocused:()=>model().backFocused,removeFocused:()=>model().removeFocused,
  }} codeAreas={{action:()=>Widget({id:'shop-purchase',doc:'shop-action',props:{label:()=>model().actionLabel,selected:()=>model().actionFocused},disabled:()=>!model().actionEnabled,onIntent:()=>intent(model().actionKey)})}}
- onIntent={(_,e)=>intent(e.item??(e.path.at(-1)==='remove'?'overworld-equip:none':e.path.at(-1)==='back'?'overworld-back':e.path.at(-1)!))}/>,
+ onIntent={(_,e)=>intent(e.item??(e.path.at(-1)==='help'?'overworld-shop-help':e.path.at(-1)==='remove'?'overworld-equip:none':e.path.at(-1)==='back'?'overworld-back':e.path.at(-1)!))}/>,
 });

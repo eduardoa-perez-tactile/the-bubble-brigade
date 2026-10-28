@@ -10,7 +10,8 @@
       "type": "element",
       "children": [
         "pointer",
-        "art",
+        "well",
+        "stand",
         "plaque",
         "badge"
       ],
@@ -19,20 +20,19 @@
         "dir": "column",
         "align": "center",
         "w": "100%",
-        "h": 172,
+        "h": 208,
         "gap": 2
       }
     },
     "pointer": {
-      "type": "label",
-      "text": "SELECTED",
+      "type": "element",
+      "children": [],
       "style": {
-        "h": 22,
-        "fontSize": 14,
-        "fitMin": 16,
-        "color": "#fce3a1",
-        "w": "100%",
-        "textAlign": "center",
+        "pad": 0,
+        "w": 50,
+        "h": 24,
+        "align": "center",
+        "justify": "center",
         "opacity": 0
       }
     },
@@ -40,23 +40,26 @@
       "type": "icon",
       "image": "cartoon/frames/item/pink_candy",
       "style": {
-        "w": 86,
-        "h": 72
+        "w": 100,
+        "h": 86,
+        "ty": 0,
+        "attach": true
       },
       "property": "illustration"
     },
     "plaque": {
       "type": "element",
       "children": [
+        "paper",
         "name",
         "price"
       ],
       "style": {
         "pad": 3,
-        "w": "100%",
-        "h": 48,
-        "bg": "#eddbb2",
-        "radius": 4,
+        "w": "94%",
+        "h": 56,
+        "bg": "#00000000",
+        "radius": 2,
         "align": "center"
       }
     },
@@ -92,9 +95,199 @@
         "fontSize": 16,
         "fitMin": 16,
         "color": "#fff0ca",
-        "w": "100%",
+        "w": "86%",
         "textAlign": "center",
         "bg": "#285b59"
+      }
+    },
+    "well": {
+      "type": "element",
+      "children": [
+        "shadow",
+        "leftBracket",
+        "rightBracket",
+        "art"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 86,
+        "align": "center",
+        "justify": "end"
+      }
+    },
+    "shadow": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pivot": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": 86,
+        "h": 10,
+        "pad": 0,
+        "radius": 99,
+        "bg": "#30221966",
+        "attach": true
+      }
+    },
+    "stand": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 112,
+        "h": 7,
+        "radius": 2,
+        "bg": "#734a2b"
+      }
+    },
+    "leftBracket": {
+      "type": "element",
+      "children": [
+        "leftBracketTop",
+        "leftBracketStem",
+        "leftBracketBottom"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 64,
+        "bg": "#00000000",
+        "radius": 2,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          -62,
+          0
+        ],
+        "opacity": 0,
+        "dir": "column",
+        "justify": "space-between",
+        "align": "start"
+      }
+    },
+    "rightBracket": {
+      "type": "element",
+      "children": [
+        "rightBracketTop",
+        "rightBracketStem",
+        "rightBracketBottom"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 64,
+        "bg": "#00000000",
+        "radius": 2,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          62,
+          0
+        ],
+        "opacity": 0,
+        "dir": "column",
+        "justify": "space-between",
+        "align": "end"
+      }
+    },
+    "leftBracketTop": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 4,
+        "bg": "#302219"
+      }
+    },
+    "leftBracketStem": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 4,
+        "h": 56,
+        "bg": "#302219"
+      }
+    },
+    "leftBracketBottom": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 4,
+        "bg": "#302219"
+      }
+    },
+    "rightBracketTop": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 4,
+        "bg": "#302219"
+      }
+    },
+    "rightBracketStem": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 4,
+        "h": 56,
+        "bg": "#302219"
+      }
+    },
+    "rightBracketBottom": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 4,
+        "bg": "#302219"
+      }
+    },
+    "paper": {
+      "type": "element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "w": "100%",
+        "h": "100%",
+        "bg": "#eddbb2",
+        "rotate": -1,
+        "radius": 2,
+        "attach": true
       }
     }
   },
@@ -121,8 +314,27 @@
             "pointer": {
               "opacity": 1
             },
-            "plaque": {
+            "art": {
+              "scale": 1.08
+            },
+            "stand": {
+              "bg": "#302219"
+            },
+            "leftBracket": {
+              "opacity": 1
+            },
+            "rightBracket": {
+              "opacity": 1
+            },
+            "paper": {
               "bg": "#ffe8a4"
+            }
+          }
+        },
+        "no": {
+          "set": {
+            "pointer": {
+              "opacity": 0
             }
           }
         }

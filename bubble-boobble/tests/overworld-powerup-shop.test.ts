@@ -60,7 +60,7 @@ worldTest('powerup shop purchases equip one actual starting power and retry reap
  for(const item of adventurePowerShop){
   await visit(ctx,'vendor');
   const panel=adventurePanel(desktopState.get(),desktopSaveState.get());
-  expect(panel.title).toBe('BRIGADE SHOP');expect(panel.buttons.length).toBe(progress().equippedPower?7:6);
+  expect(panel.title).toBe('BRIGADE SHOP');expect(panel.buttons.length).toBe(progress().equippedPower?8:7);
   expect(panel.buttons.some(button=>button.key===`overworld-browse:${item.id}`)).toBe(true);
   await intent(ctx,`overworld-browse:${item.id}`);
   expect(progress().coins).toBe(balance);
@@ -109,7 +109,7 @@ renderTest('powerup shop counter controls fit supported screen extremes',async c
   const {width,height,safe}=device;ctx.input.view(width,height,1,[safe[0]!,safe[1]!,safe[2]!,safe[3]!]);await adventureStep(ctx,3);
   ctx.render.stats({width,height});
   const buttons=ctx.ui.interactables().filter(button=>button.enabled&&button.hittable);
-  expect(buttons.length).toBe(5);
+  expect(buttons.length).toBe(6);
   for(const button of buttons){
    const r=button.rect;
    if(r.x<safe[0]!-1||r.y<safe[1]!-1||r.x+r.width>width-safe[2]!+1||r.y+r.height>height-safe[3]!+1||r.width<44||r.height<44)throw new Error('Shop control out of bounds: '+JSON.stringify({width,height,label:button.label,rect:r}));
@@ -134,6 +134,7 @@ renderTest('powerup shop counter browses before spending and keeps ownership equ
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).name).toBe('BLUE CANDY');
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('shop-purchase');await adventureStep(ctx,3);
  expect(progress().coins).toBe(20);expect(progress().equippedPower).toBe('blue_candy');
+ expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).merchantNod).toBe(1);
  ctx.render.stats({width:1280,height:720});
  expect(ctx.ui.interactables().some(b=>b.id==='shop-purchase'&&b.enabled&&b.hittable)).toBe(false);
  await ctx.ui.press('overworld-browse:shoes');await adventureStep(ctx,3);
@@ -145,6 +146,11 @@ renderTest('powerup shop counter browses before spending and keeps ownership equ
  expect(progress().coins).toBe(20);expect(progress().equippedPower).toBe('yellow_candy');
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('remove');await adventureStep(ctx,3);
  expect(progress().equippedPower).toBe(null);expect(progress().purchases.yellow_candy).toBe(true);
+ ctx.render.stats({width:1280,height:720});await ctx.ui.press('help');await adventureStep(ctx,3);
+ expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).helpOpen).toBe(true);
+ expect(progress().coins).toBe(20);
+ ctx.render.stats({width:1280,height:720});await ctx.ui.press('help');await adventureStep(ctx,3);
+ expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).helpOpen).toBe(false);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('back');await adventureStep(ctx,3);
  expect(desktopState.get().screen).toBe('overworld');
 },{scene,memory:'phone-low'});

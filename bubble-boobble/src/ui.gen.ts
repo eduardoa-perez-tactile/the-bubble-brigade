@@ -105,14 +105,18 @@ declare module '@gameengine/ui' {
      *   - `illustration`: image, default "cartoon/frames/item/pink_candy"
      *   - `equippedArt`: image, default "cartoon/frames/item/pink_candy"
      *   - `products`: list of shop-product
-     * Events: `back`, `press (<item>)`, `remove`
+     *   - `helpOpen`: yesno, default false
+     *   - `showStatus`: yesno, default false
+     *   - `helpFocused`: yesno, default false
+     *   - `merchantNod`: trigger (a counter: each change fires it)
+     * Events: `back`, `press (<item>)`, `remove`, `help`
      * Code areas: `action`
-     * Refs: `back`, `remove`
+     * Refs: `back`, `remove`, `help`
      */
     'adventure-shop': {
-      props: { coins: string | { loc: string } | LocText; name: string | { loc: string } | LocText; description: string | { loc: string } | LocText; benefit: string | { loc: string } | LocText; consequence: string | { loc: string } | LocText; actionLabel: string | { loc: string } | LocText; balance: string | { loc: string } | LocText; equippedLabel: string | { loc: string } | LocText; status: string | { loc: string } | LocText; actionEnabled: boolean; actionUnavailable: boolean; hasEquipped: boolean; backFocused: boolean; removeFocused: boolean; illustration: string; equippedArt: string; products: readonly { key: string; label?: string | { loc: string } | LocText; price?: string | { loc: string } | LocText; illustration?: string; selected?: boolean; focused?: boolean; equipped?: boolean }[] };
+      props: { coins: string | { loc: string } | LocText; name: string | { loc: string } | LocText; description: string | { loc: string } | LocText; benefit: string | { loc: string } | LocText; consequence: string | { loc: string } | LocText; actionLabel: string | { loc: string } | LocText; balance: string | { loc: string } | LocText; equippedLabel: string | { loc: string } | LocText; status: string | { loc: string } | LocText; actionEnabled: boolean; actionUnavailable: boolean; hasEquipped: boolean; backFocused: boolean; removeFocused: boolean; illustration: string; equippedArt: string; products: readonly { key: string; label?: string | { loc: string } | LocText; price?: string | { loc: string } | LocText; illustration?: string; selected?: boolean; focused?: boolean; equipped?: boolean }[]; helpOpen: boolean; showStatus: boolean; helpFocused: boolean; merchantNod: number };
       areas: 'action';
-      refs: 'back' | 'remove';
+      refs: 'back' | 'remove' | 'help';
     };
     /**
      * Adventure shop item: a widget, button (ui/docs/adventure-shop-item.ui.json)
