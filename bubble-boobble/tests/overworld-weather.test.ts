@@ -51,7 +51,7 @@ worldTest('map weather stays cosmetic bounded and below actors across every dist
      const rotation=draw.rotation!;
      expect(!!rotation&&rotation.every(Number.isFinite)).toBe(true);
      expect(rotation[0]===0&&rotation[1]===0).toBe(true);
-     expect(Math.abs(2*Math.atan2(rotation[2],rotation[3]))<=.02600001).toBe(true);
+     expect(Math.abs(2*Math.atan2(rotation[2],rotation[3]))<=.04800001).toBe(true);
      expect(Math.abs(rotation[2]**2+rotation[3]**2-1)<.000001).toBe(true);
     }
    }

@@ -46,7 +46,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   sprite('overworld-shared/foreground',point.x,point.y+16,58,36,Math.round(2000-point.y));
   // A small cosmetic lean follows the gust; foot depth and map geometry stay fixed.
   if(gust>0){
-   const angle=gust*(.018+.008*Math.sin(tick*.045+x!*.01));
+   const angle=gust*(.034+.014*Math.sin(tick*.045+x!*.01));
    out[out.length-1]!.rotation=[0,0,Math.sin(angle/2),Math.cos(angle/2)];
   }
  }
