@@ -2,6 +2,8 @@
  * Operates ONLY the explicit existing headless session; owns no session lifecycle.
  * Example: node tools/overworld/capture-portal-light.mjs --session 12345
  * Optional: --district 1 --sizes landscape,slim,wide --loop-frames 24
+ * --near uses the actual gate approach instead of the farther reveal point.
+ * --positions-only audits the same approaches/viewports without screenshots.
  * QA progress lives in a new dedicated profile. Use an isolated headless session.
  */
 import {spawnSync} from 'node:child_process';
@@ -16,6 +18,7 @@ const arguments_=process.argv.slice(2),option=(name,fallback)=>{
 const session=option('--session','');
 if(!/^\d+$/.test(session))throw new Error('Pass --session PID for an isolated existing headless session. This tool never chooses the newest session.');
 const directory=resolve(root,option('--out','.gameengine/portal-light-review'));
+const positionsOnly=arguments_.includes('--positions-only');
 const districtOption=option('--district','all'),districtNumbers=districtOption==='all'?[1,2,3,4,5]:[Number(districtOption)];
 if(districtNumbers.some(n=>!Number.isInteger(n)||n<1||n>5))throw new Error('--district must be 1..5 or all');
 const presets={landscape:[1280,720,[0,0,0,0]],slim:[360,880,[0,34,0,24]],wide:[1680,720,[0,0,0,0]]};
@@ -24,7 +27,9 @@ if(sizes.some(s=>!presets[s]))throw new Error('--sizes must name landscape,slim,
 const loopFrames=Number(option('--loop-frames','0'));
 if(!Number.isInteger(loopFrames)||loopFrames<0||loopFrames>120)throw new Error('--loop-frames must be 0..120');
 mkdirSync(directory,{recursive:true});
-const report={session:Number(session),protocol:'Game Engine headless',qaProfile:'separate new PORTAL QA profile; existing profiles preserved',captures:[]};
+const report={session:Number(session),protocol:'Game Engine headless',qaProfile:'separate new PORTAL QA profile; existing profiles preserved',approaches:[],captures:[]};
+const reportPath=resolve(directory,positionsOnly?'positions.json':'captures.json');
+const writeReport=()=>writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
 function command(...args){
  const r=spawnSync('gameengine',[...args.map(String),'--session',session,'--json'],{cwd:root,encoding:'utf8',timeout:90000,maxBuffer:16*1024*1024});
  if(r.error||r.status!==0)throw new Error(`${args.join(' ')}: ${r.error?.message||r.stderr||r.stdout||`exit ${r.status}`}`);
@@ -53,7 +58,7 @@ function capture(district,size,label,width,height,ready,phase,reduced=false){
  const shot=command('screenshot',path,'--width',width,'--height',height),render=call('render.stats');
  if(render.worldOccluded||render.validationErrors?.length)throw new Error('Invalid or covered review frame: '+JSON.stringify(render));
  report.captures.push({district,size,label,viewport:{width,height},fixture:actual,shot,render});
- writeFileSync(resolve(directory,'captures.json'),JSON.stringify(report,null,2)+'\n');
+ writeReport();
 }
 try{
  const active=command('session','list').sessions.find(s=>String(s.pid)===session);
@@ -66,7 +71,7 @@ try{
  for(const district of districtNumbers){
   const module=await import(pathToFileURL(resolve(root,`src/overworld/maps/district-${district}.ts`)).href);
   const map=module[`district${district}Map`],gate=map.pois.find(p=>p.kind==='gate');
-  const approach={x:(gate.x-map.origin.x)*map.scale,y:(map.origin.y-gate.y)*map.scale-(district===3?0:40)};
+  const approach={x:(gate.x-map.origin.x)*map.scale,y:(map.origin.y-gate.y)*map.scale-(arguments_.includes('--near')||district===3?0:40)};
   command('cheat','run','overworld.map-preview',`district=${district}`,'facing=1');step(1);
   for(const size of sizes){
    const [width,height,insets]=presets[size];
@@ -74,6 +79,16 @@ try{
    await settle(width,height);
    command('cheat','run','overworld.warp',`x=${approach.x}`,`y=${approach.y}`);step(90);
    await settle(width,height);
+   // WarpOverworld refuses blocked points silently. Confirm the real camera
+   // target/avatar reached the request before calling any frame an approach.
+   const query=command('world','query','OverworldAvatar','LocalTransform','--limit',1);
+   const position=query.entities?.[0]?.components?.LocalTransform?.position;
+   if(!Array.isArray(position)||!Number.isFinite(position[0])||!Number.isFinite(position[1]))throw new Error('Cannot read actual OverworldAvatar position: '+JSON.stringify(query));
+   const distance=Math.hypot(position[0]-approach.x,position[1]-approach.y);
+   report.approaches.push({district,size,viewport:{width,height},requested:approach,actual:position,distance});
+   writeReport();
+   if(distance>1)throw new Error(`Refuse mislabeled approach for district ${district} ${size}: requested ${JSON.stringify(approach)}, actual ${JSON.stringify(position)}, distance ${distance}`);
+   if(positionsOnly)continue;
    capture(district,size,'off',width,height,false,0);
    capture(district,size,'rest',width,height,true,0);
    capture(district,size,'peak',width,height,true,60);
@@ -84,10 +99,10 @@ try{
     capture(district,size,`loop-${String(index).padStart(3,'0')}`,width,height,true,phase);
    }
   }
-  console.log(`Captured district ${district}: ${report.captures.filter(c=>c.district===district).length} actual-engine frames`);
+  console.log(positionsOnly?`Audited district ${district}: ${report.approaches.filter(a=>a.district===district).length} actual approach positions`:`Captured district ${district}: ${report.captures.filter(c=>c.district===district).length} actual-engine frames`);
  }
- console.log(JSON.stringify({ok:true,session:Number(session),directory,captures:report.captures.length}));
+ console.log(JSON.stringify({ok:true,session:Number(session),directory,approaches:report.approaches.length,captures:report.captures.length,report:reportPath}));
 }catch(error){
- writeFileSync(resolve(directory,'failure.json'),JSON.stringify({error:String(error),captures:report.captures.length},null,2)+'\n');
+ writeFileSync(resolve(directory,positionsOnly?'positions-failure.json':'failure.json'),JSON.stringify({error:String(error),approaches:report.approaches.length,captures:report.captures.length},null,2)+'\n');
  throw error;
 }
