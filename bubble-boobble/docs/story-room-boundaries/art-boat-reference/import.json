@@ -1,0 +1,565 @@
+{
+  "alphaCoverageComparison" : ">=",
+  "alphaCoverageThreshold" : 128,
+  "anchors" : {
+    "designLeftInnerFace" : 325,
+    "designRightInnerFace" : 1345,
+    "emitterLeftCenter" : 294,
+    "emitterRightCenter" : 1378,
+    "floorFeet" : 777
+  },
+  "assets" : [
+    {
+      "alphaBounds128" : [
+        62,
+        0,
+        205,
+        732
+      ],
+      "alphaClearance128" : [
+        62,
+        0,
+        115,
+        0
+      ],
+      "bytes" : 168021,
+      "changedRGBPixelCount" : 234132,
+      "crop" : [
+        160,
+        0,
+        480,
+        732
+      ],
+      "destinationSourceRect" : [
+        160,
+        0,
+        480,
+        732
+      ],
+      "name" : "film-left-boat-reference",
+      "operation" : "generated decontaminated RGBA registered to exact original double-outline center and spacing per row",
+      "originalRGBFraction" : 0,
+      "originalRGBSolidPixelCount" : 0,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 0,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 0,
+      "role" : "film",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 260,
+          "rightExclusive" : 360,
+          "y" : 0
+        },
+        {
+          "left" : 250,
+          "rightExclusive" : 359,
+          "y" : 48
+        },
+        {
+          "left" : 234,
+          "rightExclusive" : 292,
+          "y" : 150
+        },
+        {
+          "left" : 229,
+          "rightExclusive" : 292,
+          "y" : 200
+        },
+        {
+          "left" : 224,
+          "rightExclusive" : 284,
+          "y" : 400
+        },
+        {
+          "left" : 239,
+          "rightExclusive" : 305,
+          "y" : 550
+        },
+        {
+          "left" : 246,
+          "rightExclusive" : 300,
+          "y" : 600
+        },
+        {
+          "left" : 256,
+          "rightExclusive" : 307,
+          "y" : 650
+        },
+        {
+          "left" : 267,
+          "rightExclusive" : 313,
+          "y" : 700
+        },
+        {
+          "left" : 275,
+          "rightExclusive" : 314,
+          "y" : 731
+        }
+      ],
+      "sha256" : "4147df1cecaeae87704c5147bd8fb6929d6684ee55d09ab1faa3f2df8d154f12",
+      "side" : "left",
+      "size" : [
+        320,
+        732
+      ],
+      "solidPixelCount" : 45529,
+      "translucentVisibleFraction" : 0.38331337184725939
+    },
+    {
+      "alphaBounds128" : [
+        148,
+        0,
+        259,
+        732
+      ],
+      "alphaClearance128" : [
+        148,
+        0,
+        61,
+        0
+      ],
+      "bytes" : 170725,
+      "changedRGBPixelCount" : 234110,
+      "crop" : [
+        1192,
+        0,
+        1512,
+        732
+      ],
+      "destinationSourceRect" : [
+        1192,
+        0,
+        1512,
+        732
+      ],
+      "name" : "film-right-boat-reference",
+      "operation" : "generated decontaminated RGBA registered to exact original double-outline center and spacing per row",
+      "originalRGBFraction" : 0,
+      "originalRGBSolidPixelCount" : 0,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 0,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 0,
+      "role" : "film",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1358,
+          "rightExclusive" : 1415,
+          "y" : 0
+        },
+        {
+          "left" : 1348,
+          "rightExclusive" : 1423,
+          "y" : 48
+        },
+        {
+          "left" : 1390,
+          "rightExclusive" : 1439,
+          "y" : 150
+        },
+        {
+          "left" : 1393,
+          "rightExclusive" : 1445,
+          "y" : 200
+        },
+        {
+          "left" : 1382,
+          "rightExclusive" : 1450,
+          "y" : 400
+        },
+        {
+          "left" : 1394,
+          "rightExclusive" : 1436,
+          "y" : 550
+        },
+        {
+          "left" : 1370,
+          "rightExclusive" : 1428,
+          "y" : 600
+        },
+        {
+          "left" : 1345,
+          "rightExclusive" : 1417,
+          "y" : 650
+        },
+        {
+          "left" : 1341,
+          "rightExclusive" : 1406,
+          "y" : 700
+        },
+        {
+          "left" : 1361,
+          "rightExclusive" : 1397,
+          "y" : 731
+        }
+      ],
+      "sha256" : "93cd9413c805d9050fe033768e586eb750801bac421df8f17a1156569d0894c6",
+      "side" : "right",
+      "size" : [
+        320,
+        732
+      ],
+      "solidPixelCount" : 42728,
+      "translucentVisibleFraction" : 0.50914918722812208
+    },
+    {
+      "alphaBounds128" : [
+        8,
+        0,
+        59,
+        110
+      ],
+      "alphaClearance128" : [
+        8,
+        0,
+        11,
+        3
+      ],
+      "bytes" : 21566,
+      "changedRGBPixelCount" : 1437,
+      "crop" : [
+        260,
+        720,
+        330,
+        833
+      ],
+      "destinationSourceRect" : [
+        260,
+        720,
+        330,
+        833
+      ],
+      "glassRepairPredicate" : "sourceG+sourceB>2*sourceR+40",
+      "name" : "emitter-left-boat-reference",
+      "operation" : "registered alpha with exact original brass RGB; decontaminated generated glass RGB",
+      "originalBrassRGBExactFraction" : 1,
+      "originalRGBFraction" : 0.78398169336384438,
+      "originalRGBSolidPixelCount" : 3426,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 6473,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 6473,
+      "role" : "emitter",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 275,
+          "rightExclusive" : 313,
+          "y" : 731
+        },
+        {
+          "left" : 274,
+          "rightExclusive" : 314,
+          "y" : 777
+        },
+        {
+          "left" : 268,
+          "rightExclusive" : 319,
+          "y" : 825
+        }
+      ],
+      "sha256" : "ab912af3f5390a941d94c4796f2923315ba302043cc806712f27017e3957078e",
+      "side" : "left",
+      "size" : [
+        70,
+        113
+      ],
+      "solidPixelCount" : 4370,
+      "translucentVisibleFraction" : 0.17622123536536133
+    },
+    {
+      "alphaBounds128" : [
+        8,
+        0,
+        58,
+        108
+      ],
+      "alphaClearance128" : [
+        8,
+        0,
+        12,
+        5
+      ],
+      "bytes" : 21508,
+      "changedRGBPixelCount" : 1506,
+      "crop" : [
+        1344,
+        720,
+        1414,
+        833
+      ],
+      "destinationSourceRect" : [
+        1344,
+        720,
+        1414,
+        833
+      ],
+      "glassRepairPredicate" : "sourceG+sourceB>2*sourceR+40",
+      "name" : "emitter-right-boat-reference",
+      "operation" : "registered alpha with exact original brass RGB; decontaminated generated glass RGB",
+      "originalBrassRGBExactFraction" : 1,
+      "originalRGBFraction" : 0.78599127484246245,
+      "originalRGBSolidPixelCount" : 3243,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 6404,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 6404,
+      "role" : "emitter",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1364,
+          "rightExclusive" : 1397,
+          "y" : 731
+        },
+        {
+          "left" : 1358,
+          "rightExclusive" : 1396,
+          "y" : 777
+        },
+        {
+          "left" : 1352,
+          "rightExclusive" : 1402,
+          "y" : 825
+        }
+      ],
+      "sha256" : "1197ffeb5d60012f3b3a20252322ccf0c877d82cdfae647b2d43ead9eda6fc0e",
+      "side" : "right",
+      "size" : [
+        70,
+        113
+      ],
+      "solidPixelCount" : 4126,
+      "translucentVisibleFraction" : 0.1941225165562914
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        1020,
+        66
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 141045,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        325,
+        777,
+        1345,
+        843
+      ],
+      "destinationSourceRect" : [
+        325,
+        777,
+        1345,
+        843
+      ],
+      "name" : "floor-boat-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 67320,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 67320,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 67320,
+      "role" : "floor",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 325,
+          "rightExclusive" : 1345,
+          "y" : 777
+        },
+        {
+          "left" : 325,
+          "rightExclusive" : 1345,
+          "y" : 825
+        }
+      ],
+      "sha256" : "4718f8d5624d0941e63041ce27783802eaac82582fc33ec6cda42bb07627a708",
+      "side" : "center",
+      "size" : [
+        1020,
+        66
+      ],
+      "solidPixelCount" : 67320,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        164,
+        66
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 24449,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        325,
+        777,
+        489,
+        843
+      ],
+      "destinationSourceRect" : [
+        325,
+        777,
+        489,
+        843
+      ],
+      "name" : "floor-left-boat-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 10824,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 10824,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 10824,
+      "role" : "floor-left",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 325,
+          "rightExclusive" : 489,
+          "y" : 777
+        },
+        {
+          "left" : 325,
+          "rightExclusive" : 489,
+          "y" : 825
+        }
+      ],
+      "sha256" : "bc9e34b04417fae0e81ae0a4bee71b50477c9bdd43a1f1df2196695be8387df6",
+      "side" : "center",
+      "size" : [
+        164,
+        66
+      ],
+      "solidPixelCount" : 10824,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        256,
+        66
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 36054,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        580,
+        777,
+        836,
+        843
+      ],
+      "destinationSourceRect" : [
+        580,
+        777,
+        836,
+        843
+      ],
+      "name" : "floor-center-boat-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 16896,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 16896,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 16896,
+      "role" : "floor-center",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 580,
+          "rightExclusive" : 836,
+          "y" : 777
+        },
+        {
+          "left" : 580,
+          "rightExclusive" : 836,
+          "y" : 825
+        }
+      ],
+      "sha256" : "8bf13e427b8128050bd81c5d5a025bc622d190010b5a0e224bfb0adba2b9685c",
+      "side" : "center",
+      "size" : [
+        256,
+        66
+      ],
+      "solidPixelCount" : 16896,
+      "translucentVisibleFraction" : 0
+    },
+    {
+      "alphaBounds128" : [
+        0,
+        0,
+        164,
+        66
+      ],
+      "alphaClearance128" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bytes" : 24548,
+      "changedRGBPixelCount" : 0,
+      "crop" : [
+        1181,
+        777,
+        1345,
+        843
+      ],
+      "destinationSourceRect" : [
+        1181,
+        777,
+        1345,
+        843
+      ],
+      "name" : "floor-right-boat-reference",
+      "operation" : "exact original RGB; registered alpha only for repeated shafts",
+      "originalRGBFraction" : 1,
+      "originalRGBSolidPixelCount" : 10824,
+      "outsideDeclaredRepairOriginalRGBExactCount" : 10824,
+      "outsideDeclaredRepairOriginalRGBExactFraction" : 1,
+      "outsideDeclaredRepairPixelCount" : 10824,
+      "role" : "floor-right",
+      "scanlineDestinationSourceBounds128" : [
+        {
+          "left" : 1181,
+          "rightExclusive" : 1345,
+          "y" : 777
+        },
+        {
+          "left" : 1181,
+          "rightExclusive" : 1345,
+          "y" : 825
+        }
+      ],
+      "sha256" : "051293dd4721fcd6d52a9c47c4ddbb1804646301f97ddf4e74ac329b5662c2bc",
+      "side" : "center",
+      "size" : [
+        164,
+        66
+      ],
+      "solidPixelCount" : 10824,
+      "translucentVisibleFraction" : 0
+    }
+  ],
+  "family" : "boat",
+  "originalRGBSolidFraction" : 1,
+  "prototypeWorldInnerWidth" : 960,
+  "registration" : "registration.json",
+  "source" : "approved-reference.png",
+  "sourceCanvas" : [
+    1672,
+    941
+  ],
+  "sourceSHA256" : "5236339bec697611e22b91f2eb225e87da4546fb0feb631c621d810243f69447"
+}

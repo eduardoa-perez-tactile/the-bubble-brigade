@@ -53,8 +53,8 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  createEffect(()=>{const current=state(),selected=(current.screen==='overworld-card'||current.adventure)?encounterById(current.adventureEncounter??''):undefined;
   const episode=selected?episodeForLevel(selected.level):undefined,next=episode?`adventure-${episode.theme}`:'';
   if(next===activeEpisodeGroup)return;const previous=activeEpisodeGroup;activeEpisodeGroup=next;
-  // The episode group is its one illustration. Pin/preload it quietly for the
-  // description; inspecting a landmark must not open a second loading screen.
+  // The episode group holds its painting and matching room-border kit. Preload
+  // it for the description without opening a second loading screen.
   if(previous)assets.release(previous);
   if(next)assets.load(next);
  });

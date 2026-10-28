@@ -1,0 +1,9 @@
+guid = "ea6447b8-6c1c-597c-aafe-5b645438fe04"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "story-boundaries-stone"
+filter = "linear"
+compression = "none"
+trim = false

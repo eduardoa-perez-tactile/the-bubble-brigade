@@ -1,16 +1,24 @@
 import {levelRows,levelWidth,Tile,type Level} from '../arcade/types';
 import {CARTOON_ENEMY_SIZE,CARTOON_PLAYER_SIZE} from './actor-layout';
 import {cartoonProjectY} from './coordinates';
+import {storyRoomReferenceComposition,storyRoomExteriorMargin} from './room-boundary-config';
 
 /** The artwork's authored vertical metric also positions mouths and contact
  * envelopes in simulation. Keep it independent of the stage's actual width. */
 export const cartoonVerticalMetric=1728/1280;
 
-/** Visible walls occupy the existing two solid tile columns, plus one extra
- * two-column band outside the room. These are art extents, not new collision. */
-export const STORY_ROOM_WALL_WIDTH=96;
+/** Collision keeps its original inner wall face. Landscape fits the complete
+ * exterior silhouette; portrait fits its inner band to preserve actor size. */
+export const STORY_ROOM_WALL_WIDTH=192;
 export const STORY_ROOM_OUTER_MARGIN=48;
-export const STORY_ROOM_FOUNDATION_HEIGHT=48;
+export const STORY_ROOM_FOUNDATION_HEIGHT=80;
+export const STORY_ROOM_CONTACT_SHADOW_DEPTH=16;
+
+/** Height for shared foundation modules. Registered families draw original
+ * floor depths from their source metadata instead of stretching these modules. */
+export function storyRoomFoundationHeight(level:Level){
+  return storyRoomReferenceComposition(level)?.foundationHeight??STORY_ROOM_FOUNDATION_HEIGHT;
+}
 
 /** Static presentation bounds for differently sized Adventure rooms. The
  * canonical non-story courtyard retains its established composition, including Party. */
@@ -35,8 +43,11 @@ export function compactAdventureFrame(level:Level){
       +CARTOON_ENEMY_SIZE*120/128;
     aboveFloor=Math.max(aboveFloor,flightTop);
   }
-  // The full foundation sits below the unchanged collision feet and cap.
-  const belowFloor=20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT;
+  // Shared modules reserve their foundation/shadow. Reference compositions keep
+  // their low walkable floor and allow decorative plinths behind the footer.
+  const belowFloor=storyRoomReferenceComposition(level)?.reserveBelowFloor
+    ??20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT+STORY_ROOM_CONTACT_SHADOW_DEPTH;
   const framingWidth=width+2*STORY_ROOM_OUTER_MARGIN;
-  return {width,framingWidth,floorFeet,floorProjected,aboveFloor,belowFloor};
+  const fullFramingWidth=width+2*storyRoomExteriorMargin(level);
+  return {width,framingWidth,fullFramingWidth,floorFeet,floorProjected,aboveFloor,belowFloor};
 }

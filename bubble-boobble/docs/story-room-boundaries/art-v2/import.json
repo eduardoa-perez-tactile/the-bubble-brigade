@@ -1,0 +1,76 @@
+{
+  "assets" : [
+    {
+      "bytes" : 94566,
+      "crop" : [
+        430,
+        444,
+        718,
+        703
+      ],
+      "name" : "base-timber-v2",
+      "sha256" : "923bfaff5f660880c5244293dbde263af8e3bd91a711b44fb9792bba95f5e158",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 111940,
+      "crop" : [
+        1171,
+        369,
+        1480,
+        703
+      ],
+      "name" : "base-vegetation-v2",
+      "sha256" : "16f4a83eacf9dad38393c9ab8b865a7f4ea81c88fad4b653e46e1a82bd347add",
+      "size" : [
+        192,
+        224
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 28486,
+      "crop" : [
+        430,
+        790,
+        718,
+        903
+      ],
+      "name" : "collar-timber-v2",
+      "sha256" : "91847d924697c948aced307237346b44da58015e71a9fc57a4ebc24d9fe27ccc",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    },
+    {
+      "bytes" : 34182,
+      "crop" : [
+        1171,
+        790,
+        1480,
+        903
+      ],
+      "name" : "collar-vegetation-v2",
+      "sha256" : "0ed8096fc691dbf95c79aeadbb5908f21c237008000b408f11d69bbdbd017d1d",
+      "size" : [
+        192,
+        64
+      ],
+      "source" : "architecture-sheet.png"
+    }
+  ],
+  "generator" : "built-in image_gen",
+  "import" : "CoreGraphics rectangular crop and high-quality downsample only; preserve alpha, no redraw or keying",
+  "sources" : [
+    {
+      "file" : "architecture-sheet.png",
+      "sha256" : "8d952e23a3907254e7c8016d26e583c312127b9d25e8e423ae399e3254b5e07b"
+    }
+  ]
+}
