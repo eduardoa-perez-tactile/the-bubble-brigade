@@ -3,6 +3,7 @@ import {simplifiedEnemyDraws} from './enemy-motion';
 import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
+import {storyRoomBoundaryDraws} from './room-boundaries';
 import {cartoonHudBounds} from './hud-layout';
 import {cartoonBubbleState} from './bubble-state';
 import {cartoonBubbleShape,cartoonFeedback} from './feedback';
@@ -147,6 +148,9 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     ...(composed&&!g.Level.episode?{backgroundTick:reduced?0:Math.max(0,tick),backgroundMotion:!reduced}:{})});
   if(composed&&!g.Level.episode)out.push(...cartoonBackgroundDraws(tick,{x:layout.viewportLeft,y:layout.viewportTop,
     width:layout.viewportRight-layout.viewportLeft,height:layout.viewportBottom-layout.viewportTop},reduced));
+  if(composed&&g.Level.episode)out.push(...storyRoomBoundaryDraws(g.Level,{
+    scale:layout.scale,projectX:px,projectY:py,viewportTop:layout.viewportTop,
+  }));
   const columns=levelColumns(g.Level);
   const capHeight=composed?CARTOON_PLATFORM_HEIGHT:24,capSpan=composed?CARTOON_PLATFORM_SPAN:48;
 

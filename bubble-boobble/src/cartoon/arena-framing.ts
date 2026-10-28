@@ -1,4 +1,4 @@
-import {levelHeight,levelRows,levelWidth,Tile,type Level} from '../arcade/types';
+import {levelRows,levelWidth,Tile,type Level} from '../arcade/types';
 import {CARTOON_ENEMY_SIZE,CARTOON_PLAYER_SIZE} from './actor-layout';
 import {cartoonProjectY} from './coordinates';
 
@@ -6,11 +6,17 @@ import {cartoonProjectY} from './coordinates';
  * envelopes in simulation. Keep it independent of the stage's actual width. */
 export const cartoonVerticalMetric=1728/1280;
 
+/** Visible walls occupy the existing two solid tile columns, plus one extra
+ * two-column band outside the room. These are art extents, not new collision. */
+export const STORY_ROOM_WALL_WIDTH=96;
+export const STORY_ROOM_OUTER_MARGIN=48;
+export const STORY_ROOM_FOUNDATION_HEIGHT=48;
+
 /** Static presentation bounds for differently sized Adventure rooms. The
- * canonical courtyard retains its established composition, including Party. */
+ * canonical non-story courtyard retains its established composition, including Party. */
 export function compactAdventureFrame(level:Level){
   const width=levelWidth(level);
-  if(!level.episode||(width===1728&&levelHeight(level)===552))return undefined;
+  if(!level.episode)return undefined;
   const floorFeet=(levelRows(level)-1)*Tile;
   let firstShelf=-1;
   for(let row=1;row<level.tiles.length&&firstShelf<0;row++){
@@ -29,7 +35,8 @@ export function compactAdventureFrame(level:Level){
       +CARTOON_ENEMY_SIZE*120/128;
     aboveFloor=Math.max(aboveFloor,flightTop);
   }
-  // The platform cap and underside extend below the collision feet.
-  const belowFloor=20*cartoonVerticalMetric+14;
-  return {width,floorFeet,floorProjected,aboveFloor,belowFloor};
+  // The full foundation sits below the unchanged collision feet and cap.
+  const belowFloor=20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT;
+  const framingWidth=width+2*STORY_ROOM_OUTER_MARGIN;
+  return {width,framingWidth,floorFeet,floorProjected,aboveFloor,belowFloor};
 }
