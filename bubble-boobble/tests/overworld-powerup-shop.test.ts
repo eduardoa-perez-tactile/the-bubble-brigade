@@ -1,3 +1,5 @@
+import {views,finishAnimations} from '@gameengine/ui';
+import {AdventureShopView} from '../src/overworld/shop.view';
 import {expect,worldTest,renderTest,type WorldTestContext} from '@gameengine/test';
 import {DesktopIntent} from '../src/schema.gen';
 import {desktopSave,desktopSaveState,initialDesktopSave} from '../src/desktop/save';
@@ -109,7 +111,7 @@ renderTest('powerup shop counter controls fit supported screen extremes',async c
   const {width,height,safe}=device;ctx.input.view(width,height,1,[safe[0]!,safe[1]!,safe[2]!,safe[3]!]);await adventureStep(ctx,3);
   ctx.render.stats({width,height});
   const buttons=ctx.ui.interactables().filter(button=>button.enabled&&button.hittable);
-  expect(buttons.length).toBe(6);
+  if(buttons.length!==6)throw new Error(JSON.stringify({width,height,controls:ctx.ui.interactables()}));
   for(const button of buttons){
    const r=button.rect;
    if(r.x<safe[0]!-1||r.y<safe[1]!-1||r.x+r.width>width-safe[2]!+1||r.y+r.height>height-safe[3]!+1||r.width<44||r.height<44)throw new Error('Shop control out of bounds: '+JSON.stringify({width,height,label:button.label,rect:r}));
@@ -153,4 +155,30 @@ renderTest('powerup shop counter browses before spending and keeps ownership equ
  expect(adventureShopModel(desktopState.get(),desktopSaveState.get()).helpOpen).toBe(false);
  ctx.render.stats({width:1280,height:720});await ctx.ui.press('back');await adventureStep(ctx,3);
  expect(desktopState.get().screen).toBe('overworld');
+},{scene,memory:'phone-low'});
+
+renderTest('powerup shop layered owner blinks without moving his body and ducks behind the opaque desk',async ctx=>{
+ await adventureStep(ctx,8);await ctx.loaded();
+ ctx.input.view(1280,720,1);
+ const save={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure:{...initialAdventure(),coins:35}}]};
+ const model=adventureShopModel(desktopState.get(),save);
+ const before=JSON.stringify(save);
+ const handle=views.push(AdventureShopView,model,{enter:null});
+ await ctx.step(2);finishAnimations();ctx.render.stats({width:1280,height:720});
+ const r=ctx.ui.rect('shop-owner');expect(!!r).toBe(true);
+ const points:[number,number][]=[[r!.x+r!.width*.39,r!.y+r!.height*.46],[r!.x+r!.width*.3,r!.y+r!.height*.18],[256,508]];
+ const probe=()=>ctx.render.probe({width:1280,height:720,points}).points.map(p=>p.rgba);
+ const open=probe();let closed:number[][]|undefined;
+ for(let tick=0;tick<42&&!closed;tick++){
+  await ctx.step(6);const frame=probe();
+  if(frame[0]!.slice(0,3).some((v,i)=>Math.abs(v-open[0]![i]!)>40))closed=frame;
+ }
+ if(!closed)throw new Error('Blink not seen: '+JSON.stringify({rect:r,open,last:probe()}));
+ expect(closed![1]).toEqual(open[1]);expect(closed![2]).toEqual(open[2]);
+ handle.update({...model,ownerHidden:true});await ctx.step(18);finishAnimations();
+ const hidden=probe();expect(hidden[2]).toEqual(open[2]);
+ if(!hidden[0]!.slice(0,3).some((v,i)=>Math.abs(v-open[0]![i]!)>20))throw new Error('Owner not hidden: '+JSON.stringify({open,hidden}));
+ if(!ctx.ui.interactables().some(b=>b.id==='shop-purchase'&&b.enabled&&b.hittable))throw new Error('Purchase hidden under desk: '+JSON.stringify(ctx.ui.interactables()));
+ expect(JSON.stringify(save)).toBe(before);
+ handle.close({immediate:true});
 },{scene,memory:'phone-low'});

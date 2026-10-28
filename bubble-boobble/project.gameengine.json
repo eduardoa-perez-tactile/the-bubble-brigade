@@ -105,7 +105,7 @@
         ]
       },
       "shop-presentation": {
-        "include": ["assets/cartoon/shop/**"]
+        "include": ["assets/cartoon/shop/scene-*.png", "assets/cartoon/shop/owner-*", "assets/cartoon/shop/action-paper.png", "assets/cartoon/shop/pointing-hand.png", "assets/cartoon/shop/price-tag.png", "assets/cartoon/shop/gold-coin.png"]
       },
       "adventure-lighthouse": {
         "include": [

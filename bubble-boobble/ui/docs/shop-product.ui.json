@@ -2,88 +2,139 @@
   "$schemaVersion": 1,
   "guid": "f0e54737-9adf-4411-b67b-17918a2f7330",
   "name": "shop-product",
-  "title": "Shop shelf product",
+  "title": "Counter merchandise",
   "kind": "widget",
   "root": "root",
   "nodes": {
     "root": {
       "type": "element",
       "children": [
+        "shadow",
+        "art",
         "pointer",
-        "well",
-        "stand",
-        "plaque",
+        "tag",
         "badge"
       ],
       "style": {
         "pad": 0,
-        "dir": "column",
-        "align": "center",
         "w": "100%",
-        "h": 208,
-        "gap": 2
+        "h": "100%"
       }
     },
-    "pointer": {
+    "shadow": {
       "type": "element",
       "children": [],
       "style": {
         "pad": 0,
-        "w": 50,
-        "h": 24,
-        "align": "center",
-        "justify": "center",
-        "opacity": 0
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.69
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "w": "74%",
+        "h": 12,
+        "radius": 99,
+        "bg": "#25170c66",
+        "attach": true
       }
     },
     "art": {
       "type": "icon",
       "image": "cartoon/frames/item/pink_candy",
       "style": {
-        "w": 100,
-        "h": 86,
-        "ty": 0,
+        "position": "anchored",
+        "anchor": [
+          0.04,
+          0.04
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "92%",
+        "h": "72%",
         "attach": true
       },
       "property": "illustration"
     },
-    "plaque": {
+    "pointer": {
+      "type": "icon",
+      "image": "cartoon/shop/pointing-hand",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0.3
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "45%",
+        "h": "28%",
+        "offset": [
+          -32,
+          0
+        ],
+        "opacity": 0,
+        "attach": true
+      }
+    },
+    "tag": {
       "type": "element",
       "children": [
-        "paper",
-        "name",
+        "coin",
         "price"
       ],
       "style": {
-        "pad": 3,
-        "w": "94%",
-        "h": 56,
-        "bg": "#00000000",
-        "radius": 2,
-        "align": "center"
+        "pad": [
+          4,
+          12,
+          4,
+          14
+        ],
+        "position": "anchored",
+        "anchor": [
+          0.12,
+          0.75
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "w": "76%",
+        "h": "23%",
+        "image": "cartoon/shop/price-tag",
+        "fit": "fill",
+        "dir": "row",
+        "gap": 6,
+        "align": "center",
+        "justify": "center"
       }
     },
-    "name": {
-      "type": "label",
-      "text": "{label}",
+    "coin": {
+      "type": "icon",
+      "image": "cartoon/shop/gold-coin",
       "style": {
-        "h": 22,
-        "fontSize": 20,
-        "fitMin": 14,
-        "color": "#30251c",
-        "w": "100%",
-        "textAlign": "center"
-      }
+        "w": 20,
+        "h": 28
+      },
+      "show": "showCoin"
     },
     "price": {
       "type": "label",
       "text": "{price}",
       "style": {
-        "h": 20,
-        "fontSize": 17,
-        "fitMin": 14,
-        "color": "#30251c",
-        "w": "100%",
+        "fontSize": 29,
+        "fitMin": 12,
+        "h": 36,
+        "color": "#21190e",
+        "w": 0,
+        "grow": 1,
         "textAlign": "center"
       }
     },
@@ -91,219 +142,39 @@
       "type": "label",
       "text": "EQUIPPED",
       "style": {
-        "h": 24,
-        "fontSize": 16,
-        "fitMin": 16,
-        "color": "#fff0ca",
-        "w": "86%",
-        "textAlign": "center",
-        "bg": "#285b59"
-      }
-    },
-    "well": {
-      "type": "element",
-      "children": [
-        "shadow",
-        "leftBracket",
-        "rightBracket",
-        "art"
-      ],
-      "style": {
-        "pad": 0,
-        "w": "100%",
-        "h": 86,
-        "align": "center",
-        "justify": "end"
-      }
-    },
-    "shadow": {
-      "type": "element",
-      "children": [],
-      "style": {
+        "fontSize": 14,
+        "fitMin": 12,
+        "h": 20,
+        "color": "#f7e4b9",
         "position": "anchored",
         "anchor": [
-          0.5,
-          1
+          0.12,
+          0.98
         ],
         "pivot": [
-          0.5,
-          1
-        ],
-        "offset": [
           0,
           0
         ],
-        "w": 86,
-        "h": 10,
-        "pad": 0,
-        "radius": 99,
-        "bg": "#30221966",
-        "attach": true
-      }
-    },
-    "stand": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 112,
-        "h": 7,
-        "radius": 2,
-        "bg": "#734a2b"
-      }
-    },
-    "leftBracket": {
-      "type": "element",
-      "children": [
-        "leftBracketTop",
-        "leftBracketStem",
-        "leftBracketBottom"
-      ],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 64,
-        "bg": "#00000000",
-        "radius": 2,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "offset": [
-          -62,
-          0
-        ],
-        "opacity": 0,
-        "dir": "column",
-        "justify": "space-between",
-        "align": "start"
-      }
-    },
-    "rightBracket": {
-      "type": "element",
-      "children": [
-        "rightBracketTop",
-        "rightBracketStem",
-        "rightBracketBottom"
-      ],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 64,
-        "bg": "#00000000",
-        "radius": 2,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "offset": [
-          62,
-          0
-        ],
-        "opacity": 0,
-        "dir": "column",
-        "justify": "space-between",
-        "align": "end"
-      }
-    },
-    "leftBracketTop": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 4,
-        "bg": "#302219"
-      }
-    },
-    "leftBracketStem": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 4,
-        "h": 56,
-        "bg": "#302219"
-      }
-    },
-    "leftBracketBottom": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 4,
-        "bg": "#302219"
-      }
-    },
-    "rightBracketTop": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 4,
-        "bg": "#302219"
-      }
-    },
-    "rightBracketStem": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 4,
-        "h": 56,
-        "bg": "#302219"
-      }
-    },
-    "rightBracketBottom": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "w": 16,
-        "h": 4,
-        "bg": "#302219"
-      }
-    },
-    "paper": {
-      "type": "element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0.5,
-          0.5
-        ],
-        "pivot": [
-          0.5,
-          0.5
-        ],
-        "w": "100%",
-        "h": "100%",
-        "bg": "#eddbb2",
-        "rotate": -1,
-        "radius": 2,
-        "attach": true
+        "w": "76%",
+        "textAlign": "center",
+        "attach": true,
+        "opacity": 0
       }
     }
   },
   "behaviour": "button",
   "properties": {
-    "label": {
-      "type": "text",
-      "default": ""
+    "illustration": {
+      "type": "image",
+      "default": "cartoon/frames/item/pink_candy"
     },
     "price": {
       "type": "text",
       "default": ""
     },
-    "illustration": {
-      "type": "image",
-      "default": "cartoon/frames/item/pink_candy"
+    "label": {
+      "type": "text",
+      "default": ""
     },
     "selected": {
       "type": "yesno",
@@ -315,26 +186,7 @@
               "opacity": 1
             },
             "art": {
-              "scale": 1.08
-            },
-            "stand": {
-              "bg": "#302219"
-            },
-            "leftBracket": {
-              "opacity": 1
-            },
-            "rightBracket": {
-              "opacity": 1
-            },
-            "paper": {
-              "bg": "#ffe8a4"
-            }
-          }
-        },
-        "no": {
-          "set": {
-            "pointer": {
-              "opacity": 0
+              "scale": 1.06
             }
           }
         }
@@ -342,29 +194,38 @@
     },
     "focused": {
       "type": "yesno",
-      "default": false,
-      "poses": {
-        "yes": {
-          "set": {
-            "name": {
-              "color": "#954526"
-            }
-          }
-        }
-      }
+      "default": false
     },
     "equipped": {
       "type": "yesno",
       "default": false,
       "poses": {
-        "no": {
+        "yes": {
           "set": {
             "badge": {
-              "opacity": 0
+              "opacity": 1
             }
           }
         }
       }
+    },
+    "large": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "art": {
+              "scale": 1.25,
+              "ty": 0
+            }
+          }
+        }
+      }
+    },
+    "showCoin": {
+      "type": "yesno",
+      "default": true
     }
   },
   "transition": {
@@ -375,7 +236,7 @@
     "pressed": {
       "set": {
         "art": {
-          "scale": 0.94
+          "scale": 0.98
         }
       }
     }
