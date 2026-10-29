@@ -1,0 +1,282 @@
+{
+  "source": "Verified Game Engine mobile/Metal captures",
+  "nativeCount": 25,
+  "captureCount": 39,
+  "rooms": [
+    {
+      "number": 1,
+      "title": "Lantern Landing",
+      "district": "Harbor",
+      "columns": 40,
+      "family": "Lighthouse stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_1_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 2,
+      "title": "Parcel Panic",
+      "district": "Harbor",
+      "columns": 44,
+      "family": "Oak piers",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_2_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 3,
+      "title": "Sailcloth Shuffle",
+      "district": "Harbor",
+      "columns": 44,
+      "family": "Oak piers",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_3_1280/mobile/metal.png",
+      "narrow": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_3_344/mobile/metal.png",
+      "wide": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_3_2520/mobile/metal.png",
+      "second": null
+    },
+    {
+      "number": 4,
+      "title": "Pressure Trouble",
+      "district": "Harbor",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_4_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 5,
+      "title": "Tugboat Tussle",
+      "district": "Harbor",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_5_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 6,
+      "title": "Dewdrop Steps",
+      "district": "Garden",
+      "columns": 44,
+      "family": "Garden stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_6_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 7,
+      "title": "Acorn Antics",
+      "district": "Garden",
+      "columns": 44,
+      "family": "Garden stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_7_1280/mobile/metal.png",
+      "narrow": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_7_344/mobile/metal.png",
+      "wide": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_7_2520/mobile/metal.png",
+      "second": null
+    },
+    {
+      "number": 8,
+      "title": "Willow Waltz",
+      "district": "Garden",
+      "columns": 44,
+      "family": "Garden stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_8_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 9,
+      "title": "Bramble Bounce",
+      "district": "Garden",
+      "columns": 44,
+      "family": "Garden stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_9_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 10,
+      "title": "Woodland Welcome",
+      "district": "Garden",
+      "columns": 44,
+      "family": "Garden stone",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_10_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_10_1280_second_act/mobile/metal.png"
+    },
+    {
+      "number": 11,
+      "title": "Kettle Capers",
+      "district": "Fair",
+      "columns": 44,
+      "family": "Fair timber/copper",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_11_1280/mobile/metal.png",
+      "narrow": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_11_344/mobile/metal.png",
+      "wide": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_11_2520/mobile/metal.png",
+      "second": null
+    },
+    {
+      "number": 12,
+      "title": "Depot Dash",
+      "district": "Fair",
+      "columns": 44,
+      "family": "Fair timber/copper",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_12_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 13,
+      "title": "Pinwheel Pranks",
+      "district": "Fair",
+      "columns": 44,
+      "family": "Fair timber/copper",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_13_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 14,
+      "title": "Thunder Workshop",
+      "district": "Fair",
+      "columns": 44,
+      "family": "Fair timber/copper",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_14_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 15,
+      "title": "Last Call at the Fair",
+      "district": "Fair",
+      "columns": 44,
+      "family": "Fair timber/copper",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_15_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_15_1280_second_act/mobile/metal.png"
+    },
+    {
+      "number": 16,
+      "title": "Lantern Hops",
+      "district": "Springs",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_16_1280/mobile/metal.png",
+      "narrow": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_16_344/mobile/metal.png",
+      "wide": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_16_2520/mobile/metal.png",
+      "second": null
+    },
+    {
+      "number": 17,
+      "title": "Firefly Ferry",
+      "district": "Springs",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_17_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 18,
+      "title": "Moonpool Mischief",
+      "district": "Springs",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_18_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 19,
+      "title": "Reedpipe Ruckus",
+      "district": "Springs",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_19_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 20,
+      "title": "Marshlight Matinee",
+      "district": "Springs",
+      "columns": 44,
+      "family": "Bubble film",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_20_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_20_1280_second_act/mobile/metal.png"
+    },
+    {
+      "number": 21,
+      "title": "Crystal Commotion",
+      "district": "Foundry",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_21_1280/mobile/metal.png",
+      "narrow": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_21_344/mobile/metal.png",
+      "wide": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_21_2520/mobile/metal.png",
+      "second": null
+    },
+    {
+      "number": 22,
+      "title": "Foundry Frolic",
+      "district": "Foundry",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_22_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 23,
+      "title": "Tempest Tangle",
+      "district": "Foundry",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_23_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 24,
+      "title": "Boiler Brigade",
+      "district": "Foundry",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_24_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": null
+    },
+    {
+      "number": 25,
+      "title": "Skybell Send-off",
+      "district": "Foundry",
+      "columns": 44,
+      "family": "Copper pipes",
+      "native": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_25_1280/mobile/metal.png",
+      "narrow": null,
+      "wide": null,
+      "second": "../../tests/goldens/story_room_rollout_shows_all_twenty_five_native_rooms_and_affected_family_screen_extremes/stage_25_1280_second_act/mobile/metal.png"
+    }
+  ]
+}

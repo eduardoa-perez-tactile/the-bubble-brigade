@@ -146,7 +146,7 @@ worldTest('Story room boundaries align with actual movement stops and enclose ev
        }else expect(evidence.originalRGBFraction>=.995).toBe(true);
       }
       if(evidence.alphaClearance128){
-       if((reference!.id==='parcel'||reference!.id==='garden')&&role==='profile'){
+       if((reference!.id==='parcel'||reference!.id==='garden'||reference!.id==='fair')&&role==='profile'){
         // A complete U-frame hands off to its matching floor inside this crop.
         // The painted cap crest can rise up to six source pixels above the
         // physical floor. All architecture ABOVE that join must remain uncut.
@@ -329,10 +329,10 @@ worldTest('Story room boundaries follow all twenty five existing setting identit
   const expected=number<=5?harbor[number-1]!:district[Math.floor((number-6)/5)]!;
   const plan=cartoonDrawPlan(game,120);
   const reference=storyRoomBoundaryReference(game.Level);
-  if((['stone','pipe','bubble'].includes(expected)||number===2||number===6)&&!reference)
+  if(!reference)
    throw new Error(`Story boundary stage ${number}: approved ${expected} reference family must replace the provisional kit`);
   if(reference){
-   expect(reference.id).toBe(number===2?'parcel':number===6?'garden':expected==='stone'?'lighthouse':expected);
+   expect(reference.id).toBe(expected==='stone'?'lighthouse':expected==='timber'?(number>=11?'fair':'parcel'):expected==='vegetation'?'garden':expected);
    const profiles=reference.assets.filter(asset=>['profile','emitter','film'].includes(referenceRole(asset)));
    expect(profiles.some(asset=>referenceSide(asset)==='left')).toBe(true);
    expect(profiles.some(asset=>referenceSide(asset)==='right')).toBe(true);

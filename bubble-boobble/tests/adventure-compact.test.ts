@@ -76,7 +76,7 @@ worldTest('Adventure compact layouts shorten actual floor travel and retain enem
   expect(after<=before*.7).toBe(true);
   console.log(`Adventure compact stage ${number}: floor travel ${before} -> ${after} simulation ticks`);
  }
- for(let number=1;number<=25;number++)if(![...prototypes,2,6].includes(number))expect(createAdventureLevel(number).tiles[0]!.length).toBe(72);
+ for(let number=1;number<=25;number++)expect(createAdventureLevel(number).tiles[0]!.length).toBe(number===1?40:44);
  expect(createCartoonArena(campaign[0]!).tiles[0]!.length).toBe(72);
 },{scene});
 

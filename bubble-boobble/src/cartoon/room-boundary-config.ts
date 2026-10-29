@@ -21,9 +21,7 @@ const referenceComposition={reserveBelowFloor:40,foundationHeight:48,prototypeWo
  * inside its reserved band. The wider rooms never enlarge their border art. */
 export function storyRoomReferenceComposition(level:Level){
   if(level.episode?.theme==='lighthouse')return lighthouseComposition;
-  if(level.episode?.theme==='post-office'||level.episode?.theme==='garden-1')return referenceComposition;
-  const style=storyRoomBoundaryStyle(level);
-  return style==='pipe'||style==='bubble'?referenceComposition:undefined;
+  return storyRoomBoundaryStyle(level)?referenceComposition:undefined;
 }
 
 /** Full silhouettes fit landscape/native views. Portrait keeps the narrower
@@ -32,7 +30,7 @@ export function storyRoomExteriorMargin(level:Level){
   const style=storyRoomBoundaryStyle(level);
   if(!style)return 48;
   const reference=referenceBoundaryFamilyForTheme(level.episode?.theme,style);
-  if(!reference)return 256-48+6;
+  if(!reference)return 48;
   const {anchors}=reference;
   const unit=reference.prototypeWorldInnerWidth/(anchors.designRightInnerFace-anchors.designLeftInnerFace);
   let outside=0;

@@ -1,9 +1,0 @@
-guid = "9bb77321-89e4-59ec-876a-1f0fd0e74dcd"
-importer = "texture"
-
-[settings]
-kind = "sprite"
-atlas = "story-boundaries-timber"
-filter = "linear"
-compression = "none"
-trim = false
