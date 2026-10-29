@@ -10,7 +10,7 @@ const allPowers=['pink_candy','blue_candy','yellow_candy','shoes','crystal_ring'
 /** Floating status only. Collected powers have no reserved empty slots. */
 export const StoryHudView=defineView<StoryHudModel>({
  name:'StoryHUD',layer:'overlay',blockInput:false,
- samples:{gameplay,powered:{...gameplay,powers:allPowers.slice(0,3)},allPowers:{...gameplay,powers:allPowers},multiwave:{...gameplay,wave:'WAVE 1 / 2',powers:allPowers.slice(0,3)},bonus:{...gameplay,enemies:'0',bonus:true,encounterIcon:'cartoon/frames/item/food-13',powers:allPowers.slice(0,3)},lastLife:{...gameplay,portrait:'cartoon/reconstruction/ui/portraits/red',lives:'1',enemies:'1',lowLife:true}},
+ samples:{gameplay,powered:{...gameplay,powers:allPowers.slice(0,3)},allPowers:{...gameplay,powers:allPowers},multiwave:{...gameplay,wave:'ACT 1 / 2',powers:allPowers.slice(0,3)},bonus:{...gameplay,enemies:'0',bonus:true,encounterIcon:'cartoon/frames/item/food-13',powers:allPowers.slice(0,3)},lastLife:{...gameplay,portrait:'cartoon/reconstruction/ui/portraits/red',lives:'1',enemies:'1',lowLife:true}},
  render:model=><Screen safeArea class="story-hud-screen"><Widget id="story-hud" doc="story-hud" class="story-hud" props={{
   portrait:()=>model().portrait,
   lives:()=>model().lives,enemies:()=>model().enemies,powers:()=>model().powers,

@@ -1,6 +1,7 @@
 import type { GameState } from '../arcade/types';
 import { State, TPS } from '../arcade/types';
 import { CARTOON_CLASSIC_READY_STEPS } from './flow-timing';
+import { ADVENTURE_ACT_READY_STEPS, ADVENTURE_ACT_ACTION_STEPS } from '../adventure/timing';
 
 export const CLASSIC_READY_LEAD_TICKS = CARTOON_CLASSIC_READY_STEPS;
 export interface IntroPresentation {
@@ -41,8 +42,18 @@ function readyCue(tick: number, end: number, reduced: boolean): IntroCue {
  */
 export function introCue(game: GameState, reducedEffects = false, visible = true, presentation?: IntroPresentation): IntroCue {
   if (!visible || game.Paused || presentation?.covered) return hidden;
-  // Reinforcements have their own small act label; large opening art would hide the descent.
-  if(game.Level.episode&&(game.EpisodeWave??0)>0)return hidden;
+  if ((game.EpisodeIntermission ?? 0) > 0) return hidden;
+  if (game.Level.episode && (game.EpisodeWave ?? 0) > 0) {
+    if (game.State !== State.Ready || game.Countdown <= 0) return hidden;
+    const readyTicks = (game.EpisodeReadyTicks ?? ADVENTURE_ACT_READY_STEPS + ADVENTURE_ACT_ACTION_STEPS) - ADVENTURE_ACT_ACTION_STEPS;
+    const elapsed = (game.EpisodeReadyTicks ?? ADVENTURE_ACT_READY_STEPS + ADVENTURE_ACT_ACTION_STEPS) - game.Countdown;
+    if (elapsed < readyTicks) return readyCue(elapsed, readyTicks, reducedEffects);
+    const tick = elapsed - readyTicks, end = ADVENTURE_ACT_ACTION_STEPS;
+    const opacity = tick < 6 ? tick / 6 : tick >= end - 9 ? (end - tick) / 9 : 1;
+    const stage: IntroCueStage = tick < 6 ? 'action-smear' : tick >= end - 9 ? 'action-out' : 'action-hold';
+    return {cueStage: reducedEffects ? 'action-hold' : stage, cueArt: 'cartoon/ui/cues/bubble-up', cueOpacity: opacity,
+      showStartCue: opacity > 0, showReadyArt: false, showActionArt: opacity > 0};
+  }
   if (presentation?.readyTick !== undefined) return readyCue(presentation.readyTick, CLASSIC_READY_LEAD_TICKS - 6, reducedEffects);
   const preparing = game.Party ? game.State === State.Playing && game.Party.Phase === 'prepare' : game.State === State.Ready;
   if (!preparing) return hidden;

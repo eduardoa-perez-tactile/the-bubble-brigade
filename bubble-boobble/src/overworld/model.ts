@@ -13,6 +13,7 @@ export interface OverworldHudModel {
 }
 export interface EncounterCardModel {
  title:string; subtitle:string; description:string; status:string; reward:string;
+ actSummary:string;actBreakdown:string;
  selected?:number; illustration?:string; locked:boolean; playLabel:string;
 }
 export interface OverworldChoice {key:string;label:string;selected?:boolean;illustration?:string;detail?:string;showArt?:boolean}

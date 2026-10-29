@@ -66,20 +66,22 @@ worldTest('story HUD wave labels describe authored acts rather than queued indiv
  for(let number=1;number<=25;number++){
   const game=createGame([createAdventureLevel(number)],1,1);
   const model=storyHudModel(game,initialDesktopSave);
-  expect(model.wave).toBe(number%5===0?'WAVE 1 / 2':'');
+  expect(model.wave).toBe(number%5===0?'ACT 1 / 2':'');
   expect(game.Enemies.some(enemy=>enemy.State===EnemyState.Spawning)).toBe(true);
  }
 },{scene});
 
 worldTest('story HUD finale preserves remaining counts before the final timed collection period',()=>{
  const game=createGame([createAdventureLevel(5)],1,1);game.State=State.Playing;game.Players[0]!.Invincible=600;
- expect(storyHudModel(game,initialDesktopSave).wave).toBe('WAVE 1 / 2');
+ expect(storyHudModel(game,initialDesktopSave).wave).toBe('ACT 1 / 2');
  applyPower(game,'pink_candy',0);applyPower(game,'ruby_ring',0);
  for(const enemy of game.Enemies)enemy.State=EnemyState.Defeated;
  stepGame(game,idle);
+ expect(storyHudModel(game,initialDesktopSave).wave).toBe('ACT 1 / 2');
+ for(let remaining=game.EpisodeIntermission??0;remaining>0;remaining--)stepGame(game,idle);
  const second=storyHudModel(game,initialDesktopSave);
  expect(game.EpisodeWave).toBe(1);
- expect(second.enemies).toBe('3');expect(second.bonus).toBe(false);expect(second.wave).toBe('WAVE 2 / 2');
+ expect(second.enemies).toBe('3');expect(second.bonus).toBe(false);expect(second.wave).toBe('ACT 2 / 2');
  expect(second.powers.map(p=>p.key).join(',')).toBe('pink_candy,ruby_ring');
  expect(game.State).toBe(State.Ready);
  for(let remaining=game.Countdown;remaining>0;remaining--)stepGame(game,idle);
@@ -89,11 +91,11 @@ worldTest('story HUD finale preserves remaining counts before the final timed co
  stepGame(game,idle);
  const clear=storyHudModel(game,initialDesktopSave);
  expect(clear.wave).toBe('');expect(clear.encounterIcon).toBe('cartoon/frames/item/food-13');
- expect(clear.enemies).toBe('0');expect(clear.bonus).toBe(true);expect(clear.bonusSeconds).toBe('2');
+ expect(clear.enemies).toBe('0');expect(clear.bonus).toBe(true);expect(clear.bonusSeconds).toBe('5');
  for(let tick=0;tick<60;tick++)stepGame(game,idle);
- expect(storyHudModel(game,initialDesktopSave).bonusSeconds).toBe('1');
+ expect(storyHudModel(game,initialDesktopSave).bonusSeconds).toBe('4');
  game.Paused=true;for(let tick=0;tick<30;tick++)stepGame(game,idle);
- expect(storyHudModel(game,initialDesktopSave).bonusSeconds).toBe('1');
+ expect(storyHudModel(game,initialDesktopSave).bonusSeconds).toBe('4');
 },{scene});
 
 async function act(ctx:WorldTestContext,action:string,value=''){

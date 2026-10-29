@@ -108,6 +108,8 @@ export function loadLevel(g: GameState, index: number) {
   };
   g.LevelTicks = 0;
   if(g.Level.episode)g.EpisodeWave=0;
+  delete g.EpisodeIntermission;
+  delete g.EpisodeReadyTicks;
   g.Freeze = 0;
   g.SpawnedSpecial = 0;
   g.Hurry = false;
@@ -155,7 +157,11 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
   g.Tick++;
   if (g.State === State.Ready) {
     if(g.Level.episode){
-      if(g.Freeze>0){g.Freeze--;return;}
+      if(g.Freeze>0){
+        g.Freeze--;
+        // Opening time-stop behavior is preserved; later acts keep their banner pace.
+        if(!(g.EpisodeWave??0))return;
+      }
       stepAdventureSpawns(g);
     }
     g.Countdown--;
@@ -178,7 +184,9 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
     g.State = State.GameOver;
     return;
   }
-  if (g.State === State.Playing) {
+  // Clock rewards must not turn an act break into a second, invisible waiting period.
+  if(g.EpisodeIntermission&&g.Freeze>0)g.Freeze--;
+  if (g.State === State.Playing && !g.EpisodeIntermission) {
     if (g.Freeze > 0) g.Freeze--;
     else {
       g.LevelTicks++;
@@ -198,9 +206,9 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
   updateParticles(g);
   if (g.State === State.Playing) {
     checkPowerSpawns(g);
-    for (let i = 0; i < g.Players.length; i++) checkPlayerHit(g, i);
-    stepAdventureEpisode(g);
-    if (remainingEnemies(g) === 0 && g.Players.some(alive)) {
+    if(!g.EpisodeIntermission)for (let i = 0; i < g.Players.length; i++) checkPlayerHit(g, i);
+    const changingAct=stepAdventureEpisode(g);
+    if (!changingAct && remainingEnemies(g) === 0 && g.Players.some(alive)) {
       g.State = State.Clearing;
       g.Countdown = g.Level.episode ? ADVENTURE_CLEAR_STEPS : 7 * TPS;
       g.Projectiles = [];

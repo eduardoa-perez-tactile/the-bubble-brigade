@@ -1,3 +1,4 @@
+import { State } from '../arcade/types';
 import type { GameState } from '../arcade/types';
 import { partyColors, partyNames } from '../arcade/party-config';
 import { hudModel, type HudModel } from '../desktop/hud.view';
@@ -17,7 +18,7 @@ export interface RosterSlot {
   down: boolean;
 }
 export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>> {
-  episode?:boolean; bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
+  showActComplete?:boolean; episode?:boolean; bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
   classicPortrait?: string;
   waveLabel?: string;
   showStatus?: boolean;
@@ -31,8 +32,22 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
   const base = hudModel(game, save, shade);
   const cue = introCue(game, !!save.settings.reducedEffects, shade === 'normal', presentation);
   const startCue = !cue.showStartCue ? '' : cue.cueArt.endsWith('/ready') ? 'Ready?' : 'BUBBLE UP!';
-  if (!game.Party) return { ...base, ...cue, ...(game.Level.episode?{episode:true,showStatus:!!game.Level.episode.waves,round:game.Level.episode.title.toUpperCase(),banner:game.State===2?'EPISODE CLEAR!':base.banner,highTitle:game.Level.episode.waves?'ACT':'EPISODE',high:game.Level.episode.waves?`${(game.EpisodeWave??0)+1} / 2`:String(game.Level.number)}:{}),startCue, startHint: '', showBanner: base.showBanner && game.State !== 0,
-    classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
+  if (!game.Party) {
+    const episode = game.Level.episode, acts = 1 + (episode?.waves?.length ?? 0);
+    const act = (game.EpisodeWave ?? 0) + 1;
+    const intermission = !!episode && (game.EpisodeIntermission ?? 0) > 0;
+    const showIntermission = intermission && shade === 'normal' && !game.Paused && !presentation?.covered;
+    return { ...base, ...cue, ...(episode ? {
+      episode: true, showStatus: acts > 1, round: episode.title.toUpperCase(),
+      banner: intermission ? `ACT ${act}\nCOMPLETE!` : game.State === State.Clearing ? 'EPISODE CLEAR!' : base.banner,
+      hint: intermission ? `NEXT: ACT ${act + 1} OF ${acts}` : base.hint,
+      detail: intermission ? `NEXT: ACT ${act + 1} OF ${acts}` : base.detail,
+      highTitle: acts > 1 ? 'ACT' : 'EPISODE', high: acts > 1 ? `${act} / ${acts}` : String(game.Level.number),
+    } : {}), startCue, startHint: '',
+      showActComplete: showIntermission,
+      showBanner: !intermission && base.showBanner && game.State !== State.Ready,
+      classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
+  }
   const roster = partyColors.map((skin, slot): RosterSlot => {
     const player = game.Players[slot];
     const mode = game.Party!.Slots[slot] ?? 'empty';

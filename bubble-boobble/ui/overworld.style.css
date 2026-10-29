@@ -12,7 +12,8 @@
 .overworld-card .ud-overworld-dialogue__owd_message,
 .overworld-card .ud-overworld-dialogue__owd_detail,
 .overworld-card .ud-overworld-encounter__owe_description,
-.overworld-card .ud-overworld-encounter__owe_status {white-space:pre-wrap;}
+.overworld-card .ud-overworld-encounter__owe_status,
+.overworld-card .ud-overworld-encounter__owe_act_breakdown {white-space:pre-wrap;}
 @media (aspect < 1.2) {
 .overworld-hud .ud-overworld-hud__owh_place {width:270px;}
 .overworld-card .ud-overworld-dialogue__ow_panel,
@@ -30,6 +31,8 @@
  .overworld-card .ud-overworld-encounter__owe_subtitle,
  .overworld-card .ud-overworld-encounter__owe_reward {font-size:30px;height:64px;}
  .overworld-card .ud-overworld-encounter__owe_description {font-size:32px;height:160px;}
+ .overworld-card .ud-overworld-encounter__owe_acts {font-size:32px;text-fit:28px 32px;height:50px;}
+ .overworld-card .ud-overworld-encounter__owe_act_breakdown {font-size:28px;text-fit:24px 28px;height:52px;}
  .overworld-card .ud-overworld-encounter__owe_status {font-size:30px;height:104px;}
  .overworld-hud .ud-overworld-hud__owh_top {height:110px;}
  .overworld-hud .ud-overworld-hud__owh_right {width:240px;height:110px;}

@@ -22,7 +22,7 @@ export function storyHudModel(game:GameState,save:DesktopSave):StoryHudModel {
   portrait:`cartoon/reconstruction/ui/portraits/${skin}`,lives:String(lives),
   enemies:String(remainingEnemies(game)),bonus,
   bonusSeconds:bonus?String(Math.max(0,Math.ceil(game.Countdown/TPS))):'',lowLife:lives<=1,
-  wave:!bonus&&game.Level.episode?.waves?.length?`WAVE ${(game.EpisodeWave??0)+1} / ${1+game.Level.episode.waves.length}`:'',
+  wave:!bonus&&game.Level.episode?.waves?.length?`ACT ${(game.EpisodeWave??0)+1} / ${1+game.Level.episode.waves.length}`:'',
   encounterIcon:bonus?'cartoon/frames/item/food-13':'cartoon/frames/enemy/banebou/body-0',
   powers:STORY_POWERS.filter(([flag])=>player?.Power[flag]).map(([,key])=>({key,art:`cartoon/frames/item/${key}`})),
  };

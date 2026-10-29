@@ -103,6 +103,11 @@ export function episodeForLevel(number:number):AdventureEpisode {
   ...(script.waves?{waves:script.waves.map(wave=>wave.map(enemy=>({...enemy})))}:{}),
  };
 }
+/** Encounter-card metadata without constructing the playable tile grid. */
+export function adventureActCounts(number:number,trial=false):number[] {
+ const script=scripts[number-1];if(!script)throw new Error(`Unknown Adventure episode ${number}`);
+ return [trial?Math.min(3,script.enemies.length):script.enemies.length,...(episodeForLevel(number).waves??[]).map(wave=>wave.length)];
+}
 export function createAdventureLevel(number:number):Level {
  const script=scripts[number-1];if(!script)throw new Error(`Unknown Adventure episode ${number}`);
  const columns=script.columns;

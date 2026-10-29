@@ -1,3 +1,15 @@
 /* Story metrics have their own document. Keep the shared intro/hurry/freeze cue layer. */
 .cartoon-hud.story-cues-only .ud-cartoon-hud__ch_top,
 .cartoon-hud.story-cues-only .ud-cartoon-hud__ch_bottom {display:none;}
+/* Act completion shares the arena's big cue lettering, without a panel. */
+.cartoon-hud.story-cues-only .ud-cartoon-hud__ch_act_complete_title {
+ font-family:"cartoon/fonts/Rye-Regular";white-space:pre-wrap;line-height:1.05;
+}
+@media (aspect < 0.55) {
+ .cartoon-hud.story-cues-only .ud-cartoon-hud__ch_act_complete_title {
+  font-size:90px;text-fit:90px 90px;
+ }
+ .cartoon-hud.story-cues-only .ud-cartoon-hud__ch_act_complete_next {
+  font-size:34px;text-fit:34px 34px;
+ }
+}

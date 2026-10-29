@@ -1,3 +1,4 @@
+import {ADVENTURE_ACT_BREAK_STEPS} from '../src/adventure/timing';
 import {expect,worldTest,renderTest} from '@gameengine/test';
 import baseline from './fixtures/adventure-compact-baseline.json';
 import campaign from '../data/levels.json';
@@ -24,7 +25,7 @@ import {session} from '../src/arcade/session';
 const scene='scenes/cartoon.scene.json';
 const idle={Move:0,Jump:false,Fire:false};
 const prototypes=[1,4,5] as const;
-const views=[
+const views:Array<{width:number;height:number;safeArea:[number,number,number,number]}>=[
  {width:344,height:882,safeArea:[0,32,0,0]},
  {width:1280,height:720,safeArea:[0,0,0,0]},
  {width:2520,height:1080,safeArea:[0,0,0,0]},
@@ -95,6 +96,8 @@ worldTest('Adventure compact openings and boarding party preserve safe arrivals 
   game.Freeze=0;Object.assign(player,{X:col*Tile,Y:22*Tile-ActorSize,Ground:true,VY:0});
   for(const enemy of game.Enemies)enemy.State=EnemyState.Defeated;
   stepGame(game,idle);
+  expect(game.EpisodeIntermission).toBe(ADVENTURE_ACT_BREAK_STEPS);
+  for(let tick=0;tick<ADVENTURE_ACT_BREAK_STEPS;tick++)stepGame(game,idle);
   const boarding=game.Enemies.filter(enemy=>enemy.State===EnemyState.Spawning);
   expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Ready);expect(boarding.length).toBe(3);
   expect(boarding.every(enemy=>adventureSpawnSafe(game,enemy))).toBe(true);
@@ -203,7 +206,7 @@ renderTest('Adventure compact opening and boarding formations fit narrow native 
   }
   if(number===5){
    await ctx.cheat(AdventureMoment,{secondAct:true});
-   for(let ticks=0;session.get().game!.Enemies.some(enemy=>enemy.State===EnemyState.Spawning&&(enemy.SpawnTicks??0)>0)&&ticks<120;ticks++)await adventureStep(ctx,1);
+   for(let ticks=0;(session.get().game!.EpisodeIntermission||session.get().game!.Enemies.some(enemy=>enemy.State===EnemyState.Spawning&&(enemy.SpawnTicks??0)>0))&&ticks<240;ticks++)await adventureStep(ctx,1);
    for(const view of views){
     ctx.input.view(view.width,view.height,1,view.safeArea);await adventureStep(ctx,1);
     expect(session.get().game!.EpisodeWave).toBe(1);

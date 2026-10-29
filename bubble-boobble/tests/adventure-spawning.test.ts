@@ -11,6 +11,7 @@ import {checkPlayerHit} from '../src/arcade/player';
 import {createPartyGame} from '../src/arcade/party';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
 import {introCue} from '../src/cartoon/intro-cue';
+import {ADVENTURE_ACT_BREAK_STEPS} from '../src/adventure/timing';
 import {adventureStep} from './support/adventure-time';
 import {OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 import {WarpOverworld} from '../src/overworld/overworld.cheats';
@@ -115,6 +116,8 @@ worldTest('Adventure spawning all five finale waves descend and activate togethe
   const g=createGame([createAdventureLevel(number)],42);g.State=State.Playing;
   for(const e of g.Enemies)e.State=EnemyState.Defeated;
   stepGame(g,idle);
+  expect(g.EpisodeIntermission).toBe(ADVENTURE_ACT_BREAK_STEPS);
+  for(let tick=0;tick<ADVENTURE_ACT_BREAK_STEPS;tick++)stepGame(g,idle);
   expect(g.EpisodeWave).toBe(1);expect(g.State).toBe(State.Ready);expect(remainingEnemies(g)).toBe(3);
   const wave=g.Enemies.filter(e=>e.State===EnemyState.Spawning);expect(wave.length).toBe(3);
   for(const e of wave)expect(adventureSpawnSafe(g,e)).toBe(true);
@@ -141,7 +144,10 @@ renderTest('Adventure spawning recorded opening and finale descents fit every sc
  expect(session.get().game!.State).toBe(State.Ready);
  let peak=0;
  for(const phase of ['opening','finale']){
-  if(phase==='finale')await ctx.cheat(AdventureMoment,{secondAct:true});
+  if(phase==='finale'){
+   await ctx.cheat(AdventureMoment,{secondAct:true});
+   for(let tick=0;session.get().game!.EpisodeIntermission&&tick<ADVENTURE_ACT_BREAK_STEPS;tick++)await adventureStep(ctx,1);
+  }
   // Capture visibly descending sprites, rather than their initial fully offscreen pose.
   await adventureStep(ctx,14);
   for(const [width,height]of [[360,880],[768,1024],[1280,720],[2520,1080]]){
@@ -151,7 +157,7 @@ renderTest('Adventure spawning recorded opening and finale descents fit every sc
    const plan=cartoonDrawPlan(game,game.Tick,{width:width!,height:height!,safeArea:[0,0,0,0]});
    expect(plan.some(draw=>draw.frame.startsWith('enemy/'))).toBe(true);expect(plan.some(draw=>draw.diamond)).toBe(false);
    const stats=ctx.render.stats({width:width!,height:height!});peak=Math.max(peak,stats.drawCalls);
-   expect(introCue(game).showStartCue).toBe(false);
+   expect(introCue(game).showStartCue).toBe(phase==='finale');
    ctx.render.expectDrawCalls('<=',50,{width:width!,height:height!});
    ctx.render.expectScreenshot(`${phase}-${width}`,{width:width!,height:height!});
   }

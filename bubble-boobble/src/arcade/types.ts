@@ -170,6 +170,10 @@ export interface PartyState {
 }
 export interface GameState {
   EpisodeWave?: number;
+  /** Remaining reward-collection steps between authored Adventure acts. */
+  EpisodeIntermission?: number;
+  /** Total preparation duration, used by the read-only act cue presentation. */
+  EpisodeReadyTicks?: number;
   Party?: PartyState;
   Companion?: CompanionState;
   Companions?: (CompanionState | null)[];
