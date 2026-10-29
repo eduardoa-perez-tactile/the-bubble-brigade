@@ -49,7 +49,9 @@ export const OverworldSystem=defineSystem({
       confirmKeys=event.down?confirmKeys|bit:confirmKeys&~bit;
     }
     confirm ||= confirmKeys!==0;
-    const neutral=!confirm&&!pressed&&!x&&!y;
+    // Closing a window in DesktopSystem disarms map input. Its Back press
+    // cannot also count as neutral input and reopen the map menu this step.
+    const neutral=!confirm&&!pressed&&!x&&!y&&!pause;
     if(s.modal||returning){
       // Return input cannot open an invisible modal while DesktopSystem is
       // rejecting transition intents. Marker time still follows the reveal.
