@@ -208,12 +208,8 @@
         "selected": {
           "property": "startSelected"
         },
-        "hasArt": {
-          "property": "firstUseArt"
-        },
-        "art": {
-          "property": "firstArt"
-        },
+        "hasArt": false,
+        "art": "cartoon/menu/focus-bubble",
         "compact": {
           "property": "narrow"
         },
@@ -254,7 +250,7 @@
         "selected": {
           "property": "settingsSelected"
         },
-        "hasArt": true,
+        "hasArt": false,
         "art": "cartoon/menu/type/options",
         "compact": {
           "property": "narrow"
@@ -277,12 +273,8 @@
         "selected": {
           "property": "quitSelected"
         },
-        "hasArt": {
-          "property": "thirdUseArt"
-        },
-        "art": {
-          "property": "thirdArt"
-        },
+        "hasArt": false,
+        "art": "cartoon/menu/focus-bubble",
         "compact": {
           "property": "narrow"
         },
@@ -640,6 +632,7 @@
       "type": "element",
       "name": "Element",
       "children": [
+        "cm_audience_row",
         "cm_audience_left",
         "cm_audience_right"
       ],
@@ -680,7 +673,7 @@
         ],
         "offset": [
           0,
-          65
+          0
         ],
         "w": 260,
         "h": 260,
@@ -706,13 +699,39 @@
         ],
         "offset": [
           0,
-          65
+          0
         ],
         "w": 260,
         "h": 260,
         "image": "cartoon/menu/audience-corner-soft",
         "fit": "contain",
         "flip": "x",
+        "attach": true
+      }
+    },
+    "cm_audience_row": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pivot": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 260,
+        "image": "cartoon/menu/audience-row-soft",
+        "fit": "cover",
         "attach": true
       }
     }
@@ -846,22 +865,6 @@
     "progress": {
       "type": "text",
       "default": "HARBOR · 0 / 5 CLEARED"
-    },
-    "firstUseArt": {
-      "type": "yesno",
-      "default": true
-    },
-    "thirdUseArt": {
-      "type": "yesno",
-      "default": true
-    },
-    "firstArt": {
-      "type": "image",
-      "default": "cartoon/menu/type/continue"
-    },
-    "thirdArt": {
-      "type": "image",
-      "default": "cartoon/menu/type/quit"
     },
     "narrow": {
       "type": "yesno",
@@ -1103,8 +1106,7 @@
       "promptVisible": true
     },
     "menu": {
-      "startSelected": true,
-      "firstArt": "cartoon/menu/type/continue"
+      "startSelected": true
     }
   }
 }
