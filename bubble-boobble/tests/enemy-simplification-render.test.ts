@@ -3,7 +3,7 @@ import campaign from '../data/levels.json';
 import {EnemyShowcase} from '../src/cartoon/enemy-showcase.cheats';
 import {session} from '../src/arcade/session';
 import {createPartyGame} from '../src/arcade/party';
-import {updateEnemies,updateDefeated} from '../src/arcade/enemies';
+import {updateEnemies,updateDefeated,CARTOON_ENEMY_WINDUP} from '../src/arcade/enemies';
 import {bubble,effect,updateBubbles,hitWithElement,carryOnWater} from '../src/arcade/bubbles';
 import {EnemyState,State} from '../src/arcade/types';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
@@ -51,12 +51,15 @@ worldTest('simplified enemy real movement jump escape water and defeat retain th
  }
 },{scene});
 
-worldTest('simplified shooter poses begin on the same simulation step as real projectiles',()=>{
+worldTest('simplified shooter poses announce the enemy juice prefire then release real projectiles',()=>{
  for(const kind of ['mighta','invader']){
   const g=simulation(),e=g.Enemies[0]!;
   Object.assign(e,{Kind:kind,X:975,Y:268,Ground:true,Cooldown:0,Shoot:0,State:EnemyState.Active});
   Object.assign(g.Players[0]!,{X:1200,Y:268});g.Enemies=[e];
   updateEnemies(g);
+  expect(e.Shoot<0).toBe(true);expect(g.Projectiles.length).toBe(0);
+  expect(cartoonDrawPlan(g,g.Tick).some(d=>d.frame===`enemy/${kind}/simple-shoot`)).toBe(true);
+  for(let tick=0;tick<CARTOON_ENEMY_WINDUP;tick++)updateEnemies(g);
   expect(e.Shoot>0).toBe(true);expect(g.Projectiles.length).toBe(1);
   expect(g.Projectiles[0]!.Laser).toBe(kind==='invader');
   expect(cartoonDrawPlan(g,g.Tick).some(d=>d.frame===`enemy/${kind}/simple-shoot`)).toBe(true);
@@ -90,7 +93,7 @@ renderTest('simplified roster both directions anger and three capture warnings o
 
 renderTest('simplified real shooter attacks and live mixed wave stay readable on phone low',async({input,step,cheat,render})=>{
  input.view(768,720,1);await step(3);
- await cheat(EnemyShowcase,{scenario:'shooters',frozen:false});await step(1);
+ await cheat(EnemyShowcase,{scenario:'shooters',frozen:false});await step(CARTOON_ENEMY_WINDUP+1);
  const fired=session.get().game!;
  expect(fired.Enemies.every(e=>e.Shoot>0)).toBe(true);
  expect(fired.Projectiles.some(p=>p.Laser)).toBe(true);

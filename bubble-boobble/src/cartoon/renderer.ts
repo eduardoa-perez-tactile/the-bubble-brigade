@@ -10,6 +10,9 @@ export interface CartoonDraw {
   width: number;
   height: number;
   flip?: boolean;
+  /** Clockwise screen rotation in radians, around a normalized top-left canvas pivot. */
+  rotation?: number;
+  pivot?: readonly [number, number];
   /** Rotated white quad; width/height describe its final axis-aligned bounds. */
   diamond?: boolean;
   color?: readonly [number, number, number, number?];
@@ -63,11 +66,30 @@ export function cartoonMotion(game:GameState|null,previous:MotionGlobals){
     globals:{v2:vec(0),v3:vec(4),v4:vec(8),v5:vec(12),v6:vec(16),v7:vec(20)}};
 }
 
+/** Rotate the canvas around its painted center (or feet), rather than orbiting
+ * padded artwork around its canvas center. The same transform drives native
+ * rendering and conservative clipping, so a spinning corner cannot pop out. */
+export function cartoonDrawTransform(draw:CartoonDraw){
+  const angle=draw.rotation??0,pivot=draw.pivot??[.5,.5];
+  const cosine=angle===0?1:Math.cos(angle),sine=angle===0?0:Math.sin(angle);
+  const dx=(.5-pivot[0]!)*draw.width,dy=(.5-pivot[1]!)*draw.height;
+  const centerX=draw.x+pivot[0]!*draw.width+dx*cosine-dy*sine;
+  const centerY=draw.y+pivot[1]!*draw.height+dx*sine+dy*cosine;
+  return {centerX,centerY,
+    halfWidth:(Math.abs(cosine)*draw.width+Math.abs(sine)*draw.height)/2,
+    halfHeight:(Math.abs(sine)*draw.width+Math.abs(cosine)*draw.height)/2};
+}
+
 /** Native sprites retain original bounds; the scene's shared stencil crops UVs. */
 export function cartoonSprites(draws: readonly CartoonDraw[], clip: PixelClip): CartoonSprite[] {
   const sprites: CartoonSprite[] = [];
   for (const draw of draws) {
-    if(draw.width<=0||draw.height<=0||draw.x>=clip.right||draw.y>=clip.bottom||draw.x+draw.width<=clip.left||draw.y+draw.height<=clip.top)continue;
+    if(draw.width<=0||draw.height<=0)continue;
+    if(draw.rotation){
+      const bounds=cartoonDrawTransform(draw);
+      if(bounds.centerX-bounds.halfWidth>=clip.right||bounds.centerY-bounds.halfHeight>=clip.bottom||
+        bounds.centerX+bounds.halfWidth<=clip.left||bounds.centerY+bounds.halfHeight<=clip.top)continue;
+    }else if(draw.x>=clip.right||draw.y>=clip.bottom||draw.x+draw.width<=clip.left||draw.y+draw.height<=clip.top)continue;
     const episode=draw.frame.startsWith('episode/');
     const environment=draw.frame.startsWith('environment/');
     const solid=/^solid\/#[0-9a-f]{6}$/i.test(draw.frame);
