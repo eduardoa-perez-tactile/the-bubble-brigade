@@ -22,7 +22,7 @@ worldTest('Adventure acts presentation counts three acts and separates break rea
  level.episode={...level.episode!,waves:[...level.episode!.waves!,level.episode!.waves![0]!.map(e=>({...e}))]};
  const g=createGame([level],42);g.State=State.Playing;g.EpisodeIntermission=90;
  let hud=cartoonHudModel(g,initialDesktopSave);
- expect(hud.banner).toBe('ACT 1\nCOMPLETE!');expect(hud.detail).toBe('NEXT: ACT 2 OF 3');
+ expect(hud.banner).toBe('ACT CLEAR!');expect(hud.detail).toBe('');
  expect(hud.showActComplete).toBe(true);expect(hud.showBanner).toBe(false);expect(hud.showStartCue).toBe(false);
  expect(hud.high).toBe('1 / 3');expect(storyHudModel(g,initialDesktopSave).wave).toBe('ACT 1 / 3');
  expect(cartoonHudModel(g,initialDesktopSave,'pause').showActComplete).toBe(false);
