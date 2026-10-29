@@ -30,13 +30,13 @@
       "name": "Label",
       "text": "{label}",
       "style": {
-        "fontSize": 48,
+        "fontSize": 36,
         "weight": 800,
         "color": "#f3e3be",
         "w": "100%",
-        "h": 64,
+        "h": 52,
         "textAlign": "left",
-        "fitMin": 24,
+        "fitMin": 36,
         "attach": true
       }
     },
@@ -119,7 +119,7 @@
             },
             "cb_label": {
               "color": "#f4d79a",
-              "tx": 4
+              "tx": 0
             },
             "cb_art": {
               "tint": "#f4d79a"

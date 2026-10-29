@@ -36,10 +36,10 @@
 }
 @media (aspect < 0.85) {
  .cartoon-menu .ud-cartoon-menu__cm_composition {height:1020px;}
+ .cartoon-menu .ud-cartoon-button__cb_label {font-size:52px;text-fit:52px 52px;height:96px;}
  .cartoon-menu .ud-cartoon-menu__cm_hint,
  .cartoon-modes .ud-cartoon-modes__ms_brand,
  .cartoon-modes .ud-cartoon-modes__ms_hint {display:none;}
- .cartoon-menu .ud-cartoon-button__cb_label {font-size:72px;height:96px;}
 }
 
 /* Preserve the last action on shorter portrait windows. */

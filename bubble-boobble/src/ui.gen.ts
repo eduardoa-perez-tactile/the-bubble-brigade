@@ -567,10 +567,6 @@ declare module '@gameengine/ui' {
      *   - `firstLabel`: text, default "ADVENTURE"
      *   - `arcadeSelected`: yesno, default false
      *   - `progress`: text, default "HARBOR · 0 / 5 CLEARED"
-     *   - `firstUseArt`: yesno, default true
-     *   - `thirdUseArt`: yesno, default true
-     *   - `firstArt`: image, default "cartoon/menu/type/continue"
-     *   - `thirdArt`: image, default "cartoon/menu/type/quit"
      *   - `narrow`: yesno, default false
      *   - `titleNarrow`: yesno, default false
      *   - `closedPrompt`: yesno, default false
@@ -584,7 +580,7 @@ declare module '@gameengine/ui' {
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
-      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean; restartSelected: boolean; showRestart: boolean; freshMenu: boolean; freshNarrow: boolean };
+      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean; restartSelected: boolean; showRestart: boolean; freshMenu: boolean; freshNarrow: boolean };
       areas: 'atmosphere' | 'greeter' | 'selection';
       refs: 'cloth' | 'curtain-prompt' | 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-new' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
     };
