@@ -1,5 +1,7 @@
 # Story foreground pilots
 
+The subsequent [all-story rollout](story-foreground-rollout.md) extends this system to all 25 levels using seven shared sets; this page preserves the approved pilot art and registration provenance.
+
 The user approved foreground previews for Sailcloth, Acorn Antics (`garden-2`) and Boiler Brigade (`foundry-4`). The production PNGs are transparent **full-canvas 1672 × 941 overlays**, extracted with built-in ImageGen on October 29, 2026. They preserve the approved near-camera props’ original positions, proportions and painted defocus. The first 3:1 recompositions were rejected and replaced; those discarded variants are not shipped.
 
 | Episode | Sprite | Foreground |

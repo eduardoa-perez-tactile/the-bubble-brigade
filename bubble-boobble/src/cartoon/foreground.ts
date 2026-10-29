@@ -1,12 +1,12 @@
 import {ActorSize,Tile,levelColumns,levelRows,type Level} from '../arcade/types';
 import type {CartoonDraw} from './renderer';
 import {CARTOON_PLAYER_SIZE} from './actor-layout';
+import {episodeForLevel} from '../adventure/episodes';
 import sourceAlphaBounds from '../../assets/adventure/foreground/alpha-bounds.json';
 
 export interface ForegroundPixelBounds {left:number;top:number;right:number;bottom:number}
 export type ForegroundBounds=ForegroundPixelBounds;
 export interface ForegroundSource {
-  level:number;
   width:number;height:number;
   /** All nonzero source alpha, including quantization speckles: diagnostics only. */
   alphaBounds:ForegroundPixelBounds;
@@ -24,11 +24,24 @@ export interface ForegroundLayout {
 }
 
 /** The imported manifest is the single source of measured alpha geometry. */
-export const STORY_FOREGROUND_SOURCES:Readonly<Record<string,ForegroundSource>>={
-  sailcloth:{level:3,...sourceAlphaBounds.sailcloth},
-  'garden-2':{level:7,...sourceAlphaBounds['garden-2']},
-  'foundry-4':{level:24,...sourceAlphaBounds['foundry-4']},
-};
+export const STORY_FOREGROUND_SOURCES:Readonly<Record<string,ForegroundSource>>=sourceAlphaBounds;
+/** One source texture per art family; episode groups preload the same path. */
+export const STORY_FOREGROUND_BY_LEVEL:readonly string[]=[
+  'sailcloth','parcels','sailcloth','foundry-4','sailcloth',
+  'garden-2','garden-2','garden-2','garden-2','garden-2',
+  'carnival','carnival','carnival','carnival','carnival',
+  'springs','springs','springs','springs','springs',
+  'glassworks','foundry-4','glassworks','foundry-4','glassworks',
+];
+
+const storyForegroundThemes=STORY_FOREGROUND_BY_LEVEL.map((_,index)=>episodeForLevel(index+1).theme);
+
+/** Exact authored episode identity prevents custom/Party rooms borrowing scenery. */
+export function storyForegroundKey(level:Level):string|undefined {
+  if(level.arena!=='cartoon-courtyard'||!Number.isInteger(level.number)||level.number<1||level.number>STORY_FOREGROUND_BY_LEVEL.length)return undefined;
+  if(level.episode?.theme!==storyForegroundThemes[level.number-1])return undefined;
+  return STORY_FOREGROUND_BY_LEVEL[level.number-1];
+}
 export const STORY_FOREGROUND_FLOOR_GAP=8;
 /** Placement ignores only sub-4/255 source quantization speckles. This is not a
  * shader cutoff: the approved soft source pixels remain untouched. */
@@ -90,8 +103,8 @@ export function foregroundPaintBoundsInBand(placement:ForegroundPlacement,left:n
  * wall silhouettes, while paint inside the actual playable band clears feet.
  * No actor state drives framing, and the original composition scales uniformly. */
 export function foregroundPlacement(level:Level,layout:ForegroundLayout):ForegroundPlacement|undefined {
-  const theme=level.episode?.theme,source=theme?STORY_FOREGROUND_SOURCES[theme]:undefined;
-  if(level.arena!=='cartoon-courtyard'||!source||source.level!==level.number)return undefined;
+  const key=storyForegroundKey(level),source=key?STORY_FOREGROUND_SOURCES[key]:undefined;
+  if(!source)return undefined;
   const width=layout.viewportRight-layout.viewportLeft;
   if(width<=0||layout.viewportBottom<=layout.viewportTop)return undefined;
   const scale=width/source.width,height=source.height*scale;
@@ -100,7 +113,7 @@ export function foregroundPlacement(level:Level,layout:ForegroundLayout):Foregro
     projectedRight=layout.projectX((levelColumns(level)-2)*Tile+STORY_FOREGROUND_ACTOR_OVERHANG);
   const protectedBand={left:Math.max(layout.viewportLeft,Math.min(projectedLeft,projectedRight)),
     right:Math.min(layout.viewportRight,Math.max(projectedLeft,projectedRight))};
-  const draw:CartoonDraw={frame:`episode/foreground/${theme}`,x:layout.viewportLeft,
+  const draw:CartoonDraw={frame:`episode/foreground/${key}`,x:layout.viewportLeft,
     y:Math.max(layout.viewportBottom-height,walkableFloorY-source.height*STORY_FOREGROUND_FOOTLINE_FRACTION*scale),width,height};
   const inner=profileInBand(source,draw,protectedBand.left,protectedBand.right,STORY_FOREGROUND_ALPHA_THRESHOLD);
   if(inner)draw.y=Math.max(draw.y,walkableFloorY+gap-inner.min*scale);

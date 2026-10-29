@@ -9,7 +9,7 @@ import {cartoonProjection} from '../src/cartoon/projection';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
 import {cartoonSprites} from '../src/cartoon/renderer';
 import {cartoonHudBounds} from '../src/cartoon/hud-layout';
-import {foregroundPlacement,foregroundDraws,foregroundPaintBoundsInBand,STORY_FOREGROUND_SOURCES,STORY_FOREGROUND_ALPHA_THRESHOLD,type ForegroundPlacement} from '../src/cartoon/foreground';
+import {foregroundPlacement,foregroundDraws,foregroundPaintBoundsInBand,STORY_FOREGROUND_SOURCES,STORY_FOREGROUND_BY_LEVEL,storyForegroundKey,STORY_FOREGROUND_ALPHA_THRESHOLD,type ForegroundPlacement} from '../src/cartoon/foreground';
 import type {CartoonDraw} from '../src/cartoon/renderer';
 import {actorAlphaBounds} from './helpers/refinement-fit';
 import {session} from '../src/arcade/session';
@@ -18,7 +18,7 @@ import {adventureStep} from './support/adventure-time';
 import {enterForegroundPilot,leaveForegroundPilot} from './support/story-foreground-flow';
 
 const scene='scenes/cartoon.scene.json';
-const pilots=[3,7,24];
+const levels=Array.from({length:25},(_,index)=>index+1);
 const views=[
  {width:344,height:882,safeArea:[0,32,0,0]},
  {width:768,height:1024,safeArea:[0,20,0,0]},
@@ -36,23 +36,34 @@ function actorsClearPaint(plan:CartoonDraw[],placement:ForegroundPlacement):void
 }
 
 function centerVisible(placement:ForegroundPlacement,number:number,width:number):void {
- if(width===1280&&placement.centerVisibleHeight<20)
-  throw new Error(`Stage${number}: connected center foreground has only${placement.centerVisibleHeight}px visible; expected at least20px, not corner fragments`);
+ if(width===1280&&placement.centerVisibleHeight<20){
+  const {source,draw,protectedBand}=placement,scale=draw.width/source.width;
+  const first=Math.max(0,Math.floor((protectedBand.left-draw.x)/scale/source.profileBinWidth));
+  const last=Math.min(source.paintMinRows.length-1,Math.ceil((protectedBand.right-draw.x)/scale/source.profileBinWidth)-1);
+  const diagnostic={family:draw.frame,draw,protectedBand,sourceSize:[source.width,source.height],
+   protectedSourceBins:[first,last],protectedPaintMinRows:source.paintMinRows.slice(first,last+1),
+   centerMeaningfulBounds:placement.centerMeaningfulBounds,centerVisibleHeight:placement.centerVisibleHeight,
+   meaningfulMinRows:source.meaningfulMinRows,viewportBounds:placement.viewportBounds,
+   walkableFloorY:placement.walkableFloorY,gap:placement.gap};
+  throw new Error(`Stage${number}: connected center foreground has only${placement.centerVisibleHeight}px visible; expected at least20px, not corner fragments. ${JSON.stringify(diagnostic)}`);
+ }
 }
 
-worldTest('Story foreground pilots preserve gameplay state and visible paint clears the walkable band',()=>{
+worldTest('Story foreground rollout preserves gameplay state and visible paint clears the walkable band',()=>{
  expect(STORY_FOREGROUND_ALPHA_THRESHOLD).toBe(4);
- expect(Object.keys(STORY_FOREGROUND_SOURCES).sort()).toEqual(['foundry-4','garden-2','sailcloth']);
+ expect(Object.keys(STORY_FOREGROUND_SOURCES).sort()).toEqual(['carnival','foundry-4','garden-2','glassworks','parcels','sailcloth','springs']);
  for(let number=1;number<=25;number++)for(const view of views){
   const game=createGame([createAdventureLevel(number)],42),before=JSON.stringify(game);
   const layout=arenaLayout(game.Level,view),projection=cartoonProjection(game,layout);
   const frame={...layout,projectX:projection.projectX,projectY:projection.projectY};
   const placement=foregroundPlacement(game.Level,frame),plan=cartoonDrawPlan(game,120,view);
   const drawn=plan.filter(draw=>draw.frame.startsWith('episode/foreground/'));
-  expect(!!placement).toBe(pilots.includes(number));
-  expect(drawn.length).toBe(pilots.includes(number)?1:0);
+  expect(!!placement).toBe(true);
+  expect(drawn.length).toBe(1);
   if(placement){
-   const source=STORY_FOREGROUND_SOURCES[game.Level.episode!.theme]!;
+   const sourceKey=storyForegroundKey(game.Level)!;
+   expect(sourceKey).toBe(STORY_FOREGROUND_BY_LEVEL[number-1]);
+   const source=STORY_FOREGROUND_SOURCES[sourceKey]!;
    const draw=placement.draw,scale=draw.width/source.width;
    const floor=projection.projectY((levelRows(game.Level)-1)*Tile);
    // Full16:9 registration preserves the approved composition instead of recomposing a short strip.
@@ -74,8 +85,9 @@ worldTest('Story foreground pilots preserve gameplay state and visible paint cle
    expect(placement.paintedBounds.top<layout.viewportBottom).toBe(true);
    centerVisible(placement,number,view.width);
    expect(plan.at(-1)).toEqual(draw);
-   expect(foregroundDraws({...game.Level,number:1},frame)).toEqual([]);
+   expect(foregroundDraws({...game.Level,number:0},frame)).toEqual([]);
    expect(foregroundDraws({...game.Level,arena:'courtyard'},frame)).toEqual([]);
+   expect(foregroundDraws({...game.Level,episode:{...game.Level.episode!,theme:'unknown'}},frame)).toEqual([]);
    const party=createPartyGame([game.Level],42);party.Level=game.Level;
    expect(cartoonDrawPlan(party,120,view).some(d=>d.frame.startsWith('episode/foreground/'))).toBe(false);
    // Floor-left/center/right exercise visible-art overhang beyond the collision body.
@@ -91,9 +103,9 @@ worldTest('Story foreground pilots preserve gameplay state and visible paint cle
  }
 },{scene});
 
-renderTest('Story foreground pilots load native artwork and preserve actors and HUD at screen extremes',async ctx=>{
+renderTest('Story foreground rollout loads native artwork and preserve actors and HUD at screen extremes',async ctx=>{
  ctx.input.view(1280,720,1);await adventureStep(ctx,8);await ctx.loaded();await ctx.cheat(OverworldJournalFixture,{});
- for(const number of pilots){
+ for(const number of levels){
   await enterForegroundPilot(ctx,number);
   for(const view of views){
    ctx.input.view(view.width,view.height,1,view.safeArea);await adventureStep(ctx,1);
@@ -106,11 +118,11 @@ renderTest('Story foreground pilots load native artwork and preserve actors and 
    centerVisible(painted,number,view.width);actorsClearPaint(plan,painted);
    const sprites=cartoonSprites(plan,{left:layout.viewportLeft,top:layout.viewportTop,right:layout.viewportRight,bottom:layout.viewportBottom});
    const sprite=sprites.find(d=>d.frame===foreground[0]!.frame)!;
-   expect(sprite.image).toBe(`adventure/foreground/${game.Level.episode!.theme}`);
+   expect(sprite.image).toBe(`adventure/foreground/${storyForegroundKey(game.Level)}`);
    const residency=assets.stats(),active=residency.groups[`adventure-${game.Level.episode!.theme}`]!;
    expect(active.status).toBe('loaded');expect(active.failed).toEqual([]);
    expect(active.members>0&&active.resident.textures>0).toBe(true);
-   // Unaffected room2 already exceeds the global phone-low residency budget (capture helper control).
+   // Baseline room2 before this rollout already exceeded the global phone-low residency budget.
    // Keep this slice's group bounded; report the existing global warning without raising its budget.
    expect(active.resident.textures<=6*1024*1024).toBe(true);
    const stats=ctx.render.stats({width:view.width,height:view.height});
@@ -126,7 +138,7 @@ renderTest('Story foreground pilots load native artwork and preserve actors and 
     const rect=ctx.ui.rect(id);expect(!!rect).toBe(true);
     expect(rect!.x>=0&&rect!.y>=0&&rect!.x+rect!.width<=view.width+.1&&rect!.y+rect!.height<=view.height+.1).toBe(true);
    }
-   console.log('Story foreground pilot frame',JSON.stringify({stage:number,width:view.width,height:view.height,drawCalls:stats.drawCalls,foregroundSprites:foreground.length,group:active,memoryClass:residency.class,totalBytes:residency.resident,globalBudgetWarning:residency.overBudget,playfieldPaintedTop:painted.playfieldPaintedBounds?.top,centerVisibleHeight:painted.centerVisibleHeight,floor:painted.walkableFloorY,gap:painted.gap}));
+   console.log('Story foreground rollout frame',JSON.stringify({stage:number,width:view.width,height:view.height,drawCalls:stats.drawCalls,foregroundSprites:foreground.length,group:active,memoryClass:residency.class,totalBytes:residency.resident,globalBudgetWarning:residency.overBudget,playfieldPaintedTop:painted.playfieldPaintedBounds?.top,centerVisibleHeight:painted.centerVisibleHeight,floor:painted.walkableFloorY,gap:painted.gap}));
   }
   await leaveForegroundPilot(ctx);
  }
