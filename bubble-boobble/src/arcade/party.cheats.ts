@@ -11,9 +11,13 @@ import { desktopGameRequest, desktopAction } from '../desktop/state';
 import { EnemyState, State } from './types';
 import { checkPowerSpawns } from './items';
 import { hurtPlayer } from './player';
+import { partySpawnSettleTicks } from './party-config';
 export const PartyReset=defineCheat({id:'party.reset',group:'Party',title:'Inspect wave survival',params:{team:{type:'int',min:6,max:10,default:6},countdown:{type:'int',min:1,max:180,default:1},wave:{type:'int',min:1,max:10,default:1},humans:{type:'int',min:1,max:10,default:1}},resources:[write(ArcadeControl)],run(ctx,{wave,humans,countdown,team}){
   const g=createPartyGame(campaign,42,Array.from({length:team===10?10:6},(_,i)=>i<humans?'human':'ai'));
-  g.Party!.Wave=wave;preparePartyWave(g);g.Party!.Timer=countdown;
+  g.Party!.Wave=wave;preparePartyWave(g);g.Party!.Timer=countdown;g.Party!.PrepareTicks=countdown;g.Countdown=countdown;
+  // A short inspection countdown also settles the actors; production never skips arrival.
+  for(const enemy of g.Enemies)if(enemy.State===EnemyState.Spawning)
+    enemy.SpawnTicks=Math.min(enemy.SpawnTicks??0,Math.max(0,countdown-partySpawnSettleTicks));
   desktopAction('party');desktopAction('start-party');
   session.set({active:true,mode:'party',game:g});ctx.setField(ArcadeControl,'skip',true);ctx.setField(ArcadeControl,'requestSequence',desktopGameRequest.get().sequence);
 }});

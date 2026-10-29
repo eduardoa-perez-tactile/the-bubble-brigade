@@ -29,6 +29,6 @@ export function cartoonBadgeAnchor(player:{X:number;Y:number},layout:{y:number;s
 /** Shared visibility keeps text identities on exactly the same blink as art. */
 export function cartoonPlayerVisible(player:{Downed?:boolean;Lives:number;Dead:number;Invincible:number},phase:string|undefined,levelTicks:number,party:boolean){
   if(!player.Downed&&player.Lives===0&&player.Dead===0)return false;
-  const grace=party&&(phase==='combat'||phase==='boss')&&levelTicks<120;
+  const grace=party&&(phase==='prepare'||(phase==='combat'||phase==='boss')&&levelTicks<120);
   return !!player.Downed||grace||!player.Invincible||player.Invincible%12<6;
 }

@@ -1,5 +1,7 @@
 import { expect, worldTest } from '@gameengine/test';
 import { arcadeDrawPlan } from '../src/arcade/presentation';
+import { stepGame } from '../src/arcade/game';
+import { partyArrivalY } from '../src/arcade/party-config';
 import campaign from '../data/levels.json';
 import { createPartyGame, partyWaveBudget, preparePartyWave } from '../src/arcade/party';
 import { partyEnemyFormation } from '../src/arcade/party-spawns';
@@ -50,14 +52,20 @@ worldTest('party placement all enemy artwork falls from above then lands on its 
  const g=createPartyGame(campaign,42,Array.from({length:10},()=> 'human'));
  g.Party!.Wave=9;preparePartyWave(g);
  const positions=g.Enemies.map(e=>[e.X,e.Y,e.Ground,e.VY]);
- for(const timer of [180,170,150,120,90,1]){
-  g.Party!.Timer=timer;
+ const arrivalTicks=g.Party!.Timer;
+ let previous=0;
+ for(const tick of [0,12,36,60,arrivalTicks-1]){
+  for(let t=previous;t<tick;t++)stepGame(g,{Move:0,Jump:false,Fire:false});
+  previous=tick;
   const draws=arcadeDrawPlan(g);
-  for(let index=0;index<g.Enemies.length;index++){
-   const e=g.Enemies[index]!,t=Math.max(0,Math.min(1,(180-timer-index%6*5)/60));
-   const y=-48+(e.Y+96)*(1-(1-t)*(1-t));
+  for(const e of g.Enemies){
+   const y=partyArrivalY(e)+48;
    expect(draws.some(d=>d.image.startsWith(`reference/${e.Kind}/`)&&d.x===e.X&&d.y===y)).toBe(true);
   }
   expect(g.Enemies.map(e=>[e.X,e.Y,e.Ground,e.VY])).toEqual(positions);
  }
+ stepGame(g,{Move:0,Jump:false,Fire:false});
+ expect(g.Party!.Phase).toBe('combat');
+ for(const e of g.Enemies)
+  expect(arcadeDrawPlan(g).some(d=>d.image.startsWith(`reference/${e.Kind}/`)&&d.x===e.X&&d.y===e.Y+48)).toBe(true);
 });

@@ -72,7 +72,7 @@ worldTest('ten dragon identities remain unique in grayscale and blinking present
  for(const b of badges){expect(b.y).toBeGreaterThanOrEqual(64);expect(b.y+b.h).toBeLessThanOrEqual(656);}
 });
 worldTest('dragon names are text only and disappear when the wave starts while rescue calls remain',()=>{
- const g=createPartyGame(campaign,42,humans);g.Party!.Timer=2;
+ const g=createPartyGame(campaign,42,humans);g.Party!.Timer=2;for(const enemy of g.Enemies)enemy.SpawnTicks=0;
  const badges=dragonBadges(g),plan=arcadeDrawPlan(g);
  expect(badges.length).toBe(10);
  for(const b of badges){

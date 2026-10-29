@@ -1,4 +1,4 @@
-import { alive, type GameState, type PartySlot, type Level } from './types';
+import { alive, type GameState, type PartySlot, type Level, type Enemy } from './types';
 import { cartoonSpawn } from '../cartoon/arena';
 export const partyColors = ['green','blue','red','yellow','purple','orange','cyan','pink','ivory','slate'] as const;
 // Bub and Bob are the original Taito pair; the remaining names are our cast.
@@ -13,6 +13,15 @@ export function partySpawn(index:number, count:number, level?:Level) {
 export const defaultPartySlots: PartySlot[] = partyColors.map((_,i)=>i===0?'human':'ai');
 export const partyPrepareTicks = 180;
 export const partyBreakTicks = 300;
+export const partySpawnDescentTicks = 48;
+export const partySpawnStaggerTicks = 2;
+export const partySpawnSettleTicks = 12;
+export const partyArrivalTicks = (count:number) => partySpawnDescentTicks + Math.max(0,count-1)*partySpawnStaggerTicks + partySpawnSettleTicks;
+/** Presentation only: spawning bodies reserve their final positions until release. */
+export function partyArrivalY(enemy:Pick<Enemy,'Y'|'SpawnTicks'>):number {
+ const progress=1-Math.min(partySpawnDescentTicks,Math.max(0,enemy.SpawnTicks??0))/partySpawnDescentTicks;
+ return -120+(enemy.Y+120)*(1-(1-progress)*(1-progress));
+}
 export function partySurvivorCount(g:GameState):number {
   return g.Players.reduce((count,dragon,index)=>count+(g.Party!.Slots[index]!=='empty'&&alive(dragon)?1:0),0);
 }
@@ -26,7 +35,8 @@ export function recordPartyLastKill(g:GameState,slot:number|undefined) {
 }
 export function partyFinisher(g:GameState):number|undefined {
  const last=g.Party?.LastKill;
- return last&&last.Wave===g.Party!.Wave&&(g.Tick-last.Tick<partyLastKillTicks||g.State===4)?last.Slot:undefined;
+ const current=last&&(last.Wave===g.Party!.Wave||g.Party!.Phase==='prepare'&&last.Wave===g.Party!.Wave-1);
+ return current&&(g.Tick-last!.Tick<partyLastKillTicks||g.State===4)?last!.Slot:undefined;
 }
 
 /** Credit the dragon that finishes the enemy, including elemental and boss kills. */

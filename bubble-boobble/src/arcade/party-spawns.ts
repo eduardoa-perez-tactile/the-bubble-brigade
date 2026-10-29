@@ -93,35 +93,53 @@ export function partyEnemyReinforcement(g:GameState,kind:string,reserved:readonl
  return cartoonEnemyFormation(g,[kind],reserved,true)[0];
 }
 function cartoonEnemyFormation(g:GameState,kinds:readonly string[],reserved:readonly Spot[],optional:boolean):EnemySpawn[]{
- const protectedSpots=protectedCartoonSpots(g);
  const occupied:Spot[]=[...reserved,...g.Enemies.filter(e=>e.State!==EnemyState.Defeated)];
- const clear=(p:Spot)=>!blocked(g,p.X,p.Y,ActorSize)&&
-  !protectedSpots.some(other=>spawnOverlap(p,other,148,140))&&
-  !occupied.some(other=>spawnOverlap(p,other));
- const ground:Spot[]=[],air:Spot[]=[];
  const right=(arenaColumns(g)-2)*Tile-ActorSize;
- for(let row=2;row<arenaRows(g);row++)for(let x=2*Tile+2;x<=right;x+=Tile/2){
-  const p={X:x,Y:row*Tile-ActorSize};
-  if(!clear(p))continue;
-  (supported(g,p)?ground:air).push(p);
- }
- const placed:(EnemySpawn|undefined)[]=Array(kinds.length),tiers=[3,8,13,18,22];
- for(const flying of [false,true])for(let index=0;index<kinds.length;index++){
-  if(isFlyingEnemy(kinds[index]!)!==flying)continue;
-  const fraction=(index*7%17)/16;
-  const target={X:2*Tile+(g.Party!.Wave%2?fraction:1-fraction)*(right-2*Tile),
-   Y:tiers[index%tiers.length]!*Tile-ActorSize-(flying?60:0)};
-  let best:Spot|undefined,distance=Infinity;
-  for(const spot of flying?air:ground){
-   const score=Math.abs(spot.X-target.X)+Math.abs(spot.Y-target.Y);
-   if(score>=distance||placed.some(p=>p&&spawnOverlap(spot,p)))continue;
-   best=spot;distance=score;
+ const candidates=(protectedSpots:readonly Spot[],width:number,height:number)=>{
+  const ground:Spot[]=[],air:Spot[]=[];
+  for(let row=2;row<arenaRows(g);row++)for(let x=2*Tile+2;x<=right;x+=Tile/2){
+   const p={X:x,Y:row*Tile-ActorSize};
+   if(blocked(g,p.X,p.Y,ActorSize)||protectedSpots.some(other=>spawnOverlap(p,other,width,height))||
+    occupied.some(other=>spawnOverlap(p,other)))continue;
+   (supported(g,p)?ground:air).push(p);
   }
-  if(!best){
-   if(optional)return [];
-   throw new Error(`No clear cartoon ${flying?'air':'ground'} spawn for ${kinds[index]}`);
+  return {ground,air};
+ };
+ const place=(pools:{ground:Spot[];air:Spot[]},compact=false,reverse=false,bottom=false):EnemySpawn[]|undefined=>{
+  const placed:(EnemySpawn|undefined)[]=Array(kinds.length),tiers=[3,8,13,18,22];
+  if(compact)for(const pool of [pools.ground,pools.air])
+   pool.sort((a,b)=>(bottom?b.Y-a.Y:a.Y-b.Y)||(reverse?b.X-a.X:a.X-b.X));
+  // Walkers reserve the scarce fully supported feet before flyers use the air.
+  for(const flying of [false,true])for(let index=0;index<kinds.length;index++){
+   if(isFlyingEnemy(kinds[index]!)!==flying)continue;
+   const fraction=(index*7%17)/16;
+   const target={X:2*Tile+(g.Party!.Wave%2?fraction:1-fraction)*(right-2*Tile),
+    Y:tiers[index%tiers.length]!*Tile-ActorSize-(flying?60:0)};
+   let best:Spot|undefined,distance=Infinity;
+   for(const spot of flying?pools.air:pools.ground){
+    const score=compact?0:Math.abs(spot.X-target.X)+Math.abs(spot.Y-target.Y);
+    if(score>=distance||placed.some(p=>p&&spawnOverlap(spot,p)))continue;
+    best=spot;distance=score;
+    if(compact)break;
+   }
+   if(!best)return undefined;
+   placed[index]={...best,Ground:!flying};
   }
-  placed[index]={...best,Ground:!flying};
+  return placed as EnemySpawn[];
+ };
+ // Small formations keep the broad spread and generous player silhouette gap.
+ const generous=place(candidates(protectedCartoonSpots(g),148,140));
+ if(generous)return generous;
+ if(optional)return [];
+ // A full late wave cannot reserve every former player spawn as well as every
+ // large enemy silhouette. Compact rows retain the complete cast and its art
+ // envelopes, with a real body +8px gap around each dragon's current position.
+ // These targets stay fixed while dragons move through the protected arrival.
+ const dragons=g.Players.filter(p=>p.Lives>0||p.Downed);
+ const compact=candidates(dragons,ActorSize+8,ActorSize+8);
+ for(const bottom of [false,true])for(const reverse of [g.Party!.Wave%2===0,g.Party!.Wave%2!==0]){
+  const result=place(compact,true,reverse,bottom);
+  if(result)return result;
  }
- return placed as EnemySpawn[];
+ throw new Error(`No clear cartoon formation for all ${kinds.length} enemies`);
 }

@@ -9,6 +9,7 @@ import { item } from '../arcade/items';
 import { arenaHeight, arenaWidth, body, EnemyState, State } from '../arcade/types';
 import { desktopAction, desktopGameRequest } from '../desktop/state';
 import { session } from '../arcade/session';
+import { partySpawnSettleTicks } from '../arcade/party-config';
 
 const families = ['zenchan','monsta','mighta','pulpul','banebou','invader'];
 const powers = ['pink_candy','blue_candy','yellow_candy','shoes','orange_parasol','red_parasol',
@@ -31,6 +32,7 @@ export const CartoonOverhaul = defineCheat({
     const g=createPartyGame(campaign,42,Array.from({length:size},(_,i)=>i<humans?'human' as const:'ai' as const),10,'cartoon');
     g.Party!.Wave=boss?10:wave; preparePartyWave(g);
     g.Party!.Phase=boss?'boss':'combat';g.Party!.Timer=0;g.Countdown=0;g.State=State.Playing;
+    for(const enemy of g.Enemies){enemy.State=EnemyState.Active;delete enemy.SpawnTicks;}
     g.Party!.ToSpawn=0;g.Party!.Telegraphs=[];g.LevelTicks=121;
     const width=arenaWidth(g), height=arenaHeight(g), floor=height-24-44;
     for(const p of g.Players)p.Invincible=100000;
@@ -86,7 +88,9 @@ export const CartoonPartyReset = defineCheat({
   run(ctx,{team,wave,humans,countdown}){
     const size=team===6?6:10;
     const g=createPartyGame(campaign,42,Array.from({length:size},(_,i)=>i<humans?'human' as const:'ai' as const),10,'cartoon');
-    g.Party!.Wave=wave;preparePartyWave(g);g.Party!.Timer=countdown;
+    g.Party!.Wave=wave;preparePartyWave(g);g.Party!.Timer=countdown;g.Party!.PrepareTicks=countdown;g.Countdown=countdown;
+    for(const enemy of g.Enemies)if(enemy.State===EnemyState.Spawning)
+      enemy.SpawnTicks=Math.min(enemy.SpawnTicks??0,Math.max(0,countdown-partySpawnSettleTicks));
     desktopAction('cartoon-mode');desktopAction('party');desktopAction('start-party');
     session.set({active:true,mode:'party',game:g});
     ctx.setField(ArcadeControl,'skip',true);
