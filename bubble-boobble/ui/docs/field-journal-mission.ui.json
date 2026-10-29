@@ -1,0 +1,164 @@
+{
+  "$schemaVersion": 1,
+  "guid": "b9ae855a-4836-4940-8c20-52f7b5b6a12f",
+  "name": "field-journal-mission",
+  "title": "Field journal mission",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Field journal mission",
+      "style": {
+        "dir": "row",
+        "pad": [
+          6,
+          9,
+          6,
+          9
+        ],
+        "align": "center",
+        "radius": 6,
+        "w": "100%",
+        "h": 74,
+        "gap": 12
+      },
+      "children": [
+        "thumbnail",
+        "copy",
+        "crest"
+      ]
+    },
+    "thumbnail": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "art"
+      ],
+      "style": {
+        "pad": 2,
+        "w": 88,
+        "h": 58,
+        "bg": "#c4a570",
+        "radius": 4
+      }
+    },
+    "art": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": "100%",
+        "h": "100%"
+      },
+      "property": "art"
+    },
+    "copy": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "title",
+        "status"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "h": 54,
+        "dir": "column",
+        "justify": "center",
+        "gap": 3
+      }
+    },
+    "title": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 25,
+        "fontSize": 18,
+        "fitMin": 15,
+        "color": "#285b59"
+      }
+    },
+    "status": {
+      "type": "label",
+      "name": "Label",
+      "text": "{status}",
+      "style": {
+        "w": "100%",
+        "h": 23,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#72634b"
+      }
+    },
+    "crest": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": 32,
+        "h": 34
+      },
+      "property": "crest"
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "Windup Theatre"
+    },
+    "status": {
+      "type": "text",
+      "default": "Ready · Opens two paths"
+    },
+    "art": {
+      "type": "image",
+      "default": "adventure/fair-3"
+    },
+    "crest": {
+      "type": "image",
+      "default": "overworld-living/common/markers/available"
+    },
+    "active": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#285b591a"
+            }
+          }
+        }
+      }
+    },
+    "locked": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "thumbnail": {
+              "saturation": 0,
+              "imageAlpha": 0.5
+            }
+          }
+        }
+      }
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  }
+}

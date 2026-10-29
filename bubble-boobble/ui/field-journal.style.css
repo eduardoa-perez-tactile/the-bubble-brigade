@@ -1,0 +1,129 @@
+/* Field Journal: approved desktop geometry, shared art, and responsive safe-area layout. */
+ .field-journal-screen .ud-field-journal__root {font-family:"cartoon/fonts/BreeSerif-Regular";}
+ .field-journal-screen .ud-field-journal__heading {font-family:"cartoon/fonts/Rye-Regular";}
+ .field-journal-screen .ud-field-journal__cover {max-width:94%;border-width:2px;border-color:#ba9c60;}
+ .field-journal-screen .ud-field-journal__districtItems {flex-direction:row;gap:6px;}
+ .field-journal-screen .ud-field-journal__missionItems {flex-direction:column;gap:2px;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__root {height:40px;background-color:transparent;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__label {font-size:17px;height:30px;color:#285b59;}
+ .field-journal-screen .ud-field-journal__objective .ud-journal-action__root {height:35px;}
+ .field-journal-screen .ud-field-journal__objective .ud-journal-action__label {height:29px;font-size:18px;}
+ .field-journal-screen .ud-field-journal__memories {width:125px;height:40px;}
+ .field-journal-screen .ud-field-journal__close {width:44px;height:40px;}
+ .field-journal-screen .ud-field-journal__showMap {width:100%;height:35px;}
+ .field-journal-screen .ud-field-journal__return {width:228px;height:26px;}
+ .field-journal-screen .ud-field-journal__trial,.field-journal-screen .ud-field-journal__claim {width:100%;height:44px;}
+ .field-journal-screen .ud-field-journal__thumbnail {overflow:hidden;}
+ .field-journal-screen .ud-field-journal__return.ud-journal-action__root {background-color:transparent;}
+ .field-journal-screen .ud-field-journal__return .ud-journal-action__label {width:100%;height:26px;font-size:15px;text-fit:13px 15px;text-align:right;color:#285b59;}
+ .field-journal-screen .ud-field-journal__return.v-selected-yes {border-width:1px;border-color:#a8742f;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__root.v-selected-yes {border-width:1px;border-color:#a8742f;}
+ .field-journal-screen .ud-field-journal-tab__root.v-selected-yes,.field-journal-screen .ud-field-journal-mission__root.v-selected-yes {border-width:1px;border-color:#a8742f;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__root {width:170px;height:120px;flex-direction:column;align-items:center;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__name {font-size:17px;height:28px;}
+ .field-journal-screen .ud-field-journal__trialStatus {white-space:pre-wrap;}
+ .field-journal-screen .ud-field-journal__hero,.field-journal-screen .ud-field-journal__trialImage {object-fit:cover;}
+ .field-journal-screen .ud-field-journal-tab__root {flex-direction:column;justify-content:center;align-items:center;background-color:transparent;gap:1px;}
+ .field-journal-screen .ud-field-journal-tab__root.v-active-yes {background-color:#285b59;}
+ .field-journal-screen .ud-field-journal-mission__root {flex-direction:row;justify-content:flex-start;align-items:center;background-color:transparent;padding:6px 9px;gap:12px;}
+ .field-journal-screen .ud-field-journal-mission__root.v-active-yes {background-color:#285b591a;}
+ .field-journal-screen .ud-field-journal-mission__copy {flex-direction:column;width:0;flex-grow:1;justify-content:center;}
+@media (aspect < 1.3) {
+ .field-journal-screen .ud-field-journal__cover {width:94%;height:auto;}
+ .field-journal-screen .ud-field-journal__paper {height:auto;padding:32px 24px 50px;gap:8px;}
+ .field-journal-screen .ud-field-journal__header {height:48px;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__root {height:44px;}
+ .field-journal-screen .ud-field-journal__memories,.field-journal-screen .ud-field-journal__close {height:44px;}
+ .field-journal-screen .ud-field-journal__objective .ud-journal-action__root,.field-journal-screen .ud-field-journal__showMap {height:44px;}
+ .field-journal-screen .ud-field-journal__footer {height:48px;}
+ .field-journal-screen .ud-field-journal__return {height:44px;}
+ .field-journal-screen .ud-field-journal__spread {flex-direction:column;height:auto;gap:12px;}
+ .field-journal-screen .ud-field-journal__left {width:100%;height:auto;flex-grow:0;gap:3px;}
+ .field-journal-screen .ud-field-journal__right {width:100%;height:auto;}
+ .field-journal-screen .ud-field-journal__fold {width:100%;height:1px;}
+ .field-journal-screen .ud-field-journal__tabs {height:auto;flex-wrap:wrap;gap:6px;}
+ .field-journal-screen .ud-field-journal-tab__root {width:31%;height:44px;}
+ .field-journal-screen .ud-field-journal__heroFrame {height:70px;}
+ .field-journal-screen .ud-field-journal__district {height:43px;font-size:31px;text-fit:27px 31px;}
+ .field-journal-screen .ud-field-journal__objective {height:128px;}
+ .field-journal-screen .ud-field-journal__missionList {height:auto;}
+ .field-journal-screen .ud-field-journal-mission__root {height:56px;padding:4px 7px;}
+ .field-journal-screen .ud-field-journal-mission__thumbnail {height:48px;width:82px;}
+ .field-journal-screen .ud-field-journal-mission__copy {height:48px;gap:2px;}
+ .field-journal-screen .ud-field-journal-mission__status {height:20px;}
+ .field-journal-screen .ud-field-journal__shadow {display:none;}
+ .field-journal-screen .ud-field-journal__memoriesSpread {flex-direction:column;height:auto;gap:18px;}
+ .field-journal-screen .ud-field-journal__trialPage,.field-journal-screen .ud-field-journal__collectionPage {width:100%;height:auto;flex-grow:0;}
+ .field-journal-screen .ud-field-journal__memoryFold {width:100%;height:1px;}
+ .field-journal-screen .ud-field-journal__trialImage {height:130px;}
+}
+@media (aspect < 1.3) {
+ .field-journal-screen .ud-field-journal__memoriesSpread {flex-direction:row;height:422px;gap:20px;}
+ .field-journal-screen .ud-field-journal__trialPage {width:0;flex-grow:1;height:100%;gap:8px;}
+ .field-journal-screen .ud-field-journal__collectionPage {width:45%;height:100%;gap:10px;}
+ .field-journal-screen .ud-field-journal__memoryFold {width:1px;height:100%;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf {height:145px;padding:0;gap:8px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__root {width:47%;height:140px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__name {font-size:16px;height:42px;text-fit:14px 16px;}
+ .field-journal-screen .ud-field-journal__rewardArea {height:170px;}
+ .field-journal-screen .ud-field-journal__rewardTitle {height:52px;}
+ .field-journal-screen .ud-field-journal__rewardDetail {height:38px;}
+ .field-journal-screen .ud-field-journal__trialName {height:50px;}
+ .field-journal-screen .ud-field-journal__trialStatus {height:60px;}
+}
+@media (aspect < 0.55) {
+ .field-journal-screen .ud-field-journal__paper {padding:28px;gap:14px;}
+ .field-journal-screen .ud-field-journal__header {height:100px;padding:0 10px;gap:12px;}
+ .field-journal-screen .ud-field-journal__heading {height:62px;font-size:36px;text-fit:27px 36px;}
+ .field-journal-screen .ud-field-journal__memories {width:172px;height:94px;}
+ .field-journal-screen .ud-field-journal__close {width:94px;height:94px;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__root {height:94px;}
+ .field-journal-screen .ud-field-journal__header .ud-journal-action__label {font-size:26px;height:64px;text-fit:22px 26px;}
+ .field-journal-screen .ud-field-journal-tab__root {height:96px;}
+ .field-journal-screen .ud-field-journal-tab__title {font-size:29px;height:40px;text-fit:25px 29px;}
+ .field-journal-screen .ud-field-journal-tab__subtitle {font-size:19px;height:30px;text-fit:17px 19px;}
+ .field-journal-screen .ud-field-journal__chapter {font-size:22px;height:34px;text-fit:19px 22px;}
+ .field-journal-screen .ud-field-journal__district {height:54px;font-size:42px;text-fit:34px 42px;}
+ .field-journal-screen .ud-field-journal__heroFrame {height:190px;}
+ .field-journal-screen .ud-field-journal__progress {height:42px;}
+ .field-journal-screen .ud-field-journal__progressText {font-size:25px;height:38px;text-fit:21px 25px;}
+ .field-journal-screen .ud-field-journal__objective {height:270px;padding:12px;gap:5px;}
+ .field-journal-screen .ud-field-journal__nextHeading {font-size:20px;height:28px;text-fit:18px 20px;}
+ .field-journal-screen .ud-field-journal__nextTitle {font-size:32px;height:42px;text-fit:25px 32px;}
+ .field-journal-screen .ud-field-journal__nextReason {font-size:23px;height:60px;text-fit:20px 23px;}
+ .field-journal-screen .ud-field-journal__objective .ud-journal-action__root,.field-journal-screen .ud-field-journal__showMap {height:94px;}
+ .field-journal-screen .ud-field-journal__objective .ud-journal-action__label {font-size:28px;height:76px;text-fit:22px 28px;}
+ .field-journal-screen .ud-field-journal__nextDistrict {font-size:22px;height:44px;text-fit:19px 22px;}
+ .field-journal-screen .ud-field-journal__stampsHeading {font-size:32px;height:48px;text-fit:27px 32px;}
+ .field-journal-screen .ud-field-journal-mission__root {height:100px;gap:14px;}
+ .field-journal-screen .ud-field-journal-mission__thumbnail {height:82px;width:120px;}
+ .field-journal-screen .ud-field-journal-mission__copy {height:88px;}
+ .field-journal-screen .ud-field-journal-mission__title {font-size:28px;height:40px;text-fit:23px 28px;}
+ .field-journal-screen .ud-field-journal-mission__status {font-size:22px;height:42px;text-fit:18px 22px;}
+ .field-journal-screen .ud-field-journal-mission__crest {width:44px;height:48px;}
+ .field-journal-screen .ud-field-journal__footer {height:auto;flex-direction:column;gap:8px;}
+ .field-journal-screen .ud-field-journal__total {width:100%;height:35px;margin:0;flex-grow:0;font-size:22px;text-fit:19px 22px;text-align:center;}
+ .field-journal-screen .ud-field-journal__return {height:94px;width:100%;}
+ .field-journal-screen .ud-field-journal__return .ud-journal-action__label {font-size:27px;height:76px;text-fit:23px 27px;text-align:center;}
+ .field-journal-screen .ud-field-journal__memoriesSpread {gap:20px;flex-direction:column;height:auto;}
+ .field-journal-screen .ud-field-journal__trialPage,.field-journal-screen .ud-field-journal__collectionPage {width:100%;height:auto;flex-grow:0;}
+ .field-journal-screen .ud-field-journal__memoryFold {width:100%;height:1px;}
+ .field-journal-screen .ud-field-journal__memoryHeading,.field-journal-screen .ud-field-journal__trialHeading {font-size:22px;height:32px;text-fit:19px 22px;}
+ .field-journal-screen .ud-field-journal__memoryTitle {font-size:42px;height:58px;text-fit:36px 42px;}
+ .field-journal-screen .ud-field-journal__trialName {font-size:32px;height:48px;text-fit:27px 32px;}
+ .field-journal-screen .ud-field-journal__trialStatus {font-size:25px;height:80px;text-fit:22px 25px;}
+ .field-journal-screen .ud-field-journal__trial {height:94px;}
+ .field-journal-screen .ud-field-journal__trial .ud-journal-action__root {height:94px;}
+ .field-journal-screen .ud-field-journal__trial .ud-journal-action__label {font-size:28px;height:72px;text-fit:23px 28px;}
+ .field-journal-screen .ud-field-journal__keepsakeHeading {font-size:32px;height:48px;text-fit:27px 32px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf {height:180px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__root {width:260px;height:160px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__name {font-size:26px;height:40px;text-fit:22px 26px;}
+ .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__status,.field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__owned {font-size:21px;height:30px;text-fit:19px 21px;}
+ .field-journal-screen .ud-field-journal__keepsakeHint {font-size:25px;height:70px;text-fit:22px 25px;}
+ .field-journal-screen .ud-field-journal__rewardArea {height:260px;}
+ .field-journal-screen .ud-field-journal__rewardTitle {font-size:27px;height:74px;text-fit:23px 27px;}
+ .field-journal-screen .ud-field-journal__rewardDetail {font-size:24px;height:44px;text-fit:21px 24px;}
+ .field-journal-screen .ud-field-journal__claim,.field-journal-screen .ud-field-journal__claim .ud-journal-action__root {height:94px;}
+ .field-journal-screen .ud-field-journal__claim .ud-journal-action__label {font-size:28px;height:72px;text-fit:23px 28px;}
+}

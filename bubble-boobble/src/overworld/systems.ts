@@ -67,6 +67,8 @@ export const OverworldSystem=defineSystem({
     const point=moveOverworld(s,x,y,ctx.dt,s.districtId),moving=point.x!==s.x||point.y!==s.y;
     const facing:OverworldFacing=moving?(Math.abs(x)>=.25&&Math.abs(y)>=.25?`${y>0?'up':'down'}-${x<0?'left':'right'}`:Math.abs(x)>Math.abs(y)?x<0?'left':'right':y>0?'up':'down'):s.facing;
     const focusedPoi=focusedOverworldPoi(s.districtId,point.x,point.y);
+    const waypointPoi=s.waypointId?.startsWith('trial-')?'trial':s.waypointId;
+    const waypointId=waypointPoi&&focusedPoi===waypointPoi?'':s.waypointId;
     const shortcutLatched=focusedPoi==='shortcut';
     if(shortcutLatched&&!s.shortcutLatched)ctx.events.emit(DesktopIntent,{action:'overworld-shortcut',value:'shortcut',index:0,x:0,y:0});
     const interact=armed&&s.inputArmed&&focusedPoi&&(pressed||confirm&&!s.confirmHeld);
@@ -74,8 +76,8 @@ export const OverworldSystem=defineSystem({
     const footsteps=advanceOverworldFootsteps(s.footsteps??[],s,point,walkTick,facing,!!interact);
     const markerMotion=advanceMarkerMotion(markerContext,focusedPoi,!!interact);
     // Walk poses require displacement; marker clips use their own bounded clock.
-    if(markerMotion!==s.markerMotion||s.footsteps?.length||footsteps.length||moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||interact)
-      overworldState.set({...s,...point,facing,moving,focusedPoi,tick:moving?s.tick+1:s.tick,walkTick,footsteps,markerMotion,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
+    if(markerMotion!==s.markerMotion||s.footsteps?.length||footsteps.length||moving||s.moving!==moving||s.focusedPoi!==focusedPoi||s.inputArmed!==armed||s.confirmHeld!==confirm||s.confirmKeys!==confirmKeys||s.shortcutLatched!==shortcutLatched||s.waypointId!==waypointId||interact)
+      overworldState.set({...s,...point,facing,moving,focusedPoi,waypointId,tick:moving?s.tick+1:s.tick,walkTick,footsteps,markerMotion,inputArmed:interact?false:armed,confirmHeld:confirm,confirmKeys,shortcutLatched,modal:!!interact});
     if(interact)ctx.events.emit(DesktopIntent,{action:'overworld-interact',value:focusedPoi,index:0,x:0,y:0});
   },
 });

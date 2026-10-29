@@ -1,0 +1,1026 @@
+{
+  "$schemaVersion": 1,
+  "guid": "ec6d986b-7c2d-4f4c-850d-732358d472ea",
+  "name": "field-journal",
+  "title": "Adventure Journal",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Adventure Journal",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 0,
+        "align": "center",
+        "justify": "center"
+      },
+      "children": [
+        "shadow",
+        "cover"
+      ]
+    },
+    "cover": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "paper"
+      ],
+      "style": {
+        "pad": 6,
+        "w": 1100,
+        "h": 650,
+        "bg": "#244f4b",
+        "radius": 18
+      }
+    },
+    "paper": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "paperTexture",
+        "header",
+        "tabs",
+        "spread",
+        "memoriesSpread",
+        "footer"
+      ],
+      "style": {
+        "pad": [
+          28,
+          30,
+          28,
+          30
+        ],
+        "w": "100%",
+        "h": "100%",
+        "dir": "column",
+        "gap": 10,
+        "radius": 12,
+        "bg": "#f5e9cd",
+        "clip": true
+      }
+    },
+    "header": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "heading",
+        "memories",
+        "close",
+        "rewardDot"
+      ],
+      "style": {
+        "pad": [
+          0,
+          40,
+          0,
+          40
+        ],
+        "w": "100%",
+        "h": 44,
+        "dir": "row",
+        "align": "center",
+        "gap": 18
+      }
+    },
+    "heading": {
+      "type": "label",
+      "name": "Label",
+      "text": "Adventure Journal",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 44,
+        "fontSize": 30,
+        "fitMin": 26,
+        "color": "#285b59"
+      }
+    },
+    "memories": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "memories",
+      "props": {
+        "label": {
+          "property": "memoriesLabel"
+        },
+        "selected": {
+          "property": "memoriesSelected"
+        }
+      }
+    },
+    "close": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "close",
+      "props": {
+        "label": "X",
+        "selected": {
+          "property": "closeSelected"
+        }
+      }
+    },
+    "tabs": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "districtItems"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 48,
+        "dir": "row",
+        "gap": 6
+      }
+    },
+    "districtItems": {
+      "type": "repeat",
+      "doc": "field-journal-tab",
+      "property": "pages"
+    },
+    "spread": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "left",
+        "fold",
+        "right"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 422,
+        "dir": "row",
+        "gap": 24
+      }
+    },
+    "left": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "chapter",
+        "district",
+        "heroFrame",
+        "progress",
+        "objective",
+        "nextDistrict"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "h": "100%",
+        "dir": "column",
+        "gap": 4
+      }
+    },
+    "chapter": {
+      "type": "label",
+      "name": "Label",
+      "text": "DISTRICT 3 OF 5 · YOU ARE HERE",
+      "style": {
+        "w": "100%",
+        "h": 18,
+        "fontSize": 12,
+        "fitMin": 11,
+        "color": "#285b59"
+      },
+      "property": "chapter"
+    },
+    "district": {
+      "type": "label",
+      "name": "Label",
+      "text": "Pinwheel Fair",
+      "style": {
+        "w": "100%",
+        "h": 43,
+        "fontSize": 36,
+        "fitMin": 30,
+        "color": "#285b59"
+      },
+      "property": "district"
+    },
+    "heroFrame": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "hero"
+      ],
+      "style": {
+        "pad": 2,
+        "w": "100%",
+        "h": 190,
+        "bg": "#b89c65",
+        "radius": 5
+      }
+    },
+    "progress": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "stamp",
+        "progressText"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 25,
+        "dir": "row",
+        "align": "center",
+        "gap": 7
+      }
+    },
+    "stamp": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 24,
+        "h": 24,
+        "image": "overworld-living/common/markers/cleared",
+        "fit": "contain"
+      }
+    },
+    "progressText": {
+      "type": "label",
+      "name": "Label",
+      "text": "1 of 5 mission stamps collected",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 23,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#285b59"
+      },
+      "property": "progressText"
+    },
+    "objective": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "nextHeading",
+        "nextTitle",
+        "nextReason",
+        "showMap"
+      ],
+      "style": {
+        "pad": [
+          7,
+          12,
+          7,
+          12
+        ],
+        "w": "100%",
+        "h": 111,
+        "bg": "#ece0c4",
+        "radius": 7,
+        "dir": "column",
+        "gap": 2
+      }
+    },
+    "nextHeading": {
+      "type": "label",
+      "name": "Label",
+      "text": "YOUR NEXT ADVENTURE",
+      "style": {
+        "w": "100%",
+        "h": 16,
+        "fontSize": 11,
+        "fitMin": 10,
+        "color": "#285b59"
+      },
+      "property": "objectiveHeading"
+    },
+    "nextTitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "Windup Theatre",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 23,
+        "fitMin": 20,
+        "color": "#285b59"
+      },
+      "property": "detailTitle"
+    },
+    "nextReason": {
+      "type": "label",
+      "name": "Label",
+      "text": "Clear this mission to open two more paths.",
+      "style": {
+        "w": "100%",
+        "h": 20,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#285b59"
+      },
+      "property": "detail"
+    },
+    "showMap": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "show-map",
+      "props": {
+        "label": {
+          "property": "objectiveLabel"
+        },
+        "selected": {
+          "property": "objectiveSelected"
+        }
+      }
+    },
+    "nextDistrict": {
+      "type": "label",
+      "name": "Label",
+      "text": "4 more stamps to reach Cloudtop Springs.",
+      "style": {
+        "w": "100%",
+        "h": 19,
+        "fontSize": 13,
+        "fitMin": 11,
+        "color": "#72634b",
+        "textAlign": "center"
+      },
+      "property": "nextLabel"
+    },
+    "fold": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 1,
+        "h": "100%",
+        "bg": "#bd9f6a"
+      }
+    },
+    "right": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "stampsHeading",
+        "missionList"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 438,
+        "h": "100%",
+        "dir": "column",
+        "gap": 5
+      }
+    },
+    "stampsHeading": {
+      "type": "label",
+      "name": "Label",
+      "text": "Your mission stamps",
+      "style": {
+        "w": "100%",
+        "h": 33,
+        "fontSize": 25,
+        "fitMin": 22,
+        "color": "#285b59"
+      }
+    },
+    "missionList": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "missionItems"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 380,
+        "dir": "column",
+        "gap": 2
+      }
+    },
+    "missionItems": {
+      "type": "repeat",
+      "doc": "field-journal-mission",
+      "property": "missions"
+    },
+    "footer": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "total",
+        "return"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 28,
+        "dir": "row",
+        "align": "center",
+        "gap": 12
+      }
+    },
+    "total": {
+      "type": "label",
+      "name": "Label",
+      "text": "11 / 25 adventure stamps",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 23,
+        "fontSize": 12,
+        "fitMin": 11,
+        "color": "#72634b",
+        "margin": [
+          0,
+          0,
+          0,
+          65
+        ]
+      },
+      "property": "totalProgress"
+    },
+    "shadow": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 8,
+        "w": 1100,
+        "h": 650,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          0,
+          10
+        ],
+        "bg": "#102f2c88",
+        "radius": 20,
+        "attach": true
+      }
+    },
+    "return": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "return-map",
+      "props": {
+        "label": {
+          "property": "returnLabel"
+        },
+        "selected": {
+          "property": "returnSelected"
+        }
+      }
+    },
+    "memoriesSpread": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "trialPage",
+        "memoryFold",
+        "collectionPage"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 422,
+        "dir": "row",
+        "gap": 24,
+        "hide": true
+      }
+    },
+    "trialPage": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "memoryHeading",
+        "memoryTitle",
+        "trialImage",
+        "trialHeading",
+        "trialName",
+        "trialStatus",
+        "trial"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "h": "100%",
+        "dir": "column",
+        "gap": 10
+      }
+    },
+    "memoryHeading": {
+      "type": "label",
+      "name": "Label",
+      "text": "OFF THE BEATEN PATH",
+      "style": {
+        "w": "100%",
+        "h": 22,
+        "fontSize": 12,
+        "fitMin": 11,
+        "color": "#285b59"
+      }
+    },
+    "memoryTitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "Memories",
+      "style": {
+        "w": "100%",
+        "h": 43,
+        "fontSize": 36,
+        "fitMin": 30,
+        "color": "#285b59"
+      }
+    },
+    "trialHeading": {
+      "type": "label",
+      "name": "Label",
+      "text": "OPTIONAL MASTERY TRIAL",
+      "style": {
+        "w": "100%",
+        "h": 19,
+        "fontSize": 12,
+        "fitMin": 11,
+        "color": "#72634b"
+      }
+    },
+    "trialName": {
+      "type": "label",
+      "name": "Label",
+      "text": "{trialName}",
+      "style": {
+        "w": "100%",
+        "h": 34,
+        "fontSize": 25,
+        "fitMin": 20,
+        "color": "#285b59"
+      }
+    },
+    "trialStatus": {
+      "type": "label",
+      "name": "Label",
+      "text": "{trialStatus}",
+      "style": {
+        "w": "100%",
+        "h": 42,
+        "fontSize": 16,
+        "fitMin": 13,
+        "color": "#72634b"
+      }
+    },
+    "trial": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "trial",
+      "props": {
+        "label": {
+          "property": "trialActionLabel"
+        },
+        "selected": {
+          "property": "trialSelected"
+        }
+      },
+      "show": "trialAvailable"
+    },
+    "memoryFold": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 1,
+        "h": "100%",
+        "bg": "#bd9f6a"
+      }
+    },
+    "collectionPage": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "keepsakeHeading",
+        "keepsakeShelf",
+        "keepsakeHint",
+        "rewardArea"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 438,
+        "h": "100%",
+        "dir": "column",
+        "gap": 12
+      }
+    },
+    "keepsakeHeading": {
+      "type": "label",
+      "name": "Label",
+      "text": "Your keepsakes",
+      "style": {
+        "w": "100%",
+        "h": 33,
+        "fontSize": 25,
+        "fitMin": 22,
+        "color": "#285b59"
+      }
+    },
+    "keepsakeShelf": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "keepsakeItems"
+      ],
+      "style": {
+        "pad": 12,
+        "w": "100%",
+        "h": 150,
+        "dir": "row",
+        "gap": 24,
+        "justify": "center"
+      }
+    },
+    "keepsakeItems": {
+      "type": "repeat",
+      "doc": "journal-keepsake",
+      "property": "keepsakes"
+    },
+    "keepsakeHint": {
+      "type": "label",
+      "name": "Label",
+      "text": "{keepsakeHint}",
+      "style": {
+        "w": "100%",
+        "h": 44,
+        "fontSize": 16,
+        "fitMin": 14,
+        "color": "#72634b"
+      }
+    },
+    "rewardArea": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "rewardTitle",
+        "rewardDetail",
+        "claim"
+      ],
+      "style": {
+        "pad": 12,
+        "w": "100%",
+        "h": 130,
+        "dir": "column",
+        "gap": 8,
+        "bg": "#ece0c4",
+        "radius": 7
+      },
+      "show": "claimable"
+    },
+    "rewardTitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "A little thank-you from the Brigade",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 18,
+        "fitMin": 15,
+        "color": "#285b59"
+      }
+    },
+    "rewardDetail": {
+      "type": "label",
+      "name": "Label",
+      "text": "Your three-mission reward is ready.",
+      "style": {
+        "w": "100%",
+        "h": 24,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#72634b"
+      }
+    },
+    "claim": {
+      "type": "use",
+      "doc": "journal-action",
+      "key": "overworld-guide-claim",
+      "props": {
+        "label": "Claim 15 coins",
+        "selected": {
+          "property": "claimSelected"
+        }
+      }
+    },
+    "hero": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": "100%",
+        "h": "100%",
+        "radius": 3
+      },
+      "property": "heroArt"
+    },
+    "trialImage": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "ui/sprites/star",
+      "style": {
+        "size": 32,
+        "w": "100%",
+        "h": 158,
+        "radius": 5
+      },
+      "property": "trialSceneArt"
+    },
+    "rewardDot": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 8,
+        "w": 7,
+        "h": 7,
+        "bg": "#a8742f",
+        "radius": 4,
+        "position": "anchored",
+        "anchor": [
+          1,
+          0
+        ],
+        "offset": [
+          -121,
+          4
+        ],
+        "attach": true
+      },
+      "show": "claimable"
+    },
+    "paperTexture": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "160%",
+        "h": "170%",
+        "image": "cartoon/ui/theatre-paper",
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "offset": [
+          0,
+          0
+        ],
+        "attach": true
+      }
+    }
+  },
+  "view": {
+    "behaviour": "dialog",
+    "safe": true,
+    "dims": true,
+    "enter": {
+      "set": {
+        "cover": {
+          "opacity": 0,
+          "ty": 10
+        },
+        "shadow": {
+          "opacity": 0
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "cover": {
+          "opacity": 0,
+          "ty": 7
+        },
+        "shadow": {
+          "opacity": 0
+        }
+      }
+    }
+  },
+  "properties": {
+    "pages": {
+      "type": "list",
+      "of": "field-journal-tab",
+      "default": [
+        {
+          "key": "quay",
+          "label": "Quay",
+          "status": "5 / 5 cleared"
+        },
+        {
+          "key": "gardens",
+          "label": "Gardens",
+          "status": "5 / 5 cleared"
+        },
+        {
+          "key": "fair",
+          "label": "Fair",
+          "status": "YOU ARE HERE",
+          "active": true
+        },
+        {
+          "key": "springs",
+          "label": "Springs",
+          "status": "Locked"
+        },
+        {
+          "key": "works",
+          "label": "Works",
+          "status": "Locked"
+        }
+      ]
+    },
+    "missions": {
+      "type": "list",
+      "of": "field-journal-mission",
+      "default": [
+        {
+          "key": "mission-1",
+          "label": "Bubble Carousel",
+          "status": "Cleared · View record",
+          "art": "adventure/fair-1",
+          "crest": "overworld-living/common/markers/cleared",
+          "active": false,
+          "locked": false
+        },
+        {
+          "key": "mission-2",
+          "label": "Kite Hangar",
+          "status": "Ready to explore",
+          "art": "adventure/fair-2",
+          "crest": "overworld-living/common/markers/available",
+          "active": false,
+          "locked": false
+        },
+        {
+          "key": "mission-3",
+          "label": "Windup Theatre",
+          "status": "Ready · Opens two paths",
+          "art": "adventure/fair-3",
+          "crest": "overworld-living/common/markers/available",
+          "active": true,
+          "locked": false
+        },
+        {
+          "key": "mission-4",
+          "label": "Pinwheel Observatory",
+          "status": "Clear Windup Theatre to unlock",
+          "art": "adventure/fair-4",
+          "crest": "overworld-living/common/markers/locked",
+          "active": false,
+          "locked": true
+        },
+        {
+          "key": "mission-5",
+          "label": "Balloon Organ",
+          "status": "Clear Windup Theatre to unlock",
+          "art": "adventure/fair-5",
+          "crest": "overworld-living/common/markers/locked",
+          "active": false,
+          "locked": true
+        }
+      ]
+    },
+    "chapter": {
+      "type": "text",
+      "default": "DISTRICT 3 OF 5 · YOU ARE HERE"
+    },
+    "district": {
+      "type": "text",
+      "default": "Pinwheel Fair"
+    },
+    "progressText": {
+      "type": "text",
+      "default": "1 of 5 mission stamps collected"
+    },
+    "objectiveHeading": {
+      "type": "text",
+      "default": "YOUR NEXT ADVENTURE"
+    },
+    "detailTitle": {
+      "type": "text",
+      "default": "Windup Theatre"
+    },
+    "detail": {
+      "type": "text",
+      "default": "Clear this mission to open two more paths."
+    },
+    "objectiveLabel": {
+      "type": "text",
+      "default": "Show on map"
+    },
+    "nextLabel": {
+      "type": "text",
+      "default": "4 more stamps to reach Cloudtop Springs."
+    },
+    "totalProgress": {
+      "type": "text",
+      "default": "11 / 25 adventure stamps"
+    },
+    "returnLabel": {
+      "type": "text",
+      "default": "Return to Pinwheel Fair"
+    },
+    "memoriesLabel": {
+      "type": "text",
+      "default": "Memories"
+    },
+    "trialName": {
+      "type": "text",
+      "default": "Juggling Ring Trial"
+    },
+    "trialStatus": {
+      "type": "text",
+      "default": "ONE LIFE · THREE CREATURES"
+    },
+    "trialActionLabel": {
+      "type": "text",
+      "default": "Show trial on map"
+    },
+    "keepsakeHint": {
+      "type": "text",
+      "default": "Find keepsakes at the supply cart."
+    },
+    "showMemories": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "spread": {
+              "hide": true
+            },
+            "memoriesSpread": {
+              "hide": false
+            }
+          }
+        }
+      }
+    },
+    "objectiveSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "memoriesSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "closeSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "returnSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "trialSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "claimable": {
+      "type": "yesno",
+      "default": false
+    },
+    "claimSelected": {
+      "type": "yesno",
+      "default": false
+    },
+    "keepsakes": {
+      "type": "list",
+      "of": "journal-keepsake",
+      "default": []
+    },
+    "heroArt": {
+      "type": "image",
+      "default": "overworld-original/district-3/base"
+    },
+    "trialSceneArt": {
+      "type": "image",
+      "default": "adventure/fair-1"
+    },
+    "trialAvailable": {
+      "type": "yesno",
+      "default": true
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 180
+  }
+}

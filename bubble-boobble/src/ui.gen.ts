@@ -1304,6 +1304,85 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Adventure Journal: a view, dialog (ui/docs/field-journal.ui.json)
+     *
+     * Properties:
+     *   - `pages`: list of field-journal-tab
+     *   - `missions`: list of field-journal-mission
+     *   - `chapter`: text, default "DISTRICT 3 OF 5 · YOU ARE HERE"
+     *   - `district`: text, default "Pinwheel Fair"
+     *   - `progressText`: text, default "1 of 5 mission stamps collected"
+     *   - `objectiveHeading`: text, default "YOUR NEXT ADVENTURE"
+     *   - `detailTitle`: text, default "Windup Theatre"
+     *   - `detail`: text, default "Clear this mission to open two more paths."
+     *   - `objectiveLabel`: text, default "Show on map"
+     *   - `nextLabel`: text, default "4 more stamps to reach Cloudtop Springs."
+     *   - `totalProgress`: text, default "11 / 25 adventure stamps"
+     *   - `returnLabel`: text, default "Return to Pinwheel Fair"
+     *   - `memoriesLabel`: text, default "Memories"
+     *   - `trialName`: text, default "Juggling Ring Trial"
+     *   - `trialStatus`: text, default "ONE LIFE · THREE CREATURES"
+     *   - `trialActionLabel`: text, default "Show trial on map"
+     *   - `keepsakeHint`: text, default "Find keepsakes at the supply cart."
+     *   - `showMemories`: yesno, default false
+     *   - `objectiveSelected`: yesno, default false
+     *   - `memoriesSelected`: yesno, default false
+     *   - `closeSelected`: yesno, default false
+     *   - `returnSelected`: yesno, default false
+     *   - `trialSelected`: yesno, default false
+     *   - `claimable`: yesno, default false
+     *   - `claimSelected`: yesno, default false
+     *   - `keepsakes`: list of journal-keepsake
+     *   - `heroArt`: image, default "overworld-original/district-3/base"
+     *   - `trialSceneArt`: image, default "adventure/fair-1"
+     *   - `trialAvailable`: yesno, default true
+     * Events: `memories`, `close`, `press (<item>)`, `show-map`, `trial`, `overworld-guide-claim`, `return-map`
+     * Code areas: none
+     * Refs: `memories`, `close`, `show-map`, `trial`, `overworld-guide-claim`, `return-map`
+     */
+    'field-journal': {
+      props: { pages: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; selected?: boolean }[]; missions: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; art?: string; crest?: string; active?: boolean; locked?: boolean; selected?: boolean }[]; chapter: string | { loc: string } | LocText; district: string | { loc: string } | LocText; progressText: string | { loc: string } | LocText; objectiveHeading: string | { loc: string } | LocText; detailTitle: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; objectiveLabel: string | { loc: string } | LocText; nextLabel: string | { loc: string } | LocText; totalProgress: string | { loc: string } | LocText; returnLabel: string | { loc: string } | LocText; memoriesLabel: string | { loc: string } | LocText; trialName: string | { loc: string } | LocText; trialStatus: string | { loc: string } | LocText; trialActionLabel: string | { loc: string } | LocText; keepsakeHint: string | { loc: string } | LocText; showMemories: boolean; objectiveSelected: boolean; memoriesSelected: boolean; closeSelected: boolean; returnSelected: boolean; trialSelected: boolean; claimable: boolean; claimSelected: boolean; keepsakes: readonly { key: string; label?: string | { loc: string } | LocText; art?: string; owned?: boolean }[]; heroArt: string; trialSceneArt: string; trialAvailable: boolean };
+      areas: never;
+      refs: 'memories' | 'close' | 'show-map' | 'trial' | 'overworld-guide-claim' | 'return-map';
+    };
+    /**
+     * Field journal mission: a widget, button (ui/docs/field-journal-mission.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "Windup Theatre"
+     *   - `status`: text, default "Ready · Opens two paths"
+     *   - `art`: image, default "adventure/fair-3"
+     *   - `crest`: image, default "overworld-living/common/markers/available"
+     *   - `active`: yesno, default false
+     *   - `locked`: yesno, default false
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'field-journal-mission': {
+      props: { label: string | { loc: string } | LocText; status: string | { loc: string } | LocText; art: string; crest: string; active: boolean; locked: boolean; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Field journal tab: a widget, button (ui/docs/field-journal-tab.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "Fair"
+     *   - `status`: text, default "You are here"
+     *   - `active`: yesno, default false
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'field-journal-tab': {
+      props: { label: string | { loc: string } | LocText; status: string | { loc: string } | LocText; active: boolean; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Game mode card: a widget, button (ui/docs/game-mode-card.ui.json)
      *
      * Properties:

@@ -31,7 +31,11 @@ function assertButtons(ctx:WorldTestContext,width:number,height:number,safe:read
   const r=button.rect;
   const context=JSON.stringify({width,height,safe,label:button.label,id:button.id,rect:r});
   if(r.x<safe[0]!-1||r.y<safe[1]!-1||r.x+r.width>width-safe[2]!+1||r.y+r.height>height-safe[3]!+1)throw new Error('Button escapes safe area: '+context);
-  if(r.width<44||r.height<44)throw new Error('Button smaller than44px: '+context);
+  // Match the approved compact desktop journal; touch journal layouts and
+  // unrelated HUD/shop controls still require at least44px.
+  const compactDesktopJournal=width>=height&&desktopState.get().screen==='overworld-panel'&&desktopState.get().overworldPanel==='journal';
+  const minimumTarget=compactDesktopJournal?26:44;
+  if(r.width<minimumTarget||r.height<minimumTarget)throw new Error(`Button smaller than${minimumTarget}px: `+context);
  }
  return buttons;
 }
@@ -102,7 +106,9 @@ renderTest('overworld full six-action journal and shop remain readable reachable
   ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,3);
   await intent(ctx,'overworld-journal');await adventureStep(ctx,16);expect(desktopState.get().overworldPanel).toBe('journal');
   ctx.render.stats({width,height});const rows=assertButtons(ctx,width,height,safe,6);
-  expect(rows.some(b=>b.label.includes('EXPLORE FERNFALL'))).toBe(true);
+  // Completed current pages now offer mission guidance. Visiting another
+  // district requires selecting that district's page rather than a redirect.
+  expect(rows.some(b=>b.id?.includes('show-map'))).toBe(true);
   if(width===360)ctx.render.expectScreenshot('slim-full-journal',{width,height});
   if(width===2520)ctx.render.expectScreenshot('ultrawide-full-journal',{width,height});
   await intent(ctx,'overworld-back');

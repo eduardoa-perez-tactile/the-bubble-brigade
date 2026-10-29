@@ -52,7 +52,7 @@ export function overworldDrawPlan(s:OverworldState,p:AdventureProgress,avatar='g
   }
  }
  // Preserve every authored part; a full pool is an explicit error, never missing scenery.
- return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),livingTrialMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects),portalLightDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));
+ return composeBoundedOverworldDraws(capacity,out,overworldAmbientDraws(s.districtId,tick,reducedEffects),livingResidentDraws(s.districtId,tick,s,reducedEffects),livingShopDraws(s.districtId,s.markerMotion,reducedEffects),livingMissionMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects,s.waypointId),livingTrialMarkerDraws(s.districtId,p,s.markerMotion,reducedEffects,s.waypointId),portalLightDraws(s.districtId,p,s.markerMotion,reducedEffects),overworldFootstepDraws(s.footsteps??[],reducedEffects));
 }
 /** A bounded lazy sprite pool. Simulation owns identities; LateUpdate changes visuals only. */
 export const OverworldVisualPool=defineSystem({
