@@ -5,6 +5,7 @@ import {cartoonEnemyProjectileDraws,cartoonEnemyAttackDraws,cartoonEnemyImpactDr
 import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
+import {foregroundDraws} from './foreground';
 import {storyRoomBoundaryDraws,storyRoomHasReferenceFloor} from './room-boundaries';
 import {storyRoomBackgroundGround} from './room-boundary-config';
 import {cartoonHudBounds} from './hud-layout';
@@ -483,5 +484,11 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     const size=cartoonPopSize(p.Life);
     centered('pop',p.X+22,p.Y+22,size,false,[1,1,1,Math.min(1,p.Life/6)]);
   }
+  // Only the approved story pilots have near-camera scenery. Painted columns
+  // inside the playable band clear actors; native HUD views remain above it.
+  if(composed&&g.Level.episode&&!g.Party)out.push(...foregroundDraws(g.Level,{
+    viewportLeft:layout.viewportLeft,viewportRight:layout.viewportRight,
+    viewportTop:layout.viewportTop,viewportBottom:layout.viewportBottom,projectX:px,projectY:py,
+  }));
   return out;
 }

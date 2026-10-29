@@ -132,6 +132,7 @@
       "adventure-sailcloth": {
         "include": [
           "assets/adventure/sailcloth.png",
+          "assets/adventure/foreground/sailcloth.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-parcel-reference.png"
         ]
       },
@@ -156,6 +157,7 @@
       "adventure-garden-2": {
         "include": [
           "assets/adventure/garden-2.png",
+          "assets/adventure/foreground/garden-2.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
@@ -258,6 +260,7 @@
       "adventure-foundry-4": {
         "include": [
           "assets/adventure/foundry-4.png",
+          "assets/adventure/foreground/foundry-4.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
