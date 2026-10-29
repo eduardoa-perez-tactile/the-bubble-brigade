@@ -161,6 +161,19 @@
           }
         }
       }
+    },
+    "showPointer": {
+      "type": "yesno",
+      "default": true,
+      "poses": {
+        "no": {
+          "set": {
+            "cb_pointer": {
+              "hide": true
+            }
+          }
+        }
+      }
     }
   },
   "states": {

@@ -1,7 +1,7 @@
 import {expect,worldTest,renderTest,type WorldTestContext} from '@gameengine/test';
 import {DesktopIntent} from '../src/schema.gen';
 import {desktopState} from '../src/desktop/state';
-import {getDesktopButtons} from '../src/desktop/model';
+import {getDesktopButtons,menuHasAdventureProgress} from '../src/desktop/model';
 import {desktopSave,desktopSaveState,initialDesktopSave} from '../src/desktop/save';
 import {initialAdventure,adventureForProfile,beginAdventureAttempt,completeAdventure,purchaseAdventureItem,claimAdventureCollectible,discoverAdventureShortcut,setAdventureAnchor} from '../src/overworld/progression';
 import {overworldState} from '../src/overworld/state';
@@ -70,6 +70,9 @@ worldTest('adventure restart from main menu cancels safely then resets only the 
 },{scene:'scenes/arcade.scene.json'});
 
 renderTest('adventure restart menu control opens a safe confirmation at slim and wide sizes',async ctx=>{
+ const adventure={...initialAdventure(),cleared:{'encounter-1':{bestScore:100,clears:1}}};
+ const saved={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure}]};
+ ctx.services.mock('storage.read',{result:{found:true,version:1,savedAt:1,data:desktopSave.store(saved),recovered:false}});
  await ctx.loaded();await adventureStep(ctx,4);
  await intent(ctx,'menu');while(desktopState.get().titleRevealActive)await adventureStep(ctx,1);await adventureStep(ctx,2);
  for(const [width,height] of [[360,880],[2520,1080]]){
@@ -90,3 +93,16 @@ renderTest('adventure restart menu control opens a safe confirmation at slim and
   expect(desktopState.get().screen).toBe('menu');expect(desktopSaveState.get()).toEqual(before);
  }
 },{scene:'scenes/cartoon.scene.json',memory:'phone-low'});
+
+worldTest('main menu hides restart until adventure progress exists and ignores reset attempt counter',async()=>{
+ const state={...desktopState.get(),screen:'menu' as const,cartoon:true};
+ const fresh=initialAdventure();
+ expect(menuHasAdventureProgress(fresh)).toBe(false);
+ expect(menuHasAdventureProgress({...fresh,nextAttempt:12})).toBe(false);
+ expect(getDesktopButtons(state,initialDesktopSave).map(button=>button.key)).toEqual(['adventure-continue','adventure-arcade','settings','quit']);
+ for(const adventure of [{...fresh,pending:{id:'attempt-1',encounterId:'encounter-1',startingPower:null}},{...fresh,coins:5},{...fresh,cleared:{'encounter-1':{bestScore:0,clears:1}}},{...fresh,anchor:{...fresh.anchor,x:fresh.anchor.x+1}}]){
+  expect(menuHasAdventureProgress(adventure)).toBe(true);
+  const saved={...initialDesktopSave,profiles:[{...initialDesktopSave.profiles[0]!,adventure}]};
+  expect(getDesktopButtons(state,saved)[1]!.key).toBe('adventure-new');
+ }
+},{scene:'scenes/cartoon.scene.json'});

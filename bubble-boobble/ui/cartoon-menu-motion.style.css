@@ -1,0 +1,10 @@
+.menu-selection {width:100%;height:100%;pointer-events:none;}
+.menu-selection-art {position:absolute;left:-96px;top:50%;width:84px;height:66px;transform:translateY(-50%);pointer-events:none;overlap:attach;}
+.menu-selection-bubble,.menu-selection-shimmer {position:absolute;left:0;top:0;width:100%;height:100%;object-fit:contain;pointer-events:none;}
+.menu-selection-shimmer {opacity:0;mix-blend-mode:plus-lighter;}
+.menu-selection-narrow .menu-selection-art {left:-76px;transform:translateY(-50%) scale(.76);}
+.menu-selection-glints {position:absolute;left:10px;top:0;width:66px;height:66px;pointer-events:none;}
+.cartoon-menu.menu-calm .menu-selection {transition:none;}
+.cartoon-menu.menu-calm .menu-selection-glints {display:none;}
+.cartoon-menu .ud-cartoon-menu__cm_focus_slot,.cartoon-menu .ud-cartoon-menu__cm_focus,.cartoon-menu .ud-cartoon-menu__cm_audience {pointer-events:none;}
+@media (prefers-reduced-motion:reduce) {.menu-selection {transition:none;}}

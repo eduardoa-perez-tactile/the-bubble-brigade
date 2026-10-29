@@ -22,6 +22,7 @@
         "cm_title_curtain",
         "cm_curtain_label",
         "cm_composition",
+        "cm_audience",
         "cm_hint",
         "cm_status",
         "cm_progress"
@@ -54,7 +55,8 @@
         "cm_arcade_slot",
         "cm_settings_slot",
         "cm_quit_slot",
-        "cm_prompt"
+        "cm_prompt",
+        "cm_focus_slot"
       ]
     },
     "cm_spotlight": {
@@ -214,7 +216,8 @@
         },
         "compact": {
           "property": "narrow"
-        }
+        },
+        "showPointer": false
       }
     },
     "cm_arcade": {
@@ -234,7 +237,8 @@
         "art": "cartoon/menu/type/arcade",
         "compact": {
           "property": "narrow"
-        }
+        },
+        "showPointer": false
       }
     },
     "cm_settings": {
@@ -254,7 +258,8 @@
         "art": "cartoon/menu/type/options",
         "compact": {
           "property": "narrow"
-        }
+        },
+        "showPointer": false
       }
     },
     "cm_quit": {
@@ -280,7 +285,8 @@
         },
         "compact": {
           "property": "narrow"
-        }
+        },
+        "showPointer": false
       }
     },
     "cm_prompt": {
@@ -327,7 +333,7 @@
         ],
         "offset": [
           -36,
-          -26
+          -95
         ],
         "w": 450,
         "h": 36,
@@ -349,7 +355,7 @@
         ],
         "offset": [
           36,
-          -26
+          -95
         ],
         "w": 350,
         "h": 36,
@@ -371,7 +377,7 @@
         ],
         "offset": [
           0,
-          -45
+          -125
         ],
         "w": 600,
         "h": 24,
@@ -560,7 +566,8 @@
         ],
         "w": 390,
         "h": 48
-      }
+      },
+      "show": "showRestart"
     },
     "cm_restart": {
       "type": "use",
@@ -577,7 +584,81 @@
         },
         "compact": {
           "property": "narrow"
-        }
+        },
+        "showPointer": false
+      }
+    },
+    "cm_focus": {
+      "type": "codeArea",
+      "name": "Code area",
+      "key": "selection",
+      "style": {
+        "w": "100%",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "h": "100%",
+        "pad": 0
+      }
+    },
+    "cm_focus_slot": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "cm_focus"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.21,
+          0
+        ],
+        "pivot": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          318
+        ],
+        "w": 390,
+        "h": 48
+      }
+    },
+    "cm_audience": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          1
+        ],
+        "pivot": [
+          0.5,
+          1
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 210,
+        "image": "cartoon/menu/audience-foreground",
+        "fit": "fill"
       }
     }
   },
@@ -671,6 +752,12 @@
               ]
             },
             "cm_composition": {
+              "hide": true
+            },
+            "cm_focus": {
+              "hide": true
+            },
+            "cm_audience": {
               "hide": true
             }
           }
@@ -867,6 +954,22 @@
             },
             "cm_title_curtain": {
               "image": "cartoon/menu/curtain-tactile-portrait"
+            },
+            "cm_focus_slot": {
+              "anchor": [
+                0.5,
+                0
+              ],
+              "pivot": [
+                0.5,
+                0
+              ],
+              "offset": [
+                0,
+                540
+              ],
+              "w": 600,
+              "h": 96
             }
           }
         }
@@ -895,6 +998,48 @@
     "restartSelected": {
       "type": "yesno",
       "default": false
+    },
+    "showRestart": {
+      "type": "yesno",
+      "default": true
+    },
+    "freshMenu": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cm_arcade_slot": {
+              "ty": -48
+            },
+            "cm_settings_slot": {
+              "ty": -48
+            },
+            "cm_quit_slot": {
+              "ty": -48
+            }
+          }
+        }
+      }
+    },
+    "freshNarrow": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "cm_arcade_slot": {
+              "ty": -96
+            },
+            "cm_settings_slot": {
+              "ty": -96
+            },
+            "cm_quit_slot": {
+              "ty": -96
+            }
+          }
+        }
+      }
     }
   },
   "samples": {
