@@ -7,4 +7,4 @@ atlas = "menu-presentation"
 filter = "linear"
 compression = "astc6x6"
 trim = false
-max_size = 512
+max_size = 256

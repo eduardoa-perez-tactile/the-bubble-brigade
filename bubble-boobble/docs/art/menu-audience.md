@@ -1,6 +1,18 @@
 # Main-menu audience foreground
 
-Asset: `assets/cartoon/menu/audience-foreground.png` (2172 × 724, transparent PNG).
+Current asset: `assets/cartoon/menu/audience-corner-soft.png` (1254 × 1254, transparent PNG), generated with built-in ImageGen on October 29, 2026. This revised sprite contains one left-corner audience cluster with natural rounded proportions. Display it in a square box at each bottom corner, mirroring the right instance. This replaces stretching a full-width image and bakes substantially stronger defocus into the painted forms. The texture is capped at 512 texels at import.
+
+## Corner revision prompt
+
+Use case: style-transfer. Edit target: the supplied audience foreground image. Produce a new SQUARE 1024x1024 transparent sprite containing ONLY ONE LEFT-CORNER audience cluster, for a hand-painted cartoon theater menu. Recompose to 4 to 6 rounded backs of heads and overlapping shoulders facing away from viewer. Tallest head at far left, silhouettes slope downward toward right edge. Occupy bottom 60% at left and taper to bottom 15% at right; upper 40% transparent. Round heads must be natural rounded proportions, never horizontally stretched or flattened. Keep the existing muted dark navy, plum, warm brown vintage gouache color feel, but make this MUCH MORE OUT OF FOCUS than reference: very heavy soft defocus, diffuse feathered alpha edges, broad blurry painted masses, low contrast contours. Remove all crisp amber rim lines, remove identifiable hair/ear/hat details; any warm stage light is only a very broad faint glow. No crisp outlines anywhere. This is intentionally unfocused foreground depth, not readable characters. Keep hand-painted cartoon style, not photographic bokeh or photoreal humans. Heads and shoulders continue beyond the bottom and left canvas edges. Transparent background, no stage, no chairs, no text, no scenery. Needs to remain visibly soft and blurred even displayed small.
+
+## Final softness edit prompt
+
+Edit only softness and lighting of this square transparent cartoon audience sprite. Preserve square aspect, same exact 4–6 natural rounded backs of heads/shoulders composition, high on left and low toward right, and muted navy/plum/warmbrown palette. Make the OUTER TRANSPARENT CONTOUR dramatically softly defocused too: feather color and opacity gradually into true transparent alpha over a broad 25–40 pixel band, no hard cutout silhouette and no crisp rim. Reduce amber brightness by half; replace glowing outlines with barely perceptible broad warm painted tone. Internal forms remain heavily blurred and out of focus. Hand-painted gouache cartoon, not photoreal. No background at all: preserve genuine transparent alpha outside audience, no white/black matte, no halo rim color, no text. This is a foreground depth cue which should look obviously out of focus even when scaled down.
+
+## Original full-width source
+
+Superseded asset: `assets/cartoon/menu/audience-foreground.png` (2172 × 724, transparent PNG), retained in Git history. Removed from current assets after the square corner replacement to avoid shipping unused artwork.
 
 Generated with the built-in ImageGen tool on October 29, 2026, using the current Game Engine menu capture as a style and composition reference. Softness and defocus are baked into the generated artwork; no runtime blur or image post-processing is required.
 
