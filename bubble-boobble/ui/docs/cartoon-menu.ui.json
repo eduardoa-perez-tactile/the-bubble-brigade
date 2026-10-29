@@ -639,7 +639,10 @@
     "cm_audience": {
       "type": "element",
       "name": "Element",
-      "children": [],
+      "children": [
+        "cm_audience_left",
+        "cm_audience_right"
+      ],
       "style": {
         "pad": 0,
         "position": "anchored",
@@ -657,8 +660,60 @@
         ],
         "w": "100%",
         "h": 210,
-        "image": "cartoon/menu/audience-foreground",
         "fit": "fill"
+      }
+    },
+    "cm_audience_left": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          1
+        ],
+        "pivot": [
+          0,
+          1
+        ],
+        "offset": [
+          0,
+          65
+        ],
+        "w": 260,
+        "h": 260,
+        "image": "cartoon/menu/audience-corner-soft",
+        "fit": "contain",
+        "attach": true
+      }
+    },
+    "cm_audience_right": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          1,
+          1
+        ],
+        "pivot": [
+          1,
+          1
+        ],
+        "offset": [
+          0,
+          65
+        ],
+        "w": 260,
+        "h": 260,
+        "image": "cartoon/menu/audience-corner-soft",
+        "fit": "contain",
+        "flip": "x",
+        "attach": true
       }
     }
   },
