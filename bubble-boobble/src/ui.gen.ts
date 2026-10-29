@@ -47,6 +47,23 @@ declare module '@gameengine/ui' {
       refs: 'back';
     };
     /**
+     * Adventure options: a view, dialog (ui/docs/adventure-options.ui.json)
+     *
+     * Properties:
+     *   - `rows`: list of cartoon-option-row
+     *   - `profile`: text, default ""
+     *   - `status`: text, default ""
+     *   - `showStatus`: yesno, default false
+     * Events: `press (<item>)`
+     * Code areas: none
+     * Refs: none
+     */
+    'adventure-options': {
+      props: { rows: readonly { key: string; label?: string | { loc: string } | LocText; value?: string | { loc: string } | LocText; selected?: boolean; adjustable?: boolean }[]; profile: string | { loc: string } | LocText; status: string | { loc: string } | LocText; showStatus: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Adventure Pause: a view, dialog (ui/docs/adventure-pause.ui.json)
      *
      * Properties:

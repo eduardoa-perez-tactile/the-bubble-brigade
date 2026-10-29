@@ -1,0 +1,169 @@
+{
+  "$schemaVersion": 1,
+  "guid": "6f4df1ba-2627-4d73-9643-0a0d4ad922bd",
+  "name": "adventure-options",
+  "title": "Adventure options",
+  "kind": "view",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Adventure options",
+      "style": {
+        "w": "100%",
+        "h": "100%",
+        "pad": 24,
+        "align": "center",
+        "justify": "center"
+      },
+      "children": [
+        "ao_panel"
+      ]
+    },
+    "ao_panel": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ao_rule",
+        "ao_title",
+        "ao_hint",
+        "ao_rows",
+        "ao_profile",
+        "ao_status"
+      ],
+      "style": {
+        "pad": 24,
+        "w": 560,
+        "h": "auto",
+        "dir": "column",
+        "align": "center",
+        "gap": 10,
+        "bg": "#f5e9cd",
+        "radius": 18
+      }
+    },
+    "ao_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 3,
+        "bg": "#b88a40"
+      }
+    },
+    "ao_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "OPTIONS",
+      "style": {
+        "w": "100%",
+        "h": 46,
+        "fontSize": 34,
+        "fitMin": 24,
+        "color": "#214e4c",
+        "textAlign": "center"
+      }
+    },
+    "ao_hint": {
+      "type": "label",
+      "name": "Label",
+      "text": "SELECT TO CHANGE / LEFT AND RIGHT TO ADJUST",
+      "style": {
+        "w": "100%",
+        "h": 24,
+        "fontSize": 14,
+        "fitMin": 12,
+        "color": "#88603b",
+        "textAlign": "center"
+      }
+    },
+    "ao_rows": {
+      "type": "repeat",
+      "doc": "cartoon-option-row",
+      "property": "rows",
+      "style": {
+        "w": "100%",
+        "gap": 7
+      }
+    },
+    "ao_profile": {
+      "type": "label",
+      "name": "Label",
+      "text": "{profile}",
+      "style": {
+        "w": "100%",
+        "h": 24,
+        "fontSize": 14,
+        "fitMin": 11,
+        "color": "#88603b",
+        "textAlign": "center"
+      }
+    },
+    "ao_status": {
+      "type": "label",
+      "name": "Label",
+      "text": "{status}",
+      "style": {
+        "w": "100%",
+        "h": 40,
+        "fontSize": 14,
+        "fitMin": 11,
+        "color": "#214e4c",
+        "textAlign": "center"
+      },
+      "show": "showStatus"
+    }
+  },
+  "view": {
+    "behaviour": "dialog",
+    "dims": true,
+    "safe": true,
+    "enter": {
+      "set": {
+        "ao_panel": {
+          "opacity": 0,
+          "ty": 20,
+          "scale": 0.97
+        }
+      }
+    },
+    "exit": {
+      "set": {
+        "ao_panel": {
+          "opacity": 0,
+          "ty": 10,
+          "scale": 0.985
+        }
+      },
+      "transition": {
+        "type": "easeOut",
+        "ms": 140
+      }
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 220
+  },
+  "properties": {
+    "rows": {
+      "type": "list",
+      "of": "cartoon-option-row",
+      "default": []
+    },
+    "profile": {
+      "type": "text",
+      "default": ""
+    },
+    "status": {
+      "type": "text",
+      "default": ""
+    },
+    "showStatus": {
+      "type": "yesno",
+      "default": false
+    }
+  }
+}

@@ -11,19 +11,20 @@
       "name": "Cartoon option row",
       "style": {
         "dir": "row",
-        "pad": 0,
+        "pad": 10,
         "align": "center",
-        "radius": 0,
-        "w": 490,
-        "h": 44
+        "radius": 9,
+        "w": "100%",
+        "h": 48,
+        "gap": 8,
+        "bg": "#e8d5ad",
+        "justify": "space-between"
       },
       "children": [
         "op_label",
-        "op_value",
         "op_left",
-        "op_right",
-        "op_pointer",
-        "op_rule"
+        "op_value",
+        "op_right"
       ]
     },
     "op_label": {
@@ -32,20 +33,11 @@
       "text": "Label",
       "property": "label",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          24,
-          5
-        ],
-        "w": 210,
-        "h": 34,
-        "fontSize": 21,
-        "fitMin": 15,
-        "color": "#2d2a24"
+        "w": "48%",
+        "h": 30,
+        "fontSize": 20,
+        "fitMin": 14,
+        "color": "#254d4b"
       }
     },
     "op_value": {
@@ -54,21 +46,12 @@
       "text": "Value",
       "property": "value",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          270,
-          5
-        ],
-        "w": 180,
-        "h": 34,
+        "w": "34%",
+        "h": 30,
         "textAlign": "center",
-        "fontSize": 21,
+        "fontSize": 20,
         "fitMin": 14,
-        "color": "#2d2a24"
+        "color": "#254d4b"
       }
     },
     "op_left": {
@@ -76,19 +59,10 @@
       "name": "Label",
       "text": "<",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          240,
-          6
-        ],
-        "w": 26,
-        "h": 32,
+        "w": 18,
+        "h": 30,
         "fontSize": 20,
-        "color": "#2d2a24"
+        "color": "#254d4b"
       },
       "show": "adjustable"
     },
@@ -97,67 +71,18 @@
       "name": "Label",
       "text": ">",
       "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          454,
-          6
-        ],
-        "w": 26,
-        "h": 32,
+        "w": 18,
+        "h": 30,
         "fontSize": 20,
-        "color": "#2d2a24"
+        "color": "#254d4b"
       },
       "show": "adjustable"
-    },
-    "op_pointer": {
-      "type": "label",
-      "name": "Label",
-      "text": ">",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          0,
-          6
-        ],
-        "w": 22,
-        "h": 32,
-        "fontSize": 20,
-        "color": "#9e302b"
-      },
-      "show": "selected"
-    },
-    "op_rule": {
-      "type": "element",
-      "name": "Element",
-      "children": [],
-      "style": {
-        "pad": 0,
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          22,
-          43
-        ],
-        "w": 458,
-        "h": 1,
-        "bg": "#b4aa91"
-      }
     }
   },
   "behaviour": "button",
   "transition": {
-    "type": "instant"
+    "type": "easeOut",
+    "ms": 160
   },
   "properties": {
     "label": {
@@ -175,10 +100,19 @@
         "yes": {
           "set": {
             "op_label": {
-              "color": "#9e302b"
+              "color": "#fff0ca"
             },
             "op_value": {
-              "color": "#9e302b"
+              "color": "#fff0ca"
+            },
+            "root": {
+              "bg": "#245c5b"
+            },
+            "op_left": {
+              "color": "#fff0ca"
+            },
+            "op_right": {
+              "color": "#fff0ca"
             }
           }
         }
@@ -193,14 +127,22 @@
     "pressed": {
       "set": {
         "root": {
-          "tx": 2
+          "tx": 0,
+          "bg": "#b9863d",
+          "scale": 0.97,
+          "ty": 2
         }
+      },
+      "transition": {
+        "type": "easeOut",
+        "ms": 90
       }
     },
     "disabled": {
       "set": {
         "root": {
-          "opacity": 0.45
+          "opacity": 0.6,
+          "bg": "#b8a989"
         }
       }
     }

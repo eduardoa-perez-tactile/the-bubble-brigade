@@ -32,3 +32,40 @@
  .cartoon-account-settings .ud-cartoon-account__da_stats_name {top:966px;}
  .cartoon-account-settings .ud-cartoon-account__da_stats {top:1008px;}
 }
+
+/* Options opened from the map or an encounter share the Adventure menu surface. */
+.cartoon-options {width:100%;height:100%;font-family:"cartoon/fonts/BreeSerif-Regular";}
+.cartoon-options .ud-adventure-options__ao_panel {max-width:94%;border-width:4px;border-color:#285b59;}
+.cartoon-options .ud-adventure-options__ao_title {font-family:"cartoon/fonts/Rye-Regular";}
+.cartoon-options .ud-cartoon-option-row__root {border-width:1px;border-color:#b88a40;}
+.cartoon-options .ud-adventure-options__ao_status {white-space:pre-wrap;}
+@media (aspect < 0.85) {
+ .cartoon-options .ud-adventure-options__ao_panel {width:94%;padding:20px;gap:8px;}
+ .cartoon-options .ud-adventure-options__ao_title {height:58px;font-size:42px;text-fit:32px 42px;}
+ .cartoon-options .ud-adventure-options__ao_hint {height:42px;font-size:21px;text-fit:17px 21px;}
+ .cartoon-options .ud-adventure-options__ao_rows {gap:8px;}
+ .cartoon-options .ud-cartoon-option-row__root {height:96px;padding:12px;gap:8px;}
+ .cartoon-options .ud-cartoon-option-row__op_label,
+ .cartoon-options .ud-cartoon-option-row__op_value {height:64px;font-size:30px;text-fit:22px 30px;}
+ .cartoon-options .ud-cartoon-option-row__op_left,
+ .cartoon-options .ud-cartoon-option-row__op_right {width:26px;height:64px;font-size:30px;}
+ .cartoon-options .ud-adventure-options__ao_profile {height:36px;font-size:22px;text-fit:16px 22px;}
+ .cartoon-options .ud-adventure-options__ao_status {height:60px;font-size:21px;text-fit:17px 21px;}
+}
+@media (aspect < 0.55) {
+ .cartoon-options .ud-cartoon-option-row__root {height:106px;}
+}
+/* Tablets have room for readable compact rows without filling the whole height. */
+@media (aspect >= 0.7) and (aspect < 0.85) {
+ .cartoon-options .ud-adventure-options__ao_panel {width:560px;padding:24px;gap:10px;}
+ .cartoon-options .ud-adventure-options__ao_title {height:46px;font-size:34px;text-fit:24px 34px;}
+ .cartoon-options .ud-adventure-options__ao_hint {height:24px;font-size:14px;text-fit:12px 14px;}
+ .cartoon-options .ud-adventure-options__ao_rows {gap:7px;}
+ .cartoon-options .ud-cartoon-option-row__root {height:56px;padding:10px;gap:8px;}
+ .cartoon-options .ud-cartoon-option-row__op_label,
+ .cartoon-options .ud-cartoon-option-row__op_value {height:36px;font-size:20px;text-fit:14px 20px;}
+ .cartoon-options .ud-cartoon-option-row__op_left,
+ .cartoon-options .ud-cartoon-option-row__op_right {width:18px;height:36px;font-size:20px;}
+ .cartoon-options .ud-adventure-options__ao_profile {height:24px;font-size:14px;text-fit:11px 14px;}
+ .cartoon-options .ud-adventure-options__ao_status {height:40px;font-size:14px;text-fit:11px 14px;}
+}
