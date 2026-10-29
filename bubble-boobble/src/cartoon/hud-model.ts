@@ -4,6 +4,7 @@ import { partyColors, partyNames } from '../arcade/party-config';
 import { hudModel, type HudModel } from '../desktop/hud.view';
 import type { DesktopSave } from '../desktop/save';
 import { introCue, type IntroCue, type IntroPresentation } from './intro-cue';
+import { hurryCue, type HurryCue } from './hurry-cue';
 
 export type RosterCondition = 'ready' | 'rescue' | 'returning' | 'out' | 'open';
 export interface RosterSlot {
@@ -17,7 +18,7 @@ export interface RosterSlot {
   active: boolean;
   down: boolean;
 }
-export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>> {
+export interface CartoonHudModel extends HudModel, Partial<Omit<IntroCue, 'showStartCue'>>, Partial<HurryCue> {
   showActComplete?:boolean; episode?:boolean; bossActive?: boolean; bossHealth?: number; bossMaximum?: number; bossCaptured?: boolean; bossVictory?: boolean;
   classicPortrait?: string;
   waveLabel?: string;
@@ -37,7 +38,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
     const act = (game.EpisodeWave ?? 0) + 1;
     const intermission = !!episode && (game.EpisodeIntermission ?? 0) > 0;
     const showIntermission = intermission && shade === 'normal' && !game.Paused && !presentation?.covered;
-    return { ...base, ...cue, ...(episode ? {
+    return { ...base, ...cue, ...hurryCue(game, !!save.settings.reducedEffects, shade === 'normal', presentation), ...(episode ? {
       episode: true, showStatus: acts > 1, round: episode.title.toUpperCase(),
       banner: intermission ? 'ACT CLEAR!' : game.State === State.Clearing ? 'EPISODE CLEAR!' : base.banner,
       hint: intermission ? '' : base.hint,
@@ -45,7 +46,7 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
       highTitle: acts > 1 ? 'ACT' : 'EPISODE', high: acts > 1 ? `${act} / ${acts}` : String(game.Level.number),
     } : {}), startCue, startHint: '',
       showActComplete: showIntermission,
-      showBanner: !intermission && base.showBanner && game.State !== State.Ready,
+      showBanner: !intermission && base.showBanner && game.State !== State.Ready && !(game.Hurry && game.State === State.Playing),
       classicPortrait: `cartoon/reconstruction/ui/portraits/${save.profiles[save.active]?.avatar ?? 'green'}` };
   }
   const roster = partyColors.map((skin, slot): RosterSlot => {
