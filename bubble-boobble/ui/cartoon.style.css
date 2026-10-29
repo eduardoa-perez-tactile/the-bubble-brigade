@@ -28,6 +28,9 @@
 .cartoon-settings-portrait { width: 60px; height: 60px; }
 /* Gameplay canvas: stretch across safe width, retain the stage's720px height. */
 .cartoon-hud { width: 100%; height: 720px; }
+/* A brief upper-stage cue: keep the approved size on wide windows and leave
+   breathing room on narrow windows. It never draws a panel or a subtitle. */
+.cartoon-hud .ud-cartoon-hud__ch_hurry { max-width: 65%; pointer-events: none; }
 .cartoon-hud .ud-cartoon-hud__ch_brand { font-family: "cartoon/fonts/Rye-Regular"; }
 .cartoon-hud .ud-cartoon-hud__ch_roster_wide { display: none; }
 /* Shared with cartoonHudFooterHeight: ten faces in one row at aspect>=1.6. */

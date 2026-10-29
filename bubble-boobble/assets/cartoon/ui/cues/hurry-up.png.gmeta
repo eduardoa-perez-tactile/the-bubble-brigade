@@ -1,0 +1,10 @@
+guid = "6fde903d-eadb-46f3-aa74-c5b3454cd702"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "cartoon-cues"
+filter = "linear"
+compression = "none"
+max_size = 1024
+trim = true

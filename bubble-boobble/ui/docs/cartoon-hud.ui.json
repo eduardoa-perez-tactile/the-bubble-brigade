@@ -29,7 +29,8 @@
         "ch_banner",
         "ch_freeze",
         "ch_start",
-        "ch_act_complete"
+        "ch_act_complete",
+        "ch_hurry"
       ]
     },
     "ch_top": {
@@ -1409,6 +1410,41 @@
         "pivot": "centre"
       },
       "point": "act-complete-title"
+    },
+    "ch_hurry": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_hurry_art"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          64
+        ],
+        "w": 430,
+        "h": 160
+      },
+      "show": "showHurryCue",
+      "point": "hurry-cue"
+    },
+    "ch_hurry_art": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "image": "cartoon/ui/cues/hurry-up",
+        "w": "100%",
+        "h": "100%",
+        "fit": "contain"
+      }
     }
   },
   "view": {
@@ -1848,6 +1884,170 @@
     "showActComplete": {
       "type": "yesno",
       "default": false
+    },
+    "showHurryCue": {
+      "type": "yesno",
+      "default": false
+    },
+    "hurryStage": {
+      "type": "enum",
+      "values": [
+        "off",
+        "enter",
+        "hold",
+        "out"
+      ],
+      "default": "off",
+      "poses": {
+        "enter": {
+          "set": {
+            "ch_hurry": {
+              "scale": 0.9
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "hold": {
+          "set": {
+            "ch_hurry": {
+              "scale": 1
+            }
+          },
+          "transition": {
+            "type": "easeOut",
+            "ms": 100
+          }
+        },
+        "out": {
+          "set": {
+            "ch_hurry": {
+              "scale": 1
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "off": {
+          "set": {
+            "ch_hurry": {
+              "scale": 1
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        }
+      }
+    },
+    "hurryFade": {
+      "type": "enum",
+      "values": [
+        "zero",
+        "eighth",
+        "quarter",
+        "three-eighths",
+        "half",
+        "five-eighths",
+        "three-quarters",
+        "seven-eighths",
+        "full"
+      ],
+      "default": "full",
+      "poses": {
+        "zero": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "eighth": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.125
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "quarter": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.25
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "three-eighths": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.375
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "half": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.5
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "five-eighths": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.625
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "three-quarters": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.75
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "seven-eighths": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 0.875
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        },
+        "full": {
+          "set": {
+            "ch_hurry": {
+              "opacity": 1
+            }
+          },
+          "transition": {
+            "type": "instant"
+          }
+        }
+      }
     }
   },
   "transition": {
@@ -1870,6 +2070,12 @@
     },
     "smear": {
       "cueFade": "full"
+    },
+    "hurry": {
+      "showHurryCue": true,
+      "hurryStage": "hold",
+      "hurryFade": "full",
+      "episode": true
     }
   }
 }
