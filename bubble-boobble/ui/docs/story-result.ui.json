@@ -25,11 +25,7 @@
       "type": "element",
       "name": "Element",
       "children": [
-        "sr_rule",
-        "sr_episode",
-        "sr_title",
-        "sr_score_row",
-        "sr_reward_row",
+        "sr_board",
         "sr_buttons",
         "sr_hint"
       ],
@@ -301,6 +297,23 @@
         "textAlign": "center",
         "color": "#fff0ca"
       }
+    },
+    "sr_board": {
+      "type": "element",
+      "name": "Mission blackboard",
+      "children": [
+        "sr_rule",
+        "sr_episode",
+        "sr_title",
+        "sr_score_row",
+        "sr_reward_row"
+      ],
+      "style": {
+        "w": "100%",
+        "pad": 0,
+        "dir": "column",
+        "gap": 12
+      }
     }
   },
   "view": {
@@ -347,7 +360,56 @@
     },
     "victory": {
       "type": "yesno",
-      "default": false
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "sr_panel": {
+              "bg": "#00000000",
+              "pad": 0,
+              "radius": 0
+            },
+            "sr_board": {
+              "image": "cartoon/ui/results/scoreboard",
+              "pad": [
+                36,
+                48,
+                36,
+                48
+              ]
+            },
+            "sr_rule": {
+              "hide": true
+            },
+            "sr_episode": {
+              "color": "#ffd366"
+            },
+            "sr_title": {
+              "color": "#fff1cb"
+            },
+            "sr_score_label": {
+              "color": "#f7edc9"
+            },
+            "sr_score": {
+              "color": "#ffd366"
+            },
+            "sr_reward_row": {
+              "bg": "#00000000",
+              "pad": 0,
+              "radius": 0
+            },
+            "sr_reward_label": {
+              "color": "#f7edc9"
+            },
+            "sr_reward_value": {
+              "color": "#ffd366"
+            },
+            "sr_hint": {
+              "color": "#fff1cb"
+            }
+          }
+        }
+      }
     }
   }
 }
