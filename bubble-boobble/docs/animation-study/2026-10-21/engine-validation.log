@@ -1,0 +1,12 @@
+[v8] host: /Applications/Tactile Game Engine.app/Contents/Resources/engine/target/release/gameengine-host (release)
+6 host processes, 6 at a time (--jobs 6)
+✓ [v8] expanded dragon animation visits eight walk poses and six shoot poses with a slower walk and the original shot duration  (0 steps, 91b7f1445aac3ab4)
+✓ [v8] expanded dragon animation all colors retain anchored frames and input step firing  (0 steps, 91b7f1445aac3ab4)
+✓ [v8 · t1] expanded dragon animation real walk cycle shot recovery and return to idle  (54 steps, 191c5adb902b0b8b)
+    │ {"peakDrawCalls":13,"walkFrames":8,"shootFrames":6}
+✓ [v8] expanded enemy animation eight distinct poses loop at family cadence in normal and angry states  (0 steps, 91b7f1445aac3ab4)
+✓ [v8] expanded enemy animation hopper articulation keeps body rigid feet anchored and seams joined  (0 steps, 91b7f1445aac3ab4)
+✓ [v8] expanded enemy animation flight uses stable body landmarks and preparation wings do not freeze or change simulation  (0 steps, 91b7f1445aac3ab4)
+✓ [v8 · t1] expanded enemy animation full walking and wing cycles render in combat across desktop aspects  (51 steps, 6573c49a2831a549)
+    │ {"peakDrawCalls":12,"expandedEnemyFamilies":5,"hopperRig":true}
+7 passed, 0 failed
