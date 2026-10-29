@@ -20,8 +20,10 @@ and golden/replay baselines are unchanged.
   was removed after playtest feedback). Rotation is computed in code from
   the existing 50-tick flight, about the painted center, in the launch direction.
   Reduced effects show full-size enemies immediately without rotation.
-- The last unresolved enemy becomes red and uses the existing angry speed,
-  without an extra multiplier. A short tint/scale pulse announces new rage.
+- The last unresolved enemy keeps its original colours and uses the existing
+  angry speed without an extra multiplier. An outlined red cartoon anger mark
+  remains above its head; two brief steam puffs and a 26-tick squash/stretch
+  announce new rage. Reduced effects keep the static anger mark alone.
   Pending Party reinforcements and future Adventure acts prevent early rage.
   Captives keep their bubble presentation and escape angry.
 - Ground families use distance-driven wheel cadence, feet-pivot lean, spring
@@ -58,6 +60,14 @@ node tools/cartoon/capture-enemy-juice.mjs
   unchanged `main`. No changed-file TypeScript diagnostics were reported.
 - Cross-review identified the disappearing final Party defeat; the retained
   rest-phase flight and reward regression test address it.
+
+Follow-up colour/indicator verification: four focused size-transition T0 cases
+pass after removing the defeat blue tint; 14 focused `enemy juice` T0 cases pass
+after replacing the red body tint with the anger mark. Reviewed onset, squash,
+stretch, settled rage and all-family captures at both 360×880 and 1680×720
+(10 frames, peak 15 mobile-tier draws, no render validation errors). Marker
+logic covers all six families, HUD bounds, reduced effects and lifecycle cleanup.
+These captures remain in ignored `.cache/rage-indicator`.
 
 Per PROJECT.md's prototype mode, full suites, Hermes parity, golden/replay
 sweeps, pipeline recordings, cooks, cooked smoke, and physical phone profiling

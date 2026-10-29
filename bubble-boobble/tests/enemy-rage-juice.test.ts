@@ -8,7 +8,7 @@ import {updateLastEnemyRage} from '../src/arcade/enemy-rage';
 import {updateEnemies} from '../src/arcade/enemies';
 import {blocked} from '../src/arcade/physics';
 import {bubble,updateBubbles} from '../src/arcade/bubbles';
-import {cartoonEnemyTint,simplifiedEnemyDraws} from '../src/cartoon/enemy-motion';
+import {cartoonEnemyRagePose,simplifiedEnemyDraws} from '../src/cartoon/enemy-motion';
 import {EnemyState,State,type GameState} from '../src/arcade/types';
 const scene='scenes/cartoon.scene.json';
 const idle={Move:0,Jump:false,Fire:false};
@@ -60,9 +60,9 @@ worldTest('enemy juice unresolved captives count until defeat and the last capti
   const trapped=arrange(createGame([createCartoonArena(campaign[0]!)],42)),last=trapped.Enemies[0]!;
   last.State=EnemyState.Trapped;
   trapped.Bubbles=[{...bubble(last.X,last.Y),ID:++trapped.NextID,EnemyID:last.ID,Floating:true,Age:60,CapturedAge:1270}];
-  updateLastEnemyRage(trapped);expect(last.Angry).toBe(true);expect(cartoonEnemyTint(last)).toBe(undefined);
+  updateLastEnemyRage(trapped);expect(last.Angry).toBe(true);expect(cartoonEnemyRagePose(last)).toEqual({scaleX:1,scaleY:1});
   updateBubbles(trapped,[]);expect(last.State).toBe(EnemyState.Active);expect(last.Angry).toBe(true);
-  expect(cartoonEnemyTint(last)![1]<.5).toBe(true);
+  expect(simplifiedEnemyDraws({...last,Kind:'mighta'},last.Age,124)[0]!.color).toBe(undefined);
 },{scene});
 worldTest('enemy juice family motion is read only feet anchored and rage remains readable with reduced effects',()=>{
   const g=arrange(createGame([createCartoonArena(campaign[0]!)],42)),e=g.Enemies[0]!;
@@ -71,10 +71,10 @@ worldTest('enemy juice family motion is read only feet anchored and rage remains
     Object.assign(e,{Kind:kind,Ground:true,X:512,Age:12});
     const before=JSON.stringify(g),draw=simplifiedEnemyDraws(e,12,124)[0]!;
     expect(Math.abs(draw.y+draw.height*120/128-e.Y-44)<.00001).toBe(true);
-    expect(draw.color![1]<.5).toBe(true);
+    expect(draw.color).toBe(undefined);
     const reduced=simplifiedEnemyDraws(e,12,124,true)[0]!;
     expect(reduced.width).toBe(124);expect(reduced.height).toBe(124);expect(reduced.rotation).toBe(0);
-    expect(reduced.color).toEqual([1,.48,.42,1]);expect(JSON.stringify(g)).toBe(before);
+    expect(reduced.color).toBe(undefined);expect(JSON.stringify(g)).toBe(before);
   }
   e.Kind='mighta';e.Angry=false;e.Shoot=-22;const start=simplifiedEnemyDraws(e,12,124)[0]!;
   e.Shoot=-1;const charged=simplifiedEnemyDraws(e,12,124)[0]!;expect(charged.height<start.height).toBe(true);

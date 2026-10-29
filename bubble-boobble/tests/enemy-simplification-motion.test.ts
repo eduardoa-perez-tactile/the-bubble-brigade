@@ -50,7 +50,7 @@ worldTest('enemy juice simplified rollers follow distance and retain a travellin
     expect(simplifiedEnemyState(e,8)).toBe('air');
     e.Ground=true;e.Angry=true;
     expect(simplifiedEnemyState(e,8)).toBe('travel-1');
-    expect(simplifiedEnemyDraws(e,8,80)[0]!.color![1]<.5).toBe(true);
+    expect(simplifiedEnemyDraws(e,8,80)[0]!.color).toBe(undefined);
   }
 });
 
