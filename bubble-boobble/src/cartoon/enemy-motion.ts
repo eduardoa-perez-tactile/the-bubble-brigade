@@ -18,13 +18,16 @@ export function simplifiedEnemyState(e:Readonly<Enemy>,_tick:number,reduced=fals
   return !reduced&&Math.floor(Math.abs(e.X)/exposure)%2===1?'travel-1':'travel-0';
 }
 
-/** Essential status is retained with reduced effects. The short onset pulse
- * settles into a strong red wash instead of replacing locomotion with a still. */
-export function cartoonEnemyTint(e:Readonly<Enemy>,reduced=false):CartoonDraw['color'] {
-  if(!e.Angry||e.State!==EnemyState.Active)return;
-  const age=e.RageAge===undefined?Infinity:Math.max(0,e.Age-e.RageAge);
-  const pulse=!reduced&&age<24?Math.sin(age/24*Math.PI):0;
-  return [1,.48-.20*pulse,.42-.18*pulse,1];
+/** One short tantrum on activation, sampled from the stopped enemy clock.
+ * Status itself belongs to the anger mark, never a wash over the artwork. */
+const ragePoseKeys=[[0,1,1],[7,1.14,.84],[13,.9,1.12],[20,1.03,.97],[26,1,1]] as const;
+export function cartoonEnemyRagePose(e:Readonly<Enemy>,reduced=false){
+  const age=e.RageAge===undefined?Infinity:e.Age-e.RageAge;
+  if(reduced||!e.Angry||e.State!==EnemyState.Active||age<0||age>=26)return {scaleX:1,scaleY:1};
+  const keys=ragePoseKeys;
+  let index=0;while(index<keys.length-2&&age>keys[index+1]![0])index++;
+  const a=keys[index]!,b=keys[index+1]!,t=(age-a[0])/(b[0]-a[0]),ease=t*t*(3-2*t);
+  return {scaleX:a[1]+(b[1]-a[1])*ease,scaleY:a[2]+(b[2]-a[2])*ease};
 }
 
 /** Single-piece toys keep the painted contact row fixed. Body lean, squash and
@@ -77,11 +80,10 @@ export function simplifiedEnemyDraws(e:Readonly<Enemy>,tick:number,size:number,r
         rotation*=1-settle;
       }
     }
-    const rageAge=e.RageAge===undefined?Infinity:Math.max(0,e.Age-e.RageAge);
-    if(rageAge<24){const announce=Math.sin(rageAge/24*Math.PI);sx+=.04*announce;sy+=.04*announce;}
+    const tantrum=cartoonEnemyRagePose(e);sx*=tantrum.scaleX;sy*=tantrum.scaleY;
   }
   const width=size*sx,height=size*sy;
   return [{frame:`enemy/${e.Kind}/simple-${state}`,
     x:e.X+22-width/2+dx,y:e.Y+44-height*120/128,width,height,flip:e.Dir<0,
-    rotation,pivot:[.5,120/128],color:cartoonEnemyTint(e,reduced)}];
+    rotation,pivot:[.5,120/128]}];
 }
