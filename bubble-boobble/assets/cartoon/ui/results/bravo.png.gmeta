@@ -1,0 +1,10 @@
+guid = "9a56a066-8625-410d-99ff-26601fc35044"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "cartoon-results-art"
+filter = "linear"
+compression = "none"
+trim = false
+max_size = 1536

@@ -937,7 +937,7 @@ declare module '@gameengine/ui' {
      *   - `ready`: yesno, default false
      *   - `metrics`: list of victory-metric
      *   - `ranking`: list of victory-rank
-     *   - `buttons`: list of victory-action
+     *   - `buttons`: list of overworld-button
      * Events: `press (<item>)`
      * Code areas: none
      * Refs: `results-title`, `hero`, `scoreboard`, `team-board`, `ranking-list`, `ranking-ribbon`, `actions`, `input-hint`
@@ -1687,23 +1687,24 @@ declare module '@gameengine/ui' {
       refs: 'art';
     };
     /**
-     * Story result: a view, dialog (ui/docs/story-result.ui.json)
+     * Story result: a view, screen (ui/docs/story-result.ui.json)
      *
      * Properties:
      *   - `episode`: text, default "LANTERN LANDING"
-     *   - `title`: text, default ""
+     *   - `title`: text, default "MISSION CLEARED"
      *   - `score`: text, default "0000000"
      *   - `rewardLabel`: text, default "FIRST-CLEAR REWARD"
      *   - `rewardValue`: text, default "+10 COINS"
      *   - `hint`: text, default "ENTER / A TO CONFIRM"
      *   - `buttons`: list of overworld-button
-     *   - `showOutcomeTitle`: yesno, default false
+     *   - `showOutcomeTitle`: yesno, default true
+     *   - `victory`: yesno, default false
      * Events: `press (<item>)`
      * Code areas: none
      * Refs: `summary-panel`, `outcome-title`
      */
     'story-result': {
-      props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showOutcomeTitle: boolean };
+      props: { episode: string | { loc: string } | LocText; title: string | { loc: string } | LocText; score: string | { loc: string } | LocText; rewardLabel: string | { loc: string } | LocText; rewardValue: string | { loc: string } | LocText; hint: string | { loc: string } | LocText; buttons: readonly { key: string; label?: string | { loc: string } | LocText; selected?: boolean }[]; showOutcomeTitle: boolean; victory: boolean };
       areas: never;
       refs: 'summary-panel' | 'outcome-title';
     };

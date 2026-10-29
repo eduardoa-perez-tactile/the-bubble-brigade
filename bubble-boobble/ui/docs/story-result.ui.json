@@ -12,12 +12,13 @@
       "style": {
         "w": "100%",
         "h": "100%",
-        "pad": 20,
+        "pad": 0,
         "align": "center",
         "justify": "center"
       },
       "children": [
-        "sr_panel"
+        "sr_backdrop",
+        "sr_stage"
       ]
     },
     "sr_panel": {
@@ -34,13 +35,22 @@
       ],
       "style": {
         "pad": 24,
-        "w": 470,
+        "w": 520,
         "h": "auto",
         "dir": "column",
         "align": "center",
         "gap": 12,
         "bg": "#f5e9cd",
-        "radius": 18
+        "radius": 18,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "offset": [
+          0,
+          0
+        ]
       },
       "point": "summary-panel"
     },
@@ -74,8 +84,8 @@
       "text": "{title}",
       "style": {
         "w": "100%",
-        "h": 52,
-        "fontSize": 34,
+        "h": 46,
+        "fontSize": 30,
         "fitMin": 22,
         "textAlign": "center",
         "color": "#214e4c"
@@ -182,17 +192,120 @@
       "text": "{hint}",
       "style": {
         "w": "100%",
-        "h": 34,
-        "fontSize": 16,
+        "h": 24,
+        "fontSize": 13,
         "fitMin": 13,
         "textAlign": "center",
         "color": "#8a6436"
       }
+    },
+    "sr_backdrop": {
+      "type": "icon",
+      "image": "cartoon/ui/results/backdrop",
+      "show": "victory",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "w": "100%",
+        "h": "100%",
+        "fit": "cover",
+        "safeArea": "full"
+      }
+    },
+    "sr_stage": {
+      "type": "element",
+      "children": [
+        "sr_headline",
+        "sr_hero",
+        "sr_caption",
+        "sr_panel"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ],
+        "pivot": "centre",
+        "w": "96%",
+        "h": "100%",
+        "align": "center",
+        "justify": "center"
+      }
+    },
+    "sr_headline": {
+      "type": "icon",
+      "image": "cartoon/ui/results/bravo",
+      "show": "victory",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          8
+        ],
+        "w": "70%",
+        "h": 176,
+        "fit": "contain"
+      }
+    },
+    "sr_hero": {
+      "type": "icon",
+      "image": "cartoon/ui/results/hero",
+      "show": "victory",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.25,
+          0
+        ],
+        "pivot": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          218
+        ],
+        "w": "40%",
+        "h": 380,
+        "fit": "contain"
+      }
+    },
+    "sr_caption": {
+      "type": "label",
+      "text": "ONWARD, BRIGADE!",
+      "show": "victory",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.25,
+          0
+        ],
+        "offset": [
+          0,
+          606
+        ],
+        "w": "42%",
+        "h": 28,
+        "fontSize": 22,
+        "fitMin": 16,
+        "textAlign": "center",
+        "color": "#fff0ca"
+      }
     }
   },
   "view": {
-    "behaviour": "dialog",
-    "dims": true
+    "behaviour": "screen",
+    "safe": true
   },
   "transition": {
     "type": "easeOut",
@@ -205,7 +318,7 @@
     },
     "title": {
       "type": "text",
-      "default": ""
+      "default": "MISSION CLEARED"
     },
     "score": {
       "type": "text",
@@ -229,6 +342,10 @@
       "default": []
     },
     "showOutcomeTitle": {
+      "type": "yesno",
+      "default": true
+    },
+    "victory": {
       "type": "yesno",
       "default": false
     }
