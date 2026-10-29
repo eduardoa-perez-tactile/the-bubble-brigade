@@ -9,16 +9,7 @@ export const cartoonVerticalMetric=1728/1280;
 
 /** Collision keeps its original inner wall face. Landscape fits the complete
  * exterior silhouette; portrait fits its inner band to preserve actor size. */
-export const STORY_ROOM_WALL_WIDTH=192;
 export const STORY_ROOM_OUTER_MARGIN=48;
-export const STORY_ROOM_FOUNDATION_HEIGHT=80;
-export const STORY_ROOM_CONTACT_SHADOW_DEPTH=16;
-
-/** Height for shared foundation modules. Registered families draw original
- * floor depths from their source metadata instead of stretching these modules. */
-export function storyRoomFoundationHeight(level:Level){
-  return storyRoomReferenceComposition(level)?.foundationHeight??STORY_ROOM_FOUNDATION_HEIGHT;
-}
 
 /** Static presentation bounds for differently sized Adventure rooms. The
  * canonical non-story courtyard retains its established composition, including Party. */
@@ -43,10 +34,10 @@ export function compactAdventureFrame(level:Level){
       +CARTOON_ENEMY_SIZE*120/128;
     aboveFloor=Math.max(aboveFloor,flightTop);
   }
-  // Shared modules reserve their foundation/shadow. Reference compositions keep
-  // their low walkable floor and allow decorative plinths behind the footer.
+  // Reference compositions keep their low walkable floor and allow decorative
+  // plinths behind the footer; the playable crown remains fully reserved.
   const belowFloor=storyRoomReferenceComposition(level)?.reserveBelowFloor
-    ??20*cartoonVerticalMetric+STORY_ROOM_FOUNDATION_HEIGHT+STORY_ROOM_CONTACT_SHADOW_DEPTH;
+    ??40;
   const framingWidth=width+2*STORY_ROOM_OUTER_MARGIN;
   const fullFramingWidth=width+2*storyRoomExteriorMargin(level);
   return {width,framingWidth,fullFramingWidth,floorFeet,floorProjected,aboveFloor,belowFloor};

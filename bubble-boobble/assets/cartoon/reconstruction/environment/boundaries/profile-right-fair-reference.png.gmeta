@@ -1,0 +1,9 @@
+guid = "5aa36357-f1a6-457e-8d8c-195a910b8959"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "compact-room-fair"
+filter = "linear"
+compression = "none"
+trim = false

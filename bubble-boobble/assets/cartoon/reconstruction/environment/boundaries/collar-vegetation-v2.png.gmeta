@@ -1,9 +1,0 @@
-guid = "ee320873-adab-5f19-a14b-7324eae5103d"
-importer = "texture"
-
-[settings]
-kind = "sprite"
-atlas = "story-boundaries-vegetation"
-filter = "linear"
-compression = "none"
-trim = false
