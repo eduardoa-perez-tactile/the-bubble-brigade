@@ -367,12 +367,13 @@ declare module '@gameengine/ui' {
      *   - `color`: enum green | blue | red | yellow | purple | orange | cyan | pink | ivory | slate, default "green"
      *   - `label`: text, default "BUB"
      *   - `portrait`: image, default "cartoon/frames/dragon/green/idle-0"
+     *   - `empty`: yesno, default false
      * Events: `<id>`
      * Code areas: none
      * Refs: none
      */
     'cartoon-dragon-card': {
-      props: { modeLabel: string | { loc: string } | LocText; selected: boolean; color: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; label: string | { loc: string } | LocText; portrait: string };
+      props: { modeLabel: string | { loc: string } | LocText; selected: boolean; color: 'green' | 'blue' | 'red' | 'yellow' | 'purple' | 'orange' | 'cyan' | 'pink' | 'ivory' | 'slate'; label: string | { loc: string } | LocText; portrait: string; empty: boolean };
       areas: never;
       refs: never;
     };
@@ -677,14 +678,24 @@ declare module '@gameengine/ui' {
      *   - `sel8`: yesno, default false
      *   - `mode9`: text, default "AI TEAMMATE"
      *   - `sel9`: yesno, default false
-     * Events: `dragon-0`, `dragon-1`, `dragon-2`, `dragon-3`, `dragon-4`, `dragon-5`, `start-party`, `menu`, `dragon-6`, `dragon-7`, `dragon-8`, `dragon-9`
+     *   - `empty0`: yesno, default false
+     *   - `empty1`: yesno, default false
+     *   - `empty2`: yesno, default false
+     *   - `empty3`: yesno, default false
+     *   - `empty4`: yesno, default false
+     *   - `empty5`: yesno, default false
+     *   - `empty6`: yesno, default false
+     *   - `empty7`: yesno, default false
+     *   - `empty8`: yesno, default false
+     *   - `empty9`: yesno, default false
+     * Events: `dragon-0`, `dragon-1`, `dragon-2`, `dragon-3`, `dragon-4`, `dragon-5`, `dragon-6`, `dragon-7`, `dragon-8`, `dragon-9`, `start-party`, `menu`
      * Code areas: none
-     * Refs: `dragon-0`, `dragon-1`, `dragon-2`, `dragon-3`, `dragon-4`, `dragon-5`, `start-party`, `menu`, `dragon-6`, `dragon-7`, `dragon-8`, `dragon-9`
+     * Refs: `dragon-0`, `dragon-1`, `dragon-2`, `dragon-3`, `dragon-4`, `dragon-5`, `dragon-6`, `dragon-7`, `dragon-8`, `dragon-9`, `start-party`, `menu`
      */
     'cartoon-party': {
-      props: { status: string | { loc: string } | LocText; heading: string | { loc: string } | LocText; mode0: string | { loc: string } | LocText; sel0: boolean; mode1: string | { loc: string } | LocText; sel1: boolean; mode2: string | { loc: string } | LocText; sel2: boolean; mode3: string | { loc: string } | LocText; sel3: boolean; mode4: string | { loc: string } | LocText; sel4: boolean; mode5: string | { loc: string } | LocText; sel5: boolean; startSelected: boolean; backSelected: boolean; startLabel: string | { loc: string } | LocText; mode6: string | { loc: string } | LocText; sel6: boolean; mode7: string | { loc: string } | LocText; sel7: boolean; mode8: string | { loc: string } | LocText; sel8: boolean; mode9: string | { loc: string } | LocText; sel9: boolean };
+      props: { status: string | { loc: string } | LocText; heading: string | { loc: string } | LocText; mode0: string | { loc: string } | LocText; sel0: boolean; mode1: string | { loc: string } | LocText; sel1: boolean; mode2: string | { loc: string } | LocText; sel2: boolean; mode3: string | { loc: string } | LocText; sel3: boolean; mode4: string | { loc: string } | LocText; sel4: boolean; mode5: string | { loc: string } | LocText; sel5: boolean; startSelected: boolean; backSelected: boolean; startLabel: string | { loc: string } | LocText; mode6: string | { loc: string } | LocText; sel6: boolean; mode7: string | { loc: string } | LocText; sel7: boolean; mode8: string | { loc: string } | LocText; sel8: boolean; mode9: string | { loc: string } | LocText; sel9: boolean; empty0: boolean; empty1: boolean; empty2: boolean; empty3: boolean; empty4: boolean; empty5: boolean; empty6: boolean; empty7: boolean; empty8: boolean; empty9: boolean };
       areas: never;
-      refs: 'dragon-0' | 'dragon-1' | 'dragon-2' | 'dragon-3' | 'dragon-4' | 'dragon-5' | 'start-party' | 'menu' | 'dragon-6' | 'dragon-7' | 'dragon-8' | 'dragon-9';
+      refs: 'dragon-0' | 'dragon-1' | 'dragon-2' | 'dragon-3' | 'dragon-4' | 'dragon-5' | 'dragon-6' | 'dragon-7' | 'dragon-8' | 'dragon-9' | 'start-party' | 'menu';
     };
     /**
      * Cartoon pause: a view, dialog (ui/docs/cartoon-pause.ui.json)

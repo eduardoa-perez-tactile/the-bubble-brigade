@@ -26,18 +26,18 @@ renderTest('cartoon theatrical menus preserve touch navigation across screen sha
     expect(desktopState.get().screen).toBe('overworld');
     input.emit(DesktopIntent,{action:'overworld-main-menu'});await step(2);
     render.stats({width,height});
-    const arcade=ui.interactables().find(button=>button.label==='ARCADE MODES')!;
+    const arcade=ui.interactables().find(button=>button.label==='PARTY PLAY')!;
     await ui.press(arcade.id!);await step(1);
-    expect(desktopState.get().screen).toBe('modes');
+    expect(desktopState.get().screen).toBe('party');
     const stats=render.stats({width,height});
     expect(stats.drawCalls).toBeLessThanOrEqual(14);
     console.log(JSON.stringify({width,height,modeCardDrawCalls:stats.drawCalls}));
-    for (const id of ['classic-mode','madness-mode','mode-back']) {
-      const rect=ui.rect(`mode-select.${id}`)!;
+    for (const id of ['dragon-0','dragon-9','start-party','menu']) {
+      const rect=ui.rect(`party-lobby.${id}`)!;
       expect(!!rect).toBe(true);
       expect(rect.x>=0 && rect.y>=0 && rect.x+rect.width<=width+1 && rect.y+rect.height<=height+1).toBe(true);
     }
-    await ui.press('mode-select.mode-back');
+    await ui.press('party-lobby.menu');
     await step(1);
     expect(desktopState.get().screen).toBe('menu');
   }

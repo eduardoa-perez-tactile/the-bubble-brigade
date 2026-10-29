@@ -226,11 +226,11 @@
       "doc": "cartoon-button",
       "key": "adventure-arcade",
       "props": {
-        "label": "ARCADE MODES",
+        "label": "PARTY PLAY",
         "selected": {
           "property": "arcadeSelected"
         },
-        "hasArt": true,
+        "hasArt": false,
         "art": "cartoon/menu/type/arcade",
         "compact": {
           "property": "narrow"

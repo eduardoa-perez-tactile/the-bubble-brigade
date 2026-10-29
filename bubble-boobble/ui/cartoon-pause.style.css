@@ -24,3 +24,24 @@
  .cartoon-pause .ud-cartoon-defeat-action__da_label { width:560px; height:60px; font-size:40px; text-fit:30px 40px; }
  .cartoon-pause .ud-cartoon-pause__cp_hint { width:640px; height:30px; font-size:20px; }
 }
+
+/* Party Play shares Adventure's brass, sea-green ink and clear button states.
+   Only the overlay dims the arena; the live run remains visible beneath it. */
+.overworld-card.party-level-pause .ud-adventure-pause__ow_panel {
+ width:520px;max-width:94%;padding:24px;gap:8px;border-width:4px;border-color:#285b59;border-radius:18px;
+}
+.overworld-card.party-level-pause .ud-adventure-pause__owd_speaker {height:46px;font-size:36px;text-fit:26px 36px;}
+.overworld-card.party-level-pause .ud-adventure-pause__owd_message {height:30px;font-size:22px;text-fit:16px 22px;color:#214e4c;}
+.overworld-card.party-level-pause .ud-adventure-pause__owd_detail {height:44px;font-size:17px;text-fit:14px 17px;white-space:pre-wrap;}
+.overworld-card.party-level-pause .ud-adventure-pause__owd_buttons {width:100%;gap:8px;}
+.overworld-card.party-level-pause .ud-overworld-button__root {width:100%;height:56px;border-width:1px;border-color:#b88a40;}
+.overworld-card.party-level-pause .ud-overworld-button__owb_label {height:40px;font-size:24px;text-fit:20px 24px;}
+@media (aspect < 0.7) {
+ .overworld-card.party-level-pause .ud-adventure-pause__ow_panel {width:94%;padding:24px;gap:14px;}
+ .overworld-card.party-level-pause .ud-adventure-pause__owd_speaker {height:74px;font-size:50px;text-fit:36px 50px;}
+ .overworld-card.party-level-pause .ud-adventure-pause__owd_message {height:54px;font-size:30px;text-fit:24px 30px;}
+ .overworld-card.party-level-pause .ud-adventure-pause__owd_detail {height:76px;font-size:26px;text-fit:21px 26px;}
+ .overworld-card.party-level-pause .ud-adventure-pause__owd_buttons {gap:12px;}
+ .overworld-card.party-level-pause .ud-overworld-button__root {width:100%;height:106px;}
+ .overworld-card.party-level-pause .ud-overworld-button__owb_label {height:76px;font-size:36px;text-fit:28px 36px;}
+}

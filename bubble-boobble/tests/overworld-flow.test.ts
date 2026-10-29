@@ -47,10 +47,10 @@ worldTest('adventure flow selected encounter retry return and Classic records st
  expect(session.get().active).toBe(false);
  expect(desktopSaveState.get().profiles[0]!.played).toBe(0);
  expect(adventureForProfile(desktopSaveState.get().profiles[0]!).coins).toBe(0);
- await intent(ctx,'overworld-main-menu');await intent(ctx,'classic-mode');await adventureStep(ctx,2);
- expect(session.get().mode).toBe('campaign');expect(session.get().game!.Campaign.length).toBe(25);
+ await intent(ctx,'overworld-main-menu');await intent(ctx,'adventure-arcade');await intent(ctx,'start-party');await adventureStep(ctx,2);
+ expect(!!session.get().game!.Party).toBe(true);
  await ctx.cheat(OverworldResolveEncounter,{won:false});await adventureStep(ctx,2);
- expect(desktopSaveState.get().profiles[0]!.played).toBe(1);expect(desktopSaveState.get().profiles[0]!.lost).toBe(1);
+ expect(desktopSaveState.get().profiles[0]!.played).toBe(0);expect(desktopSaveState.get().profiles[0]!.lost).toBe(0);
 },{scene});
 worldTest('adventure flow clear grants once returns to entrance and preserves selected record',async ctx=>{
  await enter(ctx);await card(ctx,'encounter-1');await intent(ctx,'adventure-play');await adventureStep(ctx,2);

@@ -39,7 +39,7 @@ worldTest('story arrival uses destination action instead of stale story party or
  const classic=cartoonArrivalModel({...oldStory,transitionAction:'start'})!;
  expect(classic.title).toBe('COURTYARD CAPER');expect(classic.mode).toBe('CLASSIC / ROUND 01');
  const party=cartoonArrivalModel({...oldStory,transitionAction:'start-party'})!;
- expect(party.title).toBe('COURTYARD CAPER');expect(party.mode).toBe('BUBBLE MADNESS / WAVE 01');
+ expect(party.title).toBe('COURTYARD CAPER');expect(party.mode).toBe('WAVE SURVIVAL / WAVE 01');
  const custom=cartoonArrivalModel({...oldStory,transitionAction:'test-level',level:{...oldStory.level,number:17}})!;
  expect(custom.title).toBe('CUSTOM LEVEL');expect(custom.mode).toBe('PLAY TEST / ROUND 17');
  expect(cartoonArrivalModel({...oldStory,transitionAction:'leave'})).toBe(null);

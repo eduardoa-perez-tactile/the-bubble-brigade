@@ -22,14 +22,15 @@ export function desktopButtonRect(s:DesktopState,p:DesktopSave,index:number):Des
 
 /** Shared reference-canvas positions for UI hit targets and pixel portraits. */
 export function partyCardRect(index:number):DesktopRect {return {x:24+(index%5)*146,y:132+Math.floor(index/5)*230,width:136,height:214};}
-export function partyGridSelection(selected:number,x:number,y:number):number {
+export function partyGridSelection(selected:number,x:number,y:number,columns=5):number {
  if(selected<partySize){
-   if(x)return Math.floor(selected/5)*5+(selected%5+x+5)%5;
-   if(y<0)return selected>=5?selected-5:selected;
-   if(y>0)return selected<5?selected+5:selected%5<2?partySize+1:partySize;
+   const row=Math.floor(selected/columns),col=selected%columns;
+   if(x)return row*columns+(col+x+columns)%columns;
+   if(y<0)return row>0?selected-columns:selected;
+   if(y>0)return selected+columns<partySize?selected+columns:col<Math.floor(columns/2)?partySize+1:partySize;
  }else{
    if(x)return selected===partySize?partySize+1:partySize;
-   if(y<0)return selected===partySize?8:5;
+   if(y<0)return selected===partySize?(columns===5?8:partySize-1):partySize-columns;
  }
  return selected;
 }
@@ -49,6 +50,27 @@ export function cartoonMenuHoverRect(s:DesktopState,index:number,view:{width:num
  const w=view.width-l!-r!,h=view.height-t!-b!,u=Math.min(w/768,h/720);
  const cx=l!+w/2,cy=t!+h/2,tall=view.width/view.height<.85;
  const rect=(x:number,y:number,width:number,height:number)=>({x:cx+x*u,y:cy+y*u,width:width*u,height:height*u});
+ if(s.screen==='party'){
+  if(index<0||index>partySize+1)return null;
+  if(view.width/view.height<.7){
+   const compact=view.width/view.height>=.55;
+   const stageX=cx-360*u,stageY=cy-(compact?520:690)*u;
+   const box=index<partySize?{x:24+(index%2)*342,y:(compact?120:156)+Math.floor(index/2)*(compact?146:208),width:330,height:compact?136:192}:index===partySize?{x:254,y:compact?890:1230,width:442,height:96}:{x:24,y:compact?890:1230,width:210,height:96};
+   return {x:stageX+box.x*u,y:stageY+box.y*u,width:box.width*u,height:box.height*u};
+  }
+  const box=index<partySize?partyCardRect(index):index===partySize?{x:242,y:612,width:284,height:44}:{x:48,y:612,width:152,height:44};
+  return rect(box.x-384,box.y-360,box.width,box.height);
+ }
+ // These offsets match the settled Adventure dialog's Party-only CSS, including
+ // the expanded Repeat rows on tall screens. Pointer positions are recorded pixels.
+ if(s.screen==='pause'&&s.partyRun){
+  const count=s.pauseConfirm?2:5;
+  if(index<0||index>=count)return null;
+  const portrait=view.width/view.height<.7;
+  const panelWidth=portrait?.94*(w-48*u):Math.min(520*u,.94*(w-48*u));
+  const buttonWidth=panelWidth-56*u;
+  return {x:cx-buttonWidth/2,y:cy+((s.pauseConfirm?18:(portrait?-162:-78))+index*(portrait?120:64))*u,width:buttonWidth,height:(portrait?106:56)*u};
+ }
  if(s.screen==='menu')return index>=0&&index<5?{x:tall?cx-300*u:l!+w*.21,y:cy+(-(tall?1020:720)/2+(tall?540+index*96:318+index*48))*u,width:(tall?600:390)*u,height:(tall?96:48)*u}:null;
  if(s.screen==='modes')return index===0?rect(-284,-310-24+174,272,380):index===1?rect(12,-310-24+174,272,380):index===2?{x:cx-120*u,y:t!+h-(38+96)*u,width:240*u,height:96*u}:null;
  return null;

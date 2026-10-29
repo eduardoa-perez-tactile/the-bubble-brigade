@@ -21,14 +21,9 @@ import { session } from '../src/arcade/session';
 const idle={Move:0,Jump:false,Fire:false};
 const scene='scenes/cartoon.scene.json';
 
-worldTest('concept controls recorded solo default nine bots ten humans pause and restart preserve mode and geometry',async({input,step})=>{
+worldTest('concept controls recorded default nine bots ten humans pause and restart preserve mode and geometry',async({input,step})=>{
  await step(8);
  expect(desktopState.get().cartoon).toBe(true);
- input.emit(DesktopIntent,{action:'classic-mode'});await step(1);
- expect(session.get().game!.Players.length).toBe(1);
- expect(session.get().game!.Party).toBe(undefined);
- expect(session.get().game!.Level.arena).toBe('cartoon-courtyard');
- input.emit(DesktopIntent,{action:'leave'});await step(1);
  input.emit(DesktopIntent,{action:'party'});await step(1);
  input.emit(DesktopIntent,{action:'start-party'});await step(1);
  expect(session.get().game!.Party!.Slots).toEqual(['human','ai','ai','ai','ai','ai','ai','ai','ai','ai']);

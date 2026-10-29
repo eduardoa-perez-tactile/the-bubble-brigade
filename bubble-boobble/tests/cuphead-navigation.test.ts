@@ -170,14 +170,9 @@ worldTest('cuphead result back closes details first then exits through cover',as
  await step(cartoonFlowTiming(false,'leave',true).finishAt+1);expect(desktopState.get().screen).toBe('menu');
 },{scene});
 
-worldTest('cuphead classic Ready lead-in follows the complete iris before its unchanged preparation starts',async({input,step,world})=>{
+worldTest('cuphead removed classic action opens the survival lobby without launching a run',async({input,step})=>{
  await step(8);input.emit(DesktopIntent,{action:'ui-activate',value:'classic-mode'});await step(2);
- const timing=cartoonFlowTiming(true,'start',false),origin=desktopState.get().transitionStartedStep!;
- const at=async(age:number)=>{const frames=origin+age-world.resource(Time).step;if(frames>0)await step(frames);};
- await at(timing.commitAt);expect(session.get().game!.Countdown).toBe(60);
- await at(timing.revealEndAt);expect(desktopState.get().transitionAction).toBe('start');
- expect(session.get().game!.Countdown).toBe(60);
- await at(timing.finishAt-1);expect(session.get().game!.Countdown).toBe(60);
- await at(timing.finishAt);expect(desktopState.get().transitionAction).toBe('');
- expect(session.get().game!.Countdown).toBe(59);
+ expect(desktopState.get().screen).toBe('party');
+ expect(desktopState.get().transitionAction??'').toBe('');
+ expect(session.get().active).toBe(false);
 },{scene});
