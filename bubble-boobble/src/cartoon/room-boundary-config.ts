@@ -1,5 +1,5 @@
 import type {Level} from '../arcade/types';
-import {referenceBoundaryFamilyForStyle} from './room-boundary-reference-data';
+import {referenceBoundaryFamilyForTheme} from './room-boundary-reference-data';
 
 export type StoryRoomBoundaryStyle='stone'|'timber'|'pipe'|'vegetation'|'bubble';
 
@@ -21,6 +21,7 @@ const referenceComposition={reserveBelowFloor:40,foundationHeight:48,prototypeWo
  * inside its reserved band. The wider rooms never enlarge their border art. */
 export function storyRoomReferenceComposition(level:Level){
   if(level.episode?.theme==='lighthouse')return lighthouseComposition;
+  if(level.episode?.theme==='post-office'||level.episode?.theme==='garden-1')return referenceComposition;
   const style=storyRoomBoundaryStyle(level);
   return style==='pipe'||style==='bubble'?referenceComposition:undefined;
 }
@@ -30,7 +31,7 @@ export function storyRoomReferenceComposition(level:Level){
 export function storyRoomExteriorMargin(level:Level){
   const style=storyRoomBoundaryStyle(level);
   if(!style)return 48;
-  const reference=referenceBoundaryFamilyForStyle(style);
+  const reference=referenceBoundaryFamilyForTheme(level.episode?.theme,style);
   if(!reference)return 256-48+6;
   const {anchors}=reference;
   const unit=reference.prototypeWorldInnerWidth/(anchors.designRightInnerFace-anchors.designLeftInnerFace);

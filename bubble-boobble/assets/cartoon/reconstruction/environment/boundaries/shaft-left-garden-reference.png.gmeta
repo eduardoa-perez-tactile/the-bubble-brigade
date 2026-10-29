@@ -1,0 +1,9 @@
+guid = "5f455ebd-50b1-490a-bc37-86932f8467cf"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+atlas = "compact-room-garden"
+filter = "linear"
+compression = "none"
+trim = false

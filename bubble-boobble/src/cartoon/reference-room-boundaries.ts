@@ -11,7 +11,7 @@ export interface ReferenceBoundaryAsset {
 }
 
 export interface ReferenceBoundaryFamily {
-  id:'lighthouse'|'pipe'|'bubble';
+  id:'lighthouse'|'pipe'|'bubble'|'parcel'|'garden';
   prototypeWorldInnerWidth:number;
   anchors:{
     designLeftInnerFace:number;

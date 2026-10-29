@@ -1,0 +1,431 @@
+{
+  "alphaCoverageComparison": ">=",
+  "alphaCoverageThreshold": 128,
+  "anchors": {
+    "designLeftInnerFace": 310,
+    "designRightInnerFace": 1363,
+    "floorFeet": 777
+  },
+  "assets": [
+    {
+      "alphaBounds128": [
+        8,
+        0,
+        350,
+        891
+      ],
+      "alphaBoundsAboveFloor128": [
+        8,
+        0,
+        350,
+        777
+      ],
+      "alphaBoundsAboveFloorJoin128": [
+        8,
+        0,
+        334,
+        772
+      ],
+      "alphaClearance128": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "alphaClearanceAboveFloor128": [
+        8,
+        0,
+        0,
+        0
+      ],
+      "alphaClearanceAboveFloorJoin128": [
+        8,
+        0,
+        16,
+        0
+      ],
+      "bytes": 578960,
+      "crop": [
+        0,
+        0,
+        350,
+        891
+      ],
+      "destinationSourceRect": [
+        0,
+        0,
+        350,
+        891
+      ],
+      "firstInnerEdgeSolidSourceY": 772,
+      "floorJoinTopSourceY": 772,
+      "lastInnerEdgeSolidSourceY": 879,
+      "name": "profile-left-garden-reference",
+      "operation": "exact generated master crop; preserved generated alpha; no painted masks or nonuniform scaling",
+      "rgbaBytes": 1247400,
+      "role": "profile",
+      "scanlineDestinationSourceBounds128": [
+        {
+          "left": 69,
+          "rightExclusive": 312,
+          "y": 0
+        },
+        {
+          "left": 68,
+          "rightExclusive": 313,
+          "y": 24
+        },
+        {
+          "left": 16,
+          "rightExclusive": 317,
+          "y": 150
+        },
+        {
+          "left": 26,
+          "rightExclusive": 311,
+          "y": 200
+        },
+        {
+          "left": 65,
+          "rightExclusive": 312,
+          "y": 400
+        },
+        {
+          "left": 40,
+          "rightExclusive": 312,
+          "y": 600
+        },
+        {
+          "left": 30,
+          "rightExclusive": 322,
+          "y": 700
+        },
+        {
+          "left": 23,
+          "rightExclusive": 350,
+          "y": 777
+        },
+        {
+          "left": 81,
+          "rightExclusive": 188,
+          "y": 890
+        }
+      ],
+      "sha256": "31f9cf2dececd864d2de48e4cd77f78ec89987c833ca68c3379b01660f2c057b",
+      "side": "left",
+      "size": [
+        350,
+        891
+      ],
+      "solidPixelCount": 244711
+    },
+    {
+      "alphaBounds128": [
+        0,
+        0,
+        342,
+        891
+      ],
+      "alphaBoundsAboveFloor128": [
+        0,
+        0,
+        320,
+        777
+      ],
+      "alphaBoundsAboveFloorJoin128": [
+        16,
+        0,
+        320,
+        772
+      ],
+      "alphaClearance128": [
+        0,
+        0,
+        10,
+        0
+      ],
+      "alphaClearanceAboveFloor128": [
+        0,
+        0,
+        32,
+        0
+      ],
+      "alphaClearanceAboveFloorJoin128": [
+        16,
+        0,
+        32,
+        0
+      ],
+      "bytes": 533752,
+      "crop": [
+        1320,
+        0,
+        1672,
+        891
+      ],
+      "destinationSourceRect": [
+        1320,
+        0,
+        1672,
+        891
+      ],
+      "firstInnerEdgeSolidSourceY": 772,
+      "floorJoinTopSourceY": 772,
+      "lastInnerEdgeSolidSourceY": 880,
+      "name": "profile-right-garden-reference",
+      "operation": "exact generated master crop; preserved generated alpha; no painted masks or nonuniform scaling",
+      "rgbaBytes": 1254528,
+      "role": "profile",
+      "scanlineDestinationSourceBounds128": [
+        {
+          "left": 1361,
+          "rightExclusive": 1604,
+          "y": 0
+        },
+        {
+          "left": 1361,
+          "rightExclusive": 1605,
+          "y": 24
+        },
+        {
+          "left": 1355,
+          "rightExclusive": 1605,
+          "y": 150
+        },
+        {
+          "left": 1362,
+          "rightExclusive": 1605,
+          "y": 200
+        },
+        {
+          "left": 1362,
+          "rightExclusive": 1607,
+          "y": 400
+        },
+        {
+          "left": 1361,
+          "rightExclusive": 1617,
+          "y": 600
+        },
+        {
+          "left": 1349,
+          "rightExclusive": 1640,
+          "y": 700
+        },
+        {
+          "left": 1320,
+          "rightExclusive": 1636,
+          "y": 777
+        },
+        {
+          "left": 1456,
+          "rightExclusive": 1492,
+          "y": 890
+        }
+      ],
+      "sha256": "a423df342f5c27f76f984b44ab9cb6f806856626a71f824f41bf5d56e9e59920",
+      "side": "right",
+      "size": [
+        352,
+        891
+      ],
+      "solidPixelCount": 233414
+    },
+    {
+      "alphaBounds128": [
+        63,
+        0,
+        313,
+        256
+      ],
+      "alphaClearance128": [
+        63,
+        0,
+        37,
+        0
+      ],
+      "bytes": 136808,
+      "crop": [
+        0,
+        0,
+        350,
+        256
+      ],
+      "destinationSourceRect": [
+        0,
+        -256,
+        350,
+        0
+      ],
+      "name": "shaft-left-garden-reference",
+      "operation": "eight identical stored RGBA bands from plain top32 source rows; alpha source-exact; premultiplied PNG roundtrip quantizes source RGB by up to2 levels; no geometric resampling",
+      "repeatY": 8,
+      "rgbaBytes": 358400,
+      "role": "shaft",
+      "scanlineDestinationSourceBounds128": [
+        {
+          "left": 69,
+          "rightExclusive": 312,
+          "y": 0
+        },
+        {
+          "left": 68,
+          "rightExclusive": 313,
+          "y": 24
+        },
+        {
+          "left": 68,
+          "rightExclusive": 313,
+          "y": 150
+        },
+        {
+          "left": 69,
+          "rightExclusive": 312,
+          "y": 200
+        }
+      ],
+      "sha256": "963ff91293cacba338340b1bc882bc3283e25ea9e2c9b01fa18913813596d339",
+      "side": "left",
+      "size": [
+        350,
+        256
+      ],
+      "solidPixelCount": 62576,
+      "sourceBandRect": [
+        0,
+        0,
+        350,
+        32
+      ]
+    },
+    {
+      "alphaBounds128": [
+        41,
+        0,
+        285,
+        256
+      ],
+      "alphaClearance128": [
+        41,
+        0,
+        67,
+        0
+      ],
+      "bytes": 135724,
+      "crop": [
+        1320,
+        0,
+        1672,
+        256
+      ],
+      "destinationSourceRect": [
+        1320,
+        -256,
+        1672,
+        0
+      ],
+      "name": "shaft-right-garden-reference",
+      "operation": "eight identical stored RGBA bands from plain top32 source rows; alpha source-exact; premultiplied PNG roundtrip quantizes source RGB by up to2 levels; no geometric resampling",
+      "repeatY": 8,
+      "rgbaBytes": 360448,
+      "role": "shaft",
+      "scanlineDestinationSourceBounds128": [
+        {
+          "left": 1361,
+          "rightExclusive": 1604,
+          "y": 0
+        },
+        {
+          "left": 1361,
+          "rightExclusive": 1605,
+          "y": 24
+        },
+        {
+          "left": 1361,
+          "rightExclusive": 1605,
+          "y": 150
+        },
+        {
+          "left": 1361,
+          "rightExclusive": 1604,
+          "y": 200
+        }
+      ],
+      "sha256": "f0bb39c9af1b050c995621abb2cd5b73fa1d800988c5b40d25090ddd3c7e1541",
+      "side": "right",
+      "size": [
+        352,
+        256
+      ],
+      "solidPixelCount": 62376,
+      "sourceBandRect": [
+        1320,
+        0,
+        1672,
+        32
+      ]
+    },
+    {
+      "alphaBounds128": [
+        0,
+        0,
+        1053,
+        105
+      ],
+      "alphaClearance128": [
+        0,
+        0,
+        0,
+        9
+      ],
+      "bytes": 234347,
+      "crop": [
+        310,
+        777,
+        1363,
+        891
+      ],
+      "destinationSourceRect": [
+        310,
+        777,
+        1363,
+        891
+      ],
+      "name": "floor-garden-reference",
+      "operation": "exact generated master crop; preserved generated alpha; no painted masks or nonuniform scaling",
+      "rgbaBytes": 480168,
+      "role": "floor",
+      "scanlineDestinationSourceBounds128": [
+        {
+          "left": 310,
+          "rightExclusive": 1363,
+          "y": 777
+        },
+        {
+          "left": 310,
+          "rightExclusive": 1363,
+          "y": 801
+        }
+      ],
+      "sha256": "454cb596e595a373ed7c1b2403eb6e269af62a71840e2ad585a3974d7893746e",
+      "side": "center",
+      "size": [
+        1053,
+        114
+      ],
+      "solidPixelCount": 108817
+    }
+  ],
+  "atlas": "compact-room-garden",
+  "designStatus": "new unapproved compact-room proposal; actual engine capture required",
+  "family": "garden",
+  "prototypeWorldInnerWidth": 960,
+  "runtimePNGBytes": 1619591,
+  "runtimeRGBABytes": 3700944,
+  "source": "source-master.png",
+  "sourceCanvas": [
+    1672,
+    941
+  ],
+  "sourceSHA256": "5efdfc54d747d06f48b1ab15dcc3d6b0b2da185ad20eed243a0105254374c100"
+}

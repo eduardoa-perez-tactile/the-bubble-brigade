@@ -3,7 +3,7 @@ import {cartoonVerticalMetric,STORY_ROOM_WALL_WIDTH,storyRoomFoundationHeight,ST
 import type {CartoonDraw} from './renderer';
 import {referenceBoundaryRole,referenceRoomBoundaryDraws,type ReferenceBoundaryFamily} from './reference-room-boundaries';
 import {storyRoomBoundaryStyle} from './room-boundary-config';
-import {referenceBoundaryFamilyForStyle} from './room-boundary-reference-data';
+import {referenceBoundaryFamilyForTheme} from './room-boundary-reference-data';
 export {storyRoomBoundaryStyle} from './room-boundary-config';
 export type {StoryRoomBoundaryStyle} from './room-boundary-config';
 export type {ReferenceBoundaryAsset,ReferenceBoundaryFamily} from './reference-room-boundaries';
@@ -19,7 +19,7 @@ export interface StoryRoomBoundaryProjection {
  * landmarks, canonical material density and physical body-plane alignment. */
 export function storyRoomBoundaryReference(level:Level):ReferenceBoundaryFamily|undefined {
   const style=storyRoomBoundaryStyle(level);
-  return style?referenceBoundaryFamilyForStyle(style):undefined;
+  return style?referenceBoundaryFamilyForTheme(level.episode?.theme,style):undefined;
 }
 
 /** Registered caps/fascias replace only the reference families' floor artwork.
