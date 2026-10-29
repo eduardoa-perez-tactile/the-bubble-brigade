@@ -15,7 +15,7 @@ const columns=[120,440,640,1080,1320,1560];
 /** Recorded QA setup only. All subsequent steps use the normal party simulation. */
 export const EnemyShowcase=defineCheat({
  id:'cartoon.enemy-showcase',group:'Concept verification',title:'Inspect simplified enemy roster and real attacks',
- params:{scenario:{type:'enum',values:['roster','capture','states','shooters','mixed','size-transitions'],default:'roster'},
+ params:{scenario:{type:'enum',values:['roster','capture','states','shooters','mixed','size-transitions','rage','final-pop'],default:'roster'},
   frozen:{type:'bool',default:true},defeatAge:{type:'int',min:0,max:49,default:0}},resources:[write(ArcadeControl)],
  run(ctx,{scenario,frozen,defeatAge}){
   const g=createPartyGame(campaign,42,Array.from({length:10},()=> 'human' as const),10,'cartoon');
@@ -67,7 +67,7 @@ export const EnemyShowcase=defineCheat({
     const dead=g.Enemies.find(e=>e.Kind===kind&&e.State===EnemyState.Defeated)!;
     dead.X=160+i*270;dead.Y=450;
    }
-   for(const p of g.Players)p.X=-200;
+   for(const p of g.Players){p.X=-200;p.Invincible=100008;}
    g.Items=[];g.Particles=[];
   }
   if(scenario==='shooters'){
@@ -75,6 +75,12 @@ export const EnemyShowcase=defineCheat({
     // The downward nozzle overhangs the shelf into a real gap, so its actual
     // laser survives the supporting tile and becomes visible below the toy.
     {...make('invader',3,13),X:975,Cooldown:0,Angry:false}];
+  }
+  if(scenario==='rage')g.Enemies=[{...make('zenchan',2,22),X:800,Angry:false,Cooldown:120}];
+  if(scenario==='final-pop'){
+   const e={...make('mighta',2,13),X:800,Angry:true,State:EnemyState.Trapped};
+   g.Enemies=[e];g.Bubbles=[{...bubble(e.X,e.Y),ID:++g.NextID,EnemyID:e.ID,Floating:true,Age:60,CapturedAge:100}];
+   popBubble(g,0,0);g.Bubbles=g.Bubbles.filter(b=>!b.Removed);
   }
   desktopAction('cartoon-mode');desktopAction('party');desktopAction('start-party');
   session.set({active:true,mode:'party',game:g});

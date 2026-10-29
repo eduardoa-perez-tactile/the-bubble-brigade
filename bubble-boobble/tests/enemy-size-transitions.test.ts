@@ -7,6 +7,8 @@ import {updateDefeated} from '../src/arcade/enemies';
 import {EnemyState,State,type GameState} from '../src/arcade/types';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
 import type {CartoonDraw} from '../src/cartoon/renderer';
+import {CARTOON_ENEMY_SIZE,CARTOON_CAPTURED_ENEMY_SIZE} from '../src/cartoon/actor-layout';
+import {cartoonBubbleShape} from '../src/cartoon/feedback';
 import {emptyFeel} from '../src/arcade/juice';
 
 const scene='scenes/cartoon.scene.json';
@@ -48,32 +50,37 @@ function paintedBounds(draws:CartoonDraw[]){
 }
 function close(a:number,b:number,tolerance=.001){expect(Math.abs(a-b)).toBeLessThanOrEqual(tolerance);}
 
-worldTest('enemy size transitions real bubble pops retain captive canvas and registration for every family',()=>{
+worldTest('enemy size transitions real bubble pops retain captive canvas and logical root for every family',()=>{
  for(const kind of kinds)for(const dir of [-1,1])for(const view of views){
-  const g=fixture(kind,dir),captive=enemyDraw(g,kind,view,true),score=g.Score;
+  const g=fixture(kind,dir),captive=enemyDraw(g,kind,view,false),score=g.Score;
+  const b=g.Bubbles[0]!,shape=cartoonBubbleShape(b,110);
+  const floatOffset=(shape.x-b.X-22)*captive.width/CARTOON_CAPTURED_ENEMY_SIZE;
   popBubble(g,0,0);g.Bubbles=g.Bubbles.filter(b=>!b.Removed);
   const e=g.Enemies[0]!;
   expect(e.State).toBe(EnemyState.Defeated);expect(e.DeadTicks).toBe(50);
   expect(g.Score).toBe(score+100);expect(g.Counters.Popped).toBe(1);
-  const dead=enemyDraw(g,kind,view,true);
+  const dead=enemyDraw(g,kind,view,false);
   close(dead.width,captive.width);close(dead.height,captive.height);
-  close(dead.x,captive.x);close(dead.y,captive.y);
+  // The shell's existing lateral float is decorative; release follows the
+  // authoritative enemy root. Account for that exact offset, not a tolerance.
+  close(dead.x,captive.x-floatOffset);close(dead.y,captive.y);
  }
 },{scene});
 
-worldTest('enemy size transitions stay compact through the actual defeat lifetime and do not advance in presentation',()=>{
+worldTest('enemy size transitions restore full painted scale through the actual defeat lifetime without advancing presentation',()=>{
  for(const kind of kinds)for(const reduced of [false,true]){
   const g=fixture(kind),view=views[1]!,captive=enemyDraw(g,kind,view,reduced);
   popBubble(g,0,0);g.Bubbles=g.Bubbles.filter(b=>!b.Removed);const e=g.Enemies[0]!;
   const afterPop=JSON.stringify(g);
   for(let repeat=0;repeat<3;repeat++)cartoonDrawPlan(g,g.Tick+repeat*100,view,undefined,undefined,reduced);
   expect(JSON.stringify(g)).toBe(afterPop);
-  const captivePaint=paintedBounds([captive]);
+  const frames=animation.frames as Record<string,{visualBounds?:number[]}>;
+  const normalName=`enemy/${kind}/${kind==='monsta'||kind==='pulpul'?'walk-0':'simple-travel-0'}`;
+  const normal=frames[normalName]!.visualBounds??[0,0,128,128];
+  const fullExtent=Math.max(normal[2]!-normal[0]!,normal[3]!-normal[1]!)/128*CARTOON_ENEMY_SIZE*captive.width/CARTOON_CAPTURED_ENEMY_SIZE;
   for(let age=0;age<50;age++){
    const draws=enemyDraws(g,kind,view,reduced),draw=draws[0]!;
    for(const d of draws){
-    expect(d.width).toBeLessThanOrEqual(captive.width*1.08+.001);
-    expect(d.height).toBeLessThanOrEqual(captive.height*1.08+.001);
     expect(d.width>0&&d.height>0).toBe(true);
    }
    const painted=paintedBounds(draws);
@@ -82,9 +89,14 @@ worldTest('enemy size transitions stay compact through the actual defeat lifetim
    const atRelease={...g,Enemies:g.Enemies.map(enemy=>({...enemy,DeadTicks:50}))};
    const reference=paintedBounds(enemyDraws(atRelease,kind,view,reduced));
    close(painted.centerX,reference.centerX);close(painted.centerY,reference.centerY);
-   expect(painted.width).toBeLessThanOrEqual(captivePaint.width*1.08+.001);
-   expect(painted.height).toBeLessThanOrEqual(captivePaint.height*1.08+.001);
-   if(age===0){
+   const extent=Math.max(painted.width,painted.height);
+   expect(extent).toBeLessThanOrEqual(fullExtent+.001);
+   if(age>=4||reduced)close(extent,fullExtent);
+   for(const d of draws){
+    expect(d.color?.[2]).toBe(1);expect(d.color![0]<d.color![1]&&d.color![1]<d.color![2]).toBe(true);
+    expect(d.rotation).toBe(reduced?0:(e.VX<0?-1:1)*age/50*Math.PI*2);
+   }
+   if(age===0&&!reduced){
     // Small shell bob is cosmetic and must never become a feet-anchor jump.
     close(draw.x+draw.width/2,captive.x+captive.width/2,captive.width*.03);
     close(draw.y+draw.height/2,captive.y+captive.height/2,captive.height*.03);

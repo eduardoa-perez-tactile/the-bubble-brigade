@@ -6,6 +6,7 @@ import { createGame, remainingEnemies } from './game';
 import { enableCompanion, companionInput, warmPartyNavigation } from './companion';
 import { respawn, updatePlayer, checkPlayerHit } from './player';
 import { updateEnemies, updateProjectiles, updateDefeated } from './enemies';
+import { updateLastEnemyRage } from './enemy-rage';
 import { updateBubbles, updateEffects } from './bubbles';
 import { updateItems, checkPowerSpawns, spawnFood } from './items';
 import { arenaWidth, body, alive, EnemyState, State, type GameState, type Input, type Level, type PartySlot } from './types';
@@ -120,10 +121,15 @@ function rest(g:GameState) {
   const p=g.Party!;
   for(const e of g.Enemies)if(e.State===EnemyState.Defeated&&e.DeadTicks>0)spawnFood(g,e.X,e.Y);
   p.Phase='rest';p.Timer=partyBreakTicks;p.Telegraphs=[];
-  g.State=State.Clearing;g.Countdown=p.Timer;g.Enemies=[];g.Projectiles=[];g.Bubbles=[];g.Effects=[];g.Freeze=0;g.Hurry=false;
+  g.State=State.Clearing;g.Countdown=p.Timer;
+  // The final pop deserves the same full defeat flight as every earlier pop.
+  // Rewards above retain the existing immediate collection interval.
+  g.Enemies=g.Level.arena==='cartoon-courtyard'?g.Enemies.filter(e=>e.State===EnemyState.Defeated&&e.DeadTicks>0):[];
+  g.Projectiles=[];g.Bubbles=[];g.Effects=[];g.Freeze=0;g.Hurry=false;
   for(let i=0;i<g.Players.length;i++)if(g.Players[i]!.Downed)revive(g,i);
 }
 function enrageLastEnemy(g:GameState) {
+  if(g.Level.arena==='cartoon-courtyard'){updateLastEnemyRage(g);return;}
   const p=g.Party!;
   if(p.Phase!=='combat'||p.ToSpawn>0||p.Telegraphs.length>0)return;
   let last;
@@ -159,6 +165,10 @@ export function stepParty(g:GameState,inputs:Input[]) {
     return;
   }
   if(p.Phase==='rest') {
+    if(g.Level.arena==='cartoon-courtyard'){
+      updateDefeated(g,false);
+      g.Enemies=g.Enemies.filter(e=>e.DeadTicks>0);
+    }
     updateBubbles(g,ins);updateEffects(g);updateItems(g);g.Particles=g.Particles.filter(v=>{v.Y-=.6;return --v.Life>0;});p.Timer--;g.Countdown=p.Timer;
     if(p.Timer<=partyPrepareTicks){p.Wave++;preparePartyWave(g);}
     return;

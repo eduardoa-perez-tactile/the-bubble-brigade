@@ -45,7 +45,7 @@ import type { PixelQuad } from "./pixel-renderer/types.ts";
 import { goSin } from "./trig";
 import { arenaWidth, arenaHeight, levelColumns, levelRows, levelWidth, levelHeight, EnemyState, position } from "./types.ts";
 import type { GameState, Level } from "./types.ts";
-import { cartoonSprites, cartoonMotion } from '../cartoon/renderer';
+import { cartoonSprites, cartoonMotion, cartoonDrawTransform } from '../cartoon/renderer';
 import { cartoonRescueLabels } from '../cartoon/labels';
 import { cartoonProjection } from '../cartoon/projection';
 import { cartoonDrawPlan, cartoonMenuDrawPlan, cartoonEditorDrawPlan } from '../cartoon/plan';
@@ -696,7 +696,12 @@ export const ArcadePresentation = defineSystem({
           if(c.col(MeshRenderer).mesh[i])c.setField(MeshRenderer,i,'mesh',null);
           offsets.position[t]=d.x+d.width/2;offsets.position[t+1]=720-d.y-d.height/2;offsets.position[t+2]=0;
           offsets.scale[t]=offsets.scale[t+1]=offsets.scale[t+2]=1;
-          if(d.diamond){offsets.rotation[m+2]=.3826834323650898;offsets.rotation[m+3]=.9238795325112867;}
+          if(d.rotation!==undefined){
+            const transform=cartoonDrawTransform(d);
+            offsets.position[t]=transform.centerX;offsets.position[t+1]=720-transform.centerY;
+            // Screen +Y points down; native world +Y points up.
+            offsets.rotation[m+2]=Math.sin(-d.rotation/2);offsets.rotation[m+3]=Math.cos(d.rotation/2);
+          }else if(d.diamond){offsets.rotation[m+2]=.3826834323650898;offsets.rotation[m+3]=.9238795325112867;}
           const side=d.diamond?Math.SQRT1_2:1;
           c.set(Sprite,i,{image:d.image,visible:true,size:[d.width*side,d.height*side],anchor:[.5,.5],flipX:!!d.flip,
             blend:'Alpha',maskInteraction:'VisibleInside',unlit:true,order:quad,

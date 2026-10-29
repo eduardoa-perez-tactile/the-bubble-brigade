@@ -1,6 +1,7 @@
 import animation from '../../assets/cartoon/animation.json';
 import type {Enemy} from '../arcade/types';
 import type {CartoonDraw} from './renderer';
+import {CARTOON_ENEMY_SIZE} from './actor-layout';
 
 export const CARTOON_ENEMY_DEFEAT_BLEND_TICKS=4;
 
@@ -22,25 +23,30 @@ export function cartoonCaptiveEnemyDraw(frame:string,centerX:number,centerY:numb
     y:centerY-(bounds.top+bounds.height/2)*size,width:size,height:size,flip:false};
 }
 
-/** Defeat follows the simulation's existing 50-tick flight, with no new state.
- * Release begins on the captive drawing, then blends to the dead pose inside
- * that same painted envelope. A different pose's padding cannot enlarge or
- * recenter the character. Coordinates are local to the bubble center; callers
- * project that root before applying the uniformly scaled art offsets.
- * Carried enemies keep their separate full-size water-carry presentation. */
-export function cartoonDefeatedEnemyDraws(e:Readonly<Enemy>,capturedFrame:string,deadFrame:string,size:number,reduced=false):CartoonDraw[]{
+/** Release restores the active character's painted scale over four ticks.
+ * Both authored poses share a painted-center pivot while crossfading; the dead
+ * art preserves its proportions and matches the normal pose's largest extent.
+ * Spin is computed from the existing defeat lifetime and launch direction, so
+ * presentation never advances or changes its 50-tick trajectory or reward. */
+export function cartoonDefeatedEnemyDraws(e:Readonly<Enemy>,capturedFrame:string,deadFrame:string,size:number,reduced=false,
+  normalFrame=`enemy/${e.Kind}/${e.Kind==='monsta'||e.Kind==='pulpul'?'walk-0':'simple-travel-0'}`):CartoonDraw[]{
   const age=Math.max(0,50-e.DeadTicks),rootX=e.X+22,rootY=e.Y+22;
-  const captive=cartoonCaptiveEnemyDraw(capturedFrame,rootX,rootY,size);
-  if(age===0)return [captive];
-  const captured=paintedBounds(capturedFrame),dead=paintedBounds(deadFrame);
-  const fit=Math.min(1,captured.width/dead.width,captured.height/dead.height);
-  const deadSize=size*fit;
-  const centerX=rootX,centerY=rootY;
-  const defeated:CartoonDraw={frame:deadFrame,
-    x:centerX-(dead.left+dead.width/2)*deadSize,
-    y:centerY-(dead.top+dead.height/2)*deadSize,
-    width:deadSize,height:deadSize,flip:false};
-  if(reduced||age>=CARTOON_ENEMY_DEFEAT_BLEND_TICKS)return [defeated];
-  const blend=age/CARTOON_ENEMY_DEFEAT_BLEND_TICKS;
-  return [{...captive,color:[1,1,1,1-blend]},{...defeated,color:[1,1,1,blend]}];
+  const captured=paintedBounds(capturedFrame),dead=paintedBounds(deadFrame),normal=paintedBounds(normalFrame);
+  const extent=(bounds:ReturnType<typeof paintedBounds>)=>Math.max(bounds.width,bounds.height);
+  const progress=reduced?1:Math.min(1,age/CARTOON_ENEMY_DEFEAT_BLEND_TICKS);
+  const targetExtent=CARTOON_ENEMY_SIZE*extent(normal);
+  const releaseExtent=size*extent(captured);
+  const visibleExtent=releaseExtent+(targetExtent-releaseExtent)*progress;
+  const direction=e.VX===0?(e.Dir<0?-1:1):(e.VX<0?-1:1);
+  const rotation=reduced?0:direction*age/50*Math.PI*2;
+  const tinted=(frame:string,bounds:ReturnType<typeof paintedBounds>,opacity:number):CartoonDraw=>{
+    const canvasSize=visibleExtent/extent(bounds);
+    return {frame,x:rootX-(bounds.left+bounds.width/2)*canvasSize,
+      y:rootY-(bounds.top+bounds.height/2)*canvasSize,width:canvasSize,height:canvasSize,flip:false,
+      pivot:[bounds.left+bounds.width/2,bounds.top+bounds.height/2],rotation,
+      color:[.24,.58,1,opacity]};
+  };
+  if(progress===0)return [tinted(capturedFrame,captured,1)];
+  if(progress===1)return [tinted(deadFrame,dead,1)];
+  return [tinted(capturedFrame,captured,1-progress),tinted(deadFrame,dead,progress)];
 }

@@ -23,6 +23,7 @@ import { spawnPosition } from "./physics";
 import { checkPlayerHit, respawn, updatePlayer } from "./player";
 import { spawnSpecial, updateBubbles, updateEffects } from "./bubbles";
 import { updateDefeated, updateEnemies, updateProjectiles } from "./enemies";
+import { updateLastEnemyRage } from './enemy-rage';
 import { checkPowerSpawns, updateItems } from "./items";
 import { createRNG, float64, intN, rngHex } from "./rng";
 export function createGame(
@@ -194,6 +195,7 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
         g.Hurry = true;
         for (const e of g.Enemies) e.Angry = true;
       }
+      updateLastEnemyRage(g);
       updateEnemies(g);
       updateProjectiles(g);
     }
@@ -203,6 +205,7 @@ export function stepGame(g: GameState, inputs: Input[] | Input) {
   updateEffects(g);
   if (updateItems(g)) return;
   updateDefeated(g);
+  updateLastEnemyRage(g);
   updateParticles(g);
   if (g.State === State.Playing) {
     checkPowerSpawns(g);

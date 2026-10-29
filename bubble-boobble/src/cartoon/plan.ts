@@ -1,5 +1,6 @@
 import {adventureArrivalY} from '../adventure/spawning';
-import {simplifiedEnemyDraws} from './enemy-motion';
+import {simplifiedEnemyDraws,cartoonEnemyTint} from './enemy-motion';
+import {cartoonEnemyProjectileDraws,cartoonEnemyAttackDraws,cartoonEnemyImpactDraws} from './enemy-projectiles';
 import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
 import {cartoonBackgroundDraws} from './background';
@@ -320,11 +321,13 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
       }
     }else{
       actor(cartoonEnemyFrame(e.Kind,pose,clock),e.X+22-size/2,y+44,size,e.Dir<0);
-      if(pose==='angry')out[out.length-1]!.color=[1,.76,.68,1];
+      const draw=out[out.length-1]!;
+      draw.color=cartoonEnemyTint(e,reduced);
+      if(flyer&&!reduced&&e.State===EnemyState.Active){draw.rotation=e.Dir*e.Vertical*.08;draw.pivot=[.5,.5];}
     }
   }
-  for(const p of g.Projectiles)if(!p.Bottle)add(effectFrame(p.Laser?'laser':'boulder',p.Age),p.X,p.Y,p.Laser?16:24,p.Laser?28:24);
   for(const effect of g.Effects){
+    if(effect.Element==='enemy-impact')continue;
     if(effect.Element==='thunder'){
       // Use the same authored lightning drawing as the charged bubble. Keep
       // its square canvas and center it on the swept collision body.
@@ -426,6 +429,15 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     out[out.length-1]!.y=py(dust.groundY)+(dust.y-dust.groundY)*layout.scale;
   }
   drawBubbles(true);
+  // Essential threats sit above actors and shells. Project each center first,
+  // then preserve the art's uniform envelope across platform projection knots.
+  const threat=(d:CartoonDraw)=>out.push({...d,
+    x:px(d.x+d.width/2)-d.width*layout.scale/2,
+    y:py(d.y+d.height/2)-d.height*layout.scale/2,
+    width:d.width*layout.scale,height:d.height*layout.scale});
+  for(const e of g.Enemies)for(const d of cartoonEnemyAttackDraws(e,reduced))threat(d);
+  for(const p of g.Projectiles)for(const d of cartoonEnemyProjectileDraws(p,reduced))threat(d);
+  for(const e of g.Effects)for(const d of cartoonEnemyImpactDraws(e,reduced))threat(d);
   const feedback=cartoonFeedback(g,feel,reduced);
   for(const d of feedback.sprites){
     add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);

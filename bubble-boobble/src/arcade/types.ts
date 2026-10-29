@@ -81,6 +81,8 @@ export interface Player extends Body {
   Power: Powers;
 }
 export interface Enemy extends Body {
+  /** Present only after cartoon last-enemy rage; uses the frozen actor clock. */
+  RageAge?: number;
   SpawnTicks?: number;
   CarriedBy: number;
   CarryTicks: number;

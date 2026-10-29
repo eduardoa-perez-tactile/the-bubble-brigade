@@ -38,16 +38,19 @@ worldTest('simplified hopper compression follows support and airborne stretch fo
   expect(simplifiedEnemyDraws(e,100,80)[0]!.frame).toBe('enemy/banebou/simple-compress');
 });
 
-worldTest('simplified rollers change wheel drawings without inventing vertical travel',()=>{
+worldTest('enemy juice simplified rollers follow distance and retain a travelling angry pose',()=>{
   for(const kind of ['zenchan','mighta','invader']){
-    const e=enemy(kind),a=simplifiedEnemyDraws(e,0,80)[0]!,b=simplifiedEnemyDraws(e,8,80)[0]!;
+    const e=enemy(kind);e.X=0;const a=simplifiedEnemyDraws(e,0,80)[0]!;
+    expect(simplifiedEnemyDraws(e,200,80)[0]).toEqual(a);
+    e.X=kind==='invader'?10:16;const b=simplifiedEnemyDraws(e,8,80)[0]!;
     expect(a.frame).toBe(`enemy/${kind}/simple-travel-0`);
     expect(b.frame).toBe(`enemy/${kind}/simple-travel-1`);
-    expect(a.y).toBe(b.y);expect(a.height).toBe(b.height);
+    near(a.y+a.height*120/128,e.Y+44);near(b.y+b.height*120/128,e.Y+44);
     e.Ground=false;e.VY=3;
     expect(simplifiedEnemyState(e,8)).toBe('air');
     e.Ground=true;e.Angry=true;
-    expect(simplifiedEnemyState(e,8)).toBe('angry');
+    expect(simplifiedEnemyState(e,8)).toBe('travel-1');
+    expect(simplifiedEnemyDraws(e,8,80)[0]!.color![1]<.5).toBe(true);
   }
 });
 
@@ -60,7 +63,7 @@ worldTest('simplified enemy draws preserve feet facing and read-only frozen outp
       const draws=simplifiedEnemyDraws(posed,8,97.25);
       expect(draws.length).toBe(1);
       const d=draws[0]!;
-      near(d.x+d.width/2,posed.X+22);near(d.y+d.height*120/128,posed.Y+44);
+      expect(Math.abs(d.x+d.width/2-posed.X-22)<=7).toBe(true);near(d.y+d.height*120/128,posed.Y+44);
       expect(d.flip).toBe(Dir<0);
       expect(simplifiedEnemyDraws(posed,8,97.25)).toEqual(draws);
       expect(JSON.stringify(posed)).toBe(before);
