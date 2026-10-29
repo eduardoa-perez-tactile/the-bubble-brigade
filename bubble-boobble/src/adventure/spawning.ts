@@ -1,4 +1,5 @@
 import {blocked,solid} from '../arcade/physics';
+import {ADVENTURE_ACT_READY_STEPS,ADVENTURE_ACT_ACTION_STEPS} from './timing';
 import {ActorSize,EnemyState,State,Tile,alive,arenaColumns,arenaRows,type Enemy,type GameState} from '../arcade/types';
 
 // Match the drawn cartoon silhouettes, rather than only the 44px hitboxes.
@@ -58,7 +59,9 @@ export function stageAdventureEnemies(g:GameState,enemies:Enemy[],opening:boolea
   Object.assign(e,spot,{State:EnemyState.Spawning,SpawnTicks:adventureSpawnDescent+enemies.indexOf(e)*adventureSpawnStagger});
  }
  g.State=State.Ready;
- g.Countdown=adventureSpawnDescent+Math.max(0,enemies.length-1)*adventureSpawnStagger+adventureSpawnSettle+(opening?adventureSpawnOpeningCue:0);
+ const arrivalSteps=adventureSpawnDescent+Math.max(0,enemies.length-1)*adventureSpawnStagger+adventureSpawnSettle;
+ g.Countdown=opening?arrivalSteps+adventureSpawnOpeningCue:Math.max(arrivalSteps,ADVENTURE_ACT_READY_STEPS)+ADVENTURE_ACT_ACTION_STEPS;
+ g.EpisodeReadyTicks=g.Countdown;
  g.Projectiles=[];
 }
 /** All arrivals settle first and activate together at the end of preparation. */

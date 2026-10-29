@@ -28,7 +28,8 @@
         "ch_bottom",
         "ch_banner",
         "ch_freeze",
-        "ch_start"
+        "ch_start",
+        "ch_act_complete"
       ]
     },
     "ch_top": {
@@ -1361,6 +1362,81 @@
       },
       "show": "episode",
       "children": []
+    },
+    "ch_act_complete": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "ch_act_complete_title",
+        "ch_act_complete_next"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.48
+        ],
+        "pivot": "centre",
+        "offset": [
+          0,
+          0
+        ],
+        "w": "92%",
+        "h": 250
+      },
+      "show": "showActComplete",
+      "point": "act-complete"
+    },
+    "ch_act_complete_title": {
+      "type": "label",
+      "name": "Label",
+      "text": "{banner}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": 190,
+        "fontSize": 80,
+        "fitMin": 64,
+        "textAlign": "center",
+        "color": "#fff3d9",
+        "outline": 0.04,
+        "outlineColor": "#30271e"
+      },
+      "point": "act-complete-title"
+    },
+    "ch_act_complete_next": {
+      "type": "label",
+      "name": "Label",
+      "text": "{detail}",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0
+        ],
+        "offset": [
+          0,
+          206
+        ],
+        "w": "100%",
+        "h": 40,
+        "fontSize": 26,
+        "fitMin": 24,
+        "textAlign": "center",
+        "color": "#fff3d9",
+        "outline": 0.04,
+        "outlineColor": "#30271e"
+      },
+      "point": "act-complete-next"
     }
   },
   "view": {
@@ -1796,6 +1872,10 @@
           }
         }
       }
+    },
+    "showActComplete": {
+      "type": "yesno",
+      "default": false
     }
   },
   "transition": {

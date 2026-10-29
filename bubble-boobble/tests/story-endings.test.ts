@@ -191,6 +191,8 @@ renderTest('story endings one stable summary keeps guarded actions visible until
 },{scene,memory:'phone-low'});
 renderTest('story endings multi act finale and defeat show only the final outcome',async ctx=>{
  ctx.input.view(1280,720,1);await begin(ctx,'encounter-5');await ctx.cheat(AdventureClearAct,{});
+ expect(session.get().game!.EpisodeIntermission!>0).toBe(true);
+ for(let ticks=0;(session.get().game!.EpisodeIntermission??0)>0&&ticks<100;ticks++)await adventureStep(ctx,1);
  expect(session.get().game!.EpisodeWave).toBe(1);expect(session.get().game!.State).toBe(State.Ready);
  ctx.render.stats({width:1280,height:720});expect(!!ctx.ui.rect('story-outcome')).toBe(false);
  for(let ticks=0;session.get().game!.State===State.Ready&&ticks<180;ticks++)await adventureStep(ctx,1);

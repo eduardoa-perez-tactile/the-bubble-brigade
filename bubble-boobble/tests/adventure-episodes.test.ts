@@ -6,6 +6,7 @@ import {createGame,stepGame,validateLevel} from '../src/arcade/game';
 import {item} from '../src/arcade/items';
 import {EnemyState,State} from '../src/arcade/types';
 import {stepAdventureEpisode} from '../src/adventure/gameplay';
+import {ADVENTURE_ACT_BREAK_STEPS} from '../src/adventure/timing';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
 import {OverworldMapPreview,OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 import {WarpOverworld} from '../src/overworld/overworld.cheats';
@@ -47,7 +48,9 @@ worldTest('Adventure episodes use enemy combat without environmental pressure ha
 worldTest('Adventure finale requires its second act before a clear and resets it on retry',async()=>{
  const game=createGame([createAdventureLevel(5)],1,1);game.State=State.Playing;
  for(const e of game.Enemies)e.State=EnemyState.Defeated;
- stepGame(game,idle);expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Ready);
+ stepGame(game,idle);expect(game.EpisodeWave).toBe(0);expect(game.EpisodeIntermission).toBe(ADVENTURE_ACT_BREAK_STEPS);
+ for(let tick=0;tick<ADVENTURE_ACT_BREAK_STEPS;tick++)stepGame(game,idle);
+ expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Ready);
  expect(game.Enemies.filter(e=>e.State===EnemyState.Spawning).length).toBe(3);
  for(let remaining=game.Countdown;remaining>0;remaining--)stepGame(game,idle);
  expect(game.State).toBe(State.Playing);expect(game.Enemies.filter(e=>e.State===EnemyState.Active).length).toBe(3);
@@ -85,7 +88,9 @@ renderTest('Adventure revamp real harbor stage cards and five distinct playable 
   expect(session.get().game!.Level.episode!.id).toBe(`encounter-${number}`);
   ctx.render.expectScreenshot(`episode-${number}-stage`,{width:1280,height:720});
   peak=Math.max(peak,ctx.render.stats({width:1280,height:720}).drawCalls);
-  if(number>=4){await ctx.cheat(AdventureMoment,{secondAct:number===5});await adventureStep(ctx,1);ctx.render.expectScreenshot(number===4?'enemy-combat':'finale-second-act',{width:1280,height:720});}
+  if(number>=4){await ctx.cheat(AdventureMoment,{secondAct:number===5});await adventureStep(ctx,1);
+   if(number===5)for(let tick=0;session.get().game!.EpisodeIntermission&&tick<ADVENTURE_ACT_BREAK_STEPS;tick++)await adventureStep(ctx,1);
+   ctx.render.expectScreenshot(number===4?'enemy-combat':'finale-second-act',{width:1280,height:720});}
   expect(peak<=50).toBe(true);
   await act('leave');await ctx.loaded();await adventureStep(ctx,10);
   expect(overworldState.get().active).toBe(true);

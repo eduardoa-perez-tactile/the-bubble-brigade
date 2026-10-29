@@ -1,3 +1,4 @@
+import {ADVENTURE_ACT_BREAK_STEPS} from '../src/adventure/timing';
 import {expect,worldTest,renderTest,type WorldTestContext} from '@gameengine/test';
 import {assets} from '@gameengine/runtime';
 import {createAdventureLevel} from '../src/adventure/episodes';
@@ -171,6 +172,8 @@ worldTest('Story room rollout finale second acts safely arrive inside compact wa
   // Flank setup isolates arrival safety. These teleports are not route evidence.
   Object.assign(game.Players[0]!,{X:col*Tile,Y:22*Tile-ActorSize,VY:0,Ground:true,Invincible:1000});
   for(const enemy of game.Enemies)enemy.State=EnemyState.Defeated;stepGame(game,idle);
+  expect(game.EpisodeIntermission).toBe(ADVENTURE_ACT_BREAK_STEPS);
+  for(let tick=0;tick<ADVENTURE_ACT_BREAK_STEPS;tick++)stepGame(game,idle);
   expect(game.EpisodeWave).toBe(1);expect(game.State).toBe(State.Ready);
   const wave=game.Enemies.filter(e=>e.State===EnemyState.Spawning);
   expect(wave.map(e=>e.Kind)).toEqual(['mighta','monsta',number===10?'banebou':'invader']);
@@ -200,7 +203,7 @@ renderTest('Story room rollout shows all twenty five native rooms and affected f
   }
   if([10,15,20,25].includes(number)){
    const view=views[1]!;ctx.input.view(view.width,view.height,1,view.safeArea);await ctx.cheat(AdventureMoment,{secondAct:true});
-   for(let i=0;session.get().game!.State===State.Ready&&i<240;i++)await adventureStep(ctx,1);
+   for(let i=0;(session.get().game!.EpisodeIntermission||session.get().game!.State===State.Ready)&&i<360;i++)await adventureStep(ctx,1);
    expect(session.get().game!.EpisodeWave).toBe(1);expect(session.get().game!.State).toBe(State.Playing);ctx.render.waitForAssets({width:view.width,height:view.height});capture(number,view,2);
   }
   await leave(ctx);

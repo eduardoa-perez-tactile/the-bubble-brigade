@@ -16,6 +16,7 @@ export const CartoonHudView = defineView<CartoonHudModel>({
   name: 'CartoonHUD',
   samples: {
     playing,
+    actComplete: {...playing,episode:true,party:false,showActComplete:true,banner:'ACT 1\nCOMPLETE!',detail:'NEXT: ACT 2 OF 3'},
     rescue: { ...playing, rosterAll: roster.map((p,index)=>index===7?{...p,status:'RESCUE ME!',down:true,condition:'rescue' as const}:p), rosterBottom: roster.slice(5).map((p,index)=>index===2?{...p,status:'RESCUE ME!',down:true,condition:'rescue' as const}:p) },
     ready: { ...playing, score: '0000000', round: 'WAVE 1 / 10', high: '10 / 10',
       showBanner: false, banner: '', hint: '', showStartCue: true,
@@ -32,7 +33,7 @@ export const CartoonHudView = defineView<CartoonHudModel>({
   },
   render: model => <Screen safeArea class="desktop-screen desktop-hud-screen">
     <Widget class={()=>model().episode?"cartoon-hud story-cues-only":"cartoon-hud"} doc="cartoon-hud" id="cartoon-hud" props={{
-      episode:()=>!!model().episode,bossActive: () => !!model().bossActive,
+      showActComplete:()=>!!model().showActComplete,episode:()=>!!model().episode,bossActive: () => !!model().bossActive,
       showStatus: () => model().showStatus ?? (model().highTitle === 'BOSS HP' || model().highTitle === 'LAST DRAGON'),
       classicPortrait: () => model().classicPortrait ?? 'cartoon/reconstruction/ui/portraits/green',
       waveLabel: () => model().waveLabel ?? model().round.replace(/ \/ \d+$/, ''),
