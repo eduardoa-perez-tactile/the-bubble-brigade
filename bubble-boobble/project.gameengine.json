@@ -119,6 +119,7 @@
       "adventure-lighthouse": {
         "include": [
           "assets/adventure/lighthouse.png",
+          "assets/adventure/foreground/sailcloth.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-stone-v5.png",
           "assets/cartoon/reconstruction/environment/boundaries/floor-stone-v4.png"
         ]
@@ -126,6 +127,7 @@
       "adventure-post-office": {
         "include": [
           "assets/adventure/post-office.png",
+          "assets/adventure/foreground/parcels.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-parcel-reference.png"
         ]
       },
@@ -139,18 +141,21 @@
       "adventure-pump-station": {
         "include": [
           "assets/adventure/pump-station.png",
+          "assets/adventure/foreground/foundry-4.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
       "adventure-tugboat": {
         "include": [
           "assets/adventure/tugboat.png",
+          "assets/adventure/foreground/sailcloth.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-garden-1": {
         "include": [
           "assets/adventure/garden-1.png",
+          "assets/adventure/foreground/garden-2.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
@@ -164,96 +169,112 @@
       "adventure-garden-3": {
         "include": [
           "assets/adventure/garden-3.png",
+          "assets/adventure/foreground/garden-2.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
       "adventure-garden-4": {
         "include": [
           "assets/adventure/garden-4.png",
+          "assets/adventure/foreground/garden-2.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
       "adventure-garden-5": {
         "include": [
           "assets/adventure/garden-5.png",
+          "assets/adventure/foreground/garden-2.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
       "adventure-fair-1": {
         "include": [
           "assets/adventure/fair-1.png",
+          "assets/adventure/foreground/carnival.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-fair-reference.png"
         ]
       },
       "adventure-fair-2": {
         "include": [
           "assets/adventure/fair-2.png",
+          "assets/adventure/foreground/carnival.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-fair-reference.png"
         ]
       },
       "adventure-fair-3": {
         "include": [
           "assets/adventure/fair-3.png",
+          "assets/adventure/foreground/carnival.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-fair-reference.png"
         ]
       },
       "adventure-fair-4": {
         "include": [
           "assets/adventure/fair-4.png",
+          "assets/adventure/foreground/carnival.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-fair-reference.png"
         ]
       },
       "adventure-fair-5": {
         "include": [
           "assets/adventure/fair-5.png",
+          "assets/adventure/foreground/carnival.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-fair-reference.png"
         ]
       },
       "adventure-springs-1": {
         "include": [
           "assets/adventure/springs-1.png",
+          "assets/adventure/foreground/springs.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-springs-2": {
         "include": [
           "assets/adventure/springs-2.png",
+          "assets/adventure/foreground/springs.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-springs-3": {
         "include": [
           "assets/adventure/springs-3.png",
+          "assets/adventure/foreground/springs.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-springs-4": {
         "include": [
           "assets/adventure/springs-4.png",
+          "assets/adventure/foreground/springs.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-springs-5": {
         "include": [
           "assets/adventure/springs-5.png",
+          "assets/adventure/foreground/springs.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]
       },
       "adventure-foundry-1": {
         "include": [
           "assets/adventure/foundry-1.png",
+          "assets/adventure/foreground/glassworks.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
       "adventure-foundry-2": {
         "include": [
           "assets/adventure/foundry-2.png",
+          "assets/adventure/foreground/foundry-4.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
       "adventure-foundry-3": {
         "include": [
           "assets/adventure/foundry-3.png",
+          "assets/adventure/foreground/glassworks.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
@@ -267,6 +288,7 @@
       "adventure-foundry-5": {
         "include": [
           "assets/adventure/foundry-5.png",
+          "assets/adventure/foreground/glassworks.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-pump-reference.png"
         ]
       },
