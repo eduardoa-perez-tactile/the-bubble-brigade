@@ -276,12 +276,13 @@ declare module '@gameengine/ui' {
      *   - `art`: image, default "cartoon/menu/focus-bubble"
      *   - `hasArt`: yesno, default false
      *   - `compact`: yesno, default false
+     *   - `showPointer`: yesno, default true
      * Events: `<id>`
      * Code areas: none
      * Refs: none
      */
     'cartoon-button': {
-      props: { label: string | { loc: string } | LocText; selected: boolean; art: string; hasArt: boolean; compact: boolean };
+      props: { label: string | { loc: string } | LocText; selected: boolean; art: string; hasArt: boolean; compact: boolean; showPointer: boolean };
       areas: never;
       refs: never;
     };
@@ -574,14 +575,17 @@ declare module '@gameengine/ui' {
      *   - `titleNarrow`: yesno, default false
      *   - `closedPrompt`: yesno, default false
      *   - `restartSelected`: yesno, default false
+     *   - `showRestart`: yesno, default true
+     *   - `freshMenu`: yesno, default false
+     *   - `freshNarrow`: yesno, default false
      * Events: `choose-mode`, `adventure-new`, `adventure-arcade`, `settings`, `quit`, `menu`
-     * Code areas: `atmosphere`, `greeter`
+     * Code areas: `atmosphere`, `greeter`, `selection`
      * Refs: `cloth`, `curtain-prompt`, `spotlight`, `title-card`, `greeter`, `choose-mode`, `adventure-new`, `adventure-arcade`, `settings`, `quit`, `menu`
      * Samples (`view render doc:cartoon-menu --sample …`): `title`, `menu`
      */
     'cartoon-menu': {
-      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean; restartSelected: boolean };
-      areas: 'atmosphere' | 'greeter';
+      props: { startSelected: boolean; settingsSelected: boolean; quitSelected: boolean; titleMode: boolean; promptVisible: boolean; showStatus: boolean; status: string | { loc: string } | LocText; thirdLabel: string | { loc: string } | LocText; firstLabel: string | { loc: string } | LocText; arcadeSelected: boolean; progress: string | { loc: string } | LocText; firstUseArt: boolean; thirdUseArt: boolean; firstArt: string; thirdArt: string; narrow: boolean; titleNarrow: boolean; closedPrompt: boolean; restartSelected: boolean; showRestart: boolean; freshMenu: boolean; freshNarrow: boolean };
+      areas: 'atmosphere' | 'greeter' | 'selection';
       refs: 'cloth' | 'curtain-prompt' | 'spotlight' | 'title-card' | 'greeter' | 'choose-mode' | 'adventure-new' | 'adventure-arcade' | 'settings' | 'quit' | 'menu';
     };
     /**

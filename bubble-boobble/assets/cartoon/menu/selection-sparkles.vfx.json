@@ -1,0 +1,84 @@
+{
+  "$schemaVersion": 1,
+  "emitters": [
+    {
+      "name": "landing-glints",
+      "capacity": 4,
+      "rate": 0,
+      "bursts": [
+        {
+          "at": 0.22,
+          "count": 3
+        }
+      ],
+      "duration": 0.75,
+      "loop": false,
+      "shape": {
+        "kind": "circle",
+        "radius": 0.22
+      },
+      "lifetime": [
+        0.25,
+        0.42
+      ],
+      "speed": [
+        0.25,
+        0.55
+      ],
+      "size": [
+        0.035,
+        0.055
+      ],
+      "color": [
+        0.68,
+        0.91,
+        1,
+        0.9
+      ],
+      "color2": [
+        1,
+        0.66,
+        0.86,
+        0.8
+      ],
+      "colorOverLife": [
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0.12,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "sizeOverLife": [
+        [
+          0,
+          0.2
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          1,
+          0.1
+        ]
+      ],
+      "blend": "additive"
+    }
+  ]
+}

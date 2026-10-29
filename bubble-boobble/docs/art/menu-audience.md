@@ -1,0 +1,9 @@
+# Main-menu audience foreground
+
+Asset: `assets/cartoon/menu/audience-foreground.png` (2172 × 724, transparent PNG).
+
+Generated with the built-in ImageGen tool on October 29, 2026, using the current Game Engine menu capture as a style and composition reference. Softness and defocus are baked into the generated artwork; no runtime blur or image post-processing is required.
+
+## Generation prompt
+
+Use case: illustration-story. Asset type: transparent foreground audience layer for a 2D cartoon theater game menu. The supplied image is ONLY a style, palette, and composition reference; do not reproduce its stage, dragon, logo, curtains or lettering. Generate ONLY audience silhouettes seen from behind, soft overlapping backs of heads and shoulders, clustered along the bottom left and bottom right of an extra-wide shallow 3:1 transparent canvas. Keep the upper half fully transparent, and the middle 40 percent width almost completely open/transparent: the tallest heads belong to far left and right corners, with tiny low shapes at bottom center at most. Their shoulders continue beyond and are cut off by the bottom canvas edge. Style: warm vintage cartoon hand-painted gouache, broad soft brushwork and baked-in defocus, deliberately blurry edges and simple rounded shapes, muted dark plum, navy, warm brown; very subtle amber rim light from stage in front. Adult and child rounded heads, a few soft cartoon creature ears allowed, no detailed faces and no visible eyes because all are facing away. Dark subdued value hierarchy, not saturated or bright. This will occupy about the bottom 10 percent of a 16:9 menu with stage visible above it. No hard outlines, no vector look, no photorealism, no theater scenery, no seats extending upward, no text, no watermark, no background color. Genuine transparent alpha background.
