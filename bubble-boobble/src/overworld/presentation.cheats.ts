@@ -19,9 +19,10 @@ import {adventureForProfile} from './progression';
 /** Dense journal fixture for responsive QA; production grants still use normal encounter results. */
 export const OverworldJournalFixture=defineCheat({
  id:'overworld.journal-fixture',group:'Adventure',title:'Populate a full Adventure journal for layout QA',
- run(ctx){
+ params:{clears:{type:'number',min:0,max:25,default:25}},
+ run(ctx,{clears}){
   const index=desktopSaveState.get().active;
-  for(const encounter of encounters.filter(e=>!e.trial)){
+  for(const encounter of encounters.filter(e=>!e.trial).slice(0,Math.floor(clears))){
    desktopSaveState.dispatch('adventureBeginAttempt',{profileIndex:index,encounterId:encounter.id},ctx.time);
    const pending=adventureForProfile(desktopSaveState.get().profiles[index]!).pending;
    if(pending)desktopSaveState.dispatch('adventureComplete',{profileIndex:index,encounterId:encounter.id,attemptId:pending.id,score:100},ctx.time);

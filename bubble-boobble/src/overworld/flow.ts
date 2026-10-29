@@ -6,6 +6,7 @@ import { districts, districtById, encounterById, trialForDistrict, availableDist
 import { overworldState, enterOverworld, suspendOverworld, setOverworldModal, returnToEntrance } from './state';
 import {overworldEntrancePoint as importShortcutPoint} from './navigation';
 import { overworldPoi } from './navigation';
+import {adventureJournalModel} from './journal-model';
 
 export function handleAdventureAction(action:string,value:string,now:number):boolean {
  const s=desktopState.get(),map=overworldState.get();
@@ -75,13 +76,25 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  }
  if(action==='overworld-shortcut'&&map.active&&map.focusedPoi==='shortcut'){desktopSaveState.dispatch('adventureShortcut',{profileIndex,id:`${map.districtId}:shortcut`},now);return true;}
  if(action==='overworld-menu'&&map.active){anchor();panel('pause');return true;}
- if(action==='overworld-journal'&&map.active){panel('journal');patch({journalDistrict:map.districtId,journalEntry:''});return true;}
+ if(action==='overworld-journal'&&map.active){panel('journal');patch({journalDistrict:map.districtId,journalEntry:'',journalMemories:false});return true;}
  if(action.startsWith('overworld-journal-page:')&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
-  const id=action.slice('overworld-journal-page:'.length);if(districtById(id))patch({journalDistrict:id,journalEntry:'',panelMessage:'',selected:districtById(id)!.index});return true;
+  const id=action.slice('overworld-journal-page:'.length);if(districtById(id))patch({journalDistrict:id,journalEntry:'',journalMemories:false,panelMessage:'',selected:districtById(id)!.index});return true;
  }
  if(action.startsWith('overworld-journal-entry:')&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
   const id=action.slice('overworld-journal-entry:'.length),entry=encounterById(id);
   if(entry?.districtId===(s.journalDistrict??map.districtId))patch({journalEntry:id,panelMessage:''});return true;
+ }
+ if(action==='overworld-journal-memories'&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
+  const next={...s,journalMemories:!s.journalMemories,panelMessage:''};
+  const selected=adventureJournalModel(next,save,map.districtId).buttons.findIndex(b=>b.key==='overworld-journal-memories');
+  patch({journalMemories:next.journalMemories,panelMessage:'',selected:Math.max(0,selected)});return true;
+ }
+ if(action.startsWith('overworld-journal-show:')&&map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
+  const id=action.slice('overworld-journal-show:'.length),entry=encounterById(id);
+  if(!entry||entry.districtId!==map.districtId||entry.districtId!==(s.journalDistrict??map.districtId)||!availableEncounter(id,progress))return true;
+  close();const current=overworldState.get();
+  const poiId=entry.trial?'trial':id;
+  overworldState.set({...current,waypointId:current.focusedPoi===poiId?'':id});return true;
  }
  if(action==='overworld-guide-claim'&&s.screen==='overworld-panel'&&s.overworldPanel==='journal'){
   desktopSaveState.dispatch('adventureGuideReward',{profileIndex},now);patch({panelMessage:progress.rewardClaims['guide-three-clears']?'Three-clear reward already collected.':adventureCleared(progress)>=3?'Three-clear reward: 15 coins saved.':'Clear any three encounters to claim 15 coins in the journal.'});return true;
@@ -100,6 +113,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action.startsWith('overworld-equip:')&&s.screen==='overworld-panel'&&['vendor','shop'].includes(s.overworldPanel??''))return true;
  if(action.startsWith('overworld-travel:')&&map.active&&s.screen==='overworld-panel'&&['gate','journal'].includes(s.overworldPanel??'')){
   const id=action.slice(17);if(!availableDistrict(id,progress))return true;
+  if(id===map.districtId){close();return true;}
   enterOverworld(id);const at=overworldState.get();desktopSaveState.dispatch('adventureAnchor',{profileIndex,districtId:id,x:at.x,y:at.y},now);
   patch({screen:'overworld',overworldPanel:'',selected:0});return true;
  }
@@ -107,6 +121,9 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
  if(action==='settings'&&map.active){setOverworldModal(true);patch({settingsReturn:s.screen,screen:'settings',selected:0});return true;}
  if(action==='menu'&&s.screen==='settings'&&s.settingsReturn?.startsWith('overworld')){
   const screen=s.settingsReturn;patch({screen,settingsReturn:'menu',selected:0});if(screen==='overworld')setOverworldModal(false);return true;
+ }
+ if(['overworld-journal-return','overworld-journal-close'].includes(action)){
+  if(map.active&&s.screen==='overworld-panel'&&s.overworldPanel==='journal')close();return true;
  }
  if(action==='overworld-back'||action==='menu'&&s.screen.startsWith('overworld')){close();return true;}
  return false;

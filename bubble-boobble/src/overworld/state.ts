@@ -12,6 +12,8 @@ export interface OverworldState {
   active:boolean; reference:boolean; modal:boolean; districtId:string; x:number; y:number; facing:OverworldFacing;
   moving:boolean; focusedPoi:string; tick:number; walkTick:number; inputArmed:boolean; confirmHeld:boolean;
   cameraReady:boolean; confirmKeys:number; shortcutLatched:boolean; footsteps:OverworldFootstep[]; markerMotion?:MarkerMotion;
+  /** Ephemeral journal guidance; never changes the avatar position or saved map anchor. */
+  waypointId?:string;
 }
 export const initialOverworldState:OverworldState={
   active:false,reference:false,modal:false,districtId:'district-1',x:0,y:-280,facing:'down',moving:false,
@@ -22,9 +24,9 @@ export const overworldState=defineDoc('overworld',initialOverworldState as unkno
 export function enterOverworld(districtId:string,anchor?:OverworldPoint|string):void {
   const s=overworldState.get(),point=typeof anchor==='string'?overworldPoi(districtId,anchor):anchor;
   const p=point&&isOverworldWalkable(point.x,point.y,districtId)?point:overworldSpawn(districtId);
-  overworldState.set({...s,active:true,reference:false,modal:false,districtId,x:p.x,y:p.y,moving:false,focusedPoi:focusedOverworldPoi(districtId,p.x,p.y),inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false,shortcutLatched:false,footsteps:[],markerMotion:initialMarkerMotion(),walkTick:0});
+  overworldState.set({...s,active:true,reference:false,modal:false,districtId,x:p.x,y:p.y,moving:false,focusedPoi:focusedOverworldPoi(districtId,p.x,p.y),inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false,shortcutLatched:false,footsteps:[],markerMotion:initialMarkerMotion(),walkTick:0,waypointId:''});
 }
-export function suspendOverworld():void { const s=overworldState.get();overworldState.set({...s,active:false,modal:false,moving:false,inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false,footsteps:[]}); }
+export function suspendOverworld():void { const s=overworldState.get();overworldState.set({...s,active:false,modal:false,moving:false,inputArmed:false,confirmHeld:false,confirmKeys:0,cameraReady:false,footsteps:[],waypointId:''}); }
 export function setOverworldModal(modal:boolean):void { const s=overworldState.get();overworldState.set({...s,modal,moving:false,inputArmed:false}); }
 export function returnToEntrance(encounterId:string,won=false):void {
   const encounter=encounterById(encounterId);

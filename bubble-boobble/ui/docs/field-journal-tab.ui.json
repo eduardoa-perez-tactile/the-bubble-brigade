@@ -1,0 +1,92 @@
+{
+  "$schemaVersion": 1,
+  "guid": "3b58c396-4a1d-49f4-bcec-f1086f5bb58f",
+  "name": "field-journal-tab",
+  "title": "Field journal tab",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Field journal tab",
+      "style": {
+        "dir": "column",
+        "pad": 3,
+        "align": "center",
+        "radius": 6,
+        "w": 185,
+        "h": 48,
+        "justify": "center",
+        "gap": 1
+      },
+      "children": [
+        "title",
+        "subtitle"
+      ]
+    },
+    "title": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": "100%",
+        "h": 25,
+        "fontSize": 18,
+        "fitMin": 14,
+        "color": "#285b59",
+        "textAlign": "center"
+      }
+    },
+    "subtitle": {
+      "type": "label",
+      "name": "Label",
+      "text": "{status}",
+      "style": {
+        "w": "100%",
+        "h": 15,
+        "fontSize": 11,
+        "fitMin": 10,
+        "color": "#72634b",
+        "textAlign": "center"
+      }
+    }
+  },
+  "behaviour": "button",
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "Fair"
+    },
+    "status": {
+      "type": "text",
+      "default": "You are here"
+    },
+    "active": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#285b59"
+            },
+            "title": {
+              "color": "#fff3d4"
+            },
+            "subtitle": {
+              "color": "#fff3d4"
+            }
+          }
+        }
+      }
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false
+    }
+  },
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  }
+}

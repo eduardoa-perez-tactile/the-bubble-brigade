@@ -35,6 +35,8 @@ worldTest('map guide metadata never focuses and journal grants the three-clear r
  const coins=()=>adventureForProfile(desktopSaveState.get().profiles[0]!).coins;
  expect(coins()).toBe(30);
  await intent('overworld-journal');expect(desktopState.get().overworldPanel).toBe('journal');
+ // Optional rewards now live on the Memories page rather than crowding the journey.
+ await intent('overworld-journal-memories');
  expect(adventurePanel(desktopState.get(),desktopSaveState.get()).buttons.some(b=>b.key==='overworld-guide-claim')).toBe(true);
  await intent('overworld-guide-claim');expect(coins()).toBe(45);
  expect(adventureForProfile(desktopSaveState.get().profiles[0]!).rewardClaims['guide-three-clears']).toBe(true);
