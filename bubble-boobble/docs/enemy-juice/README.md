@@ -16,9 +16,10 @@ and golden/replay baselines are unchanged.
   large outlined shots and the essential charge warning.
 - Popped enemies expand over four ticks from the captive envelope to their
   original largest painted dimension, preserving each dead drawing's aspect.
-  Both release drawings have a blue tint. Rotation is computed in code from
+  Both release drawings retain their original colours (the initial blue tint
+  was removed after playtest feedback). Rotation is computed in code from
   the existing 50-tick flight, about the painted center, in the launch direction.
-  Reduced effects show full-size blue enemies immediately without rotation.
+  Reduced effects show full-size enemies immediately without rotation.
 - The last unresolved enemy becomes red and uses the existing angry speed,
   without an extra multiplier. A short tint/scale pulse announces new rage.
   Pending Party reinforcements and future Adventure acts prevent early rage.

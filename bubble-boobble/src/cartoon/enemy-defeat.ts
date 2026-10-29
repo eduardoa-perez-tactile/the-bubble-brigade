@@ -39,14 +39,14 @@ export function cartoonDefeatedEnemyDraws(e:Readonly<Enemy>,capturedFrame:string
   const visibleExtent=releaseExtent+(targetExtent-releaseExtent)*progress;
   const direction=e.VX===0?(e.Dir<0?-1:1):(e.VX<0?-1:1);
   const rotation=reduced?0:direction*age/50*Math.PI*2;
-  const tinted=(frame:string,bounds:ReturnType<typeof paintedBounds>,opacity:number):CartoonDraw=>{
+  const pose=(frame:string,bounds:ReturnType<typeof paintedBounds>,opacity:number):CartoonDraw=>{
     const canvasSize=visibleExtent/extent(bounds);
     return {frame,x:rootX-(bounds.left+bounds.width/2)*canvasSize,
       y:rootY-(bounds.top+bounds.height/2)*canvasSize,width:canvasSize,height:canvasSize,flip:false,
       pivot:[bounds.left+bounds.width/2,bounds.top+bounds.height/2],rotation,
-      color:[.24,.58,1,opacity]};
+      color:[1,1,1,opacity]};
   };
-  if(progress===0)return [tinted(capturedFrame,captured,1)];
-  if(progress===1)return [tinted(deadFrame,dead,1)];
-  return [tinted(capturedFrame,captured,1-progress),tinted(deadFrame,dead,progress)];
+  if(progress===0)return [pose(capturedFrame,captured,1)];
+  if(progress===1)return [pose(deadFrame,dead,1)];
+  return [pose(capturedFrame,captured,1-progress),pose(deadFrame,dead,progress)];
 }

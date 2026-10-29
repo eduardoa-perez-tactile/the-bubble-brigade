@@ -93,7 +93,7 @@ worldTest('enemy size transitions restore full painted scale through the actual 
    expect(extent).toBeLessThanOrEqual(fullExtent+.001);
    if(age>=4||reduced)close(extent,fullExtent);
    for(const d of draws){
-    expect(d.color?.[2]).toBe(1);expect(d.color![0]<d.color![1]&&d.color![1]<d.color![2]).toBe(true);
+    expect(d.color?.slice(0,3)).toEqual([1,1,1]);
     expect(d.rotation).toBe(reduced?0:(e.VX<0?-1:1)*age/50*Math.PI*2);
    }
    if(age===0&&!reduced){
