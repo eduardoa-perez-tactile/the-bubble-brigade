@@ -123,10 +123,7 @@
       "adventure-post-office": {
         "include": [
           "assets/adventure/post-office.png",
-          "assets/cartoon/reconstruction/environment/boundaries/wall-timber.png",
-          "assets/cartoon/reconstruction/environment/boundaries/foundation-timber.png",
-          "assets/cartoon/reconstruction/environment/boundaries/base-timber-v2.png",
-          "assets/cartoon/reconstruction/environment/boundaries/collar-timber-v2.png"
+          "assets/cartoon/reconstruction/environment/boundaries/*-parcel-reference.png"
         ]
       },
       "adventure-sailcloth": {
@@ -153,10 +150,7 @@
       "adventure-garden-1": {
         "include": [
           "assets/adventure/garden-1.png",
-          "assets/cartoon/reconstruction/environment/boundaries/wall-vegetation.png",
-          "assets/cartoon/reconstruction/environment/boundaries/foundation-vegetation.png",
-          "assets/cartoon/reconstruction/environment/boundaries/base-vegetation-v2.png",
-          "assets/cartoon/reconstruction/environment/boundaries/collar-vegetation-v2.png"
+          "assets/cartoon/reconstruction/environment/boundaries/*-garden-reference.png"
         ]
       },
       "adventure-garden-2": {

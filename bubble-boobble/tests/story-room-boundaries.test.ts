@@ -47,6 +47,7 @@ type AssetEvidence=ReferenceBoundaryAsset&{
  rgbRepairWeightMask?:string;rgbRepairWeightMaskSourceFrame?:readonly number[];
  sidePlatformInpaintSourceRect?:readonly number[];changedRGBPixelCount?:number;
  originalBrassRGBExactFraction?:number;glassRepairPredicate?:string;
+ alphaClearanceAboveFloorJoin128?:readonly number[];firstInnerEdgeSolidSourceY?:number;floorJoinTopSourceY?:number;
 };
 
 function coversHeight(draws:readonly CartoonDraw[],top:number,bottom:number):void {
@@ -145,7 +146,17 @@ worldTest('Story room boundaries align with actual movement stops and enclose ev
        }else expect(evidence.originalRGBFraction>=.995).toBe(true);
       }
       if(evidence.alphaClearance128){
-       expect(evidence.alphaClearance128[0]!>=2&&evidence.alphaClearance128[2]!>=2).toBe(true);
+       if((reference!.id==='parcel'||reference!.id==='garden')&&role==='profile'){
+        // A complete U-frame hands off to its matching floor inside this crop.
+        // The painted cap crest can rise up to six source pixels above the
+        // physical floor. All architecture ABOVE that join must remain uncut.
+        const outer=side==='left'?0:2,clear=evidence.alphaClearanceAboveFloorJoin128;
+        expect(evidence.alphaClearance128[outer]!>=2).toBe(true);
+        expect(!!clear&&clear[0]!>=2&&clear[2]!>=2).toBe(true);
+        expect(evidence.firstInnerEdgeSolidSourceY!>=anchors.floorFeet-6).toBe(true);
+        expect(evidence.firstInnerEdgeSolidSourceY!<=anchors.floorFeet).toBe(true);
+        expect(evidence.floorJoinTopSourceY).toBe(evidence.firstInnerEdgeSolidSourceY);
+       }else expect(evidence.alphaClearance128[0]!>=2&&evidence.alphaClearance128[2]!>=2).toBe(true);
       }
      }
     }
@@ -318,10 +329,10 @@ worldTest('Story room boundaries follow all twenty five existing setting identit
   const expected=number<=5?harbor[number-1]!:district[Math.floor((number-6)/5)]!;
   const plan=cartoonDrawPlan(game,120);
   const reference=storyRoomBoundaryReference(game.Level);
-  if(['stone','pipe','bubble'].includes(expected)&&!reference)
+  if((['stone','pipe','bubble'].includes(expected)||number===2||number===6)&&!reference)
    throw new Error(`Story boundary stage ${number}: approved ${expected} reference family must replace the provisional kit`);
   if(reference){
-   expect(reference.id).toBe(expected==='stone'?'lighthouse':expected);
+   expect(reference.id).toBe(number===2?'parcel':number===6?'garden':expected==='stone'?'lighthouse':expected);
    const profiles=reference.assets.filter(asset=>['profile','emitter','film'].includes(referenceRole(asset)));
    expect(profiles.some(asset=>referenceSide(asset)==='left')).toBe(true);
    expect(profiles.some(asset=>referenceSide(asset)==='right')).toBe(true);
