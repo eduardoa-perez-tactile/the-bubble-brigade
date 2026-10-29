@@ -45,8 +45,8 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
  // Read and upload gameplay art during the cartoon title/menu. The first
  // courtyard draw must not start loading its material or shared sprite atlas.
  let courtyardLoaded=false;
- createEffect(()=>{if(!courtyardLoaded&&materials()?.v1[0]===1){courtyardLoaded=true;assets.load('courtyard-gameplay');assets.load('menu-presentation');}});
- onCleanup(()=>{if(courtyardLoaded){assets.release('courtyard-gameplay');assets.release('menu-presentation');}});
+ createEffect(()=>{if(!courtyardLoaded&&materials()?.v1[0]===1){courtyardLoaded=true;assets.load('courtyard-gameplay');assets.load('menu-presentation');assets.load('iris-presentation');}});
+ onCleanup(()=>{if(courtyardLoaded){assets.release('courtyard-gameplay');assets.release('menu-presentation');assets.release('iris-presentation');}});
  let developmentReported=false;let cartoonReported=false;
  createEffect(()=>{if(materials()?.v1[0]===1&&!cartoonReported){cartoonReported=true;emit(DesktopIntent,{action:'cartoon-mode'});}});
  createEffect(()=>{if(control()?.active&&!developmentReported){developmentReported=true;emit(DesktopIntent,{action:'development-menu',index:developmentMenuEnabled?1:0});}});
@@ -163,7 +163,7 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   if(titleCurtain)titleCurtain.update(model);else titleCurtain=views.push(CartoonTitleCurtainView,model);
  });
  let cover:ViewHandle<CartoonTransitionModel>|undefined;
- createEffect(()=>{const s=state();if(!s.transitionAction){cover?.close({immediate:true});cover=undefined;return;}const elapsed=(s.transitionStartedStep??-1)<0?0:Math.max(0,(clock()?.step??0)-s.transitionStartedStep!);const timing=cartoonFlowTiming(!!s.transitionHasTitle,s.transitionAction,s.partyRun);if(elapsed>=timing.revealEndAt){cover?.close({immediate:true});cover=undefined;return;}const t=s.transitionCommitted?Math.min(1,Math.max(0,(elapsed-timing.commitAt)/timing.revealSteps)):Math.min(1,elapsed/timing.closeAt);const aperture=s.transitionCommitted?1-(1-t)*(1-t):1-t*t;const m={aperture,reducedEffects:!!save().settings.reducedEffects,opacity:s.transitionCommitted?1-t:t};if(cover)cover.update(m);else cover=views.push(CartoonTransitionView,m);});
+ createEffect(()=>{const s=state();if(!s.transitionAction){cover?.close({immediate:true});cover=undefined;return;}const elapsed=(s.transitionStartedStep??-1)<0?0:Math.max(0,(clock()?.step??0)-s.transitionStartedStep!);const timing=cartoonFlowTiming(!!s.transitionHasTitle,s.transitionAction,s.partyRun);if(elapsed>=timing.revealEndAt){cover?.close({immediate:true});cover=undefined;return;}const t=s.transitionCommitted?Math.min(1,Math.max(0,(elapsed-timing.commitAt)/timing.revealSteps)):Math.min(1,elapsed/timing.closeAt);const aperture=s.transitionCommitted?1-(1-t)*(1-t):1-t*t;const m={aperture,reducedEffects:!!save().settings.reducedEffects,opacity:s.transitionCommitted?1-t:t,drawingFrame:Math.floor(elapsed*24/60)%4};if(cover)cover.update(m);else cover=views.push(CartoonTransitionView,m);});
  // Reuse the viewport-sized transition layer so the finale fade also covers safe insets and tall screens.
  let finaleCover:ViewHandle<CartoonTransitionModel>|undefined;
  createEffect(()=>{

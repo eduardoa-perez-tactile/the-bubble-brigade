@@ -55,6 +55,9 @@
   },
   "assets": {
     "groups": {
+      "iris-presentation": {
+        "include": ["assets/cartoon/iris/**"]
+      },
       "film-presentation": {
         "include": ["assets/cartoon/film/**"]
       },
