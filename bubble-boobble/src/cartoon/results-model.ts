@@ -17,7 +17,7 @@ export function victoryPresentation(model:DesktopModel){
   {key:'best',label:'PERSONAL BEST',value:model.resultStats.match(/BEST (\d+)/)?.[1]??score},
  ];
  return {
-  eyebrow:model.resultParty?'BUBBLE MADNESS / FINAL BOSS DEFEATED':round?'A BRIGADE ADVENTURE / RUN COMPLETE':'CUSTOM ROUND / PLAY TEST COMPLETE',
+  eyebrow:model.resultParty?'WAVE SURVIVAL / FINAL BOSS DEFEATED':round?'A BRIGADE ADVENTURE / RUN COMPLETE':'CUSTOM ROUND / PLAY TEST COMPLETE',
   heroCaption:'THE BUBBLE BRIGADE',outcome:model.resultParty?'BRIGADE VICTORY!':round?'ADVENTURE COMPLETE!':'ROUND COMPLETE!',
   detailHeading:model.resultParty?'TEAM RANKING / KNOCKOUTS':'YOUR ADVENTURE',metrics,
   ranking:model.resultParty?model.ranking.map(r=>({key:r.key,rank:r.rank,name:r.name,mode:r.mode,kills:r.kills})):

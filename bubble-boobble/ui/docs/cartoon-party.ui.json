@@ -10,10 +10,10 @@
       "type": "element",
       "name": "Cartoon party",
       "style": {
-        "w": 768,
-        "h": 720,
+        "w": "100%",
+        "h": "100%",
         "pad": 0,
-        "bg": "#f1e3bf",
+        "bg": "#143f43",
         "position": "anchored",
         "anchor": [
           0.5,
@@ -23,26 +23,12 @@
           0,
           0
         ],
-        "image": "cartoon/ui/theatre-paper",
-        "fit": "fill"
+        "fit": "cover",
+        "image": "cartoon/ui/results/backdrop",
+        "brightness": 0.38
       },
       "children": [
-        "pl_title",
-        "pl_hint",
-        "pl_controls",
-        "pl_status",
-        "pl_card0",
-        "pl_card1",
-        "pl_card2",
-        "pl_card3",
-        "pl_card4",
-        "pl_card5",
-        "pl_start",
-        "pl_back",
-        "pl_card6",
-        "pl_card7",
-        "pl_card8",
-        "pl_card9"
+        "pl_stage"
       ]
     },
     "pl_title": {
@@ -57,18 +43,21 @@
         ],
         "offset": [
           0,
-          38
+          35
         ],
-        "fontSize": 26,
-        "color": "#30271e",
-        "outline": 0
+        "fontSize": 34,
+        "color": "#fff1cc",
+        "outline": 0,
+        "w": 720,
+        "h": 48,
+        "fitMin": 28
       },
       "property": "heading"
     },
     "pl_hint": {
       "type": "label",
       "name": "Label",
-      "text": "10 DRAGONS / 10 WAVES / TEAM RESCUES / FINAL BOSS",
+      "text": "WAVE SURVIVAL · UP TO 10 DRAGONS · 10 WAVES · FINAL BOSS",
       "style": {
         "position": "anchored",
         "anchor": [
@@ -77,17 +66,19 @@
         ],
         "offset": [
           0,
-          86
+          90
         ],
-        "fontSize": 10,
-        "color": "#30271e",
-        "outline": 0
+        "fontSize": 14,
+        "color": "#e2c68f",
+        "outline": 0,
+        "w": 720,
+        "h": 24
       }
     },
     "pl_controls": {
       "type": "label",
       "name": "Label",
-      "text": "SLOT: HUMAN / AI / EMPTY   PAD START: JOIN   A: CONFIRM   B: BACK\nBUB: ARROWS + SPACE   BOB: J L MOVE / I JUMP / K FIRE",
+      "text": "SELECT A DRAGON TO CHANGE: HUMAN / AI / EMPTY\nPAD START: JOIN   A / ENTER: CONFIRM   B / ESC: BACK",
       "style": {
         "position": "anchored",
         "anchor": [
@@ -98,13 +89,13 @@
           0,
           666
         ],
-        "fontSize": 9,
+        "fontSize": 12,
         "textAlign": "center",
-        "color": "#30271e",
+        "color": "#f5e9cd",
         "outline": 0,
         "w": 700,
-        "h": 30,
-        "fitMin": 8
+        "h": 36,
+        "fitMin": 11
       }
     },
     "pl_status": {
@@ -121,12 +112,13 @@
           0,
           586
         ],
-        "fontSize": 10,
-        "color": "#a6472d",
+        "fontSize": 15,
+        "color": "#ffe2a0",
         "outline": 0,
         "w": 700,
-        "h": 18,
-        "textAlign": "center"
+        "h": 24,
+        "textAlign": "center",
+        "fitMin": 12
       }
     },
     "pl_card0": {
@@ -140,11 +132,11 @@
           0
         ],
         "offset": [
-          24,
-          132
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -155,7 +147,10 @@
         },
         "color": "green",
         "label": "BUB",
-        "portrait": "cartoon/frames/dragon/green/idle-0"
+        "portrait": "cartoon/frames/dragon/green/idle-0",
+        "empty": {
+          "property": "empty0"
+        }
       }
     },
     "pl_card1": {
@@ -169,11 +164,11 @@
           0
         ],
         "offset": [
-          170,
-          132
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -184,7 +179,10 @@
         },
         "color": "blue",
         "label": "BOB",
-        "portrait": "cartoon/frames/dragon/blue/idle-0"
+        "portrait": "cartoon/frames/dragon/blue/idle-0",
+        "empty": {
+          "property": "empty1"
+        }
       }
     },
     "pl_card2": {
@@ -198,11 +196,11 @@
           0
         ],
         "offset": [
-          316,
-          132
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -213,7 +211,10 @@
         },
         "color": "red",
         "label": "EMBER",
-        "portrait": "cartoon/frames/dragon/red/idle-0"
+        "portrait": "cartoon/frames/dragon/red/idle-0",
+        "empty": {
+          "property": "empty2"
+        }
       }
     },
     "pl_card3": {
@@ -227,11 +228,11 @@
           0
         ],
         "offset": [
-          462,
-          132
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -242,7 +243,10 @@
         },
         "color": "yellow",
         "label": "SUNNY",
-        "portrait": "cartoon/frames/dragon/yellow/idle-0"
+        "portrait": "cartoon/frames/dragon/yellow/idle-0",
+        "empty": {
+          "property": "empty3"
+        }
       }
     },
     "pl_card4": {
@@ -256,11 +260,11 @@
           0
         ],
         "offset": [
-          608,
-          132
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -271,7 +275,10 @@
         },
         "color": "purple",
         "label": "PLUM",
-        "portrait": "cartoon/frames/dragon/purple/idle-0"
+        "portrait": "cartoon/frames/dragon/purple/idle-0",
+        "empty": {
+          "property": "empty4"
+        }
       }
     },
     "pl_card5": {
@@ -285,11 +292,11 @@
           0
         ],
         "offset": [
-          24,
-          362
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "modeLabel": {
@@ -300,56 +307,9 @@
         },
         "color": "orange",
         "label": "TANGO",
-        "portrait": "cartoon/frames/dragon/orange/idle-0"
-      }
-    },
-    "pl_start": {
-      "type": "use",
-      "doc": "cartoon-action",
-      "key": "start-party",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          242,
-          612
-        ],
-        "w": 284,
-        "h": 44
-      },
-      "props": {
-        "label": {
-          "property": "startLabel"
-        },
-        "selected": {
-          "property": "startSelected"
-        }
-      }
-    },
-    "pl_back": {
-      "type": "use",
-      "doc": "cartoon-action",
-      "key": "menu",
-      "style": {
-        "position": "anchored",
-        "anchor": [
-          0,
-          0
-        ],
-        "offset": [
-          48,
-          612
-        ],
-        "w": 152,
-        "h": 44
-      },
-      "props": {
-        "label": "BACK",
-        "selected": {
-          "property": "backSelected"
+        "portrait": "cartoon/frames/dragon/orange/idle-0",
+        "empty": {
+          "property": "empty5"
         }
       }
     },
@@ -364,11 +324,11 @@
           0
         ],
         "offset": [
-          170,
-          362
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "color": "cyan",
@@ -379,7 +339,10 @@
           "property": "sel6"
         },
         "label": "MIST",
-        "portrait": "cartoon/frames/dragon/cyan/idle-0"
+        "portrait": "cartoon/frames/dragon/cyan/idle-0",
+        "empty": {
+          "property": "empty6"
+        }
       }
     },
     "pl_card7": {
@@ -393,11 +356,11 @@
           0
         ],
         "offset": [
-          316,
-          362
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "color": "pink",
@@ -408,7 +371,10 @@
           "property": "sel7"
         },
         "label": "ROSIE",
-        "portrait": "cartoon/frames/dragon/pink/idle-0"
+        "portrait": "cartoon/frames/dragon/pink/idle-0",
+        "empty": {
+          "property": "empty7"
+        }
       }
     },
     "pl_card8": {
@@ -422,11 +388,11 @@
           0
         ],
         "offset": [
-          462,
-          362
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "color": "ivory",
@@ -437,7 +403,10 @@
           "property": "sel8"
         },
         "label": "PEARL",
-        "portrait": "cartoon/frames/dragon/ivory/idle-0"
+        "portrait": "cartoon/frames/dragon/ivory/idle-0",
+        "empty": {
+          "property": "empty8"
+        }
       }
     },
     "pl_card9": {
@@ -451,11 +420,11 @@
           0
         ],
         "offset": [
-          608,
-          362
+          0,
+          0
         ],
-        "w": 136,
-        "h": 214
+        "w": "100%",
+        "h": "100%"
       },
       "props": {
         "color": "slate",
@@ -466,7 +435,344 @@
           "property": "sel9"
         },
         "label": "FLINT",
-        "portrait": "cartoon/frames/dragon/slate/idle-0"
+        "portrait": "cartoon/frames/dragon/slate/idle-0",
+        "empty": {
+          "property": "empty9"
+        }
+      }
+    },
+    "pl_stage": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_title",
+        "pl_hint",
+        "pl_controls",
+        "pl_status",
+        "pl_slot0",
+        "pl_slot1",
+        "pl_slot2",
+        "pl_slot3",
+        "pl_slot4",
+        "pl_slot5",
+        "pl_slot6",
+        "pl_slot7",
+        "pl_slot8",
+        "pl_slot9",
+        "pl_start_box",
+        "pl_back_box"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 768,
+        "h": 720,
+        "position": "anchored",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    "pl_start": {
+      "type": "use",
+      "doc": "overworld-button",
+      "key": "start-party",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%"
+      },
+      "props": {
+        "label": {
+          "property": "startLabel"
+        },
+        "selected": {
+          "property": "startSelected"
+        }
+      }
+    },
+    "pl_back": {
+      "type": "use",
+      "doc": "overworld-button",
+      "key": "menu",
+      "style": {
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          0,
+          0
+        ],
+        "w": "100%",
+        "h": "100%"
+      },
+      "props": {
+        "label": "BACK",
+        "selected": {
+          "property": "backSelected"
+        }
+      }
+    },
+    "pl_slot0": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card0"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          24,
+          132
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot1": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card1"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          170,
+          132
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot2": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card2"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          316,
+          132
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot3": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card3"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          462,
+          132
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot4": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card4"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          608,
+          132
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot5": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card5"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          24,
+          362
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot6": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card6"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          170,
+          362
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot7": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card7"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          316,
+          362
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot8": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card8"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          462,
+          362
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_slot9": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_card9"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          608,
+          362
+        ],
+        "w": 136,
+        "h": 214
+      }
+    },
+    "pl_start_box": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_start"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          242,
+          612
+        ],
+        "w": 284,
+        "h": 44
+      }
+    },
+    "pl_back_box": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pl_back"
+      ],
+      "style": {
+        "pad": 0,
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          48,
+          612
+        ],
+        "w": 152,
+        "h": 44
       }
     }
   },
@@ -574,6 +880,46 @@
       "default": "AI TEAMMATE"
     },
     "sel9": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty0": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty1": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty2": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty3": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty4": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty5": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty6": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty7": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty8": {
+      "type": "yesno",
+      "default": false
+    },
+    "empty9": {
       "type": "yesno",
       "default": false
     }

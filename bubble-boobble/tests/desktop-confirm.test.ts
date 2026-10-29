@@ -15,16 +15,18 @@ worldTest('desktop physical Enter opens title and activates the selected menu it
   input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('overworld-panel');
   input.key(38, false); await step(1);
   input.key(53, true); await step(1); input.key(53, false); await step(1);
-  input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('modes');
-  input.key(38, false); await step(1); input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('play');
-  expect(desktopGameRequest.get().action).toBe('start');
+  input.key(38, true); await step(1); expect(desktopState.get().screen).toBe('party');
+  input.key(38, false); await step(1);
+  input.emit(DesktopIntent,{action:'select',index:10});await step(1);
+  input.key(38, true); await step(1);expect(desktopState.get().screen).toBe('play');
+  expect(desktopGameRequest.get().action).toBe('party');
 }, { scene });
 worldTest('desktop physical Enter tap between simulation steps is not dropped', async ({ input, step }) => {
   await step(3);
   input.key(38, true); input.key(38, false); await step(1);
   expect(desktopState.get().screen).toBe('menu');
 }, { scene });
-worldTest('desktop short Enter taps confirm settings mode and start AI co-op', async ({ input, step }) => {
+worldTest('desktop short Enter taps confirm settings and start survival', async ({ input, step }) => {
   await step(3);
   const tap = async () => { input.key(38, true); input.key(38, false); await step(1); };
   await tap();
@@ -35,7 +37,8 @@ worldTest('desktop short Enter taps confirm settings mode and start AI co-op', a
   input.emit(DesktopIntent, { action: 'menu' }); await step(1); await tap();
   expect(desktopState.get().screen).toBe('overworld-panel');
   input.emit(DesktopIntent,{action:'select',index:1});await step(1);await tap();
-  expect(desktopState.get().screen).toBe('modes'); await tap();
+  expect(desktopState.get().screen).toBe('party');
+  input.emit(DesktopIntent,{action:'select',index:10});await step(1);await tap();
   expect(desktopState.get().screen).toBe('play'); expect(desktopGameRequest.get().mode).toBe('ai');
 }, { scene });
 worldTest('desktop repeat Enter events activate once until release', async ({ input, step }) => {

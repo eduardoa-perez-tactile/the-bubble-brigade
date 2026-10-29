@@ -36,7 +36,7 @@ export function handleAdventureAction(action:string,value:string,now:number):boo
   desktopSaveState.dispatch('adventureReset',{profileIndex},now);enterOverworld(districts[0]!.id);quit();
   patch({screen:'overworld',adventure:false,adventureEncounter:'',adventureAttempt:'',adventureProfile:profileIndex,overworldPanel:'',panelMessage:'',status:'',custom:false,partyRun:false,selected:0});return true;
  }
- if(action==='adventure-arcade'){suspendOverworld();patch({screen:'modes',adventure:false,selected:0});return true;}
+ if(action==='adventure-arcade'){suspendOverworld();patch({screen:'party',partyReturn:s.screen==='overworld-panel'?'overworld-panel':'menu',partyEditing:false,adventure:false,selected:0,status:''});return true;}
  if(action==='overworld-interact'){
   if(!map.active||s.screen!=='overworld'||map.focusedPoi!==value)return true;
   const poi=overworldPoi(map.districtId,value);if(!poi||poi.kind==='guide'||(poi.x-map.x)**2+(poi.y-map.y)**2>(poi.radius??68)**2)return true;

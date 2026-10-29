@@ -22,24 +22,23 @@ export const CartoonAccountView=defineView<DesktopModel>({
 });
 
 export const CartoonPartyView=defineView<DesktopModel>({
- name:'CartoonParty',samples:{team:desktopModel({...initialDesktopState,screen:'party',selected:0},initialDesktopSave)},
- render:(model,{intent})=><Screen safeArea class="desktop-screen"><Widget doc="cartoon-party" id="party-lobby" class="cartoon-party"
+ name:'CartoonParty',samples:{team:desktopModel({...initialDesktopState,screen:'party',selected:0},initialDesktopSave),empty:desktopModel({...initialDesktopState,screen:'party',selected:9,partySlots:['human','ai','ai','empty','empty','empty','empty','empty','empty','empty']},initialDesktopSave),editing:desktopModel({...initialDesktopState,screen:'party',partyEditing:true,selected:10},initialDesktopSave)},
+ render:(model,{intent})=><Screen safeArea class="desktop-screen party-play-screen"><Widget doc="cartoon-party" id="party-lobby" class="cartoon-party"
  props={{heading:()=>model().buttons[10]?.label==='RESUME SURVIVAL'?'YOUR DRAGON TEAM':'CHOOSE YOUR DRAGONS',status:()=>model().status,
- mode0:()=>model().partyModes[0]??'OPEN SLOT',sel0:()=>model().selected===0,
- mode1:()=>model().partyModes[1]??'OPEN SLOT',sel1:()=>model().selected===1,
- mode2:()=>model().partyModes[2]??'OPEN SLOT',sel2:()=>model().selected===2,
- mode3:()=>model().partyModes[3]??'OPEN SLOT',sel3:()=>model().selected===3,
- mode4:()=>model().partyModes[4]??'OPEN SLOT',sel4:()=>model().selected===4,
- mode5:()=>model().partyModes[5]??'OPEN SLOT',sel5:()=>model().selected===5,
- mode6:()=>model().partyModes[6]??'OPEN SLOT',sel6:()=>model().selected===6,
- mode7:()=>model().partyModes[7]??'OPEN SLOT',sel7:()=>model().selected===7,
- mode8:()=>model().partyModes[8]??'OPEN SLOT',sel8:()=>model().selected===8,
- mode9:()=>model().partyModes[9]??'OPEN SLOT',sel9:()=>model().selected===9,
+ empty0:()=>model().partyModes[0]==='OPEN SLOT',mode0:()=>model().partyModes[0]??'OPEN SLOT',sel0:()=>model().selected===0,
+ empty1:()=>model().partyModes[1]==='OPEN SLOT',mode1:()=>model().partyModes[1]??'OPEN SLOT',sel1:()=>model().selected===1,
+ empty2:()=>model().partyModes[2]==='OPEN SLOT',mode2:()=>model().partyModes[2]??'OPEN SLOT',sel2:()=>model().selected===2,
+ empty3:()=>model().partyModes[3]==='OPEN SLOT',mode3:()=>model().partyModes[3]??'OPEN SLOT',sel3:()=>model().selected===3,
+ empty4:()=>model().partyModes[4]==='OPEN SLOT',mode4:()=>model().partyModes[4]??'OPEN SLOT',sel4:()=>model().selected===4,
+ empty5:()=>model().partyModes[5]==='OPEN SLOT',mode5:()=>model().partyModes[5]??'OPEN SLOT',sel5:()=>model().selected===5,
+ empty6:()=>model().partyModes[6]==='OPEN SLOT',mode6:()=>model().partyModes[6]??'OPEN SLOT',sel6:()=>model().selected===6,
+ empty7:()=>model().partyModes[7]==='OPEN SLOT',mode7:()=>model().partyModes[7]??'OPEN SLOT',sel7:()=>model().selected===7,
+ empty8:()=>model().partyModes[8]==='OPEN SLOT',mode8:()=>model().partyModes[8]??'OPEN SLOT',sel8:()=>model().selected===8,
+ empty9:()=>model().partyModes[9]==='OPEN SLOT',mode9:()=>model().partyModes[9]??'OPEN SLOT',sel9:()=>model().selected===9,
  startSelected:()=>model().selected===10,backSelected:()=>model().selected===11,startLabel:()=>model().buttons[10]?.label??'START SURVIVAL'}}
  onIntent={(_,e)=>{const key=e.path.at(-1)!;intent(key.startsWith('dragon-')?`party-slot:${key.slice(7)}`:key);}}/></Screen>,
 });
 
-export const CartoonModeView=defineView<DesktopModel>({name:'CartoonModes',samples:{classic:desktopModel({...initialDesktopState,screen:'modes',selected:0},initialDesktopSave),madness:desktopModel({...initialDesktopState,screen:'modes',selected:1},initialDesktopSave)},render:(model,{intent})=><Screen safeArea class="desktop-screen cartoon-mode-screen"><Widget doc="cartoon-modes" id="mode-select" class="cartoon-modes" props={{classicSelected:()=>model().selected===0,madnessSelected:()=>model().selected===1,backSelected:()=>model().selected===2}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/></Screen>});
 
 const resultSample=(won:boolean,count=10)=>desktopModel({...initialDesktopState,cartoon:true,screen:'result',partyRun:true,won,score:58200,round:10,resultReady:true,dragonResults:Array.from({length:count},(_,slot)=>({slot,kills:30-slot*3}))},initialDesktopSave);
 export const CartoonResultsView=defineView<DesktopModel>({

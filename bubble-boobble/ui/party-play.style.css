@@ -1,0 +1,73 @@
+/* Party Play shares Adventure's teal ink, warm paper and brass accents. */
+.party-play-screen {width:100%;height:100%;background-color:#143f43;}
+.party-play-screen .cartoon-party {width:100%;height:100%;}
+.cartoon-party .ud-cartoon-party__root {width:100%;height:100%;}
+.cartoon-party .ud-cartoon-party__pl_title {font-family:"cartoon/fonts/Rye-Regular";}
+.cartoon-party .ud-cartoon-dragon-card__root {border-width:2px;border-color:#b88a40;}
+.cartoon-party .ud-cartoon-dragon-card__pc_header {border-radius:9px;}
+.cartoon-party .ud-overworld-button__root {border-width:2px;border-color:#b88a40;}
+.cartoon-party .ud-cartoon-party__pl_start_box .ud-overworld-button__root {background-color:#f0c56f;}
+.cartoon-party .ud-cartoon-party__pl_start_box .ud-overworld-button__root.v-selected-yes {background-color:#245c5b;}
+.cartoon-party .ud-cartoon-party__pl_controls {white-space:pre-wrap;}
+
+/* A two-column cast list keeps portraits and assignments readable in tall windows. */
+@media (aspect < 0.7) {
+ .cartoon-party .ud-cartoon-party__pl_stage {width:720px;height:1380px;}
+ .cartoon-party .ud-cartoon-party__pl_title {top:30px;width:680px;height:60px;font-size:42px;text-fit:32px 42px;}
+ .cartoon-party .ud-cartoon-party__pl_hint {top:104px;width:660px;height:36px;font-size:20px;text-fit:16px 20px;}
+ .cartoon-party .ud-cartoon-party__pl_slot0,
+ .cartoon-party .ud-cartoon-party__pl_slot2,
+ .cartoon-party .ud-cartoon-party__pl_slot4,
+ .cartoon-party .ud-cartoon-party__pl_slot6,
+ .cartoon-party .ud-cartoon-party__pl_slot8 {left:24px;width:330px;height:192px;}
+ .cartoon-party .ud-cartoon-party__pl_slot1,
+ .cartoon-party .ud-cartoon-party__pl_slot3,
+ .cartoon-party .ud-cartoon-party__pl_slot5,
+ .cartoon-party .ud-cartoon-party__pl_slot7,
+ .cartoon-party .ud-cartoon-party__pl_slot9 {left:366px;width:330px;height:192px;}
+ .cartoon-party .ud-cartoon-party__pl_slot0,.cartoon-party .ud-cartoon-party__pl_slot1 {top:156px;}
+ .cartoon-party .ud-cartoon-party__pl_slot2,.cartoon-party .ud-cartoon-party__pl_slot3 {top:364px;}
+ .cartoon-party .ud-cartoon-party__pl_slot4,.cartoon-party .ud-cartoon-party__pl_slot5 {top:572px;}
+ .cartoon-party .ud-cartoon-party__pl_slot6,.cartoon-party .ud-cartoon-party__pl_slot7 {top:780px;}
+ .cartoon-party .ud-cartoon-party__pl_slot8,.cartoon-party .ud-cartoon-party__pl_slot9 {top:988px;}
+ .cartoon-party .ud-cartoon-dragon-card__root {width:330px;height:192px;border-radius:12px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_header {width:330px;height:44px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_title {width:310px;height:36px;font-size:28px;text-fit:22px 28px;top:4px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_portrait {left:8px;top:54px;width:124px;height:124px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_footer {left:136px;top:54px;width:184px;height:124px;border-radius:8px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_mode {top:26px;width:178px;height:36px;font-size:24px;text-fit:18px 24px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_hint {top:76px;width:176px;height:28px;font-size:18px;text-fit:15px 18px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_left {top:0px;height:192px;width:4px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_right {left:326px;top:0px;height:192px;width:4px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_top {width:330px;height:4px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_bottom {top:188px;width:330px;height:4px;}
+ .cartoon-party .ud-cartoon-party__pl_status {top:1190px;width:672px;height:32px;font-size:22px;text-fit:18px 22px;}
+ .cartoon-party .ud-cartoon-party__pl_back_box {left:24px;top:1230px;width:210px;height:96px;}
+ .cartoon-party .ud-cartoon-party__pl_start_box {left:254px;top:1230px;width:442px;height:96px;}
+ .cartoon-party .ud-overworld-button__owb_label {height:52px;font-size:30px;text-fit:24px 30px;}
+ .cartoon-party .ud-cartoon-party__pl_controls {top:1328px;width:680px;height:48px;font-size:18px;text-fit:15px 18px;}
+}
+
+/* Shorter portrait windows use the same cast list with shorter rows. */
+@media (aspect >= 0.55) and (aspect < 0.7) {
+ .cartoon-party .ud-cartoon-party__pl_stage {height:1040px;}
+ .cartoon-party .ud-cartoon-party__pl_title {top:18px;height:48px;font-size:36px;}
+ .cartoon-party .ud-cartoon-party__pl_hint {top:76px;height:30px;font-size:16px;}
+ .cartoon-party .ud-cartoon-party__pl_slot0,.cartoon-party .ud-cartoon-party__pl_slot1 {top:120px;height:136px;}
+ .cartoon-party .ud-cartoon-party__pl_slot2,.cartoon-party .ud-cartoon-party__pl_slot3 {top:266px;height:136px;}
+ .cartoon-party .ud-cartoon-party__pl_slot4,.cartoon-party .ud-cartoon-party__pl_slot5 {top:412px;height:136px;}
+ .cartoon-party .ud-cartoon-party__pl_slot6,.cartoon-party .ud-cartoon-party__pl_slot7 {top:558px;height:136px;}
+ .cartoon-party .ud-cartoon-party__pl_slot8,.cartoon-party .ud-cartoon-party__pl_slot9 {top:704px;height:136px;}
+ .cartoon-party .ud-cartoon-dragon-card__root {height:136px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_header {height:34px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_title {height:32px;font-size:23px;top:0px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_portrait {left:22px;top:38px;width:92px;height:92px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_footer {top:40px;height:88px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_mode {top:12px;height:30px;font-size:22px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_hint {top:54px;height:24px;font-size:16px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_left,.cartoon-party .ud-cartoon-dragon-card__pc_selected_right {height:136px;}
+ .cartoon-party .ud-cartoon-dragon-card__pc_selected_bottom {top:132px;}
+ .cartoon-party .ud-cartoon-party__pl_status {top:850px;height:30px;font-size:20px;}
+ .cartoon-party .ud-cartoon-party__pl_start_box,.cartoon-party .ud-cartoon-party__pl_back_box {top:890px;height:96px;}
+ .cartoon-party .ud-cartoon-party__pl_controls {top:994px;height:46px;font-size:16px;}
+}
