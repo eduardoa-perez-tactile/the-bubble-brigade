@@ -1,5 +1,6 @@
 import {adventureArrivalY} from '../adventure/spawning';
-import {simplifiedEnemyDraws,cartoonEnemyTint} from './enemy-motion';
+import {simplifiedEnemyDraws,cartoonEnemyRagePose} from './enemy-motion';
+import {cartoonEnemyRageDraws} from './enemy-rage-feedback';
 import {cartoonEnemyProjectileDraws,cartoonEnemyAttackDraws,cartoonEnemyImpactDraws} from './enemy-projectiles';
 import {cartoonCaptiveEnemyDraw,cartoonDefeatedEnemyDraws} from './enemy-defeat';
 import {CARTOON_PICKUP_SIZE,cartoonPopSize} from './reward-feedback';
@@ -130,7 +131,12 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   const baseLayout=arenaLayout(g.Level,view),composed=g.Level.arena==='cartoon-courtyard';
   const projection=composed?cartoonProjection(g,baseLayout):undefined;
   const layout={...baseLayout,...(projection?{scale:projection.scale,projectX:projection.projectX,inverseX:projection.inverseX,projectY:projection.projectY,inverseY:projection.inverseY}: {})};
-  const out:CartoonDraw[]=[],markers:CartoonDraw[]=[];
+  const out:CartoonDraw[]=[],markers:CartoonDraw[]=[],rageFeedback:CartoonDraw[]=[];
+  const rageBands=cartoonHudBounds(view??{width:768,height:720,safeArea:[0,0,0,0]});
+  const canvasUnit=view?Math.min(view.width/768,view.height/720):1;
+  const rageBounds={scale:layout.scale,left:layout.viewportLeft+4,right:layout.viewportRight-4,
+    top:Math.max(layout.viewportTop,rageBands.top)+4,bottom:Math.min(layout.viewportBottom,rageBands.bottom)-4,
+    minSize:10/Math.max(.01,canvasUnit)};
   const helps=cartoonHelpAnchors(g,{...layout,footerTop:view?cartoonHudBounds(view).bottom:672});
   const px=(x:number)=>projection?projection.projectX(x):layout.x+x*layout.scale;
   const py=(y:number)=>projection?projection.projectY(y):layout.y+y*layout.scale;
@@ -322,9 +328,12 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     }else{
       actor(cartoonEnemyFrame(e.Kind,pose,clock),e.X+22-size/2,y+44,size,e.Dir<0);
       const draw=out[out.length-1]!;
-      draw.color=cartoonEnemyTint(e,reduced);
+      const tantrum=cartoonEnemyRagePose(e,reduced);
+      draw.x+=(1-tantrum.scaleX)*draw.width/2;draw.y+=(1-tantrum.scaleY)*draw.height/2;
+      draw.width*=tantrum.scaleX;draw.height*=tantrum.scaleY;
       if(flyer&&!reduced&&e.State===EnemyState.Active){draw.rotation=e.Dir*e.Vertical*.08;draw.pivot=[.5,.5];}
     }
+    rageFeedback.push(...cartoonEnemyRageDraws(e,out[out.length-1]!,rageBounds,reduced));
   }
   for(const effect of g.Effects){
     if(effect.Element==='enemy-impact')continue;
@@ -438,6 +447,9 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(const e of g.Enemies)for(const d of cartoonEnemyAttackDraws(e,reduced))threat(d);
   for(const p of g.Projectiles)for(const d of cartoonEnemyProjectileDraws(p,reduced))threat(d);
   for(const e of g.Effects)for(const d of cartoonEnemyImpactDraws(e,reduced))threat(d);
+  for(const d of rageFeedback){
+    if(d.frame.startsWith('solid/'))markers.push(d);else out.push(d);
+  }
   const feedback=cartoonFeedback(g,feel,reduced);
   for(const d of feedback.sprites){
     add(d.frame,d.x,d.y,d.width,d.height,!!d.flip,d.color);

@@ -30,7 +30,7 @@ worldTest('enemy juice final party pop keeps its spinning flight through rest an
   expect(e.DeadTicks).toBe(48);expect(e.X!==startX||e.Y!==startY).toBe(true);
   const draws=cartoonDrawPlan(g,g.Tick).filter(d=>d.frame.startsWith('enemy/monsta/'));
   expect(draws.length>0).toBe(true);expect(Math.abs(draws[0]!.rotation??0)>0).toBe(true);
-  expect(draws[0]!.color![2]).toBe(1);
+  expect(draws[0]!.color?.slice(0,3)).toEqual([1,1,1]);
   for(let tick=0;tick<50;tick++)stepParty(g,[]);
   expect(e.DeadTicks).toBe(0);expect(g.Enemies.length).toBe(0);
   expect(flightFood().length).toBe(1);expect(food().length).toBe(2);expect(g.Party!.Phase).toBe('rest');
