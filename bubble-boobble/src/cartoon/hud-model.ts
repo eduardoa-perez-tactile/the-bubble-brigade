@@ -39,9 +39,9 @@ export function cartoonHudModel(game: GameState, save: DesktopSave, shade: HudMo
     const showIntermission = intermission && shade === 'normal' && !game.Paused && !presentation?.covered;
     return { ...base, ...cue, ...(episode ? {
       episode: true, showStatus: acts > 1, round: episode.title.toUpperCase(),
-      banner: intermission ? `ACT ${act}\nCOMPLETE!` : game.State === State.Clearing ? 'EPISODE CLEAR!' : base.banner,
-      hint: intermission ? `NEXT: ACT ${act + 1} OF ${acts}` : base.hint,
-      detail: intermission ? `NEXT: ACT ${act + 1} OF ${acts}` : base.detail,
+      banner: intermission ? 'ACT CLEAR!' : game.State === State.Clearing ? 'EPISODE CLEAR!' : base.banner,
+      hint: intermission ? '' : base.hint,
+      detail: intermission ? '' : base.detail,
       highTitle: acts > 1 ? 'ACT' : 'EPISODE', high: acts > 1 ? `${act} / ${acts}` : String(game.Level.number),
     } : {}), startCue, startHint: '',
       showActComplete: showIntermission,
