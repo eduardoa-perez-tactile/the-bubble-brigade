@@ -112,7 +112,7 @@ worldTest('cartoon controls normal preparation warms all bot navigation before t
   expect(g.Party!.Phase).toBe('prepare');
   expect(g.Companions!.filter(Boolean).length).toBe(9);
   expect(g.Companions!.slice(1).every(bot=>bot!.Graph===null)).toBe(true);
-  for(let tick=0;tick<179;tick++)stepGame(g,idle);
+  const duration=g.Party!.Timer;for(let tick=0;tick<duration-1;tick++)stepGame(g,idle);
   expect(g.Party!.Phase).toBe('prepare');
   expect(g.Party!.Timer).toBe(1);
   const graph=g.Companions![1]!.Graph;

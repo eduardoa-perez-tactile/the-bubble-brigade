@@ -163,6 +163,8 @@ export interface PartyState {
   BossWave:number;
   Phase:'prepare'|'combat'|'rest'|'boss';
   Timer:number;
+  /** Total arrival duration; the remaining timer includes the settling beat. */
+  PrepareTicks?:number;
   Slots:PartySlot[];
   ToSpawn:number;
   SpawnTick:number;

@@ -42,6 +42,9 @@ function readyCue(tick: number, end: number, reduced: boolean): IntroCue {
  */
 export function introCue(game: GameState, reducedEffects = false, visible = true, presentation?: IntroPresentation): IntroCue {
   if (!visible || game.Paused || presentation?.covered) return hidden;
+  // Party arrivals and the start signal use the compact HUD banner, leaving the
+  // full formation visible while dragons keep moving and firing.
+  if (game.Party) return hidden;
   if ((game.EpisodeIntermission ?? 0) > 0) return hidden;
   if (game.Level.episode && (game.EpisodeWave ?? 0) > 0) {
     if (game.State !== State.Ready || game.Countdown <= 0) return hidden;
@@ -55,10 +58,9 @@ export function introCue(game: GameState, reducedEffects = false, visible = true
       showStartCue: opacity > 0, showReadyArt: false, showActionArt: opacity > 0};
   }
   if (presentation?.readyTick !== undefined) return readyCue(presentation.readyTick, CLASSIC_READY_LEAD_TICKS - 6, reducedEffects);
-  const preparing = game.Party ? game.State === State.Playing && game.Party.Phase === 'prepare' : game.State === State.Ready;
+  const preparing = game.State === State.Ready;
   if (!preparing) return hidden;
-  if (game.Party && game.Party.Timer > TPS + 6) return readyCue(180 - game.Party.Timer, 114, reducedEffects);
-  const remaining = game.Party ? game.Party.Timer : game.Countdown;
+  const remaining = game.Countdown;
   if (remaining > TPS || remaining <= 0) return hidden;
   const tick = TPS - remaining;
   const opacity = tick < 6 ? tick / 6 : tick >= 42 ? (TPS - tick) / 18 : 1;

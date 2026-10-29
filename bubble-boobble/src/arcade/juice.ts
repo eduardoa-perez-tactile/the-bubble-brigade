@@ -163,7 +163,7 @@ export function advanceFeel(old:FeelState,g:GameState,step:number,countdownEnabl
     const b=g.Party?.Boss;
     if(b&&b.HP<previous.hp&&b.Mode!=='captured')add('boss-hit',b.X+48,b.Y+96);
     if(b?.Mode==='captured'&&previous.bossMode!=='captured')add('capture',b.X+48,b.Y+96);
-    if(g.Party?.Phase==='rest'&&previous.phase!=='rest')add('clear',384,175);
+    if(g.Party&&(g.Party.Wave>previous.wave||g.Party.Phase==='rest'&&previous.phase!=='rest'))add('clear',384,175);
     if(b?.Mode==='defeated'&&previous.bossMode!=='defeated')add('victory',b.X+48,b.Y+48);
     else if(g.State===4&&previous.state!==4&&b?.Mode!=='defeated')add('victory',384,230);
   }
@@ -182,9 +182,8 @@ export function deriveFeelAudio(old:FeelState,g:GameState,enabled=true):FeelAudi
   if(boss?.Mode==='captured'&&previous.bossMode!=='captured')cues.push({kind:'boss-capture'});
   if(g.State===3&&previous.state!==3)cues.push({kind:'defeat'});
  }
- const countdown=g.Party?.Phase==='prepare'?g.Party.Timer:-1;
- const before=reset?-1:previous.countdown,stage=Math.ceil(countdown/60);
- if(countdown>0&&stage<=3&&(before<0||stage<Math.ceil(before/60)))cues.push({kind:'countdown-tick'});
+ // Arrivals have per-enemy descent clocks, not a 3/2/1 countdown.
+ // The one GO edge marks the actual simultaneous release into combat.
  if(!reset&&previous.phase==='prepare'&&g.Party&&(g.Party.Phase==='combat'||g.Party.Phase==='boss'))cues.push({kind:'go'});
  return cues;
 }

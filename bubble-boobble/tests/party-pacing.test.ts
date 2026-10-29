@@ -12,15 +12,17 @@ import { session } from '../src/arcade/session';
 const idle={Move:0,Jump:false,Fire:false};
 const game=()=>createPartyGame(campaign,42,Array.from({length:6},()=> 'human'));
 
-worldTest('party pacing break lasts five seconds including the next wave entrance with shooting throughout',()=>{
- const g=game();for(let t=0;t<180;t++)stepGame(g,idle);
- g.Enemies=[];stepGame(g,idle);expect(g.Party!.Timer).toBe(300);
- for(let t=0;t<299;t++) {
+worldTest('party pacing starts the next arrival immediately with shooting throughout',()=>{
+ const g=game();while(g.Party!.Phase==='prepare')stepGame(g,idle);
+ g.Enemies=[];stepGame(g,{...idle,Fire:true});
+ expect(g.Party!.Wave).toBe(2);expect(g.Party!.Phase).toBe('prepare');
+ const duration=g.Party!.Timer;
+ for(let t=0;t<duration-1;t++) {
   stepGame(g,[{...idle,Fire:true}]);
-  expect(g.Party!.Phase==='rest'||g.Party!.Phase==='prepare').toBe(true);
+  expect(g.Party!.Phase).toBe('prepare');
  }
- expect(g.Party!.Wave).toBe(2);expect(g.Party!.Phase).toBe('prepare');expect(g.Party!.Timer).toBe(1);
- expect(g.Bubbles.length).toBeGreaterThan(0);expect(g.Counters.Blown).toBeGreaterThan(10);
+ expect(g.Party!.Timer).toBe(1);expect(g.Bubbles.length).toBeGreaterThan(0);
+ expect(g.Counters.Blown).toBeGreaterThan(1);
  stepGame(g,idle);expect(g.Party!.Phase).toBe('combat');expect(g.Enemies.every(e=>e.Age===0)).toBe(true);
  stepGame(g,idle);expect(g.Enemies.some(e=>e.Age>0)).toBe(true);
 });
@@ -29,29 +31,29 @@ worldTest('party pacing preparation shots move and pop but cannot capture arrivi
  const g=game(),e=g.Enemies[0]!;
  Object.assign(g.Players[0]!,{X:e.X-60,Y:e.Y,Dir:1,Ground:true});
  stepGame(g,[{...idle,Fire:true}]);expect(g.Bubbles.length).toBe(1);const shot=g.Bubbles[0]!,x=shot.X;
- stepGame(g,idle);expect(shot.X).toBeGreaterThan(x);expect(e.State).toBe(EnemyState.Active);
+ stepGame(g,idle);expect(shot.X).toBeGreaterThan(x);expect(e.State).toBe(EnemyState.Spawning);
  const hit=()=>({...bubble(e.X,e.Y),ID:1000,Speed:1,MaxDistance:300,Dir:1});
- g.Bubbles=[hit()];updateBubbles(g,[idle]);expect(e.State).toBe(EnemyState.Active);expect(g.Bubbles[0]!.EnemyID).toBe(0);
+ g.Bubbles=[hit()];updateBubbles(g,[idle]);expect(e.State).toBe(EnemyState.Spawning);expect(g.Bubbles[0]!.EnemyID).toBe(0);
  g.Bubbles=[{...bubble(g.Players[0]!.X,g.Players[0]!.Y),Age:30,Floating:true}];updateBubbles(g,[idle]);expect(g.Bubbles.length).toBe(0);expect(g.Sounds.includes('pop')).toBe(true);
- g.Bubbles=[hit()];g.Party!.Phase='combat';updateBubbles(g,[idle]);expect(e.State).toBe(EnemyState.Trapped);expect(g.Bubbles[0]!.EnemyID).toBe(e.ID);
+ g.Bubbles=[hit()];g.Party!.Phase='combat';e.State=EnemyState.Active;updateBubbles(g,[idle]);expect(e.State).toBe(EnemyState.Trapped);expect(g.Bubbles[0]!.EnemyID).toBe(e.ID);
 });
 
 worldTest('party pacing preparation protects enemies from elements and delays offensive pickups',()=>{
  const g=game(),e=g.Enemies[0]!;
- g.Effects=[{...effect(e.X-1,e.Y),Element:'thunder',Dir:1,Life:90}];updateEffects(g);expect(e.State).toBe(EnemyState.Active);
+ g.Effects=[{...effect(e.X-1,e.Y),Element:'thunder',Dir:1,Life:90}];updateEffects(g);expect(e.State).toBe(EnemyState.Spawning);
  for(const Power of ['dynamite','clock']) {
   g.Items=[{...item(g.Players[0]!.X,g.Players[0]!.Y),Power}];updateItems(g);
-  expect(g.Items.length).toBe(1);expect(g.Enemies.every(e=>e.State===EnemyState.Active)).toBe(true);expect(g.Freeze).toBe(0);
+  expect(g.Items.length).toBe(1);expect(g.Enemies.every(e=>e.State===EnemyState.Spawning)).toBe(true);expect(g.Freeze).toBe(0);
  }
  g.Party!.Phase='rest';updateItems(g);expect(g.Items.length).toBe(1);expect(g.Freeze).toBe(0);
- g.Party!.Phase='combat';updateItems(g);expect(g.Items.length).toBe(0);expect(g.Freeze).toBeGreaterThan(0);
+ g.Party!.Phase='combat';for(const enemy of g.Enemies)enemy.State=EnemyState.Active;updateItems(g);expect(g.Items.length).toBe(0);expect(g.Freeze).toBeGreaterThan(0);
 });
 
-renderTest('party pacing five second countdown preparation shooting and red last enemy',async({cheat,step,input,render})=>{
+renderTest('party pacing arrival preparation shooting and red last enemy',async({cheat,step,input,render})=>{
  input.view(768,720,1);await step(3);await cheat(PartyReset,{wave:1,humans:6});await step(2);await cheat(PartyClear,{});await step(1);
- render.expectScreenshot('five_second_break',{width:768,height:720});
- await step(150);input.action('partyFire1',1);await step(2);expect(session.get().game!.Party!.Phase).toBe('prepare');
- expect(session.get().game!.Bubbles.length).toBeGreaterThan(0);expect(session.get().game!.Enemies.every(e=>e.State===EnemyState.Active)).toBe(true);
+ render.expectScreenshot('next_wave_arriving',{width:768,height:720});
+ await step(12);input.action('partyFire1',1);await step(2);expect(session.get().game!.Party!.Phase).toBe('prepare');
+ expect(session.get().game!.Bubbles.length).toBeGreaterThan(0);expect(session.get().game!.Enemies.every(e=>e.State===EnemyState.Spawning)).toBe(true);
  render.expectScreenshot('safe_preparation_shooting',{width:768,height:720});
  input.action('partyFire1',0);await step(session.get().game!.Party!.Timer);expect(session.get().game!.Party!.Phase).toBe('combat');await cheat(PartyLastEnemy,{});await step(1);
  expect(session.get().game!.Enemies.length).toBe(1);expect(session.get().game!.Enemies[0]!.Angry).toBe(true);
@@ -64,6 +66,6 @@ worldTest('party pacing last surviving enemy becomes angry red and faster after 
  const normal=copyGame(g);updateEnemies(normal);const normalDistance=normal.Enemies[0]!.X-e.X;
  stepGame(g,idle);expect(e.Angry).toBe(true);expect(e.X-300).toBeGreaterThan(normalDistance);
  expect(arcadeDrawPlan(g).some(d=>d.image===referenceFrame('monsta/angry',e.Age))).toBe(true);
- const multiple=game();multiple.Party!.Phase='combat';stepGame(multiple,idle);expect(multiple.Enemies.some(e=>e.Angry)).toBe(false);
+ const multiple=game();multiple.Party!.Phase='combat';for(const enemy of multiple.Enemies)enemy.State=EnemyState.Active;stepGame(multiple,idle);expect(multiple.Enemies.some(e=>e.Angry)).toBe(false);
  const preparing=game();preparing.Enemies=preparing.Enemies.slice(0,1);stepGame(preparing,idle);expect(preparing.Enemies[0]!.Angry).toBe(false);
 });

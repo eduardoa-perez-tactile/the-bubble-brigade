@@ -1,4 +1,4 @@
-import { expect, worldTest, renderTest } from '@gameengine/test';
+import { expect, worldTest } from '@gameengine/test';
 import { PlaySound } from '@gameengine/runtime';
 import campaign from '../data/levels.json';
 import { createPartyGame, preparePartyWave } from '../src/arcade/party';
@@ -7,7 +7,7 @@ import { arcadeDrawPlan } from '../src/arcade/presentation';
 import { item } from '../src/arcade/items';
 import { hudModel } from '../src/desktop/hud.view';
 import { initialDesktopSave } from '../src/desktop/save';
-import { PartyReset, PartyClear } from '../src/arcade/party.cheats';
+import { PartyReset } from '../src/arcade/party.cheats';
 import { PopBurst, ResetArcade } from '../src/arcade/arcade.cheats';
 import { session } from '../src/arcade/session';
 const scene='scenes/arcade.scene.json',idle={Move:0,Jump:false,Fire:false};
@@ -18,10 +18,10 @@ worldTest('party polish flyers descend and idle without moving their simulation 
  const dragonDraws=arcadeDrawPlan(g).filter(d=>d.image.includes('/bubble/'));
  expect(dragonDraws.length).toBe(0);
  const first=()=>arcadeDrawPlan(g).find(d=>d.x===e.X&&d.image.includes(`/${e.Kind}/`))!;
- expect(first().y).toBe(-48);
+ expect(first().y).toBe(-72);
  for(let tick=0;tick<30;tick++)stepGame(g,idle);
- expect(first().y).toBeGreaterThan(-48);expect(first().y).toBeLessThan(e.Y+48);
- for(let tick=0;tick<70;tick++)stepGame(g,idle);
+ expect(first().y).toBeGreaterThan(-72);expect(first().y).toBeLessThan(e.Y+48);
+ for(let tick=0,n=g.Party!.Timer-12;tick<n;tick++)stepGame(g,idle);
  expect(first().y).toBe(e.Y+48);const frame=first().image;
  for(let tick=0;tick<10;tick++)stepGame(g,idle);
  expect(first().image).not.toBe(frame);expect(first().y).toBe(e.Y+48);
@@ -36,15 +36,15 @@ worldTest('party polish benefit descriptions use three letters or fewer',()=>{
  }
 });
 
-worldTest('party polish HUD explains rest arrival positioning and go',()=>{
+worldTest('party polish HUD explains arrival settling and actual go',()=>{
  const g=createPartyGame(campaign,42);g.Party!.Phase='rest';g.Party!.Timer=300;g.State=2;
  let hud=hudModel(g,initialDesktopSave);expect(hud.banner).toBe('WAVE 2 IN 5S');expect(hud.hint).toBe('REST - COLLECT REWARDS');expect(hud.detail).toBe('MOVE, JUMP AND SHOOT');
  g.Party!.Timer=60;expect(hudModel(g,initialDesktopSave).banner).toBe('WAVE 2 IN 1S');
- g.Party!.Wave++;preparePartyWave(g);hud=hudModel(g,initialDesktopSave);expect(hud.banner).toBe('WAVE 2 IN 3S');expect(hud.hint).toBe('ENEMIES ARRIVING');
- for(let tick=0;tick<100;tick++)stepGame(g,idle);
- expect(hudModel(g,initialDesktopSave).hint).toBe('GET INTO POSITION');
- for(let tick=0;tick<80;tick++)stepGame(g,idle);
- expect(hudModel(g,initialDesktopSave).banner).toBe('WAVE 2 - GO!');
+ g.Party!.Wave++;preparePartyWave(g);hud=hudModel(g,initialDesktopSave);expect(hud.banner).toBe('WAVE 02 - ARRIVING');expect(hud.hint).toBe('MOVE, JUMP AND SHOOT');
+ for(let tick=0,n=g.Party!.Timer-6;tick<n;tick++)stepGame(g,idle);
+ expect(hudModel(g,initialDesktopSave).banner).toBe('WAVE 02 - GET READY');
+ for(let tick=0;tick<6;tick++)stepGame(g,idle);
+ expect(hudModel(g,initialDesktopSave).banner).toBe('WAVE 02 - GO!');
  for(let tick=0;tick<120;tick++)stepGame(g,idle);
  expect(hudModel(g,initialDesktopSave).showBanner).toBe(false);
 });
@@ -56,26 +56,4 @@ worldTest('party polish six real pops coalesce while classic cues retain their o
  input.action('partyFire1',1);await step(1);expect(world.events(PlaySound).map(s=>s.sound)).toEqual(['audio/bubble-shot']);
  input.action('partyFire1',0);await step(1);await cheat(ResetArcade,{ready:false});await cheat(PopBurst,{});
  expect(session.get().game!.Sounds).toEqual(['pop']);expect(world.events(PlaySound).map(s=>s.sound)).toEqual(['reference/audio/pop']);
-},{scene});
-
-renderTest('party polish readable countdown falling enemies and rest practice shots',async({cheat,step,input,render,ui})=>{
- input.view(768,720,1);await step(3);await cheat(PartyReset,{wave:1,humans:6,countdown:180});await step(30);
- const background=render.probe({width:768,height:720,points:[[110,56]]}).points[0]!.rgba;
- for(let channel=0;channel<3;channel++)expect(Math.abs(background[channel]!-[18,30,52][channel]!)).toBeLessThanOrEqual(6);
- render.expectScreenshot('arriving',{width:768,height:720});
- await step(70);render.expectScreenshot('positioning',{width:768,height:720});
- await step(80);render.expectScreenshot('go',{width:768,height:720});
- await cheat(PartyClear,{});await step(2);input.action('partyFire1',1);await step(6);
- expect(session.get().game!.Bubbles.length).toBeGreaterThan(0);
- expect(render.probe({width:768,height:720,points:[[110,140]]}).points[0]!.rgba.slice(0,3)).toEqual([12,21,43]);
- render.expectScreenshot('rest_shooting',{width:768,height:720});
- for(const [width,height] of [[768,720],[1680,720],[640,960]]){
-  input.view(width!,height!,1);await step(1);render.expectDrawCalls('<=',14,{width:width!,height:height!});
-  const panel=ui.rect('desktop-hud.banner')!;
-  expect(panel.x>=0&&panel.y>=0&&panel.x+panel.width<=width!&&panel.y+panel.height<=height!).toBe(true);
-  for(const name of ['banner-title','banner-hint','party-detail']){
-   const label=ui.rect(`desktop-hud.${name}`)!;
-   expect(label.x>=panel.x&&label.y>=panel.y&&label.x+label.width<=panel.x+panel.width&&label.y+label.height<=panel.y+panel.height).toBe(true);
-  }
- }
 },{scene});

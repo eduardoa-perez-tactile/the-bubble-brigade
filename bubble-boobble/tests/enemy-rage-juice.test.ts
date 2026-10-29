@@ -42,7 +42,8 @@ worldTest('enemy juice rage waits for party reinforcements final Adventure act a
   const g=arrange(createPartyGame(campaign,42,Array.from({length:6},()=> 'human' as const),10,'cartoon'));
   g.Party!.Phase='combat';g.Party!.Timer=0;g.Party!.ToSpawn=1;
   stepGame(g,idle);expect(g.Enemies[0]!.Angry).toBe(false);
-  g.Party!.ToSpawn=0;stepGame(g,idle);expect(g.Enemies[0]!.Angry).toBe(false);
+  g.Party!.ToSpawn=0;g.Party!.Telegraphs=[{X:700,Y:200,Ticks:60}];
+  stepGame(g,idle);expect(g.Enemies[0]!.Angry).toBe(false);
   g.Party!.Telegraphs=[];stepGame(g,idle);expect(g.Enemies[0]!.Angry).toBe(true);
   const adventure=arrange(createGame([createAdventureLevel(5)],42));
   stepGame(adventure,idle);expect(adventure.Enemies[0]!.Angry).toBe(false);

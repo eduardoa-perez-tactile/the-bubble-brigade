@@ -18,7 +18,7 @@ import { arenaLayout } from '../arcade/arena-layout';
 import { CARTOON_PLAYER_SIZE,CARTOON_ENEMY_SIZE,CARTOON_BUBBLE_SIZE,CARTOON_CAPTURED_ENEMY_SIZE,CARTOON_BOSS_SIZE,CARTOON_PLATFORM_HEIGHT,CARTOON_PLATFORM_SPAN,cartoonBadgeAnchor,cartoonPlayerVisible } from './actor-layout';
 import { cartoonHelpAnchors } from './help-layout';
 import { State, EnemyState, levelColumns, levelRows, type GameState, type Player, type Level } from '../arcade/types';
-import { partyColors } from '../arcade/party-config';
+import { partyColors, partyArrivalY, partySpawnSettleTicks } from '../arcade/party-config';
 import type { FeelState } from '../arcade/juice';
 import { desktopSaveState } from '../desktop/save';
 import animation from '../../assets/cartoon/animation.json';
@@ -256,11 +256,8 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     out.push({frame:itemFrame(item.Power,item.Food),x:px(item.X+16)-size*layout.scale/2,
       y:py(item.Y+32)-size*layout.scale,width:size*layout.scale,height:size*layout.scale});
   }
-  const entrance=(y:number,index:number)=>{
-    if(g.Party?.Phase!=='prepare')return y;
-    const t=Math.max(0,Math.min(1,(180-g.Party.Timer-index%6*5)/60));
-    return -48+(y+48)*(1-(1-t)*(1-t));
-  };
+  const bossEntrance=(y:number)=>g.Party?.Phase==='prepare'
+    ?partyArrivalY({Y:y,SpawnTicks:Math.max(0,g.Party.Timer-partySpawnSettleTicks)}):y;
   const boss=g.Party?.Boss;
   if(boss&&boss.Mode!=='defeated'){
     const angry=boss.HP*3<=boss.MaxHP;
@@ -270,7 +267,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
     if(boss.Mode==='captured'||!boss.Invulnerable||boss.Tick%4<2){
       const size=composed?CARTOON_BOSS_SIZE:144;
       actor(`boss/simple-${frame}`,
-        boss.X+48-size/2,entrance(boss.Y,0)+96,size,boss.Dir<0);
+        boss.X+48-size/2,bossEntrance(boss.Y)+96,size,boss.Dir<0);
       const draw=cartoonBossFeedback(out.pop()!,boss,feel,reduced);
       // A large airborne silhouette needs room above its root at arena edges.
       // Fit the art inside the playfield without changing the board framing.
@@ -307,7 +304,7 @@ export function cartoonDrawPlan(g:GameState,tick:number,view?:{width:number;heig
   for(let index=0;index<g.Enemies.length;index++){
     const e=g.Enemies[index]!;
     if(e.State===EnemyState.Trapped||e.State===EnemyState.Defeated&&e.DeadTicks===0)continue;
-    const y=e.State===EnemyState.Spawning?adventureArrivalY(e):entrance(e.Y,index);
+    const y=e.State===EnemyState.Spawning?(g.Party?partyArrivalY(e):adventureArrivalY(e)):e.Y;
     let pose=e.Angry?'angry':'walk';
     if(e.Kind==='mighta'&&e.Shoot>0)pose='shoot';
     if(e.State===EnemyState.Defeated||e.State===EnemyState.Carried)pose='dead';

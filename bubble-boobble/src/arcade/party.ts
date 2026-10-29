@@ -1,6 +1,6 @@
 import { createPartyArena } from './party-arena';
 import { createCartoonArena } from '../cartoon/arena';
-import { partyEnemyFormation,partySpawnSafe,partyEnemyReinforcement } from './party-spawns';
+import { partyEnemyFormation } from './party-spawns';
 import { createBoss, ensureThunderPickups, stepBoss } from './boss';
 import { createGame, remainingEnemies } from './game';
 import { enableCompanion, companionInput, warmPartyNavigation } from './companion';
@@ -11,7 +11,7 @@ import { updateBubbles, updateEffects } from './bubbles';
 import { updateItems, checkPowerSpawns, spawnFood } from './items';
 import { arenaWidth, body, alive, EnemyState, State, type GameState, type Input, type Level, type PartySlot } from './types';
 
-import { partyColors, defaultPartySlots, partyPrepareTicks, partyBreakTicks, partySurvivorCount, partyStartGraceTicks } from './party-config';
+import { partyColors, defaultPartySlots, partyArrivalTicks, partySpawnDescentTicks, partySpawnStaggerTicks, partySpawnSettleTicks, partySurvivorCount, partyStartGraceTicks } from './party-config';
 export { partyColors, partySpawnColumns, defaultPartySlots } from './party-config';
 const idle: Input = Object.freeze({Move:0,Jump:false,Fire:false});
 const kinds = ['zenchan','monsta','banebou','mighta','pulpul','invader'];
@@ -22,7 +22,7 @@ export function createPartyGame(levels:Level[], seed:number, slots:PartySlot[]=d
   if (!Number.isInteger(bossWave)||bossWave<2||bossWave>100) throw new Error('Invalid boss wave');
   if(!levels.length)throw new Error('no levels supplied');
   const g=createGame(arena==='cartoon'?[createCartoonArena(levels[0]!)]:slots.length>6?[createPartyArena(levels[0]!)]:levels.slice(0,1),seed,slots.length);
-  g.Party={Kills:slots.map(()=>0),Wave:1,BossWave:bossWave,Phase:'prepare',Timer:partyPrepareTicks,Slots:slots.slice(),ToSpawn:0,SpawnTick:0,Spawned:0,Telegraphs:[]};
+  g.Party={Kills:slots.map(()=>0),Wave:1,BossWave:bossWave,Phase:'prepare',Timer:0,Slots:slots.slice(),ToSpawn:0,SpawnTick:0,Spawned:0,Telegraphs:[]};
   g.Enemies=[];g.Companions=Array.from({length:slots.length},()=>null);
   for(let i=0;i<g.Players.length;i++) {
     g.Players[i]!.Skin=partyColors[i];
@@ -39,69 +39,42 @@ export function copyParty(g:GameState) {
 }
 const occupied=(g:GameState)=>g.Party!.Slots.reduce((n,s)=>n+(s!=='empty'?1:0),0);
 export function partyWaveBudget(wave:number,team:number) { return Math.min(32,3+wave*2+Math.max(0,Math.min(team,6)-1)*2 + Math.ceil(Math.max(0,team-6)/2)); }
-/** Show the whole formation before releasing it, just like a campaign round. */
+/** Reserve the entire next formation before releasing any member into combat. */
 export function preparePartyWave(g:GameState) {
   const p=g.Party!;
-  g.State=State.Playing;g.LevelTicks=0;g.Hurry=false;g.Freeze=0;g.Bubbles=[];g.Projectiles=[];g.Effects=[];g.Enemies=[];
-  p.Phase='prepare';p.Timer=partyPrepareTicks;g.Countdown=p.Timer;p.Spawned=0;p.Telegraphs=[];p.SpawnTick=0;p.ToSpawn=0;
-  delete p.Boss;delete p.LastKill;
+  g.State=State.Playing;g.LevelTicks=0;g.Hurry=false;g.Freeze=0;g.Projectiles=[];g.Effects=[];
+  // Practice shots keep their position and lifetime across the boundary. Captive
+  // bubbles belong to the completed wave and must not retain dead actor IDs.
+  g.Bubbles=g.Bubbles.filter(b=>!b.Removed&&b.EnemyID===0&&b.Element==='');
+  g.Enemies=g.Enemies.filter(e=>e.State===EnemyState.Defeated&&e.DeadTicks>0);
+  p.Phase='prepare';p.Spawned=0;p.Telegraphs=[];p.SpawnTick=0;p.ToSpawn=0;
+  delete p.Boss;
+  if(p.LastKill?.Wave!==p.Wave-1)delete p.LastKill;
   if(p.Wave===p.BossWave) {
     p.Boss=createBoss(occupied(g),g.Level);
-    g.Items=[];ensureThunderPickups(g);
+    p.Timer=partyArrivalTicks(1);p.PrepareTicks=p.Timer;g.Countdown=p.Timer;
+    ensureThunderPickups(g);
     return;
   }
   const count=partyWaveBudget(p.Wave,occupied(g));
   const variety=Math.min(kinds.length,p.Wave+1);
   const waveKinds=Array.from({length:count},(_,index)=>kinds[(index+p.Wave-1)%variety]!);
-  const staged=g.Level.arena==='cartoon-courtyard';
-  const opening=staged?Math.min(count,3+Math.ceil(occupied(g)/4)):count;
-  // Later groups may reuse a location after the previous actors have moved.
-  // Only each arriving group reserves simultaneous silhouette space.
-  const formation=partyEnemyFormation(g,waveKinds.slice(0,opening));
-  if(staged)for(let start=opening;start<count;start+=4)
-    formation.push(...partyEnemyFormation(g,waveKinds.slice(start,start+4)));
+  const formation=partyEnemyFormation(g,waveKinds);
+  p.Timer=partyArrivalTicks(count);p.PrepareTicks=p.Timer;g.Countdown=p.Timer;
   for(let index=0;index<count;index++) {
-    if(index>=opening){
-      const spawn=formation[index]!;
-      p.Telegraphs.push({...spawn,Kind:waveKinds[index]!,Ticks:(1+Math.floor((index-opening)/4))*180});
-      continue;
-    }
     const spawn=formation[index]!,x=spawn.X,y=spawn.Y;
     g.NextID++;
-    g.Enemies.push({...body(x,y),Ground:spawn.Ground,ID:g.NextID,Kind:waveKinds[index]!,State:EnemyState.Active,Dir:x<arenaWidth(g)/2?1:-1,Vertical:index%2?1:-1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:index*.6,CarriedBy:0,CarryTicks:0});
+    g.Enemies.push({...body(x,y),Ground:spawn.Ground,ID:g.NextID,Kind:waveKinds[index]!,State:EnemyState.Spawning,SpawnTicks:partySpawnDescentTicks+index*partySpawnStaggerTicks,Dir:x<arenaWidth(g)/2?1:-1,Vertical:index%2?1:-1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:index*.6,CarriedBy:0,CarryTicks:0});
   }
-  p.Spawned=opening;p.ToSpawn=count-opening;
+  p.Spawned=count;
 }
 function beginWave(g:GameState) {
   const p=g.Party!;
   p.Timer=0;p.Phase=p.Boss?'boss':'combat';
-  for(const dragon of g.Players) if(alive(dragon))dragon.Invincible=partyStartGraceTicks;
-}
-function spawnTelegraphs(g:GameState) {
-  const p=g.Party!;
-  if(g.Level.arena==='cartoon-courtyard'&&g.Freeze>0)return;
-  const pending:typeof p.Telegraphs=[];
-  let warnings=p.Telegraphs.filter(t=>t.Kind&&t.Ticks<=60).length;
-  for(const t of p.Telegraphs){
-    if(t.Kind&&t.Ticks===61&&warnings>=4){pending.push(t);continue;}
-    t.Ticks--;
-    if(t.Kind&&t.Ticks===60)warnings++;
-    if(t.Kind&&(t.Ticks===60||t.Ticks<=0)){
-      const reserved=p.Telegraphs.filter(other=>other!==t&&other.Ticks<=60);
-      if(!partySpawnSafe(g,t,reserved)){
-        const location=partyEnemyReinforcement(g,t.Kind,reserved);
-        if(location)Object.assign(t,location);
-        // Every relocation gets a full visible warning. A crowded arena waits.
-        t.Ticks=60;pending.push(t);continue;
-      }
-    }
-    if(t.Ticks>0){pending.push(t);continue;}
-    g.NextID++;
-    const variety=Math.min(kinds.length,p.Wave+1),kind=t.Kind??kinds[(g.NextID-1)%variety]!;
-    g.Enemies.push({...body(t.X,t.Y),Ground:t.Ground??false,ID:g.NextID,Kind:kind,State:EnemyState.Active,Dir:t.X<arenaWidth(g)/2?1:-1,Vertical:1,Angry:false,Age:0,Cooldown:120,Shoot:0,DeadTicks:0,Phase:0,CarriedBy:0,CarryTicks:0});
-    if(t.Kind){p.Spawned++;p.ToSpawn--;warnings--;}
+  for(const enemy of g.Enemies)if(enemy.State===EnemyState.Spawning){
+    enemy.State=EnemyState.Active;enemy.Age=0;delete enemy.SpawnTicks;
   }
-  p.Telegraphs=pending;
+  for(const dragon of g.Players) if(alive(dragon))dragon.Invincible=partyStartGraceTicks;
 }
 function revive(g:GameState,index:number) {
   const dragon=g.Players[index]!;
@@ -117,16 +90,11 @@ function rescues(g:GameState) {
     if(g.Players.some((other,j)=>j!==i&&alive(other)&&Math.abs(other.X-p.X)<52&&Math.abs(other.Y-p.Y)<52))revive(g,i);
   }
 }
-function rest(g:GameState) {
+function nextWave(g:GameState) {
   const p=g.Party!;
   for(const e of g.Enemies)if(e.State===EnemyState.Defeated&&e.DeadTicks>0)spawnFood(g,e.X,e.Y);
-  p.Phase='rest';p.Timer=partyBreakTicks;p.Telegraphs=[];
-  g.State=State.Clearing;g.Countdown=p.Timer;
-  // The final pop deserves the same full defeat flight as every earlier pop.
-  // Rewards above retain the existing immediate collection interval.
-  g.Enemies=g.Level.arena==='cartoon-courtyard'?g.Enemies.filter(e=>e.State===EnemyState.Defeated&&e.DeadTicks>0):[];
-  g.Projectiles=[];g.Bubbles=[];g.Effects=[];g.Freeze=0;g.Hurry=false;
   for(let i=0;i<g.Players.length;i++)if(g.Players[i]!.Downed)revive(g,i);
+  p.Wave++;preparePartyWave(g);
 }
 function enrageLastEnemy(g:GameState) {
   if(g.Level.arena==='cartoon-courtyard'){updateLastEnemyRage(g);return;}
@@ -150,32 +118,35 @@ export function stepParty(g:GameState,inputs:Input[]) {
   // Check before phase handling so a wiped team cannot enter another wave.
   if(partySurvivorCount(g)===0){g.State=State.GameOver;return;}
   warmPartyNavigation(g);
-  const ins=inputs.slice(),holdMovement=p.Phase==='prepare'&&p.Wave===1;
+  const ins=inputs.slice();
   for(let i=0;i<g.Players.length;i++) {
     if(p.Slots[i]==='empty')continue;
-    if(p.Slots[i]==='ai')ins[i]=holdMovement?idle:companionInput(g,i);
-    if(holdMovement)ins[i]={Move:0,Jump:false,Fire:!!ins[i]?.Fire};
-    if(alive(g.Players[i]!))updatePlayer(g,i,ins[i]??idle,!holdMovement);
+    if(p.Slots[i]==='ai')ins[i]=companionInput(g,i);
+    if(alive(g.Players[i]!))updatePlayer(g,i,ins[i]??idle);
   }
   if(p.Phase==='prepare') {
+    updateDefeated(g,false);
+    g.Enemies=g.Enemies.filter(e=>e.State!==EnemyState.Defeated||e.DeadTicks>0);
+    let descending=false,arriving=false;
+    for(const enemy of g.Enemies)if(enemy.State===EnemyState.Spawning){
+      if((enemy.SpawnTicks??0)>0)descending=true;
+      enemy.SpawnTicks=Math.max(0,(enemy.SpawnTicks??0)-1);
+      if(enemy.SpawnTicks>0)arriving=true;
+    }
     updateBubbles(g,ins);updateEffects(g);updateItems(g);
     g.Particles=g.Particles.filter(v=>{v.Y-=.6;return --v.Life>0;});
-    rescues(g);p.Timer--;g.Countdown=p.Timer;
-    if(p.Timer<=0)beginWave(g);
+    rescues(g);p.Timer=Math.max(descending?partySpawnSettleTicks:0,p.Timer-1);g.Countdown=p.Timer;
+    if(!arriving&&p.Timer===0)beginWave(g);
     return;
   }
   if(p.Phase==='rest') {
-    if(g.Level.arena==='cartoon-courtyard'){
-      updateDefeated(g,false);
-      g.Enemies=g.Enemies.filter(e=>e.DeadTicks>0);
-    }
-    updateBubbles(g,ins);updateEffects(g);updateItems(g);g.Particles=g.Particles.filter(v=>{v.Y-=.6;return --v.Life>0;});p.Timer--;g.Countdown=p.Timer;
-    if(p.Timer<=partyPrepareTicks){p.Wave++;preparePartyWave(g);}
+    // Older hot-reloaded sessions may still be in the retired rest phase.
+    // Their rewards and rescues were already paid when that phase began.
+    p.Wave++;preparePartyWave(g);
     return;
   }
   rescues(g);
   g.LevelTicks++;
-  spawnTelegraphs(g);
   enrageLastEnemy(g);
   if(g.Freeze>0)g.Freeze--;else{updateEnemies(g);updateProjectiles(g);}
   // Remove completed actors to bound long-session work.
@@ -186,6 +157,6 @@ export function stepParty(g:GameState,inputs:Input[]) {
   if(g.State===State.Won)return;
   for(let i=0;i<g.Players.length;i++)checkPlayerHit(g,i);
   if(partySurvivorCount(g)===0){g.State=State.GameOver;return;}
-  if(p.Phase==='combat'&&p.ToSpawn===0&&p.Telegraphs.length===0&&remainingEnemies(g)===0)rest(g);
+  if(p.Phase==='combat'&&remainingEnemies(g)===0)nextWave(g);
   g.Particles=g.Particles.filter(v=>{v.Y-=.6;return --v.Life>0;});
 }

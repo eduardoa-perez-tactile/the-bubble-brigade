@@ -8,7 +8,7 @@ import {desktopState,TITLE_REVEAL_STEPS} from '../src/desktop/state';
 
 const scene='scenes/cartoon.scene.json';
 const party=()=>createPartyGame(campaign,42,Array.from({length:6},()=> 'human' as const),10,'cartoon');
-worldTest('brigade feedback countdown boundaries survive packing and pause without visual cues',()=>{
+worldTest('brigade feedback arrival clock stays quiet and GO survives packing and pause',()=>{
  const g=party();g.Countdown=181;g.Party!.Timer=181;
  let feel=advanceFeel(emptyFeel(),g,0);
  const emitted:string[]=[];
@@ -19,7 +19,7 @@ worldTest('brigade feedback countdown boundaries survive packing and pause witho
   const next=advanceFeel(unpackFeel(packFeel(feel)),g,tick!);
   feel=next;
  }
- expect(emitted.filter(k=>k==='countdown-tick').length).toBe(3);
+ expect(emitted.filter(k=>k==='countdown-tick').length).toBe(0);
  expect(emitted.filter(k=>k==='go').length).toBe(1);
  expect(unpackFeel(packFeel(feel))).toEqual(feel);
  expect(feel.cues.length).toBe(0);
@@ -54,11 +54,11 @@ worldTest('brigade feedback countdown reset drops stale stages and never emits s
  const g=party();g.Tick=100;g.Party!.Timer=120;g.Countdown=120;
  const old=advanceFeel(emptyFeel(),g,100);
  g.Tick=0;g.Party!.Timer=180;g.Countdown=180;
- expect(deriveFeelAudio(old,g)).toEqual([{kind:'countdown-tick'}]);
+ expect(deriveFeelAudio(old,g)).toEqual([]);
  g.Paused=true;
  const resetPaused=advanceFeel(old,g,101);
  expect(resetPaused.previous!.countdown).toBe(-1);
- g.Paused=false;expect(deriveFeelAudio(resetPaused,g)).toEqual([{kind:'countdown-tick'}]);
+ g.Paused=false;expect(deriveFeelAudio(resetPaused,g)).toEqual([]);
  g.Party!.Phase='combat';
  expect(deriveFeelAudio(old,g)).toEqual([]);
  g.Tick=101;g.Party!.Wave=0;
@@ -113,7 +113,7 @@ worldTest('brigade feedback actual windup landing wave and outcomes use new cues
  await step(2);expect(sounds('defeat').length).toBe(0);
 },{scene});
 
-worldTest('brigade feedback countdown emits actual ticks and go only at boundaries and stays muted',async({step,cheat,input,audio})=>{
+worldTest('brigade feedback arrivals emit GO once at activation without countdown bleeps and stay muted',async({step,cheat,input,audio})=>{
  await step(8);await cheat(CartoonOverhaul,{scenario:'combat'});
  await cheat(BrigadeSfxProbe,{scenario:'countdown'});
  const sounds:string[]=[];
@@ -123,7 +123,7 @@ worldTest('brigade feedback countdown emits actual ticks and go only at boundari
   sounds.push(...audio.sounds().slice(cursor).filter(s=>s.sound==='audio/brigade/sfx/countdown-tick'||s.sound==='audio/brigade/sfx/go').map(s=>s.sound));
   cursor=audio.sounds().length;
  }
- expect(sounds.filter(s=>s.endsWith('/countdown-tick')).length).toBe(3);
+ expect(sounds.filter(s=>s.endsWith('/countdown-tick')).length).toBe(0);
  expect(sounds.filter(s=>s.endsWith('/go')).length).toBe(1);
  input.action('mute',1);await step(1);input.action('mute',0);await step(1);
  cursor=audio.sounds().length;

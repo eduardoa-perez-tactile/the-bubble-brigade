@@ -8,7 +8,7 @@ import { arenaBackdrop, bubblePose, dragonPose, dragonShadow, dragonBadges, rect
 import { ArcadeFeel, ArcadeAudio } from '../schema.gen';
 import campaignPreviews from '../../data/levels.json';
 import { partyCardRect } from '../desktop/layout';
-import { partyColors, partyNames, partyPrepareTicks, partyStartGraceTicks } from './party-config';
+import { partyColors, partyNames, partyArrivalY, partySpawnSettleTicks, partyStartGraceTicks } from './party-config';
 // Presentation follows pinned internal/app/render.go. It never changes match state.
 import {
   defineSystem,
@@ -148,11 +148,8 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
   const skinAt = (index: number) => g.Party
     ? (isDragonSkin(g.Players[index]?.Skin) ? g.Players[index]!.Skin! : dragonSkins[index % dragonSkins.length]!)
     : index === 1 ? 'blue' : avatar;
-  const entranceY = (target: number, index: number) => {
-    if (g.Party?.Phase !== 'prepare') return target;
-    const t = Math.max(0, Math.min(1, (partyPrepareTicks - g.Party.Timer - index % 6 * 5) / 60));
-    return -48 + (target + 48) * (1 - (1 - t) * (1 - t));
-  };
+  const bossEntranceY = (target:number) => g.Party?.Phase==='prepare'
+    ?partyArrivalY({Y:target,SpawnTicks:Math.max(0,g.Party.Timer-partySpawnSettleTicks)}):target;
   if (g.Party) {
     for (const spawn of g.Party.Telegraphs ?? []) {
       if(spawn.Kind&&spawn.Ticks>60)continue;
@@ -161,7 +158,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
     }
     const boss = g.Party.Boss;
     if (boss) {
-      const captured=boss.Mode==='captured', y=entranceY(boss.Y+48,0);
+      const captured=boss.Mode==='captured', y=bossEntranceY(boss.Y+48);
       const windup=boss.Mode==='windup',pulse=windup?(30-boss.Timer)/30:0;
       const w=96+(captured?goSin(boss.Timer*.16)*3:pulse*9),h=96-pulse*7;
       if(captured || !boss.Invulnerable || boss.Tick%4<2)
@@ -194,7 +191,7 @@ export function arcadeDrawPlan(g: GameState, avatar = "green", feel?: FeelState,
       state = e.Angry ? "shoot-angry" : "shoot";
     if (e.State === EnemyState.Defeated || e.State === EnemyState.Carried)
       state = "dead";
-    const y=e.State===EnemyState.Spawning?adventureArrivalY(e)+48:entranceY(e.Y+48,index);
+    const y=(e.State===EnemyState.Spawning?(g.Party?partyArrivalY(e):adventureArrivalY(e)):e.Y)+48;
     out.push(image(e.Kind + "/" + state, g.Party?.Phase === 'prepare' ? g.Tick + index * 3 : e.Age, e.X, y, 48, 48, e.Dir));
   }
   for (const b of g.Bubbles) {

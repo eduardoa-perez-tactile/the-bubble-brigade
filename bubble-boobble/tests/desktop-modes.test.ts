@@ -42,7 +42,7 @@ worldTest('party play returns to its caller and team setup preserves the current
  await cheat(PartyReset,{wave:4,team:10,countdown:1,humans:1});await step(2);
  await cheat(PartyFinalPop,{slot:0});await step(2);
  expect(desktopState.get().score).toBeGreaterThan(0);
- expect(desktopState.get().round).toBe(4);
+ expect(desktopState.get().round).toBe(5);
  input.emit(DesktopIntent,{action:'pause'});await step(1);
  const score=desktopState.get().score,round=desktopState.get().round;
  input.emit(DesktopIntent,{action:'party'});await step(1);expect(desktopState.get().partyEditing).toBe(true);
