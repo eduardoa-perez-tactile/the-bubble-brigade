@@ -39,7 +39,8 @@
         "dir": "column",
         "align": "center",
         "gap": 12,
-        "bg": "#f0e4c6"
+        "bg": "#f5e9cd",
+        "radius": 18
       },
       "point": "summary-panel"
     },
@@ -51,7 +52,7 @@
         "pad": 0,
         "w": "100%",
         "h": 3,
-        "bg": "#8c5a35"
+        "bg": "#b88a40"
       }
     },
     "sr_episode": {
@@ -64,7 +65,7 @@
         "fontSize": 18,
         "fitMin": 14,
         "textAlign": "center",
-        "color": "#715138"
+        "color": "#8a6436"
       }
     },
     "sr_title": {
@@ -77,7 +78,7 @@
         "fontSize": 34,
         "fitMin": 22,
         "textAlign": "center",
-        "color": "#382d25"
+        "color": "#214e4c"
       },
       "show": "showOutcomeTitle",
       "point": "outcome-title"
@@ -107,7 +108,7 @@
         "h": 38,
         "fontSize": 22,
         "fitMin": 18,
-        "color": "#5a4936"
+        "color": "#354c46"
       }
     },
     "sr_score": {
@@ -120,7 +121,7 @@
         "fontSize": 30,
         "fitMin": 22,
         "textAlign": "right",
-        "color": "#382d25"
+        "color": "#354c46"
       }
     },
     "sr_reward_row": {
@@ -137,7 +138,8 @@
         "dir": "row",
         "align": "center",
         "justify": "space-between",
-        "bg": "#e5d3b1"
+        "bg": "#dfebdc",
+        "radius": 5
       }
     },
     "sr_reward_label": {
@@ -149,7 +151,7 @@
         "h": 42,
         "fontSize": 17,
         "fitMin": 14,
-        "color": "#634326"
+        "color": "#245c5b"
       }
     },
     "sr_reward_value": {
@@ -162,7 +164,7 @@
         "fontSize": 22,
         "fitMin": 16,
         "textAlign": "right",
-        "color": "#634326"
+        "color": "#245c5b"
       }
     },
     "sr_buttons": {
@@ -184,7 +186,7 @@
         "fontSize": 16,
         "fitMin": 13,
         "textAlign": "center",
-        "color": "#715138"
+        "color": "#8a6436"
       }
     }
   },

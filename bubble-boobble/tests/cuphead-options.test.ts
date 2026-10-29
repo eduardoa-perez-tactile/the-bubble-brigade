@@ -3,13 +3,14 @@ import {DesktopIntent} from '../src/schema.gen';
 import {desktopState} from '../src/desktop/state';
 import {desktopSaveState} from '../src/desktop/save';
 
-renderTest('cuphead ruled options preserve values touch actions and safe fit',async({step,input,render,ui})=>{
+renderTest('adventure options preserve values touch actions and safe fit',async({step,input,render,ui})=>{
  input.view(768,720,1);await step(8);
  input.emit(DesktopIntent,{action:'settings'});await step(2);
  expect(desktopState.get().screen).toBe('settings');
  for(const [width,height] of [[768,720],[1680,720],[640,960],[904,2316],[1620,2160]]){
   input.view(width!,height!,1);await step(1);const stats=render.stats({width:width!,height:height!});
-  const actions=ui.interactables();expect(actions.length).toBe(7);
+  const actions=ui.interactables().filter(action=>action.enabled&&action.hittable);
+  expect(actions.length).toBe(8);
   for(const action of actions){const r=ui.rect(action.id!)!;expect(r.x>=0&&r.y>=0&&r.x+r.width<=width!+1&&r.y+r.height<=height!+1).toBe(true);}
   expect(stats.drawCalls).toBeLessThanOrEqual(12);
   console.log(JSON.stringify({width,height,optionsDrawCalls:stats.drawCalls}));

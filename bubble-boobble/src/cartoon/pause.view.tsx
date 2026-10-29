@@ -3,15 +3,28 @@ import { desktopModel, type DesktopModel } from '../desktop/model';
 import { initialDesktopState } from '../desktop/state';
 import { initialDesktopSave } from '../desktop/save';
 
-/** A small ruled menu over the frozen arena, with caller-aware options and safe defaults. */
+const adventureSample = (pauseConfirm?: 'restart' | 'leave') => desktopModel({
+ ...initialDesktopState, screen:'pause', cartoon:true, adventure:true,
+ adventureEncounter:'encounter-1', pauseConfirm,
+}, initialDesktopSave);
+
+/** Adventure shares the map's panel and actions; the controller owns pause and confirmation rules. */
 export const CartoonPauseView = defineView<DesktopModel>({
  name:'CartoonPause', dims:true, blockInput:true,
  samples:{paused:desktopModel({...initialDesktopState,screen:'pause',cartoon:true,partyRun:true},initialDesktopSave),
- confirm:desktopModel({...initialDesktopState,screen:'pause',cartoon:true,pauseConfirm:'restart'},initialDesktopSave)},
- render:(model,{intent})=><Screen safeArea class="desktop-screen cartoon-pause-screen">
+ confirm:desktopModel({...initialDesktopState,screen:'pause',cartoon:true,pauseConfirm:'restart'},initialDesktopSave),
+ adventure:adventureSample(),retry:adventureSample('restart'),leave:adventureSample('leave')},
+ render:(model,{intent})=>model().adventureRun?
+  <Widget id="cartoon-pause" doc="adventure-pause" class="overworld-screen overworld-card adventure-level-pause" props={{
+   speaker:()=>model().pauseConfirm?(model().pauseConfirm==='restart'?'RETRY ENCOUNTER?':'RETURN TO MAP?'):'TAKE A BREATHER',
+   message:()=>model().pauseContext,
+   detail:()=>model().pauseConfirm?(model().pauseConfirm==='restart'?'Retry this encounter from the beginning.':'Return to the same map entrance.'):'YOUR ENCOUNTER IS PAUSED',
+   buttons:()=>model().buttons,showBack:false,
+  }} onIntent={(_,e)=>intent(e.item??e.path.at(-1)!)}/>:
+  <Screen safeArea class="desktop-screen cartoon-pause-screen">
   <Widget id="cartoon-pause" doc="cartoon-pause" class="cartoon-pause" props={{
    title:()=>model().pauseConfirm?'ARE YOU SURE?':'PAUSED',
-   subtitle:()=>model().pauseConfirm?(model().adventureRun?(model().pauseConfirm==='restart'?'RETRY THIS ENCOUNTER FROM THE BEGINNING':'RETURN TO THE SAME MAP ENTRANCE'):(model().pauseConfirm==='restart'?'RESTART FROM THE FIRST ROUND / WAVE':'THIS RUN WILL END')):'THE BUBBLE BRIGADE',
+   subtitle:()=>model().pauseConfirm?(model().pauseConfirm==='restart'?'RESTART FROM THE FIRST ROUND / WAVE':'THIS RUN WILL END'):'THE BUBBLE BRIGADE',
    actions:()=>model().buttons,
   }} onIntent={(_,e)=>intent(e.item??e.path.at(-1)!)}/>
  </Screen>,
