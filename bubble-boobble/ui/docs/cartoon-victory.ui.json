@@ -71,7 +71,7 @@
     "cv_title": {
       "type": "icon",
       "name": "Icon",
-      "image": "cartoon/ui/results/title",
+      "image": "cartoon/ui/results/bravo",
       "style": {
         "size": 32,
         "position": "anchored",
@@ -83,7 +83,7 @@
           0,
           8
         ],
-        "w": "94%",
+        "w": "70%",
         "h": 176
       },
       "point": "results-title"
@@ -412,7 +412,7 @@
     },
     "cv_action_rows": {
       "type": "repeat",
-      "doc": "victory-action",
+      "doc": "overworld-button",
       "property": "buttons"
     },
     "cv_hint": {
@@ -596,7 +596,7 @@
     },
     "buttons": {
       "type": "list",
-      "of": "victory-action",
+      "of": "overworld-button",
       "default": []
     }
   }

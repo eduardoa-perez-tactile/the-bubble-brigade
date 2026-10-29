@@ -3,12 +3,12 @@
 .cartoon-victory { width: 100%; height: 100%; font-family: "cartoon/fonts/BreeSerif-Regular"; }
 .cartoon-victory .ud-cartoon-victory__cv_stage { max-width: 1280px; }
 .cartoon-victory .ud-cartoon-victory__cv_backdrop { object-fit: cover; pointer-events: none; }
-.cartoon-victory .ud-cartoon-victory__cv_title { object-fit: fill; pointer-events: none; }
+.cartoon-victory .ud-cartoon-victory__cv_title { object-fit: contain; pointer-events: none; }
 .cartoon-victory .ud-cartoon-victory__cv_frame,
 .cartoon-victory .ud-cartoon-victory__cv_detail_frame { background-slice: auto; pointer-events: none; }
 .cartoon-victory .ud-cartoon-victory__cv_hero { object-fit: contain; pointer-events: none; }
-.cartoon-victory .ud-victory-action__root { width: 0; min-width: 0; flex-grow: 1; }
-.cartoon-victory .ud-victory-action__va_label { font-family: "cartoon/fonts/BreeSerif-Regular"; }
+.cartoon-victory .ud-overworld-button__root { width: 0; min-width: 0; flex-grow: 1; height:48px; border-width:1px; border-color:#b88a40; }
+.cartoon-victory .ud-overworld-button__owb_label { font-family: "cartoon/fonts/BreeSerif-Regular"; font-size:22px; text-fit:16px 22px; }
 /* On portrait phones the hero sits above the board, with larger actual hitboxes. */
 @media (aspect < 0.7) {
  .cartoon-victory .ud-cartoon-victory__cv_stage { height: 1100px; }
@@ -27,8 +27,8 @@
  .cartoon-victory .ud-victory-rank__vr_mode,
  .cartoon-victory .ud-victory-rank__vr_kills { height: 38px; font-size: 24px; text-fit: 17px 24px; }
  .cartoon-victory .ud-cartoon-victory__cv_actions { top: 950px; height: 96px; width: 96%; gap: 8px; }
- .cartoon-victory .ud-victory-action__root { height: 96px; }
- .cartoon-victory .ud-victory-action__va_label { height: 72px; font-size: 27px; text-fit: 19px 27px; }
+ .cartoon-victory .ud-overworld-button__root { height: 96px; }
+ .cartoon-victory .ud-overworld-button__owb_label { height: 72px; font-size: 27px; text-fit: 19px 27px; }
  .cartoon-victory .ud-cartoon-victory__cv_hint { top: 1065px; height: 24px; font-size: 16px; }
 }
 @media (aspect < 0.5) {
