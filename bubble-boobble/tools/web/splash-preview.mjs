@@ -64,10 +64,10 @@ try {
     const layout = await page.evaluate(() => {
       const launch = document.querySelector('#launch');
       const rect = document.querySelector('#start').getBoundingClientRect();
-      return { overflow: launch.scrollWidth > launch.clientWidth, x: rect.x, y: rect.y, right: rect.right, bottom: rect.bottom, images: [...document.querySelectorAll('#launch img')].every(image => image.complete && image.naturalWidth > 0), font: document.fonts.check('12px "Bubble Arcade"') };
+      return { overflow: launch.scrollWidth > launch.clientWidth, x: rect.x, y: rect.y, right: rect.right, bottom: rect.bottom, images: [...document.querySelectorAll('#launch img')].every(image => image.complete && image.naturalWidth > 0), font: document.fonts.check('12px "Brigade Serif"') };
     });
     assert.equal(layout.overflow, false, `Horizontal overflow at ${width}x${height}`);
-    assert.equal(layout.images && layout.font, true, 'All original sprites, logo and arcade font must load');
+    assert.equal(layout.images && layout.font, true, 'Brigade logo, greeter and serif font must load');
     assert.ok(layout.x >= 0 && layout.right <= width && layout.y >= 0 && layout.bottom <= height, `Start must be visible at ${width}x${height}`);
     await shot(`ready-${width}x${height}`);
   }
