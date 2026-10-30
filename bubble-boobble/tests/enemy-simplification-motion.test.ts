@@ -3,6 +3,7 @@ import campaign from '../data/levels.json';
 import {createGame} from '../src/arcade/game';
 import {EnemyState,type Enemy} from '../src/arcade/types';
 import {simplifiedEnemyDraws,simplifiedEnemyState} from '../src/cartoon/enemy-motion';
+import {emptyFeel} from '../src/arcade/juice';
 
 const kinds=['zenchan','mighta','banebou','invader'];
 const enemy=(Kind:string):Enemy=>({...createGame(campaign,42).Enemies[0]!,Kind,
@@ -71,5 +72,34 @@ worldTest('simplified enemy draws preserve feet facing and read-only frozen outp
       expect(reduced.width).toBe(97.25);expect(reduced.height).toBe(97.25);
       expect(simplifiedEnemyDraws(posed,300,97.25,true)).toEqual([reduced]);
     }
+  }
+});
+
+worldTest('enemy juice landing holds a planted squash rebounds and settles without replaying old contacts',()=>{
+  for(const kind of kinds){
+    const e=enemy(kind),feel=emptyFeel();
+    feel.cues=[{kind:'enemy-land',slot:e.ID,x:e.X+24,y:e.Y+92,at:100},
+      {kind:'enemy-land',slot:e.ID+1,x:0,y:0,at:110}];
+    const baseline=simplifiedEnemyDraws(e,0,80)[0]!;
+    const sample=(age:number)=>{
+      feel.clock=100+age;
+      const before=JSON.stringify({e,feel}),draw=simplifiedEnemyDraws(e,0,80,false,feel)[0]!;
+      near(draw.y+draw.height*120/128,e.Y+44);
+      expect(simplifiedEnemyDraws(e,300,80,false,feel)).toEqual([draw]);
+      expect(JSON.stringify({e,feel})).toBe(before);
+      return draw;
+    };
+    const impact=sample(0),held=sample(3),rebound=sample(8);
+    expect(impact.width>=100).toBe(true);expect(impact.height<=64).toBe(true);
+    near(held.width,impact.width);near(held.height,impact.height);
+    expect(rebound.width<baseline.width).toBe(true);expect(rebound.height>baseline.height).toBe(true);
+    expect(sample(20)).toEqual(baseline);expect(sample(60)).toEqual(baseline);
+    feel.clock=100;
+    expect(simplifiedEnemyDraws(e,0,80,true,feel)[0]!.height).toBe(80);
+    e.Ground=false;e.VY=-7;
+    const takeoff=sample(0);
+    expect(takeoff.height>96).toBe(true);
+    e.VY=0;expect(sample(0).height).toBe(80);
+    e.VY=5;expect(sample(0).height>80).toBe(true);
   }
 });

@@ -5,6 +5,7 @@ import {EnemyState,State} from '../src/arcade/types';
 import {cartoonEnemyRagePose} from '../src/cartoon/enemy-motion';
 import {cartoonEnemyRageDraws,ENEMY_RAGE_MARK_FRAME} from '../src/cartoon/enemy-rage-feedback';
 import {cartoonDrawPlan} from '../src/cartoon/plan';
+import {cartoonDrawTransform} from '../src/cartoon/renderer';
 const scene='scenes/cartoon.scene.json';
 function fixture(){
  const g=createPartyGame(campaign,42,Array.from({length:6},()=> 'human' as const),10,'cartoon');
@@ -21,7 +22,7 @@ worldTest('enemy juice anger mark survives reduced effects and keeps all six fam
   const plan=cartoonDrawPlan(g,g.Tick,{width:360,height:880,safeArea:[0,32,0,0]},undefined,undefined,reduced);
   const actor=plan.find(d=>d.frame.startsWith(`enemy/${kind}/`))!;
   expect(actor.color).toBe(undefined);
-  expect(plan.filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(8);
+  expect(plan.filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(12);
   expect(JSON.stringify(g)).toBe(before);
  }
 },{scene});
@@ -31,19 +32,46 @@ worldTest('enemy juice rage announcement settles once while its head marker rema
  const bounds={scale:.2,left:0,right:100,top:0,bottom:80,minSize:10};
  const before=JSON.stringify(g),start=cartoonEnemyRageDraws(e,actor,bounds);
  expect(start.filter(d=>d.frame==='dust-puff').length).toBe(2);
- for(const d of start){expect(d.x>=0&&d.y>=0).toBe(true);expect(d.x+d.width<=100.001&&d.y+d.height<=80.001).toBe(true);}
+ for(const d of start){
+  const transformed=cartoonDrawTransform(d);
+  expect(transformed.centerX-transformed.halfWidth>=-.001&&transformed.centerY-transformed.halfHeight>=-.001).toBe(true);
+  expect(transformed.centerX+transformed.halfWidth<=100.001&&transformed.centerY+transformed.halfHeight<=80.001).toBe(true);
+ }
  expect(cartoonEnemyRagePose(e).scaleY<1).toBe(true);
  const reduced=cartoonEnemyRageDraws(e,actor,bounds,true);
  expect(reduced.some(d=>d.frame==='dust-puff')).toBe(false);
- expect(reduced.filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(8);
+ expect(reduced.filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(12);
  expect(cartoonEnemyRagePose(e,true)).toEqual({scaleX:1,scaleY:1});
  expect(JSON.stringify(g)).toBe(before);
  e.Age=60;
  expect(cartoonEnemyRagePose(e)).toEqual({scaleX:1,scaleY:1});
  expect(cartoonEnemyRageDraws(e,actor,bounds).some(d=>d.frame==='dust-puff')).toBe(false);
- expect(cartoonEnemyRageDraws(e,actor,bounds).filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(8);
+ expect(cartoonEnemyRageDraws(e,actor,bounds).filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME).length).toBe(12);
  for(const state of [EnemyState.Trapped,EnemyState.Defeated,EnemyState.Carried,EnemyState.Spawning]){
   e.State=state;expect(cartoonEnemyRageDraws(e,actor,bounds).length).toBe(0);
  }
  e.State=EnemyState.Active;e.Angry=false;expect(cartoonEnemyRageDraws(e,actor,bounds).length).toBe(0);
+},{scene});
+
+worldTest('enemy juice curved anger mark attaches to the brow and holds still after the onset',()=>{
+ const {g,e}=fixture();e.Age=60;
+ const bounds={scale:1,left:0,right:400,top:0,bottom:300};
+ for(const direction of [-1,1]){
+  e.Dir=direction;
+  const actor={frame:'enemy/zenchan/simple-travel-0',x:100,y:100,width:80,height:80,flip:direction<0};
+  const before=JSON.stringify(g),draws=cartoonEnemyRageDraws(e,actor,bounds);
+  const cores=draws.filter(d=>d.frame===ENEMY_RAGE_MARK_FRAME);
+  expect(cores.length).toBe(12);
+  expect(cores.every(d=>Number.isFinite(d.rotation)&&Math.abs(d.rotation!)>.01)).toBe(true);
+  // The mark overlaps the head contour rather than occupying a separate badge row.
+  const centers=cores.map(d=>cartoonDrawTransform(d));
+  const top=Math.min(...centers.map(d=>d.centerY-d.halfHeight));
+  const bottom=Math.max(...centers.map(d=>d.centerY+d.halfHeight));
+  expect(top<actor.y+40&&bottom>actor.y).toBe(true);
+  e.Age=80;
+  expect(cartoonEnemyRageDraws(e,actor,bounds)).toEqual(draws);
+  expect(cartoonEnemyRageDraws(e,actor,bounds,true)).toEqual(draws);
+  e.Age=60;
+  expect(JSON.stringify(g)).toBe(before);
+ }
 },{scene});
