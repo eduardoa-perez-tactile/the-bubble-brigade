@@ -3,69 +3,32 @@
   src: url("./brigade.ttf") format("truetype");
   font-display: swap;
 }
-:root {
-  --splash-bg: #390b0c;
-  --splash-panel: #32100f;
-  --splash-gold: #edc575;
-  --splash-text: #fff0c9;
-  --splash-muted: #e3cba5;
-}
-html, body { background: var(--splash-bg); color: var(--splash-text); }
+html, body { background: #390b0c; color: #fff0c9; }
 #launch {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
-  background: url("./curtain.png") center top / 100% 104% no-repeat, var(--splash-bg);
+  padding: 0;
+  background: url("./curtain.png") center top / 100% 104% no-repeat, #390b0c;
   overflow: auto;
   font-family: "Brigade Serif", Georgia, serif;
   text-align: center;
 }
-#launch[hidden] { display: none; }
-.splash-content { box-sizing: border-box; width: min(100%, 600px); min-height: calc(100svh - 48px); display: flex; flex-direction: column; justify-content: flex-end; flex: 0 0 auto; margin: auto; padding: 40px 0 clamp(22px, 6vh, 70px); }
+#launch[hidden], #launch #start[hidden] { display: none; }
+#launch #loading-content { position: absolute; z-index: 1; bottom: max(56px, 27vh); left: max(24px, env(safe-area-inset-left)); right: max(24px, env(safe-area-inset-right)); max-width: 360px; margin: 0 auto; pointer-events: none; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.splash-entry { width: 100%; }
-.splash-loading { width: min(100%, 280px); margin: 0 auto 15px; }
-#status { max-width: none; margin: 0 0 10px; color: var(--splash-text); font: inherit; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; text-shadow: 0 2px 3px #39190e; }
 #load-progress { display: block; box-sizing: border-box; width: 100%; height: 6px; padding: 1px; border: 1px solid #dab76e; border-radius: 4px; background: #49120d; appearance: none; }
 #load-progress[hidden] { display: none; }
 #load-progress::-webkit-progress-bar { background: #49120d; border-radius: 4px; }
-#load-progress::-webkit-progress-value { background: var(--splash-gold); border-radius: 4px; }
-#load-progress::-moz-progress-bar { background: var(--splash-gold); border-radius: 4px; }
+#load-progress::-webkit-progress-value { background: #edc575; border-radius: 4px; }
+#load-progress::-moz-progress-bar { background: #edc575; border-radius: 4px; }
 #load-progress:indeterminate { background: repeating-linear-gradient(110deg, #49120d 0 12px, #aa703b 12px 24px); }
-#launch[data-phase="ready"] .splash-loading { visibility: hidden; }
-#launch #start { width: 100%; min-height: 52px; padding: 8px; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--splash-text); font: inherit; font-size: clamp(23px, 3.2vw, 40px); line-height: 1.3; text-shadow: 0 2px 3px #39190e; cursor: pointer; }
-#launch #start:disabled { opacity: .45; cursor: wait; }
-#launch #start:not(:disabled):hover { color: #ffdc91; }
-#launch #start:focus-visible, .splash-controls summary:focus-visible { outline: 2px solid var(--splash-gold); outline-offset: 5px; }
-.splash-controls { width: min(100%, 560px); margin: 12px auto 0; }
-.splash-controls summary { display: list-item; width: fit-content; margin: auto; color: var(--splash-text); font-size: 15px; line-height: 1.6; cursor: pointer; text-shadow: 0 2px 3px #39190e; }
-.splash-control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; padding: 22px; border: 1px solid #aa844a; border-radius: 7px; background: #32100ff5; text-align: left; }
-.splash-control-grid h2 { margin: 0 0 10px; color: var(--splash-gold); font-size: 18px; font-weight: normal; }
-.splash-control-grid p { margin: 8px 0 0; font-size: 14px; line-height: 1.8; }
-.splash-control-grid kbd { display: inline-block; padding: 0 5px; border: 1px solid #aa844a; border-bottom-width: 2px; border-radius: 3px; background: #491d18; color: var(--splash-text); font: inherit; }
-.splash-shared-controls { grid-column: 1 / -1; }
-.splash-shared-controls .splash-coop { color: var(--splash-muted); }
-.splash-compat { margin: 14px 0 0; color: var(--splash-muted); font-size: 11px; line-height: 1.6; text-shadow: 0 2px 3px #39190e; }
-#launch[data-phase="error"] #status { color: var(--splash-text); }
-#launch[data-phase="error"] .splash-loading { width: min(100%, 440px); }
-#launch[data-phase="error"] .splash-loading::after { content: "Refresh the page to try again."; display: block; margin-top: 14px; color: var(--splash-muted); font-size: 14px; }
-dialog { max-width: min(420px, 85vw); padding: 24px; border: 1px solid var(--splash-gold); border-radius: 8px; background: var(--splash-panel); color: var(--splash-text); font-family: "Brigade Serif", Georgia, serif; }
-dialog::backdrop { background: #21080bdd; }
-dialog h2 { color: var(--splash-gold); font-size: 25px; font-weight: normal; }
-dialog p, dialog button { font-size: 16px; line-height: 1.6; }
-dialog button { border: 1px solid var(--splash-gold); background: var(--splash-bg); font-family: inherit; }
+#launch #start { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; cursor: pointer; }
+#launch #start:disabled { cursor: wait; }
+#launch #start:focus-visible { outline: 2px solid #edc575; outline-offset: -6px; }
+#launch[data-phase="error"] #status { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip-path: none; white-space: normal; color: #fff0c9; font-size: 16px; line-height: 1.5; text-shadow: 0 2px 3px #39190e; }
 @media (max-aspect-ratio: 85/100) { #launch { background-image: url("./curtain-portrait.png"); } }
-@media (max-width: 480px) {
-  .splash-control-grid { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
-  #status { font-size: 14px; }
-  .splash-compat { font-size: 10px; }
-}
-@media (max-height: 600px) and (min-width: 600px) {
-  #launch { padding-block: 14px; }
-  .splash-content { min-height: calc(100svh - 28px); padding-bottom: 16px; }
-  .splash-loading { margin-bottom: 8px; }
-  .splash-controls { margin-top: 6px; }
-  .splash-compat { margin-top: 8px; }
-}
+/* The in-game fullscreen action still uses this dialog after the curtain closes. */
+dialog { max-width: min(420px, 85vw); padding: 24px; border: 1px solid #edc575; border-radius: 8px; background: #32100f; color: #fff0c9; font-family: "Brigade Serif", Georgia, serif; }
+dialog::backdrop { background: #21080bdd; }
+dialog h2 { color: #edc575; font-size: 25px; font-weight: normal; }
+dialog p, dialog button { font-size: 16px; line-height: 1.6; }
+dialog button { border: 1px solid #edc575; background: #390b0c; font-family: inherit; }

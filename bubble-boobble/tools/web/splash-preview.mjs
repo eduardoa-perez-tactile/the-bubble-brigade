@@ -76,25 +76,20 @@ try {
     assert.equal(layout.overflow, false, `Horizontal overflow at ${width}x${height}`);
     assert.equal(layout.images && layout.font, true, 'Closed curtain and serif font must load');
     assert.equal(layout.portrait, width / height <= .85, 'Curtain variant must match the main screen aspect rule');
-    assert.equal(await page.locator('.splash-logo, .splash-greeter, .splash-ticket').count(), 0, 'No added logo, mascot or card');
-    assert.ok(layout.x >= 0 && layout.right <= width && layout.y >= 0 && layout.bottom <= height, `Start must be visible at ${width}x${height}`);
+    assert.equal(await page.locator('.splash-logo, .splash-greeter, .splash-ticket, .splash-controls, .splash-compat').count(), 0, 'Only the curtain and loading bar remain');
+    assert.equal(await page.locator('#start').textContent(), '', 'No visible start prompt');
+    const bar = await page.locator('#load-progress').boundingBox();
+    assert.ok(bar && bar.width >= 200 && bar.height >= 6 && bar.x >= 0 && bar.x + bar.width <= width && bar.y > height / 2 && bar.y + bar.height <= height, 'Loading bar stays visibly sized below the artwork at every viewport');
+    assert.equal(await page.evaluate(() => document.elementFromPoint(innerWidth / 2, innerHeight / 2)?.id), 'start', 'Ready curtain is the click target');
+    assert.ok(layout.x >= 0 && layout.right <= width && layout.y >= 0 && layout.bottom <= height, `Curtain click target must fit at ${width}x${height}`);
     await shot(`ready-${width}x${height}`);
   }
-  report.checks.push('No horizontal overflow; Start visible at desktop, ultrawide, short landscape and two narrow portrait sizes');
+  report.checks.push('Only curtain and loading bar; ready click target fits desktop, ultrawide, short landscape and two narrow portrait sizes');
   await page.setViewportSize({ width: 1024, height: 768 });
-  await page.locator('.splash-controls summary').focus();
-  await page.keyboard.press('Enter');
-  assert.equal(await page.locator('.splash-controls').getAttribute('open') !== null, true);
-  await page.locator('#launch').evaluate(node => { node.scrollTop = 0; });
-  assert.ok(await page.locator('#status').evaluate(node => node.getBoundingClientRect().top >= 0), 'Expanded instructions must scroll from the top without clipping the loading status');
-  await shot('controls');
-  await page.setViewportSize({ width: 320, height: 568 });
-  assert.equal(await page.locator('#launch').evaluate(node => node.scrollWidth > node.clientWidth), false);
-  await page.locator('.splash-shared-controls').scrollIntoViewIfNeeded();
-  await shot('controls-narrow');
-  report.checks.push('Keyboard opens How to Play; expanded controls scroll on narrow screens');
-  await page.locator('.splash-controls').evaluate(node => { node.open = false; });
-  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.locator('#start').focus();
+  assert.equal(await page.locator('#start').evaluate(node => document.activeElement === node), true);
+  assert.equal(await page.locator('#start').getAttribute('aria-label'), 'Play The Bubble Brigade');
+  report.checks.push('Ready curtain retains a keyboard-focusable accessible start action without a visible button or prompt');
   // Exercise the exact DOM changes used by the engine fail() path, including a failure after launch.
   await page.evaluate(() => { document.querySelector('#launch').hidden = true; });
   await page.evaluate(() => {
@@ -105,6 +100,7 @@ try {
   await page.waitForFunction(() => document.querySelector('#launch').dataset.phase === 'error');
   assert.equal(await page.locator('#load-progress').isVisible(), false);
   assert.equal(await page.locator('#start').isVisible(), false);
+  assert.ok(await page.locator('#status').evaluate(node => getComputedStyle(node).clipPath === 'none' && node.getBoundingClientRect().width > 1));
   await shot('unsupported-browser');
   report.checks.push('Engine errors stay readable and hide both Start and progress, including after the launch overlay was hidden');
   assert.deepEqual(errors, []);
