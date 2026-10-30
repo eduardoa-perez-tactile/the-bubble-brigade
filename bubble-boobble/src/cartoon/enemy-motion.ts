@@ -21,6 +21,7 @@ export function simplifiedEnemyState(e:Readonly<Enemy>,_tick:number,reduced=fals
 /** One short tantrum on activation, sampled from the stopped enemy clock.
  * Status itself belongs to the anger mark, never a wash over the artwork. */
 const ragePoseKeys=[[0,1,1],[7,1.14,.84],[13,.9,1.12],[20,1.03,.97],[26,1,1]] as const;
+const landingPoseKeys=[[0,1],[3,1],[8,-.36],[13,.12],[20,0]] as const;
 export function cartoonEnemyRagePose(e:Readonly<Enemy>,reduced=false){
   const age=e.RageAge===undefined?Infinity:e.Age-e.RageAge;
   if(reduced||!e.Angry||e.State!==EnemyState.Active||age<0||age>=26)return {scaleX:1,scaleY:1};
@@ -40,23 +41,32 @@ export function simplifiedEnemyDraws(e:Readonly<Enemy>,tick:number,size:number,r
     if(state==='shoot'){
       if(e.Shoot<0){
         const charge=1-Math.min(1,-e.Shoot/CARTOON_ENEMY_WINDUP);
-        sx+=.08*charge;sy-=.10*charge;
-        dx=-e.Dir*2*charge;
+        // Reach the loaded pose early enough to hold it before the muzzle burst.
+        const loaded=Math.min(1,charge/.8),ease=loaded*loaded*(3-2*loaded);
+        sx+=.20*ease;sy-=.22*ease;
+        dx=-e.Dir*4*ease;
+        rotation=e.Kind==='mighta'?-e.Dir*.045*ease:0;
       }else{
         const duration=e.Kind==='mighta'?30:12;
-        const age=duration-e.Shoot,release=Math.max(0,1-age/10);
-        sx+=.10*release;sy-=.06*release;
+        const age=duration-e.Shoot,release=Math.max(0,1-age/10)**2;
+        // A horizontal cannon recoils into a tall narrow body; the downward
+        // nozzle kicks into a wide body. Both return to the unchanged foot row.
+        sx+=(e.Kind==='mighta'?-.18:.20)*release;
+        sy+=(e.Kind==='mighta'?.20:-.16)*release;
         dx=-e.Dir*(e.Kind==='mighta'?7:2)*release;
-        rotation=e.Kind==='mighta'?-e.Dir*.045*release:0;
+        rotation=e.Kind==='mighta'?-e.Dir*.09*release:0;
       }
     }else if(state==='compress'){
-      sx=1.08;sy=.86;
+      sx=1.15;sy=.83;
     }else if(state==='air'){
       const rising=e.VY<0;
       const spring=e.Kind==='banebou';
-      const stretch=e.VY===0?0:spring?(rising?.12:.045):(rising?.045:.02);
-      sx-=stretch;sy+=stretch;
-      rotation=e.Kind==='zenchan'?e.Dir*(rising?.055:-.035):0;
+      // Velocity supplies the clock: apex holds and frozen enemies hold their
+      // silhouette too. Fast takeoff has a strong stretch, descent a smaller one.
+      const speed=Math.min(1,Math.abs(e.VY)/7);
+      const stretch=speed*(spring?(rising?.34:.18):(rising?.24:.12));
+      sx=1/(1+stretch);sy=1+stretch;
+      rotation=e.Kind==='zenchan'?e.Dir*(rising?.08:-.05)*speed:0;
     }else{
       // Position clocks stop with travel and naturally reverse at walls.
       const wheel=Math.sin(e.X/(e.Kind==='invader'?10:16)*Math.PI);
@@ -74,10 +84,17 @@ export function simplifiedEnemyDraws(e:Readonly<Enemy>,tick:number,size:number,r
         const elapsed=feel!.clock-cue.at;
         if(elapsed>=0)age=Math.min(age,elapsed);
       }
-      if(age<12){
-        const settle=(1-age/12)**2,strength=e.Kind==='banebou'?1.5:1;
-        sx+=.09*settle*strength;sy-=.07*settle*strength;
-        rotation*=1-settle;
+      if(age<20){
+        // Hold the impact for three ticks, overshoot into a rebound, then settle.
+        // Blend from the actor's current supported pose rather than stacking
+        // another squash onto the hopper's already compressed drawing.
+        const keys=landingPoseKeys;
+        let index=0;while(index<keys.length-2&&age>keys[index+1]![0])index++;
+        const a=keys[index]!,b=keys[index+1]!,t=(age-a[0])/(b[0]-a[0]),ease=t*t*(3-2*t);
+        const impact=a[1]+(b[1]-a[1])*ease;
+        const targetX=e.Kind==='banebou'?1.33:1.25,targetY=e.Kind==='banebou'?.70:.80;
+        sx+=(targetX-sx)*impact;sy+=(targetY-sy)*impact;
+        rotation*=1-Math.max(0,impact);
       }
     }
     const tantrum=cartoonEnemyRagePose(e);sx*=tantrum.scaleX;sy*=tantrum.scaleY;

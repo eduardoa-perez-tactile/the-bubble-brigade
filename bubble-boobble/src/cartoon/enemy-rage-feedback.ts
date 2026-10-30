@@ -7,16 +7,15 @@ const frames=animation.frames as Readonly<Record<string,FrameBounds>>;
 
 /** Identifies the red cores without relying on the actor's original colours. */
 export const ENEMY_RAGE_MARK_FRAME='solid/#e34d42';
-const veins:readonly (readonly [number,number,number,number])[]=[
-  [-.48,-.20,-.20,-.20],[-.20,-.20,-.20,-.48],
-  [.20,-.48,.20,-.20],[.20,-.20,.48,-.20],
-  [.48,.20,.20,.20],[.20,.20,.20,.48],
-  [-.20,.48,-.20,.20],[-.20,.20,-.48,.20],
+// Four bowed hooks leave an open centre. Short overlapping, tapered strokes
+// give the existing white sprite an inked curve rather than a square HUD cross.
+const hook:readonly (readonly [number,number])[]=[
+  [-.49,-.14],[-.32,-.15],[-.20,-.27],[-.16,-.49],
 ];
 
-/** Screen-space, above-actor feedback. Four bent veins use one existing white
- * atlas sprite; the two onset puffs reuse the contact-dust art. At most 26 draws
- * per angry actor, no persistent particles, clocks or simulation writes. */
+/** A brow-attached ink mark and one brief steam release. All strokes share the
+ * existing white atlas sprite (24 quads, plus two onset puffs), with no material,
+ * new asset, persistent particles or simulation writes. */
 export function cartoonEnemyRageDraws(e:Readonly<Enemy>,actorDraw:Readonly<CartoonDraw>,
   options:{scale:number;left:number;right:number;top:number;bottom:number;minSize?:number},reduced=false):CartoonDraw[]{
   if(e.State!==EnemyState.Active||!e.Angry||actorDraw.width<=0||actorDraw.height<=0)return [];
@@ -42,11 +41,13 @@ export function cartoonEnemyRageDraws(e:Readonly<Enemy>,actorDraw:Readonly<Carto
   const pop=!reduced&&onset?1+.18*Math.sin(onsetAge/24*Math.PI):1;
   // The caller converts a 10px minimum to compositor-reference units.
   // Only a physically smaller supplied region may reduce that essential size.
-  const size=Math.min(Math.max(options.minSize??10,28*Math.max(0,options.scale))*pop,roomWidth/1.26,roomHeight/1.26);
+  const size=Math.min(Math.max(options.minSize??10,25*Math.max(0,options.scale))*pop,roomWidth/1.26,roomHeight/1.26);
   const half=size*.63;
   const clamp=(value:number,minimum:number,maximum:number)=>Math.max(minimum,Math.min(maximum,value));
-  const centerX=clamp(paintedLeft+(paintedRight-paintedLeft)*(e.Dir<0?.28:.72),options.left+half,options.right-half);
-  const centerY=clamp(paintedTop-Math.max(2,5*options.scale)-half,options.top+half,options.bottom-half);
+  const centerX=clamp(paintedLeft+(paintedRight-paintedLeft)*(e.Dir<0?.25:.75),options.left+half,options.right-half);
+  // Straddle the head's upper contour, so the mark belongs to the character
+  // instead of floating in the same band as player number badges.
+  const centerY=clamp(paintedTop-size*.10,options.top+half,options.bottom-half);
   const out:CartoonDraw[]=[];
   if(!reduced&&onset){
     const t=onsetAge/24,puffSize=Math.max(6,20*options.scale)*(.72+.40*t);
@@ -57,14 +58,20 @@ export function cartoonEnemyRageDraws(e:Readonly<Enemy>,actorDraw:Readonly<Carto
       out.push({frame:'dust-puff',x,y,width,height,flip:direction<0,color:[1,.96,.88,.85*(1-t)]});
     }
   }
-  // Layer complete strokes in order, so all quads batch on the same white page.
-  // The cream edge survives dark scenery; ink separates the red from pale art.
-  for(const [frame,stroke] of [['solid/#fff0c9',.30],['solid/#30252c',.22],[ENEMY_RAGE_MARK_FRAME,.12]] as const){
-    const thickness=size*stroke;
-    for(const [x0,y0,x1,y1]of veins){
-      out.push({frame,x:centerX+Math.min(x0,x1)*size-thickness/2,
-        y:centerY+Math.min(y0,y1)*size-thickness/2,
-        width:Math.abs(x1-x0)*size+thickness,height:Math.abs(y1-y0)*size+thickness});
+  // Layer all outlines, then all red cores to preserve batching. Each bowed
+  // hook turns through three segments and narrows towards its outer ends.
+  for(const [frame,edge] of [['solid/#30252c',.055],[ENEMY_RAGE_MARK_FRAME,0]] as const){
+    for(let quarter=0;quarter<4;quarter++){
+      const turn=quarter*Math.PI/2,cos=Math.cos(turn),sin=Math.sin(turn);
+      for(let segment=0;segment<hook.length-1;segment++){
+        const a=hook[segment]!,b=hook[segment+1]!;
+        const x0=(a[0]*cos-a[1]*sin)*size,y0=(a[0]*sin+a[1]*cos)*size;
+        const x1=(b[0]*cos-b[1]*sin)*size,y1=(b[0]*sin+b[1]*cos)*size;
+        const thickness=size*([.085,.12,.09][segment]!+edge);
+        const width=Math.hypot(x1-x0,y1-y0)+thickness*.65;
+        out.push({frame,x:centerX+(x0+x1)/2-width/2,y:centerY+(y0+y1)/2-thickness/2,
+          width,height:thickness,rotation:Math.atan2(y1-y0,x1-x0)});
+      }
     }
   }
   return out;

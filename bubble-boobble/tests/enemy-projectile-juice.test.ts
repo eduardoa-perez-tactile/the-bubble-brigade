@@ -71,3 +71,43 @@ worldTest('enemy juice wall impacts are short harmless effects and boss shots ke
  expect(cartoonEnemyImpactDraws(impact).length).toBe(0);
  expect(cartoonEnemyProjectileDraws({...body(),Bottle:true,Laser:false,Age:0,Removed:false}).length).toBe(0);
 },{scene});
+
+worldTest('enemy juice rolling shots spin in travel direction with a bounded tapered wake',()=>{
+ for(const direction of [-1,1]){
+  const p={...body(400,240),VX:direction*3.8,Laser:false,Age:24,Removed:false};
+  const before=JSON.stringify(p),draws=cartoonEnemyProjectileDraws(p),core=draws[draws.length-1]!;
+  expect((core.rotation??0)*direction>0).toBe(true);
+  expect(draws[draws.length-2]!.rotation).toBe(core.rotation);
+  expect(core.pivot).toEqual([.5,.5]);
+  expect(draws.filter(d=>d.frame==='dust-puff').length).toBe(4);
+  for(const d of draws.slice(0,-2)){
+   const lag=(p.X+8-d.x-d.width/2)/p.VX;
+   expect(lag>=0&&lag<=p.Age).toBe(true);
+  }
+  expect(cartoonEnemyProjectileDraws(p)).toEqual(draws);
+  expect(JSON.stringify(p)).toBe(before);
+  const reduced=cartoonEnemyProjectileDraws(p,true);
+  expect(reduced.length).toBe(2);expect(reduced[1]!.rotation??0).toBe(0);
+  expect(cartoonEnemyProjectileDraws({...p,Age:0}).length).toBe(2);
+  expect(cartoonEnemyProjectileDraws({...p,Removed:true}).length).toBe(0);
+ }
+ const laser={...body(400,240),VY:3.8,Laser:true,Age:24,Removed:false};
+ const beam=cartoonEnemyProjectileDraws(laser);
+ expect(beam.some(d=>d.frame==='dust-puff')).toBe(false);
+ expect(beam.length>2).toBe(true);expect(beam[beam.length-1]!.rotation??0).toBe(0);
+},{scene});
+worldTest('enemy juice muzzle charge holds before a directional burst and settles after release',()=>{
+ for(const kind of ['mighta','invader']){
+  const {e}=scenario(kind);e.Shoot=-4;
+  const held=cartoonEnemyAttackDraws(e);e.Shoot=-1;
+  expect(cartoonEnemyAttackDraws(e)).toEqual(held);
+  expect(held.some(d=>d.diamond)).toBe(false);
+  expect(cartoonEnemyAttackDraws(e,true).length>0).toBe(true);
+  e.Shoot=kind==='mighta'?30:12;
+  const burst=cartoonEnemyAttackDraws(e);
+  expect(burst.some(d=>d.frame==='effect/spark-0')).toBe(true);
+  expect(burst.filter(d=>d.frame==='dust-puff').length).toBe(2);
+  e.Shoot-=10;expect(cartoonEnemyAttackDraws(e).length).toBe(0);
+  e.State=EnemyState.Trapped;expect(cartoonEnemyAttackDraws(e).length).toBe(0);
+ }
+},{scene});
