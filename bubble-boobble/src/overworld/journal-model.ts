@@ -49,7 +49,13 @@ export function adventureJournalModel(s:DesktopState,save:DesktopSave,mapDistric
  const returnLabel=`Return to ${districtById(mapDistrict)?.name??'map'}`;
  const claimable=adventureCleared(p)>=3&&!p.rewardClaims['guide-three-clears'];
  const shortNames=['Quay','Gardens','Fair','Springs','Works'];
- const pages=districts.map(d=>({key:`overworld-journal-page:${d.id}`,label:shortNames[d.index]!,name:d.name,active:d.id===district.id,current:d.id===mapDistrict,locked:!availableDistrict(d.id,p),status:d.id===mapDistrict?'YOU ARE HERE':availableDistrict(d.id,p)?`${d.encounterIds.filter(id=>!!p.cleared[id]).length} / 5 cleared`:'Locked'}));
+ const pages=districts.map(d=>{
+  const current=d.id===mapDistrict,locked=!availableDistrict(d.id,p),clears=d.encounterIds.filter(id=>!!p.cleared[id]).length;
+  const completed=clears===d.encounterIds.length;
+  const tabState:'current'|'locked'|'complete'|'open'=current?'current':locked?'locked':completed?'complete':'open';
+  return {key:`overworld-journal-page:${d.id}`,label:shortNames[d.index]!,name:d.name,active:d.id===district.id,current,locked,completed,tabState,
+   status:current?'YOU ARE HERE':locked?'Locked':`${clears} / 5 cleared`};
+ });
  const missions=local.map(e=>{
   const ready=availableEncounter(e.id,p),paths=openedPaths(e,local,p);
   return {key:`overworld-journal-entry:${e.id}`,label:e.name,art:`adventure/${episodeForLevel(e.level).theme}`,
