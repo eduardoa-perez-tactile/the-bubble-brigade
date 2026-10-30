@@ -20,7 +20,7 @@ export function getDesktopButtons(s:DesktopState,p:DesktopSave):DesktopButton[]{
  switch(s.screen){
  case 'overworld':return [];
  case 'overworld-panel':return adventurePanel(s,p).buttons;
- case 'overworld-card':return [...(availableEncounter(s.adventureEncounter??'',adventureForProfile(p.profiles[p.active]!))?[button('adventure-play','PLAY ENCOUNTER')]:[]),button('overworld-back','BACK TO MAP')];
+ case 'overworld-card':{const progress=adventureForProfile(p.profiles[p.active]!),id=s.adventureEncounter??'';return [...(availableEncounter(id,progress)?[button('adventure-play',progress.cleared[id]?'REPLAY MISSION':'START MISSION')]:[]),button('overworld-back','Back to map')];}
  case 'title':return [button('menu','PRESS ENTER TO START')];
  case 'menu':return s.cartoon?[button('adventure-continue',Object.keys(adventureForProfile(p.profiles[p.active]!).cleared).length?'CONTINUE ADVENTURE':'BEGIN ADVENTURE'),...(menuHasAdventureProgress(adventureForProfile(p.profiles[p.active]!))?[button('adventure-new','RESTART ADVENTURE')]:[]),button('adventure-arcade','PARTY PLAY'),button('settings','OPTIONS'),WEB_BUILD?button('help','HOW TO PLAY'):button('quit','QUIT')]:[button('adventure-menu','START GAME'),button('settings','SETTINGS'),WEB_BUILD?button('help','HOW TO PLAY'):button('quit','QUIT')];
  case 'modes':return [button('party','PARTY PLAY'),button('mode-back','BACK')];

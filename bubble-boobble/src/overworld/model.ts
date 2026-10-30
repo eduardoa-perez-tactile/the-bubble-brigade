@@ -14,6 +14,9 @@ export interface OverworldHudModel {
 export interface EncounterCardModel {
  title:string; subtitle:string; description:string; status:string; reward:string;
  actSummary:string;actBreakdown:string;
+ /** Briefing copy and metadata; the view only displays these controller decisions. */
+ objective:string;badge:string;actsLabel:string;enemiesLabel:string;
+ rewardAmount:string;rewardCaption:string;
  selected?:number; illustration?:string; locked:boolean; playLabel:string;
 }
 export interface OverworldChoice {key:string;label:string;selected?:boolean;illustration?:string;detail?:string;showArt?:boolean}

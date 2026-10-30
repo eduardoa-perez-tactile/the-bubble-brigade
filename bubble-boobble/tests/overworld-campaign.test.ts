@@ -146,7 +146,7 @@ renderTest('adventure campaign actual menu begin play intro results and map retu
  expect(overworldState.get().reference).toBe(false);expect(desktopState.get().screen).toBe('overworld');
  ctx.render.expectScreenshot('adventure-begin-source-map',{width:1280,height:720});
  await inspect(ctx,'encounter-1');ctx.render.expectScreenshot('adventure-real-entrance-card',{width:1280,height:720});
- await press(ctx,'PLAY ENCOUNTER');await adventureStep(ctx,40);
+ await press(ctx,'START MISSION');await adventureStep(ctx,40);
  expect(desktopState.get().transitionAction).toBe('adventure-play');
  ctx.render.expectScreenshot('adventure-encounter-intro',{width:1280,height:720});
  await adventureStep(ctx,240);await ctx.loaded();expect(session.get().active).toBe(true);expect(session.get().game!.Level.number).toBe(1);

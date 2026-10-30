@@ -12,7 +12,7 @@
       "style": {
         "w": "100%",
         "h": "100%",
-        "pad": 24,
+        "pad": 0,
         "align": "center",
         "justify": "center"
       },
@@ -26,25 +26,30 @@
       "children": [
         "ow_rule",
         "owe_subtitle",
-        "owe_title",
-        "owe_illustration",
-        "owe_description",
+        "owe_title_row",
+        "owe_body",
+        "owe_footer",
         "owe_acts",
         "owe_act_breakdown",
-        "owe_status",
-        "owe_reward",
-        "owe_play",
-        "owe_back"
+        "owe_reward"
       ],
       "style": {
-        "pad": 26,
+        "pad": [
+          24,
+          28,
+          24,
+          28
+        ],
         "dir": "column",
-        "align": "center",
-        "gap": 8,
-        "w": 620,
-        "h": "auto",
-        "bg": "#f5e9cd",
-        "radius": 18
+        "align": "stretch",
+        "gap": 10,
+        "w": "82%",
+        "h": "86%",
+        "radius": 18,
+        "fit": "fill",
+        "clip": true,
+        "image": "adventure/briefing/paper-panel",
+        "sliceScale": 0.28
       }
     },
     "ow_rule": {
@@ -54,7 +59,7 @@
       "style": {
         "pad": 0,
         "w": "100%",
-        "h": 3,
+        "h": 2,
         "bg": "#b88a40"
       }
     },
@@ -66,7 +71,7 @@
         "fontSize": 15,
         "fitMin": 13,
         "w": "100%",
-        "h": 24,
+        "h": 20,
         "color": "#8a6436",
         "textAlign": "center"
       }
@@ -76,11 +81,11 @@
       "name": "Label",
       "text": "{title}",
       "style": {
-        "fontSize": 42,
-        "fitMin": 22,
-        "w": "100%",
-        "h": 58,
-        "color": "#214e4c",
+        "fontSize": 52,
+        "fitMin": 26,
+        "w": "auto",
+        "h": 64,
+        "color": "#084b50",
         "textAlign": "center"
       }
     },
@@ -89,12 +94,12 @@
       "name": "Label",
       "text": "{description}",
       "style": {
-        "fontSize": 21,
-        "fitMin": 16,
+        "fontSize": 24,
+        "fitMin": 19,
         "w": "100%",
         "h": 64,
-        "color": "#354c46",
-        "textAlign": "center"
+        "color": "#243c36",
+        "textAlign": "left"
       }
     },
     "owe_status": {
@@ -102,14 +107,14 @@
       "name": "Label",
       "text": "{status}",
       "style": {
-        "fontSize": 16,
-        "fitMin": 16,
+        "fontSize": 17,
+        "fitMin": 14,
         "w": "100%",
-        "h": 34,
+        "h": 46,
         "color": "#245c5b",
-        "textAlign": "center",
-        "bg": "#dfebdc",
-        "radius": 5
+        "textAlign": "left",
+        "radius": 5,
+        "hide": true
       }
     },
     "owe_reward": {
@@ -122,37 +127,8 @@
         "w": "100%",
         "h": 28,
         "color": "#8a5b27",
-        "textAlign": "center"
-      }
-    },
-    "owe_play": {
-      "type": "use",
-      "doc": "overworld-button",
-      "key": "play",
-      "props": {
-        "label": {
-          "property": "playLabel"
-        },
-        "selected": {
-          "property": "playSelected"
-        }
-      },
-      "style": {
-        "w": "100%"
-      }
-    },
-    "owe_back": {
-      "type": "use",
-      "doc": "overworld-button",
-      "key": "back",
-      "props": {
-        "label": "BACK TO MAP",
-        "selected": {
-          "property": "backSelected"
-        }
-      },
-      "style": {
-        "w": "100%"
+        "textAlign": "center",
+        "hide": true
       }
     },
     "owe_illustration": {
@@ -161,7 +137,7 @@
       "property": "illustration",
       "style": {
         "w": "100%",
-        "h": 135,
+        "h": "100%",
         "fit": "cover"
       }
     },
@@ -176,7 +152,8 @@
         "h": 26,
         "color": "#245c5b",
         "textAlign": "center",
-        "weight": 700
+        "weight": 700,
+        "hide": true
       }
     },
     "owe_act_breakdown": {
@@ -189,7 +166,409 @@
         "w": "100%",
         "h": 24,
         "color": "#8a6436",
-        "textAlign": "center"
+        "textAlign": "center",
+        "hide": true
+      }
+    },
+    "owe_title_row": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_title",
+        "owe_badge"
+      ],
+      "style": {
+        "pad": [
+          0,
+          0,
+          0,
+          100
+        ],
+        "dir": "row",
+        "align": "center",
+        "justify": "center",
+        "gap": 24,
+        "w": "100%",
+        "h": 64
+      }
+    },
+    "owe_badge": {
+      "type": "label",
+      "name": "Label",
+      "text": "{badge}",
+      "style": {
+        "w": 68,
+        "h": 36,
+        "fontSize": 19,
+        "fitMin": 11,
+        "textAlign": "center",
+        "color": "#124b4e",
+        "radius": 6
+      }
+    },
+    "owe_body": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_art_frame",
+        "owe_briefing"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 0,
+        "grow": 1,
+        "gap": 32,
+        "align": "stretch"
+      }
+    },
+    "owe_art_frame": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_illustration"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "63%",
+        "h": "100%",
+        "clip": true,
+        "radius": 8
+      }
+    },
+    "owe_briefing": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_mission_label",
+        "owe_objective",
+        "owe_description",
+        "owe_copy_space",
+        "owe_chips",
+        "owe_reward_rule",
+        "owe_reward_row",
+        "owe_status"
+      ],
+      "style": {
+        "pad": [
+          18,
+          0,
+          12,
+          0
+        ],
+        "dir": "column",
+        "w": 0,
+        "grow": 1,
+        "h": "100%",
+        "gap": 6,
+        "align": "stretch"
+      }
+    },
+    "owe_mission_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "YOUR MISSION",
+      "style": {
+        "w": "100%",
+        "h": 22,
+        "fontSize": 17,
+        "fitMin": 14,
+        "color": "#8a5b27"
+      }
+    },
+    "owe_objective": {
+      "type": "label",
+      "name": "Label",
+      "text": "{objective}",
+      "style": {
+        "w": "100%",
+        "h": 56,
+        "fontSize": 44,
+        "fitMin": 25,
+        "color": "#084b50"
+      }
+    },
+    "owe_copy_space": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "h": 0,
+        "grow": 1
+      }
+    },
+    "owe_chips": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_act_chip",
+        "owe_enemy_chip"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 52,
+        "gap": 10,
+        "align": "center"
+      }
+    },
+    "owe_act_chip": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_act_chip_icon",
+        "owe_act_chip_label"
+      ],
+      "style": {
+        "pad": [
+          8,
+          14,
+          8,
+          14
+        ],
+        "dir": "row",
+        "w": 0,
+        "grow": 1,
+        "h": 52,
+        "gap": 12,
+        "align": "center",
+        "justify": "center",
+        "bg": "#dfe8d2",
+        "radius": 7
+      }
+    },
+    "owe_act_chip_icon": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "adventure/briefing/acts",
+      "style": {
+        "size": 32,
+        "w": 30,
+        "h": 32
+      }
+    },
+    "owe_act_chip_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{actsLabel}",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 38,
+        "fontSize": 22,
+        "fitMin": 16,
+        "color": "#124b4e"
+      }
+    },
+    "owe_enemy_chip": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_enemy_chip_icon",
+        "owe_enemy_chip_label"
+      ],
+      "style": {
+        "pad": [
+          8,
+          14,
+          8,
+          14
+        ],
+        "dir": "row",
+        "w": 0,
+        "grow": 1,
+        "h": 52,
+        "gap": 12,
+        "align": "center",
+        "justify": "center",
+        "bg": "#dfe8d2",
+        "radius": 7
+      }
+    },
+    "owe_enemy_chip_icon": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "adventure/briefing/enemies",
+      "style": {
+        "size": 32,
+        "w": 30,
+        "h": 32
+      }
+    },
+    "owe_enemy_chip_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{enemiesLabel}",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 38,
+        "fontSize": 22,
+        "fitMin": 16,
+        "color": "#124b4e"
+      }
+    },
+    "owe_reward_rule": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": "100%",
+        "h": 2,
+        "margin": [
+          14,
+          0,
+          10,
+          0
+        ],
+        "bg": "#b88a40"
+      }
+    },
+    "owe_reward_row": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_coin",
+        "owe_reward_copy"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 72,
+        "gap": 20,
+        "align": "center"
+      }
+    },
+    "owe_coin": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "adventure/briefing/coin",
+      "style": {
+        "size": 32,
+        "w": 64,
+        "h": 70
+      }
+    },
+    "owe_reward_copy": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_reward_amount",
+        "owe_reward_caption"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "column",
+        "w": 0,
+        "grow": 1,
+        "h": 70,
+        "gap": 2,
+        "justify": "center"
+      }
+    },
+    "owe_reward_amount": {
+      "type": "label",
+      "name": "Label",
+      "text": "{rewardAmount}",
+      "style": {
+        "w": "100%",
+        "h": 44,
+        "fontSize": 39,
+        "fitMin": 26,
+        "color": "#084b50"
+      }
+    },
+    "owe_reward_caption": {
+      "type": "label",
+      "name": "Label",
+      "text": "{rewardCaption}",
+      "style": {
+        "w": "100%",
+        "h": 28,
+        "fontSize": 21,
+        "fitMin": 15,
+        "color": "#936f37"
+      }
+    },
+    "owe_footer": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_back_slot",
+        "owe_play_slot"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "w": "100%",
+        "h": 60,
+        "gap": 32,
+        "align": "center"
+      }
+    },
+    "owe_back": {
+      "type": "use",
+      "doc": "mission-back",
+      "key": "back",
+      "style": {
+        "w": "100%",
+        "grow": 0,
+        "h": "100%"
+      },
+      "props": {
+        "label": "Back to map",
+        "selected": {
+          "property": "backSelected"
+        }
+      }
+    },
+    "owe_play": {
+      "type": "use",
+      "doc": "mission-primary",
+      "key": "play",
+      "style": {
+        "w": "100%",
+        "h": "100%"
+      },
+      "props": {
+        "label": {
+          "property": "playLabel"
+        },
+        "selected": {
+          "property": "playSelected"
+        }
+      }
+    },
+    "owe_back_slot": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_back"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 0,
+        "grow": 1,
+        "h": "100%",
+        "align": "stretch"
+      }
+    },
+    "owe_play_slot": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "owe_play"
+      ],
+      "style": {
+        "pad": 0,
+        "w": "36%",
+        "h": "100%",
+        "align": "stretch"
       }
     }
   },
@@ -252,6 +631,9 @@
           "set": {
             "owe_play": {
               "hide": true
+            },
+            "owe_play_slot": {
+              "hide": true
             }
           }
         }
@@ -276,10 +658,62 @@
     "actBreakdown": {
       "type": "text",
       "default": ""
+    },
+    "objective": {
+      "type": "text",
+      "default": "Clear both decks."
+    },
+    "badge": {
+      "type": "text",
+      "default": "NEW"
+    },
+    "actsLabel": {
+      "type": "text",
+      "default": "2 acts"
+    },
+    "enemiesLabel": {
+      "type": "text",
+      "default": "6 enemies"
+    },
+    "rewardAmount": {
+      "type": "text",
+      "default": "10 coins"
+    },
+    "rewardCaption": {
+      "type": "text",
+      "default": "First-clear reward"
+    },
+    "hasStatus": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "owe_status": {
+              "hide": false
+            }
+          }
+        }
+      }
     }
   },
   "transition": {
     "type": "easeOut",
     "ms": 220
+  },
+  "samples": {
+    "tugboat": {
+      "title": "Tugboat Tussle",
+      "subtitle": "BRIGADE LANDING · STORY MODE",
+      "objective": "Clear both decks.",
+      "description": "Watch the opposite flank when the boarding party arrives.",
+      "badge": "NEW",
+      "actsLabel": "2 acts",
+      "enemiesLabel": "6 enemies",
+      "rewardAmount": "10 coins",
+      "rewardCaption": "First-clear reward",
+      "illustration": "adventure/briefing/tugboat",
+      "playLabel": "START MISSION"
+    }
   }
 }

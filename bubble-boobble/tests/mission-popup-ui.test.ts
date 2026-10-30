@@ -37,8 +37,8 @@ renderTest('mission popup actual buttons animate dismissal and leave no card or 
  await act(ctx,'adventure-menu');await act(ctx,'adventure-continue');await ctx.loaded();
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await adventureStep(ctx,3);
  await openCard(ctx);
- const playId=button(ctx,'PLAY ENCOUNTER').id!;
- const back=button(ctx,'BACK TO MAP');
+ const playId=button(ctx,'START MISSION').id!;
+ const back=button(ctx,'Back to map');
  await ctx.ui.press(back.id!);await adventureStep(ctx,1);
  expect(desktopState.get().screen).toBe('overworld');
  // A real document exit retains the drawing briefly, while input is already inert.
@@ -52,13 +52,13 @@ renderTest('mission popup actual buttons animate dismissal and leave no card or 
  // Reduced motion must settle the same card and dismissal without stranding it.
  await act(ctx,'effects');
  await openCard(ctx);expect(desktopSaveState.get().settings.reducedEffects).toBe(true);expect(reducedMotion()).toBe(true);
- await ctx.ui.press(button(ctx,'BACK TO MAP').id!);await adventureStep(ctx,16);
+ await ctx.ui.press(button(ctx,'Back to map').id!);await adventureStep(ctx,16);
  expect(desktopState.get().screen).toBe('overworld');
  expect(views.leaving().includes('OverworldEncounter')).toBe(false);
  expect(ctx.ui.rect(playId)).toBe(null);
  await act(ctx,'effects');
 
- await openCard(ctx);await ctx.ui.press(button(ctx,'PLAY ENCOUNTER').id!);await adventureStep(ctx,1);
+ await openCard(ctx);await ctx.ui.press(button(ctx,'START MISSION').id!);await adventureStep(ctx,1);
  expect(desktopState.get().transitionAction).toBe('adventure-play');
  const origin=desktopState.get().transitionStartedStep!;
  const timing=cartoonFlowTiming(true,'adventure-play');
@@ -75,6 +75,6 @@ renderTest('mission popup actual buttons animate dismissal and leave no card or 
  expect(desktopState.get().transitionAction??'').toBe('');
  if(session.get().game!.State!==State.Playing)throw new Error(`Mission did not finish its arrival: ${JSON.stringify({state:session.get().game!.State,countdown:session.get().game!.Countdown,paused:session.get().game!.Paused,transition:desktopState.get().transitionAction,enemies:session.get().game!.Enemies.map(enemy=>({state:enemy.State}))})}`);
  expect(ctx.ui.rect(playId)).toBe(null);
- expect(ctx.ui.interactables().some(item=>item.id===playId||item.label==='PLAY ENCOUNTER')).toBe(false);
+ expect(ctx.ui.interactables().some(item=>item.id===playId||item.label==='START MISSION')).toBe(false);
  expect(ctx.ui.rect('loading')).toBe(null);
 },{scene:'scenes/cartoon.scene.json',memory:'phone-low'});

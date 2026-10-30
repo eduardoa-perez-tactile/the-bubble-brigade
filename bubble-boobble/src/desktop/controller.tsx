@@ -5,7 +5,7 @@ import {storyHudModel,type StoryHudModel} from '../adventure/hud-model';
 import {storyOutcome} from '../adventure/ending';
 import {StoryOutcomeView,StoryResultsView,storyResultModel,type StoryOutcomeModel,type StoryResultModel} from '../adventure/ending.view';
 import {episodeForLevel} from '../adventure/episodes';
-import {encounterActSummary} from '../adventure/act-summary';
+import {encounterCardModel} from '../overworld/encounter-model';
 import {AdventureShopView} from '../overworld/shop.view';
 import {AdventureJournalView} from '../overworld/journal.view';
 import {adventureJournalModel} from '../overworld/journal-model';
@@ -16,7 +16,7 @@ import { overworldPoi } from '../overworld/navigation';
 import {overworldWaypointHint} from '../overworld/waypoint';
 import { adventurePanel } from '../overworld/panels';
 import { adventureForProfile, adventureCleared } from '../overworld/progression';
-import { districts, districtById, encounterById, availableEncounter } from '../overworld/content';
+import { districts, districtById, encounterById } from '../overworld/content';
 import { overworldActionPrompt, type OverworldHudModel } from '../overworld/model';
 import {uiAudioSnapshot,uiAudioCue,classicIntroAudioStage,type UIAudioSnapshot} from './ui-audio';
 import { cartoonFlowTiming } from '../cartoon/flow-timing';
@@ -194,7 +194,7 @@ const desktopUI=defineUI({name:'DesktopUI',root(){
   if(s.screen==='overworld-panel'){kind=`panel:${s.overworldPanel??''}`;model=s.overworldPanel==='journal'?adventureJournalModel(s,p,m.districtId):['shop','vendor'].includes(s.overworldPanel??'')?adventureShopModel(s,p,viewport()??undefined):adventurePanel(s,p);}
   else if(s.screen==='overworld-card'){
    const e=encounterById(s.adventureEncounter??''),progress=adventureForProfile(p.profiles[p.active]!);
-   if(e){const open=availableEncounter(e.id,progress),missing=e.requiresAll.filter(id=>!progress.cleared[id]);kind='card';model={...encounterActSummary(e.level,!!e.trial),selected:s.selected,illustration:`adventure/${episodeForLevel(e.level).theme}`,title:episodeForLevel(e.level).title,subtitle:`${e.name.toUpperCase()} · ${episodeForLevel(e.level).subtitle}`,description:e.trial?'MASTERY TRIAL: Capture and pop three creatures with just one life. Optional; campaign gates do not require this trial.':episodeForLevel(e.level).description,status:s.status==='MISSION COULD NOT LOAD. PLEASE TRY AGAIN.'?s.status:progress.cleared[e.id]?`CLEARED · BEST ${progress.cleared[e.id]!.bestScore}`:open?'READY TO EXPLORE':`CLEAR ${[...missing,...(e.requiresAny.length?e.requiresAny:[])].map(id=>encounterById(id)!.name).join(e.requiresAny.length?' OR ':' AND ')} FIRST`,reward:progress.rewardClaims[e.id]?'FIRST-CLEAR REWARD COLLECTED':`FIRST CLEAR · ${e.rewardCoins} COINS`,locked:!open,playLabel:'PLAY ENCOUNTER'};}
+   if(e){kind='card';model=encounterCardModel(e,progress,s.selected,s.status);}
   }
   if(!kind){mapPanel?.close({immediate:s.screen==='play'||!!s.transitionCommitted});mapPanel=undefined;mapPanelKind='';return;}
   if(kind!==mapPanelKind){mapPanel?.close();mapPanel=views.push(kind==='card'?OverworldEncounterView:kind==='panel:journal'?AdventureJournalView:['panel:shop','panel:vendor'].includes(kind)?AdventureShopView:OverworldPanelView,model,{onIntent:mapIntent});mapPanelKind=kind;}
