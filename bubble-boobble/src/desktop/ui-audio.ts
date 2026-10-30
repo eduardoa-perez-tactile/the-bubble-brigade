@@ -19,7 +19,7 @@ export function uiAudioCue(before:UIAudioSnapshot|undefined,next:UIAudioSnapshot
  if(!before?.cartoon||!next.cartoon)return null;
  if(next.status&&(next.status!==before.status||next.statusStartedStep===-1&&before.statusStartedStep!==-1))
   return /(?:SAVED|LOADED|COPIED)$/.test(next.status)?'ui-confirm':'ui-unavailable';
- if(next.transition&&!before.transition)return next.transition==='leave'?'ui-back':'ui-confirm';
+ if(next.transition&&!before.transition)return next.transition==='story-results'?null:next.transition==='leave'?'ui-back':'ui-confirm';
  // Covered commits and automatic outcome pages are not additional UI actions.
  if(before.transition||next.transition)return null;
  if(next.pauseClosing&&!before.pauseClosing)return 'ui-back';

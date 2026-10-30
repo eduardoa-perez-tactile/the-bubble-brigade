@@ -10,7 +10,7 @@ import {session} from '../src/arcade/session';
 import {State} from '../src/arcade/types';
 import {DesktopIntent} from '../src/schema.gen';
 import {OverworldResolveEncounter,WarpOverworld} from '../src/overworld/overworld.cheats';
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 
 const scene='scenes/cartoon.scene.json';
 function selected(id:string,action='adventure-play'):DesktopState {
@@ -90,7 +90,7 @@ renderTest('story arrival real locked card first entry next level and fast retry
  expect(cartoonArrivalModel(desktopState.get())!.title).toBe('LANTERN LANDING');
  ctx.render.expectScreenshot('episode-01-title',{width:1280,height:720});
  await finishLaunch(ctx);expect(session.get().game!.Level.episode!.title).toBe('Lantern Landing');
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,50);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx,true);
  await act(ctx,'ui-activate','leave');await adventureStep(ctx,100);await ctx.loaded();
 
  await card(ctx,'encounter-2');await billing(ctx);

@@ -7,7 +7,7 @@ import {overworldEntrancePoint} from '../src/overworld/navigation';
 import {desktopState,RESULT_INPUT_DELAY} from '../src/desktop/state';
 import {STORY_OUTCOME_STEPS} from '../src/adventure/ending';
 import {DesktopIntent} from '../src/schema.gen';
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 const scene='scenes/cartoon.scene.json',prefix='overworld-living/common/markers/';
 async function intent(ctx:WorldTestContext,action:string,value=''){ctx.input.emit(DesktopIntent,{action,value});await adventureStep(ctx,1);}
 worldTest('marker animation samples authored frames with staggered short ready shop bursts and safe defaults',async()=>{
@@ -75,7 +75,7 @@ worldTest('marker animation map clock focus and burst ages freeze during real mo
 for(const won of [true,false])worldTest(`marker animation real ${won?'won':'lost'} encounter return ${won?'queues exactly one celebration':'never celebrates'}`,async ctx=>{
  const step=(n:number)=>adventureStep(ctx,n);await step(8);await ctx.loaded();await intent(ctx,'adventure-menu');await intent(ctx,'adventure-continue');await ctx.loaded();await step(3);
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-2'));await step(3);await intent(ctx,'overworld-interact','encounter-2');await intent(ctx,'adventure-play');await step(280);await ctx.loaded();
- expect(desktopState.get().screen).toBe('play');await ctx.cheat(OverworldResolveEncounter,{won});await step(2);expect(desktopState.get().screen).toBe('result');
+ expect(desktopState.get().screen).toBe('play');await ctx.cheat(OverworldResolveEncounter,{won});await adventureResult(ctx);expect(desktopState.get().screen).toBe('result');
  await step((won?RESULT_INPUT_DELAY:STORY_OUTCOME_STEPS)+3);await intent(ctx,'leave');await ctx.loaded();
  expect(desktopState.get().screen).toBe('overworld');expect(overworldState.get().markerMotion!.celebrationId).toBe(won?'encounter-2':'');
  if(won){expect(overworldState.get().markerMotion!.celebrationPending).toBe(false);await step(8);expect(sampleMarkerImage('cleared','encounter-2',overworldState.get().markerMotion,0).includes('/animated/')).toBe(true);}

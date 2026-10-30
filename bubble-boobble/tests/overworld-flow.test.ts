@@ -1,4 +1,4 @@
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 import { expect, worldTest, renderTest, type WorldTestContext } from '@gameengine/test';
 import { DesktopIntent } from '../src/schema.gen.ts';
 import { desktopState, desktopGameRequest } from '../src/desktop/state.ts';
@@ -54,7 +54,7 @@ worldTest('adventure flow selected encounter retry return and Classic records st
 },{scene});
 worldTest('adventure flow clear grants once returns to entrance and preserves selected record',async ctx=>{
  await enter(ctx);await card(ctx,'encounter-1');await intent(ctx,'adventure-play');await adventureStep(ctx,2);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().won).toBe(true);
  const progress=adventureForProfile(desktopSaveState.get().profiles[0]!);
  expect(progress.cleared['encounter-1']!.clears).toBe(1);expect(progress.coins).toBe(10);expect(progress.pending).toBe(null);
@@ -62,7 +62,7 @@ worldTest('adventure flow clear grants once returns to entrance and preserves se
  await adventureStep(ctx,50);await intent(ctx,'leave');await adventureStep(ctx,2);
  expect(desktopState.get().screen).toBe('overworld');expect(overworldState.get().focusedPoi).toBe('encounter-1');
  await card(ctx,'encounter-1');await intent(ctx,'adventure-play');await adventureStep(ctx,2);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);
  const replayed=adventureForProfile(desktopSaveState.get().profiles[0]!);
  expect(replayed.coins).toBe(10);expect(replayed.cleared['encounter-1']!.clears).toBe(2);
 },{scene});
@@ -103,7 +103,7 @@ worldTest('adventure flow mastery trial runs one life and rewards outside main p
  expect(session.get().mode).toBe('adventure-encounter');expect(session.get().game!.Campaign.length).toBe(1);
  expect(session.get().game!.Players[0]!.Lives).toBe(1);
  expect(session.get().game!.Enemies.length).toBe(3);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().won).toBe(true);
  const progress=adventureForProfile(desktopSaveState.get().profiles[0]!);
  expect(progress.cleared['trial-1']!.clears).toBe(1);expect(progress.coins).toBe(10);

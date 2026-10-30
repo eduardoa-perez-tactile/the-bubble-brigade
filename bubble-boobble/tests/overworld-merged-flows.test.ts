@@ -1,4 +1,4 @@
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 import {expect,worldTest,type WorldTestContext} from '@gameengine/test';
 import {Keys} from '@gameengine/runtime';
 import {ArcadeAudio,DesktopIntent} from '../src/schema.gen';
@@ -39,12 +39,12 @@ async function back(ctx:WorldTestContext,controller:boolean,down:boolean){
 for(const won of [true,false])worldTest(`adventure merged music ${won?'victory controller B':'defeat Escape'} guards result and returns to selected entrance`,async ctx=>{
  await enterEncounter(ctx);
  const attempt=desktopState.get().adventureAttempt;
- await ctx.cheat(OverworldResolveEncounter,{won});await adventureStep(ctx,2);
+ await ctx.cheat(OverworldResolveEncounter,{won});await adventureResult(ctx);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().won).toBe(won);
  expect(desktopState.get().resultReady).toBe(false);music(ctx,'brigade-silent',null);
  // An early Back must not skip result input protection or turn into a delayed exit.
  await back(ctx,won,true);await back(ctx,won,false);
- expect(desktopState.get().screen).toBe('result');expect(desktopState.get().transitionAction??'').toBe('');
+ expect(desktopState.get().screen).toBe('result');expect(desktopState.get().transitionAction??'').toBe(won?'story-results':'');
  await adventureStep(ctx,(won?RESULT_INPUT_DELAY:STORY_OUTCOME_STEPS)+3);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(true);
  expect(desktopState.get().adventureAttempt).toBe(attempt);music(ctx,'brigade-silent',null);
