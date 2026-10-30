@@ -1,7 +1,7 @@
 # Shareable browser build
 
 Bubble Madness exports the real Tactile engine as WebAssembly/WebGPU, served by GitHub Pages:
-https://eduardoa-perez-tactile.github.io/poc-bubble-boobble/
+https://eduardoa-perez-tactile.github.io/the-bubble-brigade/
 
 Desktop WebGPU browsers are the initial target. Keyboard controls work for solo, AI co-op and
 local two-player co-op; standard-map controllers feed the same recorded engine input. The
@@ -20,11 +20,11 @@ paths live only in ignored `.gameengine/web-toolchain.json`:
   "cargoHome": "/path/to/cargo",
   "rustupHome": "/path/to/rustup",
   "emsdkRoot": "/path/to/emsdk",
-  "rustToolchain": "1.94.1"
+  "rustToolchain": "1.99.1"
 }
 ```
 
-For SDK 0.1.15, use source tag v0.1.15, Emscripten 6.0.10 and Rust 1.94.1 with
+For SDK 0.1.25, use source tag v0.1.25, Emscripten 6.0.10 and Rust 1.99.1 with
 wasm32-unknown-emscripten. Build the wasm test host using the engine's
 `node tools/wasm/build.mjs --host` with that scoped toolchain. An existing matching setup,
 such as Street Fighter's, can be reused by pointing these ignored paths at it.
