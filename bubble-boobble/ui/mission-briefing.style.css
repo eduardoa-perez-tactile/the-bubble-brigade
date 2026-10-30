@@ -1,0 +1,146 @@
+/* Mission postcard: the 16:9 composition follows the approved briefing concept. */
+.overworld-card.mission-briefing {font-family:"cartoon/fonts/BreeSerif-Regular";}
+.overworld-card.mission-briefing .ud-overworld-encounter__ow_panel {
+ width:82%;height:86%;max-width:1280px;padding:24px 28px;gap:10px;
+ border-width:0px;border-color:#285b59;border-radius:18px;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_title_row {height:64px;}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_title {
+ font-family:"cartoon/fonts/Rye-Regular";font-size:52px;height:64px;
+ max-width:82%;text-fit:26px 52px;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_subtitle {
+ height:20px;font-size:15px;text-fit:13px 15px;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_badge {
+ border-width:2px;border-color:#245c5b;border-radius:6px;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_art_frame {
+ border-width:2px;border-color:#b88a40;border-radius:8px;overflow:hidden;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_illustration {
+ border-width:0px;border-radius:0px;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_objective {
+ font-size:44px;text-fit:25px 44px;height:56px;white-space:pre-wrap;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_description {
+ font-size:24px;text-fit:19px 24px;height:64px;white-space:pre-wrap;
+}
+.overworld-card.mission-briefing .ud-overworld-encounter__owe_status {
+ font-size:17px;text-fit:14px 17px;height:46px;white-space:pre-wrap;
+}
+.overworld-card.mission-briefing .ud-mission-primary__root {
+ border-width:2px;border-color:#b88a40;border-radius:7px;
+}
+.overworld-card.mission-briefing .ud-mission-primary__mp_label {
+ font-size:28px;text-fit:20px 28px;
+}
+.overworld-card.mission-briefing .ud-mission-back__mb_label {
+ font-size:22px;text-fit:18px 22px;
+}
+
+/* Tablet and square windows keep the two-column scene, with less spare paper. */
+@media (aspect >= 1.2) and (aspect < 1.6) {
+ .overworld-card.mission-briefing .ud-overworld-encounter__ow_panel {width:94%;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_body,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_footer {gap:22px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_art_frame {width:58%;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_play_slot {width:39%;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_title {font-size:52px;text-fit:26px 52px;}
+}
+
+/* Portrait is a stacked postcard. Sized controls remain real hit-test rectangles. */
+@media (aspect < 1.2) {
+ .overworld-card.mission-briefing .ud-overworld-encounter__ow_panel {
+  width:94%;height:94%;padding:20px;gap:10px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_title_row {height:68px;gap:14px;padding:0px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_title {
+  height:68px;font-size:48px;text-fit:24px 48px;max-width:78%;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_body {
+  flex-direction:column;gap:16px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_art_frame {width:100%;height:40%;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_briefing {
+  width:100%;height:0px;flex-grow:1;padding:0px;gap:6px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_objective {
+  height:44px;font-size:36px;text-fit:24px 36px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_description {
+  height:56px;font-size:23px;text-fit:19px 23px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_copy_space {display:none;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_chips {height:44px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_act_chip,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_enemy_chip {height:44px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_rule {margin:4px 0px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_row {height:64px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_coin {width:52px;height:58px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_copy {height:64px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_amount {height:36px;font-size:32px;text-fit:24px 32px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_caption {height:24px;font-size:19px;text-fit:15px 19px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_footer {gap:16px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_play_slot {width:52%;height:60px;}
+}
+@media (aspect < 0.7) {
+ .overworld-card.mission-briefing .ud-overworld-encounter__ow_panel {
+  height:auto;max-height:94%;padding:24px;gap:14px;
+ }
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_subtitle {height:32px;font-size:25px;text-fit:20px 25px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_title_row {height:86px;gap:16px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_title {height:86px;font-size:60px;text-fit:32px 60px;max-width:77%;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_badge {width:104px;height:48px;font-size:27px;text-fit:18px 27px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_body {height:auto;flex-grow:0;gap:20px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_art_frame {height:340px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_briefing {height:auto;flex-grow:0;gap:10px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_mission_label {height:34px;font-size:27px;text-fit:23px 27px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_objective {height:66px;font-size:48px;text-fit:32px 48px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_description {height:96px;font-size:32px;text-fit:27px 32px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_chips,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_act_chip,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_enemy_chip {height:74px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_act_chip_label,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_enemy_chip_label {height:48px;font-size:32px;text-fit:26px 32px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_act_chip_icon,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_enemy_chip_icon {width:42px;height:44px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_row {height:104px;gap:22px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_coin {width:82px;height:90px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_copy {height:96px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_amount {height:54px;font-size:46px;text-fit:32px 46px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_caption {height:36px;font-size:29px;text-fit:23px 29px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_status {height:80px;font-size:28px;text-fit:23px 28px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_footer {height:212px;flex-direction:column-reverse;gap:12px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_play_slot,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_back_slot {width:100%;height:100px;flex-grow:0;}
+ .overworld-card.mission-briefing .ud-mission-primary__root,
+ .overworld-card.mission-briefing .ud-mission-back__root {height:100px;}
+ .overworld-card.mission-briefing .ud-mission-primary__mp_label,
+ .overworld-card.mission-briefing .ud-mission-back__mb_label {height:80px;font-size:34px;text-fit:28px 34px;}
+ .overworld-card.mission-briefing .ud-mission-primary__mp_arrow,
+ .overworld-card.mission-briefing .ud-mission-back__mb_arrow {height:38px;width:24px;}
+}
+@media (aspect >= 0.55) and (aspect < 0.7) {
+ .overworld-card.mission-briefing .ud-overworld-encounter__ow_panel {padding:18px;gap:8px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_art_frame {height:230px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_briefing {gap:6px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_description {height:84px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_row {height:94px;}
+}
+
+/* Short landscape phones need larger touch targets on the height-scaled canvas. */
+@media (aspect > 2) {
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_footer,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_play_slot,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_back_slot,
+ .overworld-card.mission-briefing .ud-mission-primary__root,
+ .overworld-card.mission-briefing .ud-mission-back__root {height:100px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_briefing {padding:12px 0px 4px 0px;gap:4px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_chips,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_act_chip,
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_enemy_chip {height:44px;}
+ .overworld-card.mission-briefing .ud-overworld-encounter__owe_reward_rule {margin:8px 0px;}
+ .overworld-card.mission-briefing .ud-mission-back__mb_label {height:52px;font-size:28px;text-fit:22px 28px;}
+}

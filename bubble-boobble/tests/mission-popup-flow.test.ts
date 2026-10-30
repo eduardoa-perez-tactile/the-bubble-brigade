@@ -57,7 +57,7 @@ worldTest('mission popup stays stable on cold locked and cached visits and loads
  expect(desktopState.get().screen).toBe('play');
  expect(desktopState.get().transitionAction??'').toBe('');
  expect(loading.active()).toBe(false);
- expect(ctx.ui.interactables().some(button=>button.label==='PLAY ENCOUNTER')).toBe(false);
+ expect(ctx.ui.interactables().some(button=>button.label==='START MISSION')).toBe(false);
 },{scene:'scenes/cartoon.scene.json',memory:'phone-low'});
 
 worldTest('mission popup failed load preserves the card and stale failures cannot cancel a retry',async ctx=>{

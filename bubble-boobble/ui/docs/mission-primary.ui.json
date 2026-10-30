@@ -1,0 +1,104 @@
+{
+  "$schemaVersion": 1,
+  "guid": "32d2f7e5-b992-483d-b51b-cee7304c8637",
+  "name": "mission-primary",
+  "title": "Mission primary action",
+  "kind": "widget",
+  "root": "root",
+  "nodes": {
+    "root": {
+      "type": "element",
+      "name": "Mission primary",
+      "style": {
+        "dir": "row",
+        "pad": [
+          0,
+          22,
+          0,
+          22
+        ],
+        "align": "center",
+        "bg": "#245c5b",
+        "radius": 7,
+        "justify": "center",
+        "gap": 12,
+        "w": "100%",
+        "h": 60
+      },
+      "children": [
+        "mp_label",
+        "mp_arrow"
+      ]
+    },
+    "mp_label": {
+      "type": "label",
+      "name": "Label",
+      "text": "{label}",
+      "style": {
+        "w": 0,
+        "grow": 1,
+        "h": 48,
+        "fontSize": 28,
+        "fitMin": 20,
+        "color": "#fff4d6",
+        "textAlign": "center"
+      }
+    },
+    "mp_arrow": {
+      "type": "icon",
+      "name": "Icon",
+      "image": "adventure/briefing/forward-arrow",
+      "style": {
+        "size": 32,
+        "w": 14,
+        "h": 24
+      }
+    }
+  },
+  "behaviour": "button",
+  "transition": {
+    "type": "easeOut",
+    "ms": 120
+  },
+  "properties": {
+    "label": {
+      "type": "text",
+      "default": "START MISSION"
+    },
+    "selected": {
+      "type": "yesno",
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "bg": "#245c5b"
+            }
+          }
+        }
+      }
+    }
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.985,
+          "ty": 1,
+          "bg": "#b9863d"
+        }
+      },
+      "transition": {
+        "type": "easeOut",
+        "ms": 90
+      }
+    },
+    "disabled": {
+      "set": {
+        "root": {
+          "opacity": 0.6
+        }
+      }
+    }
+  }
+}

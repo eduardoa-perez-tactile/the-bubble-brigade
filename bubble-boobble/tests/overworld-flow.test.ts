@@ -91,7 +91,7 @@ renderTest('adventure flow encounter document Play button starts the focused enc
  await ctx.render.waitForAssets({timeoutMs:30000});
  await ctx.loaded();await adventureStep(ctx,2);
  ctx.render.stats({width:1280,height:720});
- const button=ctx.ui.interactables().find(value=>value.label==='PLAY ENCOUNTER');
+ const button=ctx.ui.interactables().find(value=>value.label==='START MISSION');
  expect(!!button?.id).toBe(true);if(!button?.id)return;
  await ctx.ui.press(button.id);await adventureStep(ctx,200);
  expect(session.get().active).toBe(true);expect(session.get().game!.Level.number).toBe(1);

@@ -1469,6 +1469,36 @@ declare module '@gameengine/ui' {
       refs: never;
     };
     /**
+     * Mission back action: a widget, button (ui/docs/mission-back.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "Back to map"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'mission-back': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
+     * Mission primary action: a widget, button (ui/docs/mission-primary.ui.json)
+     *
+     * Properties:
+     *   - `label`: text, default "START MISSION"
+     *   - `selected`: yesno, default false
+     * Events: `<id>`
+     * Code areas: none
+     * Refs: none
+     */
+    'mission-primary': {
+      props: { label: string | { loc: string } | LocText; selected: boolean };
+      areas: never;
+      refs: never;
+    };
+    /**
      * Game mode select: a view, screen (ui/docs/mode-select.ui.json)
      *
      * Properties:
@@ -1533,14 +1563,22 @@ declare module '@gameengine/ui' {
      *   - `backSelected`: yesno, default false
      *   - `actSummary`: text, default ""
      *   - `actBreakdown`: text, default ""
-     * Events: `play`, `back`
+     *   - `objective`: text, default "Clear both decks."
+     *   - `badge`: text, default "NEW"
+     *   - `actsLabel`: text, default "2 acts"
+     *   - `enemiesLabel`: text, default "6 enemies"
+     *   - `rewardAmount`: text, default "10 coins"
+     *   - `rewardCaption`: text, default "First-clear reward"
+     *   - `hasStatus`: yesno, default false
+     * Events: `back`, `play`
      * Code areas: none
-     * Refs: `play`, `back`
+     * Refs: `back`, `play`
+     * Samples (`view render doc:overworld-encounter --sample …`): `tugboat`
      */
     'overworld-encounter': {
-      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; description: string | { loc: string } | LocText; status: string | { loc: string } | LocText; reward: string | { loc: string } | LocText; playLabel: string | { loc: string } | LocText; locked: boolean; illustration: string; playSelected: boolean; backSelected: boolean; actSummary: string | { loc: string } | LocText; actBreakdown: string | { loc: string } | LocText };
+      props: { title: string | { loc: string } | LocText; subtitle: string | { loc: string } | LocText; description: string | { loc: string } | LocText; status: string | { loc: string } | LocText; reward: string | { loc: string } | LocText; playLabel: string | { loc: string } | LocText; locked: boolean; illustration: string; playSelected: boolean; backSelected: boolean; actSummary: string | { loc: string } | LocText; actBreakdown: string | { loc: string } | LocText; objective: string | { loc: string } | LocText; badge: string | { loc: string } | LocText; actsLabel: string | { loc: string } | LocText; enemiesLabel: string | { loc: string } | LocText; rewardAmount: string | { loc: string } | LocText; rewardCaption: string | { loc: string } | LocText; hasStatus: boolean };
       areas: never;
-      refs: 'play' | 'back';
+      refs: 'back' | 'play';
     };
     /**
      * Overworld hud: a view, screen (ui/docs/overworld-hud.ui.json)

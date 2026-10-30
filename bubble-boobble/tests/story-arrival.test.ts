@@ -83,7 +83,7 @@ async function finishLaunch(ctx:WorldTestContext){
 renderTest('story arrival real locked card first entry next level and fast retry preserve the selected identity',async ctx=>{
  ctx.input.view(1280,720,1);await enterMap(ctx);
  await card(ctx,'encounter-3');ctx.render.stats({width:1280,height:720});
- expect(ctx.ui.interactables().some(b=>b.label==='PLAY ENCOUNTER')).toBe(false);
+ expect(ctx.ui.interactables().some(b=>b.label==='START MISSION')).toBe(false);
  expect(ctx.ui.rect('arrival.title')).toBe(null);await act(ctx,'overworld-back');
 
  await card(ctx,'encounter-1');await billing(ctx);

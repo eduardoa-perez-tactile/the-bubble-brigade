@@ -1,0 +1,10 @@
+guid = "f23c1ba2-a158-426f-bfd0-370a8add1108"
+importer = "texture"
+
+[settings]
+kind = "sprite"
+filter = "linear"
+trim = false
+atlas = "mission-briefing"
+compression = "none"
+max_size = 128

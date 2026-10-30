@@ -110,7 +110,13 @@
       },
       "overworld-shared": {
         "include": [
-          "assets/overworld-shared/**"
+          "assets/overworld-shared/**",
+          "assets/adventure/briefing/paper-panel.png",
+          "assets/adventure/briefing/coin.png",
+          "assets/adventure/briefing/acts.png",
+          "assets/adventure/briefing/enemies.png",
+          "assets/adventure/briefing/back-arrow.png",
+          "assets/adventure/briefing/forward-arrow.png"
         ]
       },
       "shop-presentation": {
@@ -148,6 +154,7 @@
       "adventure-tugboat": {
         "include": [
           "assets/adventure/tugboat.png",
+          "assets/adventure/briefing/tugboat.png",
           "assets/adventure/foreground/sailcloth.png",
           "assets/cartoon/reconstruction/environment/boundaries/*-boat-reference.png"
         ]

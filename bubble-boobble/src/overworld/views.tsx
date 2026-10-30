@@ -1,5 +1,8 @@
 import {defineView,Screen,Widget,createMemo} from '@gameengine/ui';
 import type {OverworldHudModel,EncounterCardModel,OverworldDialogueModel} from './model';
+import {encounterCardModel} from './encounter-model';
+import {encounterById} from './content';
+import {initialAdventure} from './progression';
 const hud:OverworldHudModel={district:'BRIGADE LANDING',progress:'0 / 5 LANDMARKS CLEARED',coins:'COINS  0',prompt:'',help:'WASD / ARROWS · WALK     ENTER / SPACE · INTERACT'};
 export const OverworldHudView=defineView<OverworldHudModel>({
  name:'OverworldHUD',samples:{explore:hud,entrance:{...hud,prompt:'[ENTER / A]  Visit Landing Lighthouse'}},
@@ -10,11 +13,18 @@ export const OverworldHudView=defineView<OverworldHudModel>({
   return <Screen safeArea class="overworld-screen overworld-hud-screen"><Widget id="overworld-hud" doc="overworld-hud" class="overworld-hud" props={{district:()=>model().district,progress:()=>model().progress,coins:()=>model().coins,prompt,help:()=>model().help,showPrompt:()=>!!model().prompt}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/></Screen>;
  },
 });
-const card:EncounterCardModel={title:'Bubble Yard',subtitle:'BRIGADE LANDING · ENCOUNTER 01',description:'Clear the courtyard of troublesome creatures.',actSummary:'1 ACT · 3 ENEMIES',actBreakdown:'Act 1: 3',status:'READY TO EXPLORE',reward:'FIRST CLEAR · 10 COINS',locked:false,playLabel:'PLAY ENCOUNTER'};
+const card:EncounterCardModel=encounterCardModel(encounterById('encounter-1')!,initialAdventure());
+const twoActs:EncounterCardModel={...encounterCardModel(encounterById('encounter-5')!,{...initialAdventure(),cleared:{'encounter-3':{bestScore:1500,clears:1}}})};
 // Keep modal documents at the view root: the stack owns their safe area, scrim and Enter/Exit poses.
 export const OverworldEncounterView=defineView<EncounterCardModel>({
- name:'OverworldEncounter',dims:true,blockInput:true,samples:{ready:card,twoActs:{...card,title:'Tugboat Tussle',description:'Clear both decks, then watch the opposite flank when the boarding party arrives!',actSummary:'2 ACTS · 6 ENEMIES',actBreakdown:'Act 1: 3 · Act 2: 3'},threeActs:{...card,title:'A Three-Act Encounter',actSummary:'3 ACTS · 12 ENEMIES',actBreakdown:'Act 1: 3 · Act 2: 4 · Act 3: 5'},locked:{...card,locked:true,status:'CLEAR BUBBLE YARD OR BELLFLOWER MILL FIRST'}},
- render:(model,{intent})=><Widget id="overworld-encounter" doc="overworld-encounter" class="overworld-screen overworld-card" props={{playSelected:()=>!model().locked&&(model().selected??0)===0,backSelected:()=>model().locked||(model().selected??0)===1,illustration:()=>model().illustration??'adventure/lighthouse',title:()=>model().title,subtitle:()=>model().subtitle,description:()=>model().description,actSummary:()=>model().actSummary,actBreakdown:()=>model().actBreakdown,status:()=>model().status,reward:()=>model().reward,locked:()=>model().locked,playLabel:()=>model().playLabel}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/>,
+ name:'OverworldEncounter',dims:true,blockInput:true,samples:{
+  ready:card,twoActs,threeActs:{...twoActs,title:'A Three-Act Encounter',actsLabel:'3 acts',enemiesLabel:'12 enemies',actSummary:'3 ACTS · 12 ENEMIES',actBreakdown:'Act 1: 3 · Act 2: 4 · Act 3: 5'},
+  locked:encounterCardModel(encounterById('encounter-3')!,initialAdventure()),
+  replay:encounterCardModel(encounterById('encounter-5')!,{...initialAdventure(),cleared:{'encounter-3':{bestScore:1500,clears:1},'encounter-5':{bestScore:3250,clears:2}},rewardClaims:{'encounter-5':true}}),
+  trial:encounterCardModel(encounterById('trial-1')!,initialAdventure()),
+  error:{...card,status:'MISSION COULD NOT LOAD. PLEASE TRY AGAIN.'},
+ },
+ render:(model,{intent})=><Widget id="overworld-encounter" doc="overworld-encounter" class="overworld-screen overworld-card mission-briefing" props={{objective:()=>model().objective,badge:()=>model().badge,actsLabel:()=>model().actsLabel,enemiesLabel:()=>model().enemiesLabel,hasStatus:()=>!!model().status,rewardAmount:()=>model().rewardAmount,rewardCaption:()=>model().rewardCaption,playSelected:()=>!model().locked&&(model().selected??0)===0,backSelected:()=>model().locked||(model().selected??0)===1,illustration:()=>model().illustration??'adventure/lighthouse',title:()=>model().title,subtitle:()=>model().subtitle,description:()=>model().description,actSummary:()=>model().actSummary,actBreakdown:()=>model().actBreakdown,status:()=>model().status,reward:()=>model().reward,locked:()=>model().locked,playLabel:()=>model().playLabel}} onIntent={(_,e)=>intent(e.path.at(-1)!)}/>,
 });
 export const OverworldDialogueView=defineView<OverworldDialogueModel>({
  name:'OverworldDialogue',dims:true,blockInput:true,samples:{guide:{speaker:'THE LANDING KEEPER',message:'Follow either path to find your first challenge. Each landmark has a story to tell.',detail:'Clear landmarks to open the road ahead.',buttons:[]},shop:{speaker:'THE TRAIL MERCHANT',message:'A little color for your next adventure.',detail:'Your purchases belong to this profile.',buttons:[{key:'green',label:'MOSS GREEN · OWNED'},{key:'blue',label:'SKY BLUE · 20 COINS'}]}},
