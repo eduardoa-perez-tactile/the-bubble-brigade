@@ -1,6 +1,6 @@
 # Shareable browser build
 
-Bubble Madness exports the real Tactile engine as WebAssembly/WebGPU, served by GitHub Pages:
+The Bubble Brigade exports the real Tactile engine as WebAssembly/WebGPU, served by GitHub Pages:
 https://eduardoa-perez-tactile.github.io/the-bubble-brigade/
 
 Desktop WebGPU browsers are the initial target. Keyboard controls work for solo, AI co-op and
@@ -60,12 +60,13 @@ engine's full release gates; release pipeline coverage must be current first.
 
 ## Publish
 
-The browser loading screen uses the game's arcade font, logo, palette and ten dragon sprites.
+The browser loading screen uses the Brigade logo, theatre stage, greeting character and serif font
+from the current game menu, with a gold progress bar and adventure button.
 Its HTML, styles and event-driven loading indicator live in `web/splash.html`, `web/splash.css`
 and `web/splash.mjs`; `tools/web/splash-shell.mjs` installs them during export. Bootstrap art is
-copied outside the game packs so it can display before the engine loads. `web/splash/logo.webp`
-is a 700px-wide version of `assets/branding/bubble-madness-logo.png`, exported at WebP quality 95
-with its transparency intact; the font and portraits are copied unchanged.
+copied outside the game packs so it can display before the engine loads. The original menu PNGs
+and `BreeSerif-Regular.ttf` are copied unchanged; the old pixel-logo and dragon-lineup assets
+are no longer included in the bootstrap screen.
 
 After a fresh web build, `npm run web:preview-splash` captures loading, ready, expanded controls
 and error states in `artifacts/browser-splash/`, checks five viewport sizes, and verifies the

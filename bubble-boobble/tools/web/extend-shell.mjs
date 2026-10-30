@@ -23,5 +23,5 @@ export async function extendWebShell({project,engineRoot,sdk}) {
   await build({stdin:{contents:source,resolveDir:join(engineRoot,'platform/web'),loader:'ts'},outfile:join(site,'player.js'),bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true});
   writeSplashShell({project,site});
   const git=args=>{const r=spawnSync('git',args,{cwd:project,encoding:'utf8'});if(r.status!==0)throw new Error(r.stderr);return r.stdout.trim();};
-  writeFileSync(join(site,'playtest-build.json'),JSON.stringify({sha:git(['rev-parse','HEAD']),dirty:!!git(['status','--porcelain']),exportedAt:new Date().toISOString(),name:'Bubble Madness',shell:'bubble-web-v2'},null,2)+'\n');
+  writeFileSync(join(site,'playtest-build.json'),JSON.stringify({sha:git(['rev-parse','HEAD']),dirty:!!git(['status','--porcelain']),exportedAt:new Date().toISOString(),name:'The Bubble Brigade',shell:'brigade-web-v3'},null,2)+'\n');
 }
