@@ -11,7 +11,7 @@ import {overworldState} from '../src/overworld/state';
 import {overworldEntrancePoint} from '../src/overworld/navigation';
 import {sampleMarkerImage} from '../src/overworld/marker-animation';
 import {WarpOverworld,OverworldResolveEncounter} from '../src/overworld/overworld.cheats';
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 
 const scene='scenes/cartoon.scene.json';
 async function act(ctx:WorldTestContext,action:string,value=''){
@@ -27,7 +27,7 @@ async function completedMission(ctx:WorldTestContext){
   await adventureStep(ctx,1);
  }
  expect(assets.stats().groups['overworld-district-1']!.status==='loaded').toBe(false);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,50);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx,true);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(true);
  const progress=adventureForProfile(desktopSaveState.get().profiles[0]!);
  expect(progress.coins).toBe(10);expect(progress.cleared['encounter-1']!.clears).toBe(1);

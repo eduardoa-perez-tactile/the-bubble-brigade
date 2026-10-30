@@ -1,4 +1,4 @@
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 import { expect, worldTest, renderTest, type WorldTestContext } from '@gameengine/test';
 import { DesktopIntent } from '../src/schema.gen.ts';
 import { desktopState, RESULT_INPUT_DELAY } from '../src/desktop/state.ts';
@@ -34,7 +34,7 @@ async function finish(ctx:WorldTestContext,id:string){
  expect(session.get().game!.Level.number).toBe(encounterById(id)!.level);
  expect(session.get().game!.Campaign.length).toBe(1);
  const attempt=desktopState.get().adventureAttempt;
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().won).toBe(true);
  expect(progress().attemptReceipts[attempt!]).toBe(true);
  const coins=progress().coins;
@@ -92,7 +92,7 @@ worldTest('adventure campaign all 25 source-map encounters gates rewards keepsak
    expect(availableDistrict('district-2',progress())).toBe(true);
    await inspect(ctx,'trial-1');await intent(ctx,'adventure-play');await ctx.loaded();await adventureStep(ctx,2);
    expect(session.get().game!.Players[0]!.Lives).toBe(1);expect(session.get().game!.Enemies.length).toBe(3);
-   await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
+   await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
    await intent(ctx,'leave');await ctx.loaded();await adventureStep(ctx,3);
    expect(overworldState.get().focusedPoi).toBe('trial');expect(adventureCleared(progress())).toBe(5);
   }
@@ -128,7 +128,7 @@ worldTest('adventure campaign held physical Enter released inside an encounter r
  ctx.input.key(38,true);await adventureStep(ctx,2);expect(desktopState.get().screen).toBe('overworld-card');
  await intent(ctx,'adventure-play');await ctx.loaded();await adventureStep(ctx,2);
  ctx.input.key(38,false);await adventureStep(ctx,2);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
  await intent(ctx,'leave');await ctx.loaded();await adventureStep(ctx,3);
  expect(overworldState.get().confirmKeys).toBe(0);expect(overworldState.get().inputArmed).toBe(true);
  ctx.input.key(38,true);await adventureStep(ctx,2);ctx.input.key(38,false);await adventureStep(ctx,1);
@@ -150,7 +150,7 @@ renderTest('adventure campaign actual menu begin play intro results and map retu
  expect(desktopState.get().transitionAction).toBe('adventure-play');
  ctx.render.expectScreenshot('adventure-encounter-intro',{width:1280,height:720});
  await adventureStep(ctx,240);await ctx.loaded();expect(session.get().active).toBe(true);expect(session.get().game!.Level.number).toBe(1);
- await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
+ await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);await adventureStep(ctx,RESULT_INPUT_DELAY+5);
  ctx.render.expectScreenshot('adventure-single-encounter-result',{width:1280,height:720});
  await press(ctx,'RETURN TO MAP');await adventureStep(ctx,100);await ctx.loaded();await adventureStep(ctx,3);
  expect(desktopState.get().screen).toBe('overworld');expect(overworldState.get().focusedPoi).toBe('encounter-1');

@@ -22,7 +22,18 @@ export const RESULT_INPUT_DELAY = 45;
 export const TITLE_REVEAL_STEPS = 54;
 const request=(action:string,custom=false)=>desktopGameRequest.set({sequence:desktopGameRequest.get().sequence+1,action,mode:desktopState.get().playMode??'solo',partySlots:desktopState.get().partySlots?.slice(),players:desktopState.get().playMode==='ai'||desktopState.get().playMode==='human'?2:1,level:1,customLevel:custom?cloneLevel(desktopState.get().level):null,...(desktopState.get().cartoon?{cartoon:true}:{})});
 export function showDesktopPause(paused=true){const s=desktopState.get();desktopState.set({...s,screen:paused?'pause':'play',selected:0});}
-export function finishDesktopRun(won:boolean,score:number,round:number,dragonResults:DragonResult[]=[]){const s=desktopState.get();if(s.adventure&&!s.recorded&&desktopSaveState.loaded()){if(won)desktopSaveState.dispatch('adventureComplete',{profileIndex:s.adventureProfile!,encounterId:s.adventureEncounter!,attemptId:s.adventureAttempt!,score},0);else desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},0);}else if(!s.adventure&&!s.recorded&&!s.custom&&!s.partyRun&&desktopSaveState.loaded())desktopSaveState.dispatch('record',{won,score,round},0);desktopState.set({...s,screen:'result',resultDetails:false,dragonResults,resultStartedStep:-1,resultReady:false,recorded:true,won,score,round,selected:0});}
+export function finishDesktopRun(won:boolean,score:number,round:number,dragonResults:DragonResult[]=[]){
+ const s=desktopState.get();
+ if(s.adventure&&!s.recorded&&desktopSaveState.loaded()){
+  if(won)desktopSaveState.dispatch('adventureComplete',{profileIndex:s.adventureProfile!,encounterId:s.adventureEncounter!,attemptId:s.adventureAttempt!,score},0);
+  else desktopSaveState.dispatch('adventureAbandon',{profileIndex:s.adventureProfile!},0);
+ }else if(!s.adventure&&!s.recorded&&!s.custom&&!s.partyRun&&desktopSaveState.loaded())desktopSaveState.dispatch('record',{won,score,round},0);
+ // Record completion now, but keep the finished arena visible until the iris is
+ // opaque. The shared deterministic transition timeline owns the screen swap.
+ const covered=!!s.cartoon&&!!s.adventure&&won;
+ desktopState.set({...s,screen:covered?'play':'result',resultDetails:false,dragonResults,resultStartedStep:-1,resultReady:false,recorded:true,won,score,round,selected:0,
+  ...(covered?{transitionAction:'story-results',transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:false}:{})});
+}
 export function setDesktopRunScore(score:number,round:number){const s=desktopState.get();if(s.score!==score||s.round!==round)desktopState.set({...s,score,round});}
 export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  let s=desktopState.get();
@@ -37,6 +48,10 @@ export function desktopAction(action:string,value='',index=0,x=0,y=0,now=0){
  const remember=()=>patch({history:[...s.history,cloneLevel(s.level)].slice(-50)});
  if(action==='transition-finish'){patch({transitionAction:'',transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:false});return;}
  if(action==='transition-commit'){const next=s.transitionAction;if(!next||s.transitionCommitted)return;patch({transitionAction:'',transitionCommitted:true});desktopAction(next,'',0,0,0,now);const after=desktopState.get();desktopState.set({...after,transitionAction:next,transitionStartedStep:s.transitionStartedStep,transitionCommitted:true,transitionHasTitle:!!s.transitionHasTitle,gameplayInputArmed:['start','start-party','restart','test-level','adventure-play'].includes(next)?false:after.gameplayInputArmed});return;}
+ if(action==='story-results'){
+  if(s.cartoon&&s.adventure&&s.won&&s.recorded&&s.transitionCommitted&&s.screen==='play')patch({screen:'result',resultStartedStep:-1,resultReady:false});
+  return;
+ }
  if(action==='menu'&&s.cartoon&&s.screen==='title'){patch({screen:'menu',selected:0,status:'',titleRevealActive:true,titleRevealStartedStep:-1,menuInputArmed:false});return;}
  if(action==='ui-activate'){const key=value;if(s.cartoon&&s.screen==='pause'&&!s.pauseConfirm&&['restart','leave'].includes(key)){patch({pauseConfirm:key as 'restart'|'leave',selected:0});return;}const next=['classic-mode','start'].includes(key)?'party':key;const covered=s.cartoon&&(['start','restart','leave','test-level','adventure-play'].includes(next)||next==='start-party'&&!s.partyEditing);if(covered){if(next==='start-party'&&!s.partySlots.includes('human')){patch({status:'SELECT AT LEAST ONE HUMAN'});return;}patch({transitionAction:next,transitionStartedStep:-1,transitionCommitted:false,transitionHasTitle:next==='start'||next==='start-party'||next==='adventure-play',status:''});return;}desktopAction(next,'',index,x,y,now);return;}
  if(action==='result-exit'&&s.cartoon&&s.screen==='result'){desktopAction('ui-activate','leave');return;}
@@ -152,7 +167,7 @@ export const DesktopSystem=defineSystem({name:'DesktopSystem',resources:[read(Ar
      if(c.col(ActionState).pressed[i]&&(/^(confirm|profileConfirm|fire|fire2|jump|jump2)$/.test(name)||/^party(Fire|Jump)([1-9]|10)$/.test(name)))heldAction=true;
    }
    const neutral=held===0&&!heldAction&&!pads.pads.some(p=>p.jump||p.fire||p.start);
-   if(!s.resultReady&&ctx.step-s.resultStartedStep!>=(s.cartoon&&s.adventure&&!s.won?STORY_OUTCOME_STEPS:RESULT_INPUT_DELAY)&&neutral){s={...s,resultReady:true};desktopState.set(s);}
+   if(!s.resultReady&&!s.transitionAction&&ctx.step-s.resultStartedStep!>=(s.cartoon&&s.adventure&&!s.won?STORY_OUTCOME_STEPS:RESULT_INPUT_DELAY)&&neutral){s={...s,resultReady:true};desktopState.set(s);}
    // A press on the frame that arms the screen must not also activate it.
    if(!desktopState.get().resultReady||!menuState.resultReady)confirm=false;
  }

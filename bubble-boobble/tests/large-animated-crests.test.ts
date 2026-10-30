@@ -8,7 +8,7 @@ import {WarpOverworld,OverworldResolveEncounter} from '../src/overworld/overworl
 import {overworldEntrancePoint,overworldSpawn} from '../src/overworld/navigation';
 import {overworldDrawPlan} from '../src/overworld/presentation';
 import {adventureForProfile} from '../src/overworld/progression';
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 const scene='scenes/cartoon.scene.json';
 async function intent(ctx:WorldTestContext,action:string,value=''){ctx.input.emit(DesktopIntent,{action,value});await adventureStep(ctx,1);}
 async function settle(ctx:WorldTestContext,width:number,height:number){
@@ -41,7 +41,7 @@ renderTest('large animated map crests preserve readable destinations and authore
  }
  // Completion celebrates only after a real win and the map loading curtain clears.
  await focus(ctx,'encounter-1');await intent(ctx,'overworld-interact','encounter-1');await ctx.loaded();await intent(ctx,'adventure-play');await adventureStep(ctx,3);await ctx.loaded();
- expect(desktopState.get().screen).toBe('play');await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureStep(ctx,2);
+ expect(desktopState.get().screen).toBe('play');await ctx.cheat(OverworldResolveEncounter,{won:true});await adventureResult(ctx);
  expect(desktopState.get().screen).toBe('result');await adventureStep(ctx,RESULT_INPUT_DELAY+4);await intent(ctx,'leave');await ctx.loaded();
  const returned=overworldState.get().markerMotion!;expect(returned.celebrationId).toBe('encounter-1');
  while(overworldState.get().markerMotion!.celebrationAge<6)await adventureStep(ctx,1);

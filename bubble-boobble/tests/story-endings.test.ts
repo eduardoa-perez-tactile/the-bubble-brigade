@@ -13,7 +13,7 @@ import {AdventureClearAct} from '../src/adventure/endings.cheats';
 import {OverworldResolveEncounter,WarpOverworld} from '../src/overworld/overworld.cheats';
 import {OverworldJournalFixture} from '../src/overworld/presentation.cheats';
 import {overworldEntrancePoint} from '../src/overworld/navigation';
-import {adventureStep} from './support/adventure-time';
+import {adventureStep,adventureResult} from './support/adventure-time';
 const scene='scenes/cartoon.scene.json';
 function shown(ctx:WorldTestContext,id:string){
  const rect=ctx.ui.rect(id);return !!rect&&rect.width>0&&rect.height>0;
@@ -85,7 +85,7 @@ renderTest('story endings victory bonus alert and results remain safe across sup
  await adventureStep(ctx,60);ctx.render.stats({width:1280,height:720});
  expect(!!ctx.ui.rect('story-outcome')).toBe(false);expect(desktopState.get().screen).toBe('play');
  expect(shown(ctx,'cartoon-hud.banner')).toBe(false);
- await adventureStep(ctx,228);expect(desktopState.get().screen).toBe('result');
+ await adventureStep(ctx,228);await adventureResult(ctx);expect(desktopState.get().screen).toBe('result');
  await adventureStep(ctx,50);
  for(const [width,height,safe] of [[344,882,[0,32,0,0]],[393,852,[0,59,0,34]],[810,1080,[0,20,0,0]],[1280,720,[0,0,0,0]],[2520,1080,[72,0,0,0]]] as const){
   ctx.input.view(width,height,1,[...safe]);await adventureStep(ctx,2);ctx.render.stats({width,height});
@@ -105,7 +105,7 @@ renderTest('story endings victory bonus alert and results remain safe across sup
  await ctx.ui.press(back.id!);await adventureStep(ctx,100);await ctx.loaded();expect(desktopState.get().screen).toBe('overworld');
  await ctx.cheat(WarpOverworld,overworldEntrancePoint('district-1','encounter-1'));await adventureStep(ctx,3);
  await act(ctx,'overworld-interact','encounter-1');await act(ctx,'adventure-play');await ctx.loaded();await untilPlaying(ctx);
- await ctx.cheat(AdventureClearAct,{});await adventureStep(ctx,350);
+ await ctx.cheat(AdventureClearAct,{});await adventureResult(ctx,true);
  expect(adventureForProfile(desktopSaveState.get().profiles[desktopSaveState.get().active]!).coins).toBe(coins);
  expect(storyResultModel(desktopState.get(),desktopSaveState.get()).rewardValue).toBe('REWARD CLAIMED');
  expect(storyResultModel(desktopState.get(),desktopSaveState.get()).title).toBe('MISSION CLEARED');
@@ -117,6 +117,8 @@ renderTest('story endings one stable summary keeps guarded actions visible until
  ctx.input.key('Space',true);await ctx.cheat(AdventureClearAct,{});
  for(let tick=0;desktopState.get().screen!=='result'&&tick<360;tick++)await adventureStep(ctx,1);
  expect(desktopState.get().screen).toBe('result');expect(desktopState.get().resultReady).toBe(false);
+ // Inspect the stable guarded summary after the automatic iris has revealed it.
+ for(let tick=0;desktopState.get().transitionAction&&tick<80;tick++)await adventureStep(ctx,1);
  const summaryViews=()=>views.stack().filter(view=>view.view==='StoryResults');
  expect(summaryViews().length).toBe(1);const handle=summaryViews()[0]!.id;
  const initialModel=storyResultModel(desktopState.get(),desktopSaveState.get());
