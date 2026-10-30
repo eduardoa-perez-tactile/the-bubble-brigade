@@ -27,6 +27,9 @@ let releaseDownload;
 const held = new Promise(resolve => { releaseDownload = resolve; });
 const report = { ok: false, checks: [], screenshots: [] };
 try {
+  assert.deepEqual(readFileSync(resolve(site, 'splash/curtain.png')), readFileSync(resolve(project, 'assets/cartoon/menu/curtain-tactile.png')));
+  assert.deepEqual(readFileSync(resolve(site, 'splash/curtain-portrait.png')), readFileSync(resolve(project, 'assets/cartoon/menu/curtain-tactile-portrait.png')));
+  report.checks.push('Landscape and portrait use the exact closed-curtain artwork from the main screen');
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   browser = await chromium.launch({
     executablePath: process.env.CHROME_PATH ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -61,13 +64,19 @@ try {
   report.checks.push('Actual engine download, renderer preparation and ready state; Start stays disabled until ready');
   for (const [width, height] of [[1024, 768], [1680, 720], [800, 480], [375, 812], [320, 568]]) {
     await page.setViewportSize({ width, height });
-    const layout = await page.evaluate(() => {
+    const layout = await page.evaluate(async () => {
       const launch = document.querySelector('#launch');
       const rect = document.querySelector('#start').getBoundingClientRect();
-      return { overflow: launch.scrollWidth > launch.clientWidth, x: rect.x, y: rect.y, right: rect.right, bottom: rect.bottom, images: [...document.querySelectorAll('#launch img')].every(image => image.complete && image.naturalWidth > 0), font: document.fonts.check('12px "Brigade Serif"') };
+      const background = getComputedStyle(launch).backgroundImage;
+      const curtain = new Image();
+      curtain.src = /url\("?([^"\)]+)"?\)/.exec(background)[1];
+      await curtain.decode();
+      return { overflow: launch.scrollWidth > launch.clientWidth, x: rect.x, y: rect.y, right: rect.right, bottom: rect.bottom, images: curtain.naturalWidth > 0, portrait: background.includes('curtain-portrait.png'), font: document.fonts.check('12px "Brigade Serif"') };
     });
     assert.equal(layout.overflow, false, `Horizontal overflow at ${width}x${height}`);
-    assert.equal(layout.images && layout.font, true, 'Brigade logo, greeter and serif font must load');
+    assert.equal(layout.images && layout.font, true, 'Closed curtain and serif font must load');
+    assert.equal(layout.portrait, width / height <= .85, 'Curtain variant must match the main screen aspect rule');
+    assert.equal(await page.locator('.splash-logo, .splash-greeter, .splash-ticket').count(), 0, 'No added logo, mascot or card');
     assert.ok(layout.x >= 0 && layout.right <= width && layout.y >= 0 && layout.bottom <= height, `Start must be visible at ${width}x${height}`);
     await shot(`ready-${width}x${height}`);
   }
@@ -77,7 +86,7 @@ try {
   await page.keyboard.press('Enter');
   assert.equal(await page.locator('.splash-controls').getAttribute('open') !== null, true);
   await page.locator('#launch').evaluate(node => { node.scrollTop = 0; });
-  assert.ok(await page.locator('.splash-logo').evaluate(node => node.getBoundingClientRect().top >= 0), 'Expanded instructions must scroll from the top without clipping the logo');
+  assert.ok(await page.locator('#status').evaluate(node => node.getBoundingClientRect().top >= 0), 'Expanded instructions must scroll from the top without clipping the loading status');
   await shot('controls');
   await page.setViewportSize({ width: 320, height: 568 });
   assert.equal(await page.locator('#launch').evaluate(node => node.scrollWidth > node.clientWidth), false);
