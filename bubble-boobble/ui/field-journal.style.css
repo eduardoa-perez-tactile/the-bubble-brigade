@@ -9,7 +9,7 @@
  .field-journal-screen .ud-field-journal__objective .ud-journal-action__root {height:35px;}
  .field-journal-screen .ud-field-journal__objective .ud-journal-action__label {height:29px;font-size:18px;}
  .field-journal-screen .ud-field-journal__memories {width:125px;height:40px;}
- .field-journal-screen .ud-field-journal__close {width:44px;height:40px;}
+ .field-journal-screen .ud-field-journal__close {width:44px;height:44px;}
  .field-journal-screen .ud-field-journal__showMap {width:100%;height:35px;}
  .field-journal-screen .ud-field-journal__return {width:228px;height:26px;}
  .field-journal-screen .ud-field-journal__trial,.field-journal-screen .ud-field-journal__claim {width:100%;height:44px;}
@@ -23,8 +23,13 @@
  .field-journal-screen .ud-field-journal__keepsakeShelf .ud-journal-keepsake__name {font-size:17px;height:28px;}
  .field-journal-screen .ud-field-journal__trialStatus {white-space:pre-wrap;}
  .field-journal-screen .ud-field-journal__hero,.field-journal-screen .ud-field-journal__trialImage {object-fit:cover;}
- .field-journal-screen .ud-field-journal-tab__root {flex-direction:column;justify-content:center;align-items:center;background-color:transparent;gap:1px;}
+ .field-journal-screen .ud-field-journal-tab__root {flex-direction:column;justify-content:center;align-items:center;background-color:#ede1c3;gap:1px;border-width:1px;border-color:#bd9f6a;}
  .field-journal-screen .ud-field-journal-tab__root.v-active-yes {background-color:#285b59;}
+ .field-journal-screen .ud-field-journal-tab__root.v-selected-yes {border-width:2px;border-color:#a8742f;}
+ .field-journal-screen .ud-field-journal-tab__titleRow {flex-direction:row;justify-content:center;align-items:center;gap:7px;}
+ .field-journal-screen .ud-field-journal__header .ud-field-journal__close {background-color:#285b59;border-radius:999px;border-width:2px;border-color:#ba9c60;height:44px;}
+ .field-journal-screen .ud-field-journal__header .ud-field-journal__close.v-selected-yes {background-color:#8b6229;border-width:2px;border-color:#efd18d;}
+ .field-journal-screen .ud-field-journal__close .ud-journal-action__label {width:100%;height:40px;font-size:28px;text-fit:28px 28px;color:#fff3d4;}
  .field-journal-screen .ud-field-journal-mission__root {flex-direction:row;justify-content:flex-start;align-items:center;background-color:transparent;padding:6px 9px;gap:12px;}
  .field-journal-screen .ud-field-journal-mission__root.v-active-yes {background-color:#285b591a;}
  .field-journal-screen .ud-field-journal-mission__copy {flex-direction:column;width:0;flex-grow:1;justify-content:center;}
@@ -42,7 +47,7 @@
  .field-journal-screen .ud-field-journal__right {width:100%;height:auto;}
  .field-journal-screen .ud-field-journal__fold {width:100%;height:1px;}
  .field-journal-screen .ud-field-journal__tabs {height:auto;flex-wrap:wrap;gap:6px;}
- .field-journal-screen .ud-field-journal-tab__root {width:31%;height:44px;}
+ .field-journal-screen .ud-field-journal-tab__root {width:31%;height:48px;}
  .field-journal-screen .ud-field-journal__heroFrame {height:70px;}
  .field-journal-screen .ud-field-journal__district {height:43px;font-size:31px;text-fit:27px 31px;}
  .field-journal-screen .ud-field-journal__objective {height:128px;}
@@ -81,7 +86,11 @@
  .field-journal-screen .ud-field-journal__header .ud-journal-action__label {font-size:26px;height:64px;text-fit:22px 26px;}
  .field-journal-screen .ud-field-journal-tab__root {height:96px;}
  .field-journal-screen .ud-field-journal-tab__title {font-size:29px;height:40px;text-fit:25px 29px;}
- .field-journal-screen .ud-field-journal-tab__subtitle {font-size:19px;height:30px;text-fit:17px 19px;}
+ .field-journal-screen .ud-field-journal-tab__subtitle {font-size:21px;height:30px;text-fit:19px 21px;}
+ .field-journal-screen .ud-field-journal-tab__titleRow {height:40px;gap:10px;}
+ .field-journal-screen .ud-field-journal-tab__currentCue,.field-journal-screen .ud-field-journal-tab__completeCue,.field-journal-screen .ud-field-journal-tab__lockedCue {transform:scale(1.4);}
+ .field-journal-screen .ud-field-journal__header .ud-field-journal__close {width:94px;height:94px;}
+ .field-journal-screen .ud-field-journal__close .ud-journal-action__label {height:72px;font-size:50px;text-fit:48px 50px;}
  .field-journal-screen .ud-field-journal__chapter {font-size:22px;height:34px;text-fit:19px 22px;}
  .field-journal-screen .ud-field-journal__district {height:54px;font-size:42px;text-fit:34px 42px;}
  .field-journal-screen .ud-field-journal__heroFrame {height:190px;}

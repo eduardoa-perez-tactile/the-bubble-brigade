@@ -1341,7 +1341,7 @@ declare module '@gameengine/ui' {
      * Refs: `memories`, `close`, `show-map`, `trial`, `overworld-guide-claim`, `return-map`
      */
     'field-journal': {
-      props: { pages: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; selected?: boolean }[]; missions: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; art?: string; crest?: string; active?: boolean; locked?: boolean; selected?: boolean }[]; chapter: string | { loc: string } | LocText; district: string | { loc: string } | LocText; progressText: string | { loc: string } | LocText; objectiveHeading: string | { loc: string } | LocText; detailTitle: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; objectiveLabel: string | { loc: string } | LocText; nextLabel: string | { loc: string } | LocText; totalProgress: string | { loc: string } | LocText; returnLabel: string | { loc: string } | LocText; memoriesLabel: string | { loc: string } | LocText; trialName: string | { loc: string } | LocText; trialStatus: string | { loc: string } | LocText; trialActionLabel: string | { loc: string } | LocText; keepsakeHint: string | { loc: string } | LocText; showMemories: boolean; objectiveSelected: boolean; memoriesSelected: boolean; closeSelected: boolean; returnSelected: boolean; trialSelected: boolean; claimable: boolean; claimSelected: boolean; keepsakes: readonly { key: string; label?: string | { loc: string } | LocText; art?: string; owned?: boolean }[]; heroArt: string; trialSceneArt: string; trialAvailable: boolean };
+      props: { pages: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; active?: boolean; selected?: boolean; tabState?: 'current' | 'locked' | 'complete' | 'open' }[]; missions: readonly { key: string; label?: string | { loc: string } | LocText; status?: string | { loc: string } | LocText; art?: string; crest?: string; active?: boolean; locked?: boolean; selected?: boolean }[]; chapter: string | { loc: string } | LocText; district: string | { loc: string } | LocText; progressText: string | { loc: string } | LocText; objectiveHeading: string | { loc: string } | LocText; detailTitle: string | { loc: string } | LocText; detail: string | { loc: string } | LocText; objectiveLabel: string | { loc: string } | LocText; nextLabel: string | { loc: string } | LocText; totalProgress: string | { loc: string } | LocText; returnLabel: string | { loc: string } | LocText; memoriesLabel: string | { loc: string } | LocText; trialName: string | { loc: string } | LocText; trialStatus: string | { loc: string } | LocText; trialActionLabel: string | { loc: string } | LocText; keepsakeHint: string | { loc: string } | LocText; showMemories: boolean; objectiveSelected: boolean; memoriesSelected: boolean; closeSelected: boolean; returnSelected: boolean; trialSelected: boolean; claimable: boolean; claimSelected: boolean; keepsakes: readonly { key: string; label?: string | { loc: string } | LocText; art?: string; owned?: boolean }[]; heroArt: string; trialSceneArt: string; trialAvailable: boolean };
       areas: never;
       refs: 'memories' | 'close' | 'show-map' | 'trial' | 'overworld-guide-claim' | 'return-map';
     };
@@ -1373,12 +1373,13 @@ declare module '@gameengine/ui' {
      *   - `status`: text, default "You are here"
      *   - `active`: yesno, default false
      *   - `selected`: yesno, default false
+     *   - `tabState`: enum current | locked | complete | open, default "open"
      * Events: `<id>`
      * Code areas: none
      * Refs: none
      */
     'field-journal-tab': {
-      props: { label: string | { loc: string } | LocText; status: string | { loc: string } | LocText; active: boolean; selected: boolean };
+      props: { label: string | { loc: string } | LocText; status: string | { loc: string } | LocText; active: boolean; selected: boolean; tabState: 'current' | 'locked' | 'complete' | 'open' };
       areas: never;
       refs: never;
     };

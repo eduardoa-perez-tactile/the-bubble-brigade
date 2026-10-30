@@ -11,16 +11,17 @@
       "name": "Field journal tab",
       "style": {
         "dir": "column",
-        "pad": 3,
+        "pad": 2,
         "align": "center",
-        "radius": 6,
+        "radius": 8,
         "w": 185,
         "h": 48,
         "justify": "center",
-        "gap": 1
+        "gap": 0,
+        "bg": "#ede1c3"
       },
       "children": [
-        "title",
+        "titleRow",
         "subtitle"
       ]
     },
@@ -29,8 +30,8 @@
       "name": "Label",
       "text": "{label}",
       "style": {
-        "w": "100%",
-        "h": 25,
+        "w": "auto",
+        "h": 23,
         "fontSize": 18,
         "fitMin": 14,
         "color": "#285b59",
@@ -43,11 +44,270 @@
       "text": "{status}",
       "style": {
         "w": "100%",
-        "h": 15,
-        "fontSize": 11,
-        "fitMin": 10,
+        "h": 17,
+        "fontSize": 14,
+        "fitMin": 12,
         "color": "#72634b",
         "textAlign": "center"
+      }
+    },
+    "titleRow": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "lockedCue",
+        "completeCue",
+        "currentCue",
+        "title"
+      ],
+      "style": {
+        "pad": 0,
+        "dir": "row",
+        "align": "center",
+        "justify": "center",
+        "w": "100%",
+        "h": 23,
+        "gap": 7
+      }
+    },
+    "currentCue": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "pinTail",
+        "pinHead",
+        "pinHole"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 18,
+        "hide": true
+      }
+    },
+    "completeCue": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "checkShort",
+        "checkLong"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 18,
+        "hide": true
+      }
+    },
+    "lockedCue": {
+      "type": "element",
+      "name": "Element",
+      "children": [
+        "lockLoop",
+        "lockLoopHole",
+        "lockBody",
+        "lockKeyhole"
+      ],
+      "style": {
+        "pad": 0,
+        "w": 16,
+        "h": 18,
+        "hide": true
+      }
+    },
+    "pinTail": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 8,
+        "h": 8,
+        "bg": "#9a7034",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          8,
+          11
+        ],
+        "rotate": 45,
+        "radius": 1,
+        "pivot": "centre"
+      }
+    },
+    "pinHead": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 12,
+        "h": 12,
+        "bg": "#9a7034",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          2,
+          0
+        ],
+        "radius": 6
+      }
+    },
+    "pinHole": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 4,
+        "h": 4,
+        "bg": "#ede1c3",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          6,
+          4
+        ],
+        "radius": 2
+      }
+    },
+    "checkShort": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 7,
+        "h": 3,
+        "bg": "#366b52",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          5,
+          11
+        ],
+        "rotate": 45,
+        "radius": 1,
+        "pivot": "centre"
+      }
+    },
+    "checkLong": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 12,
+        "h": 3,
+        "bg": "#366b52",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          10,
+          8
+        ],
+        "rotate": -45,
+        "radius": 1,
+        "pivot": "centre"
+      }
+    },
+    "lockLoop": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 10,
+        "h": 11,
+        "bg": "#8b713e",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          3,
+          1
+        ],
+        "radius": 5
+      }
+    },
+    "lockLoopHole": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 6,
+        "h": 8,
+        "bg": "#ede1c3",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          5,
+          3
+        ],
+        "radius": 3
+      }
+    },
+    "lockBody": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 14,
+        "h": 10,
+        "bg": "#8b713e",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          1,
+          8
+        ],
+        "radius": 2
+      }
+    },
+    "lockKeyhole": {
+      "type": "element",
+      "name": "Element",
+      "children": [],
+      "style": {
+        "pad": 0,
+        "w": 2,
+        "h": 4,
+        "bg": "#ede1c3",
+        "position": "anchored",
+        "anchor": [
+          0,
+          0
+        ],
+        "offset": [
+          7,
+          11
+        ],
+        "radius": 1
       }
     }
   },
@@ -75,6 +335,33 @@
             },
             "subtitle": {
               "color": "#fff3d4"
+            },
+            "pinHead": {
+              "bg": "#efd18d"
+            },
+            "pinTail": {
+              "bg": "#efd18d"
+            },
+            "checkShort": {
+              "bg": "#fff3d4"
+            },
+            "checkLong": {
+              "bg": "#fff3d4"
+            },
+            "lockLoop": {
+              "bg": "#fff3d4"
+            },
+            "lockBody": {
+              "bg": "#fff3d4"
+            },
+            "pinHole": {
+              "bg": "#285b59"
+            },
+            "lockLoopHole": {
+              "bg": "#285b59"
+            },
+            "lockKeyhole": {
+              "bg": "#285b59"
             }
           }
         }
@@ -82,11 +369,62 @@
     },
     "selected": {
       "type": "yesno",
-      "default": false
+      "default": false,
+      "poses": {
+        "yes": {
+          "set": {
+            "root": {
+              "scale": 1.01
+            }
+          }
+        }
+      }
+    },
+    "tabState": {
+      "type": "enum",
+      "values": [
+        "current",
+        "locked",
+        "complete",
+        "open"
+      ],
+      "default": "open",
+      "poses": {
+        "current": {
+          "set": {
+            "currentCue": {
+              "hide": false
+            }
+          }
+        },
+        "complete": {
+          "set": {
+            "completeCue": {
+              "hide": false
+            }
+          }
+        },
+        "locked": {
+          "set": {
+            "lockedCue": {
+              "hide": false
+            }
+          }
+        }
+      }
     }
   },
   "transition": {
     "type": "easeOut",
     "ms": 120
+  },
+  "states": {
+    "pressed": {
+      "set": {
+        "root": {
+          "scale": 0.98
+        }
+      }
+    }
   }
 }
