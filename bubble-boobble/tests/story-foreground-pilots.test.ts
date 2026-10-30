@@ -19,7 +19,7 @@ import {enterForegroundPilot,leaveForegroundPilot} from './support/story-foregro
 
 const scene='scenes/cartoon.scene.json';
 const levels=Array.from({length:25},(_,index)=>index+1);
-const views=[
+const views:{width:number;height:number;safeArea:[number,number,number,number]}[]=[
  {width:344,height:882,safeArea:[0,32,0,0]},
  {width:768,height:1024,safeArea:[0,20,0,0]},
  {width:1280,height:720,safeArea:[0,0,0,0]},

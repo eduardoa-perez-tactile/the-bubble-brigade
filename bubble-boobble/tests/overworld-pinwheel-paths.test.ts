@@ -9,7 +9,7 @@ import {adventureStep} from './support/adventure-time';
 const district='district-3',scene='scenes/arcade.scene.json';
 // Coordinates on the unchanged 1254px painting, rather than the collision outlines.
 const point=(x:number,y:number)=>sourceToWorld(getOverworldMap(district),{x:x*1536/1254,y:y*1536/1254});
-const paths=[
+const paths:readonly {name:string;points:readonly (readonly [number,number])[]}[]=[
  {name:'southwest promenade',points:[[410,950],[365,915],[330,875],[320,835],[330,805],[360,785]]},
  {name:'upper terrace stairs',points:[[635,353],[665,350],[685,333],[705,320],[735,323]]},
  {name:'carousel west side',points:[[430,950],[445,900],[440,850],[450,800],[480,760],[510,735],[555,710],[575,680],[590,650]]},

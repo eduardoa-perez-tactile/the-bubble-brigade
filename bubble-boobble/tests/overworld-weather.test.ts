@@ -59,7 +59,8 @@ worldTest('map weather stays cosmetic bounded and below actors across every dist
    expect(weather(districtId,tick)).toEqual(draws);
    const actor=plan.find(draw=>draw.image?.includes('/dragon-oblique/'))!;
    const markers=plan.filter(draw=>draw.image?.includes('/markers/'));
-   expect(!!actor&&markers.length===6).toBe(true);
+   // Five missions, one trial and the shop now all use the authored marker crests.
+   expect(!!actor&&markers.length===7).toBe(true);
    for(const draw of draws){
     expect(!!draw.image&&imageKeys.includes(draw.image)).toBe(true);
     expect([draw.x,draw.y,draw.width,draw.height,draw.order].every(Number.isFinite)&&draw.width>0&&draw.height>0).toBe(true);
@@ -86,10 +87,10 @@ renderTest('map weather renders on phone low at narrow and ultrawide sizes witho
  for(const {width,height,safe}of [
   {width:360,height:880,safe:[0,34,0,24]},
   {width:2520,height:1080,safe:[72,0,0,0]},
- ]){
+ ] satisfies {width:number;height:number;safe:[number,number,number,number]}[]){
   ctx.input.view(width,height,1,safe);await ctx.step(20);
   const position={x:overworldState.get().x,y:overworldState.get().y};
-  const sprites=()=>ctx.world.entities(OverworldVisual).map(entity=>({sprite:ctx.world.get(entity,Sprite),offset:ctx.world.get(entity,VisualOffset)})).filter(value=>value.sprite.visible&&imageKeys.includes(value.sprite.image));
+  const sprites=()=>ctx.world.entities(OverworldVisual).map(entity=>({sprite:ctx.world.get(entity,Sprite),offset:ctx.world.get(entity,VisualOffset)})).filter(value=>value.sprite.visible&&value.sprite.image!==null&&imageKeys.includes(value.sprite.image));
   const before=sprites();expect(before.length>0).toBe(true);
   for(const advance of [0,90]){
    if(advance)await ctx.step(advance);

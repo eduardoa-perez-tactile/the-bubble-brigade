@@ -51,5 +51,5 @@ export function MenuSelection(model: () => DesktopModel) {
       <Particles class="menu-selection-glints" effect="cartoon/menu/selection-sparkles.vfx.json" unit={100} seed={41}
         restart={landings} emitting={() => landings() > 0 && !model().reducedEffects} />
     </View>
-  </View>;
+  </View> as UINode;
 }
