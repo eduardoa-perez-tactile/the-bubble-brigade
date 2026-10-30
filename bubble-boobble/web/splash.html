@@ -1,21 +1,8 @@
     <div id="launch" data-phase="loading">
-      <main class="splash-content" aria-labelledby="name">
+      <button id="start" disabled aria-label="Play The Bubble Brigade"></button>
+      <main id="loading-content" class="splash-content" aria-labelledby="name">
         <h1 id="name" class="visually-hidden">The Bubble Brigade</h1>
-        <section class="splash-entry" aria-label="Enter the game">
-          <div class="splash-loading">
-            <p id="status" role="status">Preparing the show…</p>
-            <progress id="load-progress" max="1" aria-label="Game loading progress"></progress>
-          </div>
-          <button id="start" disabled>PRESS PLAY TO ENTER</button>
-        </section>
-        <details class="splash-controls">
-          <summary>How to play</summary>
-          <div class="splash-control-grid">
-            <section aria-label="Player one controls"><h2>Player one</h2><p><kbd>A</kbd> <kbd>D</kbd> or <kbd>←</kbd> <kbd>→</kbd> Move</p><p><kbd>W</kbd> or <kbd>↑</kbd> Jump · <kbd>Space</kbd> Fire</p></section>
-            <section aria-label="Player two controls"><h2>Player two</h2><p><kbd>J</kbd> <kbd>L</kbd> Move</p><p><kbd>I</kbd> Jump · <kbd>K</kbd> Fire</p></section>
-            <section class="splash-shared-controls" aria-label="Controller and menu controls"><h2>Gamepad &amp; menus</h2><p>Stick / D-pad Move · A Jump · X Fire · Start Pause</p><p><kbd>Esc</kbd> Pause · <kbd>M</kbd> Mute · <kbd>F11</kbd> Fullscreen</p><p class="splash-coop">Bring your brigade: choose your team in the game menu.</p></section>
-          </div>
-        </details>
-        <p class="splash-compat">Desktop browser with WebGPU · Progress saved in this browser</p>
+        <p id="status" class="visually-hidden" role="status">Preparing game…</p>
+        <progress id="load-progress" max="1" aria-label="Game loading progress"></progress>
       </main>
     </div>
