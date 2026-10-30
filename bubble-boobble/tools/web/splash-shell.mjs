@@ -14,9 +14,8 @@ export function writeSplashShell({ project, site }) {
   mkdirSync(assets, { recursive: true });
   copyFileSync(join(project, 'web/splash.css'), join(assets, 'splash.css'));
   for (const [source, name] of [
-    ['assets/cartoon/menu/logo.png', 'brigade-logo.png'],
-    ['assets/cartoon/menu/stage.png', 'stage.png'],
-    ['assets/cartoon/menu/greeting/04.png', 'greeter.png'],
+    ['assets/cartoon/menu/curtain-tactile.png', 'curtain.png'],
+    ['assets/cartoon/menu/curtain-tactile-portrait.png', 'curtain-portrait.png'],
     ['assets/cartoon/fonts/BreeSerif-Regular.ttf', 'brigade.ttf'],
   ]) copyFileSync(join(project, source), join(assets, name));
   writeFileSync(file, html);

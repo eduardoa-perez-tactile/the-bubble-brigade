@@ -60,12 +60,13 @@ engine's full release gates; release pipeline coverage must be current first.
 
 ## Publish
 
-The browser loading screen uses the Brigade logo, theatre stage, greeting character and serif font
-from the current game menu, with a gold progress bar and adventure button.
+The browser loading screen uses the same closed-curtain artwork and serif font as the main
+screen, with a small gold loading indicator and the same "PRESS PLAY TO ENTER" prompt.
+It adds no game logo, mascot or panel over the curtain.
 Its HTML, styles and event-driven loading indicator live in `web/splash.html`, `web/splash.css`
 and `web/splash.mjs`; `tools/web/splash-shell.mjs` installs them during export. Bootstrap art is
-copied outside the game packs so it can display before the engine loads. The original menu PNGs
-and `BreeSerif-Regular.ttf` are copied unchanged; the old pixel-logo and dragon-lineup assets
+copied outside the game packs so it can display before the engine loads. The original landscape
+and portrait `curtain-tactile` PNGs and `BreeSerif-Regular.ttf` are copied unchanged; the old pixel-logo and dragon-lineup assets
 are no longer included in the bootstrap screen.
 
 After a fresh web build, `npm run web:preview-splash` captures loading, ready, expanded controls
